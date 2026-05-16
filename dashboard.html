@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>sgeniusk GitHub 프로젝트 우선순위 대시보드 v2</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+:root {
+  --bg: #0d1117;
+  --panel: #161b22;
+  --panel-2: #1c2128;
+  --border: #30363d;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --accent: #58a6ff;
+  --green: #3fb950;
+  --yellow: #d29922;
+  --orange: #db6d28;
+  --red: #f85149;
+  --purple: #bc8cff;
+  --cyan: #39c5cf;
+  --tool-claude: #db6d28;
+  --tool-codex: #3fb950;
+  --tool-hermes: #bc8cff;
+  --tool-hybrid: #39c5cf;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Pretendard", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  padding: 24px;
+}
+.container { max-width: 1400px; margin: 0 auto; }
+header { margin-bottom: 24px; }
+h1 { font-size: 26px; margin-bottom: 6px; }
+.subtitle { color: var(--muted); font-size: 14px; }
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.kpi { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 16px 18px; }
+.kpi-label { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .5px; }
+.kpi-value { font-size: 26px; font-weight: 700; margin-top: 6px; }
+.kpi-note { color: var(--muted); font-size: 11px; margin-top: 4px; }
+.controls {
+  background: var(--panel); border: 1px solid var(--border); border-radius: 8px;
+  padding: 12px 16px; margin-bottom: 16px;
+  display: flex; gap: 12px; flex-wrap: wrap; align-items: center;
+}
+.controls label { font-size: 13px; color: var(--muted); }
+.controls select, .controls input[type=text] {
+  background: var(--panel-2); color: var(--text);
+  border: 1px solid var(--border); border-radius: 6px;
+  padding: 6px 10px; font-size: 13px;
+}
+.grid-2 { display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; margin-bottom: 16px; }
+@media (max-width: 1000px) { .grid-2 { grid-template-columns: 1fr; } }
+.card { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 18px; }
+.card h2 { font-size: 15px; margin-bottom: 12px; }
+.card .hint { color: var(--muted); font-size: 12px; margin-bottom: 12px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: var(--panel-2); color: var(--muted); text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--border); font-weight: 500; }
+td { padding: 10px 8px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+tr:hover td { background: rgba(88,166,255,.04); cursor: pointer; }
+tr.paused td { opacity: 0.55; }
+.rank { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; background: var(--panel-2); border: 1px solid var(--border); font-size: 11px; font-weight: 700; }
+.rank-1 { background: var(--green); color: #0d1117; border-color: var(--green); }
+.rank-2 { background: #2ea043; color: #fff; border-color: #2ea043; }
+.rank-3 { background: var(--yellow); color: #0d1117; border-color: var(--yellow); }
+.progress-cell { width: 220px; }
+.progress-bar { background: var(--panel-2); height: 10px; border-radius: 5px; overflow: hidden; position: relative; display: flex; }
+.progress-bar > div { height: 100%; transition: width .4s ease; }
+.progress-seg-docs { background: rgba(63,185,80,.55); }
+.progress-seg-skeleton { background: rgba(88,166,255,.65); }
+.progress-seg-features { background: rgba(210,153,34,.7); }
+.progress-seg-alpha { background: rgba(188,140,255,.75); }
+.progress-text { font-size: 11px; color: var(--muted); margin-top: 4px; }
+.progress-legend { display: flex; gap: 10px; font-size: 11px; color: var(--muted); margin-top: 10px; flex-wrap: wrap; }
+.progress-legend .swatch { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; vertical-align: middle; }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 500; margin-right: 4px; white-space: nowrap; }
+.badge-game { background: rgba(188,140,255,.15); color: var(--purple); }
+.badge-app { background: rgba(88,166,255,.15); color: var(--accent); }
+.badge-content { background: rgba(63,185,80,.15); color: var(--green); }
+.badge-private { background: rgba(248,81,73,.12); color: var(--red); }
+.badge-public { background: rgba(63,185,80,.12); color: var(--green); }
+.badge-stack { background: var(--panel-2); color: var(--muted); border: 1px solid var(--border); }
+.badge-paused { background: rgba(139,148,158,.2); color: var(--muted); border: 1px dashed var(--muted); }
+.tool-badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+.tool-claude { background: rgba(219,109,40,.18); color: var(--tool-claude); border: 1px solid rgba(219,109,40,.4); }
+.tool-codex { background: rgba(63,185,80,.18); color: var(--tool-codex); border: 1px solid rgba(63,185,80,.4); }
+.tool-hermes { background: rgba(188,140,255,.18); color: var(--tool-hermes); border: 1px solid rgba(188,140,255,.4); }
+.tool-hybrid { background: rgba(57,197,207,.18); color: var(--cyan); border: 1px solid rgba(57,197,207,.4); }
+.eta-near { color: var(--green); }
+.eta-mid { color: var(--yellow); }
+.eta-far { color: var(--orange); }
+.eta-long { color: var(--red); }
+canvas { max-width: 100%; }
+.detail-panel { background: var(--panel-2); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-top: 8px; font-size: 13px; }
+.detail-panel h3 { margin-bottom: 8px; color: var(--accent); }
+.detail-panel ul { margin-left: 18px; margin-top: 6px; }
+.detail-panel li { margin-bottom: 4px; }
+.detail-panel .meta-row { display: grid; grid-template-columns: 130px 1fr; gap: 8px; margin-bottom: 4px; }
+.detail-panel .meta-label { color: var(--muted); }
+.detail-panel .progress-breakdown { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 10px 0; }
+.detail-panel .breakdown-item { background: var(--panel); border: 1px solid var(--border); border-radius: 6px; padding: 8px; text-align: center; }
+.detail-panel .breakdown-label { color: var(--muted); font-size: 10px; text-transform: uppercase; }
+.detail-panel .breakdown-value { font-size: 18px; font-weight: 700; margin-top: 2px; }
+.repo-link { color: var(--accent); text-decoration: none; }
+.repo-link:hover { text-decoration: underline; }
+.section-title { font-size: 18px; margin: 24px 0 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+footer { color: var(--muted); font-size: 11px; text-align: center; margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--border); }
+.handoff-banner {
+  background: linear-gradient(135deg, rgba(219,109,40,.15), rgba(57,197,207,.1));
+  border: 1px solid rgba(219,109,40,.3);
+  border-radius: 8px; padding: 14px 18px; margin-bottom: 16px;
+}
+.handoff-banner strong { color: var(--tool-claude); }
+.handoff-banner code { background: var(--panel-2); padding: 1px 6px; border-radius: 3px; color: var(--cyan); font-family: "SF Mono", Menlo, monospace; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>sgeniusk (Gomgomee) GitHub 프로젝트 우선순위 대시보드</h1>
+    <p class="subtitle">v2 · 도구별 분류 + 진척도 구성요소 분해 · 데이터 기준일 2026-05-16</p>
+  </header>
+
+  <div class="handoff-banner">
+    <strong>Claude Code 핸드오프 준비됨</strong> — 이 대시보드와 데이터는 <code>handoff/</code> 폴더에 정리되어 있습니다. 같은 폴더의 <code>HANDOFF.md</code> 지침대로 클로드 코드에서 바로 이어 작업할 수 있습니다.
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="kpi-label">활성 프로젝트</div>
+      <div class="kpi-value" id="kpi-active">9</div>
+      <div class="kpi-note">+ 일시중단 1개 (반짝상점)</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Claude 작성</div>
+      <div class="kpi-value" style="color: var(--tool-claude)" id="kpi-claude">4</div>
+      <div class="kpi-note">Formi · 빌더스쿨 · Story X · BookCircle</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Codex 작성</div>
+      <div class="kpi-value" style="color: var(--tool-codex)" id="kpi-codex">3</div>
+      <div class="kpi-note">시즈폴 · 군주 · AI 컴퍼니 타이쿤</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Hermes Agent</div>
+      <div class="kpi-value" style="color: var(--tool-hermes)" id="kpi-hermes">1</div>
+      <div class="kpi-note">Mandate of Heroes</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">평균 진척도</div>
+      <div class="kpi-value" id="kpi-progress">52%</div>
+      <div class="kpi-note">활성 프로젝트 기준</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">완성 임박 (≥60%)</div>
+      <div class="kpi-value" style="color: var(--green)">4</div>
+      <div class="kpi-note">2-3주 내 알파 가능</div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <label>카테고리</label>
+    <select id="filter-category">
+      <option value="all">전체</option>
+      <option value="game">게임</option>
+      <option value="app">앱</option>
+      <option value="content">콘텐츠</option>
+    </select>
+    <label>도구</label>
+    <select id="filter-tool">
+      <option value="all">전체</option>
+      <option value="claude">Claude</option>
+      <option value="codex">Codex</option>
+      <option value="hermes">Hermes Agent</option>
+      <option value="hybrid">Claude+Codex</option>
+    </select>
+    <label>상태</label>
+    <select id="filter-status">
+      <option value="active">활성</option>
+      <option value="all">전체 (일시중단 포함)</option>
+      <option value="paused">일시중단</option>
+    </select>
+    <label>정렬</label>
+    <select id="sort-by">
+      <option value="priority">우선순위 (완성 임박도)</option>
+      <option value="progress">진척도 높은 순</option>
+      <option value="commits">커밋 많은 순</option>
+      <option value="recent">최근 활동 순</option>
+    </select>
+    <label style="margin-left:auto">검색</label>
+    <input type="text" id="filter-text" placeholder="이름/스택">
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h2>완성 임박도 순위</h2>
+      <p class="hint">진척도 막대는 문서/골격/기능/알파 4단계의 누적입니다. 행을 클릭하면 분해된 점수와 다음 액션을 볼 수 있습니다.</p>
+      <table id="priority-table">
+        <thead>
+          <tr>
+            <th style="width:50px">#</th>
+            <th>프로젝트</th>
+            <th>도구</th>
+            <th>유형</th>
+            <th class="progress-cell">진척도 (문서·골격·기능·알파)</th>
+            <th>커밋</th>
+            <th>예상 완료</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+      <div class="progress-legend">
+        <span><span class="swatch progress-seg-docs"></span>문서 (PRD·Spec)</span>
+        <span><span class="swatch progress-seg-skeleton"></span>골격 (Scaffold·CI)</span>
+        <span><span class="swatch progress-seg-features"></span>핵심 기능</span>
+        <span><span class="swatch progress-seg-alpha"></span>알파·폴리시</span>
+      </div>
+    </div>
+    <div class="card">
+      <h2>진척도 구성 분해 (스택드 바)</h2>
+      <p class="hint">각 프로젝트가 어느 단계에 막혀 있는지 한눈에. 노란색(기능)과 보라(알파)가 짧으면 실제 동작 가능한 코드가 부족하다는 신호.</p>
+      <canvas id="stacked-chart" height="380"></canvas>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h2>도구별 분포</h2>
+      <p class="hint">Claude가 4건, Codex가 3건, Hermes가 1건, Hybrid가 1건. 도구별 평균 진척도도 표시됩니다.</p>
+      <canvas id="tool-chart" height="300"></canvas>
+    </div>
+    <div class="card">
+      <h2>도구 × 진척도 매트릭스</h2>
+      <p class="hint">진척도(X축) × 커밋 수(Y축). 우상단에 위치할수록 빠른 완성 후보.</p>
+      <canvas id="scatter-chart" height="300"></canvas>
+    </div>
+  </div>
+
+  <h2 class="section-title">스케줄 권장 시퀀스 (수정 반영)</h2>
+  <div class="card">
+    <p class="hint">9번(뜬이유 메인 monorepo)이 빠진 결과를 반영한 4-6주 추천 로드맵입니다.</p>
+    <ol style="margin: 12px 0 0 18px; line-height: 2;">
+      <li><strong style="color:var(--green)">Sprint A (1-2주):</strong> <span class="tool-badge tool-claude">Claude</span> Formi 알파 출시 + <span class="tool-badge tool-hybrid">Hybrid</span> tteuniyu-ios Wave 3 클로징</li>
+      <li><strong style="color:var(--green)">Sprint B (2-3주):</strong> <span class="tool-badge tool-codex">Codex</span> 시즈폴 알파 락 + <span class="tool-badge tool-codex">Codex</span> 군주 v0.16 출시</li>
+      <li><strong style="color:var(--yellow)">Sprint C (3-5주):</strong> <span class="tool-badge tool-hermes">Hermes</span> Mandate of Heroes 콘텐츠 패스 + <span class="tool-badge tool-claude">Claude</span> AI Builder School 본문 채움</li>
+      <li><strong style="color:var(--orange)">Sprint D (5-8주):</strong> <span class="tool-badge tool-codex">Codex</span> AI 컴퍼니 타이쿤 MVP + <span class="tool-badge tool-claude">Claude</span> Story X 1매체 집중</li>
+      <li><strong style="color:var(--muted)">Defer:</strong> BookCircle은 핵심 4건 마감 후 재평가 · 반짝상점은 일시중단 상태 유지</li>
+    </ol>
+  </div>
+
+  <footer>
+    데이터 출처: GitHub 리포지토리 README/PRD + Contributors Insights API + commits.atom · 도구 정보는 사용자 직접 제공<br>
+    진척도 = 문서(0-25) + 골격(0-25) + 기능(0-30) + 알파/폴리시(0-20) — 자세한 산정 근거는 행 클릭 시 펼침<br>
+    <span id="data-source"></span>
+  </footer>
+</div>
+
+<script>
+// 대시보드 데이터는 외부 projects.json에서 fetch로 로드한다.
+// file:// 환경 등 fetch가 막힌 경우 아래 FALLBACK_PROJECTS 내장 사본으로 폴백한다.
+let projects = [];
+
+// fetch 실패 시 사용하는 내장 폴백 데이터 — projects.json과 수동 동기 유지 필요
+const FALLBACK_PROJECTS = [
+  { rank: 1, name: "habit", displayName: "Formi (포미)", category: "app", visibility: "public", tool: "claude", status: "active",
+    stack: ["TypeScript", "Vite+React (web)", "Expo SDK 54 (native)"],
+    breakdown: {docs: 25, skeleton: 25, features: 15, alpha: 10}, progress: 75,
+    commits: 80, lastUpdate: "2026-05-16 21:28", firstCommit: "~2026-05-09", daysActive: 7,
+    eta: "1-2주", etaClass: "eta-near",
+    rationale: "PRD(2026-05-13) 확정, Alpha report + 10-tester evaluation 완료. 웹 프로토타입 검증 끝. mobile/(Expo)로 네이티브 통합 진행 중. CI 하네스와 i18n 셋업.",
+    risks: ["Expo SDK 54 + iOS 네이티브 빌드 안정화", "스냅 카메라/스토리지 권한 흐름", "AI 패턴 분석 정확도 (7일 리포트)"],
+    nextActions: ["mobile/README.md 기준 Expo 알파 빌드 산출", "iOS TestFlight 등록", "alpha 사용자 피드백 반영"],
+    url: "https://github.com/sgeniusk/habit"
+  },
+  { rank: 2, name: "tteuniyu-ios", displayName: "뜬이유 iOS", category: "app", visibility: "private", tool: "hybrid", status: "active",
+    stack: ["Swift", "Widget", "xcodegen"],
+    breakdown: {docs: 25, skeleton: 25, features: 20, alpha: 0}, progress: 70,
+    commits: 5, lastUpdate: "2026-05-15", firstCommit: "2026-05-11", daysActive: 5,
+    eta: "1-2주", etaClass: "eta-near",
+    rationale: "Wave 1 Foundation 완료, Wave 3 통합 완료 (RisingIssuesView/ViewModel/XCTest). 남은 것은 시뮬레이터 스크린샷 + Acceptance Criteria 25개 자가검증.",
+    risks: ["폰트 라이선스 추가 작업", "ADR-006 통합 게이트 (Paid Intent ≥ 4%, Waitlist ≥ 100)", "Codex Wave 2 4-agent 통합"],
+    nextActions: ["Xcode 빌드 + 5 시뮬레이터 스크린샷", "harness/check.sh CI 통과", "monorepo 통합 시점 결정"],
+    url: "https://github.com/sgeniusk/tteuniyu-ios"
+  },
+  { rank: 3, name: "sam-defender-logue", displayName: "삼국지: 시즈폴 (Siege Fall)", category: "game", visibility: "private", tool: "codex", status: "active",
+    stack: ["TypeScript", "browser harness"],
+    breakdown: {docs: 25, skeleton: 20, features: 15, alpha: 5}, progress: 65,
+    commits: 50, lastUpdate: "2026-05-15", firstCommit: "~2026-05-07", daysActive: 9,
+    eta: "2-3주", etaClass: "eta-near",
+    rationale: "P1~P25 작업 항목 정리. 5/14-5/15 연속 업데이트. 알파 플레이어블 슬라이스 + 가상 플레이테스트 2회. 다국어 기반(P17), Hard 승률 게이트(P18) 진행.",
+    risks: ["콘텐츠 데이터 vs Markdown ID 불일치 (하네스 미완)", "20+ 항목 백로그", "에셋 파이프라인(P2) 마무리"],
+    nextActions: ["P25 루트 정찰 예측 완성", "알파 완료 백로그 정리", "에셋 수입 하네스 자동화"],
+    url: "https://github.com/sgeniusk/sam-defender-logue"
+  },
+  { rank: 4, name: "samguk-idle-prototype", displayName: "전지적 군주 시점", category: "game", visibility: "private", tool: "codex", status: "active",
+    stack: ["JavaScript", "Vite", "Vercel"],
+    breakdown: {docs: 20, skeleton: 25, features: 15, alpha: 0}, progress: 60,
+    commits: 44, lastUpdate: "2026-05-16", firstCommit: "~2026-05-08", daysActive: 8,
+    eta: "2-3주", etaClass: "eta-near",
+    rationale: "기준선 v0.15.0-alpha. 알파 하네스 운영 중. Vercel 자동 배포 후보 URL 준비. CHANGELOG 체계 정착.",
+    risks: ["방치 RPG 밸런스 튜닝", "장기 세션 진행감/보상 곡선", "모바일 가로형 UX"],
+    nextActions: ["v0.16-alpha 게이트 통과", "Vercel 정식 도메인 연결", "20분/24시간 합성 플레이테스트"],
+    url: "https://github.com/sgeniusk/samguk-idle-prototype"
+  },
+  { rank: 5, name: "three-kingdoms-deckbuilder", displayName: "Mandate of Heroes", category: "game", visibility: "private", tool: "hermes", status: "active",
+    stack: ["Godot 4", "GDScript", "JSON"],
+    breakdown: {docs: 15, skeleton: 25, features: 15, alpha: 0}, progress: 55,
+    commits: 21, lastUpdate: "2026-05-14", firstCommit: "~2026-05-05", daysActive: 11,
+    eta: "3-5주", etaClass: "eta-mid",
+    rationale: "코어 메커니즘 완성: deck, energy, position, guard, morale, intent, faction(Shu/Wei/Wu), vulnerable, branching route, edicts. Slay-the-Spire형 캠페인 1회 플레이 가능.",
+    risks: ["아트/UI 임시 (Koei 자산 회피)", "Web export 안정화", "콘텐츠(영웅/카드/이벤트) 볼륨"],
+    nextActions: ["오리지널 시각 디자인 결정", "Steam Wishlist 페이지 준비", "Mac/iOS 빌드 점검"],
+    url: "https://github.com/sgeniusk/three-kingdoms-deckbuilder"
+  },
+  { rank: 6, name: "ai-builder-school", displayName: "AI Builder School", category: "content", visibility: "public", tool: "claude", status: "active",
+    stack: ["Next.js 15", "React 19", "MDX"],
+    breakdown: {docs: 20, skeleton: 20, features: 5, alpha: 0}, progress: 45,
+    commits: 14, lastUpdate: "2026-05-16", firstCommit: "~2026-04-26", daysActive: 20,
+    eta: "3-5주", etaClass: "eta-mid",
+    rationale: "12-phase + 6 여정 + 32 lesson 골격 완성. 페이지 맵과 콘텐츠 데이터 모델 정의됨. 32 lesson 본문 채움이 핵심 과제.",
+    risks: ["32 lesson 본문 작성량", "MDX 콘텐츠 일관성/번역", "라이선스 미정"],
+    nextActions: ["우선 레슨 4-5개 본문 완성", "캡스톤 프로젝트 예시", "라이선스 결정"],
+    url: "https://github.com/sgeniusk/ai-builder-school"
+  },
+  { rank: 7, name: "ai-company-tycoon-boundaryless", displayName: "AI 컴퍼니 타이쿤", category: "game", visibility: "public", tool: "codex", status: "active",
+    stack: ["TypeScript", "Vite+React", "Vercel"],
+    breakdown: {docs: 25, skeleton: 15, features: 5, alpha: 0}, progress: 45,
+    commits: 50, lastUpdate: "2026-05-16", firstCommit: "~2026-05-09", daysActive: 7,
+    eta: "4-6주", etaClass: "eta-mid",
+    rationale: "Godot에서 웹 네이티브로 재시작. PRD/벤치마크(Game Dev Story)/제작 하네스/12명 합성 플레이테스트 정리. 실제 게임 코드는 초기.",
+    risks: ["카이로소프트식 압축 시뮬 디테일", "성장 vs 압박 균형감", "재시작 후 자산 재활용"],
+    nextActions: ["MVP 1 마일스톤 마감", "12명 합성 플레이테스트 1차", "Vercel 미리보기"],
+    url: "https://github.com/sgeniusk/ai-company-tycoon-boundaryless"
+  },
+  { rank: 8, name: "story-x-alpha", displayName: "Story X", category: "app", visibility: "private", tool: "claude", status: "active",
+    stack: ["TypeScript", "Vite+React", "Claude agents"],
+    breakdown: {docs: 20, skeleton: 15, features: 10, alpha: 0}, progress: 45,
+    commits: 58, lastUpdate: "2026-05-15", firstCommit: "~2026-05-06", daysActive: 10,
+    eta: "5-7주", etaClass: "eta-far",
+    rationale: "Project blueprint, creative dev engine, story engine(시리즈 바이블/캐논 레저), App.tsx UI 진행. 다양한 매체(소설/에세이/오디오북/만화 등) 지원이 목표.",
+    risks: ["매체별 워크플로우 스코프 폭", "에이전트 결과물 일관성", "Canon 충돌 감지 정확도"],
+    nextActions: ["1개 매체(웹툰/단편 만화) 깊이 우선 완성", "장편 연재 메모리 앵커 테스트", "에이전트 출력 골든 케이스"],
+    url: "https://github.com/sgeniusk/story-x-alpha"
+  },
+  { rank: 9, name: "BookCircle", displayName: "BookCircle", category: "app", visibility: "private", tool: "claude", status: "active",
+    stack: ["Next.js", "TypeScript", "Supabase (planned)"],
+    breakdown: {docs: 10, skeleton: 10, features: 0, alpha: 0}, progress: 20,
+    commits: 3, lastUpdate: "2026-05-12", firstCommit: "~2026-05-10", daysActive: 6,
+    eta: "8-10주", etaClass: "eta-long",
+    rationale: "Initial brief + design handoff + spec + Next.js 스캐폴드 + landing UI + Supabase placeholder. sample data로 시작. 다음 단계는 Supabase 실 연결.",
+    risks: ["Supabase 실 연결 결정", "독서클럽 도메인 정확도", "타 프로젝트 대비 우선순위 낮음"],
+    nextActions: ["로그인/초대 모델 결정", "Supabase 연결", "투표/리뷰 슬라이스 인증까지"],
+    url: "https://github.com/sgeniusk/BookCircle"
+  },
+  { rank: 10, name: "jewelry-webtoon-cloud", displayName: "반짝상점 생존기", category: "content", visibility: "private", tool: "claude", status: "paused",
+    pausedReason: "사용자 결정 — 핵심 게임/앱 마감 후 재개 검토",
+    stack: ["Markdown", "이미지 생성"],
+    breakdown: {docs: 20, skeleton: 0, features: 0, alpha: 0}, progress: 20,
+    commits: 18, lastUpdate: "2026-05-13", firstCommit: "~2026-05-01", daysActive: 15,
+    eta: "재개 후 8-12주", etaClass: "eta-long",
+    rationale: "Month 01 산출물 완성. gh auth 토큰 만료. 사용자 결정으로 일시 중단.",
+    risks: ["gh auth 만료 → 원격 푸시 끊김", "재개 시 콘텐츠 일관성 회복 비용", "이미지 일관성"],
+    nextActions: ["PAUSE: 재개 트리거 정의", "현재 산출물 README에 명시"],
+    url: "https://github.com/sgeniusk/jewelry-webtoon-cloud"
+  }
+];
+
+// projects.json의 중첩 progress 객체를 렌더링 코드가 기대하는 평탄한 형태로 변환한다.
+// FALLBACK_PROJECTS(이미 평탄한 형태)도 그대로 통과시킨다.
+function normalizeProjects(raw) {
+  return raw.map(p => {
+    const breakdown = p.breakdown || (p.progress && typeof p.progress === 'object'
+      ? { docs: p.progress.docs, skeleton: p.progress.skeleton, features: p.progress.features, alpha: p.progress.alpha }
+      : { docs: 0, skeleton: 0, features: 0, alpha: 0 });
+    const total = typeof p.progress === 'number'
+      ? p.progress
+      : (p.progress && p.progress.total != null
+          ? p.progress.total
+          : breakdown.docs + breakdown.skeleton + breakdown.features + breakdown.alpha);
+    const etaClass = /^eta-/.test(p.etaClass || '') ? p.etaClass : 'eta-' + (p.etaClass || 'long');
+    const lastUpdate = (p.lastUpdate || '').replace('T', ' ').replace(/Z$/, '');
+    return Object.assign({}, p, { breakdown, progress: total, etaClass, lastUpdate });
+  });
+}
+
+// projects.json을 fetch로 로드하고, 실패하면 내장 폴백 데이터로 대체한다.
+async function loadProjects() {
+  try {
+    const res = await fetch('./projects.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const json = await res.json();
+    return { data: normalizeProjects(json.projects || []), source: 'fetch' };
+  } catch (err) {
+    return { data: normalizeProjects(FALLBACK_PROJECTS), source: 'fallback', error: err };
+  }
+}
+
+// 데이터 출처(외부 fetch vs 내장 폴백)를 푸터에 표시한다.
+function showDataSourceNotice(source, err) {
+  const el = document.getElementById('data-source');
+  if (!el) return;
+  if (source === 'fetch') {
+    el.textContent = '데이터 출처: projects.json (외부 fetch)';
+    el.style.color = 'var(--green)';
+  } else {
+    el.textContent = 'projects.json 로드 실패 — 내장 폴백 데이터 사용 중 (file:// 환경에서는 정상 동작)';
+    el.style.color = 'var(--yellow)';
+  }
+}
+
+// 데이터가 채워진 뒤 호출되는 대시보드 초기화 진입점
+function init() {
+const tbody = document.getElementById('table-body');
+const filterCategory = document.getElementById('filter-category');
+const filterTool = document.getElementById('filter-tool');
+const filterStatus = document.getElementById('filter-status');
+const sortBy = document.getElementById('sort-by');
+const filterText = document.getElementById('filter-text');
+
+function categoryBadge(cat) {
+  const map = {game: ['게임', 'badge-game'], app: ['앱', 'badge-app'], content: ['콘텐츠', 'badge-content']};
+  const [label, cls] = map[cat] || ['기타', ''];
+  return `<span class="badge ${cls}">${label}</span>`;
+}
+function visibilityBadge(v) {
+  return `<span class="badge ${v === 'public' ? 'badge-public' : 'badge-private'}">${v === 'public' ? 'Public' : 'Private'}</span>`;
+}
+function toolBadge(tool) {
+  const map = {claude: ['Claude', 'tool-claude'], codex: ['Codex', 'tool-codex'], hermes: ['Hermes', 'tool-hermes'], hybrid: ['Claude+Codex', 'tool-hybrid']};
+  const [label, cls] = map[tool] || [tool, ''];
+  return `<span class="tool-badge ${cls}">${label}</span>`;
+}
+function pausedBadge() {
+  return `<span class="badge badge-paused">일시중단</span>`;
+}
+function stackBadges(s) {
+  return s.slice(0,3).map(x => `<span class="badge badge-stack">${x}</span>`).join('');
+}
+function rankClass(r) { return r <= 3 ? `rank rank-${r}` : 'rank'; }
+
+function progressBar(b) {
+  const segs = [
+    {key: 'docs', max: 25, cls: 'progress-seg-docs'},
+    {key: 'skeleton', max: 25, cls: 'progress-seg-skeleton'},
+    {key: 'features', max: 30, cls: 'progress-seg-features'},
+    {key: 'alpha', max: 20, cls: 'progress-seg-alpha'}
+  ];
+  return `<div class="progress-bar">${segs.map(s => `<div class="${s.cls}" style="width:${b[s.key]}%" title="${s.key}: ${b[s.key]}/${s.max}"></div>`).join('')}</div>`;
+}
+
+function renderTable() {
+  const cat = filterCategory.value;
+  const tool = filterTool.value;
+  const stat = filterStatus.value;
+  const text = filterText.value.toLowerCase();
+  const sort = sortBy.value;
+  let list = projects.filter(p => {
+    if (cat !== 'all' && p.category !== cat) return false;
+    if (tool !== 'all' && p.tool !== tool) return false;
+    if (stat === 'active' && p.status !== 'active') return false;
+    if (stat === 'paused' && p.status !== 'paused') return false;
+    if (text && !(p.name.toLowerCase().includes(text) || p.displayName.toLowerCase().includes(text) || p.stack.join(' ').toLowerCase().includes(text))) return false;
+    return true;
+  });
+  const sorters = {
+    priority: (a,b) => a.rank - b.rank,
+    progress: (a,b) => b.progress - a.progress,
+    commits: (a,b) => b.commits - a.commits,
+    recent: (a,b) => (b.lastUpdate || '').localeCompare(a.lastUpdate || '')
+  };
+  list.sort(sorters[sort]);
+  tbody.innerHTML = '';
+  list.forEach((p) => {
+    const tr = document.createElement('tr');
+    if (p.status === 'paused') tr.classList.add('paused');
+    tr.dataset.repo = p.name;
+    tr.innerHTML = `
+      <td><span class="${rankClass(p.rank)}">${p.rank}</span></td>
+      <td>
+        <div style="font-weight:600">${p.displayName}</div>
+        <div style="color:var(--muted); font-size:11px; margin-top:2px">${p.name} · ${stackBadges(p.stack)}</div>
+      </td>
+      <td>${toolBadge(p.tool)}</td>
+      <td>${categoryBadge(p.category)} ${visibilityBadge(p.visibility)} ${p.status === 'paused' ? pausedBadge() : ''}</td>
+      <td>
+        ${progressBar(p.breakdown)}
+        <div class="progress-text">${p.progress}% · 문서 ${p.breakdown.docs} / 골격 ${p.breakdown.skeleton} / 기능 ${p.breakdown.features} / 알파 ${p.breakdown.alpha}</div>
+      </td>
+      <td>${p.commits}</td>
+      <td class="${p.etaClass}">${p.eta}</td>
+    `;
+    tr.addEventListener('click', () => toggleDetail(tr, p));
+    tbody.appendChild(tr);
+  });
+}
+
+function toggleDetail(tr, p) {
+  document.querySelectorAll('tr.detail-row').forEach(r => r.remove());
+  if (tr.dataset.opened === '1') { tr.dataset.opened = '0'; return; }
+  document.querySelectorAll('tr[data-opened="1"]').forEach(r => r.dataset.opened = '0');
+  tr.dataset.opened = '1';
+  const dtr = document.createElement('tr');
+  dtr.classList.add('detail-row');
+  const td = document.createElement('td');
+  td.colSpan = 7;
+  td.innerHTML = `
+    <div class="detail-panel">
+      <h3>${p.displayName} ${p.status === 'paused' ? '<span class="badge badge-paused">일시중단</span>' : ''}</h3>
+      <div class="meta-row"><span class="meta-label">Repository</span><span><a class="repo-link" href="${p.url}" target="_blank">${p.url.replace('https://github.com/','')}</a></span></div>
+      <div class="meta-row"><span class="meta-label">개발 도구</span><span>${toolBadge(p.tool)}</span></div>
+      <div class="meta-row"><span class="meta-label">기술 스택</span><span>${p.stack.map(s=>`<span class="badge badge-stack">${s}</span>`).join(' ')}</span></div>
+      <div class="meta-row"><span class="meta-label">최초 커밋</span><span>${p.firstCommit}</span></div>
+      <div class="meta-row"><span class="meta-label">최근 커밋</span><span>${p.lastUpdate}</span></div>
+      <div class="meta-row"><span class="meta-label">활동 기간</span><span>${p.daysActive}일 · ${(p.commits/Math.max(p.daysActive,1)).toFixed(1)} commits/day</span></div>
+      <div class="meta-row"><span class="meta-label">예상 완료</span><span class="${p.etaClass}">${p.eta}</span></div>
+      ${p.pausedReason ? `<div class="meta-row"><span class="meta-label">중단 사유</span><span style="color:var(--muted)">${p.pausedReason}</span></div>` : ''}
+      <div class="progress-breakdown">
+        <div class="breakdown-item"><div class="breakdown-label">문서 / 25</div><div class="breakdown-value" style="color:var(--green)">${p.breakdown.docs}</div></div>
+        <div class="breakdown-item"><div class="breakdown-label">골격 / 25</div><div class="breakdown-value" style="color:var(--accent)">${p.breakdown.skeleton}</div></div>
+        <div class="breakdown-item"><div class="breakdown-label">기능 / 30</div><div class="breakdown-value" style="color:var(--yellow)">${p.breakdown.features}</div></div>
+        <div class="breakdown-item"><div class="breakdown-label">알파 / 20</div><div class="breakdown-value" style="color:var(--purple)">${p.breakdown.alpha}</div></div>
+      </div>
+      <div style="margin-top:10px"><strong>현황 판단</strong><div style="margin-top:4px">${p.rationale}</div></div>
+      <div style="margin-top:10px"><strong style="color:var(--red)">리스크</strong><ul>${p.risks.map(r => `<li>${r}</li>`).join('')}</ul></div>
+      <div style="margin-top:10px"><strong style="color:var(--green)">다음 액션</strong><ul>${p.nextActions.map(a => `<li>${a}</li>`).join('')}</ul></div>
+    </div>
+  `;
+  dtr.appendChild(td);
+  tr.parentNode.insertBefore(dtr, tr.nextSibling);
+}
+
+[filterCategory, filterTool, filterStatus, sortBy, filterText].forEach(el => {
+  el.addEventListener('input', renderTable);
+  el.addEventListener('change', renderTable);
+});
+
+renderTable();
+
+// Charts
+Chart.defaults.color = '#8b949e';
+Chart.defaults.borderColor = '#30363d';
+Chart.defaults.font.family = '-apple-system, BlinkMacSystemFont, "Segoe UI", "Pretendard"';
+
+const active = projects.filter(p => p.status === 'active');
+
+// Stacked bar - progress breakdown
+const sortedForChart = active.slice().sort((a,b) => b.progress - a.progress);
+new Chart(document.getElementById('stacked-chart'), {
+  type: 'bar',
+  data: {
+    labels: sortedForChart.map(p => p.displayName),
+    datasets: [
+      { label: '문서', data: sortedForChart.map(p => p.breakdown.docs), backgroundColor: '#3fb950' },
+      { label: '골격', data: sortedForChart.map(p => p.breakdown.skeleton), backgroundColor: '#58a6ff' },
+      { label: '기능', data: sortedForChart.map(p => p.breakdown.features), backgroundColor: '#d29922' },
+      { label: '알파', data: sortedForChart.map(p => p.breakdown.alpha), backgroundColor: '#bc8cff' }
+    ]
+  },
+  options: {
+    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { position: 'bottom' }, tooltip: { mode: 'index' } },
+    scales: { x: { stacked: true, beginAtZero: true, max: 100, ticks: { callback: v => v + '%' } }, y: { stacked: true } }
+  }
+});
+
+// Tool chart - bar with count + avg progress
+const tools = ['claude','codex','hermes','hybrid'];
+const toolNames = {claude: 'Claude', codex: 'Codex', hermes: 'Hermes', hybrid: 'Claude+Codex'};
+const toolColors = {claude: '#db6d28', codex: '#3fb950', hermes: '#bc8cff', hybrid: '#39c5cf'};
+const toolStats = tools.map(t => {
+  const arr = active.filter(p => p.tool === t);
+  return {
+    tool: t,
+    count: arr.length,
+    avgProgress: arr.length ? Math.round(arr.reduce((s,p)=>s+p.progress,0) / arr.length) : 0
+  };
+});
+new Chart(document.getElementById('tool-chart'), {
+  type: 'bar',
+  data: {
+    labels: toolStats.map(s => toolNames[s.tool]),
+    datasets: [
+      { label: '프로젝트 수', data: toolStats.map(s => s.count), backgroundColor: toolStats.map(s => toolColors[s.tool]), yAxisID: 'y' },
+      { label: '평균 진척도 %', data: toolStats.map(s => s.avgProgress), type: 'line', borderColor: '#e6edf3', backgroundColor: 'transparent', pointRadius: 5, yAxisID: 'y1' }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { position: 'bottom' } },
+    scales: {
+      y: { type: 'linear', position: 'left', beginAtZero: true, title: { display: true, text: '프로젝트 수' } },
+      y1: { type: 'linear', position: 'right', beginAtZero: true, max: 100, title: { display: true, text: '평균 진척 %' }, grid: { drawOnChartArea: false } }
+    }
+  }
+});
+
+// Scatter - tool colored
+new Chart(document.getElementById('scatter-chart'), {
+  type: 'scatter',
+  data: {
+    datasets: tools.map(t => ({
+      label: toolNames[t],
+      data: active.filter(p => p.tool === t).map(p => ({x: p.progress, y: p.commits, label: p.displayName})),
+      backgroundColor: toolColors[t],
+      pointRadius: 8,
+      pointHoverRadius: 11
+    }))
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'top' },
+      tooltip: { callbacks: { label: ctx => `${ctx.raw.label}: 진척 ${ctx.raw.x}%, 커밋 ${ctx.raw.y}` } }
+    },
+    scales: {
+      x: { title: { display: true, text: '진척도 (%)' }, beginAtZero: true, max: 100 },
+      y: { title: { display: true, text: '커밋 수' }, beginAtZero: true }
+    }
+  }
+});
+}
+
+// 부트스트랩 — projects.json 로드 후 대시보드를 초기화한다.
+(async () => {
+  const { data, source, error } = await loadProjects();
+  projects = data;
+  if (source === 'fallback') {
+    console.warn('projects.json fetch 실패 — 내장 폴백 데이터 사용:', error && error.message);
+  }
+  showDataSourceNotice(source, error);
+  init();
+})();
+</script>
+</body>
+</html>
