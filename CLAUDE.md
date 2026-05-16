@@ -1,11 +1,11 @@
 # GitHub 프로젝트 우선순위 대시보드 — Claude Code 컨텍스트
 
-이 폴더는 sgeniusk(Gomgomee)의 GitHub 프로젝트 진척도와 우선순위를 추적하는 단일 페이지 대시보드 + 데이터 패키지입니다. Cowork에서 분석한 결과를 Claude Code로 이어 작업하기 위해 핸드오프됩니다.
+이 폴더는 sgeniusk(Gomgomee)의 GitHub 프로젝트 진척도와 우선순위를 추적하는 **프로젝트 관리 에이전트 워크스페이스**입니다. 단순 대시보드를 넘어, 데이터 갱신·진척 코칭·새 프로젝트 킥오프를 슬래시 커맨드와 루틴으로 지원합니다.
 
 ## 컨텍스트 요약
 
 - **소유자**: sgeniusk (Gomgomee)
-- **데이터 기준일**: 2026-05-16
+- **데이터 기준일**: `projects.json`의 `meta.asOf` 참고 (refresh 시 자동 갱신)
 - **활성 프로젝트**: 9개 (게임 4, 앱 4, 콘텐츠 1)
 - **일시중단**: 1개 (jewelry-webtoon-cloud — 핵심 마감 후 재개)
 - **제외**: tteuniyu 메인 monorepo (사용자 요청으로 분석에서 제외, tteuniyu-ios는 유지)
@@ -13,30 +13,61 @@
 ## 폴더 구조
 
 ```
-handoff/
+github-priority-dashboard/
 ├── CLAUDE.md            # 이 파일 — Claude Code 진입점 컨텍스트
-├── HANDOFF.md           # 핸드오프 절차와 명령어 가이드
+├── HANDOFF.md           # 핸드오프 절차 가이드
 ├── README.md            # 사람용 개요
+├── index.html           # dashboard.html로 리다이렉트 (Pages 루트 URL용)
+├── dashboard.html       # 뷰 — Chart.js 기반, 낮/밤 모드, Sprint 보드, 제안·사용량 패널
 ├── projects.json        # 단일 진실 소스 (Source of Truth)
-├── dashboard.html       # 산출물 (Chart.js 기반 self-contained HTML)
+├── projects.schema.md   # projects.json 필드 스키마 + 변경 규칙
+├── suggestions.json     # /coach·/refresh가 생성하는 제안·코칭 데이터
+├── usage.json           # Codex/Claude 사용량 트래커 기준값
+├── scripts/
+│   └── refresh-progress.mjs   # GitHub 활동 수집 스크립트 (Node 20 내장 fetch)
+├── .claude/commands/    # 프로젝트 슬래시 커맨드 (refresh, coach, new-project)
+├── .github/workflows/
+│   └── deploy.yml       # main push 시 GitHub Pages 배포
 └── docs/
-    ├── progress-formula.md       # 진척도 산정 공식 설명
-    ├── tool-attribution.md       # 도구별 분류 근거
-    └── sprint-plan.md            # 4-6주 권장 스케줄
+    ├── progress-formula.md   # 진척도 산정 공식
+    ├── tool-attribution.md   # 도구별 분류 근거
+    ├── sprint-plan.md        # 4-6주 권장 스케줄
+    └── agent-guide.md        # 슬래시 커맨드·루틴 사용법 (사람용)
 ```
 
-## Claude Code가 알아야 할 핵심 규약
+## 에이전트 시스템
+
+이 워크스페이스는 4계층으로 동작합니다.
+
+| 계층 | 구성 | 역할 |
+| --- | --- | --- |
+| 뷰 | `dashboard.html` | 진척도·Sprint 보드·제안·사용량 시각화 |
+| 데이터 | `projects.json`·`suggestions.json`·`usage.json` | 단일 진실 소스 |
+| 에이전트 | `.claude/commands/*.md` | 슬래시 커맨드로 갱신·코칭·킥오프 |
+| 자동화 | `/schedule` 루틴 | 매일 `/refresh`를 무인 실행 |
+
+### 슬래시 커맨드
+
+- **`/refresh`** — GitHub 활동을 가져와 `projects.json`을 갱신하고, `dashboard.html`의 FALLBACK을 동기화한 뒤 `/coach` 로직으로 `suggestions.json`을 재생성한다.
+- **`/coach`** — 각 프로젝트의 막힌 단계·속도·정체를 분석해 `suggestions.json`에 제안을 기록한다. 인자로 프로젝트 이름을 주면 해당 프로젝트만 분석.
+- **`/new-project`** — 새 게임/앱/웹 아이디어를 대화로 구상하고, 결정되면 하네스 엔지니어링을 고려한 첫 프롬프트를 작성한다.
+
+### 데이터 흐름
+
+`dashboard.html`은 `fetch`로 `projects.json`·`suggestions.json`·`usage.json`을 로드하고, 실패하면(예: `file://`) 각 파일의 내장 `FALLBACK_*` 사본을 쓴다. 따라서 **`projects.json`을 갱신하면 `dashboard.html`의 `FALLBACK_PROJECTS` 블록도 같이 동기화**해야 한다 (`/refresh`가 자동 처리).
+
+## 핵심 규약
 
 ### 1. 진척도 공식
 
-`progress = docs(0-25) + skeleton(0-25) + features(0-30) + alpha(0-20)`
+`total = docs(0-25) + skeleton(0-25) + features(0-30) + alpha(0-20)`
 
 - **docs**: PRD, README, ADR, Implementation Spec의 완성도
 - **skeleton**: 빌드/실행 가능한 코드 골격, CI, 디렉토리 구조
 - **features**: PRD에 정의된 핵심 기능의 실제 동작 비율
 - **alpha**: 사용자 테스트, 폴리시, 알파/베타 등급 검증
 
-값을 변경할 때는 `projects.json`의 `breakdown` 필드를 수정하고 `total`을 합으로 갱신.
+값은 `projects.json`의 `progress` 객체(`docs`/`skeleton`/`features`/`alpha`/`total`)에 있다. 변경 시 `total`을 4개 합으로 갱신한다.
 
 ### 2. 도구 태그
 
@@ -60,41 +91,26 @@ handoff/
 - BookCircle → claude (사용자 미지정, 기본값)
 - 반짝상점 → claude, status=paused
 
-### 4. 상태 (status) 필드
+### 4. 상태 (status)·Sprint 필드
 
-- `active`: 활발한 개발 중
-- `paused`: 일시중단. UI에 점선 뱃지 + 50% 투명도로 표시
-- `archived`: (미사용, 추후 정의)
+- `status` — `active`(개발 중) / `paused`(일시중단, UI에 점선 뱃지) / `archived`(미사용)
+- `sprint` — `A`/`B`/`C`/`D`/`defer`. `docs/sprint-plan.md` 기준
+- `sprintStatus` — Sprint 보드 시드값(`planned`/`inProgress`/`review`/`done`). 보드 UI는 localStorage로 오버라이드
+
+전체 필드 규칙은 `projects.schema.md` 참고.
 
 ## 자주 쓰는 작업
 
-### A. 진척도 갱신
-```bash
-# 1) GitHub에서 최근 활동 확인
-gh repo list sgeniusk --json name,pushedAt --limit 30
-
-# 2) projects.json의 해당 프로젝트 breakdown/lastUpdate/commits 수정
-# 3) dashboard.html이 자동으로 같은 데이터를 임포트하도록 빌드 (현재는 인라인 — 동기화 필요)
-```
-
-### B. 신규 프로젝트 추가
-1. `projects.json`의 `projects` 배열에 객체 추가
-2. `rank` 재정렬 (우선순위 기준)
-3. `dashboard.html`의 `const projects = [...]` 배열도 동기화 (TODO: 외부 JSON 로드로 리팩토링)
-
-### C. 도구 태그 변경
-사용자에게 명시적으로 확인 받은 뒤에만 변경. `tool-attribution.md`에 변경 사유 기록.
-
-## 권장 다음 작업 (Claude Code에서)
-
-1. **JSON 외부 로딩 리팩토링**: `dashboard.html`이 `fetch('./projects.json')`으로 데이터를 가져오게 변경 → projects.json만 갱신하면 대시보드가 자동 반영
-2. **GitHub Actions 자동 갱신**: 매일 자정 GitHub API로 모든 프로젝트의 commits/lastUpdate를 자동 수집해 projects.json 업데이트 → 대시보드를 GitHub Pages로 배포
-3. **진척도 자동 추정**: 각 리포의 README/PRD를 파싱해 docs/skeleton/features/alpha 점수를 추천. 사용자 검수 후 확정.
-4. **Sprint 트래커 추가**: 현재는 권장 시퀀스만 나열. Sprint별 시작일/종료일/체크리스트를 별도 섹션으로.
+- **진척도·활동 갱신** — `/refresh` (또는 `node scripts/refresh-progress.mjs`)
+- **정체 점검·코칭** — `/coach`
+- **새 프로젝트 시작** — `/new-project`
+- **신규 프로젝트 등록** — `projects.json`에 객체 추가 → `rank` 재정렬 → `dashboard.html`의 `FALLBACK_PROJECTS`도 동기화 (`/refresh`가 처리)
+- **도구 태그 변경** — 사용자 확인 후에만, `tool-attribution.md`에 사유 기록
 
 ## 절대 하지 말 것
 
 - 사용자가 명시한 도구 태그를 임의 변경
 - 일시중단(paused) 프로젝트를 active로 되돌리는 것 (사용자 명시적 지시 필요)
-- 진척도를 임의로 부풀려 표시
-- dashboard.html에서 컬러 토큰의 base 색상 변경 (브랜드 일관성)
+- 진척도(`progress` 점수)를 임의로 부풀려 표시
+- `dashboard.html`에서 색 토큰의 다크 base 값 변경 (브랜드 일관성 — 라이트 테마는 `:root[data-theme="light"]`로 별도 추가)
+- `refresh-progress.mjs`로 `commits`·`lastUpdate`·`meta.asOf` 외의 필드를 자동 변경
