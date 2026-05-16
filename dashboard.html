@@ -269,113 +269,430 @@ footer { color: var(--muted); font-size: 11px; text-align: center; margin-top: 3
 // file:// 환경 등 fetch가 막힌 경우 아래 FALLBACK_PROJECTS 내장 사본으로 폴백한다.
 let projects = [];
 
-// fetch 실패 시 사용하는 내장 폴백 데이터 — projects.json과 수동 동기 유지 필요
+// fetch 실패 시 사용하는 내장 폴백 데이터 — projects.json projects 배열의 verbatim 복사본.
+// scripts/refresh-progress.mjs 갱신 후 dashboard.html의 이 블록도 동기화한다.
 const FALLBACK_PROJECTS = [
-  { rank: 1, name: "habit", displayName: "Formi (포미)", category: "app", visibility: "public", tool: "claude", status: "active",
-    stack: ["TypeScript", "Vite+React (web)", "Expo SDK 54 (native)"],
-    breakdown: {docs: 25, skeleton: 25, features: 15, alpha: 10}, progress: 75,
-    commits: 80, lastUpdate: "2026-05-16 21:28", firstCommit: "~2026-05-09", daysActive: 7,
-    eta: "1-2주", etaClass: "eta-near",
-    rationale: "PRD(2026-05-13) 확정, Alpha report + 10-tester evaluation 완료. 웹 프로토타입 검증 끝. mobile/(Expo)로 네이티브 통합 진행 중. CI 하네스와 i18n 셋업.",
-    risks: ["Expo SDK 54 + iOS 네이티브 빌드 안정화", "스냅 카메라/스토리지 권한 흐름", "AI 패턴 분석 정확도 (7일 리포트)"],
-    nextActions: ["mobile/README.md 기준 Expo 알파 빌드 산출", "iOS TestFlight 등록", "alpha 사용자 피드백 반영"],
-    url: "https://github.com/sgeniusk/habit"
-  },
-  { rank: 2, name: "tteuniyu-ios", displayName: "뜬이유 iOS", category: "app", visibility: "private", tool: "hybrid", status: "active",
-    stack: ["Swift", "Widget", "xcodegen"],
-    breakdown: {docs: 25, skeleton: 25, features: 20, alpha: 0}, progress: 70,
-    commits: 5, lastUpdate: "2026-05-15", firstCommit: "2026-05-11", daysActive: 5,
-    eta: "1-2주", etaClass: "eta-near",
-    rationale: "Wave 1 Foundation 완료, Wave 3 통합 완료 (RisingIssuesView/ViewModel/XCTest). 남은 것은 시뮬레이터 스크린샷 + Acceptance Criteria 25개 자가검증.",
-    risks: ["폰트 라이선스 추가 작업", "ADR-006 통합 게이트 (Paid Intent ≥ 4%, Waitlist ≥ 100)", "Codex Wave 2 4-agent 통합"],
-    nextActions: ["Xcode 빌드 + 5 시뮬레이터 스크린샷", "harness/check.sh CI 통과", "monorepo 통합 시점 결정"],
-    url: "https://github.com/sgeniusk/tteuniyu-ios"
-  },
-  { rank: 3, name: "sam-defender-logue", displayName: "삼국지: 시즈폴 (Siege Fall)", category: "game", visibility: "private", tool: "codex", status: "active",
-    stack: ["TypeScript", "browser harness"],
-    breakdown: {docs: 25, skeleton: 20, features: 15, alpha: 5}, progress: 65,
-    commits: 50, lastUpdate: "2026-05-15", firstCommit: "~2026-05-07", daysActive: 9,
-    eta: "2-3주", etaClass: "eta-near",
-    rationale: "P1~P25 작업 항목 정리. 5/14-5/15 연속 업데이트. 알파 플레이어블 슬라이스 + 가상 플레이테스트 2회. 다국어 기반(P17), Hard 승률 게이트(P18) 진행.",
-    risks: ["콘텐츠 데이터 vs Markdown ID 불일치 (하네스 미완)", "20+ 항목 백로그", "에셋 파이프라인(P2) 마무리"],
-    nextActions: ["P25 루트 정찰 예측 완성", "알파 완료 백로그 정리", "에셋 수입 하네스 자동화"],
-    url: "https://github.com/sgeniusk/sam-defender-logue"
-  },
-  { rank: 4, name: "samguk-idle-prototype", displayName: "전지적 군주 시점", category: "game", visibility: "private", tool: "codex", status: "active",
-    stack: ["JavaScript", "Vite", "Vercel"],
-    breakdown: {docs: 20, skeleton: 25, features: 15, alpha: 0}, progress: 60,
-    commits: 44, lastUpdate: "2026-05-16", firstCommit: "~2026-05-08", daysActive: 8,
-    eta: "2-3주", etaClass: "eta-near",
-    rationale: "기준선 v0.15.0-alpha. 알파 하네스 운영 중. Vercel 자동 배포 후보 URL 준비. CHANGELOG 체계 정착.",
-    risks: ["방치 RPG 밸런스 튜닝", "장기 세션 진행감/보상 곡선", "모바일 가로형 UX"],
-    nextActions: ["v0.16-alpha 게이트 통과", "Vercel 정식 도메인 연결", "20분/24시간 합성 플레이테스트"],
-    url: "https://github.com/sgeniusk/samguk-idle-prototype"
-  },
-  { rank: 5, name: "three-kingdoms-deckbuilder", displayName: "Mandate of Heroes", category: "game", visibility: "private", tool: "hermes", status: "active",
-    stack: ["Godot 4", "GDScript", "JSON"],
-    breakdown: {docs: 15, skeleton: 25, features: 15, alpha: 0}, progress: 55,
-    commits: 21, lastUpdate: "2026-05-14", firstCommit: "~2026-05-05", daysActive: 11,
-    eta: "3-5주", etaClass: "eta-mid",
-    rationale: "코어 메커니즘 완성: deck, energy, position, guard, morale, intent, faction(Shu/Wei/Wu), vulnerable, branching route, edicts. Slay-the-Spire형 캠페인 1회 플레이 가능.",
-    risks: ["아트/UI 임시 (Koei 자산 회피)", "Web export 안정화", "콘텐츠(영웅/카드/이벤트) 볼륨"],
-    nextActions: ["오리지널 시각 디자인 결정", "Steam Wishlist 페이지 준비", "Mac/iOS 빌드 점검"],
-    url: "https://github.com/sgeniusk/three-kingdoms-deckbuilder"
-  },
-  { rank: 6, name: "ai-builder-school", displayName: "AI Builder School", category: "content", visibility: "public", tool: "claude", status: "active",
-    stack: ["Next.js 15", "React 19", "MDX"],
-    breakdown: {docs: 20, skeleton: 20, features: 5, alpha: 0}, progress: 45,
-    commits: 14, lastUpdate: "2026-05-16", firstCommit: "~2026-04-26", daysActive: 20,
-    eta: "3-5주", etaClass: "eta-mid",
-    rationale: "12-phase + 6 여정 + 32 lesson 골격 완성. 페이지 맵과 콘텐츠 데이터 모델 정의됨. 32 lesson 본문 채움이 핵심 과제.",
-    risks: ["32 lesson 본문 작성량", "MDX 콘텐츠 일관성/번역", "라이선스 미정"],
-    nextActions: ["우선 레슨 4-5개 본문 완성", "캡스톤 프로젝트 예시", "라이선스 결정"],
-    url: "https://github.com/sgeniusk/ai-builder-school"
-  },
-  { rank: 7, name: "ai-company-tycoon-boundaryless", displayName: "AI 컴퍼니 타이쿤", category: "game", visibility: "public", tool: "codex", status: "active",
-    stack: ["TypeScript", "Vite+React", "Vercel"],
-    breakdown: {docs: 25, skeleton: 15, features: 5, alpha: 0}, progress: 45,
-    commits: 50, lastUpdate: "2026-05-16", firstCommit: "~2026-05-09", daysActive: 7,
-    eta: "4-6주", etaClass: "eta-mid",
-    rationale: "Godot에서 웹 네이티브로 재시작. PRD/벤치마크(Game Dev Story)/제작 하네스/12명 합성 플레이테스트 정리. 실제 게임 코드는 초기.",
-    risks: ["카이로소프트식 압축 시뮬 디테일", "성장 vs 압박 균형감", "재시작 후 자산 재활용"],
-    nextActions: ["MVP 1 마일스톤 마감", "12명 합성 플레이테스트 1차", "Vercel 미리보기"],
-    url: "https://github.com/sgeniusk/ai-company-tycoon-boundaryless"
-  },
-  { rank: 8, name: "story-x-alpha", displayName: "Story X", category: "app", visibility: "private", tool: "claude", status: "active",
-    stack: ["TypeScript", "Vite+React", "Claude agents"],
-    breakdown: {docs: 20, skeleton: 15, features: 10, alpha: 0}, progress: 45,
-    commits: 58, lastUpdate: "2026-05-15", firstCommit: "~2026-05-06", daysActive: 10,
-    eta: "5-7주", etaClass: "eta-far",
-    rationale: "Project blueprint, creative dev engine, story engine(시리즈 바이블/캐논 레저), App.tsx UI 진행. 다양한 매체(소설/에세이/오디오북/만화 등) 지원이 목표.",
-    risks: ["매체별 워크플로우 스코프 폭", "에이전트 결과물 일관성", "Canon 충돌 감지 정확도"],
-    nextActions: ["1개 매체(웹툰/단편 만화) 깊이 우선 완성", "장편 연재 메모리 앵커 테스트", "에이전트 출력 골든 케이스"],
-    url: "https://github.com/sgeniusk/story-x-alpha"
-  },
-  { rank: 9, name: "BookCircle", displayName: "BookCircle", category: "app", visibility: "private", tool: "claude", status: "active",
-    stack: ["Next.js", "TypeScript", "Supabase (planned)"],
-    breakdown: {docs: 10, skeleton: 10, features: 0, alpha: 0}, progress: 20,
-    commits: 3, lastUpdate: "2026-05-12", firstCommit: "~2026-05-10", daysActive: 6,
-    eta: "8-10주", etaClass: "eta-long",
-    rationale: "Initial brief + design handoff + spec + Next.js 스캐폴드 + landing UI + Supabase placeholder. sample data로 시작. 다음 단계는 Supabase 실 연결.",
-    risks: ["Supabase 실 연결 결정", "독서클럽 도메인 정확도", "타 프로젝트 대비 우선순위 낮음"],
-    nextActions: ["로그인/초대 모델 결정", "Supabase 연결", "투표/리뷰 슬라이스 인증까지"],
-    url: "https://github.com/sgeniusk/BookCircle"
-  },
-  { rank: 10, name: "jewelry-webtoon-cloud", displayName: "반짝상점 생존기", category: "content", visibility: "private", tool: "claude", status: "paused",
-    pausedReason: "사용자 결정 — 핵심 게임/앱 마감 후 재개 검토",
-    stack: ["Markdown", "이미지 생성"],
-    breakdown: {docs: 20, skeleton: 0, features: 0, alpha: 0}, progress: 20,
-    commits: 18, lastUpdate: "2026-05-13", firstCommit: "~2026-05-01", daysActive: 15,
-    eta: "재개 후 8-12주", etaClass: "eta-long",
-    rationale: "Month 01 산출물 완성. gh auth 토큰 만료. 사용자 결정으로 일시 중단.",
-    risks: ["gh auth 만료 → 원격 푸시 끊김", "재개 시 콘텐츠 일관성 회복 비용", "이미지 일관성"],
-    nextActions: ["PAUSE: 재개 트리거 정의", "현재 산출물 README에 명시"],
-    url: "https://github.com/sgeniusk/jewelry-webtoon-cloud"
-  }
-];
+    {
+      "rank": 1,
+      "name": "habit",
+      "displayName": "Formi (포미)",
+      "category": "app",
+      "visibility": "public",
+      "tool": "claude",
+      "status": "active",
+      "sprint": "A",
+      "sprintStatus": "inProgress",
+      "stack": [
+        "TypeScript",
+        "Vite+React (web)",
+        "Expo SDK 54 (native)",
+        "Vitest"
+      ],
+      "progress": {
+        "docs": 25,
+        "skeleton": 25,
+        "features": 15,
+        "alpha": 10,
+        "total": 75
+      },
+      "commits": 81,
+      "lastUpdate": "2026-05-16T14:45Z",
+      "firstCommit": "~2026-05-09",
+      "daysActive": 7,
+      "eta": "1-2주",
+      "etaClass": "near",
+      "rationale": "PRD(2026-05-13) 확정, Alpha report + 10-tester evaluation 완료. 웹 프로토타입 검증 끝. mobile/(Expo) 디렉토리로 네이티브 통합 진행 중. CI 하네스(npm run ci)와 i18n까지 셋업됨.",
+      "risks": [
+        "Expo SDK 54 + iOS 네이티브 빌드 안정화",
+        "스냅 카메라/스토리지 권한 흐름",
+        "AI 패턴 분석 정확도 (7일 리포트)"
+      ],
+      "nextActions": [
+        "mobile/README.md 기준 Expo 알파 빌드 산출",
+        "iOS TestFlight 등록 절차",
+        "캡쳐된 alpha 사용자 피드백 반영"
+      ],
+      "url": "https://github.com/sgeniusk/habit"
+    },
+    {
+      "rank": 2,
+      "name": "tteuniyu-ios",
+      "displayName": "뜬이유 iOS",
+      "category": "app",
+      "visibility": "private",
+      "tool": "hybrid",
+      "status": "active",
+      "sprint": "A",
+      "sprintStatus": "inProgress",
+      "stack": [
+        "Swift",
+        "Widget Extension",
+        "xcodegen",
+        "harness/check.sh"
+      ],
+      "progress": {
+        "docs": 25,
+        "skeleton": 25,
+        "features": 20,
+        "alpha": 0,
+        "total": 70
+      },
+      "commits": 5,
+      "lastUpdate": "2026-05-12T08:40Z",
+      "firstCommit": "2026-05-11",
+      "daysActive": 5,
+      "eta": "1-2주",
+      "etaClass": "near",
+      "rationale": "Wave 1 Foundation 완료, Wave 3 통합도 RisingIssuesView/ViewModel/XCTest까지 끝. 남은 것은 시뮬레이터 스크린샷 + RFP §11 Acceptance Criteria 25개 자가 검증.",
+      "risks": [
+        "폰트 라이선스 (Pretendard/JetBrains Mono) 추가 작업",
+        "ADR-006 게이트 (Paid Intent ≥ 4% AND Waitlist ≥ 100) 미달 시 통합 보류",
+        "Codex Wave 2 4-agent 병렬 출력 통합"
+      ],
+      "nextActions": [
+        "Xcode 빌드 + 5 시뮬레이터 스크린샷 캡처",
+        "harness/check.sh CI 통과 확인",
+        "메인 monorepo와의 통합 시점 결정"
+      ],
+      "url": "https://github.com/sgeniusk/tteuniyu-ios"
+    },
+    {
+      "rank": 3,
+      "name": "sam-defender-logue",
+      "displayName": "삼국지: 시즈폴 (Siege Fall)",
+      "category": "game",
+      "visibility": "private",
+      "tool": "codex",
+      "status": "active",
+      "sprint": "B",
+      "sprintStatus": "planned",
+      "stack": [
+        "TypeScript",
+        "browser harness",
+        "synthetic playtest"
+      ],
+      "progress": {
+        "docs": 25,
+        "skeleton": 20,
+        "features": 15,
+        "alpha": 5,
+        "total": 65
+      },
+      "commits": 50,
+      "lastUpdate": "2026-05-15T02:24Z",
+      "firstCommit": "~2026-05-07",
+      "daysActive": 9,
+      "eta": "2-3주",
+      "etaClass": "near",
+      "rationale": "P1~P25까지 작업 항목 정리. 5/14, 5/15 연속 개발 진행 업데이트. 알파 플레이어블 슬라이스 완성, 가상 플레이테스트 보고 2회. 다국어 기반(P17), Hard 승률 게이트(P18)까지 진행.",
+      "risks": [
+        "콘텐츠 데이터 vs Markdown ID 불일치 (하네스 미완)",
+        "20+ 항목 백로그 누적",
+        "에셋 파이프라인(P2) 마무리"
+      ],
+      "nextActions": [
+        "P25 루트 정찰 예측 완성",
+        "알파 완료 백로그 정리",
+        "에셋 수입 하네스 자동화"
+      ],
+      "url": "https://github.com/sgeniusk/sam-defender-logue"
+    },
+    {
+      "rank": 4,
+      "name": "samguk-idle-prototype",
+      "displayName": "전지적 군주 시점",
+      "category": "game",
+      "visibility": "private",
+      "tool": "codex",
+      "status": "active",
+      "sprint": "B",
+      "sprintStatus": "planned",
+      "stack": [
+        "JavaScript",
+        "Vite",
+        "Vercel",
+        "alpha harness"
+      ],
+      "progress": {
+        "docs": 20,
+        "skeleton": 25,
+        "features": 15,
+        "alpha": 0,
+        "total": 60
+      },
+      "commits": 46,
+      "lastUpdate": "2026-05-16T14:22Z",
+      "firstCommit": "~2026-05-08",
+      "daysActive": 8,
+      "eta": "2-3주",
+      "etaClass": "near",
+      "rationale": "현재 기준선 v0.15.0-alpha. 알파 하네스 npm run harness:alpha 운영 중. Vercel 자동 배포 후보 URL까지 준비됨. CHANGELOG 체계도 정착.",
+      "risks": [
+        "방치 RPG 밸런스 튜닝",
+        "장기 세션의 진행감/보상 곡선",
+        "모바일 가로형 UX 최적화"
+      ],
+      "nextActions": [
+        "v0.16-alpha 게이트 통과",
+        "Vercel 정식 도메인 연결",
+        "20분/24시간 세션 합성 플레이테스트"
+      ],
+      "url": "https://github.com/sgeniusk/samguk-idle-prototype"
+    },
+    {
+      "rank": 5,
+      "name": "three-kingdoms-deckbuilder",
+      "displayName": "Mandate of Heroes",
+      "category": "game",
+      "visibility": "private",
+      "tool": "hermes",
+      "status": "active",
+      "sprint": "C",
+      "sprintStatus": "planned",
+      "stack": [
+        "Godot 4",
+        "GDScript",
+        "JSON data"
+      ],
+      "progress": {
+        "docs": 15,
+        "skeleton": 25,
+        "features": 15,
+        "alpha": 0,
+        "total": 55
+      },
+      "commits": 43,
+      "lastUpdate": "2026-05-16T14:41Z",
+      "firstCommit": "~2026-05-05",
+      "daysActive": 11,
+      "eta": "3-5주",
+      "etaClass": "mid",
+      "rationale": "코어 메커니즘 완성: deck draw/discard, energy, position, guard, morale, enemy intents, faction selection (Shu/Wei/Wu), self-guard, vulnerable, branching route, edicts. Slay-the-Spire 형 1회 캠페인 플레이 가능.",
+      "risks": [
+        "아트/UI 임시 상태 (Koei 자산 회피 필수)",
+        "Web export 안정화",
+        "콘텐츠(영웅/카드/이벤트) 볼륨 확장 필요"
+      ],
+      "nextActions": [
+        "오리지널 시각 디자인 결정",
+        "Steam Wishlist 페이지 준비",
+        "Mac/iOS 빌드 점검"
+      ],
+      "url": "https://github.com/sgeniusk/three-kingdoms-deckbuilder"
+    },
+    {
+      "rank": 6,
+      "name": "ai-builder-school",
+      "displayName": "AI Builder School",
+      "category": "content",
+      "visibility": "public",
+      "tool": "claude",
+      "status": "active",
+      "sprint": "C",
+      "sprintStatus": "planned",
+      "stack": [
+        "Next.js 15",
+        "React 19",
+        "MDX",
+        "Tailwind"
+      ],
+      "progress": {
+        "docs": 20,
+        "skeleton": 20,
+        "features": 5,
+        "alpha": 0,
+        "total": 45
+      },
+      "commits": 21,
+      "lastUpdate": "2026-05-16T15:08Z",
+      "firstCommit": "~2026-04-26",
+      "daysActive": 20,
+      "eta": "3-5주",
+      "etaClass": "mid",
+      "rationale": "12-phase 커리큘럼 + 6 여정 + 32 lesson 골격 완성. 페이지 맵(/start, /curriculum, /lessons, /tracks, /projects, /templates) 정의됨. 콘텐츠 데이터 모델 + 무결성 검증 셋업. 콘텐츠 채움이 남은 핵심 작업.",
+      "risks": [
+        "32 lesson 본문 작성량",
+        "MDX 콘텐츠 일관성/번역 관리",
+        "라이선스 미정"
+      ],
+      "nextActions": [
+        "Phase별 우선 레슨 4-5개 본문 완성",
+        "캡스톤 프로젝트 예시 작성",
+        "라이선스 결정"
+      ],
+      "url": "https://github.com/sgeniusk/ai-builder-school"
+    },
+    {
+      "rank": 7,
+      "name": "ai-company-tycoon-boundaryless",
+      "displayName": "AI 컴퍼니 타이쿤",
+      "category": "game",
+      "visibility": "public",
+      "tool": "codex",
+      "status": "active",
+      "sprint": "D",
+      "sprintStatus": "planned",
+      "stack": [
+        "TypeScript",
+        "Vite+React",
+        "Vercel",
+        "PRD harness"
+      ],
+      "progress": {
+        "docs": 25,
+        "skeleton": 15,
+        "features": 5,
+        "alpha": 0,
+        "total": 45
+      },
+      "commits": 51,
+      "lastUpdate": "2026-05-16T13:23Z",
+      "firstCommit": "~2026-05-09",
+      "daysActive": 7,
+      "eta": "4-6주",
+      "etaClass": "mid",
+      "rationale": "Godot에서 웹 네이티브로 재시작. PRD/벤치마크(Game Dev Story)/제작 하네스/합성 플레이테스트 12명 프로토콜 정리. MILESTONE_PLAN, AGENT_REVIEW_PROTOCOL까지 준비. 실제 게임 코드는 초기 단계.",
+      "risks": [
+        "벤치마크(카이로소프트식) 디테일 모방 한계",
+        "타이쿤 시뮬레이션의 균형감 (성장 vs 압박)",
+        "재시작 결정 후 자산 재활용"
+      ],
+      "nextActions": [
+        "MVP 1 마일스톤 마감",
+        "합성 플레이테스트 12명 1차",
+        "Vercel 미리보기 배포"
+      ],
+      "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless"
+    },
+    {
+      "rank": 8,
+      "name": "story-x-alpha",
+      "displayName": "Story X",
+      "category": "app",
+      "visibility": "private",
+      "tool": "claude",
+      "status": "active",
+      "sprint": "D",
+      "sprintStatus": "planned",
+      "stack": [
+        "TypeScript",
+        "Vite+React",
+        "Vitest",
+        "Claude/Codex agents"
+      ],
+      "progress": {
+        "docs": 20,
+        "skeleton": 15,
+        "features": 10,
+        "alpha": 0,
+        "total": 45
+      },
+      "commits": 58,
+      "lastUpdate": "2026-05-16T06:49Z",
+      "firstCommit": "~2026-05-06",
+      "daysActive": 10,
+      "eta": "5-7주",
+      "etaClass": "far",
+      "rationale": "Project blueprint, creative development engine, story engine (시리즈 바이블, 캐논 레저), App.tsx UI까지 코드 골격 진행. 다양한 매체(소설/에세이/오디오북/만화/뮤직비디오/교육영상) 지원이 목표. Claude Code 서브에이전트 운영.",
+      "risks": [
+        "매체별 워크플로우 폭이 넓음 (스코프 리스크)",
+        "에이전트 협업 결과물 품질 일관성",
+        "Canon 충돌 자동 감지의 정확도"
+      ],
+      "nextActions": [
+        "1개 매체(웹툰 or 단편 만화) 깊이 우선 완성",
+        "장편 연재 메모리 앵커 테스트",
+        "에이전트 출력 골든 케이스 정착"
+      ],
+      "url": "https://github.com/sgeniusk/story-x-alpha"
+    },
+    {
+      "rank": 9,
+      "name": "BookCircle",
+      "displayName": "BookCircle",
+      "category": "app",
+      "visibility": "private",
+      "tool": "claude",
+      "status": "active",
+      "sprint": "defer",
+      "sprintStatus": "planned",
+      "stack": [
+        "Next.js App Router",
+        "TypeScript",
+        "Tailwind",
+        "Supabase (planned)"
+      ],
+      "progress": {
+        "docs": 10,
+        "skeleton": 10,
+        "features": 0,
+        "alpha": 0,
+        "total": 20
+      },
+      "commits": 3,
+      "lastUpdate": "2026-05-13T22:21Z",
+      "firstCommit": "~2026-05-10",
+      "daysActive": 6,
+      "eta": "8-10주 (정상 추진 시)",
+      "etaClass": "long",
+      "rationale": "Initial brief + design handoff + implementation spec + Next.js 스캐폴드 + landing/demo UI + Supabase 클라이언트 placeholder + 스키마 초안 완료. 의도적으로 sample data로 시작. Supabase 실 연결과 인증 흐름이 다음 마일스톤.",
+      "risks": [
+        "Supabase 결정 (실 연결 vs 다른 BaaS)",
+        "독서클럽 도메인 정확도 (모임 룸/투표/리뷰)",
+        "다른 핵심 프로젝트 대비 우선순위 낮음"
+      ],
+      "nextActions": [
+        "로그인 방식 + 클럽 초대 모델 결정",
+        "Supabase 프로젝트 연결",
+        "투표/리뷰 슬라이스 1개 인증 흐름까지"
+      ],
+      "url": "https://github.com/sgeniusk/BookCircle"
+    },
+    {
+      "rank": 10,
+      "name": "jewelry-webtoon-cloud",
+      "displayName": "반짝상점 생존기",
+      "category": "content",
+      "visibility": "private",
+      "tool": "claude",
+      "status": "paused",
+      "sprint": "defer",
+      "sprintStatus": "planned",
+      "pausedReason": "사용자 결정 — 핵심 게임/앱 마감 후 재개 검토",
+      "stack": [
+        "Markdown",
+        "이미지 생성 파이프라인"
+      ],
+      "progress": {
+        "docs": 20,
+        "skeleton": 0,
+        "features": 0,
+        "alpha": 0,
+        "total": 20
+      },
+      "commits": 18,
+      "lastUpdate": "2026-05-15T04:09Z",
+      "firstCommit": "~2026-05-01",
+      "daysActive": 15,
+      "eta": "재개 후 8-12주",
+      "etaClass": "long",
+      "rationale": "Month 01 산출물(세계관/시즌/학습 지도/법규 메모/스타일 가이드/캐릭터 시트/배경팩/파일럿 3편) 완성. gh auth 토큰 만료 상태. 사용자 결정으로 일시 중단.",
+      "risks": [
+        "gh auth 토큰 만료 → 원격 푸시 끊김",
+        "재개 시점에 콘텐츠 일관성 회복 비용",
+        "이미지 생성 일관성 (캐릭터 표정/포즈)"
+      ],
+      "nextActions": [
+        "PAUSE: 재개 트리거 정의 (예: 핵심 게임 2개 마감 후)",
+        "gh auth 복구는 재개 시 처리",
+        "현재 산출물 README에 명시"
+      ],
+      "url": "https://github.com/sgeniusk/jewelry-webtoon-cloud"
+    }
+  ];
 
 // projects.json의 중첩 progress 객체를 렌더링 코드가 기대하는 평탄한 형태로 변환한다.
-// FALLBACK_PROJECTS(이미 평탄한 형태)도 그대로 통과시킨다.
+// FALLBACK_PROJECTS도 같은 중첩 구조라 동일하게 처리된다.
 function normalizeProjects(raw) {
   return raw.map(p => {
     const breakdown = p.breakdown || (p.progress && typeof p.progress === 'object'

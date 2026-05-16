@@ -22,7 +22,14 @@
       "visibility": "public",
       "tool": "claude",
       "status": "active",
-      "stack": ["TypeScript", "Vite+React (web)", "Expo SDK 54 (native)", "Vitest"],
+      "sprint": "A",
+      "sprintStatus": "inProgress",
+      "stack": [
+        "TypeScript",
+        "Vite+React (web)",
+        "Expo SDK 54 (native)",
+        "Vitest"
+      ],
       "progress": {
         "docs": 25,
         "skeleton": 25,
@@ -30,8 +37,8 @@
         "alpha": 10,
         "total": 75
       },
-      "commits": 80,
-      "lastUpdate": "2026-05-16T21:28Z",
+      "commits": 81,
+      "lastUpdate": "2026-05-16T14:45Z",
       "firstCommit": "~2026-05-09",
       "daysActive": 7,
       "eta": "1-2주",
@@ -57,7 +64,14 @@
       "visibility": "private",
       "tool": "hybrid",
       "status": "active",
-      "stack": ["Swift", "Widget Extension", "xcodegen", "harness/check.sh"],
+      "sprint": "A",
+      "sprintStatus": "inProgress",
+      "stack": [
+        "Swift",
+        "Widget Extension",
+        "xcodegen",
+        "harness/check.sh"
+      ],
       "progress": {
         "docs": 25,
         "skeleton": 25,
@@ -66,7 +80,7 @@
         "total": 70
       },
       "commits": 5,
-      "lastUpdate": "2026-05-15",
+      "lastUpdate": "2026-05-12T08:40Z",
       "firstCommit": "2026-05-11",
       "daysActive": 5,
       "eta": "1-2주",
@@ -92,7 +106,13 @@
       "visibility": "private",
       "tool": "codex",
       "status": "active",
-      "stack": ["TypeScript", "browser harness", "synthetic playtest"],
+      "sprint": "B",
+      "sprintStatus": "planned",
+      "stack": [
+        "TypeScript",
+        "browser harness",
+        "synthetic playtest"
+      ],
       "progress": {
         "docs": 25,
         "skeleton": 20,
@@ -101,7 +121,7 @@
         "total": 65
       },
       "commits": 50,
-      "lastUpdate": "2026-05-15",
+      "lastUpdate": "2026-05-15T02:24Z",
       "firstCommit": "~2026-05-07",
       "daysActive": 9,
       "eta": "2-3주",
@@ -127,7 +147,14 @@
       "visibility": "private",
       "tool": "codex",
       "status": "active",
-      "stack": ["JavaScript", "Vite", "Vercel", "alpha harness"],
+      "sprint": "B",
+      "sprintStatus": "planned",
+      "stack": [
+        "JavaScript",
+        "Vite",
+        "Vercel",
+        "alpha harness"
+      ],
       "progress": {
         "docs": 20,
         "skeleton": 25,
@@ -135,8 +162,8 @@
         "alpha": 0,
         "total": 60
       },
-      "commits": 44,
-      "lastUpdate": "2026-05-16",
+      "commits": 46,
+      "lastUpdate": "2026-05-16T14:22Z",
       "firstCommit": "~2026-05-08",
       "daysActive": 8,
       "eta": "2-3주",
@@ -162,7 +189,13 @@
       "visibility": "private",
       "tool": "hermes",
       "status": "active",
-      "stack": ["Godot 4", "GDScript", "JSON data"],
+      "sprint": "C",
+      "sprintStatus": "planned",
+      "stack": [
+        "Godot 4",
+        "GDScript",
+        "JSON data"
+      ],
       "progress": {
         "docs": 15,
         "skeleton": 25,
@@ -170,8 +203,8 @@
         "alpha": 0,
         "total": 55
       },
-      "commits": 21,
-      "lastUpdate": "2026-05-14",
+      "commits": 43,
+      "lastUpdate": "2026-05-16T14:41Z",
       "firstCommit": "~2026-05-05",
       "daysActive": 11,
       "eta": "3-5주",
@@ -197,7 +230,14 @@
       "visibility": "public",
       "tool": "claude",
       "status": "active",
-      "stack": ["Next.js 15", "React 19", "MDX", "Tailwind"],
+      "sprint": "C",
+      "sprintStatus": "planned",
+      "stack": [
+        "Next.js 15",
+        "React 19",
+        "MDX",
+        "Tailwind"
+      ],
       "progress": {
         "docs": 20,
         "skeleton": 20,
@@ -205,8 +245,8 @@
         "alpha": 0,
         "total": 45
       },
-      "commits": 14,
-      "lastUpdate": "2026-05-16",
+      "commits": 21,
+      "lastUpdate": "2026-05-16T15:08Z",
       "firstCommit": "~2026-04-26",
       "daysActive": 20,
       "eta": "3-5주",
@@ -232,7 +272,14 @@
       "visibility": "public",
       "tool": "codex",
       "status": "active",
-      "stack": ["TypeScript", "Vite+React", "Vercel", "PRD harness"],
+      "sprint": "D",
+      "sprintStatus": "planned",
+      "stack": [
+        "TypeScript",
+        "Vite+React",
+        "Vercel",
+        "PRD harness"
+      ],
       "progress": {
         "docs": 25,
         "skeleton": 15,
@@ -240,8 +287,8 @@
         "alpha": 0,
         "total": 45
       },
-      "commits": 50,
-      "lastUpdate": "2026-05-16",
+      "commits": 51,
+      "lastUpdate": "2026-05-16T13:23Z",
       "firstCommit": "~2026-05-09",
       "daysActive": 7,
       "eta": "4-6주",
@@ -267,7 +314,14 @@
       "visibility": "private",
       "tool": "claude",
       "status": "active",
-      "stack": ["TypeScript", "Vite+React", "Vitest", "Claude/Codex agents"],
+      "sprint": "D",
+      "sprintStatus": "planned",
+      "stack": [
+        "TypeScript",
+        "Vite+React",
+        "Vitest",
+        "Claude/Codex agents"
+      ],
       "progress": {
         "docs": 20,
         "skeleton": 15,
@@ -276,7 +330,7 @@
         "total": 45
       },
       "commits": 58,
-      "lastUpdate": "2026-05-15",
+      "lastUpdate": "2026-05-16T06:49Z",
       "firstCommit": "~2026-05-06",
       "daysActive": 10,
       "eta": "5-7주",
@@ -302,7 +356,14 @@
       "visibility": "private",
       "tool": "claude",
       "status": "active",
-      "stack": ["Next.js App Router", "TypeScript", "Tailwind", "Supabase (planned)"],
+      "sprint": "defer",
+      "sprintStatus": "planned",
+      "stack": [
+        "Next.js App Router",
+        "TypeScript",
+        "Tailwind",
+        "Supabase (planned)"
+      ],
       "progress": {
         "docs": 10,
         "skeleton": 10,
@@ -311,7 +372,7 @@
         "total": 20
       },
       "commits": 3,
-      "lastUpdate": "2026-05-12",
+      "lastUpdate": "2026-05-13T22:21Z",
       "firstCommit": "~2026-05-10",
       "daysActive": 6,
       "eta": "8-10주 (정상 추진 시)",
@@ -337,8 +398,13 @@
       "visibility": "private",
       "tool": "claude",
       "status": "paused",
+      "sprint": "defer",
+      "sprintStatus": "planned",
       "pausedReason": "사용자 결정 — 핵심 게임/앱 마감 후 재개 검토",
-      "stack": ["Markdown", "이미지 생성 파이프라인"],
+      "stack": [
+        "Markdown",
+        "이미지 생성 파이프라인"
+      ],
       "progress": {
         "docs": 20,
         "skeleton": 0,
@@ -347,7 +413,7 @@
         "total": 20
       },
       "commits": 18,
-      "lastUpdate": "2026-05-13",
+      "lastUpdate": "2026-05-15T04:09Z",
       "firstCommit": "~2026-05-01",
       "daysActive": 15,
       "eta": "재개 후 8-12주",
