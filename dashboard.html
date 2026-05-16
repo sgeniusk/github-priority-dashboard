@@ -182,6 +182,19 @@ canvas { max-width: 100%; }
 .usage-inputs input { background: var(--panel); color: var(--text); border: 1px solid var(--border); border-radius: 5px; padding: 4px 6px; font-size: 12px; }
 .usage-warn-text { color: var(--red); font-size: 11px; margin-top: 7px; }
 .usage-note { font-size: 10px; color: var(--muted); margin-top: 6px; line-height: 1.4; }
+.suggest-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 12px; }
+.suggest-card { background: var(--panel-2); border: 1px solid var(--border); border-left-width: 3px; border-radius: 8px; padding: 12px 14px; }
+.suggest-card.sev-high { border-left-color: var(--red); }
+.suggest-card.sev-warn { border-left-color: var(--yellow); }
+.suggest-card.sev-info { border-left-color: var(--accent); }
+.suggest-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 5px; }
+.suggest-head .s-title { font-weight: 600; font-size: 13px; }
+.suggest-head .s-repo { color: var(--muted); font-size: 11px; white-space: nowrap; }
+.suggest-type { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .4px; padding: 1px 6px; border-radius: 4px; background: var(--panel); border: 1px solid var(--border); color: var(--muted); margin-right: 6px; }
+.suggest-detail { font-size: 12px; color: var(--text); margin-bottom: 7px; line-height: 1.5; }
+.suggest-actions { margin: 0; padding-left: 16px; }
+.suggest-actions li { font-size: 11px; color: var(--muted); margin-bottom: 2px; }
+.suggest-empty { color: var(--muted); font-size: 13px; padding: 6px; }
 footer { color: var(--muted); font-size: 11px; text-align: center; margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--border); }
 .handoff-banner {
   background: linear-gradient(135deg, rgba(219,109,40,.15), rgba(57,197,207,.1));
@@ -239,6 +252,12 @@ footer { color: var(--muted); font-size: 11px; text-align: center; margin-top: 3
       <div class="kpi-value" style="color: var(--green)">4</div>
       <div class="kpi-note">2-3주 내 알파 가능</div>
     </div>
+  </div>
+
+  <h2 class="section-title">제안 / 코칭 <span id="suggest-meta" style="font-size:11px;color:var(--muted);font-weight:400"></span></h2>
+  <div class="card">
+    <p class="hint">/coach·/refresh 슬래시 커맨드가 생성하는 분석 결과입니다. 정체된 프로젝트와 다음 액션 제안을 보여줍니다.</p>
+    <div class="suggest-grid" id="suggest-grid"></div>
   </div>
 
   <div class="controls">
@@ -850,6 +869,26 @@ async function loadUsage() {
   }
 }
 
+// 제안/코칭 데이터 — suggestions.json fetch 실패 시(file:// 등) 아래 폴백 사용
+const FALLBACK_SUGGESTIONS = {
+  generatedAt: "2026-05-16",
+  items: [
+    { repo: "tteuniyu-ios", type: "stall", severity: "warn", title: "Sprint A 정체 신호", detail: "마지막 푸시가 2026-05-12로 약 5일 전입니다. 같은 Sprint A의 Formi는 매일 활동 중인데 뜬이유 iOS는 멈춰 있어 동반 마감 일정이 어긋날 위험이 있습니다.", actions: ["Xcode 빌드 + 5개 시뮬레이터 스크린샷 캡처", "harness/check.sh CI 통과 확인", "Acceptance Criteria 25개 자가검증 착수"] },
+    { repo: "habit", type: "coach", severity: "info", title: "완성 최근접 — 알파 게이트만 남음", detail: "진척도 75%로 활성 프로젝트 중 1위입니다. 문서·골격이 만점이고 알파(10/20)만 미완이라, TestFlight 알파 빌드 하나로 완성 단계에 진입할 수 있습니다.", actions: ["mobile/README.md 기준 Expo iOS 알파 빌드 산출", "TestFlight 업로드 후 alpha 사용자 피드백 수집"] },
+    { repo: "ai-builder-school", type: "coach", severity: "info", title: "기능 점수가 병목", detail: "features 점수가 5/30으로 활성 프로젝트 중 최저입니다. 12-phase 골격과 페이지 맵은 완성됐지만 32개 레슨 본문이 비어 실제 동작 비율이 낮습니다.", actions: ["Phase별 우선 레슨 4-5개 본문 완성", "캡스톤 프로젝트 예시 작성"] }
+  ]
+};
+let suggestionsData = FALLBACK_SUGGESTIONS;
+async function loadSuggestions() {
+  try {
+    const res = await fetch('./suggestions.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    return await res.json();
+  } catch {
+    return FALLBACK_SUGGESTIONS;
+  }
+}
+
 // 데이터 출처(외부 fetch vs 내장 폴백)를 푸터에 표시한다.
 function showDataSourceNotice(source, err) {
   const el = document.getElementById('data-source');
@@ -1148,6 +1187,36 @@ document.getElementById('usage-reset').addEventListener('click', () => {
 });
 renderUsagePanel();
 
+// --- 제안 / 코칭 패널 ---
+function renderSuggestions() {
+  const grid = document.getElementById('suggest-grid');
+  if (!grid) return;
+  const items = suggestionsData.items || [];
+  const meta = document.getElementById('suggest-meta');
+  if (meta) meta.textContent = items.length ? `· ${items.length}건 · ${suggestionsData.generatedAt || ''} 기준` : '';
+  grid.innerHTML = '';
+  if (!items.length) {
+    grid.innerHTML = '<div class="suggest-empty">제안이 없습니다. /coach 또는 /refresh로 분석을 생성하세요.</div>';
+    return;
+  }
+  const typeLabel = { coach: 'Coach', stall: 'Stall', idea: 'Idea' };
+  items.forEach(it => {
+    const sev = ['high', 'warn', 'info'].includes(it.severity) ? it.severity : 'info';
+    const proj = projects.find(p => p.name === it.repo);
+    const card = document.createElement('div');
+    card.className = 'suggest-card sev-' + sev;
+    card.innerHTML = `
+      <div class="suggest-head">
+        <span class="s-title"><span class="suggest-type">${typeLabel[it.type] || it.type || ''}</span>${it.title || ''}</span>
+        <span class="s-repo">${proj ? proj.displayName : (it.repo || '')}</span>
+      </div>
+      <div class="suggest-detail">${it.detail || ''}</div>
+      ${Array.isArray(it.actions) && it.actions.length ? `<ul class="suggest-actions">${it.actions.map(a => `<li>${a}</li>`).join('')}</ul>` : ''}`;
+    grid.appendChild(card);
+  });
+}
+renderSuggestions();
+
 // Charts — 테마 토큰을 읽어 생성하고, 테마 전환 시 재생성한다.
 Chart.defaults.font.family = '-apple-system, BlinkMacSystemFont, "Segoe UI", "Pretendard"';
 const active = projects.filter(p => p.status === 'active');
@@ -1247,6 +1316,7 @@ buildCharts();
   }
   showDataSourceNotice(source, error);
   usageData = await loadUsage();
+  suggestionsData = await loadSuggestions();
   init();
 })();
 </script>
