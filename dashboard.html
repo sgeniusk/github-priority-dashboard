@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>sgeniusk GitHub 프로젝트 우선순위 대시보드 v2</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script>
+  // 첫 페인트 전에 테마를 적용해 FOUC(테마 깜빡임)를 막는다.
+  document.documentElement.dataset.theme =
+    localStorage.getItem('theme')
+    || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+</script>
 <style>
 :root {
   --bg: #0d1117;
@@ -24,6 +30,20 @@
   --tool-codex: #3fb950;
   --tool-hermes: #bc8cff;
   --tool-hybrid: #39c5cf;
+  --shadow: 0 1px 2px rgba(0,0,0,.4);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,.5);
+}
+/* 라이트 테마 — 표면/텍스트 토큰만 교체, 브랜드 hue(green/orange/tool-*)는 다크와 공유 */
+:root[data-theme="light"] {
+  --bg: #ffffff;
+  --panel: #ffffff;
+  --panel-2: #f0f3f6;
+  --border: #d1d9e0;
+  --text: #1f2328;
+  --muted: #59636e;
+  --accent: #0969da;
+  --shadow: 0 1px 2px rgba(31,35,40,.1);
+  --shadow-lg: 0 8px 24px rgba(31,35,40,.16);
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
@@ -32,18 +52,28 @@ body {
   color: var(--text);
   line-height: 1.6;
   padding: 24px;
+  transition: background .2s ease, color .2s ease;
 }
 .container { max-width: 1400px; margin: 0 auto; }
-header { margin-bottom: 24px; }
+header { margin-bottom: 24px; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
 h1 { font-size: 26px; margin-bottom: 6px; }
 .subtitle { color: var(--muted); font-size: 14px; }
+.theme-toggle {
+  flex-shrink: 0; background: var(--panel); color: var(--text);
+  border: 1px solid var(--border); border-radius: 8px;
+  padding: 8px 14px; font-size: 13px; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 6px;
+  box-shadow: var(--shadow); transition: transform .15s ease, background .2s ease, border-color .2s ease;
+}
+.theme-toggle:hover { transform: translateY(-1px); border-color: var(--accent); }
 .kpi-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   gap: 16px;
   margin-bottom: 24px;
 }
-.kpi { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 16px 18px; }
+.kpi { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; box-shadow: var(--shadow); transition: transform .15s ease, box-shadow .15s ease, background .2s ease, border-color .2s ease; }
+.kpi:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
 .kpi-label { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .5px; }
 .kpi-value { font-size: 26px; font-weight: 700; margin-top: 6px; }
 .kpi-note { color: var(--muted); font-size: 11px; margin-top: 4px; }
@@ -60,7 +90,7 @@ h1 { font-size: 26px; margin-bottom: 6px; }
 }
 .grid-2 { display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; margin-bottom: 16px; }
 @media (max-width: 1000px) { .grid-2 { grid-template-columns: 1fr; } }
-.card { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 18px; }
+.card { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 18px; box-shadow: var(--shadow); transition: background .2s ease, border-color .2s ease; }
 .card h2 { font-size: 15px; margin-bottom: 12px; }
 .card .hint { color: var(--muted); font-size: 12px; margin-bottom: 12px; }
 table { width: 100%; border-collapse: collapse; font-size: 13px; }
@@ -100,6 +130,8 @@ tr.paused td { opacity: 0.55; }
 .eta-far { color: var(--orange); }
 .eta-long { color: var(--red); }
 canvas { max-width: 100%; }
+/* Chart.js 반응형 캔버스는 크기가 고정된 컨테이너 안에 둬야 리사이즈 루프를 막을 수 있다 */
+.chart-box { position: relative; width: 100%; }
 .detail-panel { background: var(--panel-2); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-top: 8px; font-size: 13px; }
 .detail-panel h3 { margin-bottom: 8px; color: var(--accent); }
 .detail-panel ul { margin-left: 18px; margin-top: 6px; }
@@ -126,8 +158,13 @@ footer { color: var(--muted); font-size: 11px; text-align: center; margin-top: 3
 <body>
 <div class="container">
   <header>
-    <h1>sgeniusk (Gomgomee) GitHub 프로젝트 우선순위 대시보드</h1>
-    <p class="subtitle">v2 · 도구별 분류 + 진척도 구성요소 분해 · 데이터 기준일 2026-05-16</p>
+    <div>
+      <h1>sgeniusk (Gomgomee) GitHub 프로젝트 우선순위 대시보드</h1>
+      <p class="subtitle">v2 · 도구별 분류 + 진척도 구성요소 분해 · 데이터 기준일 2026-05-16</p>
+    </div>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="테마 전환">
+      <span id="theme-toggle-icon">🌙</span><span id="theme-toggle-label">다크</span>
+    </button>
   </header>
 
   <div class="handoff-banner">
@@ -228,7 +265,7 @@ footer { color: var(--muted); font-size: 11px; text-align: center; margin-top: 3
     <div class="card">
       <h2>진척도 구성 분해 (스택드 바)</h2>
       <p class="hint">각 프로젝트가 어느 단계에 막혀 있는지 한눈에. 노란색(기능)과 보라(알파)가 짧으면 실제 동작 가능한 코드가 부족하다는 신호.</p>
-      <canvas id="stacked-chart" height="380"></canvas>
+      <div class="chart-box" style="height:380px"><canvas id="stacked-chart"></canvas></div>
     </div>
   </div>
 
@@ -236,12 +273,12 @@ footer { color: var(--muted); font-size: 11px; text-align: center; margin-top: 3
     <div class="card">
       <h2>도구별 분포</h2>
       <p class="hint">Claude가 4건, Codex가 3건, Hermes가 1건, Hybrid가 1건. 도구별 평균 진척도도 표시됩니다.</p>
-      <canvas id="tool-chart" height="300"></canvas>
+      <div class="chart-box" style="height:300px"><canvas id="tool-chart"></canvas></div>
     </div>
     <div class="card">
       <h2>도구 × 진척도 매트릭스</h2>
       <p class="hint">진척도(X축) × 커밋 수(Y축). 우상단에 위치할수록 빠른 완성 후보.</p>
-      <canvas id="scatter-chart" height="300"></canvas>
+      <div class="chart-box" style="height:300px"><canvas id="scatter-chart"></canvas></div>
     </div>
   </div>
 
@@ -268,6 +305,21 @@ footer { color: var(--muted); font-size: 11px; text-align: center; margin-top: 3
 // 대시보드 데이터는 외부 projects.json에서 fetch로 로드한다.
 // file:// 환경 등 fetch가 막힌 경우 아래 FALLBACK_PROJECTS 내장 사본으로 폴백한다.
 let projects = [];
+
+// 테마(낮/밤) 토글 — head의 인라인 스크립트가 첫 테마를 이미 적용했고, 여기선 버튼·아이콘·차트 동기화만 담당
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  localStorage.setItem('theme', theme);
+  const icon = document.getElementById('theme-toggle-icon');
+  const label = document.getElementById('theme-toggle-label');
+  if (icon) icon.textContent = theme === 'light' ? '☀️' : '🌙';
+  if (label) label.textContent = theme === 'light' ? '라이트' : '다크';
+  if (typeof window.__rebuildCharts === 'function') window.__rebuildCharts();
+}
+applyTheme(document.documentElement.dataset.theme || 'dark');
+document.getElementById('theme-toggle').addEventListener('click', () => {
+  applyTheme(document.documentElement.dataset.theme === 'light' ? 'dark' : 'light');
+});
 
 // fetch 실패 시 사용하는 내장 폴백 데이터 — projects.json projects 배열의 verbatim 복사본.
 // scripts/refresh-progress.mjs 갱신 후 dashboard.html의 이 블록도 동기화한다.
@@ -862,34 +914,10 @@ function toggleDetail(tr, p) {
 
 renderTable();
 
-// Charts
-Chart.defaults.color = '#8b949e';
-Chart.defaults.borderColor = '#30363d';
+// Charts — 테마 토큰을 읽어 생성하고, 테마 전환 시 재생성한다.
 Chart.defaults.font.family = '-apple-system, BlinkMacSystemFont, "Segoe UI", "Pretendard"';
-
 const active = projects.filter(p => p.status === 'active');
-
-// Stacked bar - progress breakdown
 const sortedForChart = active.slice().sort((a,b) => b.progress - a.progress);
-new Chart(document.getElementById('stacked-chart'), {
-  type: 'bar',
-  data: {
-    labels: sortedForChart.map(p => p.displayName),
-    datasets: [
-      { label: '문서', data: sortedForChart.map(p => p.breakdown.docs), backgroundColor: '#3fb950' },
-      { label: '골격', data: sortedForChart.map(p => p.breakdown.skeleton), backgroundColor: '#58a6ff' },
-      { label: '기능', data: sortedForChart.map(p => p.breakdown.features), backgroundColor: '#d29922' },
-      { label: '알파', data: sortedForChart.map(p => p.breakdown.alpha), backgroundColor: '#bc8cff' }
-    ]
-  },
-  options: {
-    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
-    plugins: { legend: { position: 'bottom' }, tooltip: { mode: 'index' } },
-    scales: { x: { stacked: true, beginAtZero: true, max: 100, ticks: { callback: v => v + '%' } }, y: { stacked: true } }
-  }
-});
-
-// Tool chart - bar with count + avg progress
 const tools = ['claude','codex','hermes','hybrid'];
 const toolNames = {claude: 'Claude', codex: 'Codex', hermes: 'Hermes', hybrid: 'Claude+Codex'};
 const toolColors = {claude: '#db6d28', codex: '#3fb950', hermes: '#bc8cff', hybrid: '#39c5cf'};
@@ -901,49 +929,79 @@ const toolStats = tools.map(t => {
     avgProgress: arr.length ? Math.round(arr.reduce((s,p)=>s+p.progress,0) / arr.length) : 0
   };
 });
-new Chart(document.getElementById('tool-chart'), {
-  type: 'bar',
-  data: {
-    labels: toolStats.map(s => toolNames[s.tool]),
-    datasets: [
-      { label: '프로젝트 수', data: toolStats.map(s => s.count), backgroundColor: toolStats.map(s => toolColors[s.tool]), yAxisID: 'y' },
-      { label: '평균 진척도 %', data: toolStats.map(s => s.avgProgress), type: 'line', borderColor: '#e6edf3', backgroundColor: 'transparent', pointRadius: 5, yAxisID: 'y1' }
-    ]
-  },
-  options: {
-    responsive: true, maintainAspectRatio: false,
-    plugins: { legend: { position: 'bottom' } },
-    scales: {
-      y: { type: 'linear', position: 'left', beginAtZero: true, title: { display: true, text: '프로젝트 수' } },
-      y1: { type: 'linear', position: 'right', beginAtZero: true, max: 100, title: { display: true, text: '평균 진척 %' }, grid: { drawOnChartArea: false } }
-    }
-  }
-});
 
-// Scatter - tool colored
-new Chart(document.getElementById('scatter-chart'), {
-  type: 'scatter',
-  data: {
-    datasets: tools.map(t => ({
-      label: toolNames[t],
-      data: active.filter(p => p.tool === t).map(p => ({x: p.progress, y: p.commits, label: p.displayName})),
-      backgroundColor: toolColors[t],
-      pointRadius: 8,
-      pointHoverRadius: 11
-    }))
-  },
-  options: {
-    responsive: true, maintainAspectRatio: false,
-    plugins: {
-      legend: { position: 'top' },
-      tooltip: { callbacks: { label: ctx => `${ctx.raw.label}: 진척 ${ctx.raw.x}%, 커밋 ${ctx.raw.y}` } }
+let chartInstances = [];
+function buildCharts() {
+  chartInstances.forEach(c => c.destroy());
+  chartInstances = [];
+  const css = getComputedStyle(document.documentElement);
+  Chart.defaults.color = css.getPropertyValue('--muted').trim();
+  Chart.defaults.borderColor = css.getPropertyValue('--border').trim();
+  const lineColor = css.getPropertyValue('--text').trim();
+
+  chartInstances.push(new Chart(document.getElementById('stacked-chart'), {
+    type: 'bar',
+    data: {
+      labels: sortedForChart.map(p => p.displayName),
+      datasets: [
+        { label: '문서', data: sortedForChart.map(p => p.breakdown.docs), backgroundColor: '#3fb950' },
+        { label: '골격', data: sortedForChart.map(p => p.breakdown.skeleton), backgroundColor: '#58a6ff' },
+        { label: '기능', data: sortedForChart.map(p => p.breakdown.features), backgroundColor: '#d29922' },
+        { label: '알파', data: sortedForChart.map(p => p.breakdown.alpha), backgroundColor: '#bc8cff' }
+      ]
     },
-    scales: {
-      x: { title: { display: true, text: '진척도 (%)' }, beginAtZero: true, max: 100 },
-      y: { title: { display: true, text: '커밋 수' }, beginAtZero: true }
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'bottom' }, tooltip: { mode: 'index' } },
+      scales: { x: { stacked: true, beginAtZero: true, max: 100, ticks: { callback: v => v + '%' } }, y: { stacked: true } }
     }
-  }
-});
+  }));
+
+  chartInstances.push(new Chart(document.getElementById('tool-chart'), {
+    type: 'bar',
+    data: {
+      labels: toolStats.map(s => toolNames[s.tool]),
+      datasets: [
+        { label: '프로젝트 수', data: toolStats.map(s => s.count), backgroundColor: toolStats.map(s => toolColors[s.tool]), yAxisID: 'y' },
+        { label: '평균 진척도 %', data: toolStats.map(s => s.avgProgress), type: 'line', borderColor: lineColor, backgroundColor: 'transparent', pointRadius: 5, yAxisID: 'y1' }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'bottom' } },
+      scales: {
+        y: { type: 'linear', position: 'left', beginAtZero: true, title: { display: true, text: '프로젝트 수' } },
+        y1: { type: 'linear', position: 'right', beginAtZero: true, max: 100, title: { display: true, text: '평균 진척 %' }, grid: { drawOnChartArea: false } }
+      }
+    }
+  }));
+
+  chartInstances.push(new Chart(document.getElementById('scatter-chart'), {
+    type: 'scatter',
+    data: {
+      datasets: tools.map(t => ({
+        label: toolNames[t],
+        data: active.filter(p => p.tool === t).map(p => ({x: p.progress, y: p.commits, label: p.displayName})),
+        backgroundColor: toolColors[t],
+        pointRadius: 8,
+        pointHoverRadius: 11
+      }))
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'top' },
+        tooltip: { callbacks: { label: ctx => `${ctx.raw.label}: 진척 ${ctx.raw.x}%, 커밋 ${ctx.raw.y}` } }
+      },
+      scales: {
+        x: { title: { display: true, text: '진척도 (%)' }, beginAtZero: true, max: 100 },
+        y: { title: { display: true, text: '커밋 수' }, beginAtZero: true }
+      }
+    }
+  }));
+}
+window.__rebuildCharts = buildCharts;
+buildCharts();
 }
 
 // 부트스트랩 — projects.json 로드 후 대시보드를 초기화한다.
