@@ -167,6 +167,21 @@ canvas { max-width: 100%; }
 .sprint-tag.s-B { color: var(--accent); border-color: var(--accent); }
 .sprint-tag.s-C { color: var(--yellow); border-color: var(--yellow); }
 .sprint-tag.s-D { color: var(--orange); border-color: var(--orange); }
+.usage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 14px; }
+.usage-card { background: var(--panel-2); border: 1px solid var(--border); border-radius: 8px; padding: 14px; transition: border-color .15s ease; }
+.usage-card.warn { border-color: var(--red); }
+.usage-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.usage-head .u-name { font-weight: 600; font-size: 14px; }
+.usage-head .u-plan { color: var(--muted); font-size: 11px; white-space: nowrap; }
+.usage-bar { background: var(--panel); height: 12px; border-radius: 6px; overflow: hidden; margin: 9px 0 5px; }
+.usage-bar > div { height: 100%; transition: width .3s ease; }
+.usage-row { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); }
+.usage-dday.soon { color: var(--red); font-weight: 600; }
+.usage-inputs { display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
+.usage-inputs label { font-size: 11px; color: var(--muted); display: flex; flex-direction: column; gap: 3px; }
+.usage-inputs input { background: var(--panel); color: var(--text); border: 1px solid var(--border); border-radius: 5px; padding: 4px 6px; font-size: 12px; }
+.usage-warn-text { color: var(--red); font-size: 11px; margin-top: 7px; }
+.usage-note { font-size: 10px; color: var(--muted); margin-top: 6px; line-height: 1.4; }
 footer { color: var(--muted); font-size: 11px; text-align: center; margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--border); }
 .handoff-banner {
   background: linear-gradient(135deg, rgba(219,109,40,.15), rgba(57,197,207,.1));
@@ -323,6 +338,18 @@ footer { color: var(--muted); font-size: 11px; text-align: center; margin-top: 3
       <button class="board-reset" id="board-reset" type="button">보드 초기화</button>
     </div>
     <div class="kanban" id="kanban"></div>
+  </div>
+
+  <h2 class="section-title">사용량 트래커</h2>
+  <div class="card">
+    <div class="sprint-board-head">
+      <p class="hint">Codex·Claude는 청구 주기가 달라 수동으로 기록합니다. 사용률과 리셋일을 입력하면 D-day와 경고가 표시됩니다. 입력값은 이 브라우저(localStorage)에 저장되며, 'JSON 내보내기'로 usage.json에 반영할 수 있습니다.</p>
+      <span style="display:flex;gap:8px">
+        <button class="board-reset" id="usage-export" type="button">JSON 내보내기</button>
+        <button class="board-reset" id="usage-reset" type="button">입력 초기화</button>
+      </span>
+    </div>
+    <div class="usage-grid" id="usage-grid"></div>
   </div>
 
   <footer>
@@ -804,6 +831,25 @@ async function loadProjects() {
   }
 }
 
+// 사용량 트래커 데이터 — usage.json fetch 실패 시(file:// 등) 아래 폴백 사용
+const FALLBACK_USAGE = {
+  asOf: "2026-05-16",
+  tools: [
+    { tool: "claude", label: "Claude (Claude Code)", plan: "Max", limitLabel: "주간 한도", cycleLengthDays: 7, cycleResetDate: "2026-05-19", usedPercent: 0, note: "주간 리셋. Claude Code에는 /usage·/cost 명령이 없어 사용 화면을 보고 수동 입력." },
+    { tool: "codex", label: "Codex CLI", plan: "ChatGPT Plus", limitLabel: "월간 한도", cycleLengthDays: 30, cycleResetDate: "2026-06-01", usedPercent: 0, note: "월간 리셋. OpenAI 사용량 화면을 보고 수동 입력." }
+  ]
+};
+let usageData = FALLBACK_USAGE;
+async function loadUsage() {
+  try {
+    const res = await fetch('./usage.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    return await res.json();
+  } catch {
+    return FALLBACK_USAGE;
+  }
+}
+
 // 데이터 출처(외부 fetch vs 내장 폴백)를 푸터에 표시한다.
 function showDataSourceNotice(source, err) {
   const el = document.getElementById('data-source');
@@ -1015,6 +1061,93 @@ document.getElementById('board-reset').addEventListener('click', () => {
 });
 renderSprintBoard();
 
+// --- 사용량 트래커 ---
+// usage.json을 기준값으로, 사용자가 패널에서 입력한 값은 localStorage['usageOverride']에 저장한다.
+function loadUsageOverride() {
+  try { return JSON.parse(localStorage.getItem('usageOverride')) || {}; }
+  catch { return {}; }
+}
+function mergedUsage() {
+  const ov = loadUsageOverride();
+  return (usageData.tools || []).map(t => Object.assign({}, t, ov[t.tool] || {}));
+}
+function daysUntil(dateStr) {
+  if (!dateStr) return null;
+  const target = new Date(dateStr + 'T00:00:00');
+  const today = new Date(new Date().toDateString());
+  return Math.round((target - today) / 86400000);
+}
+function renderUsagePanel() {
+  const grid = document.getElementById('usage-grid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  mergedUsage().forEach(t => {
+    const pct = Math.max(0, Math.min(100, Number(t.usedPercent) || 0));
+    const dday = daysUntil(t.cycleResetDate);
+    const barColor = pct >= 80 ? 'var(--red)' : pct >= 50 ? 'var(--yellow)' : 'var(--green)';
+    const soon = dday !== null && dday <= 2;
+    const warn = soon || pct >= 80;
+    const ddayText = dday === null ? '리셋일 미설정'
+      : dday < 0 ? `리셋일 ${-dday}일 경과 — 갱신 필요`
+      : dday === 0 ? '오늘 리셋'
+      : `리셋까지 D-${dday}`;
+    const card = document.createElement('div');
+    card.className = 'usage-card' + (warn ? ' warn' : '');
+    card.innerHTML = `
+      <div class="usage-head">
+        <span class="u-name">${t.label}</span>
+        <span class="u-plan">${t.plan || ''}</span>
+      </div>
+      <div class="usage-bar"><div style="width:${pct}%;background:${barColor}"></div></div>
+      <div class="usage-row">
+        <span>${t.limitLabel || '한도'} ${pct}% 사용</span>
+        <span class="usage-dday${soon ? ' soon' : ''}">${ddayText}</span>
+      </div>
+      <div class="usage-inputs">
+        <label>사용률 %<input type="number" min="0" max="100" data-tool="${t.tool}" data-field="usedPercent" value="${pct}"></label>
+        <label>리셋일<input type="date" data-tool="${t.tool}" data-field="cycleResetDate" value="${t.cycleResetDate || ''}"></label>
+      </div>
+      ${warn ? `<div class="usage-warn-text">${pct >= 80 ? '사용량 80% 초과 — 속도 조절 권장. ' : ''}${soon ? '리셋 임박.' : ''}</div>` : ''}
+      ${t.note ? `<div class="usage-note">${t.note}</div>` : ''}`;
+    grid.appendChild(card);
+  });
+  grid.querySelectorAll('input').forEach(inp => {
+    inp.addEventListener('change', () => {
+      const ov = loadUsageOverride();
+      const tool = inp.dataset.tool, field = inp.dataset.field;
+      ov[tool] = ov[tool] || {};
+      ov[tool][field] = field === 'usedPercent' ? Number(inp.value) : inp.value;
+      localStorage.setItem('usageOverride', JSON.stringify(ov));
+      renderUsagePanel();
+    });
+  });
+}
+document.getElementById('usage-export').addEventListener('click', () => {
+  const out = {
+    _comment: usageData._comment || '도구별 사용량 수동 트래커.',
+    asOf: new Date().toISOString().slice(0, 10),
+    tools: mergedUsage().map(t => ({
+      tool: t.tool, label: t.label, plan: t.plan, limitLabel: t.limitLabel,
+      cycleLengthDays: t.cycleLengthDays, cycleResetDate: t.cycleResetDate,
+      usedPercent: Number(t.usedPercent) || 0, note: t.note
+    }))
+  };
+  const text = JSON.stringify(out, null, 2);
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(
+      () => alert('usage.json 내용을 클립보드에 복사했습니다. usage.json 파일에 붙여넣으세요.'),
+      () => window.prompt('usage.json에 붙여넣으세요:', text)
+    );
+  } else {
+    window.prompt('usage.json에 붙여넣으세요:', text);
+  }
+});
+document.getElementById('usage-reset').addEventListener('click', () => {
+  localStorage.removeItem('usageOverride');
+  renderUsagePanel();
+});
+renderUsagePanel();
+
 // Charts — 테마 토큰을 읽어 생성하고, 테마 전환 시 재생성한다.
 Chart.defaults.font.family = '-apple-system, BlinkMacSystemFont, "Segoe UI", "Pretendard"';
 const active = projects.filter(p => p.status === 'active');
@@ -1113,6 +1246,7 @@ buildCharts();
     console.warn('projects.json fetch 실패 — 내장 폴백 데이터 사용:', error && error.message);
   }
   showDataSourceNotice(source, error);
+  usageData = await loadUsage();
   init();
 })();
 </script>
