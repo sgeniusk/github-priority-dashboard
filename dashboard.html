@@ -1,403 +1,354 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
+<html lang="ko" data-theme="light"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>sgeniusk GitHub 프로젝트 우선순위 대시보드 v2</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-<script>
-  // 첫 페인트 전에 테마를 적용해 FOUC(테마 깜빡임)를 막는다.
-  // Airbnb 스펙은 순백 라이트 캔버스가 정본 — 저장값이 없으면 light 기본.
-  document.documentElement.dataset.theme = localStorage.getItem('theme') || 'light';
-</script>
+<title>sgeniusk 프로젝트 우선순위 대시보드</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
+/* ── Officevibe Design Tokens ── */
 :root {
-  /* 다크 — Airbnb 라이트 스펙을 어둡게 적응한 변형 */
-  --bg: #1c1c1e;
-  --panel: #2a2a2c;
-  --panel-2: #242426;
-  --border: #3a3a3c;
-  --border-strong: #4a4a4c;
-  --text: #f2f2f2;
-  --body: #c9c9c9;
-  --muted: #9a9a9a;
-  --accent: #ff385c;
-  --accent-active: #e00b41;
-  --green: #3fb950;
-  --yellow: #d29922;
-  --orange: #db6d28;
-  --red: #f85149;
-  --purple: #bc8cff;
-  --cyan: #39c5cf;
-  --tool-claude: #db6d28;
-  --tool-codex: #3fb950;
-  --tool-hermes: #bc8cff;
-  --tool-hybrid: #39c5cf;
-  --shadow-lg: rgba(0,0,0,0.5) 0 0 0 1px, rgba(0,0,0,0.45) 0 4px 14px 0;
-  --r-sm: 8px;
-  --r-md: 14px;
-  --r-card: 12px;
-  --r-full: 9999px;
+  --navy:#0c1754; --electric:#2545ff; --lilac:#d9d4ff; --yellow:#ffc13a;
+  --off-white:#f9f8f6; --white:#ffffff; --black:#171417; --gray:#222222;
+  --cool-gray:#eaebf8; --border-gray:#cccccc; --orange:#ff5b22;
+
+  --bg:var(--off-white); --surface:var(--white); --text:var(--black);
+  --t2:#5a5a72; --border:#e6e6f0; --shadow:0 1px 4px rgba(12,23,84,.07);
+
+  /* Stage colors */
+  --s1:#eaebf8; --s2:#d9d4ff; --s3:#ffc13a; --s4:#2545ff;
+
+  --font:'Inter',system-ui,sans-serif;
+  --r:16px; --rp:100px;
 }
-/* 라이트 = Airbnb 정본: 순백 캔버스, #222 잉크, 단일 Rausch(#ff385c) 액센트 */
-:root[data-theme="light"] {
-  --bg: #ffffff;
-  --panel: #ffffff;
-  --panel-2: #f7f7f7;
-  --border: #dddddd;
-  --border-strong: #c1c1c1;
-  --text: #222222;
-  --body: #3f3f3f;
-  --muted: #6a6a6a;
-  --accent: #ff385c;
-  --accent-active: #e00b41;
-  --shadow-lg: rgba(0,0,0,0.02) 0 0 0 1px, rgba(0,0,0,0.04) 0 2px 6px 0, rgba(0,0,0,0.1) 0 4px 8px 0;
+[data-theme=dark] {
+  --bg:#080c1f; --surface:#101828; --text:#ece8ff; --t2:#8890b8;
+  --border:#1c2550; --shadow:0 2px 8px rgba(0,0,0,.35);
+  --s1:#1d2445; --s2:#2b2265; --s3:#4a3600; --s4:#1133ee;
+  --cool-gray:#1c2550; --navy:#a0b0ff;
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.5;
-  padding: 32px 24px;
-  transition: background .2s ease, color .2s ease;
-  -webkit-font-smoothing: antialiased;
-}
-.container { max-width: 1280px; margin: 0 auto; }
-header { margin-bottom: 32px; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
-h1 { font-size: 28px; font-weight: 700; line-height: 1.25; margin-bottom: 6px; letter-spacing: -0.2px; }
-.subtitle { color: var(--muted); font-size: 14px; }
-.theme-toggle {
-  flex-shrink: 0; background: var(--panel); color: var(--text);
-  border: 1px solid var(--border-strong); border-radius: var(--r-sm);
-  padding: 9px 16px; font-size: 14px; font-weight: 500; cursor: pointer;
-  font-family: inherit; display: inline-flex; align-items: center; gap: 7px;
-  transition: border-color .15s ease, background .15s ease;
-}
-.theme-toggle:hover { border-color: var(--text); background: var(--panel-2); }
-.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 32px; }
-.kpi { background: var(--panel); border: 1px solid var(--border); border-radius: var(--r-md); padding: 18px 20px; transition: box-shadow .15s ease, transform .15s ease, background .2s ease, border-color .2s ease; }
-.kpi:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
-.kpi-label { color: var(--muted); font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: .4px; }
-.kpi-value { font-size: 28px; font-weight: 700; line-height: 1.1; margin-top: 8px; }
-.kpi-note { color: var(--muted); font-size: 12px; margin-top: 6px; }
-.controls { background: var(--panel); border: 1px solid var(--border); border-radius: var(--r-md); padding: 14px 16px; margin-bottom: 16px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-.controls label { font-size: 13px; color: var(--muted); }
-.controls select, .controls input[type=text] {
-  background: var(--panel); color: var(--text);
-  border: 1px solid var(--border-strong); border-radius: var(--r-sm);
-  padding: 8px 12px; font-size: 14px; font-family: inherit;
-  transition: border-color .15s ease;
-}
-.controls select:focus, .controls input[type=text]:focus { outline: none; border-color: var(--text); }
-.grid-2 { display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; margin-bottom: 16px; }
-@media (max-width: 1000px) { .grid-2 { grid-template-columns: 1fr; } }
-.card { background: var(--panel); border: 1px solid var(--border); border-radius: var(--r-md); padding: 22px; transition: background .2s ease, border-color .2s ease; }
-.card h2 { font-size: 16px; font-weight: 600; margin-bottom: 12px; }
-.card .hint { color: var(--muted); font-size: 13px; margin-bottom: 14px; line-height: 1.5; }
-table { width: 100%; border-collapse: collapse; font-size: 14px; }
-th { color: var(--muted); text-align: left; padding: 12px 8px; border-bottom: 1px solid var(--border); font-weight: 500; font-size: 13px; }
-td { padding: 13px 8px; border-bottom: 1px solid var(--border); vertical-align: middle; }
-tbody tr:last-child td { border-bottom: none; }
-tbody tr { transition: background .12s ease; }
-tbody tr:hover td { background: var(--panel-2); cursor: pointer; }
-tr.paused td { opacity: 0.55; }
-.rank { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: var(--r-full); background: var(--panel-2); border: 1px solid var(--border); font-size: 12px; font-weight: 700; color: var(--text); }
-.rank-1 { background: var(--accent); color: #fff; border-color: var(--accent); }
-.rank-2 { background: var(--text); color: var(--bg); border-color: var(--text); }
-.rank-3 { background: var(--panel-2); color: var(--text); border-color: var(--border-strong); }
-.progress-cell { width: 220px; }
-.progress-bar { background: var(--panel-2); height: 8px; border-radius: var(--r-full); overflow: hidden; position: relative; display: flex; }
-.progress-bar > div { height: 100%; transition: width .4s ease; }
-.progress-seg-docs { background: #3fb950; }
-.progress-seg-skeleton { background: #58a6ff; }
-.progress-seg-features { background: #d29922; }
-.progress-seg-alpha { background: #bc8cff; }
-.progress-text { font-size: 12px; color: var(--muted); margin-top: 5px; }
-.progress-legend { display: flex; gap: 12px; font-size: 12px; color: var(--muted); margin-top: 12px; flex-wrap: wrap; }
-.progress-legend .swatch { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: middle; }
-.badge { display: inline-block; padding: 3px 9px; border-radius: var(--r-full); font-size: 11px; font-weight: 600; margin-right: 4px; white-space: nowrap; }
-.badge-game { background: rgba(188,140,255,.16); color: var(--purple); }
-.badge-app { background: rgba(255,56,92,.1); color: var(--accent); }
-.badge-content { background: rgba(63,185,80,.16); color: var(--green); }
-.badge-private { background: var(--panel-2); color: var(--muted); border: 1px solid var(--border); }
-.badge-public { background: rgba(63,185,80,.16); color: var(--green); }
-.badge-stack { background: var(--panel-2); color: var(--muted); border: 1px solid var(--border); }
-.badge-paused { background: var(--panel-2); color: var(--muted); border: 1px dashed var(--border-strong); }
-.tool-badge { display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; border-radius: var(--r-full); font-size: 11px; font-weight: 600; }
-.tool-claude { background: rgba(219,109,40,.16); color: var(--tool-claude); }
-.tool-codex { background: rgba(63,185,80,.16); color: var(--tool-codex); }
-.tool-hermes { background: rgba(188,140,255,.16); color: var(--tool-hermes); }
-.tool-hybrid { background: rgba(57,197,207,.16); color: var(--cyan); }
-.eta-near { color: var(--green); }
-.eta-mid { color: var(--yellow); }
-.eta-far { color: var(--orange); }
-.eta-long { color: var(--red); }
-canvas { max-width: 100%; }
-/* Chart.js 반응형 캔버스는 크기가 고정된 컨테이너 안에 둬야 리사이즈 루프를 막을 수 있다 */
-.chart-box { position: relative; width: 100%; }
-.detail-panel { background: var(--panel-2); border: 1px solid var(--border); border-radius: var(--r-card); padding: 18px; margin-top: 8px; font-size: 13px; }
-.detail-panel h3 { margin-bottom: 10px; color: var(--accent); font-size: 15px; font-weight: 600; }
-.detail-panel ul { margin-left: 18px; margin-top: 6px; }
-.detail-panel li { margin-bottom: 4px; color: var(--body); }
-.detail-panel .meta-row { display: grid; grid-template-columns: 130px 1fr; gap: 8px; margin-bottom: 5px; }
-.detail-panel .meta-label { color: var(--muted); }
-.detail-panel .progress-breakdown { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 12px 0; }
-.detail-panel .breakdown-item { background: var(--panel); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 10px; text-align: center; }
-.detail-panel .breakdown-label { color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: .3px; }
-.detail-panel .breakdown-value { font-size: 18px; font-weight: 700; margin-top: 3px; }
-.repo-link { color: var(--accent); text-decoration: none; font-weight: 500; }
-.repo-link:hover { text-decoration: underline; }
-.section-title { font-size: 22px; font-weight: 600; margin: 40px 0 16px; letter-spacing: -0.3px; }
-.sprint-board-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
-.board-reset { background: var(--panel); color: var(--text); border: 1px solid var(--border-strong); border-radius: var(--r-sm); padding: 7px 14px; font-size: 13px; font-weight: 500; font-family: inherit; cursor: pointer; transition: border-color .15s ease, background .15s ease; }
-.board-reset:hover { border-color: var(--text); background: var(--panel-2); }
-.kanban { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-@media (max-width: 900px) { .kanban { grid-template-columns: 1fr 1fr; } }
-.kanban-col { background: var(--panel-2); border: 1px solid var(--border); border-radius: var(--r-md); padding: 12px; min-height: 130px; transition: border-color .15s ease, background .15s ease; }
-.kanban-col.drag-over { border-color: var(--accent); background: rgba(255,56,92,.06); }
-.kanban-col h3 { font-size: 12px; text-transform: uppercase; letter-spacing: .4px; color: var(--muted); font-weight: 600; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
-.kanban-col h3 .count { background: var(--panel); border: 1px solid var(--border); border-radius: var(--r-full); padding: 1px 8px; font-size: 11px; }
-.sprint-card { background: var(--panel); border: 1px solid var(--border); border-radius: var(--r-card); padding: 11px 12px; margin-bottom: 8px; cursor: grab; transition: transform .12s ease, box-shadow .12s ease; }
-.sprint-card:last-child { margin-bottom: 0; }
-.sprint-card:active { cursor: grabbing; }
-.sprint-card.dragging { opacity: .45; }
-.sprint-card:hover { transform: translateY(-1px); box-shadow: var(--shadow-lg); }
-.sprint-card .sc-title { font-weight: 600; font-size: 13px; margin-bottom: 6px; }
-.sprint-card .sc-meta { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; margin-bottom: 6px; }
-.sprint-card .sc-milestone { color: var(--muted); font-size: 11px; line-height: 1.45; }
-.sprint-tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: var(--r-full); background: var(--panel-2); border: 1px solid var(--border); color: var(--muted); }
-.sprint-tag.s-A { color: var(--accent); border-color: var(--accent); }
-.sprint-tag.s-B { color: #58a6ff; border-color: #58a6ff; }
-.sprint-tag.s-C { color: var(--yellow); border-color: var(--yellow); }
-.sprint-tag.s-D { color: var(--orange); border-color: var(--orange); }
-.usage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 14px; }
-.usage-card { background: var(--panel-2); border: 1px solid var(--border); border-radius: var(--r-card); padding: 16px; transition: border-color .15s ease; }
-.usage-card.warn { border-color: var(--accent); }
-.usage-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
-.usage-head .u-name { font-weight: 600; font-size: 14px; }
-.usage-head .u-plan { color: var(--muted); font-size: 11px; white-space: nowrap; }
-.usage-bar { background: var(--panel); height: 10px; border-radius: var(--r-full); overflow: hidden; margin: 10px 0 6px; border: 1px solid var(--border); }
-.usage-bar > div { height: 100%; transition: width .3s ease; }
-.usage-row { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); }
-.usage-dday.soon { color: var(--accent); font-weight: 700; }
-.usage-inputs { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
-.usage-inputs label { font-size: 11px; color: var(--muted); display: flex; flex-direction: column; gap: 4px; }
-.usage-inputs input { background: var(--panel); color: var(--text); border: 1px solid var(--border-strong); border-radius: var(--r-sm); padding: 6px 8px; font-size: 12px; font-family: inherit; }
-.usage-inputs input:focus { outline: none; border-color: var(--text); }
-.usage-warn-text { color: var(--accent); font-size: 11px; margin-top: 8px; font-weight: 500; }
-.usage-note { font-size: 10px; color: var(--muted); margin-top: 7px; line-height: 1.45; }
-.suggest-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 14px; }
-.suggest-card { background: var(--panel); border: 1px solid var(--border); border-left-width: 3px; border-radius: var(--r-card); padding: 14px 16px; }
-.suggest-card.sev-high { border-left-color: var(--accent); }
-.suggest-card.sev-warn { border-left-color: var(--yellow); }
-.suggest-card.sev-info { border-left-color: var(--border-strong); }
-.suggest-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 6px; }
-.suggest-head .s-title { font-weight: 600; font-size: 14px; }
-.suggest-head .s-repo { color: var(--muted); font-size: 11px; white-space: nowrap; }
-.suggest-type { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .4px; padding: 2px 7px; border-radius: var(--r-full); background: var(--panel-2); border: 1px solid var(--border); color: var(--muted); margin-right: 6px; }
-.suggest-detail { font-size: 13px; color: var(--body); margin-bottom: 8px; line-height: 1.5; }
-.suggest-actions { margin: 0; padding-left: 16px; }
-.suggest-actions li { font-size: 12px; color: var(--muted); margin-bottom: 3px; }
-.suggest-empty { color: var(--muted); font-size: 13px; padding: 6px; }
-footer { color: var(--muted); font-size: 13px; text-align: center; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); line-height: 1.6; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14px;line-height:1.5;transition:background .25s,color .25s;min-height:100vh}
+
+/* ── HEADER ── */
+header{position:sticky;top:0;z-index:200;background:var(--surface);border-bottom:1px solid var(--border);height:58px;display:flex;align-items:center;padding:0 28px;gap:10px;box-shadow:var(--shadow);transition:background .25s}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none}
+.logo-icon{width:30px;height:30px;background:var(--electric);border-radius:9px;display:grid;place-items:center;flex-shrink:0}
+.logo-icon svg{width:15px;height:15px}
+.logo-name{font-size:15px;font-weight:700;color:var(--electric);letter-spacing:-.3px}
+.hbadge{background:var(--cool-gray);color:var(--navy);border-radius:var(--rp);padding:3px 11px;font-size:11px;font-weight:600;flex-shrink:0}
+.spacer{flex:1}
+.nav-links{display:flex;gap:2px}
+.nav-link{padding:5px 12px;border-radius:var(--rp);font-size:12px;font-weight:500;color:var(--t2);text-decoration:none;transition:all .15s;border:none;background:none;cursor:pointer;font-family:var(--font)}
+.nav-link:hover{background:rgba(37,69,255,.08);color:var(--electric)}
+.icon-btn{width:36px;height:36px;border:1px solid var(--border);border-radius:9px;background:none;cursor:pointer;display:grid;place-items:center;color:var(--t2);font-size:15px;transition:all .15s;font-family:var(--font);flex-shrink:0}
+.icon-btn:hover{border-color:var(--electric);color:var(--electric);background:rgba(37,69,255,.05)}
+
+/* ── MAIN ── */
+main{max-width:1460px;margin:0 auto;padding:28px 28px 64px}
+section{margin-bottom:48px}
+.sec-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--t2);margin-bottom:14px;display:flex;align-items:center;gap:12px}
+.sec-label span{flex:1;height:1px;background:var(--border)}
+
+/* ── KPI GRID ── */
+.kpi-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.kpi-card{background:var(--surface);border-radius:var(--r);border:1px solid var(--border);padding:20px 20px 18px;box-shadow:var(--shadow);position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s;cursor:default}
+.kpi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--acc,var(--electric));border-radius:16px 16px 0 0}
+.kpi-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(37,69,255,.1)}
+.kpi-lbl{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--t2);margin-bottom:10px}
+.kpi-num{font-size:38px;font-weight:700;line-height:1;letter-spacing:-1.5px;color:var(--text)}
+.kpi-sub{font-size:11px;color:var(--t2);margin-top:6px;line-height:1.4}
+.kpi-tag{display:inline-flex;align-items:center;margin-top:10px;background:var(--cool-gray);color:var(--navy);border-radius:var(--rp);padding:2px 10px;font-size:10px;font-weight:600}
+
+/* ── FILTER BAR ── */
+.filter-bar{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:12px 16px;display:flex;flex-wrap:nowrap;gap:8px;align-items:center;box-shadow:var(--shadow);overflow-x:auto}
+.f-lbl{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--t2);flex-shrink:0}
+.f-group{display:flex;gap:4px;flex-wrap:nowrap;align-items:center}
+.f-div{width:1px;height:20px;background:var(--border);flex-shrink:0}
+.chip{padding:5px 13px;border-radius:var(--rp);border:1px solid var(--border);background:none;font-size:12px;font-weight:500;color:var(--t2);cursor:pointer;transition:all .15s;font-family:var(--font);white-space:nowrap;flex-shrink:0}
+.chip:hover{border-color:var(--electric);color:var(--electric);background:rgba(37,69,255,.04)}
+.chip.on{background:var(--electric);color:#fff;border-color:var(--electric)}
+.search-wrap{margin-left:auto;position:relative;flex-shrink:0}
+.search-input{padding:7px 14px 7px 34px;border:1px solid var(--border);border-radius:var(--rp);background:var(--bg);color:var(--text);font-size:13px;font-family:var(--font);width:210px;transition:border-color .2s,width .3s;outline:none}
+.search-input:focus{border-color:var(--electric);width:270px}
+.search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--t2);pointer-events:none;font-size:13px}
+
+/* ── TABLE ── */
+.tbl-wrap{background:var(--surface);border-radius:var(--r);border:1px solid var(--border);overflow:hidden;box-shadow:var(--shadow)}
+.tbl-head{display:grid;grid-template-columns:44px minmax(130px,1fr) 122px 76px 1.5fr 70px 86px 44px;padding:10px 20px;background:var(--bg);border-bottom:2px solid var(--border);gap:10px;align-items:center}
+.th{font-size:10px;font-weight:700;color:var(--t2);text-transform:uppercase;letter-spacing:.08em;cursor:pointer;display:flex;align-items:center;gap:3px;user-select:none;transition:color .15s;white-space:nowrap}
+.th:hover,.th.sorted{color:var(--electric)}
+.row-wrap{border-bottom:1px solid var(--border)}
+.row-wrap:last-child{border:none}
+.tbl-row{display:grid;grid-template-columns:44px minmax(130px,1fr) 122px 76px 1.5fr 70px 86px 44px;padding:13px 20px;gap:10px;align-items:center;cursor:pointer;transition:background .15s}
+.tbl-row:hover{background:rgba(37,69,255,.03)}
+.tbl-row.exp{background:rgba(37,69,255,.05)}
+.rank{font-size:15px;font-weight:700;color:var(--t2);line-height:1}
+.rank.hi{color:var(--electric)}
+.pname{font-size:14px;font-weight:600;display:flex;align-items:center;gap:6px;min-width:0}
+.susp-tag{background:rgba(0,0,0,.07);color:var(--t2);border-radius:4px;padding:1px 5px;font-size:9px;font-weight:700;text-transform:uppercase;flex-shrink:0}
+.tbadge{display:inline-flex;border-radius:var(--rp);padding:3px 10px;font-size:11px;font-weight:600;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.t-cl{background:rgba(37,69,255,.1);color:var(--electric)}
+.t-co{background:var(--navy);color:#fff}
+.t-he{background:var(--yellow);color:var(--black)}
+.t-hy{background:var(--orange);color:#fff}
+.typbg{display:inline-flex;border-radius:5px;padding:2px 8px;font-size:11px;font-weight:500;background:var(--cool-gray);color:var(--navy)}
+.prog-wrap{display:flex;flex-direction:column;gap:3px;min-width:0}
+.prog-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.prog-pct{font-size:13px;font-weight:700}
+.sprint-lbl{font-size:10px;color:var(--t2);font-weight:600}
+.stk-bar{height:10px;border-radius:var(--rp);display:flex;overflow:hidden;background:var(--border)}
+.seg{height:100%;transition:width .6s cubic-bezier(.4,0,.2,1)}
+.s1{background:var(--s1)}.s2{background:var(--s2)}.s3{background:var(--s3)}.s4{background:var(--s4)}
+.cm-val{font-size:13px;font-weight:600;display:flex;flex-direction:column;gap:1px}
+.cm-lbl{font-size:9px;color:var(--t2);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.eta-val{font-size:12px;color:var(--t2)}
+.exp-btn{width:28px;height:28px;border-radius:7px;border:1px solid var(--border);background:none;cursor:pointer;display:grid;place-items:center;color:var(--t2);font-size:10px;transition:all .15s;font-family:var(--font)}
+.exp-btn:hover{border-color:var(--electric);color:var(--electric)}
+.tbl-row.exp .exp-btn{background:var(--electric);color:#fff;border-color:var(--electric)}
+/* Expand */
+.exp-body{max-height:0;overflow:hidden;transition:max-height .38s cubic-bezier(.4,0,.2,1)}
+.exp-body.open{max-height:190px}
+.exp-inner{padding:14px 20px 20px 74px;display:grid;grid-template-columns:1fr 1fr;gap:24px;border-top:1px solid var(--border)}
+.brk-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--t2);margin-bottom:10px}
+.brk-row{display:flex;align-items:center;gap:10px;margin-bottom:7px}
+.brk-lbl{font-size:11px;color:var(--t2);width:54px;text-align:right;flex-shrink:0}
+.brk-track{flex:1;height:6px;background:var(--border);border-radius:var(--rp);overflow:hidden}
+.brk-fill{height:100%;border-radius:var(--rp);transition:width .5s .1s cubic-bezier(.4,0,.2,1)}
+.brk-score{font-size:11px;font-weight:700;width:34px;flex-shrink:0;color:var(--text)}
+.nxt-box{background:var(--bg);border-radius:10px;padding:12px 14px;border-left:3px solid var(--electric)}
+.nxt-txt{font-size:13px;line-height:1.5}
+.nxt-meta{font-size:11px;color:var(--t2);margin-top:8px}
+.legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;padding:0 2px}
+.leg-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--t2)}
+.leg-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}
+
+/* ── CHARTS ── */
+.charts-grid{display:grid;grid-template-columns:2.1fr 1fr 1fr;gap:14px}
+.chart-card{background:var(--surface);border-radius:var(--r);border:1px solid var(--border);padding:22px 22px 18px;box-shadow:var(--shadow)}
+.chart-title{font-size:13px;font-weight:700;margin-bottom:16px;color:var(--text)}
+
+/* ── SPRINT BOARD ── */
+.sprint-board{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.spcol{background:var(--surface);border-radius:var(--r);border:1px solid var(--border);padding:14px 12px;min-height:200px;transition:border-color .2s,background .2s}
+.spcol.dov{background:rgba(37,69,255,.05);border-color:var(--electric)}
+.sph{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
+.spcnt{background:var(--cool-gray);color:var(--navy);border-radius:var(--rp);padding:1px 8px;font-size:10px;font-weight:600}
+.spcard{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:10px 11px;margin-bottom:8px;cursor:grab;transition:transform .15s,box-shadow .15s,opacity .15s;user-select:none;-webkit-user-select:none}
+.spcard:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,.1)}
+.spcard.dragging{opacity:.35;transform:rotate(2deg) scale(.97)}
+.spcard-nm{font-size:13px;font-weight:600;margin-bottom:5px;line-height:1.3}
+.spcard-meta{display:flex;align-items:center;gap:6px}
+.spcard-pct{font-size:10px;color:var(--t2);margin-left:auto;font-weight:600}
+
+/* ── USAGE ── */
+.usage-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.usage-card{background:var(--surface);border-radius:var(--r);border:1px solid var(--border);padding:24px;box-shadow:var(--shadow)}
+.usage-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.usage-nm{font-size:16px;font-weight:700}
+.dday{background:var(--cool-gray);color:var(--navy);border-radius:var(--rp);padding:4px 14px;font-size:12px;font-weight:700}
+.dday.warn{background:rgba(255,193,58,.2);color:#7a4d00}
+.dday.danger{background:rgba(255,91,34,.15);color:var(--orange)}
+.usage-big{font-size:36px;font-weight:700;letter-spacing:-1px}
+.usage-status{font-size:12px;color:var(--t2);margin:4px 0 14px}
+.meter{height:10px;background:var(--border);border-radius:var(--rp);overflow:hidden}
+.meter-fill{height:100%;border-radius:var(--rp);transition:width .6s cubic-bezier(.4,0,.2,1)}
+.inp-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.inp-grp{display:flex;flex-direction:column;gap:5px}
+.inp-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--t2)}
+.inp{padding:9px 12px;border:1px solid var(--border-gray);border-radius:0;background:var(--bg);color:var(--text);font-size:14px;font-family:var(--font);outline:none;transition:border-color .2s;width:100%}
+.inp:focus{border-color:var(--electric)}
+.btn-ghost{margin-top:14px;padding:7px 16px;background:none;border:1px solid var(--border);border-radius:var(--rp);font-size:12px;font-weight:600;color:var(--t2);cursor:pointer;font-family:var(--font);transition:all .15s}
+.btn-ghost:hover{border-color:var(--electric);color:var(--electric)}
+
+/* ── TOOLTIP ── */
+#tip{position:fixed;z-index:9999;pointer-events:none;background:var(--navy);color:#fff;border-radius:9px;padding:7px 12px;font-size:12px;white-space:nowrap;opacity:0;transition:opacity .12s;font-family:var(--font);box-shadow:0 4px 16px rgba(12,23,84,.2)}
+#tip.on{opacity:1}
+
+/* ── FOOTER ── */
+footer{border-top:1px solid var(--border);padding:18px 28px;max-width:1460px;margin:0 auto;font-size:11px;color:var(--t2);display:flex;justify-content:space-between;align-items:center}
+.footer-reset{background:none;border:none;color:var(--t2);font-size:11px;cursor:pointer;font-family:var(--font);transition:color .15s;padding:0}
+.footer-reset:hover{color:var(--electric)}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--t2)}
+
+/* ── ANIMATIONS ── */
+.kpi-card{opacity:1}
+
+/* ── EMPTY STATE ── */
+.empty{padding:48px;text-align:center;color:var(--t2);font-size:14px}
+/* Remove opacity animation from non-KPI sections */
+.tbl-wrap,.filter-bar,.chart-card,.spcol,.usage-card{opacity:1!important;transform:none!important;animation:none!important}
+
+/* ── SUGGESTIONS ── */
+.sug-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.sug-card{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--electric);border-radius:var(--r);padding:16px 18px;box-shadow:var(--shadow)}
+.sug-card.sev-high{border-left-color:var(--orange)}
+.sug-card.sev-warn{border-left-color:var(--yellow)}
+.sug-card.sev-info{border-left-color:var(--electric)}
+.sug-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:9px}
+.sug-type{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;border-radius:var(--rp);padding:3px 10px;background:var(--cool-gray);color:var(--navy)}
+.sug-repo{font-size:11px;color:var(--t2);font-weight:600;white-space:nowrap}
+.sug-title{font-size:14px;font-weight:700;margin-bottom:6px;line-height:1.35}
+.sug-detail{font-size:12px;color:var(--t2);line-height:1.6;margin-bottom:11px}
+.sug-actions{list-style:none;display:flex;flex-direction:column;gap:6px}
+.sug-actions li{font-size:12px;padding-left:16px;position:relative;line-height:1.45}
+.sug-actions li::before{content:'\2192';position:absolute;left:0;color:var(--electric);font-weight:700}
+.sug-empty{padding:32px;text-align:center;color:var(--t2);font-size:13px}
 </style>
+<script>document.documentElement.setAttribute("data-theme",localStorage.getItem("theme")||"light");</script>
 </head>
 <body>
-<div class="container">
-  <header>
-    <div>
-      <h1>sgeniusk (Gomgomee) GitHub 프로젝트 우선순위 대시보드</h1>
-      <p class="subtitle">v2 · 도구별 분류 + 진척도 구성요소 분해 · 데이터 기준일 2026-05-16</p>
-    </div>
-    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="테마 전환">
-      <span id="theme-toggle-icon">🌙</span><span id="theme-toggle-label">다크</span>
-    </button>
-  </header>
 
-  <div class="kpi-grid">
-    <div class="kpi">
-      <div class="kpi-label">활성 프로젝트</div>
-      <div class="kpi-value" id="kpi-active">9</div>
-      <div class="kpi-note">+ 일시중단 1개 (반짝상점)</div>
+<header>
+  <a class="logo" href="#">
+    <div class="logo-icon">
+      <svg viewBox="0 0 15 15" fill="none"><rect x="1" y="1" width="5.5" height="5.5" rx="1.5" fill="white" opacity=".95"></rect><rect x="8.5" y="1" width="5.5" height="5.5" rx="1.5" fill="white" opacity=".6"></rect><rect x="1" y="8.5" width="5.5" height="5.5" rx="1.5" fill="white" opacity=".6"></rect><rect x="8.5" y="8.5" width="5.5" height="5.5" rx="1.5" fill="white" opacity=".3"></rect></svg>
     </div>
-    <div class="kpi">
-      <div class="kpi-label">Claude 작성</div>
-      <div class="kpi-value" style="color: var(--tool-claude)" id="kpi-claude">4</div>
-      <div class="kpi-note">Formi · 빌더스쿨 · Story X · BookCircle</div>
-    </div>
-    <div class="kpi">
-      <div class="kpi-label">Codex 작성</div>
-      <div class="kpi-value" style="color: var(--tool-codex)" id="kpi-codex">3</div>
-      <div class="kpi-note">시즈폴 · 군주 · AI 컴퍼니 타이쿤</div>
-    </div>
-    <div class="kpi">
-      <div class="kpi-label">Hermes Agent</div>
-      <div class="kpi-value" style="color: var(--tool-hermes)" id="kpi-hermes">1</div>
-      <div class="kpi-note">Mandate of Heroes</div>
-    </div>
-    <div class="kpi">
-      <div class="kpi-label">평균 진척도</div>
-      <div class="kpi-value" id="kpi-progress">52%</div>
-      <div class="kpi-note">활성 프로젝트 기준</div>
-    </div>
-    <div class="kpi">
-      <div class="kpi-label">완성 임박 (≥60%)</div>
-      <div class="kpi-value" style="color: var(--green)">4</div>
-      <div class="kpi-note">2-3주 내 알파 가능</div>
-    </div>
-  </div>
+    <span class="logo-name">sgeniusk</span>
+  </a>
+  <span class="hbadge">프로젝트 우선순위 대시보드</span>
+  <span class="hbadge" style="background:rgba(255,193,58,.18);color:#7a4d00">v2 · 2026-05-16</span>
+  <div class="spacer"></div>
+  <nav class="nav-links">
+    <a class="nav-link" href="#sec-table">순위</a>
+    <a class="nav-link" href="#sec-suggest">제안</a>
+    <a class="nav-link" href="#sec-charts">분석</a>
+    <a class="nav-link" href="#sec-sprint">스프린트</a>
+    <a class="nav-link" href="#sec-usage">사용량</a>
+  </nav>
+  <button class="icon-btn" id="themeBtn" title="테마 전환">🌙</button>
+</header>
 
-  <h2 class="section-title">제안 / 코칭 <span id="suggest-meta" style="font-size:11px;color:var(--muted);font-weight:400"></span></h2>
-  <div class="card">
-    <p class="hint">/coach·/refresh 슬래시 커맨드가 생성하는 분석 결과입니다. 정체된 프로젝트와 다음 액션 제안을 보여줍니다.</p>
-    <div class="suggest-grid" id="suggest-grid"></div>
-  </div>
+<main>
 
-  <div class="controls">
-    <label>카테고리</label>
-    <select id="filter-category">
-      <option value="all">전체</option>
-      <option value="game">게임</option>
-      <option value="app">앱</option>
-      <option value="content">콘텐츠</option>
-    </select>
-    <label>도구</label>
-    <select id="filter-tool">
-      <option value="all">전체</option>
-      <option value="claude">Claude</option>
-      <option value="codex">Codex</option>
-      <option value="hermes">Hermes Agent</option>
-      <option value="hybrid">Claude+Codex</option>
-    </select>
-    <label>상태</label>
-    <select id="filter-status">
-      <option value="active">활성</option>
-      <option value="all">전체 (일시중단 포함)</option>
-      <option value="paused">일시중단</option>
-    </select>
-    <label>정렬</label>
-    <select id="sort-by">
-      <option value="priority">우선순위 (완성 임박도)</option>
-      <option value="progress">진척도 높은 순</option>
-      <option value="commits">커밋 많은 순</option>
-      <option value="recent">최근 활동 순</option>
-    </select>
-    <label style="margin-left:auto">검색</label>
-    <input type="text" id="filter-text" placeholder="이름/스택">
-  </div>
+  <!-- KPI -->
+  <section>
+    <div class="kpi-grid" id="kpiGrid"></div>
+  </section>
 
-  <div class="grid-2">
-    <div class="card">
-      <h2>완성 임박도 순위</h2>
-      <p class="hint">진척도 막대는 문서/골격/기능/알파 4단계의 누적입니다. 행을 클릭하면 분해된 점수와 다음 액션을 볼 수 있습니다.</p>
-      <table id="priority-table">
-        <thead>
-          <tr>
-            <th style="width:50px">#</th>
-            <th>프로젝트</th>
-            <th>도구</th>
-            <th>유형</th>
-            <th class="progress-cell">진척도 (문서·골격·기능·알파)</th>
-            <th>커밋</th>
-            <th>예상 완료</th>
-          </tr>
-        </thead>
-        <tbody id="table-body"></tbody>
-      </table>
-      <div class="progress-legend">
-        <span><span class="swatch progress-seg-docs"></span>문서 (PRD·Spec)</span>
-        <span><span class="swatch progress-seg-skeleton"></span>골격 (Scaffold·CI)</span>
-        <span><span class="swatch progress-seg-features"></span>핵심 기능</span>
-        <span><span class="swatch progress-seg-alpha"></span>알파·폴리시</span>
+  <!-- Filters -->
+  <section>
+    <div class="filter-bar">
+      <span class="f-lbl">카테고리</span>
+      <div class="f-group" id="fCat"></div>
+      <div class="f-div"></div>
+      <span class="f-lbl">도구</span>
+      <div class="f-group" id="fTool"></div>
+      <div class="f-div"></div>
+      <span class="f-lbl">상태</span>
+      <div class="f-group" id="fStatus"></div>
+      <div class="f-div"></div>
+      <span class="f-lbl">정렬</span>
+      <div class="f-group" id="fSort"></div>
+      <div class="search-wrap">
+        <span class="search-icon">⌕</span>
+        <input class="search-input" id="sInput" placeholder="프로젝트 검색..." type="search" autocomplete="off">
       </div>
     </div>
-    <div class="card">
-      <h2>진척도 구성 분해 (스택드 바)</h2>
-      <p class="hint">각 프로젝트가 어느 단계에 막혀 있는지 한눈에. 노란색(기능)과 보라(알파)가 짧으면 실제 동작 가능한 코드가 부족하다는 신호.</p>
-      <div class="chart-box" style="height:380px"><canvas id="stacked-chart"></canvas></div>
-    </div>
-  </div>
+  </section>
 
-  <div class="grid-2">
-    <div class="card">
-      <h2>도구별 분포</h2>
-      <p class="hint">Claude가 4건, Codex가 3건, Hermes가 1건, Hybrid가 1건. 도구별 평균 진척도도 표시됩니다.</p>
-      <div class="chart-box" style="height:300px"><canvas id="tool-chart"></canvas></div>
+  <!-- Table -->
+  <section id="sec-table">
+    <div class="sec-label">완성 임박도 순위 <span></span></div>
+    <div class="tbl-wrap">
+      <div class="tbl-head">
+        <span class="th">#</span>
+        <span class="th" data-s="name">프로젝트</span>
+        <span class="th" data-s="tool">도구</span>
+        <span class="th" data-s="type">유형</span>
+        <span class="th" data-s="pct">진척도 ↕</span>
+        <span class="th" data-s="commits">커밋 ↕</span>
+        <span class="th">예상 완료</span>
+        <span class="th"></span>
+      </div>
+      <div id="tblBody"></div>
     </div>
-    <div class="card">
-      <h2>도구 × 진척도 매트릭스</h2>
-      <p class="hint">진척도(X축) × 커밋 수(Y축). 우상단에 위치할수록 빠른 완성 후보.</p>
-      <div class="chart-box" style="height:300px"><canvas id="scatter-chart"></canvas></div>
+    <div class="legend">
+      <div class="leg-item"><div class="leg-dot" style="background:var(--s1)"></div>문서 PRD·Spec (0-25)</div>
+      <div class="leg-item"><div class="leg-dot" style="background:var(--s2)"></div>골격 Scaffold·CI (0-25)</div>
+      <div class="leg-item"><div class="leg-dot" style="background:var(--s3)"></div>핵심 기능 (0-30)</div>
+      <div class="leg-item"><div class="leg-dot" style="background:var(--s4)"></div>알파·폴리시 (0-20)</div>
     </div>
-  </div>
+  </section>
 
-  <h2 class="section-title">스케줄 권장 시퀀스 (수정 반영)</h2>
-  <div class="card">
-    <p class="hint">9번(뜬이유 메인 monorepo)이 빠진 결과를 반영한 4-6주 추천 로드맵입니다.</p>
-    <ol style="margin: 12px 0 0 18px; line-height: 2;">
-      <li><strong style="color:var(--green)">Sprint A (1-2주):</strong> <span class="tool-badge tool-claude">Claude</span> Formi 알파 출시 + <span class="tool-badge tool-hybrid">Hybrid</span> tteuniyu-ios Wave 3 클로징</li>
-      <li><strong style="color:var(--green)">Sprint B (2-3주):</strong> <span class="tool-badge tool-codex">Codex</span> 시즈폴 알파 락 + <span class="tool-badge tool-codex">Codex</span> 군주 v0.16 출시</li>
-      <li><strong style="color:var(--yellow)">Sprint C (3-5주):</strong> <span class="tool-badge tool-hermes">Hermes</span> Mandate of Heroes 콘텐츠 패스 + <span class="tool-badge tool-claude">Claude</span> AI Builder School 본문 채움</li>
-      <li><strong style="color:var(--orange)">Sprint D (5-8주):</strong> <span class="tool-badge tool-codex">Codex</span> AI 컴퍼니 타이쿤 MVP + <span class="tool-badge tool-claude">Claude</span> Story X 1매체 집중</li>
-      <li><strong style="color:var(--muted)">Defer:</strong> BookCircle은 핵심 4건 마감 후 재평가 · 반짝상점은 일시중단 상태 유지</li>
-    </ol>
-  </div>
+  <!-- Suggestions -->
+  <section id="sec-suggest">
+    <div class="sec-label">제안 / 코칭 <em id="sugMeta" style="font-style:normal;font-weight:600;letter-spacing:0;text-transform:none"></em><span></span></div>
+    <div class="sug-grid" id="sugGrid"></div>
+  </section>
 
-  <h2 class="section-title">Sprint 보드</h2>
-  <div class="card">
-    <div class="sprint-board-head">
-      <p class="hint">카드를 드래그해 상태를 옮기세요. 변경은 이 브라우저에 저장됩니다(localStorage). Sprint 태그(A~D)는 docs/sprint-plan.md 기준입니다.</p>
-      <button class="board-reset" id="board-reset" type="button">보드 초기화</button>
+  <!-- Charts -->
+  <section id="sec-charts">
+    <div class="sec-label">진척도 분석 <span></span></div>
+    <div class="charts-grid">
+      <div class="chart-card">
+        <div class="chart-title">구성 분해 — 스택드 바</div>
+        <svg id="stackC" width="100%" height="268"></svg>
+        <div class="legend" id="stackLeg"></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">도구별 분포</div>
+        <svg id="donutC" width="100%" height="170" viewBox="0 0 200 170"></svg>
+        <div class="legend" id="donutLeg"></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">진척도 × 커밋 매트릭스</div>
+        <svg id="scatterC" width="100%" height="268"></svg>
+        <div class="legend" id="scatterLeg"></div>
+      </div>
     </div>
-    <div class="kanban" id="kanban"></div>
-  </div>
+  </section>
 
-  <h2 class="section-title">사용량 트래커</h2>
-  <div class="card">
-    <div class="sprint-board-head">
-      <p class="hint">Codex·Claude는 청구 주기가 달라 수동으로 기록합니다. 사용률과 리셋일을 입력하면 D-day와 경고가 표시됩니다. 입력값은 이 브라우저(localStorage)에 저장되며, 'JSON 내보내기'로 usage.json에 반영할 수 있습니다.</p>
-      <span style="display:flex;gap:8px">
-        <button class="board-reset" id="usage-export" type="button">JSON 내보내기</button>
-        <button class="board-reset" id="usage-reset" type="button">입력 초기화</button>
-      </span>
+  <!-- Sprint Board -->
+  <section id="sec-sprint">
+    <div class="sec-label" style="justify-content:space-between;align-items:center;display:flex;margin-bottom:14px">
+      <span style="display:flex;align-items:center;gap:12px">스케줄 시퀀스 <span style="flex:1;width:80px;height:1px;background:var(--border);display:inline-block"></span></span>
+      <button class="btn-ghost" style="margin:0;padding:5px 14px;font-size:11px" onclick="resetSprint()">보드 초기화</button>
     </div>
-    <div class="usage-grid" id="usage-grid"></div>
-  </div>
+    <div class="sprint-board" id="sprintBoard"></div>
+  </section>
 
-  <footer>
-    데이터 출처: GitHub 리포지토리 README/PRD + Contributors Insights API + commits.atom · 도구 정보는 사용자 직접 제공<br>
-    진척도 = 문서(0-25) + 골격(0-25) + 기능(0-30) + 알파/폴리시(0-20) — 자세한 산정 근거는 행 클릭 시 펼침<br>
-    <span id="data-source"></span>
-  </footer>
-</div>
+  <!-- Usage -->
+  <section id="sec-usage">
+    <div class="sec-label">사용량 트래커 <span></span></div>
+    <div class="usage-grid" id="usageGrid"></div>
+  </section>
+
+</main>
+
+<footer>
+  <span>데이터 출처: GitHub README/PRD · Contributors Insights API · commits.atom &nbsp;·&nbsp; 진척도 = 문서(0-25) + 골격(0-25) + 기능(0-30) + 알파(0-20)</span>
+  <button class="footer-reset" onclick="if(confirm('로컬 데이터를 초기화할까요?')){localStorage.clear();location.reload()}">데이터 초기화</button>
+</footer>
+
+<div id="tip"></div>
 
 <script>
-// 대시보드 데이터는 외부 projects.json에서 fetch로 로드한다.
-// file:// 환경 등 fetch가 막힌 경우 아래 FALLBACK_PROJECTS 내장 사본으로 폴백한다.
-let projects = [];
-
-// 테마(낮/밤) 토글 — head의 인라인 스크립트가 첫 테마를 이미 적용했고, 여기선 버튼·아이콘·차트 동기화만 담당
-function applyTheme(theme) {
-  document.documentElement.dataset.theme = theme;
-  localStorage.setItem('theme', theme);
-  const icon = document.getElementById('theme-toggle-icon');
-  const label = document.getElementById('theme-toggle-label');
-  if (icon) icon.textContent = theme === 'light' ? '☀️' : '🌙';
-  if (label) label.textContent = theme === 'light' ? '라이트' : '다크';
-  if (typeof window.__rebuildCharts === 'function') window.__rebuildCharts();
-}
-applyTheme(document.documentElement.dataset.theme || 'dark');
-document.getElementById('theme-toggle').addEventListener('click', () => {
-  applyTheme(document.documentElement.dataset.theme === 'light' ? 'dark' : 'light');
-});
-
-// fetch 실패 시 사용하는 내장 폴백 데이터 — projects.json projects 배열의 verbatim 복사본.
-// scripts/refresh-progress.mjs 갱신 후 dashboard.html의 이 블록도 동기화한다.
-const FALLBACK_PROJECTS = [
+/* ── FALLBACK 데이터 (fetch 실패 시 — file:// 등에서 사용) ── */
+const FALLBACK_PROJECTS = {
+  "$schema": "./projects.schema.md",
+  "meta": {
+    "owner": "sgeniusk",
+    "ownerName": "Gomgomee",
+    "asOf": "2026-05-16",
+    "priorityCriterion": "completionProximity",
+    "progressFormula": "docs(0-25) + skeleton(0-25) + features(0-30) + alpha_polish(0-20) = 0-100",
+    "toolLegend": {
+      "claude": "Claude Code로 작성",
+      "codex": "Codex로 작성",
+      "hermes": "Hermes Agent로 작성",
+      "hybrid": "Claude + Codex 하이브리드"
+    }
+  },
+  "projects": [
     {
       "rank": 1,
       "name": "habit",
@@ -815,507 +766,467 @@ const FALLBACK_PROJECTS = [
       ],
       "url": "https://github.com/sgeniusk/jewelry-webtoon-cloud"
     }
-  ];
-
-// projects.json의 중첩 progress 객체를 렌더링 코드가 기대하는 평탄한 형태로 변환한다.
-// FALLBACK_PROJECTS도 같은 중첩 구조라 동일하게 처리된다.
-function normalizeProjects(raw) {
-  return raw.map(p => {
-    const breakdown = p.breakdown || (p.progress && typeof p.progress === 'object'
-      ? { docs: p.progress.docs, skeleton: p.progress.skeleton, features: p.progress.features, alpha: p.progress.alpha }
-      : { docs: 0, skeleton: 0, features: 0, alpha: 0 });
-    const total = typeof p.progress === 'number'
-      ? p.progress
-      : (p.progress && p.progress.total != null
-          ? p.progress.total
-          : breakdown.docs + breakdown.skeleton + breakdown.features + breakdown.alpha);
-    const etaClass = /^eta-/.test(p.etaClass || '') ? p.etaClass : 'eta-' + (p.etaClass || 'long');
-    const lastUpdate = (p.lastUpdate || '').replace('T', ' ').replace(/Z$/, '');
-    return Object.assign({}, p, { breakdown, progress: total, etaClass, lastUpdate });
-  });
-}
-
-// projects.json을 fetch로 로드하고, 실패하면 내장 폴백 데이터로 대체한다.
-async function loadProjects() {
-  try {
-    const res = await fetch('./projects.json', { cache: 'no-store' });
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    const json = await res.json();
-    return { data: normalizeProjects(json.projects || []), source: 'fetch' };
-  } catch (err) {
-    return { data: normalizeProjects(FALLBACK_PROJECTS), source: 'fallback', error: err };
-  }
-}
-
-// 사용량 트래커 데이터 — usage.json fetch 실패 시(file:// 등) 아래 폴백 사용
-const FALLBACK_USAGE = {
-  asOf: "2026-05-16",
-  tools: [
-    { tool: "claude", label: "Claude (Claude Code)", plan: "Max", limitLabel: "주간 한도", cycleLengthDays: 7, cycleResetDate: "2026-05-19", usedPercent: 0, note: "주간 리셋. Claude Code에는 /usage·/cost 명령이 없어 사용 화면을 보고 수동 입력." },
-    { tool: "codex", label: "Codex CLI", plan: "ChatGPT Plus", limitLabel: "월간 한도", cycleLengthDays: 30, cycleResetDate: "2026-06-01", usedPercent: 0, note: "월간 리셋. OpenAI 사용량 화면을 보고 수동 입력." }
   ]
 };
-let usageData = FALLBACK_USAGE;
-async function loadUsage() {
-  try {
-    const res = await fetch('./usage.json', { cache: 'no-store' });
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    return await res.json();
-  } catch {
-    return FALLBACK_USAGE;
-  }
-}
-
-// 제안/코칭 데이터 — suggestions.json fetch 실패 시(file:// 등) 아래 폴백 사용
 const FALLBACK_SUGGESTIONS = {
-  generatedAt: "2026-05-16",
-  items: [
-    { repo: "tteuniyu-ios", type: "stall", severity: "warn", title: "Sprint A 정체 신호", detail: "마지막 푸시가 2026-05-12로 약 5일 전입니다. 같은 Sprint A의 Formi는 매일 활동 중인데 뜬이유 iOS는 멈춰 있어 동반 마감 일정이 어긋날 위험이 있습니다.", actions: ["Xcode 빌드 + 5개 시뮬레이터 스크린샷 캡처", "harness/check.sh CI 통과 확인", "Acceptance Criteria 25개 자가검증 착수"] },
-    { repo: "habit", type: "coach", severity: "info", title: "완성 최근접 — 알파 게이트만 남음", detail: "진척도 75%로 활성 프로젝트 중 1위입니다. 문서·골격이 만점이고 알파(10/20)만 미완이라, TestFlight 알파 빌드 하나로 완성 단계에 진입할 수 있습니다.", actions: ["mobile/README.md 기준 Expo iOS 알파 빌드 산출", "TestFlight 업로드 후 alpha 사용자 피드백 수집"] },
-    { repo: "ai-builder-school", type: "coach", severity: "info", title: "기능 점수가 병목", detail: "features 점수가 5/30으로 활성 프로젝트 중 최저입니다. 12-phase 골격과 페이지 맵은 완성됐지만 32개 레슨 본문이 비어 실제 동작 비율이 낮습니다.", actions: ["Phase별 우선 레슨 4-5개 본문 완성", "캡스톤 프로젝트 예시 작성"] }
+  "_comment": "/coach 및 /refresh 슬래시 커맨드가 생성하는 분석·제안 데이터. 대시보드의 '제안 / 코칭' 패널이 읽는다. 수동 편집보다 커맨드 재생성을 권장.",
+  "generatedAt": "2026-05-16",
+  "items": [
+    {
+      "repo": "tteuniyu-ios",
+      "type": "stall",
+      "severity": "warn",
+      "title": "Sprint A 정체 신호",
+      "detail": "마지막 푸시가 2026-05-12로 약 5일 전입니다. 같은 Sprint A의 Formi는 매일 활동 중인데 뜬이유 iOS는 멈춰 있어 동반 마감 일정이 어긋날 위험이 있습니다.",
+      "actions": [
+        "Xcode 빌드 + 5개 시뮬레이터 스크린샷 캡처",
+        "harness/check.sh CI 통과 확인",
+        "Acceptance Criteria 25개 자가검증 착수"
+      ]
+    },
+    {
+      "repo": "habit",
+      "type": "coach",
+      "severity": "info",
+      "title": "완성 최근접 — 알파 게이트만 남음",
+      "detail": "진척도 75%로 활성 프로젝트 중 1위입니다. 문서·골격이 만점이고 알파(10/20)만 미완이라, TestFlight 알파 빌드 하나로 완성 단계에 진입할 수 있습니다.",
+      "actions": [
+        "mobile/README.md 기준 Expo iOS 알파 빌드 산출",
+        "TestFlight 업로드 후 alpha 사용자 피드백 수집"
+      ]
+    },
+    {
+      "repo": "ai-builder-school",
+      "type": "coach",
+      "severity": "info",
+      "title": "기능 점수가 병목",
+      "detail": "features 점수가 5/30으로 활성 프로젝트 중 최저입니다. 12-phase 골격과 페이지 맵은 완성됐지만 32개 레슨 본문이 비어 실제 동작 비율이 낮습니다.",
+      "actions": [
+        "Phase별 우선 레슨 4-5개 본문 완성",
+        "캡스톤 프로젝트 예시 작성"
+      ]
+    }
   ]
 };
-let suggestionsData = FALLBACK_SUGGESTIONS;
-async function loadSuggestions() {
-  try {
-    const res = await fetch('./suggestions.json', { cache: 'no-store' });
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    return await res.json();
-  } catch {
-    return FALLBACK_SUGGESTIONS;
-  }
-}
+const FALLBACK_USAGE = {
+  "_comment": "도구별 사용량 수동 트래커. 개인 구독은 사용량 API 자동 수집이 불가하므로 직접 기록한다. 대시보드의 사용량 패널에서 입력하면 localStorage에 저장되고, 'JSON 내보내기'로 이 파일에 반영할 스니펫을 받는다.",
+  "asOf": "2026-05-16",
+  "tools": [
+    {
+      "tool": "claude",
+      "label": "Claude (Claude Code)",
+      "plan": "Max",
+      "limitLabel": "주간 한도",
+      "cycleLengthDays": 7,
+      "cycleResetDate": "2026-05-19",
+      "usedPercent": 0,
+      "note": "주간 리셋. Claude Code에는 /usage·/cost 명령이 없어 사용 화면을 보고 수동 입력."
+    },
+    {
+      "tool": "codex",
+      "label": "Codex CLI",
+      "plan": "ChatGPT Plus",
+      "limitLabel": "월간 한도",
+      "cycleLengthDays": 30,
+      "cycleResetDate": "2026-06-01",
+      "usedPercent": 0,
+      "note": "월간 리셋. OpenAI 사용량 화면을 보고 수동 입력."
+    }
+  ]
+};
 
-// 데이터 출처(외부 fetch vs 내장 폴백)를 푸터에 표시한다.
-function showDataSourceNotice(source, err) {
-  const el = document.getElementById('data-source');
-  if (!el) return;
-  if (source === 'fetch') {
-    el.textContent = '데이터 출처: projects.json (외부 fetch)';
-    el.style.color = 'var(--green)';
-  } else {
-    el.textContent = 'projects.json 로드 실패 — 내장 폴백 데이터 사용 중 (file:// 환경에서는 정상 동작)';
-    el.style.color = 'var(--yellow)';
-  }
-}
-
-// 데이터가 채워진 뒤 호출되는 대시보드 초기화 진입점
-function init() {
-const tbody = document.getElementById('table-body');
-const filterCategory = document.getElementById('filter-category');
-const filterTool = document.getElementById('filter-tool');
-const filterStatus = document.getElementById('filter-status');
-const sortBy = document.getElementById('sort-by');
-const filterText = document.getElementById('filter-text');
-
-function categoryBadge(cat) {
-  const map = {game: ['게임', 'badge-game'], app: ['앱', 'badge-app'], content: ['콘텐츠', 'badge-content']};
-  const [label, cls] = map[cat] || ['기타', ''];
-  return `<span class="badge ${cls}">${label}</span>`;
-}
-function visibilityBadge(v) {
-  return `<span class="badge ${v === 'public' ? 'badge-public' : 'badge-private'}">${v === 'public' ? 'Public' : 'Private'}</span>`;
-}
-function toolBadge(tool) {
-  const map = {claude: ['Claude', 'tool-claude'], codex: ['Codex', 'tool-codex'], hermes: ['Hermes', 'tool-hermes'], hybrid: ['Claude+Codex', 'tool-hybrid']};
-  const [label, cls] = map[tool] || [tool, ''];
-  return `<span class="tool-badge ${cls}">${label}</span>`;
-}
-function pausedBadge() {
-  return `<span class="badge badge-paused">일시중단</span>`;
-}
-function stackBadges(s) {
-  return s.slice(0,3).map(x => `<span class="badge badge-stack">${x}</span>`).join('');
-}
-function rankClass(r) { return r <= 3 ? `rank rank-${r}` : 'rank'; }
-
-function progressBar(b) {
-  const segs = [
-    {key: 'docs', max: 25, cls: 'progress-seg-docs'},
-    {key: 'skeleton', max: 25, cls: 'progress-seg-skeleton'},
-    {key: 'features', max: 30, cls: 'progress-seg-features'},
-    {key: 'alpha', max: 20, cls: 'progress-seg-alpha'}
-  ];
-  return `<div class="progress-bar">${segs.map(s => `<div class="${s.cls}" style="width:${b[s.key]}%" title="${s.key}: ${b[s.key]}/${s.max}"></div>`).join('')}</div>`;
-}
-
-function renderTable() {
-  const cat = filterCategory.value;
-  const tool = filterTool.value;
-  const stat = filterStatus.value;
-  const text = filterText.value.toLowerCase();
-  const sort = sortBy.value;
-  let list = projects.filter(p => {
-    if (cat !== 'all' && p.category !== cat) return false;
-    if (tool !== 'all' && p.tool !== tool) return false;
-    if (stat === 'active' && p.status !== 'active') return false;
-    if (stat === 'paused' && p.status !== 'paused') return false;
-    if (text && !(p.name.toLowerCase().includes(text) || p.displayName.toLowerCase().includes(text) || p.stack.join(' ').toLowerCase().includes(text))) return false;
-    return true;
-  });
-  const sorters = {
-    priority: (a,b) => a.rank - b.rank,
-    progress: (a,b) => b.progress - a.progress,
-    commits: (a,b) => b.commits - a.commits,
-    recent: (a,b) => (b.lastUpdate || '').localeCompare(a.lastUpdate || '')
-  };
-  list.sort(sorters[sort]);
-  tbody.innerHTML = '';
-  list.forEach((p) => {
-    const tr = document.createElement('tr');
-    if (p.status === 'paused') tr.classList.add('paused');
-    tr.dataset.repo = p.name;
-    tr.innerHTML = `
-      <td><span class="${rankClass(p.rank)}">${p.rank}</span></td>
-      <td>
-        <div style="font-weight:600">${p.displayName}</div>
-        <div style="color:var(--muted); font-size:11px; margin-top:2px">${p.name} · ${stackBadges(p.stack)}</div>
-      </td>
-      <td>${toolBadge(p.tool)}</td>
-      <td>${categoryBadge(p.category)} ${visibilityBadge(p.visibility)} ${p.status === 'paused' ? pausedBadge() : ''}</td>
-      <td>
-        ${progressBar(p.breakdown)}
-        <div class="progress-text">${p.progress}% · 문서 ${p.breakdown.docs} / 골격 ${p.breakdown.skeleton} / 기능 ${p.breakdown.features} / 알파 ${p.breakdown.alpha}</div>
-      </td>
-      <td>${p.commits}</td>
-      <td class="${p.etaClass}">${p.eta}</td>
-    `;
-    tr.addEventListener('click', () => toggleDetail(tr, p));
-    tbody.appendChild(tr);
-  });
-}
-
-function toggleDetail(tr, p) {
-  document.querySelectorAll('tr.detail-row').forEach(r => r.remove());
-  if (tr.dataset.opened === '1') { tr.dataset.opened = '0'; return; }
-  document.querySelectorAll('tr[data-opened="1"]').forEach(r => r.dataset.opened = '0');
-  tr.dataset.opened = '1';
-  const dtr = document.createElement('tr');
-  dtr.classList.add('detail-row');
-  const td = document.createElement('td');
-  td.colSpan = 7;
-  td.innerHTML = `
-    <div class="detail-panel">
-      <h3>${p.displayName} ${p.status === 'paused' ? '<span class="badge badge-paused">일시중단</span>' : ''}</h3>
-      <div class="meta-row"><span class="meta-label">Repository</span><span><a class="repo-link" href="${p.url}" target="_blank">${p.url.replace('https://github.com/','')}</a></span></div>
-      <div class="meta-row"><span class="meta-label">개발 도구</span><span>${toolBadge(p.tool)}</span></div>
-      <div class="meta-row"><span class="meta-label">기술 스택</span><span>${p.stack.map(s=>`<span class="badge badge-stack">${s}</span>`).join(' ')}</span></div>
-      <div class="meta-row"><span class="meta-label">최초 커밋</span><span>${p.firstCommit}</span></div>
-      <div class="meta-row"><span class="meta-label">최근 커밋</span><span>${p.lastUpdate}</span></div>
-      <div class="meta-row"><span class="meta-label">활동 기간</span><span>${p.daysActive}일 · ${(p.commits/Math.max(p.daysActive,1)).toFixed(1)} commits/day</span></div>
-      <div class="meta-row"><span class="meta-label">예상 완료</span><span class="${p.etaClass}">${p.eta}</span></div>
-      ${p.pausedReason ? `<div class="meta-row"><span class="meta-label">중단 사유</span><span style="color:var(--muted)">${p.pausedReason}</span></div>` : ''}
-      <div class="progress-breakdown">
-        <div class="breakdown-item"><div class="breakdown-label">문서 / 25</div><div class="breakdown-value" style="color:var(--green)">${p.breakdown.docs}</div></div>
-        <div class="breakdown-item"><div class="breakdown-label">골격 / 25</div><div class="breakdown-value" style="color:var(--accent)">${p.breakdown.skeleton}</div></div>
-        <div class="breakdown-item"><div class="breakdown-label">기능 / 30</div><div class="breakdown-value" style="color:var(--yellow)">${p.breakdown.features}</div></div>
-        <div class="breakdown-item"><div class="breakdown-label">알파 / 20</div><div class="breakdown-value" style="color:var(--purple)">${p.breakdown.alpha}</div></div>
-      </div>
-      <div style="margin-top:10px"><strong>현황 판단</strong><div style="margin-top:4px">${p.rationale}</div></div>
-      <div style="margin-top:10px"><strong style="color:var(--red)">리스크</strong><ul>${p.risks.map(r => `<li>${r}</li>`).join('')}</ul></div>
-      <div style="margin-top:10px"><strong style="color:var(--green)">다음 액션</strong><ul>${p.nextActions.map(a => `<li>${a}</li>`).join('')}</ul></div>
-    </div>
-  `;
-  dtr.appendChild(td);
-  tr.parentNode.insertBefore(dtr, tr.nextSibling);
-}
-
-[filterCategory, filterTool, filterStatus, sortBy, filterText].forEach(el => {
-  el.addEventListener('input', renderTable);
-  el.addEventListener('change', renderTable);
-});
-
-renderTable();
-
-// --- Sprint 보드 (드래그앤드롭 칸반) ---
-// 카드 위치는 localStorage['sprintBoard']에 저장하고, 없으면 projects.json의 sprintStatus 시드를 따른다.
-const SPRINT_STATUSES = [
-  { key: 'planned', label: '계획됨' },
-  { key: 'inProgress', label: '진행 중' },
-  { key: 'review', label: '검토' },
-  { key: 'done', label: '완료' }
-];
-function loadBoardOverride() {
-  try { return JSON.parse(localStorage.getItem('sprintBoard')) || {}; }
-  catch { return {}; }
-}
-function cardStatus(p, override) {
-  const valid = SPRINT_STATUSES.some(s => s.key === override[p.name]);
-  return valid ? override[p.name] : (p.sprintStatus || 'planned');
-}
-function renderSprintBoard() {
-  const kanban = document.getElementById('kanban');
-  if (!kanban) return;
-  const override = loadBoardOverride();
-  kanban.innerHTML = '';
-  SPRINT_STATUSES.forEach(st => {
-    const col = document.createElement('div');
-    col.className = 'kanban-col';
-    const cards = projects.filter(p => cardStatus(p, override) === st.key);
-    col.innerHTML = `<h3>${st.label}<span class="count">${cards.length}</span></h3>`;
-    cards.forEach(p => {
-      const sprintLabel = p.sprint === 'defer' ? 'Defer' : 'Sprint ' + p.sprint;
-      const milestone = (p.nextActions && p.nextActions[0]) || '';
-      const card = document.createElement('div');
-      card.className = 'sprint-card';
-      card.draggable = true;
-      card.dataset.repo = p.name;
-      card.innerHTML = `
-        <div class="sc-title">${p.displayName}</div>
-        <div class="sc-meta">
-          ${toolBadge(p.tool)}
-          <span class="sprint-tag s-${p.sprint}">${sprintLabel}</span>
-          <span style="color:var(--muted);font-size:11px">${p.progress}%</span>
-        </div>
-        <div class="sc-milestone">${milestone}</div>`;
-      card.addEventListener('dragstart', e => {
-        e.dataTransfer.setData('text/plain', p.name);
-        e.dataTransfer.effectAllowed = 'move';
-        card.classList.add('dragging');
-      });
-      card.addEventListener('dragend', () => card.classList.remove('dragging'));
-      col.appendChild(card);
-    });
-    col.addEventListener('dragover', e => { e.preventDefault(); col.classList.add('drag-over'); });
-    col.addEventListener('dragleave', () => col.classList.remove('drag-over'));
-    col.addEventListener('drop', e => {
-      e.preventDefault();
-      col.classList.remove('drag-over');
-      const repo = e.dataTransfer.getData('text/plain');
-      if (!repo) return;
-      const ov = loadBoardOverride();
-      ov[repo] = st.key;
-      localStorage.setItem('sprintBoard', JSON.stringify(ov));
-      renderSprintBoard();
-    });
-    kanban.appendChild(col);
-  });
-}
-document.getElementById('board-reset').addEventListener('click', () => {
-  localStorage.removeItem('sprintBoard');
-  renderSprintBoard();
-});
-renderSprintBoard();
-
-// --- 사용량 트래커 ---
-// usage.json을 기준값으로, 사용자가 패널에서 입력한 값은 localStorage['usageOverride']에 저장한다.
-function loadUsageOverride() {
-  try { return JSON.parse(localStorage.getItem('usageOverride')) || {}; }
-  catch { return {}; }
-}
-function mergedUsage() {
-  const ov = loadUsageOverride();
-  return (usageData.tools || []).map(t => Object.assign({}, t, ov[t.tool] || {}));
-}
-function daysUntil(dateStr) {
-  if (!dateStr) return null;
-  const target = new Date(dateStr + 'T00:00:00');
-  const today = new Date(new Date().toDateString());
-  return Math.round((target - today) / 86400000);
-}
-function renderUsagePanel() {
-  const grid = document.getElementById('usage-grid');
-  if (!grid) return;
-  grid.innerHTML = '';
-  mergedUsage().forEach(t => {
-    const pct = Math.max(0, Math.min(100, Number(t.usedPercent) || 0));
-    const dday = daysUntil(t.cycleResetDate);
-    const barColor = pct >= 80 ? 'var(--red)' : pct >= 50 ? 'var(--yellow)' : 'var(--green)';
-    const soon = dday !== null && dday <= 2;
-    const warn = soon || pct >= 80;
-    const ddayText = dday === null ? '리셋일 미설정'
-      : dday < 0 ? `리셋일 ${-dday}일 경과 — 갱신 필요`
-      : dday === 0 ? '오늘 리셋'
-      : `리셋까지 D-${dday}`;
-    const card = document.createElement('div');
-    card.className = 'usage-card' + (warn ? ' warn' : '');
-    card.innerHTML = `
-      <div class="usage-head">
-        <span class="u-name">${t.label}</span>
-        <span class="u-plan">${t.plan || ''}</span>
-      </div>
-      <div class="usage-bar"><div style="width:${pct}%;background:${barColor}"></div></div>
-      <div class="usage-row">
-        <span>${t.limitLabel || '한도'} ${pct}% 사용</span>
-        <span class="usage-dday${soon ? ' soon' : ''}">${ddayText}</span>
-      </div>
-      <div class="usage-inputs">
-        <label>사용률 %<input type="number" min="0" max="100" data-tool="${t.tool}" data-field="usedPercent" value="${pct}"></label>
-        <label>리셋일<input type="date" data-tool="${t.tool}" data-field="cycleResetDate" value="${t.cycleResetDate || ''}"></label>
-      </div>
-      ${warn ? `<div class="usage-warn-text">${pct >= 80 ? '사용량 80% 초과 — 속도 조절 권장. ' : ''}${soon ? '리셋 임박.' : ''}</div>` : ''}
-      ${t.note ? `<div class="usage-note">${t.note}</div>` : ''}`;
-    grid.appendChild(card);
-  });
-  grid.querySelectorAll('input').forEach(inp => {
-    inp.addEventListener('change', () => {
-      const ov = loadUsageOverride();
-      const tool = inp.dataset.tool, field = inp.dataset.field;
-      ov[tool] = ov[tool] || {};
-      ov[tool][field] = field === 'usedPercent' ? Number(inp.value) : inp.value;
-      localStorage.setItem('usageOverride', JSON.stringify(ov));
-      renderUsagePanel();
-    });
-  });
-}
-document.getElementById('usage-export').addEventListener('click', () => {
-  const out = {
-    _comment: usageData._comment || '도구별 사용량 수동 트래커.',
-    asOf: new Date().toISOString().slice(0, 10),
-    tools: mergedUsage().map(t => ({
-      tool: t.tool, label: t.label, plan: t.plan, limitLabel: t.limitLabel,
-      cycleLengthDays: t.cycleLengthDays, cycleResetDate: t.cycleResetDate,
-      usedPercent: Number(t.usedPercent) || 0, note: t.note
-    }))
-  };
-  const text = JSON.stringify(out, null, 2);
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(text).then(
-      () => alert('usage.json 내용을 클립보드에 복사했습니다. usage.json 파일에 붙여넣으세요.'),
-      () => window.prompt('usage.json에 붙여넣으세요:', text)
-    );
-  } else {
-    window.prompt('usage.json에 붙여넣으세요:', text);
-  }
-});
-document.getElementById('usage-reset').addEventListener('click', () => {
-  localStorage.removeItem('usageOverride');
-  renderUsagePanel();
-});
-renderUsagePanel();
-
-// --- 제안 / 코칭 패널 ---
-function renderSuggestions() {
-  const grid = document.getElementById('suggest-grid');
-  if (!grid) return;
-  const items = suggestionsData.items || [];
-  const meta = document.getElementById('suggest-meta');
-  if (meta) meta.textContent = items.length ? `· ${items.length}건 · ${suggestionsData.generatedAt || ''} 기준` : '';
-  grid.innerHTML = '';
-  if (!items.length) {
-    grid.innerHTML = '<div class="suggest-empty">제안이 없습니다. /coach 또는 /refresh로 분석을 생성하세요.</div>';
-    return;
-  }
-  const typeLabel = { coach: 'Coach', stall: 'Stall', idea: 'Idea' };
-  items.forEach(it => {
-    const sev = ['high', 'warn', 'info'].includes(it.severity) ? it.severity : 'info';
-    const proj = projects.find(p => p.name === it.repo);
-    const card = document.createElement('div');
-    card.className = 'suggest-card sev-' + sev;
-    card.innerHTML = `
-      <div class="suggest-head">
-        <span class="s-title"><span class="suggest-type">${typeLabel[it.type] || it.type || ''}</span>${it.title || ''}</span>
-        <span class="s-repo">${proj ? proj.displayName : (it.repo || '')}</span>
-      </div>
-      <div class="suggest-detail">${it.detail || ''}</div>
-      ${Array.isArray(it.actions) && it.actions.length ? `<ul class="suggest-actions">${it.actions.map(a => `<li>${a}</li>`).join('')}</ul>` : ''}`;
-    grid.appendChild(card);
-  });
-}
-renderSuggestions();
-
-// Charts — 테마 토큰을 읽어 생성하고, 테마 전환 시 재생성한다.
-Chart.defaults.font.family = '-apple-system, BlinkMacSystemFont, "Segoe UI", "Pretendard"';
-const active = projects.filter(p => p.status === 'active');
-const sortedForChart = active.slice().sort((a,b) => b.progress - a.progress);
-const tools = ['claude','codex','hermes','hybrid'];
-const toolNames = {claude: 'Claude', codex: 'Codex', hermes: 'Hermes', hybrid: 'Claude+Codex'};
-const toolColors = {claude: '#db6d28', codex: '#3fb950', hermes: '#bc8cff', hybrid: '#39c5cf'};
-const toolStats = tools.map(t => {
-  const arr = active.filter(p => p.tool === t);
+/* ── projects.json 구조 → 대시보드 데이터 매핑 ── */
+const TOOL_LABEL = { claude:'Claude', codex:'Codex', hermes:'Hermes Agent', hybrid:'Claude+Codex' };
+const TYPE_LABEL = { game:'게임', app:'앱', content:'콘텐츠' };
+function mapProject(p) {
+  const pr = p.progress || {};
   return {
-    tool: t,
-    count: arr.length,
-    avgProgress: arr.length ? Math.round(arr.reduce((s,p)=>s+p.progress,0) / arr.length) : 0
+    id: p.rank, nm: p.displayName || p.name, tool: TOOL_LABEL[p.tool] || p.tool || 'Claude',
+    type: TYPE_LABEL[p.category] || p.category || '앱', commits: p.commits || 0,
+    last: (p.lastUpdate || '').slice(0, 10),
+    sprint: p.sprint === 'defer' ? 'Defer' : (p.sprint || 'A'),
+    d: pr.docs || 0, sc: pr.skeleton || 0, fn: pr.features || 0, al: pr.alpha || 0,
+    eta: p.eta || '-', st: p.status === 'active' ? 'active' : 'suspended',
+    next: (p.nextActions && p.nextActions[0]) || '-', repo: p.name
   };
+}
+
+/* ── 데이터 (init에서 fetch 후 채움) ── */
+let P = [], SUG = { items: [] }, usageData = { tools: [] };
+
+const SPRINTS = {
+  'A':{lbl:'Sprint A',sub:'1-2주',c:'#6c5ce7'},
+  'B':{lbl:'Sprint B',sub:'2-3주',c:'#2545ff'},
+  'C':{lbl:'Sprint C',sub:'3-5주',c:'#ffc13a'},
+  'D':{lbl:'Sprint D',sub:'5-8주',c:'#ff5b22'},
+  'Defer':{lbl:'Defer',sub:'보류',c:'#aaa'}
+};
+const TCOLS = {'Claude':'#2545ff','Claude+Codex':'#ff5b22','Codex':'#0c1754','Hermes Agent':'#e0a500'};
+const TCLS  = {'Claude':'t-cl','Claude+Codex':'t-hy','Codex':'t-co','Hermes Agent':'t-he'};
+
+const pct = p => p.d + p.sc + p.fn + p.al;
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+
+/* ── STATE ── */
+let ST = { cat:'전체', tool:'전체', status:'활성', sort:'진척도', search:'', exp:new Set() };
+let spPos = {}, usage = {};
+try { spPos = JSON.parse(localStorage.getItem('sd')||'{}'); } catch(e){}
+try { usage = JSON.parse(localStorage.getItem('ud')||'{}'); } catch(e){}
+
+/* ── TOOLTIP ── */
+const tipEl = document.getElementById('tip');
+let tipOn = false;
+const showTip = (e,t) => { tipEl.textContent=t; tipEl.classList.add('on'); tipOn=true; mvTip(e); };
+const hideTip = () => { tipEl.classList.remove('on'); tipOn=false; };
+const mvTip   = e => { tipEl.style.left=(e.clientX+14)+'px'; tipEl.style.top=(e.clientY-40)+'px'; };
+document.addEventListener('mousemove', e => tipOn && mvTip(e));
+
+/* ── KPI (실데이터에서 계산) ── */
+function renderKPI() {
+  const active = P.filter(p=>p.st==='active');
+  const susp = P.length - active.length;
+  const avg  = active.length ? Math.round(active.reduce((s,p)=>s+pct(p),0)/active.length) : 0;
+  const near = active.filter(p=>pct(p)>=60).length;
+  const claude = active.filter(p=>p.tool==='Claude');
+  const codex  = active.filter(p=>p.tool==='Codex');
+  const kpis = [
+    {lbl:'활성 프로젝트',val:String(active.length),sub:(susp?'+'+susp+' 일시중단':'전부 진행 중'),acc:'#2545ff',tag:'전체 '+P.length+'개'},
+    {lbl:'Claude 작성',val:String(claude.length),sub:claude.map(p=>p.nm).join(' · ')||'-',acc:'#2545ff',tag:'Claude'},
+    {lbl:'Codex 작성',val:String(codex.length),sub:codex.map(p=>p.nm).join(' · ')||'-',acc:'#0c1754',tag:'Codex'},
+    {lbl:'평균 진척도',val:avg+'%',sub:'활성 프로젝트 기준',acc:'#ffc13a',tag:near+'개 ≥60%'},
+    {lbl:'완성 임박',val:String(near),sub:'2-3주 내 알파 가능',acc:'#ff5b22',tag:'우선 착수'}
+  ];
+  document.getElementById('kpiGrid').innerHTML = kpis.map(k=>`
+    <div class="kpi-card" style="--acc:${k.acc}">
+      <div class="kpi-lbl">${k.lbl}</div>
+      <div class="kpi-num">${k.val}</div>
+      <div class="kpi-sub">${k.sub}</div>
+      <div class="kpi-tag">${k.tag}</div>
+    </div>`).join('');
+}
+
+/* ── FILTERS ── */
+function renderFilters() {
+  const mk = (id,key,items) => {
+    document.getElementById(id).innerHTML = items.map(v=>
+      `<button class="chip${ST[key]===v?' on':''}" onclick="setF('${key}','${v.replace(/'/g,"\\'")}')">${v}</button>`
+    ).join('');
+  };
+  mk('fCat','cat',['전체','게임','앱','콘텐츠']);
+  mk('fTool','tool',['전체','Claude','Codex','Hermes Agent','Claude+Codex']);
+  mk('fStatus','status',['활성','전체']);
+  mk('fSort','sort',['진척도','커밋','최근 활동']);
+}
+window.setF = (k,v)=>{ ST[k]=v; renderFilters(); renderTable(); };
+
+/* ── FILTERED LIST ── */
+function getList() {
+  let ps = [...P];
+  if (ST.status==='활성') ps=ps.filter(p=>p.st==='active');
+  if (ST.cat!=='전체') ps=ps.filter(p=>p.type===ST.cat);
+  if (ST.tool!=='전체') ps=ps.filter(p=>p.tool===ST.tool);
+  if (ST.search) { const q=ST.search.toLowerCase(); ps=ps.filter(p=>p.nm.toLowerCase().includes(q)||p.tool.toLowerCase().includes(q)||p.type.includes(q)||(p.repo||'').toLowerCase().includes(q)); }
+  if (ST.sort==='진척도') ps.sort((a,b)=>pct(b)-pct(a));
+  else if (ST.sort==='커밋') ps.sort((a,b)=>b.commits-a.commits);
+  else ps.sort((a,b)=>(b.last||'').localeCompare(a.last||''));
+  return ps;
+}
+
+/* ── TABLE ── */
+function renderTable() {
+  const ps = getList();
+  if (!ps.length) { document.getElementById('tblBody').innerHTML='<div class="empty">검색 결과가 없습니다</div>'; return; }
+  document.getElementById('tblBody').innerHTML = ps.map((p,i)=>{
+    const tot = pct(p), ex = ST.exp.has(p.id), sp = spPos[p.id]||p.sprint;
+    const spcfg = SPRINTS[sp]||SPRINTS['A'];
+    return `
+    <div class="row-wrap">
+      <div class="tbl-row${ex?' exp':''}" onclick="togExp(${p.id})">
+        <span class="rank${i<3?' hi':''}">${i+1}</span>
+        <span class="pname">${p.nm}${p.st==='suspended'?'<span class="susp-tag">중단</span>':''}</span>
+        <span class="tbadge ${TCLS[p.tool]||'t-cl'}">${p.tool}</span>
+        <span class="typbg">${p.type}</span>
+        <div class="prog-wrap">
+          <div class="prog-top">
+            <span class="prog-pct">${tot}%</span>
+            <span class="sprint-lbl" style="color:${spcfg.c}">${sp==='Defer'?'Defer':'Sprint '+sp}</span>
+          </div>
+          <div class="stk-bar">
+            <div class="seg s1" style="width:${p.d}%"></div>
+            <div class="seg s2" style="width:${p.sc}%"></div>
+            <div class="seg s3" style="width:${p.fn}%"></div>
+            <div class="seg s4" style="width:${p.al}%"></div>
+          </div>
+        </div>
+        <div class="cm-val"><span class="cm-lbl">커밋</span>${p.commits}</div>
+        <span class="eta-val">${p.eta}</span>
+        <button class="exp-btn" onclick="event.stopPropagation();togExp(${p.id})">${ex?'▲':'▼'}</button>
+      </div>
+      <div class="exp-body${ex?' open':''}">
+        <div class="exp-inner">
+          <div>
+            <div class="brk-title">진척도 분해</div>
+            ${[['문서',p.d,25,'var(--s1)'],['골격',p.sc,25,'var(--s2)'],['기능',p.fn,30,'var(--s3)'],['알파',p.al,20,'var(--s4)']].map(([l,v,m,c])=>`
+            <div class="brk-row">
+              <span class="brk-lbl">${l}</span>
+              <div class="brk-track"><div class="brk-fill" style="width:${Math.round(v/m*100)}%;background:${c}"></div></div>
+              <span class="brk-score">${v}/${m}</span>
+            </div>`).join('')}
+          </div>
+          <div>
+            <div class="brk-title">다음 액션</div>
+            <div class="nxt-box"><div class="nxt-txt">${p.next}</div></div>
+            <div class="nxt-meta">최근: ${p.last||'-'} · <a href="https://github.com/sgeniusk/${p.repo}" target="_blank" rel="noopener" style="color:var(--electric)">${p.repo} ↗</a></div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  requestAnimationFrame(()=>{
+    document.querySelectorAll('.seg').forEach(el=>{
+      const w=el.style.width; el.style.width='0';
+      requestAnimationFrame(()=>requestAnimationFrame(()=>el.style.width=w));
+    });
+  });
+}
+window.togExp = id => { ST.exp.has(id)?ST.exp.delete(id):ST.exp.add(id); renderTable(); };
+
+/* ── 제안 / 코칭 ── */
+function renderSuggest() {
+  const items = (SUG && SUG.items) || [];
+  const meta = document.getElementById('sugMeta');
+  if (meta) meta.textContent = items.length ? ` · ${items.length}건 · ${SUG.generatedAt||''}` : '';
+  const grid = document.getElementById('sugGrid');
+  if (!items.length) { grid.innerHTML='<div class="sug-empty">제안이 없습니다. /coach 또는 /refresh로 분석을 생성하세요.</div>'; return; }
+  const TY = { coach:'Coach', stall:'Stall', idea:'Idea' };
+  grid.innerHTML = items.map(it=>{
+    const sev = ['high','warn','info'].includes(it.severity) ? it.severity : 'info';
+    const proj = P.find(p=>p.repo===it.repo);
+    return `<div class="sug-card sev-${sev}">
+      <div class="sug-top">
+        <span class="sug-type">${TY[it.type]||it.type||''}</span>
+        <span class="sug-repo">${proj?proj.nm:(it.repo||'')}</span>
+      </div>
+      <div class="sug-title">${it.title||''}</div>
+      <div class="sug-detail">${it.detail||''}</div>
+      ${Array.isArray(it.actions)&&it.actions.length?`<ul class="sug-actions">${it.actions.map(a=>`<li>${a}</li>`).join('')}</ul>`:''}
+    </div>`;
+  }).join('');
+}
+
+/* ── STACKED BAR CHART ── */
+function renderStacked() {
+  const el = document.getElementById('stackC');
+  const W = Math.max(el.parentElement.clientWidth - 44, 300);
+  const H = 268, pL=120, pR=26, pT=6, pB=28, cW=W-pL-pR, cH=H-pT-pB;
+  const ps = P.filter(p=>p.st==='active').sort((a,b)=>pct(b)-pct(a));
+  if (!ps.length) { el.innerHTML=''; return; }
+  const bH = Math.max(Math.floor(cH/ps.length*0.62), 8);
+  const gap = (cH - bH*ps.length)/Math.max(ps.length-1,1);
+  const COLS = ['#eaebf8','#d9d4ff','#ffc13a','#2545ff'];
+  const isDark = document.documentElement.getAttribute('data-theme')==='dark';
+  const COLS_D = ['#1d2445','#2b2265','#6a4e00','#1133ee'];
+  const cols = isDark ? COLS_D : COLS;
+  const textFill = isDark ? '#ece8ff' : '#171417';
+  const t2Fill   = isDark ? '#8890b8' : '#5a5a72';
+  const borderCl = isDark ? '#1c2550' : '#e6e6f0';
+
+  let s = '';
+  [0,25,50,75,100].forEach(v=>{
+    const x = pL+v/100*cW;
+    s += `<line x1="${x}" y1="${pT}" x2="${x}" y2="${pT+cH}" stroke="${borderCl}" stroke-width="1"/>`;
+    s += `<text x="${x}" y="${H-6}" text-anchor="middle" font-size="9" fill="${t2Fill}" font-family="Inter,sans-serif">${v}%</text>`;
+  });
+  const x60 = pL+0.6*cW;
+  s += `<line x1="${x60}" y1="${pT}" x2="${x60}" y2="${pT+cH}" stroke="#ff5b22" stroke-width="1.5" stroke-dasharray="4,3" opacity=".6"/>`;
+  s += `<text x="${x60+3}" y="${pT+10}" font-size="9" fill="#ff5b22" font-family="Inter,sans-serif" opacity=".8">60%</text>`;
+
+  ps.forEach((p,i)=>{
+    const y = pT+i*(bH+gap), tot=pct(p);
+    s += `<text x="${pL-8}" y="${y+bH/2+4}" text-anchor="end" font-size="11" font-weight="500" fill="${textFill}" font-family="Inter,sans-serif">${p.nm}</text>`;
+    let x=pL;
+    [p.d,p.sc,p.fn,p.al].forEach((v,j)=>{
+      const w=v/100*cW;
+      if(w>0) s += `<rect x="${x}" y="${y}" width="${w}" height="${bH}" fill="${cols[j]}" rx="2" style="cursor:pointer" onmouseenter="showTip(event,'${p.nm} ${['문서','골격','기능','알파'][j]}: ${v}점')" onmouseleave="hideTip()"/>`;
+      x+=w;
+    });
+    s += `<text x="${pL+tot/100*cW+5}" y="${y+bH/2+4}" font-size="10" fill="${t2Fill}" font-family="Inter,sans-serif">${tot}%</text>`;
+  });
+
+  el.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  el.innerHTML = s;
+  document.getElementById('stackLeg').innerHTML = ['문서','골격','기능','알파'].map((l,i)=>`<div class="leg-item"><div class="leg-dot" style="background:${COLS[i]}"></div>${l}</div>`).join('');
+}
+
+/* ── DONUT CHART ── */
+function renderDonut() {
+  const counts = {};
+  P.filter(p=>p.st==='active').forEach(p=>counts[p.tool]=(counts[p.tool]||0)+1);
+  const entries = Object.entries(counts).sort((a,b)=>b[1]-a[1]);
+  const total = entries.reduce((s,[,v])=>s+v,0);
+  if (!total) { document.getElementById('donutC').innerHTML=''; document.getElementById('donutLeg').innerHTML=''; return; }
+  const cx=100,cy=84,R=64,r=36;
+  let ang=-Math.PI/2, s='', leg='';
+  const isDark = document.documentElement.getAttribute('data-theme')==='dark';
+  const textFill = isDark ? '#ece8ff' : '#171417';
+  const t2Fill   = isDark ? '#8890b8' : '#5a5a72';
+
+  entries.forEach(([tool,cnt])=>{
+    const clr = TCOLS[tool]||'#999', a=cnt/total*Math.PI*2, ea=ang+a, lg=a>Math.PI?1:0;
+    const pt=(a,r)=>[cx+r*Math.cos(a),cy+r*Math.sin(a)];
+    const [x1,y1]=pt(ang,R),[x2,y2]=pt(ea,R),[xi1,yi1]=pt(ang,r),[xi2,yi2]=pt(ea,r);
+    s += `<path d="M${xi1},${yi1}L${x1},${y1}A${R},${R} 0 ${lg},1 ${x2},${y2}L${xi2},${yi2}A${r},${r} 0 ${lg},0 ${xi1},${yi1}Z" fill="${clr}" opacity=".88" style="cursor:pointer;transition:opacity .15s" onmouseenter="this.style.opacity=1;showTip(event,'${tool}: ${cnt}개 (${Math.round(cnt/total*100)}%)')" onmouseleave="this.style.opacity=.88;hideTip()"/>`;
+    leg += `<div class="leg-item"><div class="leg-dot" style="background:${clr}"></div>${tool}: ${cnt}</div>`;
+    ang=ea;
+  });
+  s += `<text x="${cx}" y="${cy-4}" text-anchor="middle" font-size="22" font-weight="700" fill="${textFill}" font-family="Inter,sans-serif">${total}</text>`;
+  s += `<text x="${cx}" y="${cy+14}" text-anchor="middle" font-size="10" fill="${t2Fill}" font-family="Inter,sans-serif">활성 프로젝트</text>`;
+  document.getElementById('donutC').innerHTML = s;
+  document.getElementById('donutLeg').innerHTML = leg;
+}
+
+/* ── SCATTER CHART ── */
+function renderScatter() {
+  const el = document.getElementById('scatterC');
+  const W = Math.max(el.parentElement.clientWidth - 44, 200);
+  const H=268,pL=36,pR=16,pT=18,pB=30;
+  const ps=P.filter(p=>p.st==='active');
+  if (!ps.length) { el.innerHTML=''; document.getElementById('scatterLeg').innerHTML=''; return; }
+  const maxC=Math.max(...ps.map(p=>p.commits),1);
+  const isDark=document.documentElement.getAttribute('data-theme')==='dark';
+  const textFill=isDark?'#ece8ff':'#171417', t2Fill=isDark?'#8890b8':'#5a5a72', borderCl=isDark?'#1c2550':'#e6e6f0';
+  let s='';
+
+  s+=`<line x1="${pL}" y1="${pT}" x2="${pL}" y2="${H-pB}" stroke="${borderCl}" stroke-width="1"/>`;
+  s+=`<line x1="${pL}" y1="${H-pB}" x2="${W-pR}" y2="${H-pB}" stroke="${borderCl}" stroke-width="1"/>`;
+  [0,25,50,75,100].forEach(v=>{
+    const x=pL+v/100*(W-pL-pR);
+    s+=`<line x1="${x}" y1="${pT}" x2="${x}" y2="${H-pB}" stroke="${borderCl}" stroke-width="1" stroke-dasharray="3,3"/>`;
+    s+=`<text x="${x}" y="${H-10}" text-anchor="middle" font-size="9" fill="${t2Fill}" font-family="Inter,sans-serif">${v}</text>`;
+  });
+  s+=`<text x="${pL-4}" y="${pT+6}" text-anchor="end" font-size="9" fill="${t2Fill}" font-family="Inter,sans-serif">커밋</text>`;
+  s+=`<text x="${W-pR}" y="${H-10}" text-anchor="end" font-size="9" fill="${t2Fill}" font-family="Inter,sans-serif">진척도</text>`;
+
+  const x60=pL+0.6*(W-pL-pR);
+  s+=`<line x1="${x60}" y1="${pT}" x2="${x60}" y2="${H-pB}" stroke="#ff5b22" stroke-width="1.5" stroke-dasharray="4,3" opacity=".5"/>`;
+
+  ps.forEach(p=>{
+    const tot=pct(p),cx2=pL+tot/100*(W-pL-pR),cy2=pT+(1-p.commits/maxC)*(H-pT-pB);
+    const clr=TCOLS[p.tool]||'#999', nm=p.nm.length>9?p.nm.slice(0,8)+'…':p.nm;
+    s+=`<circle cx="${cx2}" cy="${cy2}" r="7" fill="${clr}" opacity=".85" style="cursor:pointer;transition:r .15s" onmouseenter="this.setAttribute('r','9');showTip(event,'${p.nm} | 진척도: ${tot}% | 커밋: ${p.commits}')" onmouseleave="this.setAttribute('r','7');hideTip()"/>`;
+    s+=`<text x="${cx2}" y="${cy2-11}" text-anchor="middle" font-size="9" fill="${textFill}" font-family="Inter,sans-serif">${nm}</text>`;
+  });
+
+  el.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  el.innerHTML=s;
+  const tools=[...new Set(ps.map(p=>p.tool))];
+  document.getElementById('scatterLeg').innerHTML=tools.map(t=>`<div class="leg-item"><div class="leg-dot" style="background:${TCOLS[t]};border-radius:50%"></div>${t}</div>`).join('');
+}
+
+/* ── SPRINT BOARD ── */
+function renderSprint() {
+  document.getElementById('sprintBoard').innerHTML = Object.entries(SPRINTS).map(([key,cfg])=>{
+    const cards=P.filter(p=>(spPos[p.id]||p.sprint)===key);
+    return `<div class="spcol" id="col-${key}" ondragover="dragO(event,'${key}')" ondrop="dropC(event,'${key}')" ondragleave="dragL(event)">
+      <div class="sph" style="color:${cfg.c}">${cfg.lbl}<span class="spcnt">${cfg.sub}</span></div>
+      ${cards.map(p=>`
+      <div class="spcard" draggable="true" id="sc-${p.id}" ondragstart="dStart(event,${p.id})" ondragend="dEnd(event)">
+        <div class="spcard-nm">${p.nm}</div>
+        <div class="spcard-meta">
+          <span class="tbadge ${TCLS[p.tool]||'t-cl'}" style="font-size:9px;padding:2px 7px">${p.tool}</span>
+          <span class="spcard-pct">${pct(p)}%</span>
+        </div>
+      </div>`).join('')}
+    </div>`;
+  }).join('');
+}
+
+let dragId=null;
+window.dStart=(e,id)=>{ dragId=id; setTimeout(()=>document.getElementById('sc-'+id)?.classList.add('dragging'),0); e.dataTransfer.effectAllowed='move'; };
+window.dEnd=e=>{ document.querySelectorAll('.spcard').forEach(c=>c.classList.remove('dragging')); document.querySelectorAll('.spcol').forEach(c=>c.classList.remove('dov')); };
+window.dragO=(e,k)=>{ e.preventDefault(); e.currentTarget.classList.add('dov'); };
+window.dragL=e=>e.currentTarget.classList.remove('dov');
+window.dropC=(e,k)=>{ e.preventDefault(); if(dragId!==null){ spPos[dragId]=k; localStorage.setItem('sd',JSON.stringify(spPos)); renderSprint(); renderTable(); } dragId=null; };
+window.resetSprint=()=>{ P.forEach(p=>spPos[p.id]=p.sprint); localStorage.setItem('sd',JSON.stringify(spPos)); renderSprint(); renderTable(); };
+
+/* ── USAGE TRACKER ── */
+function renderUsage() {
+  const tools=[{key:'claude',nm:'Claude',clr:'#2545ff'},{key:'codex',nm:'Codex',clr:'#0c1754'}];
+  document.getElementById('usageGrid').innerHTML = tools.map(t=>{
+    const u=usage[t.key]||{pct:0,reset:''}, up=+(u.pct||0);
+    const fillClr=up>=90?'#ff5b22':up>=70?'#ffc13a':t.clr;
+    let dday='리셋일 미입력', ddayCls='';
+    if(u.reset){ const d=Math.ceil((new Date(u.reset)-new Date())/86400000); dday=d>0?`D-${d}`:`D+${Math.abs(d)} 초과`; ddayCls=d<=3?'danger':d<=7?'warn':''; }
+    return `<div class="usage-card">
+      <div class="usage-hd">
+        <span class="usage-nm" style="color:${t.clr}">${t.nm}</span>
+        <span class="dday ${ddayCls}">${dday}</span>
+      </div>
+      <div class="usage-big">${up}%</div>
+      <div class="usage-status">${up>=90?'⚠️ 한도 임박 — 사용 자제':up>=70?'⚡ 주의 필요 — 속도 조절 권장':'✓ 정상 범위'}</div>
+      <div class="meter"><div class="meter-fill" style="width:${up}%;background:${fillClr}"></div></div>
+      <div class="inp-row">
+        <div class="inp-grp">
+          <label class="inp-lbl">사용률 (%)</label>
+          <input type="number" class="inp" min="0" max="100" value="${up}" oninput="updUsage('${t.key}','pct',+this.value)">
+        </div>
+        <div class="inp-grp">
+          <label class="inp-lbl">리셋일</label>
+          <input type="date" class="inp" value="${u.reset||''}" oninput="updUsage('${t.key}','reset',this.value)">
+        </div>
+      </div>
+      <button class="btn-ghost" onclick="exportUsage('${t.key}')">JSON 내보내기</button>
+    </div>`;
+  }).join('');
+}
+window.updUsage=(tk,f,v)=>{ if(!usage[tk])usage[tk]={}; usage[tk][f]=v; localStorage.setItem('ud',JSON.stringify(usage)); renderUsage(); };
+window.exportUsage=tk=>{ const b=new Blob([JSON.stringify({[tk]:usage[tk]},null,2)],{type:'application/json'}); Object.assign(document.createElement('a'),{href:URL.createObjectURL(b),download:`usage-${tk}.json`}).click(); };
+
+/* ── THEME (localStorage 영속) ── */
+document.getElementById('themeBtn').addEventListener('click',()=>{
+  const d=document.documentElement, dark=d.getAttribute('data-theme')==='dark';
+  const next=dark?'light':'dark';
+  d.setAttribute('data-theme',next);
+  localStorage.setItem('theme',next);
+  document.getElementById('themeBtn').textContent=dark?'🌙':'☀️';
+  setTimeout(()=>{ renderStacked(); renderDonut(); renderScatter(); },80);
 });
 
-let chartInstances = [];
-function buildCharts() {
-  chartInstances.forEach(c => c.destroy());
-  chartInstances = [];
-  const css = getComputedStyle(document.documentElement);
-  Chart.defaults.color = css.getPropertyValue('--muted').trim();
-  Chart.defaults.borderColor = css.getPropertyValue('--border').trim();
-  const lineColor = css.getPropertyValue('--text').trim();
+/* ── SEARCH ── */
+document.getElementById('sInput').addEventListener('input',e=>{ ST.search=e.target.value; renderTable(); });
 
-  chartInstances.push(new Chart(document.getElementById('stacked-chart'), {
-    type: 'bar',
-    data: {
-      labels: sortedForChart.map(p => p.displayName),
-      datasets: [
-        { label: '문서', data: sortedForChart.map(p => p.breakdown.docs), backgroundColor: '#3fb950' },
-        { label: '골격', data: sortedForChart.map(p => p.breakdown.skeleton), backgroundColor: '#58a6ff' },
-        { label: '기능', data: sortedForChart.map(p => p.breakdown.features), backgroundColor: '#d29922' },
-        { label: '알파', data: sortedForChart.map(p => p.breakdown.alpha), backgroundColor: '#bc8cff' }
-      ]
-    },
-    options: {
-      indexAxis: 'y', responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { position: 'bottom' }, tooltip: { mode: 'index' } },
-      scales: { x: { stacked: true, beginAtZero: true, max: 100, ticks: { callback: v => v + '%' } }, y: { stacked: true } }
-    }
-  }));
-
-  chartInstances.push(new Chart(document.getElementById('tool-chart'), {
-    type: 'bar',
-    data: {
-      labels: toolStats.map(s => toolNames[s.tool]),
-      datasets: [
-        { label: '프로젝트 수', data: toolStats.map(s => s.count), backgroundColor: toolStats.map(s => toolColors[s.tool]), yAxisID: 'y' },
-        { label: '평균 진척도 %', data: toolStats.map(s => s.avgProgress), type: 'line', borderColor: lineColor, backgroundColor: 'transparent', pointRadius: 5, yAxisID: 'y1' }
-      ]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { position: 'bottom' } },
-      scales: {
-        y: { type: 'linear', position: 'left', beginAtZero: true, title: { display: true, text: '프로젝트 수' } },
-        y1: { type: 'linear', position: 'right', beginAtZero: true, max: 100, title: { display: true, text: '평균 진척 %' }, grid: { drawOnChartArea: false } }
-      }
-    }
-  }));
-
-  chartInstances.push(new Chart(document.getElementById('scatter-chart'), {
-    type: 'scatter',
-    data: {
-      datasets: tools.map(t => ({
-        label: toolNames[t],
-        data: active.filter(p => p.tool === t).map(p => ({x: p.progress, y: p.commits, label: p.displayName})),
-        backgroundColor: toolColors[t],
-        pointRadius: 8,
-        pointHoverRadius: 11
-      }))
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: {
-        legend: { position: 'top' },
-        tooltip: { callbacks: { label: ctx => `${ctx.raw.label}: 진척 ${ctx.raw.x}%, 커밋 ${ctx.raw.y}` } }
-      },
-      scales: {
-        x: { title: { display: true, text: '진척도 (%)' }, beginAtZero: true, max: 100 },
-        y: { title: { display: true, text: '커밋 수' }, beginAtZero: true }
-      }
-    }
-  }));
+/* ── 데이터 로드 + INIT ── */
+async function loadJSON(path,fb){
+  try{ const r=await fetch(path,{cache:'no-store'}); if(!r.ok) throw new Error('HTTP '+r.status); return await r.json(); }
+  catch(e){ console.warn('['+path+'] fetch 실패 — 내장 폴백 사용:',e.message); return fb; }
 }
-window.__rebuildCharts = buildCharts;
-buildCharts();
+async function init() {
+  document.getElementById('themeBtn').textContent =
+    document.documentElement.getAttribute('data-theme')==='dark' ? '☀️' : '🌙';
+
+  const [pj,sj,uj] = await Promise.all([
+    loadJSON('./projects.json',FALLBACK_PROJECTS),
+    loadJSON('./suggestions.json',FALLBACK_SUGGESTIONS),
+    loadJSON('./usage.json',FALLBACK_USAGE)
+  ]);
+  P = (pj.projects||[]).map(mapProject);
+  SUG = sj || { items:[] };
+  usageData = uj || { tools:[] };
+
+  // 스프린트 보드 카드 위치 시드 (localStorage가 비어 있을 때만)
+  if (!Object.keys(spPos).length) P.forEach(p=>spPos[p.id]=p.sprint);
+  // 사용량 기준값 시드 (사용자 입력이 없을 때만)
+  (usageData.tools||[]).forEach(t=>{ if(!usage[t.tool]) usage[t.tool]={pct:t.usedPercent||0,reset:t.cycleResetDate||''}; });
+
+  renderKPI(); renderFilters(); renderTable(); renderSuggest(); renderSprint(); renderUsage();
+  setTimeout(()=>{ renderStacked(); renderDonut(); renderScatter(); }, 200);
+  let rt; window.addEventListener('resize',()=>{ clearTimeout(rt); rt=setTimeout(()=>{ renderStacked(); renderScatter(); },200); });
 }
 
-// 부트스트랩 — projects.json 로드 후 대시보드를 초기화한다.
-(async () => {
-  const { data, source, error } = await loadProjects();
-  projects = data;
-  if (source === 'fallback') {
-    console.warn('projects.json fetch 실패 — 내장 폴백 데이터 사용:', error && error.message);
-  }
-  showDataSourceNotice(source, error);
-  usageData = await loadUsage();
-  suggestionsData = await loadSuggestions();
-  init();
-})();
+if (document.readyState==='complete' || document.readyState==='interactive') { init(); }
+else { window.addEventListener('DOMContentLoaded', init); }
 </script>
-</body>
-</html>
+
+
+</body></html>
