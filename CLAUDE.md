@@ -23,6 +23,7 @@ github-priority-dashboard/
 ├── projects.schema.md   # projects.json 필드 스키마 + 변경 규칙
 ├── suggestions.json     # /coach·/refresh가 생성하는 제안·코칭 데이터
 ├── usage.json           # Codex/Claude 사용량 트래커 기준값
+├── projects/{repo}/     # 프로젝트별 표준 문서 — project.json·prd.md·roadmap.md·log.md
 ├── scripts/
 │   └── refresh-progress.mjs   # GitHub 활동 수집 스크립트 (Node 20 내장 fetch)
 ├── .claude/commands/    # 프로젝트 슬래시 커맨드 (refresh, coach, new-project)
@@ -52,6 +53,7 @@ github-priority-dashboard/
 - **`/coach`** — 각 프로젝트의 막힌 단계·속도·정체를 분석해 `suggestions.json`에 제안을 기록한다. 인자로 프로젝트 이름을 주면 해당 프로젝트만 분석.
 - **`/weekly-report`** — `projects.json`을 읽어 주간 진척 요약(하이라이트·Sprint 현황·주의 신호·다음 주 우선)을 마크다운으로 산출한다.
 - **`/new-project`** — 새 게임/앱/웹 아이디어를 대화로 구상하고, 결정되면 하네스 엔지니어링을 고려한 첫 프롬프트를 작성한다.
+- **`/sync-project`** — 플랫폼별 산재한 plan/PRD/로드맵을 읽어 `projects/{repo}/`의 표준 구조(`project.json`·`prd.md`·`roadmap.md`·`log.md`)로 정규화한다.
 
 ### 데이터 흐름
 
@@ -106,6 +108,7 @@ github-priority-dashboard/
 - **정체 점검·코칭** — `/coach`
 - **주간 진척 요약** — `/weekly-report`
 - **새 프로젝트 시작** — `/new-project`
+- **프로젝트 문서 표준화** — `/sync-project {repo}`
 - **신규 프로젝트 등록** — `projects.json`에 객체 추가 → `rank` 재정렬 → `dashboard.html`의 `FALLBACK_PROJECTS` 폴백도 동기화 (`/refresh`가 처리)
 - **도구 태그 변경** — 사용자 확인 후에만, `tool-attribution.md`에 사유 기록
 

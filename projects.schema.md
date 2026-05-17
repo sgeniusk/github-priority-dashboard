@@ -45,3 +45,33 @@
 ## 변경 금지 항목 요약
 
 `tool`·`status`·`progress` 점수는 사용자 확인 없이 바꾸지 않는다. 자동 갱신 대상은 `commits`·`lastUpdate`·`firstCommit`·`daysActive`·`meta.asOf` 다섯이다.
+
+## projects/{repo}/ — 프로젝트별 문서 표준 (v1.2+)
+
+`projects.json`은 가벼운 인덱스고, 프로젝트별 상세 문서는 `projects/{repo}/` 폴더에 둔다. `{repo}`는 `projects.json`의 `name`과 동일하다.
+
+| 파일 | 내용 |
+| --- | --- |
+| `project.json` | `repo`·`displayName`·`currentVersion`·`synced`·`versions[]` |
+| `prd.md` | `## 개요` / `## 기술 스택` / `## 핵심 기능` / `## 리스크` |
+| `roadmap.md` | 버전별 `##` 섹션 (완료/진행 중/예정 + 마일스톤) |
+| `log.md` | 작업 로그 (최신 항목이 위) |
+
+### project.json — versions[]
+
+각 버전 객체.
+
+| 필드 | 타입 | 설명 |
+| --- | --- | --- |
+| `id` | string | 버전 식별자 (`foundation`/`alpha`/`release` 등) |
+| `label` | string | 표시 이름 (`기반`/`알파`/`v1.0 정식`) |
+| `status` | string | `done` / `inProgress` / `planned` |
+| `target` | string | 목표 시점 (선택) |
+| `summary` | string | 버전 요약 |
+| `milestones` | string[] | 마일스톤 목록 |
+
+`currentVersion`은 현재 `inProgress`인 버전의 `id`. `synced`는 `/sync-project`로 실제 문서가 반영됐으면 `true`, 스캐폴드 상태면 `false`.
+
+### 갱신 방법
+
+`/sync-project {repo}` — 플랫폼별 산재한 plan/PRD/로드맵을 읽어 위 4개 파일을 정규화한다. `project.json`을 직접 손대기보다 커맨드를 쓴다.

@@ -1,0 +1,39 @@
+{
+  "repo": "samguk-idle-prototype",
+  "displayName": "전지적 군주 시점",
+  "synced": false,
+  "currentVersion": "alpha",
+  "versions": [
+    {
+      "id": "foundation",
+      "label": "기반",
+      "status": "done",
+      "target": "",
+      "summary": "PRD·문서·실행 골격·검증 하네스 구성",
+      "milestones": [
+        "PRD/스펙 작성",
+        "실행 골격 + 검증 하네스"
+      ]
+    },
+    {
+      "id": "alpha",
+      "label": "알파",
+      "status": "inProgress",
+      "target": "2-3주",
+      "summary": "현재 기준선 v0.15.0-alpha. 알파 하네스 npm run harness:alpha 운영 중. Vercel 자동 배포 후보 URL까지 준비됨. CHANGELOG 체계도 정착.",
+      "milestones": [
+        "v0.16-alpha 게이트 통과",
+        "Vercel 정식 도메인 연결",
+        "20분/24시간 세션 합성 플레이테스트"
+      ]
+    },
+    {
+      "id": "release",
+      "label": "v1.0 정식",
+      "status": "planned",
+      "target": "",
+      "summary": "알파 검증 완료 후 정식 출시",
+      "milestones": []
+    }
+  ]
+}

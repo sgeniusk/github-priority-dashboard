@@ -1,0 +1,39 @@
+{
+  "repo": "story-x-alpha",
+  "displayName": "Story X",
+  "synced": false,
+  "currentVersion": "foundation",
+  "versions": [
+    {
+      "id": "foundation",
+      "label": "기반",
+      "status": "inProgress",
+      "target": "",
+      "summary": "PRD·문서·실행 골격·검증 하네스 구성",
+      "milestones": [
+        "PRD/스펙 작성",
+        "실행 골격 + 검증 하네스"
+      ]
+    },
+    {
+      "id": "alpha",
+      "label": "알파",
+      "status": "planned",
+      "target": "5-7주",
+      "summary": "Project blueprint, creative development engine, story engine (시리즈 바이블, 캐논 레저), App.tsx UI까지 코드 골격 진행. 다양한 매체(소설/에세이/오디오북/만화/뮤직비디오/교육영상) 지원이 ",
+      "milestones": [
+        "1개 매체(웹툰 or 단편 만화) 깊이 우선 완성",
+        "장편 연재 메모리 앵커 테스트",
+        "에이전트 출력 골든 케이스 정착"
+      ]
+    },
+    {
+      "id": "release",
+      "label": "v1.0 정식",
+      "status": "planned",
+      "target": "",
+      "summary": "알파 검증 완료 후 정식 출시",
+      "milestones": []
+    }
+  ]
+}
