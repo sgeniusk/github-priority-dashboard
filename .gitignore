@@ -7,3 +7,4 @@
 # Claude Code 로컬 데이터 — 프로젝트 슬래시 커맨드만 추적
 .claude/*
 !.claude/commands/
+.playwright-mcp/
