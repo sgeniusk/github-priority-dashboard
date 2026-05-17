@@ -1221,7 +1221,12 @@ function renderUsage() {
     const u=usage[t.key]||{pct:0,reset:''}, up=+(u.pct||0);
     const fillClr=up>=90?'#ff5b22':up>=70?'#ffc13a':t.clr;
     let dday='리셋일 미입력', ddayCls='';
-    if(u.reset){ const d=Math.ceil((new Date(u.reset)-new Date())/86400000); dday=d>0?`D-${d}`:`D+${Math.abs(d)} 초과`; ddayCls=d<=3?'danger':d<=7?'warn':''; }
+    if(u.reset){
+      const n=new Date(), nd=new Date(n.getFullYear(),n.getMonth(),n.getDate());
+      const d=Math.round((new Date(u.reset+'T00:00:00')-nd)/86400000);
+      dday=d>0?`D-${d}`:d===0?'오늘 리셋':`D+${Math.abs(d)} 초과`;
+      ddayCls=d===0?'':d<0?'danger':d<=3?'danger':d<=7?'warn':'';
+    }
     return `<div class="usage-card">
       <div class="usage-hd">
         <span class="usage-nm" style="color:${t.clr}">${t.nm}</span>
@@ -1240,10 +1245,19 @@ function renderUsage() {
           <input type="date" class="inp" value="${u.reset||''}" oninput="updUsage('${t.key}','reset',this.value)">
         </div>
       </div>
+      <button class="btn-ghost" onclick="resetToday('${t.key}')">오늘 리셋</button>
     </div>`;
   }).join('');
 }
 window.updUsage=(tk,f,v)=>{ if(!usage[tk])usage[tk]={}; usage[tk][f]=v; localStorage.setItem('ud',JSON.stringify(usage)); renderUsage(); };
+// '오늘 리셋' — 리셋 기준일을 오늘(로컬 날짜)로, 사용률을 0%로
+window.resetToday=tk=>{
+  const d=new Date();
+  const today=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+  usage[tk]={pct:0,reset:today};
+  localStorage.setItem('ud',JSON.stringify(usage));
+  renderUsage();
+};
 // usage.json 전체를 — 기준값(usageData)에 사용자 입력(usage)을 머지해 — 클립보드로 내보낸다
 window.exportUsageAll = () => {
   const tools = (usageData.tools || []).map(t => {
