@@ -274,6 +274,33 @@ section[data-tab]{display:none}
 section[data-tab].tab-on{display:block;animation:fadein .24s ease}
 @keyframes fadein{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
 .nav-link.on,.nav-link.on:hover{background:var(--electric);color:#fff}
+
+/* ── LIQUID GLASS (부분 적용) ── */
+:root{--glass:rgba(20,28,48,.66)}
+:root[data-theme="light"]{--glass:rgba(255,255,255,.72)}
+body{
+  background:
+    radial-gradient(640px circle at 10% -2%, rgba(37,69,255,.08), transparent 58%),
+    radial-gradient(560px circle at 94% 6%, rgba(217,212,255,.55), transparent 56%),
+    radial-gradient(720px circle at 82% 102%, rgba(255,193,58,.07), transparent 60%),
+    var(--bg);
+}
+[data-theme="dark"] body{
+  background:
+    radial-gradient(640px circle at 10% -2%, rgba(37,69,255,.22), transparent 56%),
+    radial-gradient(560px circle at 94% 6%, rgba(120,90,255,.16), transparent 56%),
+    radial-gradient(720px circle at 82% 102%, rgba(255,193,58,.07), transparent 60%),
+    var(--bg);
+}
+/* 블러는 헤더·모달에만 (성능) — 카드는 반투명 배경만으로 리퀴드 느낌 */
+header,.modal-box{
+  background:var(--glass);
+  -webkit-backdrop-filter:blur(18px) saturate(1.6);
+  backdrop-filter:blur(18px) saturate(1.6);
+}
+.card,.kpi-card,.chart-card,.usage-card{background:var(--glass)}
+.kpi-card,.card,.chart-card,.usage-card{box-shadow:inset 0 1px 0 rgba(255,255,255,.4), var(--shadow)}
+.modal-overlay{-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
 .tbl-row:focus-visible{outline-offset:-2px}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
