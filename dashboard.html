@@ -52,6 +52,8 @@ main{max-width:1460px;margin:0 auto;padding:28px 28px 64px}
 section{margin-bottom:48px}
 .sec-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--t2);margin-bottom:14px;display:flex;align-items:center;gap:12px}
 .sec-label span{flex:1;height:1px;background:var(--border)}
+.info-i{background:var(--cool-gray);color:var(--navy);border:none;border-radius:50%;width:16px;height:16px;font-size:10px;font-weight:700;cursor:pointer;font-family:var(--font);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;padding:0;line-height:1;text-transform:none;letter-spacing:0}
+.info-i:hover{background:var(--electric);color:#fff}
 
 /* ── KPI GRID ── */
 .kpi-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
@@ -375,7 +377,7 @@ header,.modal-box{
 
   <!-- Blueprint -->
   <section id="sec-blueprint" data-tab="blueprint">
-    <div class="sec-label">청사진 — 프로젝트 마스터 보드 <em id="bpMeta" style="font-style:normal;font-weight:600;letter-spacing:0;text-transform:none"></em><span></span></div>
+    <div class="sec-label">청사진 — 프로젝트 마스터 보드 <button class="info-i" onclick="openGlossary('마스터 보드')" aria-label="용어 설명">i</button><em id="bpMeta" style="font-style:normal;font-weight:600;letter-spacing:0;text-transform:none"></em><span></span></div>
     <div class="card">
       <p class="hint">진척도 높은 순으로 전 프로젝트를 한눈에. 각 카드의 문서 버튼으로 PRD·로드맵·로그를 볼 수 있어.</p>
       <div id="blueprintBody"></div>
@@ -430,13 +432,13 @@ header,.modal-box{
 
   <!-- Suggestions -->
   <section id="sec-suggest" data-tab="suggest">
-    <div class="sec-label">제안 / 코칭 <em id="sugMeta" style="font-style:normal;font-weight:600;letter-spacing:0;text-transform:none"></em><span></span></div>
+    <div class="sec-label">제안 / 코칭 <button class="info-i" onclick="openGlossary('제안/코칭')" aria-label="용어 설명">i</button><em id="sugMeta" style="font-style:normal;font-weight:600;letter-spacing:0;text-transform:none"></em><span></span></div>
     <div class="sug-grid" id="sugGrid"></div>
   </section>
 
   <!-- Charts -->
   <section id="sec-charts" data-tab="charts">
-    <div class="sec-label">진척도 분석 <span></span></div>
+    <div class="sec-label">진척도 분석 <button class="info-i" onclick="openGlossary('진척도')" aria-label="용어 설명">i</button><span></span></div>
     <div class="charts-grid">
       <div class="chart-card">
         <div class="chart-title">구성 분해 — 스택드 바</div>
@@ -463,7 +465,7 @@ header,.modal-box{
   <!-- Sprint Board -->
   <section id="sec-sprint" data-tab="sprint">
     <div class="sec-label" style="justify-content:space-between;align-items:center;display:flex;margin-bottom:14px">
-      <span style="display:flex;align-items:center;gap:12px">스케줄 시퀀스 <span style="flex:1;width:80px;height:1px;background:var(--border);display:inline-block"></span></span>
+      <span style="display:flex;align-items:center;gap:8px">스케줄 시퀀스 <button class="info-i" onclick="openGlossary('스프린트')" aria-label="용어 설명">i</button><span style="flex:1;width:60px;height:1px;background:var(--border);display:inline-block"></span></span>
       <span style="display:flex;align-items:center;gap:8px">
         <em id="spDrift" style="font-style:normal;font-weight:600;color:var(--orange);font-size:11px"></em>
         <button class="btn-ghost" style="margin:0;padding:5px 14px;font-size:11px" onclick="exportSprint()">Sprint 변경 내보내기</button>
@@ -487,6 +489,17 @@ header,.modal-box{
 </footer>
 
 <div id="tip"></div>
+
+<!-- 용어 설명 글로서리 모달 -->
+<div class="modal-overlay" id="glossaryModal" onclick="if(event.target===this)closeGlossary()">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-label="용어 설명" style="max-width:440px">
+    <div class="modal-hd">
+      <span class="modal-title" id="glossaryTitle">용어</span>
+      <button class="modal-x" onclick="closeGlossary()" aria-label="닫기">✕</button>
+    </div>
+    <div id="glossaryBody" style="font-size:13px;line-height:1.65;color:var(--text)"></div>
+  </div>
+</div>
 
 <!-- 프로젝트 문서 열람 모달 -->
 <div class="modal-overlay" id="docModal" onclick="if(event.target===this)closeDocs()">
@@ -1536,7 +1549,22 @@ document.getElementById('refreshBtn').addEventListener('click',doRefresh);
 /* ── 진척도 측정 기준 도움말 모달 ── */
 window.openHelp=()=>document.getElementById('helpModal').classList.add('on');
 window.closeHelp=()=>document.getElementById('helpModal').classList.remove('on');
-document.addEventListener('keydown',e=>{ if(e.key==='Escape'){closeHelp();closeDocs();} });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'){closeHelp();closeDocs();closeGlossary();} });
+
+/* ── 용어 설명 글로서리 ── */
+const GLOSSARY = {
+  '스프린트': '<b>스프린트</b>는 docs/sprint-plan.md의 4-6주 추천 스케줄 단위입니다. Sprint A·B·C·D는 각각 1-2주·2-3주·3-5주·5-8주 구간이고, 한 구간에 프로젝트 2개씩 묶어 동반 마감합니다. Defer는 후순위(보류). 애자일의 "스프린트"(고정 작업 기간)에서 온 용어입니다.',
+  '진척도': '진척도 = 문서(0-20) + 골격(0-30) + 기능(0-30) + 알파(0-20) = 0-100점. 골격은 하네스 엔지니어링·서브에이전트 구성 완성도를 봅니다. 순위 탭 범례의 "측정 기준" 버튼에서 단계별 채점 기준을 볼 수 있습니다.',
+  '제안/코칭': '/coach·/refresh 커맨드나 헤더의 ↻ 버튼이 생성하는 분석입니다. 정체된 프로젝트, 막힌 단계, 다음 액션을 자동 진단합니다. STALL=정체 경고, COACH=일반 코칭.',
+  '마스터 보드': '추적 중인 전 프로젝트를 진척도 높은 순으로 한눈에 보는 카드 그리드입니다. 각 카드의 "문서" 버튼으로 PRD·로드맵·로그를 엽니다.',
+  '정체': '마지막 GitHub 활동이 4-5일 이상 없는 상태입니다. 진행 중인 프로젝트가 정체되면 일정 지연 신호이며, 같은 스프린트의 동반 프로젝트에도 영향을 줍니다.'
+};
+window.openGlossary = (term)=>{
+  document.getElementById('glossaryTitle').textContent = term;
+  document.getElementById('glossaryBody').innerHTML = GLOSSARY[term] || '설명이 아직 없습니다.';
+  document.getElementById('glossaryModal').classList.add('on');
+};
+window.closeGlossary = ()=>document.getElementById('glossaryModal').classList.remove('on');
 
 /* ── 탭 전환 (파일철 레이아웃) ── */
 function showTab(name){
