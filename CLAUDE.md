@@ -23,6 +23,8 @@ github-priority-dashboard/
 ├── projects.schema.md   # projects.json 필드 스키마 + 변경 규칙
 ├── suggestions.json     # /coach·/refresh가 생성하는 제안·코칭 데이터
 ├── usage.json           # Codex/Claude 사용량 트래커 기준값
+├── blueprint.json       # 10개 project.json 집계본 — 청사진 뷰가 읽음
+├── history.json         # 진척도 스냅샷 히스토리 — refresh 시 날짜별 upsert
 ├── projects/{repo}/     # 프로젝트별 표준 문서 — project.json·prd.md·roadmap.md·log.md
 ├── scripts/
 │   └── refresh-progress.mjs   # GitHub 활동 수집 스크립트 (Node 20 내장 fetch)

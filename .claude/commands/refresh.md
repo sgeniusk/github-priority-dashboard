@@ -10,7 +10,7 @@ description: GitHub 활동을 가져와 projects.json을 갱신하고 제안을 
 
 1. **갱신 미리보기** — `node scripts/refresh-progress.mjs --dry-run`을 실행해 `lastUpdate`/`commits`/`meta.asOf` 변경 diff를 사용자에게 보여준다.
 2. **승인 확인** — 변경 사항이 있으면 사용자에게 적용 여부를 묻는다. 변경이 없으면 그대로 종료.
-3. **적용** — 승인되면 `node scripts/refresh-progress.mjs`(플래그 없이)를 실행해 `projects.json`을 저장한다.
+3. **적용** — 승인되면 `node scripts/refresh-progress.mjs`(플래그 없이)를 실행해 `projects.json`을 저장한다. 스크립트가 `history.json`에 그날의 진척도 스냅샷도 자동 upsert한다 (대시보드 추세 차트용).
 4. **FALLBACK 동기화** — `dashboard.html`의 `const FALLBACK_PROJECTS` / `FALLBACK_SUGGESTIONS` / `FALLBACK_USAGE`를 각각 `projects.json` / `suggestions.json` / `usage.json` 파일 내용 verbatim으로 다시 맞춘다. (대시보드는 fetch를 우선 쓰고, 실패 시에만 이 폴백을 쓴다.)
 5. **제안 재생성** — `/coach`의 분석 절차를 그대로 수행해 `suggestions.json`을 갱신한다.
 6. **커밋** — `projects.json`, `dashboard.html`, `suggestions.json` 변경을 한 커밋으로 묶는다. 메시지 예: `Refresh GitHub data + regenerate suggestions — <오늘 날짜>`.

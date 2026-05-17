@@ -7,6 +7,7 @@
 // 인증 — GH_TOKEN 환경변수가 있으면 사용, 없으면 `gh auth token` 셸 호출.
 // 자동 갱신 대상: lastUpdate, commits, firstCommit, daysActive, meta.asOf.
 // tool/status/breakdown 등 다른 필드는 절대 건드리지 않는다.
+// 실행 시 history.json에 그날의 진척도 스냅샷도 upsert한다 (--dry-run 시 제외).
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { execSync } from 'node:child_process';
@@ -15,6 +16,7 @@ import { dirname, join } from 'node:path';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const JSON_PATH = join(ROOT, 'projects.json');
+const HISTORY_PATH = join(ROOT, 'history.json');
 const DRY_RUN = process.argv.includes('--dry-run');
 
 function getToken() {
@@ -70,6 +72,30 @@ async function fetchFirstCommit(owner, name, totalCommits) {
   return date ? date.slice(0, 10) : null;
 }
 
+// 오늘 스냅샷을 history.json에 upsert한다 (같은 날짜면 교체, 최근 90개 유지).
+function upsertHistory(data) {
+  let hist;
+  try { hist = JSON.parse(readFileSync(HISTORY_PATH, 'utf8')); }
+  catch { hist = { _comment: '진척도 스냅샷 히스토리.', snapshots: [] }; }
+  if (!Array.isArray(hist.snapshots)) hist.snapshots = [];
+  const active = data.projects.filter((p) => p.status === 'active');
+  const projMap = {};
+  data.projects.forEach((p) => { projMap[p.name] = { total: p.progress.total, commits: p.commits || 0 }; });
+  const snap = {
+    date: data.meta.asOf,
+    avgProgress: active.length ? Math.round(active.reduce((s, p) => s + p.progress.total, 0) / active.length) : 0,
+    totalCommits: data.projects.reduce((s, p) => s + (p.commits || 0), 0),
+    active: active.length,
+    projects: projMap,
+  };
+  const i = hist.snapshots.findIndex((s) => s.date === snap.date);
+  if (i >= 0) hist.snapshots[i] = snap; else hist.snapshots.push(snap);
+  hist.snapshots.sort((a, b) => a.date.localeCompare(b.date));
+  if (hist.snapshots.length > 90) hist.snapshots = hist.snapshots.slice(-90);
+  writeFileSync(HISTORY_PATH, JSON.stringify(hist, null, 2) + '\n');
+  return `history.json 스냅샷 upsert — ${snap.date} (avg ${snap.avgProgress}%, 총 커밋 ${snap.totalCommits}), 스냅샷 ${hist.snapshots.length}개.`;
+}
+
 async function main() {
   const data = JSON.parse(readFileSync(JSON_PATH, 'utf8'));
   const owner = data.meta.owner;
@@ -115,16 +141,20 @@ async function main() {
 
   if (changes.length === 0) {
     console.log('변경 사항 없음 — projects.json이 이미 최신입니다.');
+  } else {
+    console.log(`${DRY_RUN ? '[dry-run] ' : ''}변경 사항 ${changes.length}건:`);
+    console.log(changes.join('\n'));
+  }
+
+  if (DRY_RUN) {
+    console.log('[dry-run] projects.json·history.json은 저장하지 않습니다.');
     return;
   }
-
-  console.log(`${DRY_RUN ? '[dry-run] ' : ''}변경 사항 ${changes.length}건:`);
-  console.log(changes.join('\n'));
-
-  if (!DRY_RUN) {
+  if (changes.length > 0) {
     writeFileSync(JSON_PATH, JSON.stringify(data, null, 2) + '\n');
-    console.log(`\nprojects.json 저장 완료.`);
+    console.log('\nprojects.json 저장 완료.');
   }
+  console.log(upsertHistory(data));
 }
 
 main().catch((err) => {
