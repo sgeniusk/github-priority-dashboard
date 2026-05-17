@@ -54,7 +54,7 @@ github-priority-dashboard/
 
 ### 데이터 흐름
 
-`dashboard.html`은 `fetch`로 `projects.json`·`suggestions.json`·`usage.json`을 로드하고, 실패하면(예: `file://`) 각 파일의 내장 `FALLBACK_*` 사본을 쓴다. 따라서 **`projects.json`을 갱신하면 `dashboard.html`의 `FALLBACK_PROJECTS` 블록도 같이 동기화**해야 한다 (`/refresh`가 자동 처리).
+`dashboard.html`은 `fetch`로 `projects.json`·`suggestions.json`·`usage.json`을 로드하고, 실패하면(예: `file://`) 각 파일의 내장 `FALLBACK_PROJECTS`/`FALLBACK_SUGGESTIONS`/`FALLBACK_USAGE` 사본을 쓴다. 세 폴백 상수는 각 JSON 파일의 verbatim 복사본이므로, **JSON을 갱신하면 `dashboard.html`의 해당 폴백 상수도 같이 동기화**해야 한다 (`/refresh`가 자동 처리). `mapProject()`가 `projects.json` 구조를 뷰가 기대하는 형태로 변환한다.
 
 ## 핵심 규약
 
@@ -104,7 +104,7 @@ github-priority-dashboard/
 - **진척도·활동 갱신** — `/refresh` (또는 `node scripts/refresh-progress.mjs`)
 - **정체 점검·코칭** — `/coach`
 - **새 프로젝트 시작** — `/new-project`
-- **신규 프로젝트 등록** — `projects.json`에 객체 추가 → `rank` 재정렬 → `dashboard.html`의 `FALLBACK_PROJECTS`도 동기화 (`/refresh`가 처리)
+- **신규 프로젝트 등록** — `projects.json`에 객체 추가 → `rank` 재정렬 → `dashboard.html`의 `FALLBACK_PROJECTS` 폴백도 동기화 (`/refresh`가 처리)
 - **도구 태그 변경** — 사용자 확인 후에만, `tool-attribution.md`에 사유 기록
 
 ## 절대 하지 말 것
