@@ -207,6 +207,21 @@ footer{border-top:1px solid var(--border);padding:18px 28px;max-width:1460px;mar
 :focus-visible{outline:2px solid var(--electric);outline-offset:2px;border-radius:4px}
 @keyframes spin{to{transform:rotate(360deg)}}
 .icon-btn.spin{animation:spin .6s linear infinite;pointer-events:none}
+
+/* ── HELP MODAL ── */
+.help-link{background:none;border:none;color:var(--electric);font-size:11px;font-weight:600;cursor:pointer;font-family:var(--font);padding:2px 4px;text-decoration:underline;text-underline-offset:2px}
+.modal-overlay{position:fixed;inset:0;background:rgba(12,23,84,.5);display:none;align-items:center;justify-content:center;z-index:9999;padding:24px}
+.modal-overlay.on{display:flex}
+.modal-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);max-width:560px;width:100%;max-height:84vh;overflow-y:auto;padding:24px}
+.modal-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.modal-title{font-size:17px;font-weight:700}
+.modal-x{background:none;border:none;font-size:16px;cursor:pointer;color:var(--t2);font-family:var(--font);padding:4px;line-height:1}
+.modal-x:hover{color:var(--text)}
+.modal-intro{font-size:12px;color:var(--t2);line-height:1.6;margin-bottom:16px}
+.help-stage{margin-bottom:14px}
+.help-stage-hd{font-size:13px;font-weight:700;display:flex;align-items:center;gap:7px;margin-bottom:6px}
+.help-stage ul{list-style:none;display:flex;flex-direction:column;gap:3px;padding-left:17px}
+.help-stage li{font-size:12px;color:var(--t2);line-height:1.45}
 .tbl-row:focus-visible{outline-offset:-2px}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
@@ -313,6 +328,7 @@ footer{border-top:1px solid var(--border);padding:18px 28px;max-width:1460px;mar
       <div class="leg-item"><div class="leg-dot" style="background:var(--s2)"></div>골격 하네스·서브에이전트 (0-30)</div>
       <div class="leg-item"><div class="leg-dot" style="background:var(--s3)"></div>핵심 기능 (0-30)</div>
       <div class="leg-item"><div class="leg-dot" style="background:var(--s4)"></div>알파·폴리시 (0-20)</div>
+      <button class="help-link" onclick="openHelp()" aria-label="진척도 측정 기준 보기">측정 기준 ⓘ</button>
     </div>
   </section>
 
@@ -371,6 +387,25 @@ footer{border-top:1px solid var(--border);padding:18px 28px;max-width:1460px;mar
 </footer>
 
 <div id="tip"></div>
+
+<!-- 진척도 측정 기준 도움말 모달 -->
+<div class="modal-overlay" id="helpModal" onclick="if(event.target===this)closeHelp()">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-label="진척도 측정 기준">
+    <div class="modal-hd">
+      <span class="modal-title">진척도 측정 기준</span>
+      <button class="modal-x" onclick="closeHelp()" aria-label="닫기">✕</button>
+    </div>
+    <p class="modal-intro">진척도 = 문서(0-20) + 골격(0-30) + 기능(0-30) + 알파(0-20) = 0-100. 각 단계는 검증 가능한 신호(GitHub release·TestFlight·플레이테스트 보고서 등)에 근거해 매긴다.</p>
+    <div class="help-stage"><div class="help-stage-hd"><span class="leg-dot" style="background:var(--s1)"></span>문서 (0-20) — PRD·스펙·ADR 문서화</div>
+      <ul><li>0-4 README 한두 줄</li><li>5-9 README에 컨셉+실행법+구조</li><li>10-15 PRD 또는 Spec 1개 + 컨셉 문서</li><li>16-20 PRD+ADR+로드맵+운영규약 등 다층 문서</li></ul></div>
+    <div class="help-stage"><div class="help-stage-hd"><span class="leg-dot" style="background:var(--s2)"></span>골격 (0-30) — 하네스 엔지니어링 + 서브에이전트 구성</div>
+      <ul><li>0-6 실행 골격만, 하네스·에이전트 구성 없음</li><li>7-14 빌드 골격+디렉토리 구조, 하네스 초기</li><li>15-22 검증 하네스(check.sh/CI) 동작 + 서브에이전트 역할 분담</li><li>23-30 하네스+서브에이전트+자동 리뷰/플레이테스트 프로토콜 정착</li></ul></div>
+    <div class="help-stage"><div class="help-stage-hd"><span class="leg-dot" style="background:var(--s3)"></span>기능 (0-30) — PRD 핵심 기능 동작 비율</div>
+      <ul><li>0-5 거의 미구현, 랜딩/데모만</li><li>6-12 핵심 1-2개 mock 동작</li><li>13-19 PRD 절반 실데이터 동작</li><li>20-25 PRD 80% 동작</li><li>26-30 PRD 100% + 폴리시</li></ul></div>
+    <div class="help-stage"><div class="help-stage-hd"><span class="leg-dot" style="background:var(--s4)"></span>알파 (0-20) — 검증·사용자 테스트·폴리시</div>
+      <ul><li>0-2 내부 검증 미실시</li><li>3-7 합성 플레이테스트 또는 셀프 QA</li><li>8-13 알파 사용자 N=5+ 보고서</li><li>14-18 알파 N=10+ 종합 보고서</li><li>19-20 클로즈드 베타 진입 가능</li></ul></div>
+  </div>
+</div>
 
 <script>
 /* ── FALLBACK 데이터 (fetch 실패 시 — file:// 등에서 사용) ── */
@@ -1349,6 +1384,11 @@ async function doRefresh(){
   }
 }
 document.getElementById('refreshBtn').addEventListener('click',doRefresh);
+
+/* ── 진척도 측정 기준 도움말 모달 ── */
+window.openHelp=()=>document.getElementById('helpModal').classList.add('on');
+window.closeHelp=()=>document.getElementById('helpModal').classList.remove('on');
+document.addEventListener('keydown',e=>{ if(e.key==='Escape')closeHelp(); });
 
 /* ── nav 앵커 점프 — sticky 헤더 높이만큼 오프셋해서 섹션 제목이 가려지지 않게 ── */
 document.querySelectorAll('header .nav-link[href^="#"]').forEach(a=>{
