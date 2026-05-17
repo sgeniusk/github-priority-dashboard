@@ -147,6 +147,10 @@ section{margin-bottom:48px}
 /* ── USAGE ── */
 .usage-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .usage-card{background:var(--surface);border-radius:var(--r);border:1px solid var(--border);padding:24px;box-shadow:var(--shadow)}
+.usage-del{background:none;border:none;color:var(--t2);cursor:pointer;font-size:11px;margin-left:7px;font-family:var(--font);padding:0}
+.usage-del:hover{color:var(--orange)}
+.usage-add{background:none;border:1.5px dashed var(--border-gray);border-radius:var(--r);color:var(--t2);cursor:pointer;font-size:13px;font-weight:600;font-family:var(--font);min-height:130px;transition:border-color .15s,color .15s}
+.usage-add:hover{border-color:var(--electric);color:var(--electric)}
 .usage-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
 .usage-nm{font-size:16px;font-weight:700}
 .dday{background:var(--cool-gray);color:var(--navy);border-radius:var(--rp);padding:4px 14px;font-size:12px;font-weight:700}
@@ -356,7 +360,7 @@ header,.modal-box{
     <button class="nav-link" data-tab="suggest" onclick="showTab('suggest')">제안</button>
     <button class="nav-link" data-tab="charts" onclick="showTab('charts')">분석</button>
     <button class="nav-link" data-tab="sprint" onclick="showTab('sprint')">스프린트</button>
-    <button class="nav-link" data-tab="usage" onclick="showTab('usage')">사용량</button>
+    <button class="nav-link" data-tab="usage" onclick="showTab('usage')">사용량 및 설정</button>
   </nav>
   <button class="icon-btn" id="refreshBtn" title="새로고침 + 분석" aria-label="데이터 새로고침 및 분석">↻</button>
   <button class="icon-btn" id="themeBtn" title="테마 전환" aria-label="라이트/다크 테마 전환">🌙</button>
@@ -471,7 +475,7 @@ header,.modal-box{
 
   <!-- Usage -->
   <section id="sec-usage" data-tab="usage">
-    <div class="sec-label">사용량 트래커 <span></span><button class="btn-ghost" style="margin:0;padding:5px 14px;font-size:11px" onclick="exportUsageAll()">usage.json 내보내기</button></div>
+    <div class="sec-label">사용량 및 설정 <span></span><button class="btn-ghost" style="margin:0;padding:5px 14px;font-size:11px" onclick="exportUsageAll()">usage.json 내보내기</button></div>
     <div class="usage-grid" id="usageGrid"></div>
   </section>
 
@@ -1369,62 +1373,87 @@ window.dropC=(e,k)=>{ e.preventDefault(); if(dragId!==null){ spPos[dragId]=k; lo
 window.resetSprint=()=>{ P.forEach(p=>spPos[p.id]=p.sprint); localStorage.setItem('sd',JSON.stringify(spPos)); renderSprint(); renderTable(); };
 
 /* ── USAGE TRACKER ── */
-function renderUsage() {
-  const tools=[{key:'claude',nm:'Claude',clr:'#2545ff'},{key:'codex',nm:'Codex',clr:'#0c1754'}];
-  document.getElementById('usageGrid').innerHTML = tools.map(t=>{
-    const u=usage[t.key]||{pct:0,reset:''}, up=+(u.pct||0);
-    const fillClr=up>=90?'#ff5b22':up>=70?'#ffc13a':t.clr;
-    let dday='리셋일 미입력', ddayCls='';
-    if(u.reset){
-      const n=new Date(), nd=new Date(n.getFullYear(),n.getMonth(),n.getDate());
-      const d=Math.round((new Date(u.reset+'T00:00:00')-nd)/86400000);
-      dday=d>0?`D-${d}`:d===0?'오늘 리셋':`D+${Math.abs(d)} 초과`;
-      ddayCls=d===0?'':d<0?'danger':d<=3?'danger':d<=7?'warn':'';
-    }
-    return `<div class="usage-card">
-      <div class="usage-hd">
-        <span class="usage-nm" style="color:${t.clr}">${t.nm}</span>
-        <span class="dday ${ddayCls}">${dday}</span>
-      </div>
-      <div class="usage-big">${up}%</div>
-      <div class="usage-status">${up>=90?'⚠️ 한도 임박 — 사용 자제':up>=70?'⚡ 주의 필요 — 속도 조절 권장':'✓ 정상 범위'}</div>
-      <div class="meter"><div class="meter-fill" style="width:${up}%;background:${fillClr}"></div></div>
-      <div class="inp-row">
-        <div class="inp-grp">
-          <label class="inp-lbl">사용률 (%)</label>
-          <input type="number" class="inp" min="0" max="100" value="${up}" oninput="updUsage('${t.key}','pct',+this.value)">
-        </div>
-        <div class="inp-grp">
-          <label class="inp-lbl">리셋일</label>
-          <input type="date" class="inp" value="${u.reset||''}" oninput="updUsage('${t.key}','reset',this.value)">
-        </div>
-      </div>
-      <button class="btn-ghost" onclick="resetToday('${t.key}')">오늘 리셋</button>
-    </div>`;
-  }).join('');
+// 내장(Claude·Codex) + 사용자 추가 서비스 목록
+function usageServices(){
+  const builtin=[{key:'claude',nm:'Claude',clr:'#2545ff',builtin:true},{key:'codex',nm:'Codex',clr:'#0c1754',builtin:true}];
+  let custom=[]; try{ custom=JSON.parse(localStorage.getItem('usageCustom')||'[]'); }catch(e){}
+  return builtin.concat(custom.map(c=>({key:c.key,nm:c.label,clr:c.clr||'#6a6a72',builtin:false})));
+}
+function todayStr(){ const d=new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+function usageCard(t){
+  const u=usage[t.key]||{}, up=+(u.pct||0);
+  const fillClr=up>=90?'#ff5b22':up>=70?'#ffc13a':t.clr;
+  let dday='리셋일 미입력', ddayCls='';
+  if(u.reset){
+    const n=new Date(), nd=new Date(n.getFullYear(),n.getMonth(),n.getDate());
+    const d=Math.round((new Date(u.reset+'T00:00:00')-nd)/86400000);
+    dday=d>0?`D-${d}`:d===0?'오늘 리셋':`D+${Math.abs(d)} 초과`;
+    ddayCls=d===0?'':d<0?'danger':d<=3?'danger':d<=7?'warn':'';
+  }
+  let subInfo='';
+  if(u.subscribed){
+    const n=new Date(), nd=new Date(n.getFullYear(),n.getMonth(),n.getDate());
+    const days=Math.round((nd-new Date(u.subscribed+'T00:00:00'))/86400000);
+    if(days>=0) subInfo=`구독 ${days}일째`;
+  }
+  return `<div class="usage-card">
+    <div class="usage-hd">
+      <span class="usage-nm" style="color:${t.clr}">${t.nm}${t.builtin?'':`<button class="usage-del" onclick="delUsageService('${t.key}')" aria-label="삭제">✕</button>`}</span>
+      <span class="dday ${ddayCls}">${dday}</span>
+    </div>
+    <div class="usage-big">${up}%</div>
+    <div class="usage-status">${subInfo||(up>=90?'⚠️ 한도 임박 — 사용 자제':up>=70?'⚡ 주의 필요 — 속도 조절 권장':'✓ 정상 범위')}</div>
+    <div class="meter"><div class="meter-fill" style="width:${up}%;background:${fillClr}"></div></div>
+    <div class="inp-row">
+      <div class="inp-grp"><label class="inp-lbl">사용률 (%)</label><input type="number" class="inp" min="0" max="100" value="${up}" oninput="updUsage('${t.key}','pct',+this.value)"></div>
+      <div class="inp-grp"><label class="inp-lbl">리셋일</label><input type="date" class="inp" value="${u.reset||''}" oninput="updUsage('${t.key}','reset',this.value)"></div>
+    </div>
+    <div class="inp-grp" style="margin-top:10px"><label class="inp-lbl">구독 시작일</label><input type="date" class="inp" value="${u.subscribed||''}" oninput="updUsage('${t.key}','subscribed',this.value)"></div>
+    <button class="btn-ghost" onclick="resetToday('${t.key}')">오늘 리셋</button>
+  </div>`;
+}
+function renderUsage(){
+  document.getElementById('usageGrid').innerHTML =
+    usageServices().map(usageCard).join('') +
+    `<button class="usage-add" onclick="addUsageService()">+ AI 서비스 추가</button>`;
 }
 window.updUsage=(tk,f,v)=>{ if(!usage[tk])usage[tk]={}; usage[tk][f]=v; localStorage.setItem('ud',JSON.stringify(usage)); renderUsage(); };
-// '오늘 리셋' — 리셋 기준일을 오늘(로컬 날짜)로, 사용률을 0%로
+// '오늘 리셋' — 리셋 기준일을 오늘로, 사용률 0%로 (구독 시작일은 보존)
 window.resetToday=tk=>{
-  const d=new Date();
-  const today=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
-  usage[tk]={pct:0,reset:today};
+  usage[tk]=Object.assign({}, usage[tk], {pct:0, reset:todayStr()});
   localStorage.setItem('ud',JSON.stringify(usage));
+  renderUsage();
+};
+window.addUsageService=()=>{
+  const name=(window.prompt('추가할 AI 서비스 이름 (예: Gemini, Cursor)')||'').trim();
+  if(!name) return;
+  let custom=[]; try{ custom=JSON.parse(localStorage.getItem('usageCustom')||'[]'); }catch(e){}
+  custom.push({ key:'svc-'+Date.now().toString(36), label:name, clr:'#6a6a72' });
+  localStorage.setItem('usageCustom', JSON.stringify(custom));
+  renderUsage();
+};
+window.delUsageService=(key)=>{
+  if(!window.confirm('이 서비스 카드를 삭제할까요?')) return;
+  let custom=[]; try{ custom=JSON.parse(localStorage.getItem('usageCustom')||'[]'); }catch(e){}
+  localStorage.setItem('usageCustom', JSON.stringify(custom.filter(c=>c.key!==key)));
+  delete usage[key]; localStorage.setItem('ud',JSON.stringify(usage));
   renderUsage();
 };
 // usage.json 전체를 — 기준값(usageData)에 사용자 입력(usage)을 머지해 — 클립보드로 내보낸다
 window.exportUsageAll = () => {
-  const tools = (usageData.tools || []).map(t => {
-    const ov = usage[t.tool] || {};
+  const baseMap = {}; (usageData.tools || []).forEach(t => { baseMap[t.tool] = t; });
+  const tools = usageServices().map(s => {
+    const b = baseMap[s.key] || {}, ov = usage[s.key] || {};
     return {
-      tool: t.tool, label: t.label, plan: t.plan, limitLabel: t.limitLabel,
-      cycleLengthDays: t.cycleLengthDays,
-      cycleResetDate: (ov.reset != null && ov.reset !== '') ? ov.reset : t.cycleResetDate,
-      usedPercent: ov.pct != null ? Number(ov.pct) : (t.usedPercent || 0),
-      note: t.note
+      tool: s.key, label: b.label || s.nm, plan: b.plan || '', limitLabel: b.limitLabel || '',
+      cycleLengthDays: b.cycleLengthDays != null ? b.cycleLengthDays : null,
+      cycleResetDate: (ov.reset != null && ov.reset !== '') ? ov.reset : (b.cycleResetDate || ''),
+      usedPercent: ov.pct != null ? Number(ov.pct) : (b.usedPercent || 0),
+      subscribedAt: ov.subscribed || b.subscribedAt || '',
+      note: b.note || ''
     };
   });
-  const out = { _comment: usageData._comment || '도구별 사용량 수동 트래커.', asOf: new Date().toISOString().slice(0,10), tools };
+  const out = { _comment: usageData._comment || '도구별 사용량 수동 트래커.', asOf: todayStr(), tools };
   const text = JSON.stringify(out, null, 2);
   const msg = 'usage.json 전체 내용을 클립보드에 복사했습니다.\nusage.json 파일에 붙여넣으세요.';
   if (navigator.clipboard && navigator.clipboard.writeText)
