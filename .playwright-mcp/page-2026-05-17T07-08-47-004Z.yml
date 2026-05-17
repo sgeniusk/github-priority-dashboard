@@ -1,0 +1,62 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "sgeniusk" [ref=e3] [cursor=pointer]:
+      - /url: "#"
+      - img [ref=e5]
+      - generic [ref=e10]: sgeniusk
+    - generic [ref=e11]: 프로젝트 우선순위 대시보드
+    - generic [ref=e12]: v1.1 · 2026-05-16
+    - tablist [ref=e13]:
+      - button "청사진" [ref=e14] [cursor=pointer]
+      - button "순위" [ref=e15] [cursor=pointer]
+      - button "제안" [ref=e16] [cursor=pointer]
+      - button "분석" [ref=e17] [cursor=pointer]
+      - button "스프린트" [ref=e18] [cursor=pointer]
+      - button "사용량 및 설정" [ref=e19] [cursor=pointer]
+    - button "데이터 새로고침 및 분석" [ref=e20] [cursor=pointer]: ↻
+    - button "라이트/다크 테마 전환" [ref=e21] [cursor=pointer]: ☀️
+  - main [ref=e22]:
+    - text: → → → → → → →
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - text: 사용량 및 설정
+        - button "usage.json 내보내기" [ref=e26] [cursor=pointer]
+      - generic [ref=e27]:
+        - generic [ref=e28]:
+          - generic [ref=e29]:
+            - generic [ref=e30]: Claude
+            - generic [ref=e31]: D-2
+          - generic [ref=e32]: 0%
+          - generic [ref=e33]: ✓ 정상 범위
+          - generic [ref=e35]:
+            - generic [ref=e36]:
+              - generic [ref=e37]: 사용률 (%)
+              - spinbutton [ref=e38]: "0"
+            - generic [ref=e39]:
+              - generic [ref=e40]: 리셋일
+              - textbox [ref=e41]: 2026-05-19
+          - generic [ref=e42]:
+            - generic [ref=e43]: 구독 시작일
+            - textbox [ref=e44]
+          - button "오늘 리셋" [ref=e45] [cursor=pointer]
+        - generic [ref=e46]:
+          - generic [ref=e47]:
+            - generic [ref=e48]: Codex
+            - generic [ref=e49]: D-15
+          - generic [ref=e50]: 0%
+          - generic [ref=e51]: ✓ 정상 범위
+          - generic [ref=e53]:
+            - generic [ref=e54]:
+              - generic [ref=e55]: 사용률 (%)
+              - spinbutton [ref=e56]: "0"
+            - generic [ref=e57]:
+              - generic [ref=e58]: 리셋일
+              - textbox [ref=e59]: 2026-06-01
+          - generic [ref=e60]:
+            - generic [ref=e61]: 구독 시작일
+            - textbox [ref=e62]
+          - button "오늘 리셋" [ref=e63] [cursor=pointer]
+        - button "+ AI 서비스 추가" [ref=e64] [cursor=pointer]
+  - contentinfo [ref=e65]:
+    - generic [ref=e66]: "데이터 출처: GitHub README/PRD · Contributors Insights API · commits.atom · 진척도 = 문서(0-20) + 골격(0-30) + 기능(0-30) + 알파(0-20)"
+    - button "데이터 초기화" [ref=e67] [cursor=pointer]

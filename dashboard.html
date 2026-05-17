@@ -3,6 +3,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>sgeniusk 프로젝트 우선순위 대시보드</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -356,13 +357,13 @@ header,.modal-box{
   <span class="hbadge">프로젝트 우선순위 대시보드</span>
   <span class="hbadge" style="background:rgba(255,193,58,.18);color:#7a4d00">v1.1 · 2026-05-16</span>
   <div class="spacer"></div>
-  <nav class="nav-links" role="tablist">
-    <button class="nav-link" data-tab="blueprint" onclick="showTab('blueprint')">청사진</button>
-    <button class="nav-link" data-tab="table" onclick="showTab('table')">순위</button>
-    <button class="nav-link" data-tab="suggest" onclick="showTab('suggest')">제안</button>
-    <button class="nav-link" data-tab="charts" onclick="showTab('charts')">분석</button>
-    <button class="nav-link" data-tab="sprint" onclick="showTab('sprint')">스프린트</button>
-    <button class="nav-link" data-tab="usage" onclick="showTab('usage')">사용량 및 설정</button>
+  <nav class="nav-links" role="tablist" aria-label="대시보드 탭">
+    <button class="nav-link" role="tab" aria-selected="false" data-tab="blueprint" onclick="showTab('blueprint')">청사진</button>
+    <button class="nav-link" role="tab" aria-selected="false" data-tab="table" onclick="showTab('table')">순위</button>
+    <button class="nav-link" role="tab" aria-selected="false" data-tab="suggest" onclick="showTab('suggest')">제안</button>
+    <button class="nav-link" role="tab" aria-selected="false" data-tab="charts" onclick="showTab('charts')">분석</button>
+    <button class="nav-link" role="tab" aria-selected="false" data-tab="sprint" onclick="showTab('sprint')">스프린트</button>
+    <button class="nav-link" role="tab" aria-selected="false" data-tab="usage" onclick="showTab('usage')">사용량 및 설정</button>
   </nav>
   <button class="icon-btn" id="refreshBtn" title="새로고침 + 분석" aria-label="데이터 새로고침 및 분석">↻</button>
   <button class="icon-btn" id="themeBtn" title="테마 전환" aria-label="라이트/다크 테마 전환">🌙</button>
@@ -465,7 +466,7 @@ header,.modal-box{
   <!-- Sprint Board -->
   <section id="sec-sprint" data-tab="sprint">
     <div class="sec-label" style="justify-content:space-between;align-items:center;display:flex;margin-bottom:14px">
-      <span style="display:flex;align-items:center;gap:8px">스케줄 시퀀스 <button class="info-i" onclick="openGlossary('스프린트')" aria-label="용어 설명">i</button><span style="flex:1;width:60px;height:1px;background:var(--border);display:inline-block"></span></span>
+      <span style="display:flex;align-items:center;gap:8px">스프린트 보드 <button class="info-i" onclick="openGlossary('스프린트')" aria-label="용어 설명">i</button><span style="flex:1;width:60px;height:1px;background:var(--border);display:inline-block"></span></span>
       <span style="display:flex;align-items:center;gap:8px">
         <em id="spDrift" style="font-style:normal;font-weight:600;color:var(--orange);font-size:11px"></em>
         <button class="btn-ghost" style="margin:0;padding:5px 14px;font-size:11px" onclick="exportSprint()">Sprint 변경 내보내기</button>
@@ -1547,8 +1548,20 @@ async function doRefresh(){
 document.getElementById('refreshBtn').addEventListener('click',doRefresh);
 
 /* ── 진척도 측정 기준 도움말 모달 ── */
-window.openHelp=()=>document.getElementById('helpModal').classList.add('on');
-window.closeHelp=()=>document.getElementById('helpModal').classList.remove('on');
+// 모달 포커스 관리 — 열 때 닫기 버튼으로 포커스 이동, 닫을 때 원위치 복원
+let _modalReturnFocus=null;
+function openModal(id){
+  _modalReturnFocus=document.activeElement;
+  const m=document.getElementById(id);
+  m.classList.add('on');
+  const x=m.querySelector('.modal-x'); if(x) x.focus();
+}
+function closeModal(id){
+  document.getElementById(id).classList.remove('on');
+  if(_modalReturnFocus&&_modalReturnFocus.focus){ try{_modalReturnFocus.focus();}catch(e){} _modalReturnFocus=null; }
+}
+window.openHelp=()=>openModal('helpModal');
+window.closeHelp=()=>closeModal('helpModal');
 document.addEventListener('keydown',e=>{ if(e.key==='Escape'){closeHelp();closeDocs();closeGlossary();} });
 
 /* ── 용어 설명 글로서리 ── */
@@ -1562,9 +1575,9 @@ const GLOSSARY = {
 window.openGlossary = (term)=>{
   document.getElementById('glossaryTitle').textContent = term;
   document.getElementById('glossaryBody').innerHTML = GLOSSARY[term] || '설명이 아직 없습니다.';
-  document.getElementById('glossaryModal').classList.add('on');
+  openModal('glossaryModal');
 };
-window.closeGlossary = ()=>document.getElementById('glossaryModal').classList.remove('on');
+window.closeGlossary = ()=>closeModal('glossaryModal');
 
 /* ── 탭 전환 (파일철 레이아웃) ── */
 function showTab(name){
@@ -1572,7 +1585,10 @@ function showTab(name){
     s.classList.toggle('tab-on', s.dataset.tab===name);
   });
   document.querySelectorAll('.nav-link[data-tab]').forEach(b=>{
-    b.classList.toggle('on', b.dataset.tab===name);
+    const on = b.dataset.tab===name;
+    b.classList.toggle('on', on);
+    b.setAttribute('aria-selected', on ? 'true' : 'false');
+    b.tabIndex = on ? 0 : -1;
   });
   try { localStorage.setItem('tab', name); } catch(e){}
   window.scrollTo(0,0);
@@ -1580,6 +1596,17 @@ function showTab(name){
   if(name==='charts'){ renderStacked(); renderDonut(); renderScatter(); renderTrend(); }
 }
 window.showTab = showTab;
+// 탭 화살표 키 내비게이션 (tablist 표준)
+document.querySelector('.nav-links').addEventListener('keydown', e=>{
+  if(e.key!=='ArrowLeft' && e.key!=='ArrowRight') return;
+  const tabs=[...document.querySelectorAll('.nav-link[data-tab]')];
+  const i=tabs.indexOf(document.activeElement);
+  if(i<0) return;
+  e.preventDefault();
+  const next=tabs[(i + (e.key==='ArrowRight'?1:-1) + tabs.length) % tabs.length];
+  showTab(next.dataset.tab);
+  next.focus();
+});
 
 /* ── nav 앵커 점프 — sticky 헤더 높이만큼 오프셋해서 섹션 제목이 가려지지 않게 ── */
 document.querySelectorAll('header .nav-link[href^="#"]').forEach(a=>{
@@ -1654,11 +1681,11 @@ window.openDocs = (repo)=>{
   docRepo = repo;
   const pj = P.find(p=>p.repo===repo);
   document.getElementById('docTitle').textContent = (pj?pj.nm:repo)+' — 문서';
-  document.getElementById('docModal').classList.add('on');
+  openModal('docModal');
   loadDocInto('docPRD','prd.md');
   showDocSub('roadmap');
 };
-window.closeDocs = ()=>document.getElementById('docModal').classList.remove('on');
+window.closeDocs = ()=>closeModal('docModal');
 async function loadDocInto(elId, file){
   const el = document.getElementById(elId);
   el.innerHTML = '<div class="sug-empty">불러오는 중…</div>';
