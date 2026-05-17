@@ -2,38 +2,5 @@
   "repo": "tteuniyu-ios",
   "displayName": "뜬이유 iOS",
   "synced": false,
-  "currentVersion": "alpha",
-  "versions": [
-    {
-      "id": "foundation",
-      "label": "기반",
-      "status": "done",
-      "target": "",
-      "summary": "PRD·문서·실행 골격·검증 하네스 구성",
-      "milestones": [
-        "PRD/스펙 작성",
-        "실행 골격 + 검증 하네스"
-      ]
-    },
-    {
-      "id": "alpha",
-      "label": "알파",
-      "status": "inProgress",
-      "target": "1-2주",
-      "summary": "Wave 1 Foundation 완료, Wave 3 통합도 RisingIssuesView/ViewModel/XCTest까지 끝. 남은 것은 시뮬레이터 스크린샷 + RFP §11 Acceptance Criteria 25개 자가 검증.",
-      "milestones": [
-        "Xcode 빌드 + 5 시뮬레이터 스크린샷 캡처",
-        "harness/check.sh CI 통과 확인",
-        "메인 monorepo와의 통합 시점 결정"
-      ]
-    },
-    {
-      "id": "release",
-      "label": "v1.0 정식",
-      "status": "planned",
-      "target": "",
-      "summary": "알파 검증 완료 후 정식 출시",
-      "milestones": []
-    }
-  ]
+  "versions": []
 }

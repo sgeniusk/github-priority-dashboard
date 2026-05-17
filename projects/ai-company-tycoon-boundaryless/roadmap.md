@@ -1,20 +1,14 @@
 # AI 컴퍼니 타이쿤 — 로드맵
 
-> ⚙️ /sync-project 미실행 스캐폴드 — `projects.json` 데이터에서 자동 생성. 실제 문서를 반영하려면 `/sync-project ai-company-tycoon-boundaryless`를 실행하세요.
+> ⚙️ /sync-project 미실행 스캐폴드 — 실제 로드맵·버전 계획을 반영하려면 `/sync-project ai-company-tycoon-boundaryless`를 실행하세요.
 
-현재 버전: **기반**
+## 현재 상태
+진척도 40% · 예상 완료 4-6주 · 최근 활동 2026-05-16T13:23Z
 
-## 기반 — 🔵 진행 중
-PRD·문서·실행 골격·검증 하네스 구성
-- PRD/스펙 작성
-- 실행 골격 + 검증 하네스
-
-## 알파 — ⚪ 예정 · 목표 4-6주
-Godot에서 웹 네이티브로 재시작. PRD/벤치마크(Game Dev Story)/제작 하네스/합성 플레이테스트 12명 프로토콜 정리. MILESTONE_PLAN, AGENT_REVIEW_PROTOCOL까지 준비. 실제 게임 코드는 초기 단계.
+## 다음 액션
 - MVP 1 마일스톤 마감
 - 합성 플레이테스트 12명 1차
 - Vercel 미리보기 배포
 
-## v1.0 정식 — ⚪ 예정
-알파 검증 완료 후 정식 출시
-- (마일스톤 미작성)
+## 버전 계획
+- /sync-project로 실제 버전 로드맵을 채우세요. 임의 버전은 두지 않습니다.

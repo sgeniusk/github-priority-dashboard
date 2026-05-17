@@ -2,38 +2,5 @@
   "repo": "jewelry-webtoon-cloud",
   "displayName": "반짝상점 생존기",
   "synced": false,
-  "currentVersion": "foundation",
-  "versions": [
-    {
-      "id": "foundation",
-      "label": "기반",
-      "status": "inProgress",
-      "target": "",
-      "summary": "PRD·문서·실행 골격·검증 하네스 구성",
-      "milestones": [
-        "PRD/스펙 작성",
-        "실행 골격 + 검증 하네스"
-      ]
-    },
-    {
-      "id": "alpha",
-      "label": "알파",
-      "status": "planned",
-      "target": "재개 후 8-12주",
-      "summary": "Month 01 산출물(세계관/시즌/학습 지도/법규 메모/스타일 가이드/캐릭터 시트/배경팩/파일럿 3편) 완성. gh auth 토큰 만료 상태. 사용자 결정으로 일시 중단.",
-      "milestones": [
-        "PAUSE: 재개 트리거 정의 (예: 핵심 게임 2개 마감 후)",
-        "gh auth 복구는 재개 시 처리",
-        "현재 산출물 README에 명시"
-      ]
-    },
-    {
-      "id": "release",
-      "label": "v1.0 정식",
-      "status": "planned",
-      "target": "",
-      "summary": "알파 검증 완료 후 정식 출시",
-      "milestones": []
-    }
-  ]
+  "versions": []
 }

@@ -1,0 +1,177 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "sgeniusk" [ref=e3] [cursor=pointer]:
+      - /url: "#"
+      - img [ref=e5]
+      - generic [ref=e10]: sgeniusk
+    - generic [ref=e11]: 프로젝트 우선순위 대시보드
+    - generic [ref=e12]: v1.1 · 2026-05-16
+    - tablist [ref=e13]:
+      - button "청사진" [ref=e14] [cursor=pointer]
+      - button "순위" [ref=e15] [cursor=pointer]
+      - button "제안" [ref=e16] [cursor=pointer]
+      - button "분석" [ref=e17] [cursor=pointer]
+      - button "스프린트" [ref=e18] [cursor=pointer]
+      - button "사용량" [ref=e19] [cursor=pointer]
+    - button "데이터 새로고침 및 분석" [ref=e20] [cursor=pointer]: ↻
+    - button "라이트/다크 테마 전환" [ref=e21] [cursor=pointer]: 🌙
+  - main [ref=e22]:
+    - generic [ref=e24]:
+      - generic [ref=e25]:
+        - generic [ref=e26]: 활성 프로젝트
+        - generic [ref=e27]: "9"
+        - generic [ref=e28]: +1 일시중단
+        - generic [ref=e29]: 전체 10개
+      - generic [ref=e30]:
+        - generic [ref=e31]: Claude 작성
+        - generic [ref=e32]: "4"
+        - generic [ref=e33]: Formi (포미) · AI Builder School · Story X · BookCircle
+        - generic [ref=e34]: Claude
+      - generic [ref=e35]:
+        - generic [ref=e36]: Codex 작성
+        - generic [ref=e37]: "3"
+        - generic [ref=e38]: "삼국지: 시즈폴 (Siege Fall) · 전지적 군주 시점 · AI 컴퍼니 타이쿤"
+        - generic [ref=e39]: Codex
+      - generic [ref=e40]:
+        - generic [ref=e41]: 평균 진척도
+        - generic [ref=e42]: 51%
+        - generic [ref=e43]: 활성 프로젝트 기준
+        - generic [ref=e44]: 4개 ≥60%
+      - generic [ref=e45]:
+        - generic [ref=e46]: 완성 임박
+        - generic [ref=e47]: "4"
+        - generic [ref=e48]: 2-3주 내 알파 가능
+        - generic [ref=e49]: 우선 착수
+    - generic [ref=e50]:
+      - generic [ref=e51]:
+        - text: 청사진 — 프로젝트 마스터 보드
+        - emphasis [ref=e52]: · 활성 9 / 전체 10
+      - generic [ref=e54]:
+        - paragraph [ref=e55]: 진척도 높은 순으로 전 프로젝트를 한눈에. 각 카드의 문서 버튼으로 PRD·로드맵·로그를 볼 수 있어.
+        - generic [ref=e56]:
+          - generic [ref=e57]:
+            - generic [ref=e58]:
+              - generic [ref=e59]: Formi (포미)
+              - generic [ref=e60]: Claude
+            - generic [ref=e61]:
+              - generic [ref=e62]: 70%
+              - generic [ref=e63]: Sprint A
+            - generic [ref=e65]:
+              - generic [ref=e66]: 앱
+              - generic [ref=e67]: 예상 1-2주
+            - generic [ref=e68]: ▸ mobile/README.md 기준 Expo 알파 빌드 산출
+            - button "문서 ▸ PRD · 로드맵 · 로그" [ref=e69] [cursor=pointer]
+          - generic [ref=e70]:
+            - generic [ref=e71]:
+              - generic [ref=e72]: 뜬이유 iOS
+              - generic [ref=e73]: Claude+Codex
+            - generic [ref=e74]:
+              - generic [ref=e75]: 65%
+              - generic [ref=e76]: Sprint A
+            - generic [ref=e78]:
+              - generic [ref=e79]: 앱
+              - generic [ref=e80]: 예상 1-2주
+            - generic [ref=e81]: ▸ Xcode 빌드 + 5 시뮬레이터 스크린샷 캡처
+            - button "문서 ▸ PRD · 로드맵 · 로그" [ref=e82] [cursor=pointer]
+          - generic [ref=e83]:
+            - generic [ref=e84]:
+              - generic [ref=e85]: "삼국지: 시즈폴 (Siege Fall)"
+              - generic [ref=e86]: Codex
+            - generic [ref=e87]:
+              - generic [ref=e88]: 60%
+              - generic [ref=e89]: Sprint B
+            - generic [ref=e91]:
+              - generic [ref=e92]: 게임
+              - generic [ref=e93]: 예상 2-3주
+            - generic [ref=e94]: ▸ P25 루트 정찰 예측 완성
+            - button "문서 ▸ PRD · 로드맵 · 로그" [ref=e95] [cursor=pointer]
+          - generic [ref=e96]:
+            - generic [ref=e97]:
+              - generic [ref=e98]: 전지적 군주 시점
+              - generic [ref=e99]: Codex
+            - generic [ref=e100]:
+              - generic [ref=e101]: 60%
+              - generic [ref=e102]: Sprint B
+            - generic [ref=e104]:
+              - generic [ref=e105]: 게임
+              - generic [ref=e106]: 예상 2-3주
+            - generic [ref=e107]: ▸ v0.16-alpha 게이트 통과
+            - button "문서 ▸ PRD · 로드맵 · 로그" [ref=e108] [cursor=pointer]
+          - generic [ref=e109]:
+            - generic [ref=e110]:
+              - generic [ref=e111]: Mandate of Heroes
+              - generic [ref=e112]: Hermes Agent
+            - generic [ref=e113]:
+              - generic [ref=e114]: 55%
+              - generic [ref=e115]: Sprint C
+            - generic [ref=e117]:
+              - generic [ref=e118]: 게임
+              - generic [ref=e119]: 예상 3-5주
+            - generic [ref=e120]: ▸ 오리지널 시각 디자인 결정
+            - button "문서 ▸ PRD · 로드맵 · 로그" [ref=e121] [cursor=pointer]
+          - generic [ref=e122]:
+            - generic [ref=e123]:
+              - generic [ref=e124]: AI Builder School
+              - generic [ref=e125]: Claude
+            - generic [ref=e126]:
+              - generic [ref=e127]: 45%
+              - generic [ref=e128]: Sprint C
+            - generic [ref=e130]:
+              - generic [ref=e131]: 콘텐츠
+              - generic [ref=e132]: 예상 3-5주
+            - generic [ref=e133]: ▸ Phase별 우선 레슨 4-5개 본문 완성
+            - button "문서 ▸ PRD · 로드맵 · 로그" [ref=e134] [cursor=pointer]
+          - generic [ref=e135]:
+            - generic [ref=e136]:
+              - generic [ref=e137]: Story X
+              - generic [ref=e138]: Claude
+            - generic [ref=e139]:
+              - generic [ref=e140]: 45%
+              - generic [ref=e141]: Sprint D
+            - generic [ref=e143]:
+              - generic [ref=e144]: 앱
+              - generic [ref=e145]: 예상 5-7주
+            - generic [ref=e146]: ▸ 1개 매체(웹툰 or 단편 만화) 깊이 우선 완성
+            - button "문서 ▸ PRD · 로드맵 · 로그" [ref=e147] [cursor=pointer]
+          - generic [ref=e148]:
+            - generic [ref=e149]:
+              - generic [ref=e150]: AI 컴퍼니 타이쿤
+              - generic [ref=e151]: Codex
+            - generic [ref=e152]:
+              - generic [ref=e153]: 40%
+              - generic [ref=e154]: Sprint D
+            - generic [ref=e156]:
+              - generic [ref=e157]: 게임
+              - generic [ref=e158]: 예상 4-6주
+            - generic [ref=e159]: ▸ MVP 1 마일스톤 마감
+            - button "문서 ▸ PRD · 로드맵 · 로그" [ref=e160] [cursor=pointer]
+          - generic [ref=e161]:
+            - generic [ref=e162]:
+              - generic [ref=e163]: BookCircle
+              - generic [ref=e164]: Claude
+            - generic [ref=e165]:
+              - generic [ref=e166]: 20%
+              - generic [ref=e167]: Defer
+            - generic [ref=e169]:
+              - generic [ref=e170]: 앱
+              - generic [ref=e171]: 예상 8-10주 (정상 추진 시)
+            - generic [ref=e172]: ▸ 로그인 방식 + 클럽 초대 모델 결정
+            - button "문서 ▸ PRD · 로드맵 · 로그" [ref=e173] [cursor=pointer]
+          - generic [ref=e174]:
+            - generic [ref=e175]:
+              - generic [ref=e176]:
+                - text: 반짝상점 생존기
+                - generic [ref=e177]: 중단
+              - generic [ref=e178]: Claude
+            - generic [ref=e179]:
+              - generic [ref=e180]: 20%
+              - generic [ref=e181]: Defer
+            - generic [ref=e183]:
+              - generic [ref=e184]: 콘텐츠
+              - generic [ref=e185]: 예상 재개 후 8-12주
+            - generic [ref=e186]: "▸ PAUSE: 재개 트리거 정의 (예: 핵심 게임 2개 마감 후)"
+            - button "문서 ▸ PRD · 로드맵 · 로그" [ref=e187] [cursor=pointer]
+    - text: → → → → → → →
+  - contentinfo [ref=e188]:
+    - generic [ref=e189]: "데이터 출처: GitHub README/PRD · Contributors Insights API · commits.atom · 진척도 = 문서(0-20) + 골격(0-30) + 기능(0-30) + 알파(0-20)"
+    - button "데이터 초기화" [ref=e190] [cursor=pointer]

@@ -2,38 +2,5 @@
   "repo": "three-kingdoms-deckbuilder",
   "displayName": "Mandate of Heroes",
   "synced": false,
-  "currentVersion": "alpha",
-  "versions": [
-    {
-      "id": "foundation",
-      "label": "기반",
-      "status": "done",
-      "target": "",
-      "summary": "PRD·문서·실행 골격·검증 하네스 구성",
-      "milestones": [
-        "PRD/스펙 작성",
-        "실행 골격 + 검증 하네스"
-      ]
-    },
-    {
-      "id": "alpha",
-      "label": "알파",
-      "status": "inProgress",
-      "target": "3-5주",
-      "summary": "코어 메커니즘 완성: deck draw/discard, energy, position, guard, morale, enemy intents, faction selection (Shu/Wei/Wu), self-guard, vulnerable, branc",
-      "milestones": [
-        "오리지널 시각 디자인 결정",
-        "Steam Wishlist 페이지 준비",
-        "Mac/iOS 빌드 점검"
-      ]
-    },
-    {
-      "id": "release",
-      "label": "v1.0 정식",
-      "status": "planned",
-      "target": "",
-      "summary": "알파 검증 완료 후 정식 출시",
-      "milestones": []
-    }
-  ]
+  "versions": []
 }

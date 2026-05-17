@@ -2,38 +2,5 @@
   "repo": "ai-builder-school",
   "displayName": "AI Builder School",
   "synced": false,
-  "currentVersion": "foundation",
-  "versions": [
-    {
-      "id": "foundation",
-      "label": "기반",
-      "status": "inProgress",
-      "target": "",
-      "summary": "PRD·문서·실행 골격·검증 하네스 구성",
-      "milestones": [
-        "PRD/스펙 작성",
-        "실행 골격 + 검증 하네스"
-      ]
-    },
-    {
-      "id": "alpha",
-      "label": "알파",
-      "status": "planned",
-      "target": "3-5주",
-      "summary": "12-phase 커리큘럼 + 6 여정 + 32 lesson 골격 완성. 페이지 맵(/start, /curriculum, /lessons, /tracks, /projects, /templates) 정의됨. 콘텐츠 데이터 모델 + 무결성 검증 셋업. 콘텐",
-      "milestones": [
-        "Phase별 우선 레슨 4-5개 본문 완성",
-        "캡스톤 프로젝트 예시 작성",
-        "라이선스 결정"
-      ]
-    },
-    {
-      "id": "release",
-      "label": "v1.0 정식",
-      "status": "planned",
-      "target": "",
-      "summary": "알파 검증 완료 후 정식 출시",
-      "milestones": []
-    }
-  ]
+  "versions": []
 }

@@ -2,38 +2,5 @@
   "repo": "habit",
   "displayName": "Formi (포미)",
   "synced": false,
-  "currentVersion": "alpha",
-  "versions": [
-    {
-      "id": "foundation",
-      "label": "기반",
-      "status": "done",
-      "target": "",
-      "summary": "PRD·문서·실행 골격·검증 하네스 구성",
-      "milestones": [
-        "PRD/스펙 작성",
-        "실행 골격 + 검증 하네스"
-      ]
-    },
-    {
-      "id": "alpha",
-      "label": "알파",
-      "status": "inProgress",
-      "target": "1-2주",
-      "summary": "PRD(2026-05-13) 확정, Alpha report + 10-tester evaluation 완료. 웹 프로토타입 검증 끝. mobile/(Expo) 디렉토리로 네이티브 통합 진행 중. CI 하네스(npm run ci)와 i18n까지 셋업됨.",
-      "milestones": [
-        "mobile/README.md 기준 Expo 알파 빌드 산출",
-        "iOS TestFlight 등록 절차",
-        "캡쳐된 alpha 사용자 피드백 반영"
-      ]
-    },
-    {
-      "id": "release",
-      "label": "v1.0 정식",
-      "status": "planned",
-      "target": "",
-      "summary": "알파 검증 완료 후 정식 출시",
-      "milestones": []
-    }
-  ]
+  "versions": []
 }

@@ -1,20 +1,14 @@
 # Mandate of Heroes — 로드맵
 
-> ⚙️ /sync-project 미실행 스캐폴드 — `projects.json` 데이터에서 자동 생성. 실제 문서를 반영하려면 `/sync-project three-kingdoms-deckbuilder`를 실행하세요.
+> ⚙️ /sync-project 미실행 스캐폴드 — 실제 로드맵·버전 계획을 반영하려면 `/sync-project three-kingdoms-deckbuilder`를 실행하세요.
 
-현재 버전: **알파**
+## 현재 상태
+진척도 55% · 예상 완료 3-5주 · 최근 활동 2026-05-16T14:41Z
 
-## 기반 — ✅ 완료
-PRD·문서·실행 골격·검증 하네스 구성
-- PRD/스펙 작성
-- 실행 골격 + 검증 하네스
-
-## 알파 — 🔵 진행 중 · 목표 3-5주
-코어 메커니즘 완성: deck draw/discard, energy, position, guard, morale, enemy intents, faction selection (Shu/Wei/Wu), self-guard, vulnerable, branc
+## 다음 액션
 - 오리지널 시각 디자인 결정
 - Steam Wishlist 페이지 준비
 - Mac/iOS 빌드 점검
 
-## v1.0 정식 — ⚪ 예정
-알파 검증 완료 후 정식 출시
-- (마일스톤 미작성)
+## 버전 계획
+- /sync-project로 실제 버전 로드맵을 채우세요. 임의 버전은 두지 않습니다.

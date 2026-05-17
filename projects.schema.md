@@ -52,7 +52,7 @@
 
 | 파일 | 내용 |
 | --- | --- |
-| `project.json` | `repo`·`displayName`·`currentVersion`·`synced`·`versions[]` |
+| `project.json` | `repo`·`displayName`·`synced`·`versions[]` (+ 동기화 시 `currentVersion`) |
 | `prd.md` | `## 개요` / `## 기술 스택` / `## 핵심 기능` / `## 리스크` |
 | `roadmap.md` | 버전별 `##` 섹션 (완료/진행 중/예정 + 마일스톤) |
 | `log.md` | 작업 로그 (최신 항목이 위) |
@@ -70,7 +70,7 @@
 | `summary` | string | 버전 요약 |
 | `milestones` | string[] | 마일스톤 목록 |
 
-`currentVersion`은 현재 `inProgress`인 버전의 `id`. `synced`는 `/sync-project`로 실제 문서가 반영됐으면 `true`, 스캐폴드 상태면 `false`.
+`versions[]`는 **실제 로드맵 데이터로만** 채운다 — `/sync-project` 전에는 빈 배열이다. 임의 버전은 두지 않는다. `currentVersion`은 동기화 후 현재 `inProgress`인 버전의 `id`. `synced`는 `/sync-project`로 실제 문서가 반영됐으면 `true`, 스캐폴드 상태면 `false`.
 
 ### 갱신 방법
 

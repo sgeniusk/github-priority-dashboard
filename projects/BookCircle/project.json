@@ -2,38 +2,5 @@
   "repo": "BookCircle",
   "displayName": "BookCircle",
   "synced": false,
-  "currentVersion": "foundation",
-  "versions": [
-    {
-      "id": "foundation",
-      "label": "기반",
-      "status": "inProgress",
-      "target": "",
-      "summary": "PRD·문서·실행 골격·검증 하네스 구성",
-      "milestones": [
-        "PRD/스펙 작성",
-        "실행 골격 + 검증 하네스"
-      ]
-    },
-    {
-      "id": "alpha",
-      "label": "알파",
-      "status": "planned",
-      "target": "8-10주 (정상 추진 시)",
-      "summary": "Initial brief + design handoff + implementation spec + Next.js 스캐폴드 + landing/demo UI + Supabase 클라이언트 placeholder + 스키마 초안 완료. 의도적으로 sample",
-      "milestones": [
-        "로그인 방식 + 클럽 초대 모델 결정",
-        "Supabase 프로젝트 연결",
-        "투표/리뷰 슬라이스 1개 인증 흐름까지"
-      ]
-    },
-    {
-      "id": "release",
-      "label": "v1.0 정식",
-      "status": "planned",
-      "target": "",
-      "summary": "알파 검증 완료 후 정식 출시",
-      "milestones": []
-    }
-  ]
+  "versions": []
 }

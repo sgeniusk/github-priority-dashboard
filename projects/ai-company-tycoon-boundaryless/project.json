@@ -2,38 +2,5 @@
   "repo": "ai-company-tycoon-boundaryless",
   "displayName": "AI 컴퍼니 타이쿤",
   "synced": false,
-  "currentVersion": "foundation",
-  "versions": [
-    {
-      "id": "foundation",
-      "label": "기반",
-      "status": "inProgress",
-      "target": "",
-      "summary": "PRD·문서·실행 골격·검증 하네스 구성",
-      "milestones": [
-        "PRD/스펙 작성",
-        "실행 골격 + 검증 하네스"
-      ]
-    },
-    {
-      "id": "alpha",
-      "label": "알파",
-      "status": "planned",
-      "target": "4-6주",
-      "summary": "Godot에서 웹 네이티브로 재시작. PRD/벤치마크(Game Dev Story)/제작 하네스/합성 플레이테스트 12명 프로토콜 정리. MILESTONE_PLAN, AGENT_REVIEW_PROTOCOL까지 준비. 실제 게임 코드는 초기 단계.",
-      "milestones": [
-        "MVP 1 마일스톤 마감",
-        "합성 플레이테스트 12명 1차",
-        "Vercel 미리보기 배포"
-      ]
-    },
-    {
-      "id": "release",
-      "label": "v1.0 정식",
-      "status": "planned",
-      "target": "",
-      "summary": "알파 검증 완료 후 정식 출시",
-      "milestones": []
-    }
-  ]
+  "versions": []
 }
