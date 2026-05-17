@@ -61,10 +61,10 @@ github-priority-dashboard/
 
 ### 1. 진척도 공식
 
-`total = docs(0-25) + skeleton(0-25) + features(0-30) + alpha(0-20)`
+`total = docs(0-20) + skeleton(0-30) + features(0-30) + alpha(0-20)`
 
 - **docs**: PRD, README, ADR, Implementation Spec의 완성도
-- **skeleton**: 빌드/실행 가능한 코드 골격, CI, 디렉토리 구조
+- **skeleton**: 기능 구현을 떠받치는 하네스 엔지니어링 + 서브에이전트 구성 완성도 (검증 하네스·CI·에이전트 역할 분담)
 - **features**: PRD에 정의된 핵심 기능의 실제 동작 비율
 - **alpha**: 사용자 테스트, 폴리시, 알파/베타 등급 검증
 

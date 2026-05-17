@@ -5,7 +5,7 @@
     "ownerName": "Gomgomee",
     "asOf": "2026-05-16",
     "priorityCriterion": "completionProximity",
-    "progressFormula": "docs(0-25) + skeleton(0-25) + features(0-30) + alpha_polish(0-20) = 0-100",
+    "progressFormula": "docs(0-20) + skeleton(0-30) + features(0-30) + alpha(0-20) = 0-100",
     "toolLegend": {
       "claude": "Claude Code로 작성",
       "codex": "Codex로 작성",
@@ -31,11 +31,11 @@
         "Vitest"
       ],
       "progress": {
-        "docs": 25,
+        "docs": 20,
         "skeleton": 25,
         "features": 15,
         "alpha": 10,
-        "total": 75
+        "total": 70
       },
       "commits": 81,
       "lastUpdate": "2026-05-16T14:45Z",
@@ -73,11 +73,11 @@
         "harness/check.sh"
       ],
       "progress": {
-        "docs": 25,
+        "docs": 20,
         "skeleton": 25,
         "features": 20,
         "alpha": 0,
-        "total": 70
+        "total": 65
       },
       "commits": 5,
       "lastUpdate": "2026-05-12T08:40Z",
@@ -114,11 +114,11 @@
         "synthetic playtest"
       ],
       "progress": {
-        "docs": 25,
+        "docs": 20,
         "skeleton": 20,
         "features": 15,
         "alpha": 5,
-        "total": 65
+        "total": 60
       },
       "commits": 50,
       "lastUpdate": "2026-05-15T02:24Z",
@@ -281,11 +281,11 @@
         "PRD harness"
       ],
       "progress": {
-        "docs": 25,
+        "docs": 20,
         "skeleton": 15,
         "features": 5,
         "alpha": 0,
-        "total": 45
+        "total": 40
       },
       "commits": 51,
       "lastUpdate": "2026-05-16T13:23Z",

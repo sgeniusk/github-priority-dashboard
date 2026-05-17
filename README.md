@@ -29,7 +29,7 @@ sgeniusk(Gomgomee)의 진행 중인 게임·앱·콘텐츠 프로젝트를 추�
 
 ## 진척도 공식
 
-`progress = docs(0-25) + skeleton(0-25) + features(0-30) + alpha(0-20) = 0-100`
+`progress = docs(0-20) + skeleton(0-30) + features(0-30) + alpha(0-20) = 0-100`
 
 자세한 설명은 `docs/progress-formula.md`, 필드 규칙은 `projects.schema.md`.
 

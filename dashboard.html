@@ -205,6 +205,8 @@ footer{border-top:1px solid var(--border);padding:18px 28px;max-width:1460px;mar
 
 /* ── A11Y ── */
 :focus-visible{outline:2px solid var(--electric);outline-offset:2px;border-radius:4px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.icon-btn.spin{animation:spin .6s linear infinite;pointer-events:none}
 .tbl-row:focus-visible{outline-offset:-2px}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
@@ -258,6 +260,7 @@ footer{border-top:1px solid var(--border);padding:18px 28px;max-width:1460px;mar
     <a class="nav-link" href="#sec-sprint">스프린트</a>
     <a class="nav-link" href="#sec-usage">사용량</a>
   </nav>
+  <button class="icon-btn" id="refreshBtn" title="새로고침 + 분석" aria-label="데이터 새로고침 및 분석">↻</button>
   <button class="icon-btn" id="themeBtn" title="테마 전환" aria-label="라이트/다크 테마 전환">🌙</button>
 </header>
 
@@ -306,8 +309,8 @@ footer{border-top:1px solid var(--border);padding:18px 28px;max-width:1460px;mar
       <div id="tblBody"></div>
     </div>
     <div class="legend">
-      <div class="leg-item"><div class="leg-dot" style="background:var(--s1)"></div>문서 PRD·Spec (0-25)</div>
-      <div class="leg-item"><div class="leg-dot" style="background:var(--s2)"></div>골격 Scaffold·CI (0-25)</div>
+      <div class="leg-item"><div class="leg-dot" style="background:var(--s1)"></div>문서 PRD·Spec (0-20)</div>
+      <div class="leg-item"><div class="leg-dot" style="background:var(--s2)"></div>골격 하네스·서브에이전트 (0-30)</div>
       <div class="leg-item"><div class="leg-dot" style="background:var(--s3)"></div>핵심 기능 (0-30)</div>
       <div class="leg-item"><div class="leg-dot" style="background:var(--s4)"></div>알파·폴리시 (0-20)</div>
     </div>
@@ -363,7 +366,7 @@ footer{border-top:1px solid var(--border);padding:18px 28px;max-width:1460px;mar
 </main>
 
 <footer>
-  <span>데이터 출처: GitHub README/PRD · Contributors Insights API · commits.atom &nbsp;·&nbsp; 진척도 = 문서(0-25) + 골격(0-25) + 기능(0-30) + 알파(0-20)</span>
+  <span>데이터 출처: GitHub README/PRD · Contributors Insights API · commits.atom &nbsp;·&nbsp; 진척도 = 문서(0-20) + 골격(0-30) + 기능(0-30) + 알파(0-20)</span>
   <button class="footer-reset" onclick="if(confirm('로컬 데이터를 초기화할까요?')){localStorage.clear();location.reload()}">데이터 초기화</button>
 </footer>
 
@@ -378,7 +381,7 @@ const FALLBACK_PROJECTS = {
     "ownerName": "Gomgomee",
     "asOf": "2026-05-16",
     "priorityCriterion": "completionProximity",
-    "progressFormula": "docs(0-25) + skeleton(0-25) + features(0-30) + alpha_polish(0-20) = 0-100",
+    "progressFormula": "docs(0-20) + skeleton(0-30) + features(0-30) + alpha(0-20) = 0-100",
     "toolLegend": {
       "claude": "Claude Code로 작성",
       "codex": "Codex로 작성",
@@ -404,11 +407,11 @@ const FALLBACK_PROJECTS = {
         "Vitest"
       ],
       "progress": {
-        "docs": 25,
+        "docs": 20,
         "skeleton": 25,
         "features": 15,
         "alpha": 10,
-        "total": 75
+        "total": 70
       },
       "commits": 81,
       "lastUpdate": "2026-05-16T14:45Z",
@@ -446,11 +449,11 @@ const FALLBACK_PROJECTS = {
         "harness/check.sh"
       ],
       "progress": {
-        "docs": 25,
+        "docs": 20,
         "skeleton": 25,
         "features": 20,
         "alpha": 0,
-        "total": 70
+        "total": 65
       },
       "commits": 5,
       "lastUpdate": "2026-05-12T08:40Z",
@@ -487,11 +490,11 @@ const FALLBACK_PROJECTS = {
         "synthetic playtest"
       ],
       "progress": {
-        "docs": 25,
+        "docs": 20,
         "skeleton": 20,
         "features": 15,
         "alpha": 5,
-        "total": 65
+        "total": 60
       },
       "commits": 50,
       "lastUpdate": "2026-05-15T02:24Z",
@@ -654,11 +657,11 @@ const FALLBACK_PROJECTS = {
         "PRD harness"
       ],
       "progress": {
-        "docs": 25,
+        "docs": 20,
         "skeleton": 15,
         "features": 5,
         "alpha": 0,
-        "total": 45
+        "total": 40
       },
       "commits": 51,
       "lastUpdate": "2026-05-16T13:23Z",
@@ -1004,7 +1007,7 @@ function renderTable() {
         <div class="exp-inner">
           <div>
             <div class="brk-title">진척도 분해</div>
-            ${[['문서',p.d,25,'var(--s1)'],['골격',p.sc,25,'var(--s2)'],['기능',p.fn,30,'var(--s3)'],['알파',p.al,20,'var(--s4)']].map(([l,v,m,c])=>`
+            ${[['문서',p.d,20,'var(--s1)'],['골격',p.sc,30,'var(--s2)'],['기능',p.fn,30,'var(--s3)'],['알파',p.al,20,'var(--s4)']].map(([l,v,m,c])=>`
             <div class="brk-row">
               <span class="brk-lbl">${l}</span>
               <div class="brk-track"><div class="brk-fill" style="width:${Math.round(v/m*100)}%;background:${c}"></div></div>
@@ -1034,7 +1037,7 @@ window.togExp = id => { ST.exp.has(id)?ST.exp.delete(id):ST.exp.add(id); renderT
 function renderSuggest() {
   const items = (SUG && SUG.items) || [];
   const meta = document.getElementById('sugMeta');
-  if (meta) meta.textContent = items.length ? ` · ${items.length}건 · ${SUG.generatedAt||''}` : '';
+  if (meta) meta.textContent = items.length ? ` · ${items.length}건 · ${SUG.generatedAt||''}${SUG.source==='browser'?' · 브라우저 분석':''}` : '';
   const grid = document.getElementById('sugGrid');
   if (!items.length) { grid.innerHTML='<div class="sug-empty">제안이 없습니다. /coach 또는 /refresh로 분석을 생성하세요.</div>'; return; }
   const TY = { coach:'Coach', stall:'Stall', idea:'Idea' };
@@ -1273,6 +1276,65 @@ document.getElementById('themeBtn').addEventListener('click',()=>{
 
 /* ── SEARCH ── */
 document.getElementById('sInput').addEventListener('input',e=>{ ST.search=e.target.value; renderTable(); });
+
+/* ── 새로고침 + 클라이언트 분석 ── */
+function daysSince(dateStr){
+  if(!dateStr) return 999;
+  return Math.floor((new Date() - new Date(dateStr+'T00:00:00'))/86400000);
+}
+// projects.json 데이터로 휴리스틱 분석을 돌려 suggestions 형식으로 반환한다 (LLM /coach의 경량 브라우저판).
+function analyzeProjects(){
+  const items=[], order={high:0,warn:1,info:2};
+  P.filter(p=>p.st==='active').forEach(p=>{
+    const total=pct(p), age=daysSince(p.last);
+    const act = (p.next && p.next!=='-') ? [p.next] : [];
+    if(age>=5){
+      const hi=(p.sprint==='A'||p.sprint==='B');
+      items.push({repo:p.repo,type:'stall',severity:hi?'high':'warn',
+        title:`${age}일째 활동 없음`,
+        detail:`마지막 활동이 ${p.last} (${age}일 전)입니다.${hi?` Sprint ${p.sprint} 진행 중이라 동반 일정에 영향이 있습니다.`:''}`,
+        actions:act});
+      return;
+    }
+    // 병목은 문서·골격·기능 중에서만 본다 — 알파는 본디 마지막 단계라 낮은 게 정상
+    const low=[['문서',p.d,20],['골격',p.sc,30],['기능',p.fn,30]]
+      .map(([l,v,m])=>({l,v,m,r:v/m})).sort((a,b)=>a.r-b.r)[0];
+    if(low.r<0.4 && total<90){
+      items.push({repo:p.repo,type:'coach',severity:'info',
+        title:`${low.l} 단계가 병목`,
+        detail:`${low.l} 점수가 ${low.v}/${low.m} (${Math.round(low.r*100)}%)로 가장 낮습니다. 현재 진척도 ${total}%.`,
+        actions:act});
+      return;
+    }
+    if(total>=70){
+      items.push({repo:p.repo,type:'coach',severity:'info',
+        title:'완성 임박',
+        detail:`진척도 ${total}%로 상위권입니다. 마무리 단계에 집중할 시점입니다.`,
+        actions:act});
+    }
+  });
+  items.sort((a,b)=>order[a.severity]-order[b.severity]);
+  return { generatedAt:new Date().toISOString().slice(0,16).replace('T',' '), source:'browser', items };
+}
+async function doRefresh(){
+  const btn=document.getElementById('refreshBtn');
+  btn.classList.add('spin');
+  try{
+    const [pj,uj]=await Promise.all([
+      loadJSON('./projects.json',FALLBACK_PROJECTS),
+      loadJSON('./usage.json',FALLBACK_USAGE)
+    ]);
+    P=(pj.projects||[]).map(mapProject);
+    usageData=uj||{tools:[]};
+    (usageData.tools||[]).forEach(t=>{ if(!usage[t.tool]) usage[t.tool]={pct:t.usedPercent||0,reset:t.cycleResetDate||''}; });
+    SUG=analyzeProjects();
+    renderKPI(); renderFilters(); renderTable(); renderSuggest(); renderSprint(); renderUsage();
+    renderStacked(); renderDonut(); renderScatter();
+  } finally {
+    setTimeout(()=>btn.classList.remove('spin'),400);
+  }
+}
+document.getElementById('refreshBtn').addEventListener('click',doRefresh);
 
 /* ── 데이터 로드 + INIT ── */
 async function loadJSON(path,fb){

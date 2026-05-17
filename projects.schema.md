@@ -29,7 +29,7 @@
 | `sprint` | string | `A` / `B` / `C` / `D` / `defer` — `docs/sprint-plan.md` 기준 | 수동 |
 | `sprintStatus` | string | `planned` / `inProgress` / `review` / `done` — Sprint 보드 시드값 | 수동 (보드 UI는 localStorage로 오버라이드) |
 | `stack` | string[] | 기술 스택 | 수동 |
-| `progress` | object | `docs`(0-25)·`skeleton`(0-25)·`features`(0-30)·`alpha`(0-20)·`total`(합) | ⚠️ 진척도 임의 부풀림 금지. `total`은 4개 합 |
+| `progress` | object | `docs`(0-20)·`skeleton`(0-30)·`features`(0-30)·`alpha`(0-20)·`total`(합) | ⚠️ 진척도 임의 부풀림 금지. `total`은 4개 합 |
 | `commits` | number | 총 커밋 수 | `refresh-progress.mjs`가 자동 갱신 |
 | `lastUpdate` | string | 최근 푸시 시각 `YYYY-MM-DDTHH:MMZ` | `refresh-progress.mjs`가 자동 갱신 |
 | `firstCommit` | string | 최초 커밋일 `YYYY-MM-DD` | `refresh-progress.mjs`가 자동 갱신 |
