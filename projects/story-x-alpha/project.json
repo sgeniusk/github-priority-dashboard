@@ -2,5 +2,27 @@
   "repo": "story-x-alpha",
   "displayName": "Story X",
   "synced": false,
-  "versions": []
+  "versions": [],
+  "roadmap": [
+    {
+      "t": "PRD·문서 정리",
+      "s": "done"
+    },
+    {
+      "t": "기능 단계 보강 중",
+      "s": "doing"
+    },
+    {
+      "t": "1개 매체(웹툰 or 단편 만화) 깊이 우선 완성",
+      "s": "todo"
+    },
+    {
+      "t": "장편 연재 메모리 앵커 테스트",
+      "s": "todo"
+    },
+    {
+      "t": "에이전트 출력 골든 케이스 정착",
+      "s": "todo"
+    }
+  ]
 }

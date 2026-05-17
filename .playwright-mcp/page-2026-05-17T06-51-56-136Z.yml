@@ -1,0 +1,102 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "sgeniusk" [ref=e3] [cursor=pointer]:
+      - /url: "#"
+      - img [ref=e5]
+      - generic [ref=e10]: sgeniusk
+    - generic [ref=e11]: 프로젝트 우선순위 대시보드
+    - generic [ref=e12]: v1.1 · 2026-05-16
+    - tablist [ref=e13]:
+      - button "청사진" [ref=e14] [cursor=pointer]
+      - button "순위" [ref=e15] [cursor=pointer]
+      - button "제안" [ref=e16] [cursor=pointer]
+      - button "분석" [ref=e17] [cursor=pointer]
+      - button "스프린트" [ref=e18] [cursor=pointer]
+      - button "사용량" [ref=e19] [cursor=pointer]
+    - button "데이터 새로고침 및 분석" [ref=e20] [cursor=pointer]: ↻
+    - button "라이트/다크 테마 전환" [ref=e21] [cursor=pointer]: 🌙
+  - main [ref=e22]:
+    - text: → → → → → → →
+    - generic [ref=e23]:
+      - generic [ref=e24]: 진척도 분석
+      - generic [ref=e26]:
+        - generic [ref=e27]:
+          - generic [ref=e28]: 구성 분해 — 스택드 바
+          - img "프로젝트별 진척도 구성(문서·골격·기능·알파) 스택드 바 차트" [ref=e29]:
+            - generic [ref=e30]: 0%
+            - generic [ref=e31]: 25%
+            - generic [ref=e32]: 50%
+            - generic [ref=e33]: 75%
+            - generic [ref=e34]: 100%
+            - generic [ref=e35]: 60%
+            - generic [ref=e36]: Formi (포미)
+            - generic [ref=e41]: 70%
+            - generic [ref=e42]: 뜬이유 iOS
+            - generic [ref=e46]: 65%
+            - generic [ref=e47]: "삼국지: 시즈폴 (Siege Fall)"
+            - generic [ref=e52]: 60%
+            - generic [ref=e53]: 전지적 군주 시점
+            - generic [ref=e57]: 60%
+            - generic [ref=e58]: Mandate of Heroes
+            - generic [ref=e62]: 55%
+            - generic [ref=e63]: AI Builder School
+            - generic [ref=e67]: 45%
+            - generic [ref=e68]: Story X
+            - generic [ref=e72]: 45%
+            - generic [ref=e73]: AI 컴퍼니 타이쿤
+            - generic [ref=e77]: 40%
+            - generic [ref=e78]: BookCircle
+            - generic [ref=e81]: 20%
+          - generic [ref=e82]:
+            - generic [ref=e83]: 문서
+            - generic [ref=e85]: 골격
+            - generic [ref=e87]: 기능
+            - generic [ref=e89]: 알파
+        - generic [ref=e91]:
+          - generic [ref=e92]: 도구별 분포
+          - img "도구별 활성 프로젝트 분포 도넛 차트" [ref=e93]:
+            - generic [ref=e98]: "9"
+            - generic [ref=e99]: 활성 프로젝트
+          - generic [ref=e100]:
+            - generic [ref=e101]: "Claude: 4"
+            - generic [ref=e103]: "Codex: 3"
+            - generic [ref=e105]: "Claude+Codex: 1"
+            - generic [ref=e107]: "Hermes Agent: 1"
+        - generic [ref=e109]:
+          - generic [ref=e110]: 진척도 × 커밋 매트릭스
+          - img "진척도 × 커밋 수 산점도" [ref=e111]:
+            - generic [ref=e112]: "0"
+            - generic [ref=e113]: "25"
+            - generic [ref=e114]: "50"
+            - generic [ref=e115]: "75"
+            - generic [ref=e116]: "100"
+            - generic [ref=e117]: 커밋
+            - generic [ref=e118]: 진척도
+            - generic [ref=e120]: Formi (포…
+            - generic [ref=e122]: 뜬이유 iOS
+            - generic [ref=e124]: "삼국지: 시즈폴…"
+            - generic [ref=e126]: 전지적 군주 시점
+            - generic [ref=e128]: Mandate …
+            - generic [ref=e130]: AI Build…
+            - generic [ref=e132]: AI 컴퍼니 타…
+            - generic [ref=e134]: Story X
+            - generic [ref=e136]: BookCirc…
+          - generic [ref=e137]:
+            - generic [ref=e138]: Claude
+            - generic [ref=e140]: Claude+Codex
+            - generic [ref=e142]: Codex
+            - generic [ref=e144]: Hermes Agent
+      - generic [ref=e146]:
+        - generic [ref=e147]:
+          - text: 진척도 추세
+          - emphasis [ref=e148]: · 스냅샷 1개
+        - img "평균 진척도 추세 선차트" [ref=e149]:
+          - generic [ref=e150]: "0"
+          - generic [ref=e151]: "50"
+          - generic [ref=e152]: "100"
+          - generic [ref=e154]: 51%
+          - generic [ref=e155]: 05-16
+          - generic [ref=e156]: 스냅샷 1개 — /refresh가 누적되면 추세선이 그려집니다
+  - contentinfo [ref=e157]:
+    - generic [ref=e158]: "데이터 출처: GitHub README/PRD · Contributors Insights API · commits.atom · 진척도 = 문서(0-20) + 골격(0-30) + 기능(0-30) + 알파(0-20)"
+    - button "데이터 초기화" [ref=e159] [cursor=pointer]

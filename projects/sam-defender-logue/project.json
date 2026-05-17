@@ -2,5 +2,31 @@
   "repo": "sam-defender-logue",
   "displayName": "삼국지: 시즈폴 (Siege Fall)",
   "synced": false,
-  "versions": []
+  "versions": [],
+  "roadmap": [
+    {
+      "t": "PRD·문서 정리",
+      "s": "done"
+    },
+    {
+      "t": "실행 골격·검증 하네스 구축",
+      "s": "done"
+    },
+    {
+      "t": "기능 단계 보강 중",
+      "s": "doing"
+    },
+    {
+      "t": "P25 루트 정찰 예측 완성",
+      "s": "todo"
+    },
+    {
+      "t": "알파 완료 백로그 정리",
+      "s": "todo"
+    },
+    {
+      "t": "에셋 수입 하네스 자동화",
+      "s": "todo"
+    }
+  ]
 }

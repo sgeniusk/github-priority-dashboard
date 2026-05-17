@@ -2,5 +2,31 @@
   "repo": "ai-builder-school",
   "displayName": "AI Builder School",
   "synced": false,
-  "versions": []
+  "versions": [],
+  "roadmap": [
+    {
+      "t": "PRD·문서 정리",
+      "s": "done"
+    },
+    {
+      "t": "실행 골격·검증 하네스 구축",
+      "s": "done"
+    },
+    {
+      "t": "기능 단계 보강 중",
+      "s": "doing"
+    },
+    {
+      "t": "Phase별 우선 레슨 4-5개 본문 완성",
+      "s": "todo"
+    },
+    {
+      "t": "캡스톤 프로젝트 예시 작성",
+      "s": "todo"
+    },
+    {
+      "t": "라이선스 결정",
+      "s": "todo"
+    }
+  ]
 }

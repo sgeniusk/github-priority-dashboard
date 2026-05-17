@@ -2,5 +2,23 @@
   "repo": "BookCircle",
   "displayName": "BookCircle",
   "synced": false,
-  "versions": []
+  "versions": [],
+  "roadmap": [
+    {
+      "t": "기능 단계 보강 중",
+      "s": "doing"
+    },
+    {
+      "t": "로그인 방식 + 클럽 초대 모델 결정",
+      "s": "todo"
+    },
+    {
+      "t": "Supabase 프로젝트 연결",
+      "s": "todo"
+    },
+    {
+      "t": "투표/리뷰 슬라이스 1개 인증 흐름까지",
+      "s": "todo"
+    }
+  ]
 }

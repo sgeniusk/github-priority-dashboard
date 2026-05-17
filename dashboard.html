@@ -240,10 +240,25 @@ footer{border-top:1px solid var(--border);padding:18px 28px;max-width:1460px;mar
 .mb-doc:hover{background:rgba(37,69,255,.06);border-color:var(--electric)}
 @media (max-width:640px){ #blueprintBody{grid-template-columns:1fr} }
 
-/* ── DOC VIEWER ── */
-.doc-tabs{display:flex;gap:2px;margin-bottom:14px;border-bottom:1px solid var(--border)}
-.doc-tab{background:none;border:none;border-bottom:2px solid transparent;padding:8px 14px;font-size:13px;font-weight:600;color:var(--t2);cursor:pointer;font-family:var(--font);margin-bottom:-1px}
-.doc-tab.on{color:var(--electric);border-bottom-color:var(--electric)}
+/* ── DOC VIEWER (2분할 고정 크기) ── */
+.doc-box{width:min(1040px,94vw);max-width:none;height:82vh;padding:20px;overflow:hidden;display:flex;flex-direction:column}
+.doc-panes{display:grid;grid-template-columns:1fr 1fr;gap:14px;flex:1;min-height:0;margin-top:10px}
+.doc-pane{display:flex;flex-direction:column;min-height:0;border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.doc-pane-hd{padding:9px 14px;background:var(--bg);border-bottom:1px solid var(--border);font-size:13px;font-weight:700;display:flex;gap:4px;align-items:center;flex-shrink:0}
+.doc-pane-body{flex:1;overflow-y:auto;padding:14px 16px}
+.doc-subtab{background:none;border:none;border-radius:6px;padding:4px 11px;font-size:12px;font-weight:600;color:var(--t2);cursor:pointer;font-family:var(--font)}
+.doc-subtab.on{background:var(--electric);color:#fff}
+.rm-group{margin-bottom:15px}
+.rm-group-hd{font-size:12px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.rm-done .rm-group-hd{color:#1f9d4d}
+.rm-doing .rm-group-hd{color:var(--electric)}
+.rm-todo .rm-group-hd{color:var(--t2)}
+.rm-count{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:0 7px;font-size:10px;color:var(--t2);font-weight:600}
+.rm-item{font-size:12px;padding:9px 11px;margin-bottom:6px;background:var(--bg);border:1px solid var(--border);border-radius:8px;line-height:1.5}
+.rm-done .rm-item{border-left:3px solid #1f9d4d}
+.rm-doing .rm-item{border-left:3px solid var(--electric)}
+.rm-todo .rm-item{border-left:3px solid var(--border-gray)}
+@media (max-width:760px){.doc-panes{grid-template-columns:1fr}.doc-box{height:88vh}}
 .doc-body{font-size:13px;line-height:1.6}
 .doc-body h2{font-size:16px;font-weight:700;margin:14px 0 8px}
 .doc-body h3{font-size:14px;font-weight:700;margin:13px 0 6px}
@@ -444,17 +459,24 @@ section[data-tab].tab-on{display:block;animation:fadein .24s ease}
 
 <!-- 프로젝트 문서 열람 모달 -->
 <div class="modal-overlay" id="docModal" onclick="if(event.target===this)closeDocs()">
-  <div class="modal-box" role="dialog" aria-modal="true" aria-label="프로젝트 문서">
+  <div class="modal-box doc-box" role="dialog" aria-modal="true" aria-label="프로젝트 문서">
     <div class="modal-hd">
       <span class="modal-title" id="docTitle">프로젝트 문서</span>
       <button class="modal-x" onclick="closeDocs()" aria-label="닫기">✕</button>
     </div>
-    <div class="doc-tabs">
-      <button class="doc-tab on" data-tab="prd" onclick="showDocTab('prd')">PRD</button>
-      <button class="doc-tab" data-tab="roadmap" onclick="showDocTab('roadmap')">로드맵</button>
-      <button class="doc-tab" data-tab="log" onclick="showDocTab('log')">로그</button>
+    <div class="doc-panes">
+      <div class="doc-pane">
+        <div class="doc-pane-hd">PRD</div>
+        <div class="doc-pane-body doc-body" id="docPRD"></div>
+      </div>
+      <div class="doc-pane">
+        <div class="doc-pane-hd">
+          <button class="doc-subtab on" data-sub="roadmap" onclick="showDocSub('roadmap')">로드맵</button>
+          <button class="doc-subtab" data-sub="log" onclick="showDocSub('log')">로그</button>
+        </div>
+        <div class="doc-pane-body doc-body" id="docRight"></div>
+      </div>
     </div>
-    <div class="doc-body" id="docBody"></div>
   </div>
 </div>
 
@@ -1543,26 +1565,52 @@ function mdToHtml(md){
   if(inList) html+='</ul>';
   return html;
 }
-let docRepo=null;
+let docRepo=null, docSub='roadmap';
 window.openDocs = (repo)=>{
   docRepo = repo;
   const pj = P.find(p=>p.repo===repo);
   document.getElementById('docTitle').textContent = (pj?pj.nm:repo)+' — 문서';
   document.getElementById('docModal').classList.add('on');
-  showDocTab('prd');
+  loadDocInto('docPRD','prd.md');
+  showDocSub('roadmap');
 };
 window.closeDocs = ()=>document.getElementById('docModal').classList.remove('on');
-window.showDocTab = async (tab)=>{
-  document.querySelectorAll('.doc-tab').forEach(t=>t.classList.toggle('on', t.dataset.tab===tab));
-  const body = document.getElementById('docBody');
-  body.innerHTML = '<div class="sug-empty">불러오는 중…</div>';
-  const file = {prd:'prd.md',roadmap:'roadmap.md',log:'log.md'}[tab] || 'prd.md';
+async function loadDocInto(elId, file){
+  const el = document.getElementById(elId);
+  el.innerHTML = '<div class="sug-empty">불러오는 중…</div>';
   try{
     const r = await fetch(`projects/${docRepo}/${file}`,{cache:'no-store'});
     if(!r.ok) throw new Error('HTTP '+r.status);
-    body.innerHTML = mdToHtml(await r.text());
+    el.innerHTML = mdToHtml(await r.text());
   }catch(e){
-    body.innerHTML = '<div class="sug-empty">문서를 불러올 수 없습니다. file:// 환경에서는 npx serve 또는 배포 URL로 열어주세요.</div>';
+    el.innerHTML = '<div class="sug-empty">문서를 불러올 수 없습니다. file:// 에서는 npx serve 또는 배포 URL로 열어주세요.</div>';
+  }
+}
+function renderRoadmapBoard(items){
+  const groups=[['done','완료','✓'],['doing','진행 중','●'],['todo','예정','○']];
+  const html = groups.map(([s,label,icon])=>{
+    const its=(items||[]).filter(i=>i.s===s);
+    if(!its.length) return '';
+    return `<div class="rm-group rm-${s}">
+      <div class="rm-group-hd">${icon} ${label} <span class="rm-count">${its.length}</span></div>
+      ${its.map(i=>`<div class="rm-item">${i.t}</div>`).join('')}
+    </div>`;
+  }).join('');
+  return html || '<div class="sug-empty">로드맵 항목이 없습니다. /sync-project로 실제 로드맵을 채우세요.</div>';
+}
+window.showDocSub = async (sub)=>{
+  docSub = sub;
+  document.querySelectorAll('.doc-subtab').forEach(t=>t.classList.toggle('on', t.dataset.sub===sub));
+  const el = document.getElementById('docRight');
+  if(sub==='log'){ loadDocInto('docRight','log.md'); return; }
+  el.innerHTML = '<div class="sug-empty">불러오는 중…</div>';
+  try{
+    const r = await fetch(`projects/${docRepo}/project.json`,{cache:'no-store'});
+    if(!r.ok) throw new Error('HTTP '+r.status);
+    const pj = await r.json();
+    el.innerHTML = renderRoadmapBoard(pj.roadmap);
+  }catch(e){
+    el.innerHTML = '<div class="sug-empty">로드맵을 불러올 수 없습니다. npx serve 또는 배포 URL로 열어주세요.</div>';
   }
 };
 

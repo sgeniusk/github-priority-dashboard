@@ -2,5 +2,35 @@
   "repo": "habit",
   "displayName": "Formi (포미)",
   "synced": false,
-  "versions": []
+  "versions": [],
+  "roadmap": [
+    {
+      "t": "PRD·문서 정리",
+      "s": "done"
+    },
+    {
+      "t": "실행 골격·검증 하네스 구축",
+      "s": "done"
+    },
+    {
+      "t": "알파 검증 1차",
+      "s": "done"
+    },
+    {
+      "t": "기능 단계 보강 중",
+      "s": "doing"
+    },
+    {
+      "t": "mobile/README.md 기준 Expo 알파 빌드 산출",
+      "s": "todo"
+    },
+    {
+      "t": "iOS TestFlight 등록 절차",
+      "s": "todo"
+    },
+    {
+      "t": "캡쳐된 alpha 사용자 피드백 반영",
+      "s": "todo"
+    }
+  ]
 }
