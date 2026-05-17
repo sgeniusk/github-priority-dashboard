@@ -50,6 +50,7 @@ github-priority-dashboard/
 
 - **`/refresh`** — GitHub 활동을 가져와 `projects.json`을 갱신하고, `dashboard.html`의 FALLBACK을 동기화한 뒤 `/coach` 로직으로 `suggestions.json`을 재생성한다.
 - **`/coach`** — 각 프로젝트의 막힌 단계·속도·정체를 분석해 `suggestions.json`에 제안을 기록한다. 인자로 프로젝트 이름을 주면 해당 프로젝트만 분석.
+- **`/weekly-report`** — `projects.json`을 읽어 주간 진척 요약(하이라이트·Sprint 현황·주의 신호·다음 주 우선)을 마크다운으로 산출한다.
 - **`/new-project`** — 새 게임/앱/웹 아이디어를 대화로 구상하고, 결정되면 하네스 엔지니어링을 고려한 첫 프롬프트를 작성한다.
 
 ### 데이터 흐름
@@ -103,6 +104,7 @@ github-priority-dashboard/
 
 - **진척도·활동 갱신** — `/refresh` (또는 `node scripts/refresh-progress.mjs`)
 - **정체 점검·코칭** — `/coach`
+- **주간 진척 요약** — `/weekly-report`
 - **새 프로젝트 시작** — `/new-project`
 - **신규 프로젝트 등록** — `projects.json`에 객체 추가 → `rank` 재정렬 → `dashboard.html`의 `FALLBACK_PROJECTS` 폴백도 동기화 (`/refresh`가 처리)
 - **도구 태그 변경** — 사용자 확인 후에만, `tool-attribution.md`에 사유 기록

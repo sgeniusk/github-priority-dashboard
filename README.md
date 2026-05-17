@@ -1,32 +1,38 @@
-# sgeniusk GitHub 프로젝트 우선순위 대시보드
+# sgeniusk 프로젝트 관리 에이전트 워크스페이스
 
-이 폴더는 sgeniusk(Gomgomee)의 진행 중인 게임/앱/콘텐츠 프로젝트 9개의 진척도와 우선순위를 추적하는 단일 페이지 대시보드입니다.
+sgeniusk(Gomgomee)의 진행 중인 게임·앱·콘텐츠 프로젝트를 추적·코칭하는 **프로젝트 관리 에이전트 워크스페이스**. 단순 대시보드를 넘어, 슬래시 커맨드로 데이터 갱신·진척 코칭·새 프로젝트 킥오프를 지원한다.
 
 ## 빠른 시작
 
-1. **대시보드 보기**: `dashboard.html`을 브라우저로 열기 (file:// 또는 `npx serve .`)
-2. **데이터 수정**: `projects.json` 편집
-3. **Claude Code로 이어 작업**: `HANDOFF.md` 5단계 가이드 참고
+1. **대시보드 보기** — `dashboard.html`을 브라우저로 열기 (`file://` 또는 `npx serve .`)
+2. **데이터 갱신** — 이 폴더에서 `claude` 실행 후 `/refresh`
+3. **이어받기** — `HANDOFF.md`의 세션 재개 가이드 참고
 
-## 파일
+## 구성
 
-| 파일 | 역할 |
-| --- | --- |
-| `dashboard.html` | 시각화 산출물 (Chart.js, self-contained) |
-| `projects.json` | 단일 진실 소스 — 모든 프로젝트 메타데이터 |
-| `CLAUDE.md` | Claude Code 진입점 컨텍스트 |
-| `HANDOFF.md` | Cowork → Claude Code 핸드오프 절차 |
-| `docs/` | 추가 설명 문서 |
+| 계층 | 파일 | 역할 |
+| --- | --- | --- |
+| 뷰 | `dashboard.html` | SVG 차트 기반 대시보드, 라이트/다크, 반응형 |
+| 데이터 | `projects.json` · `suggestions.json` · `usage.json` | 단일 진실 소스 |
+| 에이전트 | `.claude/commands/*.md` | 슬래시 커맨드 |
+| 자동화 | `.github/workflows/deploy.yml` | `main` push 시 Pages 배포 |
+| 컨텍스트 | `CLAUDE.md` | Claude Code 진입점 |
 
-## 현재 상태 (2026-05-16)
+대시보드는 `fetch`로 3개 JSON을 로드하고, 실패 시 내장 폴백을 쓴다.
 
-- **활성**: 9개 (게임 4 · 앱 4 · 콘텐츠 1)
-- **일시중단**: 1개 (반짝상점 생존기)
-- **완성 임박 Top 3**: Formi (75%) · 뜬이유 iOS (70%) · 시즈폴 (65%)
-- **도구 분포**: Claude 4 · Codex 3 · Hermes 1 · Hybrid 1
+## 슬래시 커맨드
 
-## 진척도 산정 공식
+- `/refresh` — GitHub 활동을 가져와 `projects.json` 갱신 + 제안 재생성
+- `/coach` — 프로젝트 단계 심층 분석·정체 감지
+- `/weekly-report` — 주간 진척 요약
+- `/new-project` — 새 프로젝트 아이디어 구상 + 하네스 엔지니어링 첫 프롬프트
+
+## 진척도 공식
 
 `progress = docs(0-25) + skeleton(0-25) + features(0-30) + alpha(0-20) = 0-100`
 
-자세한 설명: `docs/progress-formula.md`
+자세한 설명은 `docs/progress-formula.md`, 필드 규칙은 `projects.schema.md`.
+
+## 로드맵
+
+v1.0(베이스라인) → v1.1(안정화) → v1.2(문서 표준) → v1.3(청사진 뷰) → v1.4(자동 분석) → v2.0(완성형 에이전트). 핵심 목표는 모든 프로젝트의 버전 여정을 한눈에 보여주는 거대한 청사진이다.
