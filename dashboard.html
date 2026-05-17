@@ -222,6 +222,42 @@ footer{border-top:1px solid var(--border);padding:18px 28px;max-width:1460px;mar
 .help-stage-hd{font-size:13px;font-weight:700;display:flex;align-items:center;gap:7px;margin-bottom:6px}
 .help-stage ul{list-style:none;display:flex;flex-direction:column;gap:3px;padding-left:17px}
 .help-stage li{font-size:12px;color:var(--t2);line-height:1.45}
+
+/* ── BLUEPRINT ── */
+.bp-row{display:flex;align-items:flex-start;gap:16px;padding:13px 0;border-bottom:1px solid var(--border)}
+.bp-row:last-child{border-bottom:none}
+.bp-name{width:160px;flex-shrink:0;display:flex;flex-direction:column;gap:2px;cursor:pointer;padding-top:6px}
+.bp-name .bp-name-t{font-size:13px;font-weight:700}
+.bp-name:hover .bp-name-t{color:var(--electric)}
+.bp-name small{font-size:9px;color:var(--t2);font-weight:600}
+.bp-track{display:flex;gap:8px;flex:1;flex-wrap:wrap;align-items:flex-start}
+.bp-ver{flex:1;min-width:130px;border-radius:10px;padding:9px 12px;font-family:var(--font);cursor:pointer;text-align:left;border:1.5px solid var(--border);background:var(--bg);transition:transform .12s,box-shadow .12s}
+.bp-ver:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,.1)}
+.bp-ver.st-done{background:var(--electric);border-color:var(--electric);color:#fff}
+.bp-ver.st-inProgress{background:var(--bg);border-color:var(--electric);color:var(--electric)}
+.bp-ver.st-planned{background:var(--bg);border-style:dashed;border-color:var(--border-gray);color:var(--t2)}
+.bp-ver.on{box-shadow:0 0 0 3px rgba(37,69,255,.2)}
+.bp-ver-label{font-size:12px;font-weight:700;display:block}
+.bp-ver-meta{font-size:9px;font-weight:600;display:block;margin-top:3px;opacity:.85}
+.bp-detail{flex-basis:100%;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin-top:2px}
+.bp-detail-sum{font-size:12px;color:var(--t2);line-height:1.55;margin-bottom:8px}
+.bp-detail ul{padding-left:17px;list-style:disc}
+.bp-detail li{font-size:12px;margin-bottom:3px}
+@media (max-width:640px){ .bp-row{flex-direction:column;gap:8px} .bp-name{width:auto;padding-top:0} }
+
+/* ── DOC VIEWER ── */
+.doc-tabs{display:flex;gap:2px;margin-bottom:14px;border-bottom:1px solid var(--border)}
+.doc-tab{background:none;border:none;border-bottom:2px solid transparent;padding:8px 14px;font-size:13px;font-weight:600;color:var(--t2);cursor:pointer;font-family:var(--font);margin-bottom:-1px}
+.doc-tab.on{color:var(--electric);border-bottom-color:var(--electric)}
+.doc-body{font-size:13px;line-height:1.6}
+.doc-body h2{font-size:16px;font-weight:700;margin:14px 0 8px}
+.doc-body h3{font-size:14px;font-weight:700;margin:13px 0 6px}
+.doc-body h4{font-size:13px;font-weight:700;margin:10px 0 5px}
+.doc-body p{margin:6px 0;color:var(--t2)}
+.doc-body ul{padding-left:18px;margin:6px 0;list-style:disc}
+.doc-body li{margin:3px 0;color:var(--t2)}
+.doc-body blockquote{border-left:3px solid var(--electric);padding:6px 12px;color:var(--t2);background:var(--bg);border-radius:0 6px 6px 0;margin:8px 0;font-size:12px}
+.doc-body code{background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:1px 5px;font-size:12px}
 .tbl-row:focus-visible{outline-offset:-2px}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
@@ -269,6 +305,7 @@ footer{border-top:1px solid var(--border);padding:18px 28px;max-width:1460px;mar
   <span class="hbadge" style="background:rgba(255,193,58,.18);color:#7a4d00">v1.1 · 2026-05-16</span>
   <div class="spacer"></div>
   <nav class="nav-links">
+    <a class="nav-link" href="#sec-blueprint">청사진</a>
     <a class="nav-link" href="#sec-table">순위</a>
     <a class="nav-link" href="#sec-suggest">제안</a>
     <a class="nav-link" href="#sec-charts">분석</a>
@@ -284,6 +321,15 @@ footer{border-top:1px solid var(--border);padding:18px 28px;max-width:1460px;mar
   <!-- KPI -->
   <section>
     <div class="kpi-grid" id="kpiGrid"></div>
+  </section>
+
+  <!-- Blueprint -->
+  <section id="sec-blueprint">
+    <div class="sec-label">청사진 — 프로젝트 버전 여정 <em id="bpMeta" style="font-style:normal;font-weight:600;letter-spacing:0;text-transform:none"></em><span></span></div>
+    <div class="card">
+      <p class="hint">각 프로젝트의 버전 흐름이야. 버전 카드를 누르면 요약·마일스톤이 펼쳐지고, 프로젝트 이름을 누르면 PRD·로드맵·로그를 볼 수 있어.</p>
+      <div id="blueprintBody"></div>
+    </div>
   </section>
 
   <!-- Filters -->
@@ -387,6 +433,22 @@ footer{border-top:1px solid var(--border);padding:18px 28px;max-width:1460px;mar
 </footer>
 
 <div id="tip"></div>
+
+<!-- 프로젝트 문서 열람 모달 -->
+<div class="modal-overlay" id="docModal" onclick="if(event.target===this)closeDocs()">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-label="프로젝트 문서">
+    <div class="modal-hd">
+      <span class="modal-title" id="docTitle">프로젝트 문서</span>
+      <button class="modal-x" onclick="closeDocs()" aria-label="닫기">✕</button>
+    </div>
+    <div class="doc-tabs">
+      <button class="doc-tab on" data-tab="prd" onclick="showDocTab('prd')">PRD</button>
+      <button class="doc-tab" data-tab="roadmap" onclick="showDocTab('roadmap')">로드맵</button>
+      <button class="doc-tab" data-tab="log" onclick="showDocTab('log')">로그</button>
+    </div>
+    <div class="doc-body" id="docBody"></div>
+  </div>
+</div>
 
 <!-- 진척도 측정 기준 도움말 모달 -->
 <div class="modal-overlay" id="helpModal" onclick="if(event.target===this)closeHelp()">
@@ -1403,6 +1465,479 @@ document.querySelectorAll('header .nav-link[href^="#"]').forEach(a=>{
   });
 });
 
+
+/* ── 청사진 (버전 여정) ── */
+const FALLBACK_BLUEPRINT = {
+  "generatedAt": "2026-05-16",
+  "projects": [
+    {
+      "repo": "habit",
+      "displayName": "Formi (포미)",
+      "synced": false,
+      "currentVersion": "alpha",
+      "versions": [
+        {
+          "id": "foundation",
+          "label": "기반",
+          "status": "done",
+          "target": "",
+          "summary": "PRD·문서·실행 골격·검증 하네스 구성",
+          "milestones": [
+            "PRD/스펙 작성",
+            "실행 골격 + 검증 하네스"
+          ]
+        },
+        {
+          "id": "alpha",
+          "label": "알파",
+          "status": "inProgress",
+          "target": "1-2주",
+          "summary": "PRD(2026-05-13) 확정, Alpha report + 10-tester evaluation 완료. 웹 프로토타입 검증 끝. mobile/(Expo) 디렉토리로 네이티브 통합 진행 중. CI 하네스(npm run ci)와 i18n까지 셋업됨.",
+          "milestones": [
+            "mobile/README.md 기준 Expo 알파 빌드 산출",
+            "iOS TestFlight 등록 절차",
+            "캡쳐된 alpha 사용자 피드백 반영"
+          ]
+        },
+        {
+          "id": "release",
+          "label": "v1.0 정식",
+          "status": "planned",
+          "target": "",
+          "summary": "알파 검증 완료 후 정식 출시",
+          "milestones": []
+        }
+      ]
+    },
+    {
+      "repo": "tteuniyu-ios",
+      "displayName": "뜬이유 iOS",
+      "synced": false,
+      "currentVersion": "alpha",
+      "versions": [
+        {
+          "id": "foundation",
+          "label": "기반",
+          "status": "done",
+          "target": "",
+          "summary": "PRD·문서·실행 골격·검증 하네스 구성",
+          "milestones": [
+            "PRD/스펙 작성",
+            "실행 골격 + 검증 하네스"
+          ]
+        },
+        {
+          "id": "alpha",
+          "label": "알파",
+          "status": "inProgress",
+          "target": "1-2주",
+          "summary": "Wave 1 Foundation 완료, Wave 3 통합도 RisingIssuesView/ViewModel/XCTest까지 끝. 남은 것은 시뮬레이터 스크린샷 + RFP §11 Acceptance Criteria 25개 자가 검증.",
+          "milestones": [
+            "Xcode 빌드 + 5 시뮬레이터 스크린샷 캡처",
+            "harness/check.sh CI 통과 확인",
+            "메인 monorepo와의 통합 시점 결정"
+          ]
+        },
+        {
+          "id": "release",
+          "label": "v1.0 정식",
+          "status": "planned",
+          "target": "",
+          "summary": "알파 검증 완료 후 정식 출시",
+          "milestones": []
+        }
+      ]
+    },
+    {
+      "repo": "sam-defender-logue",
+      "displayName": "삼국지: 시즈폴 (Siege Fall)",
+      "synced": false,
+      "currentVersion": "alpha",
+      "versions": [
+        {
+          "id": "foundation",
+          "label": "기반",
+          "status": "done",
+          "target": "",
+          "summary": "PRD·문서·실행 골격·검증 하네스 구성",
+          "milestones": [
+            "PRD/스펙 작성",
+            "실행 골격 + 검증 하네스"
+          ]
+        },
+        {
+          "id": "alpha",
+          "label": "알파",
+          "status": "inProgress",
+          "target": "2-3주",
+          "summary": "P1~P25까지 작업 항목 정리. 5/14, 5/15 연속 개발 진행 업데이트. 알파 플레이어블 슬라이스 완성, 가상 플레이테스트 보고 2회. 다국어 기반(P17), Hard 승률 게이트(P18)까지 진행.",
+          "milestones": [
+            "P25 루트 정찰 예측 완성",
+            "알파 완료 백로그 정리",
+            "에셋 수입 하네스 자동화"
+          ]
+        },
+        {
+          "id": "release",
+          "label": "v1.0 정식",
+          "status": "planned",
+          "target": "",
+          "summary": "알파 검증 완료 후 정식 출시",
+          "milestones": []
+        }
+      ]
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "displayName": "전지적 군주 시점",
+      "synced": false,
+      "currentVersion": "alpha",
+      "versions": [
+        {
+          "id": "foundation",
+          "label": "기반",
+          "status": "done",
+          "target": "",
+          "summary": "PRD·문서·실행 골격·검증 하네스 구성",
+          "milestones": [
+            "PRD/스펙 작성",
+            "실행 골격 + 검증 하네스"
+          ]
+        },
+        {
+          "id": "alpha",
+          "label": "알파",
+          "status": "inProgress",
+          "target": "2-3주",
+          "summary": "현재 기준선 v0.15.0-alpha. 알파 하네스 npm run harness:alpha 운영 중. Vercel 자동 배포 후보 URL까지 준비됨. CHANGELOG 체계도 정착.",
+          "milestones": [
+            "v0.16-alpha 게이트 통과",
+            "Vercel 정식 도메인 연결",
+            "20분/24시간 세션 합성 플레이테스트"
+          ]
+        },
+        {
+          "id": "release",
+          "label": "v1.0 정식",
+          "status": "planned",
+          "target": "",
+          "summary": "알파 검증 완료 후 정식 출시",
+          "milestones": []
+        }
+      ]
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "displayName": "Mandate of Heroes",
+      "synced": false,
+      "currentVersion": "alpha",
+      "versions": [
+        {
+          "id": "foundation",
+          "label": "기반",
+          "status": "done",
+          "target": "",
+          "summary": "PRD·문서·실행 골격·검증 하네스 구성",
+          "milestones": [
+            "PRD/스펙 작성",
+            "실행 골격 + 검증 하네스"
+          ]
+        },
+        {
+          "id": "alpha",
+          "label": "알파",
+          "status": "inProgress",
+          "target": "3-5주",
+          "summary": "코어 메커니즘 완성: deck draw/discard, energy, position, guard, morale, enemy intents, faction selection (Shu/Wei/Wu), self-guard, vulnerable, branc",
+          "milestones": [
+            "오리지널 시각 디자인 결정",
+            "Steam Wishlist 페이지 준비",
+            "Mac/iOS 빌드 점검"
+          ]
+        },
+        {
+          "id": "release",
+          "label": "v1.0 정식",
+          "status": "planned",
+          "target": "",
+          "summary": "알파 검증 완료 후 정식 출시",
+          "milestones": []
+        }
+      ]
+    },
+    {
+      "repo": "ai-builder-school",
+      "displayName": "AI Builder School",
+      "synced": false,
+      "currentVersion": "foundation",
+      "versions": [
+        {
+          "id": "foundation",
+          "label": "기반",
+          "status": "inProgress",
+          "target": "",
+          "summary": "PRD·문서·실행 골격·검증 하네스 구성",
+          "milestones": [
+            "PRD/스펙 작성",
+            "실행 골격 + 검증 하네스"
+          ]
+        },
+        {
+          "id": "alpha",
+          "label": "알파",
+          "status": "planned",
+          "target": "3-5주",
+          "summary": "12-phase 커리큘럼 + 6 여정 + 32 lesson 골격 완성. 페이지 맵(/start, /curriculum, /lessons, /tracks, /projects, /templates) 정의됨. 콘텐츠 데이터 모델 + 무결성 검증 셋업. 콘텐",
+          "milestones": [
+            "Phase별 우선 레슨 4-5개 본문 완성",
+            "캡스톤 프로젝트 예시 작성",
+            "라이선스 결정"
+          ]
+        },
+        {
+          "id": "release",
+          "label": "v1.0 정식",
+          "status": "planned",
+          "target": "",
+          "summary": "알파 검증 완료 후 정식 출시",
+          "milestones": []
+        }
+      ]
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "displayName": "AI 컴퍼니 타이쿤",
+      "synced": false,
+      "currentVersion": "foundation",
+      "versions": [
+        {
+          "id": "foundation",
+          "label": "기반",
+          "status": "inProgress",
+          "target": "",
+          "summary": "PRD·문서·실행 골격·검증 하네스 구성",
+          "milestones": [
+            "PRD/스펙 작성",
+            "실행 골격 + 검증 하네스"
+          ]
+        },
+        {
+          "id": "alpha",
+          "label": "알파",
+          "status": "planned",
+          "target": "4-6주",
+          "summary": "Godot에서 웹 네이티브로 재시작. PRD/벤치마크(Game Dev Story)/제작 하네스/합성 플레이테스트 12명 프로토콜 정리. MILESTONE_PLAN, AGENT_REVIEW_PROTOCOL까지 준비. 실제 게임 코드는 초기 단계.",
+          "milestones": [
+            "MVP 1 마일스톤 마감",
+            "합성 플레이테스트 12명 1차",
+            "Vercel 미리보기 배포"
+          ]
+        },
+        {
+          "id": "release",
+          "label": "v1.0 정식",
+          "status": "planned",
+          "target": "",
+          "summary": "알파 검증 완료 후 정식 출시",
+          "milestones": []
+        }
+      ]
+    },
+    {
+      "repo": "story-x-alpha",
+      "displayName": "Story X",
+      "synced": false,
+      "currentVersion": "foundation",
+      "versions": [
+        {
+          "id": "foundation",
+          "label": "기반",
+          "status": "inProgress",
+          "target": "",
+          "summary": "PRD·문서·실행 골격·검증 하네스 구성",
+          "milestones": [
+            "PRD/스펙 작성",
+            "실행 골격 + 검증 하네스"
+          ]
+        },
+        {
+          "id": "alpha",
+          "label": "알파",
+          "status": "planned",
+          "target": "5-7주",
+          "summary": "Project blueprint, creative development engine, story engine (시리즈 바이블, 캐논 레저), App.tsx UI까지 코드 골격 진행. 다양한 매체(소설/에세이/오디오북/만화/뮤직비디오/교육영상) 지원이 ",
+          "milestones": [
+            "1개 매체(웹툰 or 단편 만화) 깊이 우선 완성",
+            "장편 연재 메모리 앵커 테스트",
+            "에이전트 출력 골든 케이스 정착"
+          ]
+        },
+        {
+          "id": "release",
+          "label": "v1.0 정식",
+          "status": "planned",
+          "target": "",
+          "summary": "알파 검증 완료 후 정식 출시",
+          "milestones": []
+        }
+      ]
+    },
+    {
+      "repo": "BookCircle",
+      "displayName": "BookCircle",
+      "synced": false,
+      "currentVersion": "foundation",
+      "versions": [
+        {
+          "id": "foundation",
+          "label": "기반",
+          "status": "inProgress",
+          "target": "",
+          "summary": "PRD·문서·실행 골격·검증 하네스 구성",
+          "milestones": [
+            "PRD/스펙 작성",
+            "실행 골격 + 검증 하네스"
+          ]
+        },
+        {
+          "id": "alpha",
+          "label": "알파",
+          "status": "planned",
+          "target": "8-10주 (정상 추진 시)",
+          "summary": "Initial brief + design handoff + implementation spec + Next.js 스캐폴드 + landing/demo UI + Supabase 클라이언트 placeholder + 스키마 초안 완료. 의도적으로 sample",
+          "milestones": [
+            "로그인 방식 + 클럽 초대 모델 결정",
+            "Supabase 프로젝트 연결",
+            "투표/리뷰 슬라이스 1개 인증 흐름까지"
+          ]
+        },
+        {
+          "id": "release",
+          "label": "v1.0 정식",
+          "status": "planned",
+          "target": "",
+          "summary": "알파 검증 완료 후 정식 출시",
+          "milestones": []
+        }
+      ]
+    },
+    {
+      "repo": "jewelry-webtoon-cloud",
+      "displayName": "반짝상점 생존기",
+      "synced": false,
+      "currentVersion": "foundation",
+      "versions": [
+        {
+          "id": "foundation",
+          "label": "기반",
+          "status": "inProgress",
+          "target": "",
+          "summary": "PRD·문서·실행 골격·검증 하네스 구성",
+          "milestones": [
+            "PRD/스펙 작성",
+            "실행 골격 + 검증 하네스"
+          ]
+        },
+        {
+          "id": "alpha",
+          "label": "알파",
+          "status": "planned",
+          "target": "재개 후 8-12주",
+          "summary": "Month 01 산출물(세계관/시즌/학습 지도/법규 메모/스타일 가이드/캐릭터 시트/배경팩/파일럿 3편) 완성. gh auth 토큰 만료 상태. 사용자 결정으로 일시 중단.",
+          "milestones": [
+            "PAUSE: 재개 트리거 정의 (예: 핵심 게임 2개 마감 후)",
+            "gh auth 복구는 재개 시 처리",
+            "현재 산출물 README에 명시"
+          ]
+        },
+        {
+          "id": "release",
+          "label": "v1.0 정식",
+          "status": "planned",
+          "target": "",
+          "summary": "알파 검증 완료 후 정식 출시",
+          "milestones": []
+        }
+      ]
+    }
+  ]
+};
+let BP = FALLBACK_BLUEPRINT;
+let bpOpen = null;
+function renderBlueprint(){
+  const wrap = document.getElementById('blueprintBody');
+  if(!wrap) return;
+  const ps = (BP && BP.projects) || [];
+  const meta = document.getElementById('bpMeta');
+  if(meta) meta.textContent = ps.length ? ` · ${ps.length}개 · ${BP.generatedAt||''}` : '';
+  if(!ps.length){ wrap.innerHTML = '<div class="empty">청사진 데이터 없음</div>'; return; }
+  const stTxt = { done:'✓ 완료', inProgress:'● 진행 중', planned:'○ 예정' };
+  wrap.innerHTML = ps.map(pj=>{
+    const track = (pj.versions||[]).map(v=>{
+      const key = pj.repo+'::'+v.id, open = bpOpen===key;
+      const det = open ? `<div class="bp-detail">
+        <div class="bp-detail-sum">${v.summary||'(요약 미작성)'}</div>
+        ${(v.milestones&&v.milestones.length)?`<ul>${v.milestones.map(m=>`<li>${m}</li>`).join('')}</ul>`:'<div class="bp-detail-sum">마일스톤 미작성</div>'}
+      </div>` : '';
+      return `<button class="bp-ver st-${v.status}${open?' on':''}" onclick="toggleVer('${pj.repo}','${v.id}')">
+        <span class="bp-ver-label">${v.label}</span>
+        <span class="bp-ver-meta">${stTxt[v.status]||''}${v.target?' · '+v.target:''}</span>
+      </button>${det}`;
+    }).join('');
+    return `<div class="bp-row">
+      <div class="bp-name" onclick="openDocs('${pj.repo}')" title="문서 열람" tabindex="0" role="button" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openDocs('${pj.repo}')}">
+        <span class="bp-name-t">${pj.displayName}</span>
+        <small>${pj.synced?'동기화됨':'스캐폴드'} ▸ 문서 보기</small>
+      </div>
+      <div class="bp-track">${track}</div>
+    </div>`;
+  }).join('');
+}
+window.toggleVer = (repo,id)=>{ const k=repo+'::'+id; bpOpen = bpOpen===k?null:k; renderBlueprint(); };
+
+/* ── 문서 열람 — 간이 마크다운 렌더 ── */
+function mdToHtml(md){
+  const inline = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
+    .replace(/`(.+?)`/g,'<code>$1</code>');
+  let html='', inList=false;
+  for(const raw of String(md).split('\n')){
+    const l = raw.replace(/\s+$/,'');
+    if(inList && !/^[-*] /.test(l)){ html+='</ul>'; inList=false; }
+    if(/^#### /.test(l)) html+='<h4>'+inline(l.slice(5))+'</h4>';
+    else if(/^### /.test(l)) html+='<h4>'+inline(l.slice(4))+'</h4>';
+    else if(/^## /.test(l)) html+='<h3>'+inline(l.slice(3))+'</h3>';
+    else if(/^# /.test(l)) html+='<h2>'+inline(l.slice(2))+'</h2>';
+    else if(/^[-*] /.test(l)){ if(!inList){html+='<ul>';inList=true;} html+='<li>'+inline(l.slice(2))+'</li>'; }
+    else if(/^> /.test(l)) html+='<blockquote>'+inline(l.slice(2))+'</blockquote>';
+    else if(l.trim()!=='') html+='<p>'+inline(l)+'</p>';
+  }
+  if(inList) html+='</ul>';
+  return html;
+}
+let docRepo=null;
+window.openDocs = (repo)=>{
+  docRepo = repo;
+  const pj = ((BP&&BP.projects)||[]).find(p=>p.repo===repo);
+  document.getElementById('docTitle').textContent = (pj?pj.displayName:repo)+' — 문서';
+  document.getElementById('docModal').classList.add('on');
+  showDocTab('prd');
+};
+window.closeDocs = ()=>document.getElementById('docModal').classList.remove('on');
+window.showDocTab = async (tab)=>{
+  document.querySelectorAll('.doc-tab').forEach(t=>t.classList.toggle('on', t.dataset.tab===tab));
+  const body = document.getElementById('docBody');
+  body.innerHTML = '<div class="sug-empty">불러오는 중…</div>';
+  const file = {prd:'prd.md',roadmap:'roadmap.md',log:'log.md'}[tab] || 'prd.md';
+  try{
+    const r = await fetch(`projects/${docRepo}/${file}`,{cache:'no-store'});
+    if(!r.ok) throw new Error('HTTP '+r.status);
+    body.innerHTML = mdToHtml(await r.text());
+  }catch(e){
+    body.innerHTML = '<div class="sug-empty">문서를 불러올 수 없습니다. file:// 환경에서는 npx serve 또는 배포 URL로 열어주세요.</div>';
+  }
+};
+
 /* ── 데이터 로드 + INIT ── */
 async function loadJSON(path,fb){
   try{ const r=await fetch(path,{cache:'no-store'}); if(!r.ok) throw new Error('HTTP '+r.status); return await r.json(); }
@@ -1412,21 +1947,23 @@ async function init() {
   document.getElementById('themeBtn').textContent =
     document.documentElement.getAttribute('data-theme')==='dark' ? '☀️' : '🌙';
 
-  const [pj,sj,uj] = await Promise.all([
+  const [pj,sj,uj,bp] = await Promise.all([
     loadJSON('./projects.json',FALLBACK_PROJECTS),
     loadJSON('./suggestions.json',FALLBACK_SUGGESTIONS),
-    loadJSON('./usage.json',FALLBACK_USAGE)
+    loadJSON('./usage.json',FALLBACK_USAGE),
+    loadJSON('./blueprint.json',FALLBACK_BLUEPRINT)
   ]);
   P = (pj.projects||[]).map(mapProject);
   SUG = sj || { items:[] };
   usageData = uj || { tools:[] };
+  BP = bp || { projects:[] };
 
   // 스프린트 보드 카드 위치 시드 (localStorage가 비어 있을 때만)
   if (!Object.keys(spPos).length) P.forEach(p=>spPos[p.id]=p.sprint);
   // 사용량 기준값 시드 (사용자 입력이 없을 때만)
   (usageData.tools||[]).forEach(t=>{ if(!usage[t.tool]) usage[t.tool]={pct:t.usedPercent||0,reset:t.cycleResetDate||''}; });
 
-  renderKPI(); renderFilters(); renderTable(); renderSuggest(); renderSprint(); renderUsage();
+  renderBlueprint(); renderKPI(); renderFilters(); renderTable(); renderSuggest(); renderSprint(); renderUsage();
   setTimeout(()=>{ renderStacked(); renderDonut(); renderScatter(); }, 200);
   let rt; window.addEventListener('resize',()=>{ clearTimeout(rt); rt=setTimeout(()=>{ renderStacked(); renderScatter(); },200); });
 }

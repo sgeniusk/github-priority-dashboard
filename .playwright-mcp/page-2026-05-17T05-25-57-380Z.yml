@@ -1,0 +1,724 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "sgeniusk" [ref=e3] [cursor=pointer]:
+      - /url: "#"
+      - img [ref=e5]
+      - generic [ref=e10]: sgeniusk
+    - generic [ref=e11]: 프로젝트 우선순위 대시보드
+    - generic [ref=e12]: v1.1 · 2026-05-16
+    - navigation [ref=e13]:
+      - link "청사진" [ref=e14] [cursor=pointer]:
+        - /url: "#sec-blueprint"
+      - link "순위" [ref=e15] [cursor=pointer]:
+        - /url: "#sec-table"
+      - link "제안" [ref=e16] [cursor=pointer]:
+        - /url: "#sec-suggest"
+      - link "분석" [ref=e17] [cursor=pointer]:
+        - /url: "#sec-charts"
+      - link "스프린트" [ref=e18] [cursor=pointer]:
+        - /url: "#sec-sprint"
+      - link "사용량" [ref=e19] [cursor=pointer]:
+        - /url: "#sec-usage"
+    - button "데이터 새로고침 및 분석" [ref=e20] [cursor=pointer]: ↻
+    - button "라이트/다크 테마 전환" [ref=e21] [cursor=pointer]: 🌙
+  - main [ref=e22]:
+    - generic [ref=e24]:
+      - generic [ref=e25]:
+        - generic [ref=e26]: 활성 프로젝트
+        - generic [ref=e27]: "9"
+        - generic [ref=e28]: +1 일시중단
+        - generic [ref=e29]: 전체 10개
+      - generic [ref=e30]:
+        - generic [ref=e31]: Claude 작성
+        - generic [ref=e32]: "4"
+        - generic [ref=e33]: Formi (포미) · AI Builder School · Story X · BookCircle
+        - generic [ref=e34]: Claude
+      - generic [ref=e35]:
+        - generic [ref=e36]: Codex 작성
+        - generic [ref=e37]: "3"
+        - generic [ref=e38]: "삼국지: 시즈폴 (Siege Fall) · 전지적 군주 시점 · AI 컴퍼니 타이쿤"
+        - generic [ref=e39]: Codex
+      - generic [ref=e40]:
+        - generic [ref=e41]: 평균 진척도
+        - generic [ref=e42]: 51%
+        - generic [ref=e43]: 활성 프로젝트 기준
+        - generic [ref=e44]: 4개 ≥60%
+      - generic [ref=e45]:
+        - generic [ref=e46]: 완성 임박
+        - generic [ref=e47]: "4"
+        - generic [ref=e48]: 2-3주 내 알파 가능
+        - generic [ref=e49]: 우선 착수
+    - generic [ref=e50]:
+      - generic [ref=e51]:
+        - text: 청사진 — 프로젝트 버전 여정
+        - emphasis [ref=e52]: · 10개 · 2026-05-16
+      - generic [ref=e54]:
+        - paragraph [ref=e55]: 각 프로젝트의 버전 흐름이야. 버전 카드를 누르면 요약·마일스톤이 펼쳐지고, 프로젝트 이름을 누르면 PRD·로드맵·로그를 볼 수 있어.
+        - generic [ref=e56]:
+          - generic [ref=e57]:
+            - button "Formi (포미) 스캐폴드 ▸ 문서 보기" [ref=e58] [cursor=pointer]:
+              - generic [ref=e59]: Formi (포미)
+              - generic [ref=e60]: 스캐폴드 ▸ 문서 보기
+            - generic [ref=e61]:
+              - button "기반 ✓ 완료" [ref=e62] [cursor=pointer]:
+                - generic [ref=e63]: 기반
+                - generic [ref=e64]: ✓ 완료
+              - button "알파 ● 진행 중 · 1-2주" [ref=e65] [cursor=pointer]:
+                - generic [ref=e66]: 알파
+                - generic [ref=e67]: ● 진행 중 · 1-2주
+              - button "v1.0 정식 ○ 예정" [ref=e68] [cursor=pointer]:
+                - generic [ref=e69]: v1.0 정식
+                - generic [ref=e70]: ○ 예정
+          - generic [ref=e71]:
+            - button "뜬이유 iOS 스캐폴드 ▸ 문서 보기" [ref=e72] [cursor=pointer]:
+              - generic [ref=e73]: 뜬이유 iOS
+              - generic [ref=e74]: 스캐폴드 ▸ 문서 보기
+            - generic [ref=e75]:
+              - button "기반 ✓ 완료" [ref=e76] [cursor=pointer]:
+                - generic [ref=e77]: 기반
+                - generic [ref=e78]: ✓ 완료
+              - button "알파 ● 진행 중 · 1-2주" [ref=e79] [cursor=pointer]:
+                - generic [ref=e80]: 알파
+                - generic [ref=e81]: ● 진행 중 · 1-2주
+              - button "v1.0 정식 ○ 예정" [ref=e82] [cursor=pointer]:
+                - generic [ref=e83]: v1.0 정식
+                - generic [ref=e84]: ○ 예정
+          - generic [ref=e85]:
+            - 'button "삼국지: 시즈폴 (Siege Fall) 스캐폴드 ▸ 문서 보기" [ref=e86] [cursor=pointer]':
+              - generic [ref=e87]: "삼국지: 시즈폴 (Siege Fall)"
+              - generic [ref=e88]: 스캐폴드 ▸ 문서 보기
+            - generic [ref=e89]:
+              - button "기반 ✓ 완료" [ref=e90] [cursor=pointer]:
+                - generic [ref=e91]: 기반
+                - generic [ref=e92]: ✓ 완료
+              - button "알파 ● 진행 중 · 2-3주" [ref=e93] [cursor=pointer]:
+                - generic [ref=e94]: 알파
+                - generic [ref=e95]: ● 진행 중 · 2-3주
+              - button "v1.0 정식 ○ 예정" [ref=e96] [cursor=pointer]:
+                - generic [ref=e97]: v1.0 정식
+                - generic [ref=e98]: ○ 예정
+          - generic [ref=e99]:
+            - button "전지적 군주 시점 스캐폴드 ▸ 문서 보기" [ref=e100] [cursor=pointer]:
+              - generic [ref=e101]: 전지적 군주 시점
+              - generic [ref=e102]: 스캐폴드 ▸ 문서 보기
+            - generic [ref=e103]:
+              - button "기반 ✓ 완료" [ref=e104] [cursor=pointer]:
+                - generic [ref=e105]: 기반
+                - generic [ref=e106]: ✓ 완료
+              - button "알파 ● 진행 중 · 2-3주" [ref=e107] [cursor=pointer]:
+                - generic [ref=e108]: 알파
+                - generic [ref=e109]: ● 진행 중 · 2-3주
+              - button "v1.0 정식 ○ 예정" [ref=e110] [cursor=pointer]:
+                - generic [ref=e111]: v1.0 정식
+                - generic [ref=e112]: ○ 예정
+          - generic [ref=e113]:
+            - button "Mandate of Heroes 스캐폴드 ▸ 문서 보기" [ref=e114] [cursor=pointer]:
+              - generic [ref=e115]: Mandate of Heroes
+              - generic [ref=e116]: 스캐폴드 ▸ 문서 보기
+            - generic [ref=e117]:
+              - button "기반 ✓ 완료" [ref=e118] [cursor=pointer]:
+                - generic [ref=e119]: 기반
+                - generic [ref=e120]: ✓ 완료
+              - button "알파 ● 진행 중 · 3-5주" [ref=e121] [cursor=pointer]:
+                - generic [ref=e122]: 알파
+                - generic [ref=e123]: ● 진행 중 · 3-5주
+              - button "v1.0 정식 ○ 예정" [ref=e124] [cursor=pointer]:
+                - generic [ref=e125]: v1.0 정식
+                - generic [ref=e126]: ○ 예정
+          - generic [ref=e127]:
+            - button "AI Builder School 스캐폴드 ▸ 문서 보기" [ref=e128] [cursor=pointer]:
+              - generic [ref=e129]: AI Builder School
+              - generic [ref=e130]: 스캐폴드 ▸ 문서 보기
+            - generic [ref=e131]:
+              - button "기반 ● 진행 중" [ref=e132] [cursor=pointer]:
+                - generic [ref=e133]: 기반
+                - generic [ref=e134]: ● 진행 중
+              - button "알파 ○ 예정 · 3-5주" [ref=e135] [cursor=pointer]:
+                - generic [ref=e136]: 알파
+                - generic [ref=e137]: ○ 예정 · 3-5주
+              - button "v1.0 정식 ○ 예정" [ref=e138] [cursor=pointer]:
+                - generic [ref=e139]: v1.0 정식
+                - generic [ref=e140]: ○ 예정
+          - generic [ref=e141]:
+            - button "AI 컴퍼니 타이쿤 스캐폴드 ▸ 문서 보기" [ref=e142] [cursor=pointer]:
+              - generic [ref=e143]: AI 컴퍼니 타이쿤
+              - generic [ref=e144]: 스캐폴드 ▸ 문서 보기
+            - generic [ref=e145]:
+              - button "기반 ● 진행 중" [ref=e146] [cursor=pointer]:
+                - generic [ref=e147]: 기반
+                - generic [ref=e148]: ● 진행 중
+              - button "알파 ○ 예정 · 4-6주" [ref=e149] [cursor=pointer]:
+                - generic [ref=e150]: 알파
+                - generic [ref=e151]: ○ 예정 · 4-6주
+              - button "v1.0 정식 ○ 예정" [ref=e152] [cursor=pointer]:
+                - generic [ref=e153]: v1.0 정식
+                - generic [ref=e154]: ○ 예정
+          - generic [ref=e155]:
+            - button "Story X 스캐폴드 ▸ 문서 보기" [ref=e156] [cursor=pointer]:
+              - generic [ref=e157]: Story X
+              - generic [ref=e158]: 스캐폴드 ▸ 문서 보기
+            - generic [ref=e159]:
+              - button "기반 ● 진행 중" [ref=e160] [cursor=pointer]:
+                - generic [ref=e161]: 기반
+                - generic [ref=e162]: ● 진행 중
+              - button "알파 ○ 예정 · 5-7주" [ref=e163] [cursor=pointer]:
+                - generic [ref=e164]: 알파
+                - generic [ref=e165]: ○ 예정 · 5-7주
+              - button "v1.0 정식 ○ 예정" [ref=e166] [cursor=pointer]:
+                - generic [ref=e167]: v1.0 정식
+                - generic [ref=e168]: ○ 예정
+          - generic [ref=e169]:
+            - button "BookCircle 스캐폴드 ▸ 문서 보기" [ref=e170] [cursor=pointer]:
+              - generic [ref=e171]: BookCircle
+              - generic [ref=e172]: 스캐폴드 ▸ 문서 보기
+            - generic [ref=e173]:
+              - button "기반 ● 진행 중" [ref=e174] [cursor=pointer]:
+                - generic [ref=e175]: 기반
+                - generic [ref=e176]: ● 진행 중
+              - button "알파 ○ 예정 · 8-10주 (정상 추진 시)" [ref=e177] [cursor=pointer]:
+                - generic [ref=e178]: 알파
+                - generic [ref=e179]: ○ 예정 · 8-10주 (정상 추진 시)
+              - button "v1.0 정식 ○ 예정" [ref=e180] [cursor=pointer]:
+                - generic [ref=e181]: v1.0 정식
+                - generic [ref=e182]: ○ 예정
+          - generic [ref=e183]:
+            - button "반짝상점 생존기 스캐폴드 ▸ 문서 보기" [ref=e184] [cursor=pointer]:
+              - generic [ref=e185]: 반짝상점 생존기
+              - generic [ref=e186]: 스캐폴드 ▸ 문서 보기
+            - generic [ref=e187]:
+              - button "기반 ● 진행 중" [ref=e188] [cursor=pointer]:
+                - generic [ref=e189]: 기반
+                - generic [ref=e190]: ● 진행 중
+              - button "알파 ○ 예정 · 재개 후 8-12주" [ref=e191] [cursor=pointer]:
+                - generic [ref=e192]: 알파
+                - generic [ref=e193]: ○ 예정 · 재개 후 8-12주
+              - button "v1.0 정식 ○ 예정" [ref=e194] [cursor=pointer]:
+                - generic [ref=e195]: v1.0 정식
+                - generic [ref=e196]: ○ 예정
+    - generic [ref=e198]:
+      - generic [ref=e199]: 카테고리
+      - generic [ref=e200]:
+        - button "전체" [ref=e201] [cursor=pointer]
+        - button "게임" [ref=e202] [cursor=pointer]
+        - button "앱" [ref=e203] [cursor=pointer]
+        - button "콘텐츠" [ref=e204] [cursor=pointer]
+      - generic [ref=e206]: 도구
+      - generic [ref=e207]:
+        - button "전체" [ref=e208] [cursor=pointer]
+        - button "Claude" [ref=e209] [cursor=pointer]
+        - button "Codex" [ref=e210] [cursor=pointer]
+        - button "Hermes Agent" [ref=e211] [cursor=pointer]
+        - button "Claude+Codex" [ref=e212] [cursor=pointer]
+      - generic [ref=e214]: 상태
+      - generic [ref=e215]:
+        - button "활성" [ref=e216] [cursor=pointer]
+        - button "전체" [ref=e217] [cursor=pointer]
+      - generic [ref=e219]: 정렬
+      - generic [ref=e220]:
+        - button "진척도" [ref=e221] [cursor=pointer]
+        - button "커밋" [ref=e222] [cursor=pointer]
+        - button "최근 활동" [ref=e223] [cursor=pointer]
+      - generic [ref=e224]:
+        - generic: ⌕
+        - searchbox "프로젝트 검색..." [ref=e225]
+    - generic [ref=e226]:
+      - generic [ref=e227]: 완성 임박도 순위
+      - generic [ref=e229]:
+        - generic [ref=e230]:
+          - generic [ref=e231] [cursor=pointer]: "#"
+          - generic [ref=e232] [cursor=pointer]: 프로젝트
+          - generic [ref=e233] [cursor=pointer]: 도구
+          - generic [ref=e234] [cursor=pointer]: 유형
+          - generic [ref=e235] [cursor=pointer]: 진척도 ↕
+          - generic [ref=e236] [cursor=pointer]: 커밋 ↕
+          - generic [ref=e237] [cursor=pointer]: 예상 완료
+        - generic [ref=e238]:
+          - generic [ref=e239]:
+            - button "Formi (포미) 상세 펼치기" [ref=e240] [cursor=pointer]:
+              - generic [ref=e241]: "1"
+              - generic [ref=e242]: Formi (포미)
+              - generic [ref=e243]: Claude
+              - generic [ref=e244]: 앱
+              - generic [ref=e246]:
+                - generic [ref=e247]: 70%
+                - generic [ref=e248]: Sprint A
+              - generic [ref=e250]:
+                - generic [ref=e251]: 커밋
+                - text: "81"
+              - generic [ref=e252]: 1-2주
+              - button "▼" [ref=e253]
+            - generic [ref=e254]:
+              - generic [ref=e255]:
+                - generic [ref=e256]: 진척도 분해
+                - generic [ref=e257]:
+                  - generic [ref=e258]: 문서
+                  - generic [ref=e261]: 20/20
+                - generic [ref=e262]:
+                  - generic [ref=e263]: 골격
+                  - generic [ref=e266]: 25/30
+                - generic [ref=e267]:
+                  - generic [ref=e268]: 기능
+                  - generic [ref=e271]: 15/30
+                - generic [ref=e272]:
+                  - generic [ref=e273]: 알파
+                  - generic [ref=e276]: 10/20
+              - generic [ref=e277]:
+                - generic [ref=e278]: 다음 액션
+                - generic [ref=e280]: mobile/README.md 기준 Expo 알파 빌드 산출
+                - generic [ref=e281]:
+                  - text: "최근: 2026-05-16 ·"
+                  - link "habit ↗" [ref=e282] [cursor=pointer]:
+                    - /url: https://github.com/sgeniusk/habit
+          - generic [ref=e283]:
+            - button "뜬이유 iOS 상세 펼치기" [ref=e284] [cursor=pointer]:
+              - generic [ref=e285]: "2"
+              - generic [ref=e286]: 뜬이유 iOS
+              - generic [ref=e287]: Claude+Codex
+              - generic [ref=e288]: 앱
+              - generic [ref=e290]:
+                - generic [ref=e291]: 65%
+                - generic [ref=e292]: Sprint A
+              - generic [ref=e294]:
+                - generic [ref=e295]: 커밋
+                - text: "5"
+              - generic [ref=e296]: 1-2주
+              - button "▼" [ref=e297]
+            - generic [ref=e298]:
+              - generic [ref=e299]:
+                - generic [ref=e300]: 진척도 분해
+                - generic [ref=e301]:
+                  - generic [ref=e302]: 문서
+                  - generic [ref=e305]: 20/20
+                - generic [ref=e306]:
+                  - generic [ref=e307]: 골격
+                  - generic [ref=e310]: 25/30
+                - generic [ref=e311]:
+                  - generic [ref=e312]: 기능
+                  - generic [ref=e315]: 20/30
+                - generic [ref=e316]:
+                  - generic [ref=e317]: 알파
+                  - generic [ref=e319]: 0/20
+              - generic [ref=e320]:
+                - generic [ref=e321]: 다음 액션
+                - generic [ref=e323]: Xcode 빌드 + 5 시뮬레이터 스크린샷 캡처
+                - generic [ref=e324]:
+                  - text: "최근: 2026-05-12 ·"
+                  - link "tteuniyu-ios ↗" [ref=e325] [cursor=pointer]:
+                    - /url: https://github.com/sgeniusk/tteuniyu-ios
+          - generic [ref=e326]:
+            - 'button "삼국지: 시즈폴 (Siege Fall) 상세 펼치기" [ref=e327] [cursor=pointer]':
+              - generic [ref=e328]: "3"
+              - generic [ref=e329]: "삼국지: 시즈폴 (Siege Fall)"
+              - generic [ref=e330]: Codex
+              - generic [ref=e331]: 게임
+              - generic [ref=e333]:
+                - generic [ref=e334]: 60%
+                - generic [ref=e335]: Sprint B
+              - generic [ref=e337]:
+                - generic [ref=e338]: 커밋
+                - text: "50"
+              - generic [ref=e339]: 2-3주
+              - button "▼" [ref=e340]
+            - generic [ref=e341]:
+              - generic [ref=e342]:
+                - generic [ref=e343]: 진척도 분해
+                - generic [ref=e344]:
+                  - generic [ref=e345]: 문서
+                  - generic [ref=e348]: 20/20
+                - generic [ref=e349]:
+                  - generic [ref=e350]: 골격
+                  - generic [ref=e353]: 20/30
+                - generic [ref=e354]:
+                  - generic [ref=e355]: 기능
+                  - generic [ref=e358]: 15/30
+                - generic [ref=e359]:
+                  - generic [ref=e360]: 알파
+                  - generic [ref=e363]: 5/20
+              - generic [ref=e364]:
+                - generic [ref=e365]: 다음 액션
+                - generic [ref=e367]: P25 루트 정찰 예측 완성
+                - generic [ref=e368]:
+                  - text: "최근: 2026-05-15 ·"
+                  - link "sam-defender-logue ↗" [ref=e369] [cursor=pointer]:
+                    - /url: https://github.com/sgeniusk/sam-defender-logue
+          - generic [ref=e370]:
+            - button "전지적 군주 시점 상세 펼치기" [ref=e371] [cursor=pointer]:
+              - generic [ref=e372]: "4"
+              - generic [ref=e373]: 전지적 군주 시점
+              - generic [ref=e374]: Codex
+              - generic [ref=e375]: 게임
+              - generic [ref=e377]:
+                - generic [ref=e378]: 60%
+                - generic [ref=e379]: Sprint B
+              - generic [ref=e381]:
+                - generic [ref=e382]: 커밋
+                - text: "46"
+              - generic [ref=e383]: 2-3주
+              - button "▼" [ref=e384]
+            - generic [ref=e385]:
+              - generic [ref=e386]:
+                - generic [ref=e387]: 진척도 분해
+                - generic [ref=e388]:
+                  - generic [ref=e389]: 문서
+                  - generic [ref=e392]: 20/20
+                - generic [ref=e393]:
+                  - generic [ref=e394]: 골격
+                  - generic [ref=e397]: 25/30
+                - generic [ref=e398]:
+                  - generic [ref=e399]: 기능
+                  - generic [ref=e402]: 15/30
+                - generic [ref=e403]:
+                  - generic [ref=e404]: 알파
+                  - generic [ref=e406]: 0/20
+              - generic [ref=e407]:
+                - generic [ref=e408]: 다음 액션
+                - generic [ref=e410]: v0.16-alpha 게이트 통과
+                - generic [ref=e411]:
+                  - text: "최근: 2026-05-16 ·"
+                  - link "samguk-idle-prototype ↗" [ref=e412] [cursor=pointer]:
+                    - /url: https://github.com/sgeniusk/samguk-idle-prototype
+          - generic [ref=e413]:
+            - button "Mandate of Heroes 상세 펼치기" [ref=e414] [cursor=pointer]:
+              - generic [ref=e415]: "5"
+              - generic [ref=e416]: Mandate of Heroes
+              - generic [ref=e417]: Hermes Agent
+              - generic [ref=e418]: 게임
+              - generic [ref=e420]:
+                - generic [ref=e421]: 55%
+                - generic [ref=e422]: Sprint C
+              - generic [ref=e424]:
+                - generic [ref=e425]: 커밋
+                - text: "43"
+              - generic [ref=e426]: 3-5주
+              - button "▼" [ref=e427]
+            - generic [ref=e428]:
+              - generic [ref=e429]:
+                - generic [ref=e430]: 진척도 분해
+                - generic [ref=e431]:
+                  - generic [ref=e432]: 문서
+                  - generic [ref=e435]: 15/20
+                - generic [ref=e436]:
+                  - generic [ref=e437]: 골격
+                  - generic [ref=e440]: 25/30
+                - generic [ref=e441]:
+                  - generic [ref=e442]: 기능
+                  - generic [ref=e445]: 15/30
+                - generic [ref=e446]:
+                  - generic [ref=e447]: 알파
+                  - generic [ref=e449]: 0/20
+              - generic [ref=e450]:
+                - generic [ref=e451]: 다음 액션
+                - generic [ref=e453]: 오리지널 시각 디자인 결정
+                - generic [ref=e454]:
+                  - text: "최근: 2026-05-16 ·"
+                  - link "three-kingdoms-deckbuilder ↗" [ref=e455] [cursor=pointer]:
+                    - /url: https://github.com/sgeniusk/three-kingdoms-deckbuilder
+          - generic [ref=e456]:
+            - button "AI Builder School 상세 펼치기" [ref=e457] [cursor=pointer]:
+              - generic [ref=e458]: "6"
+              - generic [ref=e459]: AI Builder School
+              - generic [ref=e460]: Claude
+              - generic [ref=e461]: 콘텐츠
+              - generic [ref=e463]:
+                - generic [ref=e464]: 45%
+                - generic [ref=e465]: Sprint C
+              - generic [ref=e467]:
+                - generic [ref=e468]: 커밋
+                - text: "21"
+              - generic [ref=e469]: 3-5주
+              - button "▼" [ref=e470]
+            - generic [ref=e471]:
+              - generic [ref=e472]:
+                - generic [ref=e473]: 진척도 분해
+                - generic [ref=e474]:
+                  - generic [ref=e475]: 문서
+                  - generic [ref=e478]: 20/20
+                - generic [ref=e479]:
+                  - generic [ref=e480]: 골격
+                  - generic [ref=e483]: 20/30
+                - generic [ref=e484]:
+                  - generic [ref=e485]: 기능
+                  - generic [ref=e488]: 5/30
+                - generic [ref=e489]:
+                  - generic [ref=e490]: 알파
+                  - generic [ref=e492]: 0/20
+              - generic [ref=e493]:
+                - generic [ref=e494]: 다음 액션
+                - generic [ref=e496]: Phase별 우선 레슨 4-5개 본문 완성
+                - generic [ref=e497]:
+                  - text: "최근: 2026-05-16 ·"
+                  - link "ai-builder-school ↗" [ref=e498] [cursor=pointer]:
+                    - /url: https://github.com/sgeniusk/ai-builder-school
+          - generic [ref=e499]:
+            - button "Story X 상세 펼치기" [ref=e500] [cursor=pointer]:
+              - generic [ref=e501]: "7"
+              - generic [ref=e502]: Story X
+              - generic [ref=e503]: Claude
+              - generic [ref=e504]: 앱
+              - generic [ref=e506]:
+                - generic [ref=e507]: 45%
+                - generic [ref=e508]: Sprint D
+              - generic [ref=e510]:
+                - generic [ref=e511]: 커밋
+                - text: "58"
+              - generic [ref=e512]: 5-7주
+              - button "▼" [ref=e513]
+            - generic [ref=e514]:
+              - generic [ref=e515]:
+                - generic [ref=e516]: 진척도 분해
+                - generic [ref=e517]:
+                  - generic [ref=e518]: 문서
+                  - generic [ref=e521]: 20/20
+                - generic [ref=e522]:
+                  - generic [ref=e523]: 골격
+                  - generic [ref=e526]: 15/30
+                - generic [ref=e527]:
+                  - generic [ref=e528]: 기능
+                  - generic [ref=e531]: 10/30
+                - generic [ref=e532]:
+                  - generic [ref=e533]: 알파
+                  - generic [ref=e535]: 0/20
+              - generic [ref=e536]:
+                - generic [ref=e537]: 다음 액션
+                - generic [ref=e539]: 1개 매체(웹툰 or 단편 만화) 깊이 우선 완성
+                - generic [ref=e540]:
+                  - text: "최근: 2026-05-16 ·"
+                  - link "story-x-alpha ↗" [ref=e541] [cursor=pointer]:
+                    - /url: https://github.com/sgeniusk/story-x-alpha
+          - generic [ref=e542]:
+            - button "AI 컴퍼니 타이쿤 상세 펼치기" [ref=e543] [cursor=pointer]:
+              - generic [ref=e544]: "8"
+              - generic [ref=e545]: AI 컴퍼니 타이쿤
+              - generic [ref=e546]: Codex
+              - generic [ref=e547]: 게임
+              - generic [ref=e549]:
+                - generic [ref=e550]: 40%
+                - generic [ref=e551]: Sprint D
+              - generic [ref=e553]:
+                - generic [ref=e554]: 커밋
+                - text: "51"
+              - generic [ref=e555]: 4-6주
+              - button "▼" [ref=e556]
+            - generic [ref=e557]:
+              - generic [ref=e558]:
+                - generic [ref=e559]: 진척도 분해
+                - generic [ref=e560]:
+                  - generic [ref=e561]: 문서
+                  - generic [ref=e564]: 20/20
+                - generic [ref=e565]:
+                  - generic [ref=e566]: 골격
+                  - generic [ref=e569]: 15/30
+                - generic [ref=e570]:
+                  - generic [ref=e571]: 기능
+                  - generic [ref=e574]: 5/30
+                - generic [ref=e575]:
+                  - generic [ref=e576]: 알파
+                  - generic [ref=e578]: 0/20
+              - generic [ref=e579]:
+                - generic [ref=e580]: 다음 액션
+                - generic [ref=e582]: MVP 1 마일스톤 마감
+                - generic [ref=e583]:
+                  - text: "최근: 2026-05-16 ·"
+                  - link "ai-company-tycoon-boundaryless ↗" [ref=e584] [cursor=pointer]:
+                    - /url: https://github.com/sgeniusk/ai-company-tycoon-boundaryless
+          - generic [ref=e585]:
+            - button "BookCircle 상세 펼치기" [ref=e586] [cursor=pointer]:
+              - generic [ref=e587]: "9"
+              - generic [ref=e588]: BookCircle
+              - generic [ref=e589]: Claude
+              - generic [ref=e590]: 앱
+              - generic [ref=e592]:
+                - generic [ref=e593]: 20%
+                - generic [ref=e594]: Defer
+              - generic [ref=e596]:
+                - generic [ref=e597]: 커밋
+                - text: "3"
+              - generic [ref=e598]: 8-10주 (정상 추진 시)
+              - button "▼" [ref=e599]
+            - generic [ref=e600]:
+              - generic [ref=e601]:
+                - generic [ref=e602]: 진척도 분해
+                - generic [ref=e603]:
+                  - generic [ref=e604]: 문서
+                  - generic [ref=e607]: 10/20
+                - generic [ref=e608]:
+                  - generic [ref=e609]: 골격
+                  - generic [ref=e612]: 10/30
+                - generic [ref=e613]:
+                  - generic [ref=e614]: 기능
+                  - generic [ref=e616]: 0/30
+                - generic [ref=e617]:
+                  - generic [ref=e618]: 알파
+                  - generic [ref=e620]: 0/20
+              - generic [ref=e621]:
+                - generic [ref=e622]: 다음 액션
+                - generic [ref=e624]: 로그인 방식 + 클럽 초대 모델 결정
+                - generic [ref=e625]:
+                  - text: "최근: 2026-05-13 ·"
+                  - link "BookCircle ↗" [ref=e626] [cursor=pointer]:
+                    - /url: https://github.com/sgeniusk/BookCircle
+      - generic [ref=e627]:
+        - generic [ref=e628]: 문서 PRD·Spec (0-20)
+        - generic [ref=e630]: 골격 하네스·서브에이전트 (0-30)
+        - generic [ref=e632]: 핵심 기능 (0-30)
+        - generic [ref=e634]: 알파·폴리시 (0-20)
+        - button "진척도 측정 기준 보기" [ref=e636] [cursor=pointer]: 측정 기준 ⓘ
+    - generic [ref=e637]:
+      - generic [ref=e638]:
+        - text: 제안 / 코칭
+        - emphasis [ref=e639]: · 3건 · 2026-05-16
+      - generic [ref=e641]:
+        - generic [ref=e642]:
+          - generic [ref=e643]:
+            - generic [ref=e644]: Stall
+            - generic [ref=e645]: 뜬이유 iOS
+          - generic [ref=e646]: Sprint A 정체 신호
+          - generic [ref=e647]: 마지막 푸시가 2026-05-12로 약 5일 전입니다. 같은 Sprint A의 Formi는 매일 활동 중인데 뜬이유 iOS는 멈춰 있어 동반 마감 일정이 어긋날 위험이 있습니다.
+          - list [ref=e648]:
+            - listitem [ref=e649]: → Xcode 빌드 + 5개 시뮬레이터 스크린샷 캡처
+            - listitem [ref=e650]: → harness/check.sh CI 통과 확인
+            - listitem [ref=e651]: → Acceptance Criteria 25개 자가검증 착수
+        - generic [ref=e652]:
+          - generic [ref=e653]:
+            - generic [ref=e654]: Coach
+            - generic [ref=e655]: Formi (포미)
+          - generic [ref=e656]: 완성 최근접 — 알파 게이트만 남음
+          - generic [ref=e657]: 진척도 75%로 활성 프로젝트 중 1위입니다. 문서·골격이 만점이고 알파(10/20)만 미완이라, TestFlight 알파 빌드 하나로 완성 단계에 진입할 수 있습니다.
+          - list [ref=e658]:
+            - listitem [ref=e659]: → mobile/README.md 기준 Expo iOS 알파 빌드 산출
+            - listitem [ref=e660]: → TestFlight 업로드 후 alpha 사용자 피드백 수집
+        - generic [ref=e661]:
+          - generic [ref=e662]:
+            - generic [ref=e663]: Coach
+            - generic [ref=e664]: AI Builder School
+          - generic [ref=e665]: 기능 점수가 병목
+          - generic [ref=e666]: features 점수가 5/30으로 활성 프로젝트 중 최저입니다. 12-phase 골격과 페이지 맵은 완성됐지만 32개 레슨 본문이 비어 실제 동작 비율이 낮습니다.
+          - list [ref=e667]:
+            - listitem [ref=e668]: → Phase별 우선 레슨 4-5개 본문 완성
+            - listitem [ref=e669]: → 캡스톤 프로젝트 예시 작성
+    - generic [ref=e670]:
+      - generic [ref=e671]: 진척도 분석
+      - generic [ref=e673]:
+        - generic [ref=e674]:
+          - generic [ref=e675]: 구성 분해 — 스택드 바
+          - img "프로젝트별 진척도 구성(문서·골격·기능·알파) 스택드 바 차트" [ref=e676]
+        - generic [ref=e677]:
+          - generic [ref=e678]: 도구별 분포
+          - img "도구별 활성 프로젝트 분포 도넛 차트" [ref=e679]
+        - generic [ref=e680]:
+          - generic [ref=e681]: 진척도 × 커밋 매트릭스
+          - img "진척도 × 커밋 수 산점도" [ref=e682]
+    - generic [ref=e683]:
+      - generic [ref=e684]:
+        - generic [ref=e685]: 스케줄 시퀀스
+        - generic [ref=e687]:
+          - emphasis
+          - button "Sprint 변경 내보내기" [ref=e688] [cursor=pointer]
+          - button "보드 초기화" [ref=e689] [cursor=pointer]
+      - generic [ref=e690]:
+        - generic [ref=e691]:
+          - generic [ref=e692]:
+            - text: Sprint A
+            - generic [ref=e693]: 1-2주
+          - generic [ref=e694]:
+            - generic [ref=e695]: Formi (포미)
+            - generic [ref=e696]:
+              - generic [ref=e697]: Claude
+              - generic [ref=e698]: 70%
+          - generic [ref=e699]:
+            - generic [ref=e700]: 뜬이유 iOS
+            - generic [ref=e701]:
+              - generic [ref=e702]: Claude+Codex
+              - generic [ref=e703]: 65%
+        - generic [ref=e704]:
+          - generic [ref=e705]:
+            - text: Sprint B
+            - generic [ref=e706]: 2-3주
+          - generic [ref=e707]:
+            - generic [ref=e708]: "삼국지: 시즈폴 (Siege Fall)"
+            - generic [ref=e709]:
+              - generic [ref=e710]: Codex
+              - generic [ref=e711]: 60%
+          - generic [ref=e712]:
+            - generic [ref=e713]: 전지적 군주 시점
+            - generic [ref=e714]:
+              - generic [ref=e715]: Codex
+              - generic [ref=e716]: 60%
+        - generic [ref=e717]:
+          - generic [ref=e718]:
+            - text: Sprint C
+            - generic [ref=e719]: 3-5주
+          - generic [ref=e720]:
+            - generic [ref=e721]: Mandate of Heroes
+            - generic [ref=e722]:
+              - generic [ref=e723]: Hermes Agent
+              - generic [ref=e724]: 55%
+          - generic [ref=e725]:
+            - generic [ref=e726]: AI Builder School
+            - generic [ref=e727]:
+              - generic [ref=e728]: Claude
+              - generic [ref=e729]: 45%
+        - generic [ref=e730]:
+          - generic [ref=e731]:
+            - text: Sprint D
+            - generic [ref=e732]: 5-8주
+          - generic [ref=e733]:
+            - generic [ref=e734]: AI 컴퍼니 타이쿤
+            - generic [ref=e735]:
+              - generic [ref=e736]: Codex
+              - generic [ref=e737]: 40%
+          - generic [ref=e738]:
+            - generic [ref=e739]: Story X
+            - generic [ref=e740]:
+              - generic [ref=e741]: Claude
+              - generic [ref=e742]: 45%
+        - generic [ref=e743]:
+          - generic [ref=e744]:
+            - text: Defer
+            - generic [ref=e745]: 보류
+          - generic [ref=e746]:
+            - generic [ref=e747]: BookCircle
+            - generic [ref=e748]:
+              - generic [ref=e749]: Claude
+              - generic [ref=e750]: 20%
+          - generic [ref=e751]:
+            - generic [ref=e752]: 반짝상점 생존기
+            - generic [ref=e753]:
+              - generic [ref=e754]: Claude
+              - generic [ref=e755]: 20%
+    - generic [ref=e756]:
+      - generic [ref=e757]:
+        - text: 사용량 트래커
+        - button "usage.json 내보내기" [ref=e759] [cursor=pointer]
+      - generic [ref=e760]:
+        - generic [ref=e761]:
+          - generic [ref=e762]:
+            - generic [ref=e763]: Claude
+            - generic [ref=e764]: D-2
+          - generic [ref=e765]: 0%
+          - generic [ref=e766]: ✓ 정상 범위
+          - generic [ref=e768]:
+            - generic [ref=e769]:
+              - generic [ref=e770]: 사용률 (%)
+              - spinbutton [ref=e771]: "0"
+            - generic [ref=e772]:
+              - generic [ref=e773]: 리셋일
+              - textbox [ref=e774]: 2026-05-19
+          - button "오늘 리셋" [ref=e775] [cursor=pointer]
+        - generic [ref=e776]:
+          - generic [ref=e777]:
+            - generic [ref=e778]: Codex
+            - generic [ref=e779]: D-15
+          - generic [ref=e780]: 0%
+          - generic [ref=e781]: ✓ 정상 범위
+          - generic [ref=e783]:
+            - generic [ref=e784]:
+              - generic [ref=e785]: 사용률 (%)
+              - spinbutton [ref=e786]: "0"
+            - generic [ref=e787]:
+              - generic [ref=e788]: 리셋일
+              - textbox [ref=e789]: 2026-06-01
+          - button "오늘 리셋" [ref=e790] [cursor=pointer]
+  - contentinfo [ref=e791]:
+    - generic [ref=e792]: "데이터 출처: GitHub README/PRD · Contributors Insights API · commits.atom · 진척도 = 문서(0-20) + 골격(0-30) + 기능(0-30) + 알파(0-20)"
+    - button "데이터 초기화" [ref=e793] [cursor=pointer]
