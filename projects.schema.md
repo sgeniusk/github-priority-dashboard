@@ -22,6 +22,7 @@
 | `rank` | number | 우선순위 순위 (1이 최상위) | 수동 |
 | `name` | string | GitHub 리포 이름 (API 키) | 수동 |
 | `displayName` | string | 대시보드 표시 이름 | 수동 |
+| `icon` | string | 프로젝트 이모지 아이콘 — 순위 표·청사진 카드에 표시 | 수동 |
 | `category` | string | `game` / `app` / `content` | 수동 |
 | `visibility` | string | `public` / `private` | 수동 |
 | `tool` | string | `claude` / `codex` / `hermes` / `hybrid` | ⚠️ 사용자 확인 없이 변경 금지 |

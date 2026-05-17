@@ -91,7 +91,9 @@ section{margin-bottom:48px}
 .tbl-row.exp{background:rgba(37,69,255,.05)}
 .rank{font-size:15px;font-weight:700;color:var(--t2);line-height:1}
 .rank.hi{color:var(--electric)}
-.pname{font-size:14px;font-weight:600;display:flex;align-items:center;gap:6px;min-width:0}
+.pname{font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px;min-width:0}
+.picon{flex-shrink:0;width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;font-size:15px;background:rgba(127,127,140,.13);border-radius:8px;line-height:1}
+.mb-name .picon{width:30px;height:30px;font-size:17px;border-radius:9px}
 .susp-tag{background:rgba(0,0,0,.07);color:var(--t2);border-radius:4px;padding:1px 5px;font-size:9px;font-weight:700;text-transform:uppercase;flex-shrink:0}
 .tbadge{display:inline-flex;border-radius:var(--rp);padding:3px 10px;font-size:11px;font-weight:600;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
 .t-cl{background:rgba(37,69,255,.1);color:var(--electric)}
@@ -155,7 +157,8 @@ section{margin-bottom:48px}
 .usage-add{background:none;border:1.5px dashed var(--border-gray);border-radius:var(--r);color:var(--t2);cursor:pointer;font-size:13px;font-weight:600;font-family:var(--font);min-height:130px;transition:border-color .15s,color .15s}
 .usage-add:hover{border-color:var(--electric);color:var(--electric)}
 .usage-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
-.usage-nm{font-size:16px;font-weight:700}
+.usage-nm{font-size:16px;font-weight:700;display:flex;align-items:center;min-width:0}
+.usage-logo{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:7px;color:#fff;font-size:11px;font-weight:800;margin-right:8px;flex-shrink:0;letter-spacing:-.4px}
 .dday{background:var(--cool-gray);color:var(--navy);border-radius:var(--rp);padding:4px 14px;font-size:12px;font-weight:700}
 .dday.warn{background:rgba(255,193,58,.2);color:#7a4d00}
 .dday.danger{background:rgba(255,91,34,.15);color:var(--orange)}
@@ -573,6 +576,7 @@ const FALLBACK_PROJECTS = {
       "rank": 1,
       "name": "habit",
       "displayName": "Formi (포미)",
+      "icon": "🎯",
       "category": "app",
       "visibility": "public",
       "tool": "claude",
@@ -615,6 +619,7 @@ const FALLBACK_PROJECTS = {
       "rank": 2,
       "name": "tteuniyu-ios",
       "displayName": "뜬이유 iOS",
+      "icon": "📈",
       "category": "app",
       "visibility": "private",
       "tool": "hybrid",
@@ -657,6 +662,7 @@ const FALLBACK_PROJECTS = {
       "rank": 3,
       "name": "sam-defender-logue",
       "displayName": "삼국지: 시즈폴 (Siege Fall)",
+      "icon": "🛡️",
       "category": "game",
       "visibility": "private",
       "tool": "codex",
@@ -698,6 +704,7 @@ const FALLBACK_PROJECTS = {
       "rank": 4,
       "name": "samguk-idle-prototype",
       "displayName": "전지적 군주 시점",
+      "icon": "👑",
       "category": "game",
       "visibility": "private",
       "tool": "codex",
@@ -740,6 +747,7 @@ const FALLBACK_PROJECTS = {
       "rank": 5,
       "name": "three-kingdoms-deckbuilder",
       "displayName": "Mandate of Heroes",
+      "icon": "🃏",
       "category": "game",
       "visibility": "private",
       "tool": "hermes",
@@ -781,6 +789,7 @@ const FALLBACK_PROJECTS = {
       "rank": 6,
       "name": "ai-builder-school",
       "displayName": "AI Builder School",
+      "icon": "🏫",
       "category": "content",
       "visibility": "public",
       "tool": "claude",
@@ -823,6 +832,7 @@ const FALLBACK_PROJECTS = {
       "rank": 7,
       "name": "ai-company-tycoon-boundaryless",
       "displayName": "AI 컴퍼니 타이쿤",
+      "icon": "🏢",
       "category": "game",
       "visibility": "public",
       "tool": "codex",
@@ -865,6 +875,7 @@ const FALLBACK_PROJECTS = {
       "rank": 8,
       "name": "story-x-alpha",
       "displayName": "Story X",
+      "icon": "📖",
       "category": "app",
       "visibility": "private",
       "tool": "claude",
@@ -907,6 +918,7 @@ const FALLBACK_PROJECTS = {
       "rank": 9,
       "name": "BookCircle",
       "displayName": "BookCircle",
+      "icon": "📚",
       "category": "app",
       "visibility": "private",
       "tool": "claude",
@@ -949,6 +961,7 @@ const FALLBACK_PROJECTS = {
       "rank": 10,
       "name": "jewelry-webtoon-cloud",
       "displayName": "반짝상점 생존기",
+      "icon": "💎",
       "category": "content",
       "visibility": "private",
       "tool": "claude",
@@ -1061,7 +1074,7 @@ const TYPE_LABEL = { game:'게임', app:'앱', content:'콘텐츠' };
 function mapProject(p) {
   const pr = p.progress || {};
   return {
-    id: p.rank, nm: p.displayName || p.name, tool: TOOL_LABEL[p.tool] || p.tool || 'Claude',
+    id: p.rank, nm: p.displayName || p.name, icon: p.icon || '📦', tool: TOOL_LABEL[p.tool] || p.tool || 'Claude',
     type: TYPE_LABEL[p.category] || p.category || '앱', commits: p.commits || 0,
     last: (p.lastUpdate || '').slice(0, 10),
     sprint: p.sprint === 'defer' ? 'Defer' : (p.sprint || 'A'),
@@ -1163,7 +1176,7 @@ function renderTable() {
     <div class="row-wrap">
       <div class="tbl-row${ex?' exp':''}" id="trow-${p.id}" role="button" tabindex="0" aria-expanded="${ex}" aria-label="${p.nm} 상세 ${ex?'접기':'펼치기'}" onclick="togExp(${p.id})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();togExp(${p.id})}">
         <span class="rank${i<3?' hi':''}">${i+1}</span>
-        <span class="pname">${p.nm}${p.st==='suspended'?'<span class="susp-tag">중단</span>':''}</span>
+        <span class="pname"><span class="picon">${p.icon||'📦'}</span>${p.nm}${p.st==='suspended'?'<span class="susp-tag">중단</span>':''}</span>
         <span class="tbadge ${TCLS[p.tool]||'t-cl'}">${p.tool}</span>
         <span class="typbg">${p.type}</span>
         <div class="prog-wrap">
@@ -1394,15 +1407,60 @@ window.dropC=(e,k)=>{ e.preventDefault(); if(dragId!==null){ spPos[dragId]=k; lo
 window.resetSprint=()=>{ P.forEach(p=>spPos[p.id]=p.sprint); localStorage.setItem('sd',JSON.stringify(spPos)); renderSprint(); renderTable(); };
 
 /* ── USAGE TRACKER ── */
+// AI 서비스 브랜드 — 이름 매칭으로 로고 색·약자 자동 지정
+const USAGE_BRANDS=[
+  {m:['claude','anthropic'],   clr:'#d97757', mono:'C'},
+  {m:['codex','openai','chatgpt','gpt'], clr:'#10a37f', mono:'O'},
+  {m:['gemini','google','bard'], clr:'#4285f4', mono:'G'},
+  {m:['perplexity'],           clr:'#20808d', mono:'P'},
+  {m:['cursor'],               clr:'#6c5ce7', mono:'Cu'},
+  {m:['copilot','github'],     clr:'#6e40c9', mono:'Co'},
+  {m:['grok','xai'],           clr:'#1d1d1f', mono:'X'},
+  {m:['mistral'],              clr:'#fa520f', mono:'M'},
+  {m:['deepseek'],             clr:'#4d6bfe', mono:'D'},
+  {m:['llama','meta'],         clr:'#0866ff', mono:'L'},
+  {m:['v0','vercel'],          clr:'#1d1d1f', mono:'V'}
+];
+function brandOf(name){
+  const n=(name||'').toLowerCase();
+  const hit=USAGE_BRANDS.find(b=>b.m.some(k=>n.includes(k)));
+  return hit || {clr:'#6a6a72', mono:((name||'?').trim().charAt(0)||'?').toUpperCase()};
+}
 // 내장(Claude·Codex) + 사용자 추가 서비스 목록
 function usageServices(){
-  const builtin=[{key:'claude',nm:'Claude',clr:'#2545ff',builtin:true},{key:'codex',nm:'Codex',clr:'#0c1754',builtin:true}];
+  const builtin=[
+    {key:'claude',nm:'Claude',clr:'#2545ff',mono:'C',builtin:true},
+    {key:'codex', nm:'Codex', clr:'#0c1754',mono:'Cx',builtin:true}
+  ];
   let custom=[]; try{ custom=JSON.parse(localStorage.getItem('usageCustom')||'[]'); }catch(e){}
-  return builtin.concat(custom.map(c=>({key:c.key,nm:c.label,clr:c.clr||'#6a6a72',builtin:false})));
+  return builtin.concat(custom.map(c=>{
+    const b=brandOf(c.label);
+    return {key:c.key,nm:c.label,clr:c.clr||b.clr,mono:c.mono||b.mono,builtin:false};
+  }));
 }
 function todayStr(){ const d=new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
 function usageCard(t){
-  const u=usage[t.key]||{}, up=+(u.pct||0);
+  const u=usage[t.key]||{};
+  const logo=`<span class="usage-logo" style="background:${t.clr}">${t.mono||'?'}</span>`;
+  let subInfo='';
+  if(u.subscribed){
+    const n=new Date(), nd=new Date(n.getFullYear(),n.getMonth(),n.getDate());
+    const days=Math.round((nd-new Date(u.subscribed+'T00:00:00'))/86400000);
+    if(days>=0) subInfo=`구독 ${days}일째`;
+  }
+  // 내장 외 서비스 — 토큰 한도 개념이 없으므로 구독 정보만
+  if(!t.builtin){
+    return `<div class="usage-card">
+      <div class="usage-hd">
+        <span class="usage-nm">${logo}${t.nm}</span>
+        <button class="usage-del" onclick="delUsageService('${t.key}')" aria-label="삭제">✕</button>
+      </div>
+      <div class="usage-status" style="margin:6px 0 14px">${subInfo||'구독 시작일을 입력하면 사용 기간이 표시됩니다'}</div>
+      <div class="inp-grp"><label class="inp-lbl">구독 시작일</label><input type="date" class="inp" value="${u.subscribed||''}" oninput="updUsage('${t.key}','subscribed',this.value)"></div>
+    </div>`;
+  }
+  // 내장(Claude·Codex) — 토큰 한도 게이지
+  const up=+(u.pct||0);
   const fillClr=up>=90?'#ff5b22':up>=70?'#ffc13a':t.clr;
   let dday='리셋일 미입력', ddayCls='';
   if(u.reset){
@@ -1411,15 +1469,9 @@ function usageCard(t){
     dday=d>0?`D-${d}`:d===0?'오늘 리셋':`D+${Math.abs(d)} 초과`;
     ddayCls=d===0?'':d<0?'danger':d<=3?'danger':d<=7?'warn':'';
   }
-  let subInfo='';
-  if(u.subscribed){
-    const n=new Date(), nd=new Date(n.getFullYear(),n.getMonth(),n.getDate());
-    const days=Math.round((nd-new Date(u.subscribed+'T00:00:00'))/86400000);
-    if(days>=0) subInfo=`구독 ${days}일째`;
-  }
   return `<div class="usage-card">
     <div class="usage-hd">
-      <span class="usage-nm" style="color:${t.clr}">${t.nm}${t.builtin?'':`<button class="usage-del" onclick="delUsageService('${t.key}')" aria-label="삭제">✕</button>`}</span>
+      <span class="usage-nm">${logo}${t.nm}</span>
       <span class="dday ${ddayCls}">${dday}</span>
     </div>
     <div class="usage-big">${up}%</div>
@@ -1446,10 +1498,11 @@ window.resetToday=tk=>{
   renderUsage();
 };
 window.addUsageService=()=>{
-  const name=(window.prompt('추가할 AI 서비스 이름 (예: Gemini, Cursor)')||'').trim();
+  const name=(window.prompt('추가할 AI 서비스 이름 (예: Gemini, Perplexity, Cursor)')||'').trim();
   if(!name) return;
   let custom=[]; try{ custom=JSON.parse(localStorage.getItem('usageCustom')||'[]'); }catch(e){}
-  custom.push({ key:'svc-'+Date.now().toString(36), label:name, clr:'#6a6a72' });
+  const b=brandOf(name);
+  custom.push({ key:'svc-'+Date.now().toString(36), label:name, clr:b.clr, mono:b.mono });
   localStorage.setItem('usageCustom', JSON.stringify(custom));
   renderUsage();
 };
@@ -1642,7 +1695,7 @@ function renderMasterBoard(){
     const spcfg = SPRINTS[sp] || SPRINTS['A'];
     return `<div class="mb-card${p.st==='suspended'?' susp':''}">
       <div class="mb-head">
-        <span class="mb-name">${p.nm}${p.st==='suspended'?'<span class="susp-tag">중단</span>':''}</span>
+        <span class="mb-name"><span class="picon">${p.icon||'📦'}</span>${p.nm}${p.st==='suspended'?'<span class="susp-tag">중단</span>':''}</span>
         <span class="tbadge ${TCLS[p.tool]||'t-cl'}">${p.tool}</span>
       </div>
       <div class="mb-pctrow">
