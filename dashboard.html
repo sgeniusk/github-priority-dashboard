@@ -202,6 +202,40 @@ footer{border-top:1px solid var(--border);padding:18px 28px;max-width:1460px;mar
 .sug-actions li{font-size:12px;padding-left:16px;position:relative;line-height:1.45}
 .sug-actions li::before{content:'\2192';position:absolute;left:0;color:var(--electric);font-weight:700}
 .sug-empty{padding:32px;text-align:center;color:var(--t2);font-size:13px}
+
+/* ── A11Y ── */
+:focus-visible{outline:2px solid var(--electric);outline-offset:2px;border-radius:4px}
+.tbl-row:focus-visible{outline-offset:-2px}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width:960px){
+  main{padding:20px 18px 48px}
+  .kpi-grid{grid-template-columns:repeat(3,1fr)}
+  .charts-grid{grid-template-columns:1fr}
+  .sprint-board{grid-template-columns:repeat(3,1fr)}
+  .exp-inner{grid-template-columns:1fr;padding-left:20px;gap:14px}
+  .exp-body.open{max-height:460px}
+}
+@media (max-width:640px){
+  body{font-size:13px}
+  main{padding:16px 14px 40px}
+  section{margin-bottom:36px}
+  header{padding:0 16px;gap:8px}
+  .nav-links{display:none}
+  .hbadge{display:none}
+  .kpi-grid{grid-template-columns:repeat(2,1fr)}
+  .kpi-num{font-size:32px}
+  .usage-grid,.inp-row{grid-template-columns:1fr}
+  .sprint-board{grid-template-columns:1fr}
+  /* 테이블 — 핵심 4열(#·프로젝트·진척도·펼침)만 노출, 나머지는 행 펼침에서 확인 */
+  .tbl-head,.tbl-row{grid-template-columns:32px minmax(0,1fr) 92px 34px;padding-left:14px;padding-right:14px}
+  .tbl-head .th:nth-child(3),.tbl-head .th:nth-child(4),.tbl-head .th:nth-child(6),.tbl-head .th:nth-child(7),
+  .tbl-row>:nth-child(3),.tbl-row>:nth-child(4),.tbl-row>:nth-child(6),.tbl-row>:nth-child(7){display:none}
+  .exp-inner{padding-left:16px}
+}
 </style>
 <script>document.documentElement.setAttribute("data-theme",localStorage.getItem("theme")||"light");</script>
 </head>
@@ -215,7 +249,7 @@ footer{border-top:1px solid var(--border);padding:18px 28px;max-width:1460px;mar
     <span class="logo-name">sgeniusk</span>
   </a>
   <span class="hbadge">프로젝트 우선순위 대시보드</span>
-  <span class="hbadge" style="background:rgba(255,193,58,.18);color:#7a4d00">v2 · 2026-05-16</span>
+  <span class="hbadge" style="background:rgba(255,193,58,.18);color:#7a4d00">v1.1 · 2026-05-16</span>
   <div class="spacer"></div>
   <nav class="nav-links">
     <a class="nav-link" href="#sec-table">순위</a>
@@ -224,7 +258,7 @@ footer{border-top:1px solid var(--border);padding:18px 28px;max-width:1460px;mar
     <a class="nav-link" href="#sec-sprint">스프린트</a>
     <a class="nav-link" href="#sec-usage">사용량</a>
   </nav>
-  <button class="icon-btn" id="themeBtn" title="테마 전환">🌙</button>
+  <button class="icon-btn" id="themeBtn" title="테마 전환" aria-label="라이트/다크 테마 전환">🌙</button>
 </header>
 
 <main>
@@ -291,17 +325,17 @@ footer{border-top:1px solid var(--border);padding:18px 28px;max-width:1460px;mar
     <div class="charts-grid">
       <div class="chart-card">
         <div class="chart-title">구성 분해 — 스택드 바</div>
-        <svg id="stackC" width="100%" height="268"></svg>
+        <svg id="stackC" width="100%" height="268" role="img" aria-label="프로젝트별 진척도 구성(문서·골격·기능·알파) 스택드 바 차트"></svg>
         <div class="legend" id="stackLeg"></div>
       </div>
       <div class="chart-card">
         <div class="chart-title">도구별 분포</div>
-        <svg id="donutC" width="100%" height="170" viewBox="0 0 200 170"></svg>
+        <svg id="donutC" width="100%" height="170" viewBox="0 0 200 170" role="img" aria-label="도구별 활성 프로젝트 분포 도넛 차트"></svg>
         <div class="legend" id="donutLeg"></div>
       </div>
       <div class="chart-card">
         <div class="chart-title">진척도 × 커밋 매트릭스</div>
-        <svg id="scatterC" width="100%" height="268"></svg>
+        <svg id="scatterC" width="100%" height="268" role="img" aria-label="진척도 × 커밋 수 산점도"></svg>
         <div class="legend" id="scatterLeg"></div>
       </div>
     </div>
@@ -941,7 +975,7 @@ function renderTable() {
     const spcfg = SPRINTS[sp]||SPRINTS['A'];
     return `
     <div class="row-wrap">
-      <div class="tbl-row${ex?' exp':''}" onclick="togExp(${p.id})">
+      <div class="tbl-row${ex?' exp':''}" id="trow-${p.id}" role="button" tabindex="0" aria-expanded="${ex}" aria-label="${p.nm} 상세 ${ex?'접기':'펼치기'}" onclick="togExp(${p.id})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();togExp(${p.id})}">
         <span class="rank${i<3?' hi':''}">${i+1}</span>
         <span class="pname">${p.nm}${p.st==='suspended'?'<span class="susp-tag">중단</span>':''}</span>
         <span class="tbadge ${TCLS[p.tool]||'t-cl'}">${p.tool}</span>
@@ -990,7 +1024,7 @@ function renderTable() {
     });
   });
 }
-window.togExp = id => { ST.exp.has(id)?ST.exp.delete(id):ST.exp.add(id); renderTable(); };
+window.togExp = id => { ST.exp.has(id)?ST.exp.delete(id):ST.exp.add(id); renderTable(); document.getElementById('trow-'+id)?.focus(); };
 
 /* ── 제안 / 코칭 ── */
 function renderSuggest() {
