@@ -1003,18 +1003,29 @@ const FALLBACK_PROJECTS = {
 };
 const FALLBACK_SUGGESTIONS = {
   "_comment": "/coach 및 /refresh 슬래시 커맨드가 생성하는 분석·제안 데이터. 대시보드의 '제안 / 코칭' 패널이 읽는다. 수동 편집보다 커맨드 재생성을 권장.",
-  "generatedAt": "2026-05-16",
+  "generatedAt": "2026-05-18",
   "items": [
     {
       "repo": "tteuniyu-ios",
       "type": "stall",
-      "severity": "warn",
-      "title": "Sprint A 정체 신호",
-      "detail": "마지막 푸시가 2026-05-12로 약 5일 전입니다. 같은 Sprint A의 Formi는 매일 활동 중인데 뜬이유 iOS는 멈춰 있어 동반 마감 일정이 어긋날 위험이 있습니다.",
+      "severity": "high",
+      "title": "Sprint A 정체 — 6일째 멈춤",
+      "detail": "마지막 푸시가 2026-05-12로 6일 전입니다. Sprint A · sprintStatus inProgress · rank 2가 겹쳐 위험도가 높습니다. 같은 Sprint A의 Formi는 매일 활동 중이라 동반 마감 일정이 어긋날 수 있습니다.",
       "actions": [
         "Xcode 빌드 + 5개 시뮬레이터 스크린샷 캡처",
         "harness/check.sh CI 통과 확인",
-        "Acceptance Criteria 25개 자가검증 착수"
+        "RFP §11 Acceptance Criteria 25개 자가검증 착수"
+      ]
+    },
+    {
+      "repo": "BookCircle",
+      "type": "stall",
+      "severity": "warn",
+      "title": "5일째 활동 없음 — defer라 우선순위는 낮음",
+      "detail": "마지막 푸시가 2026-05-13으로 5일 전이고 일평균 커밋 0.5로 저속입니다. 다만 Sprint defer로 의도적 후순위라, 핵심 게임·앱 마감 전까지는 현 상태 유지가 합리적입니다.",
+      "actions": [
+        "로그인 방식 + 클럽 초대 모델 결정",
+        "Supabase 프로젝트 연결"
       ]
     },
     {
@@ -1022,21 +1033,32 @@ const FALLBACK_SUGGESTIONS = {
       "type": "coach",
       "severity": "info",
       "title": "완성 최근접 — 알파 게이트만 남음",
-      "detail": "진척도 75%로 활성 프로젝트 중 1위입니다. 문서·골격이 만점이고 알파(10/20)만 미완이라, TestFlight 알파 빌드 하나로 완성 단계에 진입할 수 있습니다.",
+      "detail": "진척도 70%로 활성 프로젝트 중 1위입니다. 문서 20/20 만점, 골격 25/30이고 알파가 10/20으로 미완입니다. Expo iOS 알파 빌드 하나로 완성 단계에 진입할 수 있습니다.",
       "actions": [
         "mobile/README.md 기준 Expo iOS 알파 빌드 산출",
-        "TestFlight 업로드 후 alpha 사용자 피드백 수집"
+        "iOS TestFlight 등록 후 alpha 사용자 피드백 수집"
       ]
     },
     {
       "repo": "ai-builder-school",
       "type": "coach",
       "severity": "info",
-      "title": "기능 점수가 병목",
-      "detail": "features 점수가 5/30으로 활성 프로젝트 중 최저입니다. 12-phase 골격과 페이지 맵은 완성됐지만 32개 레슨 본문이 비어 실제 동작 비율이 낮습니다.",
+      "title": "기능 단계가 병목 — 5/30",
+      "detail": "features 점수가 5/30(17%)으로 활성 프로젝트 중 최저입니다. 12-phase 골격과 페이지 맵은 섰지만 32개 레슨 본문이 비어 실제 동작 비율이 낮습니다. 활동 20일째로 콘텐츠 채움 속도가 관건입니다.",
       "actions": [
         "Phase별 우선 레슨 4-5개 본문 완성",
         "캡스톤 프로젝트 예시 작성"
+      ]
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "type": "coach",
+      "severity": "info",
+      "title": "기능 병목 — 골격 대비 동작 코드 부족",
+      "detail": "features 5/30, skeleton 15/30으로 PRD·하네스는 정리됐지만 실제 게임 코드가 초기 단계입니다. Godot→웹 재시작 직후라 커밋 51회로 활발하나 진척도는 40%에 머뭅니다.",
+      "actions": [
+        "MVP 1 마일스톤 마감",
+        "합성 플레이테스트 12명 1차 실행"
       ]
     }
   ]
