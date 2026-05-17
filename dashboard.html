@@ -1350,6 +1350,19 @@ async function doRefresh(){
 }
 document.getElementById('refreshBtn').addEventListener('click',doRefresh);
 
+/* ── nav 앵커 점프 — sticky 헤더 높이만큼 오프셋해서 섹션 제목이 가려지지 않게 ── */
+document.querySelectorAll('header .nav-link[href^="#"]').forEach(a=>{
+  a.addEventListener('click', e=>{
+    const el = document.getElementById(a.getAttribute('href').slice(1));
+    if(!el) return;
+    e.preventDefault();
+    const headerH = (document.querySelector('header')||{}).offsetHeight || 58;
+    const y = el.getBoundingClientRect().top + window.scrollY - headerH - 12;
+    window.scrollTo({ top: Math.max(0, y), behavior:'smooth' });
+    history.replaceState(null, '', a.getAttribute('href'));
+  });
+});
+
 /* ── 데이터 로드 + INIT ── */
 async function loadJSON(path,fb){
   try{ const r=await fetch(path,{cache:'no-store'}); if(!r.ok) throw new Error('HTTP '+r.status); return await r.json(); }
