@@ -1,11 +1,12 @@
-// sgeniusk GitHub 리포 활동을 수집해 projects.json의 lastUpdate/commits를 갱신하는 스크립트
+// sgeniusk GitHub 리포 활동을 수집해 projects.json을 갱신하는 스크립트
 //
 // 사용법
 //   node scripts/refresh-progress.mjs            # projects.json 갱신 + 저장
 //   node scripts/refresh-progress.mjs --dry-run  # 변경 diff만 출력, 저장 안 함
 //
 // 인증 — GH_TOKEN 환경변수가 있으면 사용, 없으면 `gh auth token` 셸 호출.
-// tool/status/breakdown 등 다른 필드는 절대 건드리지 않는다 (lastUpdate, commits, meta.asOf만 갱신).
+// 자동 갱신 대상: lastUpdate, commits, firstCommit, daysActive, meta.asOf.
+// tool/status/breakdown 등 다른 필드는 절대 건드리지 않는다.
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { execSync } from 'node:child_process';
@@ -58,9 +59,21 @@ async function fetchCommitCount(owner, name) {
   return Array.isArray(arr) ? arr.length : 0;
 }
 
+// 마지막 페이지(per_page=1, page=총커밋수)의 커밋 = 가장 오래된 커밋. author.date를 YYYY-MM-DD로.
+async function fetchFirstCommit(owner, name, totalCommits) {
+  if (!totalCommits || totalCommits < 1) return null;
+  const res = await fetch(`${API}/repos/${owner}/${name}/commits?per_page=1&page=${totalCommits}`, { headers: HEADERS });
+  if (!res.ok) throw new Error(`firstCommit ${name}: HTTP ${res.status}`);
+  const arr = await res.json();
+  const c = Array.isArray(arr) && arr[0];
+  const date = c && c.commit && ((c.commit.author && c.commit.author.date) || (c.commit.committer && c.commit.committer.date));
+  return date ? date.slice(0, 10) : null;
+}
+
 async function main() {
   const data = JSON.parse(readFileSync(JSON_PATH, 'utf8'));
   const owner = data.meta.owner;
+  const today = new Date().toISOString().slice(0, 10);
   const changes = [];
 
   for (const p of data.projects) {
@@ -77,12 +90,24 @@ async function main() {
         changes.push(`  ${p.name}: commits ${p.commits} → ${newCommits}`);
         p.commits = newCommits;
       }
+
+      const newFirstCommit = await fetchFirstCommit(owner, p.name, newCommits);
+      if (newFirstCommit && p.firstCommit !== newFirstCommit) {
+        changes.push(`  ${p.name}: firstCommit ${p.firstCommit} → ${newFirstCommit}`);
+        p.firstCommit = newFirstCommit;
+      }
+      if (p.firstCommit && /^\d{4}-\d{2}-\d{2}$/.test(p.firstCommit)) {
+        const newDays = Math.max(0, Math.round((new Date(today) - new Date(p.firstCommit)) / 86400000));
+        if (p.daysActive !== newDays) {
+          changes.push(`  ${p.name}: daysActive ${p.daysActive} → ${newDays}`);
+          p.daysActive = newDays;
+        }
+      }
     } catch (err) {
       console.error(`⚠️  ${p.name} 수집 실패: ${err.message}`);
     }
   }
 
-  const today = new Date().toISOString().slice(0, 10);
   if (data.meta.asOf !== today) {
     changes.push(`  meta.asOf: ${data.meta.asOf} → ${today}`);
     data.meta.asOf = today;

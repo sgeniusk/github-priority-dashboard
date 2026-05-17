@@ -345,14 +345,18 @@ footer{border-top:1px solid var(--border);padding:18px 28px;max-width:1460px;mar
   <section id="sec-sprint">
     <div class="sec-label" style="justify-content:space-between;align-items:center;display:flex;margin-bottom:14px">
       <span style="display:flex;align-items:center;gap:12px">스케줄 시퀀스 <span style="flex:1;width:80px;height:1px;background:var(--border);display:inline-block"></span></span>
-      <button class="btn-ghost" style="margin:0;padding:5px 14px;font-size:11px" onclick="resetSprint()">보드 초기화</button>
+      <span style="display:flex;align-items:center;gap:8px">
+        <em id="spDrift" style="font-style:normal;font-weight:600;color:var(--orange);font-size:11px"></em>
+        <button class="btn-ghost" style="margin:0;padding:5px 14px;font-size:11px" onclick="exportSprint()">Sprint 변경 내보내기</button>
+        <button class="btn-ghost" style="margin:0;padding:5px 14px;font-size:11px" onclick="resetSprint()">보드 초기화</button>
+      </span>
     </div>
     <div class="sprint-board" id="sprintBoard"></div>
   </section>
 
   <!-- Usage -->
   <section id="sec-usage">
-    <div class="sec-label">사용량 트래커 <span></span></div>
+    <div class="sec-label">사용량 트래커 <span></span><button class="btn-ghost" style="margin:0;padding:5px 14px;font-size:11px" onclick="exportUsageAll()">usage.json 내보내기</button></div>
     <div class="usage-grid" id="usageGrid"></div>
   </section>
 
@@ -1174,7 +1178,30 @@ function renderSprint() {
       </div>`).join('')}
     </div>`;
   }).join('');
+  updateSprintDrift();
 }
+
+// 보드(localStorage)와 projects.json sprint 필드의 차이를 {repo:sprint}로 반환
+function sprintDrift() {
+  const out = {};
+  P.forEach(p => { const cur = spPos[p.id] || p.sprint; if (cur !== p.sprint) out[p.repo] = cur; });
+  return out;
+}
+function updateSprintDrift() {
+  const el = document.getElementById('spDrift');
+  if (!el) return;
+  const n = Object.keys(sprintDrift()).length;
+  el.textContent = n ? `미반영 ${n}건` : '';
+}
+window.exportSprint = () => {
+  const d = sprintDrift(), n = Object.keys(d).length;
+  if (!n) { alert('보드가 projects.json과 일치합니다 — 내보낼 변경이 없습니다.'); return; }
+  const text = JSON.stringify(d, null, 2);
+  const msg = `Sprint 변경 ${n}건을 클립보드에 복사했습니다.\nprojects.json의 해당 프로젝트 sprint 필드에 반영하거나 Claude에 전달하세요.`;
+  if (navigator.clipboard && navigator.clipboard.writeText)
+    navigator.clipboard.writeText(text).then(()=>alert(msg),()=>window.prompt('Sprint 변경:',text));
+  else window.prompt('Sprint 변경:',text);
+};
 
 let dragId=null;
 window.dStart=(e,id)=>{ dragId=id; setTimeout(()=>document.getElementById('sc-'+id)?.classList.add('dragging'),0); e.dataTransfer.effectAllowed='move'; };
@@ -1210,12 +1237,29 @@ function renderUsage() {
           <input type="date" class="inp" value="${u.reset||''}" oninput="updUsage('${t.key}','reset',this.value)">
         </div>
       </div>
-      <button class="btn-ghost" onclick="exportUsage('${t.key}')">JSON 내보내기</button>
     </div>`;
   }).join('');
 }
 window.updUsage=(tk,f,v)=>{ if(!usage[tk])usage[tk]={}; usage[tk][f]=v; localStorage.setItem('ud',JSON.stringify(usage)); renderUsage(); };
-window.exportUsage=tk=>{ const b=new Blob([JSON.stringify({[tk]:usage[tk]},null,2)],{type:'application/json'}); Object.assign(document.createElement('a'),{href:URL.createObjectURL(b),download:`usage-${tk}.json`}).click(); };
+// usage.json 전체를 — 기준값(usageData)에 사용자 입력(usage)을 머지해 — 클립보드로 내보낸다
+window.exportUsageAll = () => {
+  const tools = (usageData.tools || []).map(t => {
+    const ov = usage[t.tool] || {};
+    return {
+      tool: t.tool, label: t.label, plan: t.plan, limitLabel: t.limitLabel,
+      cycleLengthDays: t.cycleLengthDays,
+      cycleResetDate: (ov.reset != null && ov.reset !== '') ? ov.reset : t.cycleResetDate,
+      usedPercent: ov.pct != null ? Number(ov.pct) : (t.usedPercent || 0),
+      note: t.note
+    };
+  });
+  const out = { _comment: usageData._comment || '도구별 사용량 수동 트래커.', asOf: new Date().toISOString().slice(0,10), tools };
+  const text = JSON.stringify(out, null, 2);
+  const msg = 'usage.json 전체 내용을 클립보드에 복사했습니다.\nusage.json 파일에 붙여넣으세요.';
+  if (navigator.clipboard && navigator.clipboard.writeText)
+    navigator.clipboard.writeText(text).then(()=>alert(msg),()=>window.prompt('usage.json:',text));
+  else window.prompt('usage.json:',text);
+};
 
 /* ── THEME (localStorage 영속) ── */
 document.getElementById('themeBtn').addEventListener('click',()=>{

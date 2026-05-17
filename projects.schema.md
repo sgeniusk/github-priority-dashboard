@@ -32,8 +32,8 @@
 | `progress` | object | `docs`(0-25)·`skeleton`(0-25)·`features`(0-30)·`alpha`(0-20)·`total`(합) | ⚠️ 진척도 임의 부풀림 금지. `total`은 4개 합 |
 | `commits` | number | 총 커밋 수 | `refresh-progress.mjs`가 자동 갱신 |
 | `lastUpdate` | string | 최근 푸시 시각 `YYYY-MM-DDTHH:MMZ` | `refresh-progress.mjs`가 자동 갱신 |
-| `firstCommit` | string | 최초 커밋 추정일 (`~` 접두는 추정) | 수동 |
-| `daysActive` | number | 활동 일수 | 수동 |
+| `firstCommit` | string | 최초 커밋일 `YYYY-MM-DD` | `refresh-progress.mjs`가 자동 갱신 |
+| `daysActive` | number | 활동 일수 (`firstCommit`→`meta.asOf`) | `refresh-progress.mjs`가 자동 갱신 |
 | `eta` | string | 예상 완료 기간 | 수동 |
 | `etaClass` | string | `near` / `mid` / `far` / `long` — 색상 매핑 | 수동 |
 | `rationale` | string | 현황 판단 근거 | 수동 |
@@ -44,4 +44,4 @@
 
 ## 변경 금지 항목 요약
 
-`tool`·`status`·`progress` 점수는 사용자 확인 없이 바꾸지 않는다. 자동 갱신 대상은 `commits`·`lastUpdate`·`meta.asOf` 셋뿐이다.
+`tool`·`status`·`progress` 점수는 사용자 확인 없이 바꾸지 않는다. 자동 갱신 대상은 `commits`·`lastUpdate`·`firstCommit`·`daysActive`·`meta.asOf` 다섯이다.
