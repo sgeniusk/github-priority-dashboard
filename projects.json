@@ -315,7 +315,7 @@
     },
     {
       "rank": 8,
-      "name": "story-x-alpha",
+      "name": "story-x-beta",
       "displayName": "Story X",
       "icon": "📖",
       "category": "app",
@@ -354,7 +354,7 @@
         "장편 연재 메모리 앵커 테스트",
         "에이전트 출력 골든 케이스 정착"
       ],
-      "url": "https://github.com/sgeniusk/story-x-alpha"
+      "url": "https://github.com/sgeniusk/story-x-beta"
     },
     {
       "rank": 9,
@@ -440,6 +440,51 @@
         "현재 산출물 README에 명시"
       ],
       "url": "https://github.com/sgeniusk/jewelry-webtoon-cloud"
+    },
+    {
+      "rank": 11,
+      "name": "Nodeloom",
+      "displayName": "Nodeloom",
+      "icon": "🪢",
+      "category": "app",
+      "visibility": "private",
+      "tool": "claude",
+      "status": "active",
+      "sprint": "C",
+      "sprintStatus": "inProgress",
+      "stack": [
+        "Next.js 16",
+        "React 19",
+        "TypeScript",
+        "Tailwind v4",
+        "Zustand",
+        "Electron"
+      ],
+      "progress": {
+        "docs": 13,
+        "skeleton": 22,
+        "features": 17,
+        "alpha": 4,
+        "total": 56
+      },
+      "commits": 32,
+      "lastUpdate": "2026-05-18T13:27Z",
+      "firstCommit": "2026-05-16",
+      "daysActive": 2,
+      "eta": "3-5주",
+      "etaClass": "mid",
+      "rationale": "마인드맵×아웃라이너 하이브리드 사고 정리 도구. 같은 트리를 두 뷰로 공유하는 오프라인 퍼스트 앱. 3일간 32커밋으로 두 뷰·스마트 붙여넣기·검색·Hoist·내보내기(MD/OPML/JSON/CSV)·CLI 파리티까지 구현. vitest 테스트 하네스와 XMind/OmniOutliner 벤치마크 문서 보유, 20인 페르소나 사용성 분석 1차 반영.",
+      "risks": [
+        "스코프 폭 — 웹·CLI·데스크톱·AI 4면 동시 유지",
+        "오프라인 퍼스트 동기화 충돌 처리",
+        "React Flow 대형 트리 렌더 성능"
+      ],
+      "nextActions": [
+        "알파 사용성 테스트 — 20인 페르소나 우선순위 B/C 반영",
+        "Electron 데스크톱 앱 안정화",
+        "대형 트리 렌더 성능 — React Flow 가상화"
+      ],
+      "url": "https://github.com/sgeniusk/Nodeloom"
     }
   ]
 }

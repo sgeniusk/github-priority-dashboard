@@ -222,6 +222,17 @@ footer{border-top:1px solid var(--border);padding:18px 28px;max-width:1460px;mar
 .sug-evidence li::before{content:'\00b7';position:absolute;left:4px;color:var(--electric);font-weight:700}
 .sug-rec{font-size:12px;line-height:1.55;background:var(--cool-gray);border-radius:8px;padding:9px 11px;margin-top:13px}
 .sug-rec b{display:block;color:var(--electric);font-size:9px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
+.act-feed{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;box-shadow:var(--shadow)}
+.act-day{margin-bottom:18px}
+.act-day:last-child{margin-bottom:0}
+.act-date{font-size:11px;font-weight:700;color:var(--t2);text-transform:uppercase;letter-spacing:.05em;padding-bottom:7px;border-bottom:1px solid var(--border);margin-bottom:6px}
+.act-count{color:var(--electric);margin-left:6px}
+.act-row{display:flex;align-items:center;gap:10px;padding:7px 8px;border-radius:8px;text-decoration:none;color:var(--t1);transition:background .12s}
+.act-row:hover{background:rgba(127,127,140,.09)}
+.act-icon{flex-shrink:0;width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;font-size:13px;background:rgba(127,127,140,.13);border-radius:6px}
+.act-msg{flex:1;font-size:12.5px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.act-repo{flex-shrink:0;font-size:11px;color:var(--t2);font-weight:600}
+.act-sha{flex-shrink:0;font-size:10px;color:var(--t2);font-family:ui-monospace,Menlo,monospace;opacity:.7}
 
 /* ── A11Y ── */
 :focus-visible{outline:2px solid var(--electric);outline-offset:2px;border-radius:4px}
@@ -374,6 +385,7 @@ header,.modal-box{
     <button class="nav-link" role="tab" aria-selected="false" data-tab="blueprint" onclick="showTab('blueprint')">청사진</button>
     <button class="nav-link" role="tab" aria-selected="false" data-tab="table" onclick="showTab('table')">순위</button>
     <button class="nav-link" role="tab" aria-selected="false" data-tab="suggest" onclick="showTab('suggest')">제안</button>
+    <button class="nav-link" role="tab" aria-selected="false" data-tab="activity" onclick="showTab('activity')">활동</button>
     <button class="nav-link" role="tab" aria-selected="false" data-tab="charts" onclick="showTab('charts')">분석</button>
     <button class="nav-link" role="tab" aria-selected="false" data-tab="sprint" onclick="showTab('sprint')">스프린트</button>
     <button class="nav-link" role="tab" aria-selected="false" data-tab="usage" onclick="showTab('usage')">사용량 및 설정</button>
@@ -448,6 +460,12 @@ header,.modal-box{
   <section id="sec-suggest" data-tab="suggest">
     <div class="sec-label">제안 / 코칭 <button class="info-i" onclick="openGlossary('제안/코칭')" aria-label="용어 설명">i</button><em id="sugMeta" style="font-style:normal;font-weight:600;letter-spacing:0;text-transform:none"></em><span></span></div>
     <div class="sug-grid" id="sugGrid"></div>
+  </section>
+
+  <!-- Activity feed -->
+  <section id="sec-activity" data-tab="activity">
+    <div class="sec-label">활동 — 통합 커밋 피드<em id="actMeta" style="font-style:normal;font-weight:600;letter-spacing:0;text-transform:none"></em><span></span></div>
+    <div class="act-feed" id="actFeed"></div>
   </section>
 
   <!-- Charts -->
@@ -883,7 +901,7 @@ const FALLBACK_PROJECTS = {
     },
     {
       "rank": 8,
-      "name": "story-x-alpha",
+      "name": "story-x-beta",
       "displayName": "Story X",
       "icon": "📖",
       "category": "app",
@@ -922,7 +940,7 @@ const FALLBACK_PROJECTS = {
         "장편 연재 메모리 앵커 테스트",
         "에이전트 출력 골든 케이스 정착"
       ],
-      "url": "https://github.com/sgeniusk/story-x-alpha"
+      "url": "https://github.com/sgeniusk/story-x-beta"
     },
     {
       "rank": 9,
@@ -1008,6 +1026,51 @@ const FALLBACK_PROJECTS = {
         "현재 산출물 README에 명시"
       ],
       "url": "https://github.com/sgeniusk/jewelry-webtoon-cloud"
+    },
+    {
+      "rank": 11,
+      "name": "Nodeloom",
+      "displayName": "Nodeloom",
+      "icon": "🪢",
+      "category": "app",
+      "visibility": "private",
+      "tool": "claude",
+      "status": "active",
+      "sprint": "C",
+      "sprintStatus": "inProgress",
+      "stack": [
+        "Next.js 16",
+        "React 19",
+        "TypeScript",
+        "Tailwind v4",
+        "Zustand",
+        "Electron"
+      ],
+      "progress": {
+        "docs": 13,
+        "skeleton": 22,
+        "features": 17,
+        "alpha": 4,
+        "total": 56
+      },
+      "commits": 32,
+      "lastUpdate": "2026-05-18T13:27Z",
+      "firstCommit": "2026-05-16",
+      "daysActive": 2,
+      "eta": "3-5주",
+      "etaClass": "mid",
+      "rationale": "마인드맵×아웃라이너 하이브리드 사고 정리 도구. 같은 트리를 두 뷰로 공유하는 오프라인 퍼스트 앱. 3일간 32커밋으로 두 뷰·스마트 붙여넣기·검색·Hoist·내보내기(MD/OPML/JSON/CSV)·CLI 파리티까지 구현. vitest 테스트 하네스와 XMind/OmniOutliner 벤치마크 문서 보유, 20인 페르소나 사용성 분석 1차 반영.",
+      "risks": [
+        "스코프 폭 — 웹·CLI·데스크톱·AI 4면 동시 유지",
+        "오프라인 퍼스트 동기화 충돌 처리",
+        "React Flow 대형 트리 렌더 성능"
+      ],
+      "nextActions": [
+        "알파 사용성 테스트 — 20인 페르소나 우선순위 B/C 반영",
+        "Electron 데스크톱 앱 안정화",
+        "대형 트리 렌더 성능 — React Flow 가상화"
+      ],
+      "url": "https://github.com/sgeniusk/Nodeloom"
     }
   ]
 };
@@ -1908,7 +1971,7 @@ const FALLBACK_HISTORY = {
           "total": 40,
           "commits": 51
         },
-        "story-x-alpha": {
+        "story-x-beta": {
           "total": 45,
           "commits": 58
         },
@@ -1925,6 +1988,46 @@ const FALLBACK_HISTORY = {
   ]
 };
 let HIST = FALLBACK_HISTORY;
+
+/* ── ACTIVITY — 통합 커밋 피드 ── */
+const FALLBACK_ACTIVITY = {
+  "_comment": "전 프로젝트 통합 커밋 피드. activity.json fetch 실패(file://) 시 쓰는 폴백. 실데이터는 activity.json에서 fetch한다.",
+  "asOf": "",
+  "commits": []
+};
+let ACT = FALLBACK_ACTIVITY;
+function renderActivity(){
+  const el = document.getElementById('actFeed'), meta = document.getElementById('actMeta');
+  if(!el) return;
+  const commits = (ACT && ACT.commits) || [];
+  if(meta) meta.textContent = commits.length ? ` · ${commits.length}건` : '';
+  if(!commits.length){
+    el.innerHTML = '<div class="sug-empty">활동 데이터가 없습니다. /refresh로 통합 커밋 피드를 수집하세요. (file://에서는 npx serve 또는 배포 URL로 열어주세요.)</div>';
+    return;
+  }
+  const esc = s => (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const byDate = {};
+  commits.forEach(c=>{ const d=(c.date||'').slice(0,10); if(d)(byDate[d]=byDate[d]||[]).push(c); });
+  const dates = Object.keys(byDate).sort((a,b)=>b.localeCompare(a));
+  el.innerHTML = dates.map(d=>{
+    const list = byDate[d];
+    return `<div class="act-day">
+      <div class="act-date">${d}<span class="act-count">${list.length}커밋</span></div>
+      ${list.map(c=>{
+        const proj = P.find(p=>p.repo===c.repo);
+        const icon = proj ? (proj.icon||'📦') : '📦';
+        const nm = proj ? proj.nm : (c.repo||'');
+        return `<a class="act-row" href="https://github.com/sgeniusk/${c.repo}/commit/${c.sha}" target="_blank" rel="noopener">
+          <span class="act-icon">${icon}</span>
+          <span class="act-msg">${esc(c.message)}</span>
+          <span class="act-sha">${c.sha||''}</span>
+          <span class="act-repo">${esc(nm)}</span>
+        </a>`;
+      }).join('')}
+    </div>`;
+  }).join('');
+}
+
 let trendMetric = 'progress';
 const TREND_COLORS = ['#2545ff','#ff5b22','#0c1754','#e0a500','#1f9d4d','#9b51e0','#e0457b','#00a3a3','#5b6b8c','#c13515'];
 window.setTrendMetric = (m)=>{
@@ -1983,23 +2086,25 @@ async function init() {
   document.getElementById('themeBtn').textContent =
     document.documentElement.getAttribute('data-theme')==='dark' ? '☀️' : '🌙';
 
-  const [pj,sj,uj,hist] = await Promise.all([
+  const [pj,sj,uj,hist,act] = await Promise.all([
     loadJSON('./projects.json',FALLBACK_PROJECTS),
     loadJSON('./suggestions.json',FALLBACK_SUGGESTIONS),
     loadJSON('./usage.json',FALLBACK_USAGE),
-    loadJSON('./history.json',FALLBACK_HISTORY)
+    loadJSON('./history.json',FALLBACK_HISTORY),
+    loadJSON('./activity.json',FALLBACK_ACTIVITY)
   ]);
   P = (pj.projects||[]).map(mapProject);
   SUG = sj || { items:[] };
   usageData = uj || { tools:[] };
   HIST = hist || { snapshots:[] };
+  ACT = act || { commits:[] };
 
   // 스프린트 보드 카드 위치 시드 (localStorage가 비어 있을 때만)
   if (!Object.keys(spPos).length) P.forEach(p=>spPos[p.id]=p.sprint);
   // 사용량 기준값 시드 (사용자 입력이 없을 때만)
   (usageData.tools||[]).forEach(t=>{ if(!usage[t.tool]) usage[t.tool]={pct:t.usedPercent||0,reset:t.cycleResetDate||''}; });
 
-  renderMasterBoard(); renderKPI(); renderFilters(); renderTable(); renderSuggest(); renderSprint(); renderUsage();
+  renderMasterBoard(); renderKPI(); renderFilters(); renderTable(); renderSuggest(); renderActivity(); renderSprint(); renderUsage();
   showTab(localStorage.getItem('tab') || 'blueprint');
   setTimeout(()=>{ renderStacked(); renderDonut(); renderScatter(); renderTrend(); }, 200);
   let rt; window.addEventListener('resize',()=>{ clearTimeout(rt); rt=setTimeout(()=>{ renderStacked(); renderScatter(); renderTrend(); },200); });

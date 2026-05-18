@@ -1,6 +1,6 @@
 # Story X — 로드맵
 
-> ⚙️ /sync-project 미실행 스캐폴드 — 실제 로드맵·버전 계획을 반영하려면 `/sync-project story-x-alpha`를 실행하세요.
+> ⚙️ /sync-project 미실행 스캐폴드 — 실제 로드맵·버전 계획을 반영하려면 `/sync-project story-x-beta`를 실행하세요.
 
 ## 현재 상태
 진척도 45% · 예상 완료 5-7주 · 최근 활동 2026-05-16T06:49Z

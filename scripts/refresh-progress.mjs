@@ -1,13 +1,14 @@
 // sgeniusk GitHub 리포 활동을 수집해 projects.json을 갱신하는 스크립트
 //
 // 사용법
-//   node scripts/refresh-progress.mjs            # projects.json 갱신 + 저장
-//   node scripts/refresh-progress.mjs --dry-run  # 변경 diff만 출력, 저장 안 함
+//   node scripts/refresh-progress.mjs                 # projects.json 갱신 + history/activity 저장
+//   node scripts/refresh-progress.mjs --dry-run       # 변경 diff만 출력, 저장 안 함
+//   node scripts/refresh-progress.mjs --activity-only # activity.json(통합 커밋 피드)만 갱신
 //
 // 인증 — GH_TOKEN 환경변수가 있으면 사용, 없으면 `gh auth token` 셸 호출.
 // 자동 갱신 대상: lastUpdate, commits, firstCommit, daysActive, meta.asOf.
 // tool/status/breakdown 등 다른 필드는 절대 건드리지 않는다.
-// 실행 시 history.json에 그날의 진척도 스냅샷도 upsert한다 (--dry-run 시 제외).
+// 실행 시 history.json 진척도 스냅샷과 activity.json 통합 커밋 피드도 갱신한다 (--dry-run 시 제외).
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { execSync } from 'node:child_process';
@@ -17,7 +18,10 @@ import { dirname, join } from 'node:path';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const JSON_PATH = join(ROOT, 'projects.json');
 const HISTORY_PATH = join(ROOT, 'history.json');
+const ACTIVITY_PATH = join(ROOT, 'activity.json');
 const DRY_RUN = process.argv.includes('--dry-run');
+const ACTIVITY_ONLY = process.argv.includes('--activity-only');
+const COMMITS_PER_REPO = 8;
 
 function getToken() {
   if (process.env.GH_TOKEN) return process.env.GH_TOKEN.trim();
@@ -96,14 +100,52 @@ function upsertHistory(data) {
   return `history.json 스냅샷 upsert — ${snap.date} (avg ${snap.avgProgress}%, 총 커밋 ${snap.totalCommits}), 스냅샷 ${hist.snapshots.length}개.`;
 }
 
+// 리포의 최근 커밋 N개 — 목록 엔드포인트(sha·message·date). 통합 활동 피드용.
+async function fetchRecentCommits(owner, name, n) {
+  const res = await fetch(`${API}/repos/${owner}/${name}/commits?per_page=${n}`, { headers: HEADERS });
+  if (!res.ok) throw new Error(`recent commits ${name}: HTTP ${res.status}`);
+  const arr = await res.json();
+  if (!Array.isArray(arr)) return [];
+  return arr.map((c) => ({
+    repo: name,
+    sha: (c.sha || '').slice(0, 7),
+    message: ((c.commit && c.commit.message) || '').split('\n')[0],
+    date: (c.commit && ((c.commit.author && c.commit.author.date) || (c.commit.committer && c.commit.committer.date))) || '',
+  })).filter((c) => c.date && c.sha);
+}
+
+// 전 리포 최근 커밋을 날짜 내림차순으로 모아 activity.json에 쓴다 (최근 150건).
+function writeActivity(allCommits) {
+  const commits = allCommits
+    .slice()
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, 150);
+  const out = {
+    _comment: '전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.',
+    asOf: new Date().toISOString().slice(0, 10),
+    commits,
+  };
+  writeFileSync(ACTIVITY_PATH, JSON.stringify(out, null, 2) + '\n');
+  return `activity.json — 커밋 ${commits.length}건 수집.`;
+}
+
 async function main() {
   const data = JSON.parse(readFileSync(JSON_PATH, 'utf8'));
   const owner = data.meta.owner;
   const today = new Date().toISOString().slice(0, 10);
   const changes = [];
+  const allCommits = [];
 
   for (const p of data.projects) {
     try {
+      // 통합 활동 피드용 — 최근 커밋 수집
+      try {
+        allCommits.push(...await fetchRecentCommits(owner, p.name, COMMITS_PER_REPO));
+      } catch (e) {
+        console.error(`⚠️  ${p.name} 커밋 피드 수집 실패: ${e.message}`);
+      }
+      if (ACTIVITY_ONLY) continue;
+
       const repo = await fetchRepo(owner, p.name);
       const newLastUpdate = normalizeTimestamp(repo.pushed_at);
       const newCommits = await fetchCommitCount(owner, p.name);
@@ -133,6 +175,13 @@ async function main() {
       console.error(`⚠️  ${p.name} 수집 실패: ${err.message}`);
     }
   }
+
+  if (DRY_RUN) {
+    console.log(`[dry-run] activity.json 커밋 ${allCommits.length}건 수집(저장 안 함).`);
+  } else {
+    console.log(writeActivity(allCommits));
+  }
+  if (ACTIVITY_ONLY) return;
 
   if (data.meta.asOf !== today) {
     changes.push(`  meta.asOf: ${data.meta.asOf} → ${today}`);

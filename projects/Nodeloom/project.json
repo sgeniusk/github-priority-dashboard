@@ -1,0 +1,32 @@
+{
+  "repo": "Nodeloom",
+  "displayName": "Nodeloom",
+  "synced": false,
+  "versions": [],
+  "roadmap": [
+    {
+      "t": "두 뷰 통합 — 아웃라인↔마인드맵 토글",
+      "s": "done"
+    },
+    {
+      "t": "노드 편집·스마트 붙여넣기·검색·Hoist",
+      "s": "done"
+    },
+    {
+      "t": "내보내기 MD/OPML/JSON/CSV + CLI 파리티",
+      "s": "done"
+    },
+    {
+      "t": "Electron 데스크톱 앱 안정화",
+      "s": "doing"
+    },
+    {
+      "t": "알파 사용성 테스트 — 페르소나 B/C 우선순위",
+      "s": "todo"
+    },
+    {
+      "t": "대형 트리 렌더 성능 — React Flow 가상화",
+      "s": "todo"
+    }
+  ]
+}
