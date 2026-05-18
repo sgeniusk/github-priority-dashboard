@@ -207,11 +207,21 @@ footer{border-top:1px solid var(--border);padding:18px 28px;max-width:1460px;mar
 .sug-type{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;border-radius:var(--rp);padding:3px 10px;background:var(--cool-gray);color:var(--navy)}
 .sug-repo{font-size:11px;color:var(--t2);font-weight:600;white-space:nowrap}
 .sug-title{font-size:14px;font-weight:700;margin-bottom:6px;line-height:1.35}
-.sug-detail{font-size:12px;color:var(--t2);line-height:1.6;margin-bottom:11px}
+.sug-detail{font-size:12px;color:var(--t2);line-height:1.6;margin-bottom:0}
 .sug-actions{list-style:none;display:flex;flex-direction:column;gap:6px}
 .sug-actions li{font-size:12px;padding-left:16px;position:relative;line-height:1.45}
 .sug-actions li::before{content:'\2192';position:absolute;left:0;color:var(--electric);font-weight:700}
 .sug-empty{padding:32px;text-align:center;color:var(--t2);font-size:13px}
+.sug-conf{font-size:9px;font-weight:700;border-radius:var(--rp);padding:3px 8px;letter-spacing:.02em;white-space:nowrap}
+.sug-conf.c-high{background:var(--electric);color:#fff}
+.sug-conf.c-medium{background:var(--cool-gray);color:var(--navy)}
+.sug-conf.c-low{background:transparent;color:var(--t2);border:1px solid var(--border)}
+.sug-seclbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--t2);margin:13px 0 6px}
+.sug-evidence{list-style:none;display:flex;flex-direction:column;gap:5px;margin:0}
+.sug-evidence li{font-size:11.5px;color:var(--t2);padding-left:13px;position:relative;line-height:1.5}
+.sug-evidence li::before{content:'\00b7';position:absolute;left:4px;color:var(--electric);font-weight:700}
+.sug-rec{font-size:12px;line-height:1.55;background:var(--cool-gray);border-radius:8px;padding:9px 11px;margin-top:13px}
+.sug-rec b{display:block;color:var(--electric);font-size:9px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
 
 /* ── A11Y ── */
 :focus-visible{outline:2px solid var(--electric);outline-offset:2px;border-radius:4px}
@@ -1010,7 +1020,14 @@ const FALLBACK_SUGGESTIONS = {
       "type": "stall",
       "severity": "high",
       "title": "Sprint A 정체 — 6일째 멈춤",
-      "detail": "마지막 푸시가 2026-05-12로 6일 전입니다. Sprint A · sprintStatus inProgress · rank 2가 겹쳐 위험도가 높습니다. 같은 Sprint A의 Formi는 매일 활동 중이라 동반 마감 일정이 어긋날 수 있습니다.",
+      "detail": "Sprint A에 배정된 채 6일째 활동이 없습니다. 같은 Sprint A의 Formi는 매일 활동 중이라 동반 마감 일정이 어긋날 위험이 큽니다.",
+      "evidence": [
+        "마지막 푸시 2026-05-12 — 6일 경과",
+        "커밋 5 / 활동 5일 — 일평균 1.0",
+        "Sprint A · sprintStatus inProgress · rank 2"
+      ],
+      "confidence": "high",
+      "recommendation": "Sprint A 동반 마감(Formi)에 직접 영향 — 이번 주 안에 Xcode 빌드·시뮬레이터 스크린샷을 끝내거나, 어렵다면 Sprint A 일정을 명시적으로 재조정한다.",
       "actions": [
         "Xcode 빌드 + 5개 시뮬레이터 스크린샷 캡처",
         "harness/check.sh CI 통과 확인",
@@ -1022,7 +1039,14 @@ const FALLBACK_SUGGESTIONS = {
       "type": "stall",
       "severity": "warn",
       "title": "5일째 활동 없음 — defer라 우선순위는 낮음",
-      "detail": "마지막 푸시가 2026-05-13으로 5일 전이고 일평균 커밋 0.5로 저속입니다. 다만 Sprint defer로 의도적 후순위라, 핵심 게임·앱 마감 전까지는 현 상태 유지가 합리적입니다.",
+      "detail": "5일째 활동이 없고 일평균 커밋도 저속입니다. 다만 Sprint defer로 의도적 후순위라, 핵심 게임·앱 마감 전까지는 현 상태 유지가 합리적입니다.",
+      "evidence": [
+        "마지막 푸시 2026-05-13 — 5일 경과",
+        "커밋 3 / 활동 6일 — 일평균 0.5 (저속)",
+        "Sprint defer · rank 9"
+      ],
+      "confidence": "high",
+      "recommendation": "defer 상태라 지금 끌어올릴 필요는 없다 — 핵심 게임·앱 마감 후 재개 트리거만 적어두면 충분하다.",
       "actions": [
         "로그인 방식 + 클럽 초대 모델 결정",
         "Supabase 프로젝트 연결"
@@ -1033,7 +1057,14 @@ const FALLBACK_SUGGESTIONS = {
       "type": "coach",
       "severity": "info",
       "title": "완성 최근접 — 알파 게이트만 남음",
-      "detail": "진척도 70%로 활성 프로젝트 중 1위입니다. 문서 20/20 만점, 골격 25/30이고 알파가 10/20으로 미완입니다. Expo iOS 알파 빌드 하나로 완성 단계에 진입할 수 있습니다.",
+      "detail": "진척도 70%로 활성 프로젝트 1위입니다. 문서·골격이 탄탄하고 알파만 미완이라, 알파 빌드 하나로 완성 단계에 진입할 수 있습니다.",
+      "evidence": [
+        "진척도 70% — 활성 9개 중 1위",
+        "문서 20/20 · 골격 25/30 · 기능 15/30 · 알파 10/20",
+        "커밋 81 / 활동 7일 — 일평균 11.6 (최상위 속도)"
+      ],
+      "confidence": "high",
+      "recommendation": "알파(10/20)가 유일한 미완 영역 — Expo iOS 알파 빌드 1회로 완성 단계 진입이 가능하니 이걸 최우선에 둔다.",
       "actions": [
         "mobile/README.md 기준 Expo iOS 알파 빌드 산출",
         "iOS TestFlight 등록 후 alpha 사용자 피드백 수집"
@@ -1044,7 +1075,14 @@ const FALLBACK_SUGGESTIONS = {
       "type": "coach",
       "severity": "info",
       "title": "기능 단계가 병목 — 5/30",
-      "detail": "features 점수가 5/30(17%)으로 활성 프로젝트 중 최저입니다. 12-phase 골격과 페이지 맵은 섰지만 32개 레슨 본문이 비어 실제 동작 비율이 낮습니다. 활동 20일째로 콘텐츠 채움 속도가 관건입니다.",
+      "detail": "골격과 페이지 맵은 섰지만 32개 레슨 본문이 비어 실제 동작 비율이 낮습니다. 콘텐츠 채움 속도가 완성의 관건입니다.",
+      "evidence": [
+        "기능 5/30 (17%) — 활성 프로젝트 중 최저",
+        "문서 20/20 · 골격 20/30은 양호",
+        "활동 20일 / 커밋 21 — 일평균 1.1"
+      ],
+      "confidence": "high",
+      "recommendation": "골격은 충분하니 32개 레슨 본문 채움이 핵심 — Phase별 우선 레슨부터 깊이 완성해 기능 점수를 끌어올린다.",
       "actions": [
         "Phase별 우선 레슨 4-5개 본문 완성",
         "캡스톤 프로젝트 예시 작성"
@@ -1055,7 +1093,14 @@ const FALLBACK_SUGGESTIONS = {
       "type": "coach",
       "severity": "info",
       "title": "기능 병목 — 골격 대비 동작 코드 부족",
-      "detail": "features 5/30, skeleton 15/30으로 PRD·하네스는 정리됐지만 실제 게임 코드가 초기 단계입니다. Godot→웹 재시작 직후라 커밋 51회로 활발하나 진척도는 40%에 머뭅니다.",
+      "detail": "커밋은 활발하지만 PRD·하네스 정비에 쏠려 있어 실제 게임 코드가 초기 단계입니다. Godot→웹 재시작 직후라 진척도가 40%에 머뭅니다.",
+      "evidence": [
+        "기능 5/30 · 골격 15/30 — 둘 다 낮음",
+        "진척도 40% — 활성 중 최하위권",
+        "커밋 51 / 활동 7일 — 일평균 7.3 (활발)"
+      ],
+      "confidence": "medium",
+      "recommendation": "커밋은 활발하나 정비 작업에 쏠려 있다 — MVP 1 마일스톤으로 '실제 플레이되는 코드'에 커밋을 집중시킨다.",
       "actions": [
         "MVP 1 마일스톤 마감",
         "합성 플레이테스트 12명 1차 실행"
@@ -1255,17 +1300,25 @@ function renderSuggest() {
   const grid = document.getElementById('sugGrid');
   if (!items.length) { grid.innerHTML='<div class="sug-empty">제안이 없습니다. /coach 또는 /refresh로 분석을 생성하세요.</div>'; return; }
   const TY = { coach:'Coach', stall:'Stall', idea:'Idea' };
+  const CONF = { high:'확신 높음', medium:'확신 보통', low:'확신 낮음' };
   grid.innerHTML = items.map(it=>{
     const sev = ['high','warn','info'].includes(it.severity) ? it.severity : 'info';
     const proj = P.find(p=>p.repo===it.repo);
+    const conf = ['high','medium','low'].includes(it.confidence) ? it.confidence : '';
+    const ev = Array.isArray(it.evidence) ? it.evidence.filter(Boolean) : [];
     return `<div class="sug-card sev-${sev}">
       <div class="sug-top">
-        <span class="sug-type">${TY[it.type]||it.type||''}</span>
+        <span style="display:flex;gap:6px;align-items:center;min-width:0">
+          <span class="sug-type">${TY[it.type]||it.type||''}</span>
+          ${conf?`<span class="sug-conf c-${conf}">${CONF[conf]}</span>`:''}
+        </span>
         <span class="sug-repo">${proj?proj.nm:(it.repo||'')}</span>
       </div>
       <div class="sug-title">${it.title||''}</div>
       <div class="sug-detail">${it.detail||''}</div>
-      ${Array.isArray(it.actions)&&it.actions.length?`<ul class="sug-actions">${it.actions.map(a=>`<li>${a}</li>`).join('')}</ul>`:''}
+      ${ev.length?`<div class="sug-seclbl">근거</div><ul class="sug-evidence">${ev.map(e=>`<li>${e}</li>`).join('')}</ul>`:''}
+      ${it.recommendation?`<div class="sug-rec"><b>권고</b>${it.recommendation}</div>`:''}
+      ${Array.isArray(it.actions)&&it.actions.length?`<div class="sug-seclbl">다음 액션</div><ul class="sug-actions">${it.actions.map(a=>`<li>${a}</li>`).join('')}</ul>`:''}
     </div>`;
   }).join('');
 }
@@ -1586,6 +1639,9 @@ function analyzeProjects(){
       items.push({repo:p.repo,type:'stall',severity:hi?'high':'warn',
         title:`${age}일째 활동 없음`,
         detail:`마지막 활동이 ${p.last} (${age}일 전)입니다.${hi?` Sprint ${p.sprint} 진행 중이라 동반 일정에 영향이 있습니다.`:''}`,
+        evidence:[`마지막 활동 ${p.last} — ${age}일 경과`, `Sprint ${p.sprint} · 커밋 ${p.commits}`],
+        confidence:'high',
+        recommendation:hi?`Sprint ${p.sprint} 동반 일정에 영향 — 이번 주 재개하거나 일정을 재조정한다.`:`우선순위는 낮으나 ${age}일째 정지 — 재개 시점을 명시해둔다.`,
         actions:act});
       return;
     }
@@ -1596,6 +1652,9 @@ function analyzeProjects(){
       items.push({repo:p.repo,type:'coach',severity:'info',
         title:`${low.l} 단계가 병목`,
         detail:`${low.l} 점수가 ${low.v}/${low.m} (${Math.round(low.r*100)}%)로 가장 낮습니다. 현재 진척도 ${total}%.`,
+        evidence:[`${low.l} ${low.v}/${low.m} (${Math.round(low.r*100)}%) — 분해 항목 중 최저`, `진척도 ${total}%`],
+        confidence:'medium',
+        recommendation:`${low.l} 단계를 다음 작업의 우선 타깃으로 삼는다.`,
         actions:act});
       return;
     }
@@ -1603,6 +1662,9 @@ function analyzeProjects(){
       items.push({repo:p.repo,type:'coach',severity:'info',
         title:'완성 임박',
         detail:`진척도 ${total}%로 상위권입니다. 마무리 단계에 집중할 시점입니다.`,
+        evidence:[`진척도 ${total}% — 상위권`, `커밋 ${p.commits}`],
+        confidence:'medium',
+        recommendation:'마무리·검증 단계에 집중할 시점이다.',
         actions:act});
     }
   });
