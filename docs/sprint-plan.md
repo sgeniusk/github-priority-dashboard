@@ -22,7 +22,7 @@
 
 **목표**: 콘텐츠/벤치마크 채움
 
-- **Mandate of Heroes (Hermes)**: 오리지널 시각 디자인 결정 + 콘텐츠 1차 패스 (영웅 +6, 카드 +30)
+- **군령: 책략의 전장 (Hermes)**: 오리지널 시각 디자인 결정 + 콘텐츠 1차 패스 (영웅 +6, 카드 +30)
 - **AI Builder School (Claude)**: 32 lesson 중 우선 12개 본문 완성
 
 **Exit 조건**: Steam Wishlist 페이지 / AI Builder School 첫 코호트 모집 가능

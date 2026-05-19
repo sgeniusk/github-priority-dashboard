@@ -84,11 +84,11 @@ github-priority-dashboard/
 
 ### 3. 사용자 직접 제공 매핑 (변경 금지 — 사용자 확인 없이 수정 X)
 
-- Formi (habit) → claude
+- Formi (habit) → codex
 - 뜬이유 iOS → hybrid (README 명시)
 - 시즈폴 (sam-defender-logue) → codex
 - 전지적 군주 시점 (samguk-idle-prototype) → codex
-- Mandate of Heroes (three-kingdoms-deckbuilder) → hermes
+- 군령: 책략의 전장 (three-kingdoms-deckbuilder) → hermes
 - AI Builder School → claude
 - AI 컴퍼니 타이쿤 → codex
 - Story X → claude

@@ -1,4 +1,4 @@
-# Mandate of Heroes — 로드맵
+# 군령: 책략의 전장 — 로드맵
 
 > ⚙️ /sync-project 미실행 스캐폴드 — 실제 로드맵·버전 계획을 반영하려면 `/sync-project three-kingdoms-deckbuilder`를 실행하세요.
 

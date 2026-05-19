@@ -1,4 +1,4 @@
-# Mandate of Heroes — PRD
+# 군령: 책략의 전장 — PRD
 
 > ⚙️ /sync-project 미실행 스캐폴드 — `projects.json` 데이터에서 자동 생성. 실제 문서를 반영하려면 `/sync-project three-kingdoms-deckbuilder`를 실행하세요.
 

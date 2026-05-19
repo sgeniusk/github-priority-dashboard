@@ -40,8 +40,22 @@
 | `rationale` | string | 현황 판단 근거 | 수동 |
 | `risks` | string[] | 리스크 목록 | 수동 |
 | `nextActions` | string[] | 다음 액션. 첫 항목은 Sprint 보드 카드의 마일스톤으로 쓰임 | 수동 |
+| `agents` | object[] | (선택) 프로젝트에서 일하는 에이전트 명단 — 마을 뷰 전용. 미정의 시 마을 뷰가 `tool`로 1명 합성 | 수동 (사용자 확인 후) |
 | `url` | string | GitHub 리포 URL | 수동 |
 | `pausedReason` | string | `status: paused`일 때만. 중단 사유 | 수동 |
+
+### agents[] — 에이전트 명단 (마을 뷰)
+
+각 에이전트 객체. `dashboard.html`의 마을 탭에서 건물 앞 캐릭터·상세 모달 명단으로 쓰인다. 자동 갱신 대상이 아니다.
+
+| 필드 | 타입 | 설명 |
+| --- | --- | --- |
+| `name` | string | 역할 기반 표시 이름 (`설계` / `구현` / `검증` / `플레이테스트` 등) |
+| `role` | string | 역할 한 줄 설명 (`PRD·아키텍처` / `기능·하네스` / `테스트·QA` 등) |
+| `tool` | string | `claude` / `codex` / `hermes` — 캐릭터 색을 결정. 프로젝트 `tool`이 `hybrid`면 에이전트별로 섞는다 |
+| `task` | string | (선택) 현재 맡은 작업 |
+
+초기 명단은 진행 단계 기반으로 시드됐다 — 모든 프로젝트에 `설계`, `progress.skeleton > 0`이면 `구현`, `features`/`alpha > 0`이면 `검증`(게임은 `플레이테스트`)을 둔다. 실제 서브에이전트 편성이 확정되면 사용자가 교체한다.
 
 ## 변경 금지 항목 요약
 

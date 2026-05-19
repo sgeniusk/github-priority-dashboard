@@ -21,7 +21,7 @@
       "icon": "🎯",
       "category": "app",
       "visibility": "public",
-      "tool": "claude",
+      "tool": "codex",
       "status": "active",
       "sprint": "A",
       "sprintStatus": "inProgress",
@@ -54,6 +54,11 @@
         "mobile/README.md 기준 Expo 알파 빌드 산출",
         "iOS TestFlight 등록 절차",
         "캡쳐된 alpha 사용자 피드백 반영"
+      ],
+      "agents": [
+        { "name": "설계", "role": "PRD·아키텍처", "tool": "claude", "task": "mobile/README.md 기준 Expo 알파 빌드 산출" },
+        { "name": "구현", "role": "기능·하네스", "tool": "claude", "task": "iOS TestFlight 등록 절차" },
+        { "name": "검증", "role": "테스트·QA", "tool": "claude", "task": "캡쳐된 alpha 사용자 피드백 반영" }
       ],
       "url": "https://github.com/sgeniusk/habit"
     },
@@ -98,6 +103,11 @@
         "harness/check.sh CI 통과 확인",
         "메인 monorepo와의 통합 시점 결정"
       ],
+      "agents": [
+        { "name": "설계", "role": "PRD·아키텍처", "tool": "claude", "task": "Xcode 빌드 + 5 시뮬레이터 스크린샷 캡처" },
+        { "name": "구현", "role": "기능·하네스", "tool": "codex", "task": "harness/check.sh CI 통과 확인" },
+        { "name": "검증", "role": "테스트·QA", "tool": "claude", "task": "메인 monorepo와의 통합 시점 결정" }
+      ],
       "url": "https://github.com/sgeniusk/tteuniyu-ios"
     },
     {
@@ -139,6 +149,11 @@
         "P25 루트 정찰 예측 완성",
         "알파 완료 백로그 정리",
         "에셋 수입 하네스 자동화"
+      ],
+      "agents": [
+        { "name": "설계", "role": "PRD·아키텍처", "tool": "codex", "task": "P25 루트 정찰 예측 완성" },
+        { "name": "구현", "role": "기능·하네스", "tool": "codex", "task": "알파 완료 백로그 정리" },
+        { "name": "플레이테스트", "role": "플레이테스트·밸런스", "tool": "codex", "task": "에셋 수입 하네스 자동화" }
       ],
       "url": "https://github.com/sgeniusk/sam-defender-logue"
     },
@@ -183,12 +198,17 @@
         "Vercel 정식 도메인 연결",
         "20분/24시간 세션 합성 플레이테스트"
       ],
+      "agents": [
+        { "name": "설계", "role": "PRD·아키텍처", "tool": "codex", "task": "v0.16-alpha 게이트 통과" },
+        { "name": "구현", "role": "기능·하네스", "tool": "codex", "task": "Vercel 정식 도메인 연결" },
+        { "name": "플레이테스트", "role": "플레이테스트·밸런스", "tool": "codex", "task": "20분/24시간 세션 합성 플레이테스트" }
+      ],
       "url": "https://github.com/sgeniusk/samguk-idle-prototype"
     },
     {
       "rank": 5,
       "name": "three-kingdoms-deckbuilder",
-      "displayName": "Mandate of Heroes",
+      "displayName": "군령: 책략의 전장 (Warlord's Command)",
       "icon": "🃏",
       "category": "game",
       "visibility": "private",
@@ -224,6 +244,11 @@
         "오리지널 시각 디자인 결정",
         "Steam Wishlist 페이지 준비",
         "Mac/iOS 빌드 점검"
+      ],
+      "agents": [
+        { "name": "설계", "role": "PRD·아키텍처", "tool": "hermes", "task": "오리지널 시각 디자인 결정" },
+        { "name": "구현", "role": "기능·하네스", "tool": "hermes", "task": "Steam Wishlist 페이지 준비" },
+        { "name": "플레이테스트", "role": "플레이테스트·밸런스", "tool": "hermes", "task": "Mac/iOS 빌드 점검" }
       ],
       "url": "https://github.com/sgeniusk/three-kingdoms-deckbuilder"
     },
@@ -268,6 +293,11 @@
         "캡스톤 프로젝트 예시 작성",
         "라이선스 결정"
       ],
+      "agents": [
+        { "name": "설계", "role": "PRD·아키텍처", "tool": "claude", "task": "Phase별 우선 레슨 4-5개 본문 완성" },
+        { "name": "구현", "role": "기능·하네스", "tool": "claude", "task": "캡스톤 프로젝트 예시 작성" },
+        { "name": "검증", "role": "테스트·QA", "tool": "claude", "task": "라이선스 결정" }
+      ],
       "url": "https://github.com/sgeniusk/ai-builder-school"
     },
     {
@@ -310,6 +340,11 @@
         "MVP 1 마일스톤 마감",
         "합성 플레이테스트 12명 1차",
         "Vercel 미리보기 배포"
+      ],
+      "agents": [
+        { "name": "설계", "role": "PRD·아키텍처", "tool": "codex", "task": "MVP 1 마일스톤 마감" },
+        { "name": "구현", "role": "기능·하네스", "tool": "codex", "task": "합성 플레이테스트 12명 1차" },
+        { "name": "플레이테스트", "role": "플레이테스트·밸런스", "tool": "codex", "task": "Vercel 미리보기 배포" }
       ],
       "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless"
     },
@@ -354,6 +389,11 @@
         "장편 연재 메모리 앵커 테스트",
         "에이전트 출력 골든 케이스 정착"
       ],
+      "agents": [
+        { "name": "설계", "role": "PRD·아키텍처", "tool": "claude", "task": "1개 매체(웹툰 or 단편 만화) 깊이 우선 완성" },
+        { "name": "구현", "role": "기능·하네스", "tool": "claude", "task": "장편 연재 메모리 앵커 테스트" },
+        { "name": "검증", "role": "테스트·QA", "tool": "claude", "task": "에이전트 출력 골든 케이스 정착" }
+      ],
       "url": "https://github.com/sgeniusk/story-x-beta"
     },
     {
@@ -397,6 +437,10 @@
         "Supabase 프로젝트 연결",
         "투표/리뷰 슬라이스 1개 인증 흐름까지"
       ],
+      "agents": [
+        { "name": "설계", "role": "PRD·아키텍처", "tool": "claude", "task": "로그인 방식 + 클럽 초대 모델 결정" },
+        { "name": "구현", "role": "기능·하네스", "tool": "claude", "task": "Supabase 프로젝트 연결" }
+      ],
       "url": "https://github.com/sgeniusk/BookCircle"
     },
     {
@@ -438,6 +482,9 @@
         "PAUSE: 재개 트리거 정의 (예: 핵심 게임 2개 마감 후)",
         "gh auth 복구는 재개 시 처리",
         "현재 산출물 README에 명시"
+      ],
+      "agents": [
+        { "name": "설계", "role": "PRD·아키텍처", "tool": "claude", "task": "PAUSE: 재개 트리거 정의 (예: 핵심 게임 2개 마감 후)" }
       ],
       "url": "https://github.com/sgeniusk/jewelry-webtoon-cloud"
     },
@@ -483,6 +530,11 @@
         "알파 사용성 테스트 — 20인 페르소나 우선순위 B/C 반영",
         "Electron 데스크톱 앱 안정화",
         "대형 트리 렌더 성능 — React Flow 가상화"
+      ],
+      "agents": [
+        { "name": "설계", "role": "PRD·아키텍처", "tool": "claude", "task": "알파 사용성 테스트 — 20인 페르소나 우선순위 B/C 반영" },
+        { "name": "구현", "role": "기능·하네스", "tool": "claude", "task": "Electron 데스크톱 앱 안정화" },
+        { "name": "검증", "role": "테스트·QA", "tool": "claude", "task": "대형 트리 렌더 성능 — React Flow 가상화" }
       ],
       "url": "https://github.com/sgeniusk/Nodeloom"
     }
