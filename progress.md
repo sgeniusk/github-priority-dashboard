@@ -14,6 +14,7 @@
 
 ## 직전에 푼 것
 
+- **걸어다니는 마을(v1.5)** (2026-05-19~20) — town.html 게임 페이지 추가. 64×48 유기적 맵, 11개 건물 인테리어, agents=NPC, Kenney Tiny Town + Roguelike Characters CC0
 - **데이터 드리프트 교정** (2026-05-19) — story-x-alpha→story-x-beta 이름 교정, Nodeloom 신규 등록(rank 11, 진척도 56% 추정)
 - **통합 커밋 피드** (2026-05-19) — refresh-progress.mjs가 activity.json 생성, 대시보드 '활동' 탭 신설, 80건 표시
 - **/coach 보고 업그레이드** (2026-05-18) — evidence·confidence·recommendation 구조로 확장(gemmaci 참고)

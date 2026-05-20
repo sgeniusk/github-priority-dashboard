@@ -38,6 +38,23 @@
       "dependencies": ["v1.3-blueprint-view"]
     },
     {
+      "id": "v1.5-walkable-town",
+      "name": "v1.5 걸어다니는 마을 뷰",
+      "status": "done",
+      "description": "town.html — Kenney CC0 픽셀아트 + PixiJS로 만든 탑다운 게임. 11개 건물(=프로젝트)을 유기적 맵에 배치, 인테리어 입장 시 agents가 NPC로 등장, 게시판에서 진척도·코칭 확인. dashboard.html의 '마을' 탭은 town.html 링크로 교체",
+      "dependencies": ["v1.4-auto-analysis"]
+    },
+    {
+      "id": "v1.5.1-custom-building-sprites",
+      "name": "v1.5.1 건물 커스텀 스프라이트",
+      "status": "open",
+      "description": "11개 건물을 AI 생성 픽셀아트 PNG로 교체. town.html은 assets/town/buildings/<repo>.png 자동 폴백 준비 완료. assets/town/buildings/README.md에 프롬프트·스타일 블록 정리됨. 사용자가 PNG 생성·드롭하면 끝",
+      "dependencies": ["v1.5-walkable-town"],
+      "openQuestions": [
+        "사용자의 PNG 생성 시점 — Gemini/ChatGPT 등으로 11개 일관 스타일 생성"
+      ]
+    },
+    {
       "id": "v2.0-blueprint-polish",
       "name": "v2.0 완성형 청사진 에이전트",
       "status": "inProgress",
