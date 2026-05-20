@@ -1,18 +1,246 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-05-18",
+  "asOf": "2026-05-20",
   "commits": [
     {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "43efd7c",
+      "message": "Add v0.48 sprite sheet actor animation",
+      "date": "2026-05-19T15:00:51Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "c54b2e1",
+      "message": "Add v0.47 sprite sheet preview QA",
+      "date": "2026-05-19T14:26:03Z"
+    },
+    {
       "repo": "three-kingdoms-deckbuilder",
-      "sha": "e4b11c5",
-      "message": "feat: prep living backdrop pipeline (build 38 Living Backdrop Prep)",
-      "date": "2026-05-18T13:46:49Z"
+      "sha": "342ccef",
+      "message": "feat: prepare art candidate prompts (build 50 Art Candidate Prompts)",
+      "date": "2026-05-19T13:03:43Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "03fb08f",
+      "message": "feat: clarify first faction pick (build 49 First Pick Clarity)",
+      "date": "2026-05-19T12:55:33Z"
     },
     {
       "repo": "Nodeloom",
-      "sha": "9a72c5f",
-      "message": "마크다운 가져오기 — md 구조를 트리로 변환",
-      "date": "2026-05-18T13:27:05Z"
+      "sha": "33f7a01",
+      "message": "v1.3.4 — 노드 자식 추가 버튼 + 분기선 z-순서",
+      "date": "2026-05-19T12:08:24Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "d0038f8",
+      "message": "Add Formi reaction and room memory loop",
+      "date": "2026-05-19T12:07:04Z"
+    },
+    {
+      "repo": "Nodeloom",
+      "sha": "3d0f2c1",
+      "message": "v1.3.3 — 밑줄형 분기선과 밑줄의 중심선 어긋남 수정",
+      "date": "2026-05-19T11:55:57Z"
+    },
+    {
+      "repo": "Nodeloom",
+      "sha": "719f261",
+      "message": "v1.3.2 — 분기선이 노드에서 떨어져 끝나던 갭 수정",
+      "date": "2026-05-19T11:31:39Z"
+    },
+    {
+      "repo": "Nodeloom",
+      "sha": "f664138",
+      "message": "v1.3.1 — 밑줄 분기선 분리 + 단색 모드 색 불일치 수정",
+      "date": "2026-05-19T11:18:36Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "47b4bff",
+      "message": "Add v0.46 high-density pixel sheets",
+      "date": "2026-05-19T09:45:07Z"
+    },
+    {
+      "repo": "Nodeloom",
+      "sha": "65198ac",
+      "message": "v1.3.0 — XMind 벤치마크: 템플릿·노드 모양 확장",
+      "date": "2026-05-19T04:23:59Z"
+    },
+    {
+      "repo": "Nodeloom",
+      "sha": "92a807b",
+      "message": "v1.2.0 — 마인드맵 이미지 내보내기 (PNG·SVG·PDF)",
+      "date": "2026-05-19T03:06:33Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "1c02767",
+      "message": "Add v0.45 isometric sprite sheet pipeline",
+      "date": "2026-05-19T02:57:39Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "ae485a5",
+      "message": "feat: build 48 Art Pipeline Hooks",
+      "date": "2026-05-19T02:52:36Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "c845e11",
+      "message": "feat: build 47 Act I Pressure",
+      "date": "2026-05-19T02:44:37Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "c3f6705",
+      "message": "feat: build 46 Reward Loop Clarity",
+      "date": "2026-05-19T02:37:16Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "dc13d1a",
+      "message": "feat: build 45 Run Momentum Push",
+      "date": "2026-05-19T02:31:25Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "02352c8",
+      "message": "Add v0.44 office actor care actions",
+      "date": "2026-05-19T02:07:05Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "8617789",
+      "message": "feat: build 44 Living Backdrop Slice",
+      "date": "2026-05-19T02:05:39Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "194bab2",
+      "message": "feat: build 43 Road Replay Push",
+      "date": "2026-05-19T02:00:50Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "34ff544",
+      "message": "chore: gitignore .claude/launch.json (#67)",
+      "date": "2026-05-19T01:11:51Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "c96b2dd",
+      "message": "Add v0.43 graphic asset game screen",
+      "date": "2026-05-18T23:21:09Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "856e7c8",
+      "message": "Document v0.71 handoff state",
+      "date": "2026-05-18T23:07:55Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "81f1c00",
+      "message": "Add session handoff guide",
+      "date": "2026-05-18T23:06:30Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "4f12a1d",
+      "message": "Expand alpha 0.71 battlefield view",
+      "date": "2026-05-18T22:46:45Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "06c0068",
+      "message": "Add v0.42 office actor interaction",
+      "date": "2026-05-18T22:44:28Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "9460216",
+      "message": "Add Codex handoff doc",
+      "date": "2026-05-18T22:37:11Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "b8f1f58",
+      "message": "Add vector blob persona prototype",
+      "date": "2026-05-18T22:37:11Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "a037b99",
+      "message": "chore: bump version to 1.0.1 (#66)",
+      "date": "2026-05-18T18:04:39Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "d8d36d5",
+      "message": "feat: add per-journey pixel-art landmarks to journey hero (#65)",
+      "date": "2026-05-18T17:16:09Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "efef37d",
+      "message": "v1.0 리뷰 폴리시 — 탐험가 카드·히어로 버튼·여정 풍경 (#64)",
+      "date": "2026-05-18T16:55:56Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "d64ec99",
+      "message": "Add weekly pattern chart and reflection prompt to the Report tab",
+      "date": "2026-05-18T16:48:51Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "bd991de",
+      "message": "Add retention features to the Today tab",
+      "date": "2026-05-18T16:48:51Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "bb0cf18",
+      "message": "Rework persona avatar into a code-based motion system",
+      "date": "2026-05-18T16:48:51Z"
+    },
+    {
+      "repo": "Nodeloom",
+      "sha": "08c9eac",
+      "message": "v1.1.1 — 마인드맵 분기선이 세로로 뭉치던 버그 수정",
+      "date": "2026-05-18T15:43:56Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "8357d8b",
+      "message": "v1.0 — 정식 공개 (#63)",
+      "date": "2026-05-18T15:33:24Z"
+    },
+    {
+      "repo": "Nodeloom",
+      "sha": "f64e619",
+      "message": "v1.1.0 — 패널↔가지색 연동 + 로드맵 정리",
+      "date": "2026-05-18T15:30:25Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "18ce5f0",
+      "message": "v0.8 — 프롬프트 타이핑 효과 (레슨 미션) (#62)",
+      "date": "2026-05-18T15:28:09Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "5b28af7",
+      "message": "v0.6 후속 — 레슨 시간 최소/권장 표기 + 미션 건너뛰기 경로 (#61)",
+      "date": "2026-05-18T15:23:32Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "bb2dbb9",
+      "message": "Add alpha 0.70 command digest",
+      "date": "2026-05-18T15:15:40Z"
     },
     {
       "repo": "ai-builder-school",
@@ -21,64 +249,10 @@
       "date": "2026-05-18T13:05:35Z"
     },
     {
-      "repo": "ai-builder-school",
-      "sha": "3289266",
-      "message": "이미지 도구 프로젝트 2개 추가 — 나노바나나·미드저니 (Phase 5) (#59)",
-      "date": "2026-05-18T13:00:01Z"
-    },
-    {
-      "repo": "Nodeloom",
-      "sha": "1099fcd",
-      "message": "docs: 시장 조사 — 경쟁 지형과 킬링 포인트 확정",
-      "date": "2026-05-18T12:57:30Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "f076f18",
-      "message": "캐릭터 액세서리 레이어 — 업적으로 잠금 해제 (Phase 4) (#58)",
-      "date": "2026-05-18T12:43:26Z"
-    },
-    {
-      "repo": "Nodeloom",
-      "sha": "a9f3d63",
-      "message": "배포 정책 갱신 — v1.0.0 Vercel 프로덕션 배포",
-      "date": "2026-05-18T12:42:13Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "5c09465",
-      "message": "Add staff aftermath project impact",
-      "date": "2026-05-18T12:35:20Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "51d82e5",
-      "message": "업적 시스템 — 진척에서 파생 (Phase 3) (#57)",
-      "date": "2026-05-18T12:33:29Z"
-    },
-    {
       "repo": "samguk-idle-prototype",
       "sha": "f443517",
       "message": "Add adventure return loop and tactical hints",
       "date": "2026-05-18T12:32:07Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "6e5cb57",
-      "message": "프로젝트 준비도 — '지금 뭘 만들 수 있나' (Phase 2) (#56)",
-      "date": "2026-05-18T12:16:36Z"
-    },
-    {
-      "repo": "Nodeloom",
-      "sha": "39f8f3e",
-      "message": "Phase 1 구현 완료 — v1.0.0",
-      "date": "2026-05-18T11:32:11Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "1cd7d8b",
-      "message": "프로젝트↔템플릿 연결 + 템플릿 복사 버튼 (Phase 1) (#55)",
-      "date": "2026-05-18T11:16:30Z"
     },
     {
       "repo": "samguk-idle-prototype",
@@ -87,22 +261,10 @@
       "date": "2026-05-18T10:17:06Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "8d02363",
-      "message": "Add staff incident aftermaths",
-      "date": "2026-05-18T10:17:05Z"
-    },
-    {
       "repo": "samguk-idle-prototype",
       "sha": "08c9921",
       "message": "Add one-tap adventure idle claim",
       "date": "2026-05-18T10:07:55Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "d302fa0",
-      "message": "Add poaching offer details",
-      "date": "2026-05-18T05:33:54Z"
     },
     {
       "repo": "samguk-idle-prototype",
@@ -111,112 +273,10 @@
       "date": "2026-05-18T05:31:07Z"
     },
     {
-      "repo": "ai-builder-school",
-      "sha": "dce72be",
-      "message": "여정별 히어로 페이지 — 산을 바라보며 출발선에 선 모험 장면 (#54)",
-      "date": "2026-05-18T05:18:11Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "688e1ee",
-      "message": "feat: continue pre-art alpha development (build 37 Pre-Art Final Tighten)",
-      "date": "2026-05-18T05:00:29Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "55b0d2f",
-      "message": "feat: continue pre-art alpha development (build 36 QA Harness Polish)",
-      "date": "2026-05-18T04:54:11Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "d7a01bf",
-      "message": "feat: continue pre-art alpha development (build 35 Act I Replay Hooks)",
-      "date": "2026-05-18T04:47:50Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "669b927",
-      "message": "feat: continue pre-art alpha development (build 34 Background Style Prep)",
-      "date": "2026-05-18T04:40:45Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "4d96baa",
-      "message": "Add staff incident result cards",
-      "date": "2026-05-18T04:35:43Z"
-    },
-    {
       "repo": "samguk-idle-prototype",
       "sha": "679405c",
       "message": "Highlight adventure material routes",
       "date": "2026-05-18T04:35:34Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "3b6f717",
-      "message": "Add staff incident resolution choices",
-      "date": "2026-05-18T04:24:34Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "6e3d716",
-      "message": "Highlight growth route destinations",
-      "date": "2026-05-18T04:23:50Z"
-    },
-    {
-      "repo": "Nodeloom",
-      "sha": "ac91a63",
-      "message": "포커스 경로 브레드크럼 — 현대 아웃라이너 줌 내비게이션 흡수",
-      "date": "2026-05-18T04:12:22Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "d56a577",
-      "message": "Add growth fallback routes",
-      "date": "2026-05-18T04:11:00Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "896d739",
-      "message": "Add staff incident panel",
-      "date": "2026-05-18T04:10:05Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "d039dc7",
-      "message": "Add growth quick feedback",
-      "date": "2026-05-18T03:59:21Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "4a7c700",
-      "message": "Add recruitment brand profile",
-      "date": "2026-05-18T03:57:26Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "76b76c6",
-      "message": "레슨에 여정 중심 내비게이션 — 우측 여정 경로 카드 + 여정 순서 페이저 (#53)",
-      "date": "2026-05-18T03:46:33Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "af2bfaa",
-      "message": "Add staff specialization branches",
-      "date": "2026-05-18T03:44:19Z"
-    },
-    {
-      "repo": "Nodeloom",
-      "sha": "cc34903",
-      "message": "노드 모양 — XMind 벤치마크 흡수 (엄선 4종)",
-      "date": "2026-05-18T03:39:31Z"
-    },
-    {
-      "repo": "Nodeloom",
-      "sha": "290a829",
-      "message": "docs: XMind 직접 벤치마크 — 기능 카탈로그 + 흡수 판정",
-      "date": "2026-05-18T03:32:15Z"
     },
     {
       "repo": "habit",
@@ -229,66 +289,6 @@
       "sha": "aeea4aa",
       "message": "Add Google login and daily snap reminder notifications",
       "date": "2026-05-18T02:41:59Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "ad20cbd",
-      "message": "feat: polish first ten minutes (build 33 First Ten Polish)",
-      "date": "2026-05-18T01:37:34Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "351b755",
-      "message": "chore: disable Godot file logging in automation",
-      "date": "2026-05-18T01:23:52Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "33e5cfa",
-      "message": "feat: tune pre-art alpha playtest (build 32 Playtest Tuning)",
-      "date": "2026-05-18T01:20:46Z"
-    },
-    {
-      "repo": "Nodeloom",
-      "sha": "f7be5cf",
-      "message": "집중 모드 — UI 크롬을 숨겨 뷰만 표시",
-      "date": "2026-05-17T15:12:41Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "e03bb00",
-      "message": "Limit Kakao OAuth scope to profile_nickname",
-      "date": "2026-05-17T14:47:57Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "ff164f9",
-      "message": "Fix stretched Today record cards with a fixed height",
-      "date": "2026-05-17T14:45:31Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "d293445",
-      "message": "Add Kakao login via Supabase auth",
-      "date": "2026-05-17T13:19:16Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "ad36a26",
-      "message": "Add Supabase cloud sync foundation for snap records",
-      "date": "2026-05-17T12:45:46Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "0c3fbae",
-      "message": "Move the room to the top of the Home tab",
-      "date": "2026-05-17T11:47:07Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "48190bb",
-      "message": "Tint Meet AI suggestion card with the spec green surface",
-      "date": "2026-05-17T11:12:56Z"
     },
     {
       "repo": "sam-defender-logue",
