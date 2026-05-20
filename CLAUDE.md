@@ -6,9 +6,31 @@
 
 - **소유자**: sgeniusk (Gomgomee)
 - **데이터 기준일**: `projects.json`의 `meta.asOf` 참고 (refresh 시 자동 갱신)
-- **활성 프로젝트**: 9개 (게임 4, 앱 4, 콘텐츠 1)
+- **활성 프로젝트**: 10개 (게임 4, 앱 5, 콘텐츠 1)
 - **일시중단**: 1개 (jewelry-webtoon-cloud — 핵심 마감 후 재개)
 - **제외**: tteuniyu 메인 monorepo (사용자 요청으로 분석에서 제외, tteuniyu-ios는 유지)
+
+## 시작 (Startup workflow)
+
+새 세션은 이 4단계로 시작한다.
+
+1. **시작 진단** — `bash init.sh` 실행. JSON 무결성·핵심 파일·GitHub 토큰·`meta.asOf`를 한 화면에 확인한다.
+2. **상태 파악** — `progress.md` (현재 작업·다음 액션·검증 증거)와 `feature_list.json` (v1.0→v2.0 백로그, `active` 필드가 진행 중 feature)를 읽는다.
+3. **세부 컨텍스트** — 본 `CLAUDE.md`의 핵심 규약 + `projects.schema.md`의 필드 규칙을 따른다.
+4. **이어받기** — 다른 세션에서 넘어오는 경우 `HANDOFF.md`도 함께 본다.
+
+## 완료 정의 (Definition of Done)
+
+이 워크스페이스의 변경은 다음을 모두 만족해야 "done"이다.
+
+- **JSON 무결성** — `projects.json`·`suggestions.json`·`usage.json`·`history.json`·`activity.json`이 모두 `JSON.parse` 통과 (`bash init.sh`로 한 번에 검증)
+- **콘솔 에러 0** — `dashboard.html`을 브라우저에서 열어 모든 탭(청사진/순위/제안/활동/분석/스프린트/사용량 및 설정) 전환 시 콘솔 에러 없음
+- **FALLBACK 동기화** — `projects.json`·`suggestions.json`·`usage.json`을 갱신했으면 `dashboard.html`의 `FALLBACK_*` 상수도 verbatim 동기화 (`/refresh`가 자동 처리; `FALLBACK_HISTORY`·`FALLBACK_ACTIVITY`는 동기화 대상 아님)
+- **배포** — `main` push 후 `.github/workflows/deploy.yml`이 success로 끝남
+- **상태 갱신** — 의미 있는 작업이라면 `progress.md`의 '현재 작업'·'다음 액션'을 갱신, 새 feature는 `feature_list.json`에 추가
+- **변경 금지 항목 준수** — 아래 '절대 하지 말 것' 위반 0건
+
+`/refresh` 실행 후의 검증 증거(스냅샷 수, 활동 커밋 수, 배포 conclusion)는 `progress.md`의 검증 표에 기록한다.
 
 ## 폴더 구조
 
@@ -112,6 +134,35 @@ github-priority-dashboard/
 - **프로젝트 문서 표준화** — `/sync-project {repo}`
 - **신규 프로젝트 등록** — `projects.json`에 객체 추가 → `rank` 재정렬 → `dashboard.html`의 `FALLBACK_PROJECTS` 폴백도 동기화 (`/refresh`가 처리)
 - **도구 태그 변경** — 사용자 확인 후에만, `tool-attribution.md`에 사유 기록
+
+## Verification Commands
+
+- `bash init.sh` — JSON 무결성·핵심 파일·GitHub 토큰·`meta.asOf` 한 번에 점검 (verify 진입점)
+- `node scripts/refresh-progress.mjs --dry-run` — projects.json·history.json·activity.json 변경 미리보기, 저장 안 함
+- `node -e "JSON.parse(require('fs').readFileSync('projects.json','utf8'))"` — 단일 JSON 파일 파싱 검증 (각 JSON에 대해 반복; init.sh가 일괄 수행)
+- 브라우저 검증 — `npx serve -l 4180` 후 `http://localhost:4180/dashboard.html` 열기. 모든 탭 전환 시 콘솔 에러 0 확인
+- 별도의 단위 test 프레임워크(vitest/jest 등)는 두지 않는다 — 정적 대시보드 + JSON이라 `init.sh`의 파싱·존재 체크가 사실상 test 역할
+
+## 범위·세션 규칙 (Stay in scope · End of Session)
+
+### One feature at a time
+
+이 워크스페이스는 동시에 하나의 `active` feature만 둔다 — `feature_list.json`의 `active` 필드가 진행 중인 단일 항목. 새 작업이 떠오르면 그 feature의 `doneCriteria`에 추가하거나, 별도 feature로 백로그에 넣고 현재 active는 끝낼 때까지 유지.
+
+### Stay in scope
+
+`active` feature의 `description` + `doneCriteria` 범위를 벗어나는 작업은 별도 feature로 분리한다. 새 프로젝트 추가·도구 태그 변경 같이 사용자 결정이 필요한 항목은 데이터 변경 전에 사용자에게 확인.
+
+### End of Session — Before ending
+
+세션을 닫기 전 이 4가지를 처리한다.
+
+1. **상태 갱신** — `progress.md`의 'Current Objective'·'Recommended Next Step'·'Last Updated'를 오늘 상황에 맞게 갱신
+2. **검증 증거 기록** — 이번 세션의 검증 결과(스냅샷·콘솔·배포)를 `progress.md` 검증 표에 추가
+3. **막힌 항목 옮김** — 외부 응답 대기 등 Blockers는 `progress.md` '막혀 있는 항목'에 명시
+4. **핸드오프** — 다음 세션이 한 번에 이어갈 만큼 다듬어졌으면 종료. 미흡하면 `session-handoff.md` 템플릿을 채워 `progress.md`나 PR 본문으로 옮긴다
+
+이 절차를 따르면 다음 세션은 `bash init.sh` 한 번 + `progress.md` 한 번 읽기로 깨끗하게 restartable. 즉 Next steps가 항상 한 곳(`progress.md`)에 있다는 의미.
 
 ## 절대 하지 말 것
 

@@ -332,24 +332,6 @@ header,.modal-box{
 .card,.kpi-card,.chart-card,.usage-card{background:var(--glass)}
 .kpi-card,.card,.chart-card,.usage-card{box-shadow:inset 0 1px 0 rgba(255,255,255,.4), var(--shadow)}
 .modal-overlay{-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
-/* ── Town (마을) 뷰 ── */
-.town-stage{position:relative;width:100%;height:600px;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;background:var(--surface)}
-.town-stage canvas{display:block;width:100%;height:100%}
-.town-legend{display:flex;gap:16px;flex-wrap:wrap;margin:4px 0 14px;font-size:11px;color:var(--t2)}
-.town-legend .tl-item{display:flex;align-items:center;gap:6px}
-.town-dot{width:11px;height:11px;border-radius:3px;display:inline-block;flex-shrink:0}
-.town-fallback{display:flex;align-items:center;justify-content:center;height:100%;color:var(--t2);font-size:13px;text-align:center;padding:24px;line-height:1.6}
-.tm-agents{display:flex;flex-direction:column;gap:9px}
-.tm-agent{display:flex;gap:10px;align-items:flex-start}
-.tm-ag-dot{width:13px;height:13px;border-radius:4px;flex-shrink:0;margin-top:2px}
-.tm-ag-name{font-size:12px;font-weight:700;color:var(--text)}
-.tm-ag-role{font-size:11px;color:var(--t2)}
-.tm-ag-task{font-size:11px;color:var(--t2);margin-top:2px}
-.tm-sug{border:1px solid var(--border);border-left:3px solid var(--electric);border-radius:10px;padding:10px 13px;margin-top:8px;font-size:12px}
-.tm-sug.sev-high{border-left-color:var(--orange)}
-.tm-sug.sev-warn{border-left-color:var(--yellow)}
-.tm-sug-t{font-weight:700;color:var(--text);margin-bottom:3px}
-.tm-sug-r{color:var(--t2);line-height:1.55}
 .tbl-row:focus-visible{outline-offset:-2px}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
@@ -360,7 +342,6 @@ header,.modal-box{
   main{padding:20px 18px 48px}
   .kpi-grid{grid-template-columns:repeat(3,1fr)}
   .charts-grid{grid-template-columns:1fr}
-  .town-stage{height:720px}
   .sprint-board{grid-template-columns:repeat(3,1fr)}
   .exp-inner{grid-template-columns:1fr;padding-left:20px;gap:14px}
   .exp-body.open{max-height:460px}
@@ -407,7 +388,7 @@ header,.modal-box{
     <button class="nav-link" role="tab" aria-selected="false" data-tab="activity" onclick="showTab('activity')">활동</button>
     <button class="nav-link" role="tab" aria-selected="false" data-tab="charts" onclick="showTab('charts')">분석</button>
     <button class="nav-link" role="tab" aria-selected="false" data-tab="sprint" onclick="showTab('sprint')">스프린트</button>
-    <button class="nav-link" role="tab" aria-selected="false" data-tab="town" onclick="showTab('town')">마을</button>
+    <a class="nav-link" href="town.html" aria-label="걸어다니는 프로젝트 마을 게임 열기">마을 ↗</a>
     <button class="nav-link" role="tab" aria-selected="false" data-tab="usage" onclick="showTab('usage')">사용량 및 설정</button>
   </nav>
   <button class="icon-btn" id="refreshBtn" title="새로고침 + 분석" aria-label="데이터 새로고침 및 분석">↻</button>
@@ -534,16 +515,6 @@ header,.modal-box{
     <div class="sprint-board" id="sprintBoard"></div>
   </section>
 
-  <!-- Town -->
-  <section id="sec-town" data-tab="town">
-    <div class="sec-label">마을 — 프로젝트 빌리지 <button class="info-i" onclick="openGlossary('마을')" aria-label="용어 설명">i</button><em id="townMeta" style="font-style:normal;font-weight:600;letter-spacing:0;text-transform:none"></em><span></span></div>
-    <div class="card">
-      <p class="hint">건물 하나가 프로젝트야. 게임·앱·콘텐츠 세 동네로 나뉘고, 건물 높이는 진척도를 나타내. 건물을 클릭하면 진척도 분해·에이전트 명단·코칭을 볼 수 있어.</p>
-      <div class="town-legend" id="townLegend"></div>
-      <div class="town-stage" id="townStage"></div>
-    </div>
-  </section>
-
   <!-- Usage -->
   <section id="sec-usage" data-tab="usage">
     <div class="sec-label">사용량 및 설정 <span></span><button class="btn-ghost" style="margin:0;padding:5px 14px;font-size:11px" onclick="exportUsageAll()">usage.json 내보내기</button></div>
@@ -612,18 +583,6 @@ header,.modal-box{
   </div>
 </div>
 
-<!-- 프로젝트 상세 모달 (마을 뷰) -->
-<div class="modal-overlay" id="townModal" onclick="if(event.target===this)closeTown()">
-  <div class="modal-box" role="dialog" aria-modal="true" aria-label="프로젝트 상세">
-    <div class="modal-hd">
-      <span class="modal-title" id="townModalTitle">프로젝트</span>
-      <button class="modal-x" onclick="closeTown()" aria-label="닫기">✕</button>
-    </div>
-    <div id="townModalBody" style="font-size:13px;line-height:1.6;color:var(--text)"></div>
-  </div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/pixi.js@7.4.2/dist/pixi.min.js"></script>
 <script>
 /* ── FALLBACK 데이터 (fetch 실패 시 — file:// 등에서 사용) ── */
 const FALLBACK_PROJECTS = {
@@ -1776,7 +1735,7 @@ document.getElementById('themeBtn').addEventListener('click',()=>{
   d.setAttribute('data-theme',next);
   localStorage.setItem('theme',next);
   document.getElementById('themeBtn').textContent=dark?'🌙':'☀️';
-  setTimeout(()=>{ renderStacked(); renderDonut(); renderScatter(); renderTrend(); if(townApp) renderTown(); },80);
+  setTimeout(()=>{ renderStacked(); renderDonut(); renderScatter(); renderTrend(); },80);
 });
 
 /* ── SEARCH ── */
@@ -1865,7 +1824,7 @@ function closeModal(id){
 }
 window.openHelp=()=>openModal('helpModal');
 window.closeHelp=()=>closeModal('helpModal');
-document.addEventListener('keydown',e=>{ if(e.key==='Escape'){closeHelp();closeDocs();closeGlossary();closeTown();} });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'){closeHelp();closeDocs();closeGlossary();} });
 
 /* ── 용어 설명 글로서리 ── */
 const GLOSSARY = {
@@ -1873,8 +1832,7 @@ const GLOSSARY = {
   '진척도': '진척도 = 문서(0-20) + 골격(0-30) + 기능(0-30) + 알파(0-20) = 0-100점. 골격은 하네스 엔지니어링·서브에이전트 구성 완성도를 봅니다. 순위 탭 범례의 "측정 기준" 버튼에서 단계별 채점 기준을 볼 수 있습니다.',
   '제안/코칭': '/coach·/refresh 커맨드나 헤더의 ↻ 버튼이 생성하는 분석입니다. 정체된 프로젝트, 막힌 단계, 다음 액션을 자동 진단합니다. STALL=정체 경고, COACH=일반 코칭.',
   '마스터 보드': '추적 중인 전 프로젝트를 진척도 높은 순으로 한눈에 보는 카드 그리드입니다. 각 카드의 "문서" 버튼으로 PRD·로드맵·로그를 엽니다.',
-  '정체': '마지막 GitHub 활동이 4-5일 이상 없는 상태입니다. 진행 중인 프로젝트가 정체되면 일정 지연 신호이며, 같은 스프린트의 동반 프로젝트에도 영향을 줍니다.',
-  '마을': '전 프로젝트를 픽셀아트 빌리지로 보는 뷰입니다. 건물 1채 = 프로젝트 1개, 게임·앱·콘텐츠 세 동네로 구획됩니다. 건물 층수는 진척도(0-100)에 비례하고, 일시중단 프로젝트는 공사중단(🚧)으로 표시됩니다. 건물 앞 캐릭터는 그 프로젝트에서 일하는 에이전트이며 도구별 색(Claude 오렌지·Codex 초록·Hermes 보라)으로 구분됩니다.'
+  '정체': '마지막 GitHub 활동이 4-5일 이상 없는 상태입니다. 진행 중인 프로젝트가 정체되면 일정 지연 신호이며, 같은 스프린트의 동반 프로젝트에도 영향을 줍니다.'
 };
 window.openGlossary = (term)=>{
   document.getElementById('glossaryTitle').textContent = term;
@@ -1898,9 +1856,6 @@ function showTab(name){
   window.scrollTo(0,0);
   // 차트는 패널이 보일 때 폭이 잡히므로 분석 탭 전환 시 재렌더
   if(name==='charts'){ renderStacked(); renderDonut(); renderScatter(); renderTrend(); }
-  // 마을 캔버스도 숨겨진 상태에선 폭이 0 — 탭 진입 시점에 lazy 초기화
-  if(name==='town'){ ensureTown(); if(townApp) townApp.ticker.start(); }
-  else if(townApp){ townApp.ticker.stop(); }
 }
 window.showTab = showTab;
 // 탭 화살표 키 내비게이션 (tablist 표준)
@@ -2176,309 +2131,6 @@ function renderTrend(){
   el.innerHTML = s;
   if(leg) leg.innerHTML = list.map((p,idx)=>`<div class="leg-item"><div class="leg-dot" style="background:${TREND_COLORS[idx%TREND_COLORS.length]}"></div>${p.nm}</div>`).join('');
 }
-
-/* ══ 마을(Town) 뷰 — PixiJS 픽셀아트로 프로젝트를 빌리지로 시각화 ══ */
-let townApp=null, townScene=null, townInited=false, townAnim=[], townT=0;
-
-// 도구별 캐릭터 색 (CLAUDE.md 도구 색 정본 — 브랜드 고정, 테마 무관)
-const TOWN_TOOL = { claude:0xff5b22, codex:0x3fb950, hermes:0xbc8cff, hybrid:0x39c5cf };
-// mapProject가 만든 한글/영문 도구 라벨 → 색 키 역매핑
-const TOOL_TO_KEY = { 'Claude':'claude','Codex':'codex','Hermes Agent':'hermes','Claude+Codex':'hybrid' };
-// 카테고리별 동네 — 위에서 아래로 게임·앱·콘텐츠
-const TOWN_ZONES = [
-  { cat:'game',    label:'🎮 게임 마을',  hue:0x6c5ce7 },
-  { cat:'app',     label:'📱 앱 마을',    hue:0x2545ff },
-  { cat:'content', label:'📚 콘텐츠 마을', hue:0xffc13a }
-];
-
-const esc = s => String(s==null?'':s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-const tt  = (s,n) => { s=String(s||''); return s.length>n ? s.slice(0,n-1)+'…' : s; };
-// CSS 변수값을 0xRRGGBB 정수로 변환 (Pixi는 CSS 변수를 직접 못 읽음)
-function cssHex(varName){
-  const v = css(varName);
-  if(!v) return 0;
-  if(v[0]==='#'){ let h=v.slice(1); if(h.length===3) h=h.split('').map(c=>c+c).join(''); return parseInt(h,16)||0; }
-  const m=v.match(/rgba?\(([^)]+)\)/);
-  if(m){ const a=m[1].split(',').map(x=>parseInt(x.trim(),10)); return ((a[0]&255)<<16)|((a[1]&255)<<8)|(a[2]&255); }
-  return 0;
-}
-// 두 색 선형 보간
-function mixHex(a,b,t){
-  const ar=(a>>16)&255,ag=(a>>8)&255,ab=a&255, br=(b>>16)&255,bg=(b>>8)&255,bb=b&255;
-  return (Math.round(ar+(br-ar)*t)<<16)|(Math.round(ag+(bg-ag)*t)<<8)|Math.round(ab+(bb-ab)*t);
-}
-const townDark = () => document.documentElement.getAttribute('data-theme')==='dark';
-function TOWN_THEME(){
-  return { sky:cssHex('--bg'), surface:cssHex('--surface'), text:cssHex('--text'),
-           t2:cssHex('--t2'), border:cssHex('--border'), dark:townDark() };
-}
-// 프로젝트의 에이전트 명단 — projects.json agents 필드, 없으면 tool로 1명 합성
-function townAgentsOf(p){
-  if(p.agents && p.agents.length) return p.agents;
-  const key = TOOL_TO_KEY[p.tool] || 'claude';
-  return [{ name:p.tool||'Claude', role:'개발', tool:(key==='hybrid'?'claude':key) }];
-}
-
-// 탭 최초 진입 시 lazy 초기화 — 숨겨진 캔버스는 폭이 0이라 표시 시점에 만든다
-function ensureTown(){
-  if(townInited){ renderTown(); return; }
-  const stageEl = document.getElementById('townStage');
-  if(typeof PIXI==='undefined'){
-    stageEl.innerHTML = '<div class="town-fallback">마을 뷰를 불러올 수 없습니다.<br>PixiJS(CDN) 로드에 실패했어 — 네트워크 연결을 확인해줘.</div>';
-    townInited = true; return;
-  }
-  initTown();
-  townInited = true;
-  renderTown();
-}
-function initTown(){
-  const stageEl = document.getElementById('townStage');
-  const w = Math.max(320, stageEl.clientWidth||800);
-  const h = Math.max(320, stageEl.clientHeight||600);
-  townApp = new PIXI.Application({
-    width:w, height:h, antialias:false, autoDensity:true,
-    resolution: Math.min(2, window.devicePixelRatio||1), backgroundColor: cssHex('--bg')
-  });
-  stageEl.appendChild(townApp.view);
-  townScene = new PIXI.Container();
-  townApp.stage.addChild(townScene);
-  townApp.ticker.add(townTick);
-  let rt;
-  window.addEventListener('resize',()=>{
-    if(!townApp) return;
-    clearTimeout(rt);
-    rt = setTimeout(()=>{ if(document.getElementById('sec-town').classList.contains('tab-on')) renderTown(); },180);
-  });
-}
-function renderTown(){
-  if(!townApp || !townScene) return;
-  const stageEl = document.getElementById('townStage');
-  const w = Math.max(320, stageEl.clientWidth||800);
-  const h = Math.max(320, stageEl.clientHeight||600);
-  townApp.renderer.resize(w,h);
-  const th = TOWN_THEME();
-  townApp.renderer.background.color = th.sky;
-  townScene.removeChildren().forEach(ch=>ch.destroy({children:true}));
-  townAnim = [];
-  buildTown(w,h,th);
-  const meta = document.getElementById('townMeta');
-  if(meta) meta.textContent = P.length + '개 프로젝트 · 3개 동네';
-  renderTownLegend();
-}
-function renderTownLegend(){
-  const el = document.getElementById('townLegend');
-  if(!el) return;
-  const hex = n => '#'+n.toString(16).padStart(6,'0');
-  const tools = [['claude','Claude'],['codex','Codex'],['hermes','Hermes'],['hybrid','하이브리드']];
-  el.innerHTML = tools.map(([k,l])=>`<span class="tl-item"><span class="town-dot" style="background:${hex(TOWN_TOOL[k])}"></span>${l}</span>`).join('')
-    + '<span class="tl-item">🏗 건물 높이 = 진척도</span><span class="tl-item">🚧 일시중단</span>';
-}
-
-function buildTown(w,h,th){
-  const zoneH = h / TOWN_ZONES.length;
-  TOWN_ZONES.forEach((z,zi)=> townScene.addChild(buildZone(z, w, zoneH, zi*zoneH, th)) );
-}
-function buildZone(z, w, zoneH, zoneTop, th){
-  const c = new PIXI.Container();
-  c.y = zoneTop;
-  const groundTop = Math.round(zoneH*0.70);
-  const groundColor = mixHex(th.surface, z.hue, th.dark?0.20:0.13);
-  const g = new PIXI.Graphics();
-  g.beginFill(groundColor); g.drawRect(0,groundTop,w,zoneH-groundTop); g.endFill();
-  // 바닥 결 — 옅은 픽셀 점묘
-  g.beginFill(mixHex(groundColor, th.dark?0xffffff:0x000000, 0.07));
-  for(let i=8;i<w;i+=30){ const yy=groundTop+9+((i*13)%Math.max(8,zoneH-groundTop-16)); g.drawRect(i,yy,4,3); }
-  g.endFill();
-  // 구역 경계선
-  g.beginFill(th.border); g.drawRect(0,zoneH-1,w,1); g.endFill();
-  c.addChild(g);
-  // 동네 라벨
-  const lbl = new PIXI.Text(z.label, { fontFamily:'Inter,sans-serif', fontSize:12, fontWeight:'700', fill:th.t2 });
-  lbl.x=14; lbl.y=11; c.addChild(lbl);
-  // 건물 — 카테고리 일치 프로젝트를 rank 순으로 배치
-  const list = P.filter(p=>p.cat===z.cat).sort((a,b)=>a.id-b.id);
-  const n = list.length;
-  if(n){
-    const sidePad=36;
-    const gap = Math.min(46, Math.max(18,(w-2*sidePad)/n*0.26));
-    let bw = Math.min(98,(w-2*sidePad-(n-1)*gap)/n);
-    bw = Math.max(46, bw);
-    const rowW = n*bw+(n-1)*gap;
-    let x = Math.max(sidePad,(w-rowW)/2);
-    list.forEach(p=>{
-      const b = buildBuilding(p, bw, z.hue, th);
-      b.x = x+bw/2; b.y = groundTop; b.pivot.set(bw/2,0);
-      c.addChild(b);
-      x += bw+gap;
-    });
-  }
-  return c;
-}
-// 건물 1채 — PIXI.Graphics 사각형을 쌓은 절차적 픽셀아트. 로컬 원점(0,0)=좌하단 지면
-function buildBuilding(p, bw, hue, th){
-  const cont = new PIXI.Container();
-  const total = pct(p);
-  const floors = Math.max(1, Math.min(5, 1+Math.round(total/22)));
-  const floorH = 16, bodyH = floors*floorH;
-  const roofH = p.cat==='game'?14 : p.cat==='content'?16 : 8;
-  const bodyColor = mixHex(th.dark?th.surface:0xffffff, hue, th.dark?0.34:0.20);
-  const roofColor = mixHex(hue, 0x000000, th.dark?0.10:0.22);
-  // 지면 그림자
-  const sh = new PIXI.Graphics();
-  sh.beginFill(0x000000, th.dark?0.32:0.14); sh.drawEllipse(bw/2,2,bw*0.62,5); sh.endFill();
-  cont.addChild(sh);
-  const g = new PIXI.Graphics();
-  // 본체 + 오른쪽 음영
-  g.beginFill(bodyColor); g.drawRect(0,-bodyH,bw,bodyH); g.endFill();
-  g.beginFill(mixHex(bodyColor,0x000000,0.20)); g.drawRect(bw-4,-bodyH,4,bodyH); g.endFill();
-  // 창문 — 아래 층부터 점등 (완성도 비례)
-  const winCols = Math.max(2, Math.floor(bw/22));
-  const totalWin = winCols*floors;
-  const litCount = p.paused?0:Math.round(totalWin*total/100);
-  const litColor = 0xffd87a, dimColor = mixHex(bodyColor,0x000000,th.dark?0.30:0.42);
-  const span=(bw-10)/winCols, wW=Math.min(8,span*0.5), wH=8;
-  let wi=0;
-  for(let f=floors-1; f>=0; f--){
-    for(let c2=0; c2<winCols; c2++){
-      const wx = 5 + c2*span + (span-wW)/2;
-      const wy = -bodyH + f*floorH + (floorH-wH)/2;
-      g.beginFill(wi<litCount?litColor:dimColor); g.drawRect(wx,wy,wW,wH); g.endFill();
-      wi++;
-    }
-  }
-  // 문
-  const dw=Math.max(9,bw*0.2), dh=13;
-  g.beginFill(mixHex(bodyColor,0x000000,0.5)); g.drawRect((bw-dw)/2,-dh,dw,dh); g.endFill();
-  // 지붕 — 카테고리별 형태
-  if(p.cat==='game'){
-    g.beginFill(roofColor); g.drawPolygon([-3,-bodyH, bw/2,-bodyH-roofH, bw+3,-bodyH]); g.endFill();
-  } else if(p.cat==='content'){
-    g.beginFill(roofColor); g.drawRect(bw*0.08,-bodyH-8,bw*0.84,8); g.endFill();
-    g.beginFill(mixHex(roofColor,0xffffff,0.18)); g.drawRect(bw*0.26,-bodyH-roofH,bw*0.48,8); g.endFill();
-  } else {
-    g.beginFill(roofColor); g.drawRect(-3,-bodyH-roofH,bw+6,roofH); g.endFill();
-    g.beginFill(th.t2); g.drawRect(bw*0.72,-bodyH-roofH-11,2,11); g.endFill();
-    g.beginFill(0xff5b22); g.drawCircle(bw*0.72+1,-bodyH-roofH-12,2.2); g.endFill();
-  }
-  cont.addChild(g);
-  // 프로젝트 아이콘 — 건물 위에 떠 있는 마커
-  const icon = new PIXI.Text(p.icon||'📦', { fontSize:13 });
-  icon.anchor.set(0.5,1); icon.x=bw/2; icon.y=-bodyH-roofH-3;
-  cont.addChild(icon);
-  // 일시중단 — 디밍 오버레이 + 공사 표시
-  if(p.paused){
-    const ov = new PIXI.Graphics();
-    ov.beginFill(0x000000, th.dark?0.55:0.42); ov.drawRect(-4,-bodyH-roofH-4,bw+8,bodyH+roofH+4); ov.endFill();
-    cont.addChild(ov);
-    const cone = new PIXI.Text('🚧',{ fontSize:15 });
-    cone.anchor.set(0.5,0.5); cone.x=bw/2; cone.y=-bodyH/2; cont.addChild(cone);
-  }
-  // 최근 활동(7일 내) — 굴뚝 연기 퍼프 애니메이션
-  if(!p.paused && daysSince(p.last)<=7){
-    const puff = new PIXI.Graphics();
-    puff.beginFill(mixHex(th.surface,th.text,0.45),0.4); puff.drawCircle(0,0,3.6); puff.endFill();
-    const pbY = -bodyH-roofH-4; puff.x=bw*0.74; puff.y=pbY;
-    cont.addChild(puff);
-    townAnim.push({ type:'puff', node:puff, baseY:pbY, phase:p.id*0.7 });
-  }
-  // 에이전트 캐릭터 — 건물 앞 지면에 배치
-  const ags = townAgentsOf(p);
-  const aw=11, agap=4;
-  const rowAW = ags.length*aw+(ags.length-1)*agap;
-  let ax=(bw-rowAW)/2;
-  ags.forEach((ag,ai)=>{
-    const node = buildAgent(ag, p.paused);
-    node.x=ax; node.y=3;
-    cont.addChild(node);
-    if(!p.paused){
-      const active = p.st==='active';
-      townAnim.push({ type:'agent', node, baseY:3, phase:ai*1.4+p.id, amp:active?2.6:1.3, speed:active?2.3:1.3 });
-    }
-    ax += aw+agap;
-  });
-  // 이름 + 진척도 라벨
-  const nm = new PIXI.Text(tt(p.nm,11), { fontFamily:'Inter,sans-serif', fontSize:9, fontWeight:'600', fill:th.text });
-  nm.anchor.set(0.5,0); nm.x=bw/2; nm.y=27; cont.addChild(nm);
-  const sub = new PIXI.Text(total+'% · '+(p.sprint==='Defer'?'보류':'S'+p.sprint),
-    { fontFamily:'Inter,sans-serif', fontSize:8, fontWeight:'700', fill:th.t2 });
-  sub.anchor.set(0.5,0); sub.x=bw/2; sub.y=39; cont.addChild(sub);
-  // 상호작용 — 클릭 시 상세 모달, 호버 시 살짝 커짐
-  cont.eventMode='static'; cont.cursor='pointer';
-  cont.hitArea = new PIXI.Rectangle(-6,-bodyH-roofH-24,bw+12,bodyH+roofH+74);
-  cont.on('pointertap',()=>openTownModal(p.id));
-  cont.on('pointerover',()=>cont.scale.set(1.06));
-  cont.on('pointerout',()=>cont.scale.set(1));
-  return cont;
-}
-// 에이전트 캐릭터 — 머리·몸통 픽셀 캐릭터, 도구별 색
-function buildAgent(agent, dimmed){
-  const c = new PIXI.Container();
-  const key = agent.tool || 'claude';
-  const col = TOWN_TOOL[key] || TOWN_TOOL.claude;
-  const g = new PIXI.Graphics();
-  g.beginFill(0x000000,0.13); g.drawEllipse(5.5,20,6,2.4); g.endFill();      // 그림자
-  g.beginFill(col); g.drawRect(1,9,9,9); g.endFill();                        // 몸통
-  g.beginFill(mixHex(col,0xffffff,0.28)); g.drawRect(2,1,7.5,8); g.endFill(); // 머리
-  g.beginFill(0x1a1a1a); g.drawRect(3.6,3.6,1.7,1.7); g.drawRect(6.6,3.6,1.7,1.7); g.endFill(); // 눈
-  c.addChild(g);
-  if(dimmed) c.alpha=0.4;
-  return c;
-}
-function townTick(){
-  if(!townApp) return;
-  townT += townApp.ticker.deltaMS/1000;
-  for(const a of townAnim){
-    if(a.type==='agent'){
-      a.node.y = a.baseY + Math.abs(Math.sin(townT*a.speed + a.phase))*a.amp;
-    } else if(a.type==='puff'){
-      const k = (Math.sin(townT*1.5 + a.phase)+1)/2;
-      a.node.alpha = 0.12 + k*0.4;
-      a.node.y = a.baseY - k*6;
-    }
-  }
-}
-
-// 건물 클릭 → 프로젝트 상세 모달
-function renderTownModal(p){
-  const total=pct(p), ags=townAgentsOf(p);
-  const sugs=(SUG.items||[]).filter(s=>s.repo===p.repo);
-  const sevOrder={high:0,warn:1,info:2};
-  const brk=[['문서',p.d,20,'var(--s1)'],['골격',p.sc,30,'var(--s2)'],['기능',p.fn,30,'var(--s3)'],['알파',p.al,20,'var(--s4)']];
-  let h='';
-  h+=`<div style="display:flex;gap:7px;flex-wrap:wrap;margin-bottom:15px;font-size:11px">
-    <span class="tbadge ${TCLS[p.tool]||'t-cl'}">${esc(p.tool)}</span>
-    <span class="typbg">${esc(p.type)}</span>
-    <span class="typbg">${p.sprint==='Defer'?'Defer':'Sprint '+esc(p.sprint)}</span>
-    ${p.paused?'<span class="susp-tag">일시중단</span>':''}</div>`;
-  h+=`<div class="brk-title">진척도 — ${total}%</div>
-    <div class="stk-bar" style="margin-bottom:11px"><div class="seg s1" style="width:${p.d}%"></div><div class="seg s2" style="width:${p.sc}%"></div><div class="seg s3" style="width:${p.fn}%"></div><div class="seg s4" style="width:${p.al}%"></div></div>`;
-  h+=brk.map(([l,v,m,c])=>`<div class="brk-row"><span class="brk-lbl">${l}</span><div class="brk-track"><div class="brk-fill" style="width:${Math.round(v/m*100)}%;background:${c}"></div></div><span class="brk-score">${v}/${m}</span></div>`).join('');
-  h+=`<div class="brk-title" style="margin-top:18px">에이전트 명단 (${ags.length})</div><div class="tm-agents">`;
-  h+=ags.map(a=>{
-    const key=a.tool||'claude', col='#'+(TOWN_TOOL[key]||TOWN_TOOL.claude).toString(16).padStart(6,'0');
-    return `<div class="tm-agent"><span class="tm-ag-dot" style="background:${col}"></span><div><div class="tm-ag-name">${esc(a.name)}<span class="tm-ag-role"> · ${esc(a.role||'')}</span></div>${a.task?`<div class="tm-ag-task">▸ ${esc(a.task)}</div>`:''}</div></div>`;
-  }).join('')+`</div>`;
-  if(!p.agents) h+=`<div style="font-size:11px;color:var(--t2);margin-top:7px">projects.json에 agents 명단이 없어 도구 기준 1인으로 표시했어.</div>`;
-  const na=(p.nextAll&&p.nextAll.length)?p.nextAll:(p.next&&p.next!=='-'?[p.next]:[]);
-  if(na.length) h+=`<div class="brk-title" style="margin-top:18px">다음 액션</div><ul style="margin:0;padding-left:18px;font-size:12px;line-height:1.7">`+na.map(x=>`<li>${esc(x)}</li>`).join('')+`</ul>`;
-  if(sugs.length){
-    h+=`<div class="brk-title" style="margin-top:18px">코칭 / 제안</div>`;
-    h+=sugs.slice().sort((a,b)=>(sevOrder[a.severity]??9)-(sevOrder[b.severity]??9))
-      .map(s=>`<div class="tm-sug sev-${esc(s.severity)}"><div class="tm-sug-t">${esc(s.title)}</div><div class="tm-sug-r">${esc(s.recommendation||s.detail||'')}</div></div>`).join('');
-  }
-  h+=`<div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap">
-    <button class="btn-ghost" style="margin:0" onclick="closeTown();openDocs('${esc(p.repo)}')">문서 ▸ PRD·로드맵·로그</button>
-    ${p.url?`<a class="btn-ghost" style="margin:0;text-decoration:none;display:inline-flex;align-items:center" href="${esc(p.url)}" target="_blank" rel="noopener">GitHub ↗</a>`:''}</div>`;
-  return h;
-}
-window.openTownModal = (id)=>{
-  const p = P.find(x=>x.id===id);
-  if(!p) return;
-  document.getElementById('townModalTitle').textContent = (p.icon?p.icon+' ':'')+p.nm;
-  document.getElementById('townModalBody').innerHTML = renderTownModal(p);
-  openModal('townModal');
-};
-window.closeTown = ()=>closeModal('townModal');
 
 /* ── 데이터 로드 + INIT ── */
 async function loadJSON(path,fb){
