@@ -334,6 +334,54 @@ function scatterDeco(G,rnd){
     else if(r<0.74) G.ground[y][x]=2;
   }
 }
+// 동네별 영역에 건물을 동적 배치 — projects 개수에 따라 자동 확장. 호수·스폰·기존 건물·맵 경계 회피
+function generateAndPlaceBuildings(G, projs, buildings, rnd){
+  const REGIONS = {
+    game:    { x:3,  y:3,  w:26, h:14, roof:'gy' },
+    app:     { x:30, y:3,  w:30, h:24, roof:'rd' },
+    content: { x:3,  y:28, w:56, h:16, roof:'gy' }
+  };
+  ['game','app','content'].forEach(cat=>{
+    const reg = REGIONS[cat];
+    const list = projs.filter(p=>(p.category||'app')===cat)
+                      .sort((a,b)=>(a.rank||0)-(b.rank||0));
+    list.forEach((p, idx)=>{
+      const w = (idx % 3 === 0) ? 6 : 5;
+      const h = (idx % 2 === 0) ? 5 : 4;
+      const style = (idx % 2 === 0) ? reg.roof : (reg.roof==='gy'?'rd':'gy');
+      let placed = false;
+      for(let tries=0; tries<800 && !placed; tries++){
+        const bx = reg.x + Math.floor(rnd() * Math.max(1, reg.w - w));
+        const by = reg.y + Math.floor(rnd() * Math.max(1, reg.h - h));
+        if(buildingFits(bx, by, w, h, buildings)){
+          placeBuilding(G, bx, by, w, h, style, p, buildings);
+          placed = true;
+        }
+      }
+      if(!placed) console.warn('town: 건물 배치 실패 —', p.name, '(동네 공간 부족 — 영역 확장 필요)');
+    });
+  });
+}
+function buildingFits(bx, by, w, h, buildings){
+  if(bx < 2 || by < 2 || bx+w > MAPW-2 || by+h+1 > MAPH-2) return false;          // 맵 경계 + 트리거 칸
+  // 호수 회피 (트리거 행 포함, 약간 여유)
+  for(let dx=-1; dx<=w; dx++) for(let dy=-1; dy<=h+1; dy++){
+    const nx=(bx+dx-38)/8, ny=(by+dy-33)/6;
+    if(nx*nx+ny*ny < 1.45) return false;
+  }
+  // 스폰 회피 (32, 14)
+  if(bx-2 <= 32 && 32 <= bx+w+1 && by-2 <= 14 && 14 <= by+h+2) return false;
+  // 다른 건물과 1타일 여유 두고 겹침 방지
+  for(const b of buildings){
+    if(bx + w + 1 < b.bx) continue;
+    if(bx > b.bx + b.w + 1) continue;
+    if(by + h + 2 < b.by) continue;
+    if(by > b.by + b.h + 2) continue;
+    return false;
+  }
+  return true;
+}
+
 // 건물 — w×h 발자국만 solid로 표시. 그림은 rebuildWorld의 drawBuildingVisual이 담당
 function placeBuilding(G,bx,by,w,h,style,project,buildings){
   for(let cx=0;cx<w;cx++)for(let ry=0;ry<h;ry++){
@@ -401,20 +449,9 @@ function loadOverworld(){
   carvePond(G,{cx:38,cy:33,rx:8,ry:6},rnd);
   // 3) 숲 군락
   [[12,28,4],[55,13,4],[56,40,5],[30,43,3],[45,41,3]].forEach(g=>grove(G,g[0],g[1],g[2],rnd));
-  // 4) 건물 — 손으로 고른 유기적 위치·크기 (game→app→content 순으로 군집)
+  // 4) 건물 — 동네별 영역에 동적 배치 (projects 개수 자동 적응)
   const buildings=[];
-  const SLOTS=[
-    [8,7,6,5,'gy'],[18,9,5,4,'rd'],[8,18,5,4,'rd'],[17,20,6,5,'gy'],
-    [31,7,6,5,'rd'],[42,9,5,4,'gy'],[52,8,5,4,'rd'],[34,18,5,4,'gy'],
-    [49,22,6,5,'rd'],[10,34,5,4,'gy'],[20,39,6,5,'rd']
-  ];
-  const ord={game:0,app:1,content:2};
-  const order=projects.slice().sort((a,b)=>
-    (ord[a.category]??1)-(ord[b.category]??1) || (a.rank||0)-(b.rank||0));
-  order.forEach((p,i)=>{
-    if(i>=SLOTS.length)return;
-    const s=SLOTS[i]; placeBuilding(G,s[0],s[1],s[2],s[3],s[4],p,buildings);
-  });
+  generateAndPlaceBuildings(G, projects, buildings, rnd);
   // 5) 굽이치는 길
   [
     [[32,4],[31,13],[26,19],[23,27],[24,42]],
