@@ -141,10 +141,10 @@ let returnPos = null;           // 인테리어에서 나올 때 복귀 좌표
 let BTEX = {};                  // 건물 커스텀 스프라이트 (assets/town/buildings/<repo>.png)
 let PLAYER_TEX = null;          // 4방향 플레이어 시트 (assets/town/player.png) — 있으면 사용
 let trail = [];                 // 플레이어 위치 이력 — 동반자가 따라감
-const TRAIL_MAX = 80;
+const TRAIL_MAX = 120;
 const PETS = [
-  { id:'haechi', name:'해치', emoji:'🐶', delay:14, tex:null, wx:0, wy:0, dir:'down', frame:0, animT:0, bobT:0, spr:null, lbl:null },
-  { id:'happy',  name:'해삐', emoji:'🐱', delay:26, tex:null, wx:0, wy:0, dir:'down', frame:0, animT:0, bobT:0, spr:null, lbl:null }
+  { id:'haechi', name:'해치', emoji:'🐶', delay:28, tex:null, wx:0, wy:0, dir:'down', frame:0, animT:0, bobT:0, spr:null, lbl:null },
+  { id:'happy',  name:'해삐', emoji:'🐱', delay:60, tex:null, wx:0, wy:0, dir:'down', frame:0, animT:0, bobT:0, spr:null, lbl:null }
 ];
 let OBJ_TEX = {};               // 환경 오브젝트 커스텀 텍스처 (tree/water/mush) — 있으면 사용, 없으면 Kenney 폴백
 
