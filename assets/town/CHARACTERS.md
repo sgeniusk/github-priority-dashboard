@@ -34,25 +34,29 @@ Match the visual style of the existing building sprites in
 assets/town/buildings/ (cozy chunky Stardew look).
 ```
 
-## player.png 프롬프트
+## player.png 프롬프트 — 곰곰 (귀여운 곰)
 
 ```
 4-row × 2-column character sprite sheet, total 256×512 pixels (each cell 128×128).
 Row order TOP to BOTTOM: walking DOWN (facing camera), walking UP (facing away),
 walking LEFT, walking RIGHT.
-Each row has TWO frames: frame 1 = idle/stand pose, frame 2 = one step forward
-(opposite leg/arm forward).
+Each row has TWO frames: frame 1 = idle/stand pose, frame 2 = one step forward.
 
-Character: a friendly young farmer/villager, brown hair, simple shirt and pants,
-small and cute proportions (~3-head-tall chibi style). Same character in all 8 cells
-— only direction and step change.
+Character: 곰곰 (Gomgom), a CUTE LITTLE BEAR — anthropomorphic chibi-style.
+Round soft fluffy body, chubby short limbs, two big rounded ears on top of the head,
+small dark nose, friendly tiny black-dot eyes, warm caramel/honey-brown fur.
+Wearing a simple cozy outfit — overall straps or a comfy shirt in earthy tones
+(forest green / warm brown). Roughly 3-head-tall chibi proportions. Charmingly cute,
+not scary or realistic — like a Stardew Valley NPC version of a cuddly teddy bear.
 
-Each cell: character centered, takes about 80% of cell height, fully transparent
-background. Bold outline, limited cohesive Stardew-style palette.
-Crisp pixel-art edges, no anti-aliasing.
+Same exact bear character in all 8 cells — only direction and step change.
+Each cell: bear centered, takes about 80% of cell height, fully transparent
+background. Bold dark outline, limited cohesive Stardew-style palette matching
+the existing building sprites in assets/town/buildings/. Crisp pixel-art edges,
+NO anti-aliasing.
 ```
 
-**팁** — 8개 셀이 일관되려면 생성 모델에 "exact same character, same proportions, same colors, same outline thickness across all 8 cells" 강조.
+**팁** — 현재 `player.png`(인간 마을사람)을 레퍼런스로 첨부 + "Same exact layout and proportions, replace the character with cute bear 곰곰" 한 줄 덧붙이면 시트 구조 그대로 유지하면서 캐릭터만 바뀜.
 
 ## dog.png 프롬프트 (해치 🐶)
 
