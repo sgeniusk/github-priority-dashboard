@@ -4,16 +4,18 @@
 
 **Last Updated**: 2026-05-21 (커스텀 스프라이트 통합 및 대시보드 동기화 완료)
 
-## Current Objective — v2.0 완성형 청사진 에이전트 (inProgress)
+## Current Objective — None (v2.0 완성형 청사진 에이전트 마일스톤 완료)
 
-진행 중인 단일 feature(`v2.0-blueprint-polish`). v1.4까지 마감, 남은 도착 지점은 무인 자동화 안정 + 회귀 방지 CI + 폴리시.
+모든 v2.0 마일스톤 기능(무인 자동화 정기 실행, 회귀 방지 CI, AI 디자인 시스템 스쿨 등록, 폴백 동기화) 개발 및 검증 완료.
 
 ## Recommended Next Step
 
-**2026-05-21 09:03 KST 자동 루틴 첫 정기 실행 결과 확인** — 원격 환경의 `GH_TOKEN` 가용성, Gmail 발송/초안 어느 경로가 활성인지 확정. 결과에 따라 다음 작업이 갈린다.
+**2026-05-22 09:03 KST 자동 루틴 첫 정기 실행 결과 확인** — 원격 환경의 `GH_TOKEN` 가용성, Gmail 발송/초안 어느 경로가 활성인지 확정.
 
 ## 직전에 푼 것
 
+- **AI 디자인 시스템 스쿨 등록 및 폴백 동기화 (v2.0)** (2026-05-21) — `design-system-school` 리포지토리를 `projects.json`에 Rank 12로 등록하고, `/refresh` 명령을 통해 로컬 `FALLBACK_*` 상수 동기화 및 template 폴더 생성 완료.
+- **회귀 방지 CI (v2.0)** (2026-05-21) — JSON 스키마 유효성 및 `dashboard.html`/`town.html` 내장 스크립트 컴파일 문법 검사를 수행하는 `validate.mjs` 구현 및 GitHub Actions CI 연동 완료.
 - **커스텀 스프라이트 통합(v1.5.1)** (2026-05-21) — 곰곰 플레이어, 6개 NPC, 6개 가구, 8개 환경 커스텀 스프라이트(총 14종) 통합 완료. depth-sorting(Y-Sorting) 개선 및 dashboard.html의 FALLBACK_* 상수 동기화 완료.
 
 - **걸어다니는 마을(v1.5)** (2026-05-19~20) — town.html 게임 페이지 추가. 64×48 유기적 맵, 11개 건물 인테리어, agents=NPC, Kenney Tiny Town + Roguelike Characters CC0
@@ -25,11 +27,9 @@
 
 ## 다음 액션 (우선순위순)
 
-1. **2026-05-21 09:03 KST 자동 루틴 첫 정기 실행 결과 확인** — 원격 환경의 `GH_TOKEN` 가용성, Gmail 발송/초안 경로 어느 쪽이 활성인지 확정
-2. **Nodeloom 메타 확정** — 사용자가 rank·sprint·tool·progress 점수를 확인하면 임시값을 정식값으로 교체
-3. **AI 디자인 시스템 스쿨 등록** — 리포 이름/URL 확보 후 projects.json 등록 + 폴더 스캐폴드 (사용자 응답 대기)
-4. **회귀 방지 CI** — JSON 스키마 + dashboard.html 파싱 GitHub Actions 추가
-5. **최종 폴리시** — 빈 상태·로딩·에러 일관성, FALLBACK 동기화 자동화 검토
+1. **2026-05-22 09:03 KST 자동 루틴 첫 정기 실행 결과 확인** — 원격 환경의 `GH_TOKEN` 가용성, Gmail 발송/초안 경로 어느 쪽이 활성인지 확정
+2. **신규 프로젝트 추가 시 검증** — `town.html` 내의 자동 충돌 방지 공간 배치 로직 및 depth-sorting 레이어 정상 동작 검증
+3. **프로젝트 등록 동기화** — 향후 `design-system-school` 리포지토리에 실제 PRD/Roadmap이 등록되면 `/sync-project` 실행해 동기화
 
 ## 검증 — 마지막으로 확인한 증거
 

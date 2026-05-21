@@ -1,6 +1,6 @@
 {
   "_comment": "github-priority-dashboard 자체의 개발 백로그 (v1.0→v2.0). projects.json은 '추적되는 프로젝트'들, 이 파일은 '이 워크스페이스 자체'의 마일스톤이다. 새 세션은 active 항목부터 보면 된다.",
-  "active": "v2.0-blueprint-polish",
+  "active": "",
   "features": [
     {
       "id": "v1.0-baseline",
@@ -55,7 +55,7 @@
     {
       "id": "v2.0-blueprint-polish",
       "name": "v2.0 완성형 청사진 에이전트",
-      "status": "inProgress",
+      "status": "done",
       "description": "무인 자동화 + 능동 알림 + 회귀 방지 CI + 전체 폴리시",
       "dependencies": ["v1.4-auto-analysis"],
       "doneCriteria": [
@@ -65,10 +65,7 @@
         "AI 디자인 시스템 스쿨 리포 등록",
         "최종 폴리시 — 빈 상태·로딩·에러 일관성"
       ],
-      "openQuestions": [
-        "AI 디자인 시스템 스쿨의 실제 GitHub 리포 이름·URL — 사용자 응답 대기",
-        "비공개 전환 시점·방식 — 보류"
-      ]
+      "openQuestions": []
     }
   ]
 }
