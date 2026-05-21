@@ -119,7 +119,8 @@ const T = {
   WATER:131, SHORE:43,
   ROOF:{ gy:[48,49,50], gy2:[60,61,62], rd:[52,53,54], rd2:[64,65,66] },
   WALL:73, WALL_WIN:72, WIN:84, DOOR:86, ISTONE:126,
-  SIGN:83, BARREL:106, POT:107, CHEST:130
+  SIGN:83, BARREL:106, POT:107, CHEST:130,
+  BRIDGE:199, FENCE:198, DESK:197, CHAIR:196, BOOKSHELF:194, PLANT:193, RUG:192
 };
 // 도구별 색 (CLAUDE.md 도구 색 정본)
 const TOOLC = { claude:0xff5b22, codex:0x3fb950, hermes:0xbc8cff, hybrid:0x39c5cf };
@@ -140,11 +141,12 @@ let projects = [], suggestions = [];
 let returnPos = null;           // 인테리어에서 나올 때 복귀 좌표
 let BTEX = {};                  // 건물 커스텀 스프라이트 (assets/town/buildings/<repo>.png)
 let PLAYER_TEX = null;          // 4방향 플레이어 시트 (assets/town/player.png) — 있으면 사용
+let NPCS_TEX = null;            // 6캐릭터 × 4포즈 NPC 시트 (assets/town/npcs.png) — 있으면 사용
 let trail = [];                 // 플레이어 위치 이력 — 동반자가 따라감
-const TRAIL_MAX = 120;
+const TRAIL_MAX = 80;
 const PETS = [
-  { id:'haechi', name:'해치', emoji:'🐶', delay:28, tex:null, wx:0, wy:0, dir:'down', frame:0, animT:0, bobT:0, spr:null, lbl:null },
-  { id:'happy',  name:'해삐', emoji:'🐱', delay:60, tex:null, wx:0, wy:0, dir:'down', frame:0, animT:0, bobT:0, spr:null, lbl:null }
+  { id:'haechi', name:'해치', emoji:'🐶', delay:14, tex:null, wx:0, wy:0, dir:'down', frame:0, animT:0, bobT:0, spr:null, lbl:null },
+  { id:'happy',  name:'해삐', emoji:'🐱', delay:26, tex:null, wx:0, wy:0, dir:'down', frame:0, animT:0, bobT:0, spr:null, lbl:null }
 ];
 let OBJ_TEX = {};               // 환경 오브젝트 커스텀 텍스처 (tree/water/mush) — 있으면 사용, 없으면 Kenney 폴백
 
@@ -180,6 +182,22 @@ function loadPlayerSheet(){
       for(let c=0;c<cols;c++)
         out[d].push(new PIXI.Texture(tex.baseTexture, new PIXI.Rectangle(c*fw, r*fh, fw, fh)));
     });
+    return out;
+  }).catch(()=>null);
+}
+// 6캐릭터 × 4포즈 NPC 시트 로더 — 6행 × 4열, 각 셀 128x128 가정
+function loadNpcsSheet(){
+  return PIXI.Assets.load('./assets/town/npcs.png').then(tex=>{
+    if(!tex || tex.width<8) return null;
+    const fh = tex.height/6, fw = tex.width/4;
+    const out = { fw, fh };
+    out.frames = [];
+    for(let r=0;r<6;r++){
+      out.frames[r] = [];
+      for(let c=0;c<4;c++){
+        out.frames[r].push(new PIXI.Texture(tex.baseTexture, new PIXI.Rectangle(c*fw, r*fh, fw, fh)));
+      }
+    }
     return out;
   }).catch(()=>null);
 }
@@ -242,15 +260,27 @@ async function boot(){
       .then(t=>{ if(t&&t.width>1) BTEX[p.name]=t; }).catch(()=>{})
   ));
 
-  // 플레이어 4방향 시트 + 동반자 시트 (있으면 사용, 없으면 폴백)
+  // 플레이어 4방향 시트 + NPC 시트 + 동반자 시트 (있으면 사용, 없으면 폴백)
   PLAYER_TEX = await loadPlayerSheet();
+  NPCS_TEX = await loadNpcsSheet();
   PETS[0].tex = await loadPetSheet('./assets/town/dog.png');
   PETS[1].tex = await loadPetSheet('./assets/town/cat.png');
 
-  // 환경 오브젝트 커스텀 텍스처 (있으면 사용, 없으면 Kenney/Graphics 폴백)
+  // 환경 오브젝트 및 가구 커스텀 텍스처 (있으면 사용, 없으면 Kenney/Graphics/Wooden 폴백)
   OBJ_TEX.tree  = await loadTex('./assets/town/tree.png');
   OBJ_TEX.water = await loadTex('./assets/town/water.png');
   OBJ_TEX.mush  = await loadTex('./assets/town/mush.png');
+  OBJ_TEX.shore = await loadTex('./assets/town/shore.png');
+  OBJ_TEX.flower = await loadTex('./assets/town/flower.png');
+  OBJ_TEX.sign   = await loadTex('./assets/town/sign.png');
+  OBJ_TEX.bridge = await loadTex('./assets/town/bridge.png');
+  OBJ_TEX.fence  = await loadTex('./assets/town/fence.png');
+  OBJ_TEX.desk   = await loadTex('./assets/town/furniture/desk.png');
+  OBJ_TEX.chair  = await loadTex('./assets/town/furniture/chair.png');
+  OBJ_TEX.computer = await loadTex('./assets/town/furniture/computer.png');
+  OBJ_TEX.bookshelf = await loadTex('./assets/town/furniture/bookshelf.png');
+  OBJ_TEX.plant  = await loadTex('./assets/town/furniture/plant.png');
+  OBJ_TEX.rug    = await loadTex('./assets/town/furniture/rug.png');
 
   // 컨테이너 구성
   world = new PIXI.Container();
@@ -334,54 +364,6 @@ function scatterDeco(G,rnd){
     else if(r<0.74) G.ground[y][x]=2;
   }
 }
-// 동네별 영역에 건물을 동적 배치 — projects 개수에 따라 자동 확장. 호수·스폰·기존 건물·맵 경계 회피
-function generateAndPlaceBuildings(G, projs, buildings, rnd){
-  const REGIONS = {
-    game:    { x:3,  y:3,  w:26, h:14, roof:'gy' },
-    app:     { x:30, y:3,  w:30, h:24, roof:'rd' },
-    content: { x:3,  y:28, w:56, h:16, roof:'gy' }
-  };
-  ['game','app','content'].forEach(cat=>{
-    const reg = REGIONS[cat];
-    const list = projs.filter(p=>(p.category||'app')===cat)
-                      .sort((a,b)=>(a.rank||0)-(b.rank||0));
-    list.forEach((p, idx)=>{
-      const w = (idx % 3 === 0) ? 6 : 5;
-      const h = (idx % 2 === 0) ? 5 : 4;
-      const style = (idx % 2 === 0) ? reg.roof : (reg.roof==='gy'?'rd':'gy');
-      let placed = false;
-      for(let tries=0; tries<800 && !placed; tries++){
-        const bx = reg.x + Math.floor(rnd() * Math.max(1, reg.w - w));
-        const by = reg.y + Math.floor(rnd() * Math.max(1, reg.h - h));
-        if(buildingFits(bx, by, w, h, buildings)){
-          placeBuilding(G, bx, by, w, h, style, p, buildings);
-          placed = true;
-        }
-      }
-      if(!placed) console.warn('town: 건물 배치 실패 —', p.name, '(동네 공간 부족 — 영역 확장 필요)');
-    });
-  });
-}
-function buildingFits(bx, by, w, h, buildings){
-  if(bx < 2 || by < 2 || bx+w > MAPW-2 || by+h+1 > MAPH-2) return false;          // 맵 경계 + 트리거 칸
-  // 호수 회피 (트리거 행 포함, 약간 여유)
-  for(let dx=-1; dx<=w; dx++) for(let dy=-1; dy<=h+1; dy++){
-    const nx=(bx+dx-38)/8, ny=(by+dy-33)/6;
-    if(nx*nx+ny*ny < 1.45) return false;
-  }
-  // 스폰 회피 (32, 14)
-  if(bx-2 <= 32 && 32 <= bx+w+1 && by-2 <= 14 && 14 <= by+h+2) return false;
-  // 다른 건물과 1타일 여유 두고 겹침 방지
-  for(const b of buildings){
-    if(bx + w + 1 < b.bx) continue;
-    if(bx > b.bx + b.w + 1) continue;
-    if(by + h + 2 < b.by) continue;
-    if(by > b.by + b.h + 2) continue;
-    return false;
-  }
-  return true;
-}
-
 // 건물 — w×h 발자국만 solid로 표시. 그림은 rebuildWorld의 drawBuildingVisual이 담당
 function placeBuilding(G,bx,by,w,h,style,project,buildings){
   for(let cx=0;cx<w;cx++)for(let ry=0;ry<h;ry++){
@@ -429,6 +411,53 @@ function drawBuildingVisual(b){
   }
 }
 
+function generateAndPlaceBuildings(G, projs, buildings, rnd){
+  const REGIONS = {
+    game:    { x:3,  y:3,  w:26, h:14, roof:'gy' },
+    app:     { x:30, y:3,  w:30, h:24, roof:'rd' },
+    content: { x:3,  y:28, w:56, h:16, roof:'gy' }
+  };
+  ['game','app','content'].forEach(cat=>{
+    const reg = REGIONS[cat];
+    const list = projs.filter(p=>(p.category||'app')===cat)
+                      .sort((a,b)=>(a.rank||0)-(b.rank||0));
+    list.forEach((p, idx)=>{
+      const w = (idx % 3 === 0) ? 6 : 5;
+      const h = (idx % 2 === 0) ? 5 : 4;
+      const style = (idx % 2 === 0) ? reg.roof : (reg.roof==='gy'?'rd':'gy');
+      let placed = false;
+      for(let tries=0; tries<800 && !placed; tries++){
+        const bx = reg.x + Math.floor(rnd() * Math.max(1, reg.w - w));
+        const by = reg.y + Math.floor(rnd() * Math.max(1, reg.h - h));
+        if(buildingFits(bx, by, w, h, buildings)){
+          placeBuilding(G, bx, by, w, h, style, p, buildings);
+          placed = true;
+        }
+      }
+      if(!placed) console.warn('town: 건물 배치 실패 —', p.name, '(동네 공간 부족 — 영역 확장 필요)');
+    });
+  });
+}
+function buildingFits(bx, by, w, h, buildings){
+  if(bx < 2 || by < 2 || bx+w > MAPW-2 || by+h+1 > MAPH-2) return false;          // 맵 경계 + 트리거 칸
+  // 호수 회피 (트리거 행 포함, 약간 여유)
+  for(let dx=-1; dx<=w; dx++) for(let dy=-1; dy<=h+1; dy++){
+    const nx=(bx+dx-38)/8, ny=(by+dy-33)/6;
+    if(nx*nx+ny*ny < 1.45) return false;
+  }
+  // 스폰 회피 (32, 14)
+  if(bx-2 <= 32 && 32 <= bx+w+1 && by-2 <= 14 && 14 <= by+h+2) return false;
+  // 다른 건물과 1타일 여유 두고 겹침 방지
+  for(const b of buildings){
+    if(bx + w + 1 < b.bx) continue;
+    if(bx > b.bx + b.w + 1) continue;
+    if(by + h + 2 < b.by) continue;
+    if(by > b.by + b.h + 2) continue;
+    return false;
+  }
+  return true;
+}
+
 function loadOverworld(){
   const W=MAPW, H=MAPH;
   const ground=[], object=[], solid=[];
@@ -452,6 +481,51 @@ function loadOverworld(){
   // 4) 건물 — 동네별 영역에 동적 배치 (projects 개수 자동 적응)
   const buildings=[];
   generateAndPlaceBuildings(G, projects, buildings, rnd);
+
+  // 4b) 추가 지형 및 구조물 배치 (Stream, Bridge, Fence, Sign)
+  // Stream & Shore
+  for (let y = 11; y <= 27; y++) {
+    for (let x = 37; x <= 38; x++) {
+      if (inB(G, x, y)) {
+        G.ground[y][x] = T.WATER;
+        G.object[y][x] = -1;
+        G.solid[y][x] = 1;
+      }
+    }
+    if (inB(G, 36, y) && G.ground[y][36] !== T.WATER) {
+      G.ground[y][36] = T.SHORE;
+      G.object[y][36] = -1;
+      G.solid[y][36] = 0;
+    }
+    if (inB(G, 39, y) && G.ground[y][39] !== T.WATER) {
+      G.ground[y][39] = T.SHORE;
+      G.object[y][39] = -1;
+      G.solid[y][39] = 0;
+    }
+  }
+  // Bridge (overrides solid=1)
+  for (let y = 13; y <= 14; y++) {
+    for (let x = 37; x <= 38; x++) {
+      if (inB(G, x, y)) {
+        G.object[y][x] = T.BRIDGE;
+        G.solid[y][x] = 0;
+      }
+    }
+  }
+  // Fence around building yard
+  for (let y = 7; y <= 11; y++) {
+    setB(G, 6, y, T.FENCE);
+    setB(G, 15, y, T.FENCE);
+  }
+  for (let x = 6; x <= 9; x++) {
+    setB(G, x, 12, T.FENCE);
+  }
+  for (let x = 13; x <= 15; x++) {
+    setB(G, x, 12, T.FENCE);
+  }
+  // Signposts
+  setB(G, 30, 12, T.SIGN);
+  setB(G, 24, 20, T.SIGN);
   // 5) 굽이치는 길
   [
     [[32,4],[31,13],[26,19],[23,27],[24,42]],
@@ -481,6 +555,13 @@ function loadOverworld(){
 }
 
 /* ── 인테리어 생성 (11개 공통 제너릭 룸) ── */
+// 해시 함수로 에이전트 행 결정
+function getAgentRow(name){
+  let hash = 0;
+  for(let i=0; i<name.length; i++) hash += name.charCodeAt(i);
+  return hash % 6;
+}
+
 function loadInterior(project){
   const w = 13, h = 9;
   const ground = [], object = [], solid = [];
@@ -500,29 +581,105 @@ function loadInterior(project){
   // 게시판 — 상단 벽 근처
   object[1][2] = T.SIGN;
   const board = { tx:2, ty:2 };
-  // 장식
+  
+  // 기본 데코
   object[1][w-3] = T.BARREL; solid[1][w-3]=1;
-  object[1][w-2-1] = T.POT;  solid[1][w-3]=1;
   object[h-2][1] = T.CHEST; solid[h-2][1]=1;
 
-  // 에이전트 NPC 배치
+  // 에이전트 NPC 배치 및 방 구조 다각화
   const agents = agentsOf(project);
   const npcs = [];
-  const startX = ((w - agents.length*2) / 2 + 0.5) | 0;
-  agents.forEach((ag,i)=>{
-    npcs.push({
-      agent: ag,
-      wx: (startX + i*2)*16 + 8,
-      wy: 4*16 + 14,
-      spr: null, bobT: Math.random()*6
+  
+  const cat = project.category || 'app';
+  if(cat === 'game'){
+    // 개발 사무실 느낌 (책상, 의자, 컴퓨터 다수)
+    object[5][4] = T.DESK; solid[5][4] = 1;
+    object[4][4] = T.CHAIR; solid[4][4] = 0;
+    
+    object[5][8] = T.DESK; solid[5][8] = 1;
+    object[4][8] = T.CHAIR; solid[4][8] = 0;
+
+    object[1][1] = T.PLANT; solid[1][1] = 1;
+    object[1][w-2] = T.PLANT; solid[1][w-2] = 1;
+
+    agents.forEach((ag, i) => {
+      let wx, wy, pose = 'idle';
+      if(i === 0) {
+        wx = 4 * 16 + 8;
+        wy = 4 * 16 + 14;
+        pose = 'sitting';
+      } else if(i === 1) {
+        wx = 8 * 16 + 8;
+        wy = 4 * 16 + 14;
+        pose = 'sitting';
+      } else {
+        wx = (3 + i) * 16 + 8;
+        wy = 6 * 16 + 14;
+        pose = (i % 2 === 0) ? 'talking' : 'idle';
+      }
+      npcs.push({ agent: ag, wx, wy, pose, spr: null, bobT: Math.random()*6 });
     });
-  });
+  } else if(cat === 'content'){
+    // 도서관/연구소 느낌 (책장 가득, 러그)
+    object[1][4] = T.BOOKSHELF; solid[1][4] = 1;
+    object[1][5] = T.BOOKSHELF; solid[1][5] = 1;
+    object[1][7] = T.BOOKSHELF; solid[1][7] = 1;
+    object[1][8] = T.BOOKSHELF; solid[1][8] = 1;
+
+    for(let ry=4; ry<=5; ry++){
+      for(let rx=5; rx<=7; rx++){
+        ground[ry][rx] = T.RUG;
+      }
+    }
+
+    agents.forEach((ag, i) => {
+      let wx, wy, pose = 'idle';
+      if(i === 0){
+        wx = 5 * 16 + 8;
+        wy = 2 * 16 + 14;
+        pose = 'idle';
+      } else if(i === 1){
+        wx = 7 * 16 + 8;
+        wy = 2 * 16 + 14;
+        pose = 'talking';
+      } else {
+        wx = (4 + i) * 16 + 8;
+        wy = 5 * 16 + 14;
+        pose = 'idle';
+      }
+      npcs.push({ agent: ag, wx, wy, pose, spr: null, bobT: Math.random()*6 });
+    });
+  } else {
+    // 일반 비즈니스/App 서비스 (책상 하나, 화분, 러그)
+    object[5][6] = T.DESK; solid[5][6] = 1;
+    object[4][6] = T.CHAIR; solid[4][6] = 0;
+    
+    object[1][1] = T.PLANT; solid[1][1] = 1;
+    
+    for(let rx=5; rx<=7; rx++){
+      ground[6][rx] = T.RUG;
+    }
+
+    agents.forEach((ag, i) => {
+      let wx, wy, pose = 'idle';
+      if(i === 0) {
+        wx = 6 * 16 + 8;
+        wy = 4 * 16 + 14;
+        pose = 'sitting';
+      } else {
+        wx = (3 + i * 2) * 16 + 8;
+        wy = 5 * 16 + 14;
+        pose = (i % 2 === 1) ? 'talking' : 'idle';
+      }
+      npcs.push({ agent: ag, wx, wy, pose, spr: null, bobT: Math.random()*6 });
+    });
+  }
 
   MAP = { kind:'interior', w, h, ground, object, solid,
           buildings:[], npcs, project,
           exit:{ tx:exitTx, ty:h-2 }, board };
   player.wx = exitTx*16 + 8; player.wy = (h-2)*16 + 14; player.dir='up';
-  trail = []; // 동반자는 인테리어 따라 들어오지 않음
+  trail = [];
   rebuildWorld();
 }
 
@@ -537,7 +694,7 @@ function rebuildWorld(){
   for(let y=0;y<MAP.h;y++){
     for(let x=0;x<MAP.w;x++){
       const gt = MAP.ground[y][x];
-      // 지면 — 물은 커스텀 텍스처가 있으면 sprite, 없으면 파란 면(Graphics) 폴백
+      // 지면 — 물/자갈물가/꽃/러그 커스텀 텍스처 지원
       if(gt===T.WATER){
         if(OBJ_TEX.water){
           const s = new PIXI.Sprite(OBJ_TEX.water);
@@ -549,16 +706,45 @@ function rebuildWorld(){
           wg.drawRect(x*TS, y*TS, TS, TS); wg.endFill();
           groundC.addChild(wg);
         }
+      } else if(gt===T.SHORE && OBJ_TEX.shore){
+        const s = new PIXI.Sprite(OBJ_TEX.shore);
+        s.scale.set(TS / OBJ_TEX.shore.height);
+        s.x = x*TS; s.y = y*TS; groundC.addChild(s);
+      } else if(gt===2 && OBJ_TEX.flower){
+        const bg = tileSprite(0);
+        bg.x = x*TS; bg.y = y*TS; groundC.addChild(bg);
+        const s = new PIXI.Sprite(OBJ_TEX.flower);
+        s.scale.set(TS / OBJ_TEX.flower.height);
+        s.x = x*TS; s.y = y*TS; groundC.addChild(s);
+      } else if(gt===T.RUG){
+        if(OBJ_TEX.rug){
+          const s = new PIXI.Sprite(OBJ_TEX.rug);
+          s.scale.set(TS / OBJ_TEX.rug.height);
+          s.x = x*TS; s.y = y*TS; groundC.addChild(s);
+        } else {
+          const rg = new PIXI.Graphics();
+          rg.beginFill(0x8a2323);
+          rg.drawRect(x*TS + 2, y*TS + 2, TS - 4, TS - 4);
+          rg.endFill();
+          groundC.addChild(rg);
+        }
       } else {
         const g = tileSprite(gt);
         g.x = x*TS; g.y = y*TS; groundC.addChild(g);
       }
-      // 오브젝트 — 나무·버섯은 커스텀 텍스처 가능
+      
+      // 오브젝트
       const o = MAP.object[y][x];
       if(o!==-1){
+        let s = null;
+        let isSortable = false;
+        let anchorX = 0, anchorY = 0;
+        let offsetX = 0, offsetY = 0;
+        
         if(T.TREES.indexOf(o)>=0){
-          // 나무 — 큰 디테일 스프라이트 (커스텀) 또는 Kenney 28 × 1.7배 폴백
-          let s;
+          isSortable = true;
+          anchorX = 0.5; anchorY = 1.0;
+          offsetX = TS/2; offsetY = TS + 4;
           if(OBJ_TEX.tree){
             s = new PIXI.Sprite(OBJ_TEX.tree);
             s.scale.set((TS*1.7) / OBJ_TEX.tree.height);
@@ -566,16 +752,141 @@ function rebuildWorld(){
             s = tileSprite(o);
             s.scale.set(SCALE*1.7);
           }
-          s.anchor.set(0.5,1);
-          s.x = x*TS + TS/2; s.y = y*TS + TS + 4;
+        } else if(o===T.SIGN){
+          isSortable = true;
+          anchorX = 0.5; anchorY = 1.0;
+          offsetX = TS/2; offsetY = TS;
+          if(OBJ_TEX.sign){
+            s = new PIXI.Sprite(OBJ_TEX.sign);
+            s.scale.set(TS / OBJ_TEX.sign.height);
+          } else {
+            s = tileSprite(o);
+          }
+        } else if(o===T.FENCE){
+          isSortable = true;
+          anchorX = 0.5; anchorY = 1.0;
+          offsetX = TS/2; offsetY = TS;
+          if(OBJ_TEX.fence){
+            s = new PIXI.Sprite(OBJ_TEX.fence);
+            s.scale.set(TS / OBJ_TEX.fence.height);
+          } else {
+            s = new PIXI.Graphics();
+            s.beginFill(0x8b5a2b);
+            s.drawRect(-12 * SCALE, -14 * SCALE, 4 * SCALE, 14 * SCALE);
+            s.drawRect(8 * SCALE, -14 * SCALE, 4 * SCALE, 14 * SCALE);
+            s.drawRect(-12 * SCALE, -12 * SCALE, 24 * SCALE, 2 * SCALE);
+            s.drawRect(-12 * SCALE, -6 * SCALE, 24 * SCALE, 2 * SCALE);
+            s.endFill();
+          }
+        } else if(o===T.DESK){
+          isSortable = true;
+          anchorX = 0.5; anchorY = 1.0;
+          offsetX = TS/2; offsetY = TS;
+          
+          if(OBJ_TEX.desk){
+            s = new PIXI.Sprite(OBJ_TEX.desk);
+            s.scale.set(TS / OBJ_TEX.desk.height);
+          } else {
+            s = new PIXI.Graphics();
+            s.beginFill(0x5c3a21);
+            s.drawRect(-8*SCALE, -12*SCALE, 16*SCALE, 12*SCALE);
+            s.endFill();
+          }
+          
+          if(OBJ_TEX.computer){
+            const comp = new PIXI.Sprite(OBJ_TEX.computer);
+            comp.scale.set((TS * 0.6) / OBJ_TEX.computer.height);
+            comp.anchor.set(0.5, 0.5);
+            comp.x = x*TS + TS/2;
+            comp.y = y*TS + TS/2;
+            comp.zIndex = y*16 + 16 + 1;
+            actorC.addChild(comp);
+          }
+        } else if(o===T.CHAIR){
+          isSortable = true;
+          anchorX = 0.5; anchorY = 1.0;
+          offsetX = TS/2; offsetY = TS;
+          if(OBJ_TEX.chair){
+            s = new PIXI.Sprite(OBJ_TEX.chair);
+            s.scale.set(TS / OBJ_TEX.chair.height);
+          } else {
+            s = new PIXI.Graphics();
+            s.beginFill(0x8b5a2b);
+            s.drawRect(-6*SCALE, -10*SCALE, 12*SCALE, 10*SCALE);
+            s.endFill();
+          }
+        } else if(o===T.BOOKSHELF){
+          isSortable = true;
+          anchorX = 0.5; anchorY = 1.0;
+          offsetX = TS/2; offsetY = TS;
+          if(OBJ_TEX.bookshelf){
+            s = new PIXI.Sprite(OBJ_TEX.bookshelf);
+            s.scale.set(TS / OBJ_TEX.bookshelf.height);
+          } else {
+            s = new PIXI.Graphics();
+            s.beginFill(0x5c3a21);
+            s.drawRect(-8*SCALE, -16*SCALE, 16*SCALE, 16*SCALE);
+            s.beginFill(0x8a2323); s.drawRect(-6*SCALE, -12*SCALE, 3*SCALE, 4*SCALE);
+            s.beginFill(0x235b8a); s.drawRect(-2*SCALE, -12*SCALE, 3*SCALE, 4*SCALE);
+            s.beginFill(0x238a3f); s.drawRect(2*SCALE, -12*SCALE, 3*SCALE, 4*SCALE);
+            s.endFill();
+          }
+        } else if(o===T.PLANT){
+          isSortable = true;
+          anchorX = 0.5; anchorY = 1.0;
+          offsetX = TS/2; offsetY = TS;
+          if(OBJ_TEX.plant){
+            s = new PIXI.Sprite(OBJ_TEX.plant);
+            s.scale.set(TS / OBJ_TEX.plant.height);
+          } else {
+            s = new PIXI.Graphics();
+            s.beginFill(0x8b4513); s.drawCircle(0, -2*SCALE, 4*SCALE);
+            s.beginFill(0x228b22); s.drawCircle(0, -8*SCALE, 6*SCALE);
+            s.endFill();
+          }
+        } else if(o===T.BRIDGE){
+          isSortable = false;
+          if(OBJ_TEX.bridge){
+            s = new PIXI.Sprite(OBJ_TEX.bridge);
+            s.scale.set(TS / OBJ_TEX.bridge.height);
+          } else {
+            s = new PIXI.Graphics();
+            s.beginFill(0x8b5a2b);
+            s.drawRect(0, 4, TS, TS - 8);
+            s.endFill();
+            s.lineStyle(2, 0x5c3a21);
+            for(let i=0; i<=TS; i+=16) {
+              s.moveTo(i, 4);
+              s.lineTo(i, TS - 4);
+            }
+          }
+          s.x = x*TS; s.y = y*TS;
           objectC.addChild(s);
-        } else if(o===T.MUSH && OBJ_TEX.mush){
-          const s = new PIXI.Sprite(OBJ_TEX.mush);
-          s.scale.set(TS / OBJ_TEX.mush.height);
-          s.x = x*TS; s.y = y*TS; objectC.addChild(s);
+        } else if(o===T.MUSH){
+          isSortable = false;
+          if(OBJ_TEX.mush){
+            s = new PIXI.Sprite(OBJ_TEX.mush);
+            s.scale.set(TS / OBJ_TEX.mush.height);
+          } else {
+            s = tileSprite(o);
+          }
+          s.x = x*TS; s.y = y*TS;
+          objectC.addChild(s);
         } else {
-          const s = tileSprite(o);
-          s.x = x*TS; s.y = y*TS; objectC.addChild(s);
+          isSortable = false;
+          s = tileSprite(o);
+          s.x = x*TS; s.y = y*TS;
+          objectC.addChild(s);
+        }
+
+        if(isSortable && s){
+          if(s instanceof PIXI.Sprite) {
+            s.anchor.set(anchorX, anchorY);
+          }
+          s.x = x*TS + offsetX;
+          s.y = y*TS + offsetY;
+          s.zIndex = y*16 + 16;
+          actorC.addChild(s);
         }
       }
     }
@@ -613,10 +924,24 @@ function rebuildWorld(){
 
   // NPC 스프라이트
   MAP.npcs.forEach(n=>{
-    n.spr = new PIXI.Sprite(charTex(0,0));
-    n.spr.anchor.set(0.5,1); n.spr.scale.set(SCALE);
-    n.spr.tint = TOOLC[n.agent.tool] || TOOLC.claude;
+    const row = getAgentRow(n.agent.name);
+    let col = 0;
+    if(n.pose === 'sitting') col = 2;
+    else if(n.pose === 'talking') col = 3;
+    
+    if(NPCS_TEX){
+      n.spr = new PIXI.Sprite(NPCS_TEX.frames[row][col]);
+      const s = TS / NPCS_TEX.fh;
+      n.spr.scale.set(s);
+    } else {
+      n.spr = new PIXI.Sprite(charTex(0,0));
+      n.spr.scale.set(SCALE);
+      n.spr.tint = TOOLC[n.agent.tool] || TOOLC.claude;
+    }
+    
+    n.spr.anchor.set(0.5,1);
     actorC.addChild(n.spr);
+    
     // NPC 머리 위 이름
     const nt = new PIXI.Text(n.agent.name,{
       fontFamily:'Inter,sans-serif', fontSize:9, fontWeight:'700',
@@ -742,10 +1067,35 @@ function movePlayer(dt){
 function updateActors(dt){
   MAP.npcs.forEach(n=>{
     n.bobT += dt/1000;
+    
+    const row = getAgentRow(n.agent.name);
+    let col = 0;
+    if(n.pose === 'sitting') {
+      col = 2;
+    } else if(n.pose === 'talking') {
+      col = (Math.floor(n.bobT * 5) % 2 === 0) ? 3 : 0;
+    } else {
+      col = 0;
+    }
+    
+    if(NPCS_TEX){
+      n.spr.texture = NPCS_TEX.frames[row][col];
+      const s = TS / NPCS_TEX.fh;
+      n.spr.scale.set(s);
+    } else {
+      n.spr.texture = charTex(0,0);
+    }
+    
     n.spr.x = n.wx*SCALE;
-    n.spr.y = n.wy*SCALE + Math.sin(n.bobT*3)*2 - 1;
+    const bob = n.pose === 'sitting' ? 0 : Math.sin(n.bobT*3)*2 - 1;
+    n.spr.y = n.wy*SCALE + bob;
     n.spr.zIndex = n.wy;
-    if(n.label){ n.label.x=n.wx*SCALE; n.label.y=n.spr.y - (TS+4); }
+    
+    if(n.label){
+      n.label.x = n.wx*SCALE;
+      n.label.y = n.spr.y - (NPCS_TEX ? TS + 4 : 40);
+      n.label.zIndex = n.spr.zIndex + 1;
+    }
   });
   // 동반자(해치·해삐) — 위치 이력에서 N프레임 뒤를 추적
   if(MAP.kind==='over'){
@@ -771,6 +1121,7 @@ function updatePet(pet, dt){
   if(pet.lbl){
     pet.lbl.x = pet.wx * SCALE;
     pet.lbl.y = pet.spr.y - (pet.tex ? TS*0.7 + 6 : 40);
+    pet.lbl.zIndex = pet.spr.zIndex + 1;
   }
 }
 

@@ -590,7 +590,7 @@ const FALLBACK_PROJECTS = {
   "meta": {
     "owner": "sgeniusk",
     "ownerName": "Gomgomee",
-    "asOf": "2026-05-16",
+    "asOf": "2026-05-21",
     "priorityCriterion": "completionProximity",
     "progressFormula": "docs(0-20) + skeleton(0-30) + features(0-30) + alpha(0-20) = 0-100",
     "toolLegend": {
@@ -625,10 +625,10 @@ const FALLBACK_PROJECTS = {
         "alpha": 10,
         "total": 70
       },
-      "commits": 81,
-      "lastUpdate": "2026-05-16T14:45Z",
-      "firstCommit": "~2026-05-09",
-      "daysActive": 7,
+      "commits": 133,
+      "lastUpdate": "2026-05-21T04:58Z",
+      "firstCommit": "2026-05-13",
+      "daysActive": 8,
       "eta": "1-2주",
       "etaClass": "near",
       "rationale": "PRD(2026-05-13) 확정, Alpha report + 10-tester evaluation 완료. 웹 프로토타입 검증 끝. mobile/(Expo) 디렉토리로 네이티브 통합 진행 중. CI 하네스(npm run ci)와 i18n까지 셋업됨.",
@@ -643,9 +643,24 @@ const FALLBACK_PROJECTS = {
         "캡쳐된 alpha 사용자 피드백 반영"
       ],
       "agents": [
-        { "name": "설계", "role": "PRD·아키텍처", "tool": "claude", "task": "mobile/README.md 기준 Expo 알파 빌드 산출" },
-        { "name": "구현", "role": "기능·하네스", "tool": "claude", "task": "iOS TestFlight 등록 절차" },
-        { "name": "검증", "role": "테스트·QA", "tool": "claude", "task": "캡쳐된 alpha 사용자 피드백 반영" }
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "claude",
+          "task": "mobile/README.md 기준 Expo 알파 빌드 산출"
+        },
+        {
+          "name": "구현",
+          "role": "기능·하네스",
+          "tool": "claude",
+          "task": "iOS TestFlight 등록 절차"
+        },
+        {
+          "name": "검증",
+          "role": "테스트·QA",
+          "tool": "claude",
+          "task": "캡쳐된 alpha 사용자 피드백 반영"
+        }
       ],
       "url": "https://github.com/sgeniusk/habit"
     },
@@ -676,7 +691,7 @@ const FALLBACK_PROJECTS = {
       "commits": 5,
       "lastUpdate": "2026-05-12T08:40Z",
       "firstCommit": "2026-05-11",
-      "daysActive": 5,
+      "daysActive": 10,
       "eta": "1-2주",
       "etaClass": "near",
       "rationale": "Wave 1 Foundation 완료, Wave 3 통합도 RisingIssuesView/ViewModel/XCTest까지 끝. 남은 것은 시뮬레이터 스크린샷 + RFP §11 Acceptance Criteria 25개 자가 검증.",
@@ -691,9 +706,24 @@ const FALLBACK_PROJECTS = {
         "메인 monorepo와의 통합 시점 결정"
       ],
       "agents": [
-        { "name": "설계", "role": "PRD·아키텍처", "tool": "claude", "task": "Xcode 빌드 + 5 시뮬레이터 스크린샷 캡처" },
-        { "name": "구현", "role": "기능·하네스", "tool": "codex", "task": "harness/check.sh CI 통과 확인" },
-        { "name": "검증", "role": "테스트·QA", "tool": "claude", "task": "메인 monorepo와의 통합 시점 결정" }
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "claude",
+          "task": "Xcode 빌드 + 5 시뮬레이터 스크린샷 캡처"
+        },
+        {
+          "name": "구현",
+          "role": "기능·하네스",
+          "tool": "codex",
+          "task": "harness/check.sh CI 통과 확인"
+        },
+        {
+          "name": "검증",
+          "role": "테스트·QA",
+          "tool": "claude",
+          "task": "메인 monorepo와의 통합 시점 결정"
+        }
       ],
       "url": "https://github.com/sgeniusk/tteuniyu-ios"
     },
@@ -720,10 +750,10 @@ const FALLBACK_PROJECTS = {
         "alpha": 5,
         "total": 60
       },
-      "commits": 50,
-      "lastUpdate": "2026-05-15T02:24Z",
-      "firstCommit": "~2026-05-07",
-      "daysActive": 9,
+      "commits": 68,
+      "lastUpdate": "2026-05-21T11:13Z",
+      "firstCommit": "2026-05-02",
+      "daysActive": 19,
       "eta": "2-3주",
       "etaClass": "near",
       "rationale": "P1~P25까지 작업 항목 정리. 5/14, 5/15 연속 개발 진행 업데이트. 알파 플레이어블 슬라이스 완성, 가상 플레이테스트 보고 2회. 다국어 기반(P17), Hard 승률 게이트(P18)까지 진행.",
@@ -738,9 +768,24 @@ const FALLBACK_PROJECTS = {
         "에셋 수입 하네스 자동화"
       ],
       "agents": [
-        { "name": "설계", "role": "PRD·아키텍처", "tool": "codex", "task": "P25 루트 정찰 예측 완성" },
-        { "name": "구현", "role": "기능·하네스", "tool": "codex", "task": "알파 완료 백로그 정리" },
-        { "name": "플레이테스트", "role": "플레이테스트·밸런스", "tool": "codex", "task": "에셋 수입 하네스 자동화" }
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "codex",
+          "task": "P25 루트 정찰 예측 완성"
+        },
+        {
+          "name": "구현",
+          "role": "기능·하네스",
+          "tool": "codex",
+          "task": "알파 완료 백로그 정리"
+        },
+        {
+          "name": "플레이테스트",
+          "role": "플레이테스트·밸런스",
+          "tool": "codex",
+          "task": "에셋 수입 하네스 자동화"
+        }
       ],
       "url": "https://github.com/sgeniusk/sam-defender-logue"
     },
@@ -768,10 +813,10 @@ const FALLBACK_PROJECTS = {
         "alpha": 0,
         "total": 60
       },
-      "commits": 46,
-      "lastUpdate": "2026-05-16T14:22Z",
-      "firstCommit": "~2026-05-08",
-      "daysActive": 8,
+      "commits": 93,
+      "lastUpdate": "2026-05-20T16:44Z",
+      "firstCommit": "2026-05-14",
+      "daysActive": 7,
       "eta": "2-3주",
       "etaClass": "near",
       "rationale": "현재 기준선 v0.15.0-alpha. 알파 하네스 npm run harness:alpha 운영 중. Vercel 자동 배포 후보 URL까지 준비됨. CHANGELOG 체계도 정착.",
@@ -786,9 +831,24 @@ const FALLBACK_PROJECTS = {
         "20분/24시간 세션 합성 플레이테스트"
       ],
       "agents": [
-        { "name": "설계", "role": "PRD·아키텍처", "tool": "codex", "task": "v0.16-alpha 게이트 통과" },
-        { "name": "구현", "role": "기능·하네스", "tool": "codex", "task": "Vercel 정식 도메인 연결" },
-        { "name": "플레이테스트", "role": "플레이테스트·밸런스", "tool": "codex", "task": "20분/24시간 세션 합성 플레이테스트" }
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "codex",
+          "task": "v0.16-alpha 게이트 통과"
+        },
+        {
+          "name": "구현",
+          "role": "기능·하네스",
+          "tool": "codex",
+          "task": "Vercel 정식 도메인 연결"
+        },
+        {
+          "name": "플레이테스트",
+          "role": "플레이테스트·밸런스",
+          "tool": "codex",
+          "task": "20분/24시간 세션 합성 플레이테스트"
+        }
       ],
       "url": "https://github.com/sgeniusk/samguk-idle-prototype"
     },
@@ -815,10 +875,10 @@ const FALLBACK_PROJECTS = {
         "alpha": 0,
         "total": 55
       },
-      "commits": 43,
-      "lastUpdate": "2026-05-16T14:41Z",
-      "firstCommit": "~2026-05-05",
-      "daysActive": 11,
+      "commits": 86,
+      "lastUpdate": "2026-05-19T13:03Z",
+      "firstCommit": "2026-05-15",
+      "daysActive": 6,
       "eta": "3-5주",
       "etaClass": "mid",
       "rationale": "코어 메커니즘 완성: deck draw/discard, energy, position, guard, morale, enemy intents, faction selection (Shu/Wei/Wu), self-guard, vulnerable, branching route, edicts. Slay-the-Spire 형 1회 캠페인 플레이 가능.",
@@ -833,9 +893,24 @@ const FALLBACK_PROJECTS = {
         "Mac/iOS 빌드 점검"
       ],
       "agents": [
-        { "name": "설계", "role": "PRD·아키텍처", "tool": "hermes", "task": "오리지널 시각 디자인 결정" },
-        { "name": "구현", "role": "기능·하네스", "tool": "hermes", "task": "Steam Wishlist 페이지 준비" },
-        { "name": "플레이테스트", "role": "플레이테스트·밸런스", "tool": "hermes", "task": "Mac/iOS 빌드 점검" }
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "hermes",
+          "task": "오리지널 시각 디자인 결정"
+        },
+        {
+          "name": "구현",
+          "role": "기능·하네스",
+          "tool": "hermes",
+          "task": "Steam Wishlist 페이지 준비"
+        },
+        {
+          "name": "플레이테스트",
+          "role": "플레이테스트·밸런스",
+          "tool": "hermes",
+          "task": "Mac/iOS 빌드 점검"
+        }
       ],
       "url": "https://github.com/sgeniusk/three-kingdoms-deckbuilder"
     },
@@ -863,10 +938,10 @@ const FALLBACK_PROJECTS = {
         "alpha": 0,
         "total": 45
       },
-      "commits": 21,
-      "lastUpdate": "2026-05-16T15:08Z",
-      "firstCommit": "~2026-04-26",
-      "daysActive": 20,
+      "commits": 72,
+      "lastUpdate": "2026-05-21T12:08Z",
+      "firstCommit": "2026-05-02",
+      "daysActive": 19,
       "eta": "3-5주",
       "etaClass": "mid",
       "rationale": "12-phase 커리큘럼 + 6 여정 + 32 lesson 골격 완성. 페이지 맵(/start, /curriculum, /lessons, /tracks, /projects, /templates) 정의됨. 콘텐츠 데이터 모델 + 무결성 검증 셋업. 콘텐츠 채움이 남은 핵심 작업.",
@@ -881,9 +956,24 @@ const FALLBACK_PROJECTS = {
         "라이선스 결정"
       ],
       "agents": [
-        { "name": "설계", "role": "PRD·아키텍처", "tool": "claude", "task": "Phase별 우선 레슨 4-5개 본문 완성" },
-        { "name": "구현", "role": "기능·하네스", "tool": "claude", "task": "캡스톤 프로젝트 예시 작성" },
-        { "name": "검증", "role": "테스트·QA", "tool": "claude", "task": "라이선스 결정" }
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "claude",
+          "task": "Phase별 우선 레슨 4-5개 본문 완성"
+        },
+        {
+          "name": "구현",
+          "role": "기능·하네스",
+          "tool": "claude",
+          "task": "캡스톤 프로젝트 예시 작성"
+        },
+        {
+          "name": "검증",
+          "role": "테스트·QA",
+          "tool": "claude",
+          "task": "라이선스 결정"
+        }
       ],
       "url": "https://github.com/sgeniusk/ai-builder-school"
     },
@@ -911,9 +1001,9 @@ const FALLBACK_PROJECTS = {
         "alpha": 0,
         "total": 40
       },
-      "commits": 51,
-      "lastUpdate": "2026-05-16T13:23Z",
-      "firstCommit": "~2026-05-09",
+      "commits": 118,
+      "lastUpdate": "2026-05-20T22:56Z",
+      "firstCommit": "2026-05-14",
       "daysActive": 7,
       "eta": "4-6주",
       "etaClass": "mid",
@@ -929,9 +1019,24 @@ const FALLBACK_PROJECTS = {
         "Vercel 미리보기 배포"
       ],
       "agents": [
-        { "name": "설계", "role": "PRD·아키텍처", "tool": "codex", "task": "MVP 1 마일스톤 마감" },
-        { "name": "구현", "role": "기능·하네스", "tool": "codex", "task": "합성 플레이테스트 12명 1차" },
-        { "name": "플레이테스트", "role": "플레이테스트·밸런스", "tool": "codex", "task": "Vercel 미리보기 배포" }
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "codex",
+          "task": "MVP 1 마일스톤 마감"
+        },
+        {
+          "name": "구현",
+          "role": "기능·하네스",
+          "tool": "codex",
+          "task": "합성 플레이테스트 12명 1차"
+        },
+        {
+          "name": "플레이테스트",
+          "role": "플레이테스트·밸런스",
+          "tool": "codex",
+          "task": "Vercel 미리보기 배포"
+        }
       ],
       "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless"
     },
@@ -960,9 +1065,9 @@ const FALLBACK_PROJECTS = {
         "total": 45
       },
       "commits": 58,
-      "lastUpdate": "2026-05-16T06:49Z",
-      "firstCommit": "~2026-05-06",
-      "daysActive": 10,
+      "lastUpdate": "2026-05-21T10:44Z",
+      "firstCommit": "2026-05-14",
+      "daysActive": 7,
       "eta": "5-7주",
       "etaClass": "far",
       "rationale": "Project blueprint, creative development engine, story engine (시리즈 바이블, 캐논 레저), App.tsx UI까지 코드 골격 진행. 다양한 매체(소설/에세이/오디오북/만화/뮤직비디오/교육영상) 지원이 목표. Claude Code 서브에이전트 운영.",
@@ -977,9 +1082,24 @@ const FALLBACK_PROJECTS = {
         "에이전트 출력 골든 케이스 정착"
       ],
       "agents": [
-        { "name": "설계", "role": "PRD·아키텍처", "tool": "claude", "task": "1개 매체(웹툰 or 단편 만화) 깊이 우선 완성" },
-        { "name": "구현", "role": "기능·하네스", "tool": "claude", "task": "장편 연재 메모리 앵커 테스트" },
-        { "name": "검증", "role": "테스트·QA", "tool": "claude", "task": "에이전트 출력 골든 케이스 정착" }
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "claude",
+          "task": "1개 매체(웹툰 or 단편 만화) 깊이 우선 완성"
+        },
+        {
+          "name": "구현",
+          "role": "기능·하네스",
+          "tool": "claude",
+          "task": "장편 연재 메모리 앵커 테스트"
+        },
+        {
+          "name": "검증",
+          "role": "테스트·QA",
+          "tool": "claude",
+          "task": "에이전트 출력 골든 케이스 정착"
+        }
       ],
       "url": "https://github.com/sgeniusk/story-x-beta"
     },
@@ -1009,8 +1129,8 @@ const FALLBACK_PROJECTS = {
       },
       "commits": 3,
       "lastUpdate": "2026-05-13T22:21Z",
-      "firstCommit": "~2026-05-10",
-      "daysActive": 6,
+      "firstCommit": "2026-05-13",
+      "daysActive": 8,
       "eta": "8-10주 (정상 추진 시)",
       "etaClass": "long",
       "rationale": "Initial brief + design handoff + implementation spec + Next.js 스캐폴드 + landing/demo UI + Supabase 클라이언트 placeholder + 스키마 초안 완료. 의도적으로 sample data로 시작. Supabase 실 연결과 인증 흐름이 다음 마일스톤.",
@@ -1025,8 +1145,18 @@ const FALLBACK_PROJECTS = {
         "투표/리뷰 슬라이스 1개 인증 흐름까지"
       ],
       "agents": [
-        { "name": "설계", "role": "PRD·아키텍처", "tool": "claude", "task": "로그인 방식 + 클럽 초대 모델 결정" },
-        { "name": "구현", "role": "기능·하네스", "tool": "claude", "task": "Supabase 프로젝트 연결" }
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "claude",
+          "task": "로그인 방식 + 클럽 초대 모델 결정"
+        },
+        {
+          "name": "구현",
+          "role": "기능·하네스",
+          "tool": "claude",
+          "task": "Supabase 프로젝트 연결"
+        }
       ],
       "url": "https://github.com/sgeniusk/BookCircle"
     },
@@ -1055,8 +1185,8 @@ const FALLBACK_PROJECTS = {
       },
       "commits": 18,
       "lastUpdate": "2026-05-15T04:09Z",
-      "firstCommit": "~2026-05-01",
-      "daysActive": 15,
+      "firstCommit": "2026-05-14",
+      "daysActive": 7,
       "eta": "재개 후 8-12주",
       "etaClass": "long",
       "rationale": "Month 01 산출물(세계관/시즌/학습 지도/법규 메모/스타일 가이드/캐릭터 시트/배경팩/파일럿 3편) 완성. gh auth 토큰 만료 상태. 사용자 결정으로 일시 중단.",
@@ -1071,7 +1201,12 @@ const FALLBACK_PROJECTS = {
         "현재 산출물 README에 명시"
       ],
       "agents": [
-        { "name": "설계", "role": "PRD·아키텍처", "tool": "claude", "task": "PAUSE: 재개 트리거 정의 (예: 핵심 게임 2개 마감 후)" }
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "claude",
+          "task": "PAUSE: 재개 트리거 정의 (예: 핵심 게임 2개 마감 후)"
+        }
       ],
       "url": "https://github.com/sgeniusk/jewelry-webtoon-cloud"
     },
@@ -1101,10 +1236,10 @@ const FALLBACK_PROJECTS = {
         "alpha": 4,
         "total": 56
       },
-      "commits": 32,
-      "lastUpdate": "2026-05-18T13:27Z",
+      "commits": 42,
+      "lastUpdate": "2026-05-20T15:55Z",
       "firstCommit": "2026-05-16",
-      "daysActive": 2,
+      "daysActive": 5,
       "eta": "3-5주",
       "etaClass": "mid",
       "rationale": "마인드맵×아웃라이너 하이브리드 사고 정리 도구. 같은 트리를 두 뷰로 공유하는 오프라인 퍼스트 앱. 3일간 32커밋으로 두 뷰·스마트 붙여넣기·검색·Hoist·내보내기(MD/OPML/JSON/CSV)·CLI 파리티까지 구현. vitest 테스트 하네스와 XMind/OmniOutliner 벤치마크 문서 보유, 20인 페르소나 사용성 분석 1차 반영.",
@@ -1119,9 +1254,24 @@ const FALLBACK_PROJECTS = {
         "대형 트리 렌더 성능 — React Flow 가상화"
       ],
       "agents": [
-        { "name": "설계", "role": "PRD·아키텍처", "tool": "claude", "task": "알파 사용성 테스트 — 20인 페르소나 우선순위 B/C 반영" },
-        { "name": "구현", "role": "기능·하네스", "tool": "claude", "task": "Electron 데스크톱 앱 안정화" },
-        { "name": "검증", "role": "테스트·QA", "tool": "claude", "task": "대형 트리 렌더 성능 — React Flow 가상화" }
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "claude",
+          "task": "알파 사용성 테스트 — 20인 페르소나 우선순위 B/C 반영"
+        },
+        {
+          "name": "구현",
+          "role": "기능·하네스",
+          "tool": "claude",
+          "task": "Electron 데스크톱 앱 안정화"
+        },
+        {
+          "name": "검증",
+          "role": "테스트·QA",
+          "tool": "claude",
+          "task": "대형 트리 렌더 성능 — React Flow 가상화"
+        }
       ],
       "url": "https://github.com/sgeniusk/Nodeloom"
     }
@@ -2039,6 +2189,110 @@ const FALLBACK_HISTORY = {
           "commits": 18
         }
       }
+    },
+    {
+      "date": "2026-05-20",
+      "avgProgress": 52,
+      "totalCommits": 647,
+      "active": 10,
+      "projects": {
+        "habit": {
+          "total": 70,
+          "commits": 121
+        },
+        "tteuniyu-ios": {
+          "total": 65,
+          "commits": 5
+        },
+        "sam-defender-logue": {
+          "total": 60,
+          "commits": 55
+        },
+        "samguk-idle-prototype": {
+          "total": 60,
+          "commits": 92
+        },
+        "three-kingdoms-deckbuilder": {
+          "total": 55,
+          "commits": 86
+        },
+        "ai-builder-school": {
+          "total": 45,
+          "commits": 68
+        },
+        "ai-company-tycoon-boundaryless": {
+          "total": 40,
+          "commits": 100
+        },
+        "story-x-beta": {
+          "total": 45,
+          "commits": 58
+        },
+        "BookCircle": {
+          "total": 20,
+          "commits": 3
+        },
+        "jewelry-webtoon-cloud": {
+          "total": 20,
+          "commits": 18
+        },
+        "Nodeloom": {
+          "total": 56,
+          "commits": 41
+        }
+      }
+    },
+    {
+      "date": "2026-05-21",
+      "avgProgress": 52,
+      "totalCommits": 696,
+      "active": 10,
+      "projects": {
+        "habit": {
+          "total": 70,
+          "commits": 133
+        },
+        "tteuniyu-ios": {
+          "total": 65,
+          "commits": 5
+        },
+        "sam-defender-logue": {
+          "total": 60,
+          "commits": 68
+        },
+        "samguk-idle-prototype": {
+          "total": 60,
+          "commits": 93
+        },
+        "three-kingdoms-deckbuilder": {
+          "total": 55,
+          "commits": 86
+        },
+        "ai-builder-school": {
+          "total": 45,
+          "commits": 72
+        },
+        "ai-company-tycoon-boundaryless": {
+          "total": 40,
+          "commits": 118
+        },
+        "story-x-beta": {
+          "total": 45,
+          "commits": 58
+        },
+        "BookCircle": {
+          "total": 20,
+          "commits": 3
+        },
+        "jewelry-webtoon-cloud": {
+          "total": 20,
+          "commits": 18
+        },
+        "Nodeloom": {
+          "total": 56,
+          "commits": 42
+        }
+      }
     }
   ]
 };
@@ -2046,9 +2300,490 @@ let HIST = FALLBACK_HISTORY;
 
 /* ── ACTIVITY — 통합 커밋 피드 ── */
 const FALLBACK_ACTIVITY = {
-  "_comment": "전 프로젝트 통합 커밋 피드. activity.json fetch 실패(file://) 시 쓰는 폴백. 실데이터는 activity.json에서 fetch한다.",
-  "asOf": "",
-  "commits": []
+  "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
+  "asOf": "2026-05-21",
+  "commits": [
+    {
+      "repo": "ai-builder-school",
+      "sha": "e06fe65",
+      "message": "fix(special): 모든 슬라이드가 stage 안에 들어가게 4:3 + 콘텐츠 정리",
+      "date": "2026-05-21T12:08:16Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "71e85c1",
+      "message": "docs(spec): v2.0 레슨 통합·심화 스펙 2 초안 + list-lessons 유틸",
+      "date": "2026-05-21T11:25:29Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "8339a23",
+      "message": "chore(policy): switch to main-direct branch policy",
+      "date": "2026-05-21T11:25:27Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "9a4532b",
+      "message": "feat(special): v2.0 특강 체계 + 첫 특강 \"프런티어 AI 지형 2026\" (스펙 3) (#68)",
+      "date": "2026-05-21T11:14:32Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "c499287",
+      "message": "Add battlefield combat feedback sample slots",
+      "date": "2026-05-21T11:13:14Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "2d95477",
+      "message": "Add battlefield combat tempo readiness",
+      "date": "2026-05-21T08:22:59Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "084617c",
+      "message": "Import first battlefield terrain sign asset",
+      "date": "2026-05-21T07:51:43Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "0c7ef35",
+      "message": "Add battlefield graphics tone plan",
+      "date": "2026-05-21T06:21:18Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "fafdf95",
+      "message": "Add battlefield manual fun gate",
+      "date": "2026-05-21T06:00:57Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "f53a0e4",
+      "message": "Add battlefield terrain asset adapter",
+      "date": "2026-05-21T05:45:29Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "91bd817",
+      "message": "Add battlefield sortie direct focus",
+      "date": "2026-05-21T05:24:53Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "ded91e5",
+      "message": "Add battlefield core combat proof gate",
+      "date": "2026-05-21T05:10:03Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "e07a5d8",
+      "message": "Reflect roadmap review feedback",
+      "date": "2026-05-21T04:53:30Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "538c174",
+      "message": "Refocus roadmap on playtest slice",
+      "date": "2026-05-20T22:56:04Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "5c821e1",
+      "message": "Ship v0.83 screen mode split",
+      "date": "2026-05-20T16:43:56Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "8af5c65",
+      "message": "Update roadmap and handoff for session closeout",
+      "date": "2026-05-20T16:33:09Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "ac142b3",
+      "message": "Update end of day v0.55 plan",
+      "date": "2026-05-20T16:13:11Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "669e6a0",
+      "message": "Update v0.55 mobile handoff",
+      "date": "2026-05-20T16:09:12Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "df57811",
+      "message": "Polish v0.55 mobile command hand QA",
+      "date": "2026-05-20T16:08:19Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "c8d2545",
+      "message": "Add Formi image2 prompt batch",
+      "date": "2026-05-20T16:06:52Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "2c9fbbd",
+      "message": "Add room prop atlas slicer",
+      "date": "2026-05-20T16:02:04Z"
+    },
+    {
+      "repo": "Nodeloom",
+      "sha": "fc08b81",
+      "message": "하네스 엔지니어링 정비 — 5개 subsystem 100/100",
+      "date": "2026-05-20T15:55:06Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "814f1c0",
+      "message": "Add Formi evolution asset pipeline",
+      "date": "2026-05-20T15:50:31Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "41348e0",
+      "message": "Update v0.55 session handoff",
+      "date": "2026-05-20T15:44:22Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "fb0a6fc",
+      "message": "Add v0.55 office visuals screenshot QA",
+      "date": "2026-05-20T15:40:46Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "37a9069",
+      "message": "Add contextual snap reactions",
+      "date": "2026-05-20T15:34:40Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "bf04303",
+      "message": "Update v0.54 session handoff",
+      "date": "2026-05-20T15:23:50Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "eca92b8",
+      "message": "Add v0.54 office art import pipeline",
+      "date": "2026-05-20T15:20:53Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "e835c85",
+      "message": "Add room prop asset request queue",
+      "date": "2026-05-20T15:13:30Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "b9f8310",
+      "message": "Add room memory story badges",
+      "date": "2026-05-20T14:47:58Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "342ccef",
+      "message": "feat: prepare art candidate prompts (build 50 Art Candidate Prompts)",
+      "date": "2026-05-19T13:03:43Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "03fb08f",
+      "message": "feat: clarify first faction pick (build 49 First Pick Clarity)",
+      "date": "2026-05-19T12:55:33Z"
+    },
+    {
+      "repo": "Nodeloom",
+      "sha": "33f7a01",
+      "message": "v1.3.4 — 노드 자식 추가 버튼 + 분기선 z-순서",
+      "date": "2026-05-19T12:08:24Z"
+    },
+    {
+      "repo": "Nodeloom",
+      "sha": "3d0f2c1",
+      "message": "v1.3.3 — 밑줄형 분기선과 밑줄의 중심선 어긋남 수정",
+      "date": "2026-05-19T11:55:57Z"
+    },
+    {
+      "repo": "Nodeloom",
+      "sha": "719f261",
+      "message": "v1.3.2 — 분기선이 노드에서 떨어져 끝나던 갭 수정",
+      "date": "2026-05-19T11:31:39Z"
+    },
+    {
+      "repo": "Nodeloom",
+      "sha": "f664138",
+      "message": "v1.3.1 — 밑줄 분기선 분리 + 단색 모드 색 불일치 수정",
+      "date": "2026-05-19T11:18:36Z"
+    },
+    {
+      "repo": "Nodeloom",
+      "sha": "65198ac",
+      "message": "v1.3.0 — XMind 벤치마크: 템플릿·노드 모양 확장",
+      "date": "2026-05-19T04:23:59Z"
+    },
+    {
+      "repo": "Nodeloom",
+      "sha": "92a807b",
+      "message": "v1.2.0 — 마인드맵 이미지 내보내기 (PNG·SVG·PDF)",
+      "date": "2026-05-19T03:06:33Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "ae485a5",
+      "message": "feat: build 48 Art Pipeline Hooks",
+      "date": "2026-05-19T02:52:36Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "c845e11",
+      "message": "feat: build 47 Act I Pressure",
+      "date": "2026-05-19T02:44:37Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "c3f6705",
+      "message": "feat: build 46 Reward Loop Clarity",
+      "date": "2026-05-19T02:37:16Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "dc13d1a",
+      "message": "feat: build 45 Run Momentum Push",
+      "date": "2026-05-19T02:31:25Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "8617789",
+      "message": "feat: build 44 Living Backdrop Slice",
+      "date": "2026-05-19T02:05:39Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "194bab2",
+      "message": "feat: build 43 Road Replay Push",
+      "date": "2026-05-19T02:00:50Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "34ff544",
+      "message": "chore: gitignore .claude/launch.json (#67)",
+      "date": "2026-05-19T01:11:51Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "856e7c8",
+      "message": "Document v0.71 handoff state",
+      "date": "2026-05-18T23:07:55Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "4f12a1d",
+      "message": "Expand alpha 0.71 battlefield view",
+      "date": "2026-05-18T22:46:45Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "a037b99",
+      "message": "chore: bump version to 1.0.1 (#66)",
+      "date": "2026-05-18T18:04:39Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "d8d36d5",
+      "message": "feat: add per-journey pixel-art landmarks to journey hero (#65)",
+      "date": "2026-05-18T17:16:09Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "efef37d",
+      "message": "v1.0 리뷰 폴리시 — 탐험가 카드·히어로 버튼·여정 풍경 (#64)",
+      "date": "2026-05-18T16:55:56Z"
+    },
+    {
+      "repo": "Nodeloom",
+      "sha": "08c9eac",
+      "message": "v1.1.1 — 마인드맵 분기선이 세로로 뭉치던 버그 수정",
+      "date": "2026-05-18T15:43:56Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "bb2dbb9",
+      "message": "Add alpha 0.70 command digest",
+      "date": "2026-05-18T15:15:40Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "f443517",
+      "message": "Add adventure return loop and tactical hints",
+      "date": "2026-05-18T12:32:07Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "5865b06",
+      "message": "Prioritize adventure reward growth followup",
+      "date": "2026-05-18T10:17:06Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "08c9921",
+      "message": "Add one-tap adventure idle claim",
+      "date": "2026-05-18T10:07:55Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "5442b61",
+      "message": "Add adventure failure recovery actions",
+      "date": "2026-05-18T05:31:07Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "7f4685e",
+      "message": "Merge pull request #1 from sgeniusk/claude/frosty-vaughan-e476f9",
+      "date": "2026-05-15T16:27:16Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "3bdb05f",
+      "message": "Phase 3-(A) start + agent org chart: drop redundant command-strip, archive org",
+      "date": "2026-05-15T16:23:33Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "ab0bd0f",
+      "message": "Phase 3-(바): add a medium-specific champion to the writer-team sidebar",
+      "date": "2026-05-15T15:36:05Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "70b2663",
+      "message": "Phase 3-(사)+(나2): open-ended interview note + audiobook narration timer",
+      "date": "2026-05-15T15:32:34Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "b66336e",
+      "message": "Phase 3-(마)+(다): writer-team revise/block label + essay fact-protection note",
+      "date": "2026-05-15T15:30:17Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "6b9a02d",
+      "message": "style: switch storyx-page canvas to warm paper for framer-calm unity",
+      "date": "2026-05-15T15:10:48Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "d854882",
+      "message": "Phase 3-quick + Cowork test log: adapt action copy per medium, archive 5-persona feedback",
+      "date": "2026-05-15T15:09:06Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "106efca",
+      "message": "style: snap gap and single-value padding to 8-step sx-space scale",
+      "date": "2026-05-15T15:08:55Z"
+    },
+    {
+      "repo": "jewelry-webtoon-cloud",
+      "sha": "5a0c61b",
+      "message": "fix: scale episode navigation content",
+      "date": "2026-05-15T04:03:52Z"
+    },
+    {
+      "repo": "jewelry-webtoon-cloud",
+      "sha": "3f09d0e",
+      "message": "fix: tighten reader navigation",
+      "date": "2026-05-15T04:00:14Z"
+    },
+    {
+      "repo": "jewelry-webtoon-cloud",
+      "sha": "4ced752",
+      "message": "fix: compact episode reader",
+      "date": "2026-05-15T03:55:15Z"
+    },
+    {
+      "repo": "jewelry-webtoon-cloud",
+      "sha": "022f325",
+      "message": "fix: stabilize cover and reader layout",
+      "date": "2026-05-15T03:44:52Z"
+    },
+    {
+      "repo": "jewelry-webtoon-cloud",
+      "sha": "af611ee",
+      "message": "fix: support direct file preview",
+      "date": "2026-05-15T03:40:14Z"
+    },
+    {
+      "repo": "jewelry-webtoon-cloud",
+      "sha": "de45c29",
+      "message": "fix: gate reader behind cover actions",
+      "date": "2026-05-15T03:32:31Z"
+    },
+    {
+      "repo": "jewelry-webtoon-cloud",
+      "sha": "dafe921",
+      "message": "feat: complete ep001 png art pass",
+      "date": "2026-05-15T03:00:07Z"
+    },
+    {
+      "repo": "jewelry-webtoon-cloud",
+      "sha": "bcaa2f3",
+      "message": "feat: replace ep001 evening panels with png art",
+      "date": "2026-05-15T02:38:05Z"
+    },
+    {
+      "repo": "BookCircle",
+      "sha": "5eb5c37",
+      "message": "Trigger Vercel deployment with verified author",
+      "date": "2026-05-13T22:21:57Z"
+    },
+    {
+      "repo": "BookCircle",
+      "sha": "cd3b768",
+      "message": "Add health endpoint for deployment",
+      "date": "2026-05-13T14:32:12Z"
+    },
+    {
+      "repo": "BookCircle",
+      "sha": "58bb89b",
+      "message": "Initial BookCircle scaffold",
+      "date": "2026-05-13T14:27:24Z"
+    },
+    {
+      "repo": "tteuniyu-ios",
+      "sha": "4541274",
+      "message": "Wave 5 — Mock data fallback + 브랜드 \"뜬 이유\" + UX 개선 (#4)",
+      "date": "2026-05-12T08:40:24Z"
+    },
+    {
+      "repo": "tteuniyu-ios",
+      "sha": "1a44683",
+      "message": "Wave 4 — Xcode 빌드 수정 4건 (Info.plist + Category 명시 + INFOPLIST_FILE) (#3)",
+      "date": "2026-05-12T06:54:01Z"
+    },
+    {
+      "repo": "tteuniyu-ios",
+      "sha": "f075158",
+      "message": "Wave 3 Integration — RisingIssuesView + ViewModel + XCTest 30+ (#2)",
+      "date": "2026-05-11T23:27:08Z"
+    },
+    {
+      "repo": "tteuniyu-ios",
+      "sha": "6b249f6",
+      "message": "Wave 2 Bulk impl — Codex 4 agent 병렬 결과 (1,379 LOC Swift) (#1)",
+      "date": "2026-05-11T15:28:24Z"
+    },
+    {
+      "repo": "tteuniyu-ios",
+      "sha": "3c326be",
+      "message": "Initial commit",
+      "date": "2026-05-11T11:46:53Z"
+    }
+  ]
 };
 let ACT = FALLBACK_ACTIVITY;
 function renderActivity(){

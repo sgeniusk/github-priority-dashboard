@@ -1,18 +1,186 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-05-20",
+  "asOf": "2026-05-21",
   "commits": [
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "43efd7c",
-      "message": "Add v0.48 sprite sheet actor animation",
-      "date": "2026-05-19T15:00:51Z"
+      "repo": "ai-builder-school",
+      "sha": "e06fe65",
+      "message": "fix(special): 모든 슬라이드가 stage 안에 들어가게 4:3 + 콘텐츠 정리",
+      "date": "2026-05-21T12:08:16Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "71e85c1",
+      "message": "docs(spec): v2.0 레슨 통합·심화 스펙 2 초안 + list-lessons 유틸",
+      "date": "2026-05-21T11:25:29Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "8339a23",
+      "message": "chore(policy): switch to main-direct branch policy",
+      "date": "2026-05-21T11:25:27Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "9a4532b",
+      "message": "feat(special): v2.0 특강 체계 + 첫 특강 \"프런티어 AI 지형 2026\" (스펙 3) (#68)",
+      "date": "2026-05-21T11:14:32Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "c499287",
+      "message": "Add battlefield combat feedback sample slots",
+      "date": "2026-05-21T11:13:14Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "2d95477",
+      "message": "Add battlefield combat tempo readiness",
+      "date": "2026-05-21T08:22:59Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "084617c",
+      "message": "Import first battlefield terrain sign asset",
+      "date": "2026-05-21T07:51:43Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "0c7ef35",
+      "message": "Add battlefield graphics tone plan",
+      "date": "2026-05-21T06:21:18Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "fafdf95",
+      "message": "Add battlefield manual fun gate",
+      "date": "2026-05-21T06:00:57Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "f53a0e4",
+      "message": "Add battlefield terrain asset adapter",
+      "date": "2026-05-21T05:45:29Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "91bd817",
+      "message": "Add battlefield sortie direct focus",
+      "date": "2026-05-21T05:24:53Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "ded91e5",
+      "message": "Add battlefield core combat proof gate",
+      "date": "2026-05-21T05:10:03Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "e07a5d8",
+      "message": "Reflect roadmap review feedback",
+      "date": "2026-05-21T04:53:30Z"
     },
     {
       "repo": "ai-company-tycoon-boundaryless",
-      "sha": "c54b2e1",
-      "message": "Add v0.47 sprite sheet preview QA",
-      "date": "2026-05-19T14:26:03Z"
+      "sha": "538c174",
+      "message": "Refocus roadmap on playtest slice",
+      "date": "2026-05-20T22:56:04Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "5c821e1",
+      "message": "Ship v0.83 screen mode split",
+      "date": "2026-05-20T16:43:56Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "8af5c65",
+      "message": "Update roadmap and handoff for session closeout",
+      "date": "2026-05-20T16:33:09Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "ac142b3",
+      "message": "Update end of day v0.55 plan",
+      "date": "2026-05-20T16:13:11Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "669e6a0",
+      "message": "Update v0.55 mobile handoff",
+      "date": "2026-05-20T16:09:12Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "df57811",
+      "message": "Polish v0.55 mobile command hand QA",
+      "date": "2026-05-20T16:08:19Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "c8d2545",
+      "message": "Add Formi image2 prompt batch",
+      "date": "2026-05-20T16:06:52Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "2c9fbbd",
+      "message": "Add room prop atlas slicer",
+      "date": "2026-05-20T16:02:04Z"
+    },
+    {
+      "repo": "Nodeloom",
+      "sha": "fc08b81",
+      "message": "하네스 엔지니어링 정비 — 5개 subsystem 100/100",
+      "date": "2026-05-20T15:55:06Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "814f1c0",
+      "message": "Add Formi evolution asset pipeline",
+      "date": "2026-05-20T15:50:31Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "41348e0",
+      "message": "Update v0.55 session handoff",
+      "date": "2026-05-20T15:44:22Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "fb0a6fc",
+      "message": "Add v0.55 office visuals screenshot QA",
+      "date": "2026-05-20T15:40:46Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "37a9069",
+      "message": "Add contextual snap reactions",
+      "date": "2026-05-20T15:34:40Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "bf04303",
+      "message": "Update v0.54 session handoff",
+      "date": "2026-05-20T15:23:50Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "eca92b8",
+      "message": "Add v0.54 office art import pipeline",
+      "date": "2026-05-20T15:20:53Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "e835c85",
+      "message": "Add room prop asset request queue",
+      "date": "2026-05-20T15:13:30Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "b9f8310",
+      "message": "Add room memory story badges",
+      "date": "2026-05-20T14:47:58Z"
     },
     {
       "repo": "three-kingdoms-deckbuilder",
@@ -33,12 +201,6 @@
       "date": "2026-05-19T12:08:24Z"
     },
     {
-      "repo": "habit",
-      "sha": "d0038f8",
-      "message": "Add Formi reaction and room memory loop",
-      "date": "2026-05-19T12:07:04Z"
-    },
-    {
       "repo": "Nodeloom",
       "sha": "3d0f2c1",
       "message": "v1.3.3 — 밑줄형 분기선과 밑줄의 중심선 어긋남 수정",
@@ -57,12 +219,6 @@
       "date": "2026-05-19T11:18:36Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "47b4bff",
-      "message": "Add v0.46 high-density pixel sheets",
-      "date": "2026-05-19T09:45:07Z"
-    },
-    {
       "repo": "Nodeloom",
       "sha": "65198ac",
       "message": "v1.3.0 — XMind 벤치마크: 템플릿·노드 모양 확장",
@@ -73,12 +229,6 @@
       "sha": "92a807b",
       "message": "v1.2.0 — 마인드맵 이미지 내보내기 (PNG·SVG·PDF)",
       "date": "2026-05-19T03:06:33Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "1c02767",
-      "message": "Add v0.45 isometric sprite sheet pipeline",
-      "date": "2026-05-19T02:57:39Z"
     },
     {
       "repo": "three-kingdoms-deckbuilder",
@@ -105,12 +255,6 @@
       "date": "2026-05-19T02:31:25Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "02352c8",
-      "message": "Add v0.44 office actor care actions",
-      "date": "2026-05-19T02:07:05Z"
-    },
-    {
       "repo": "three-kingdoms-deckbuilder",
       "sha": "8617789",
       "message": "feat: build 44 Living Backdrop Slice",
@@ -129,46 +273,16 @@
       "date": "2026-05-19T01:11:51Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "c96b2dd",
-      "message": "Add v0.43 graphic asset game screen",
-      "date": "2026-05-18T23:21:09Z"
-    },
-    {
       "repo": "samguk-idle-prototype",
       "sha": "856e7c8",
       "message": "Document v0.71 handoff state",
       "date": "2026-05-18T23:07:55Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "81f1c00",
-      "message": "Add session handoff guide",
-      "date": "2026-05-18T23:06:30Z"
-    },
-    {
       "repo": "samguk-idle-prototype",
       "sha": "4f12a1d",
       "message": "Expand alpha 0.71 battlefield view",
       "date": "2026-05-18T22:46:45Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "06c0068",
-      "message": "Add v0.42 office actor interaction",
-      "date": "2026-05-18T22:44:28Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "9460216",
-      "message": "Add Codex handoff doc",
-      "date": "2026-05-18T22:37:11Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "b8f1f58",
-      "message": "Add vector blob persona prototype",
-      "date": "2026-05-18T22:37:11Z"
     },
     {
       "repo": "ai-builder-school",
@@ -189,64 +303,16 @@
       "date": "2026-05-18T16:55:56Z"
     },
     {
-      "repo": "habit",
-      "sha": "d64ec99",
-      "message": "Add weekly pattern chart and reflection prompt to the Report tab",
-      "date": "2026-05-18T16:48:51Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "bd991de",
-      "message": "Add retention features to the Today tab",
-      "date": "2026-05-18T16:48:51Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "bb0cf18",
-      "message": "Rework persona avatar into a code-based motion system",
-      "date": "2026-05-18T16:48:51Z"
-    },
-    {
       "repo": "Nodeloom",
       "sha": "08c9eac",
       "message": "v1.1.1 — 마인드맵 분기선이 세로로 뭉치던 버그 수정",
       "date": "2026-05-18T15:43:56Z"
     },
     {
-      "repo": "ai-builder-school",
-      "sha": "8357d8b",
-      "message": "v1.0 — 정식 공개 (#63)",
-      "date": "2026-05-18T15:33:24Z"
-    },
-    {
-      "repo": "Nodeloom",
-      "sha": "f64e619",
-      "message": "v1.1.0 — 패널↔가지색 연동 + 로드맵 정리",
-      "date": "2026-05-18T15:30:25Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "18ce5f0",
-      "message": "v0.8 — 프롬프트 타이핑 효과 (레슨 미션) (#62)",
-      "date": "2026-05-18T15:28:09Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "5b28af7",
-      "message": "v0.6 후속 — 레슨 시간 최소/권장 표기 + 미션 건너뛰기 경로 (#61)",
-      "date": "2026-05-18T15:23:32Z"
-    },
-    {
       "repo": "samguk-idle-prototype",
       "sha": "bb2dbb9",
       "message": "Add alpha 0.70 command digest",
       "date": "2026-05-18T15:15:40Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "919550c",
-      "message": "코딩 도구 프로젝트 3개 추가 — 협업·리팩터링·주말앱 (Phase 5) (#60)",
-      "date": "2026-05-18T13:05:35Z"
     },
     {
       "repo": "samguk-idle-prototype",
@@ -271,54 +337,6 @@
       "sha": "5442b61",
       "message": "Add adventure failure recovery actions",
       "date": "2026-05-18T05:31:07Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "679405c",
-      "message": "Highlight adventure material routes",
-      "date": "2026-05-18T04:35:34Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "e8546ba",
-      "message": "Guard notification handler setup on web",
-      "date": "2026-05-18T02:43:30Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "aeea4aa",
-      "message": "Add Google login and daily snap reminder notifications",
-      "date": "2026-05-18T02:41:59Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "2bb55cd",
-      "message": "feat: compose battlefield game screen",
-      "date": "2026-05-17T06:21:26Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "185b31a",
-      "message": "feat: add enemy intent response cues",
-      "date": "2026-05-17T05:54:49Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "f3c6a85",
-      "message": "feat: expand battlefield status pressure slice",
-      "date": "2026-05-17T05:41:58Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "eedd1b0",
-      "message": "feat: advance P200 battlefield combat slice",
-      "date": "2026-05-17T05:13:12Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "9c8ba91",
-      "message": "feat: promote prototype to alpha 151",
-      "date": "2026-05-17T01:17:43Z"
     },
     {
       "repo": "story-x-beta",
@@ -415,24 +433,6 @@
       "sha": "bcaa2f3",
       "message": "feat: replace ep001 evening panels with png art",
       "date": "2026-05-15T02:38:05Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "33f1584",
-      "message": "docs: record P25 release hash",
-      "date": "2026-05-15T02:24:14Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "4392d24",
-      "message": "feat: add route forecast scouting",
-      "date": "2026-05-15T02:23:59Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "ee787f3",
-      "message": "docs: record P24 release hash",
-      "date": "2026-05-15T02:02:19Z"
     },
     {
       "repo": "BookCircle",
