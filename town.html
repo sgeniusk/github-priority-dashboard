@@ -107,7 +107,7 @@
    ══════════════════════════════════════════════════════════════ */
 
 /* ── 상수 ── */
-const TILE = 16, SCALE = 3, TS = TILE * SCALE;          // 렌더 타일 48px
+const TILE = 16, SCALE = 4, TS = TILE * SCALE;          // 렌더 타일 64px (스타듀급 줌)
 const MAPW = 64, MAPH = 48;                              // 오버월드 크기(타일)
 const SPEED = 2.0;                                       // 이동 속도(미스케일 px/프레임)
 
@@ -139,6 +139,13 @@ let panelOpen = false;
 let projects = [], suggestions = [];
 let returnPos = null;           // 인테리어에서 나올 때 복귀 좌표
 let BTEX = {};                  // 건물 커스텀 스프라이트 (assets/town/buildings/<repo>.png)
+let PLAYER_TEX = null;          // 4방향 플레이어 시트 (assets/town/player.png) — 있으면 사용
+let trail = [];                 // 플레이어 위치 이력 — 동반자가 따라감
+const TRAIL_MAX = 80;
+const PETS = [
+  { id:'haechi', name:'해치', emoji:'🐶', delay:14, tex:null, wx:0, wy:0, dir:'down', frame:0, animT:0, bobT:0, spr:null, lbl:null },
+  { id:'happy',  name:'해삐', emoji:'🐱', delay:26, tex:null, wx:0, wy:0, dir:'down', frame:0, animT:0, bobT:0, spr:null, lbl:null }
+];
 
 /* ── 텍스처 헬퍼 ── */
 function tileTex(idx){
@@ -158,6 +165,34 @@ function tileSprite(idx){
   const s = new PIXI.Sprite(tileTex(idx));
   s.scale.set(SCALE);
   return s;
+}
+
+// 4방향 플레이어 시트 로더 — 4행(down/up/left/right) × N프레임, 정사각 프레임 가정
+function loadPlayerSheet(){
+  return PIXI.Assets.load('./assets/town/player.png').then(tex=>{
+    if(!tex || tex.width<8) return null;
+    const fh = tex.height/4, fw = fh;
+    const cols = Math.max(1, Math.round(tex.width/fw));
+    const out = { fw, fh, frames:cols };
+    ['down','up','left','right'].forEach((d,r)=>{
+      out[d]=[];
+      for(let c=0;c<cols;c++)
+        out[d].push(new PIXI.Texture(tex.baseTexture, new PIXI.Rectangle(c*fw, r*fh, fw, fh)));
+    });
+    return out;
+  }).catch(()=>null);
+}
+// 동반자(개·고양이) 시트 로더 — 정면 단일행, N프레임
+function loadPetSheet(url){
+  return PIXI.Assets.load(url).then(tex=>{
+    if(!tex || tex.width<8) return null;
+    const fh = tex.height, fw = fh;
+    const cols = Math.max(1, Math.round(tex.width/fw));
+    const frames = [];
+    for(let c=0;c<cols;c++)
+      frames.push(new PIXI.Texture(tex.baseTexture, new PIXI.Rectangle(c*fw, 0, fw, fh)));
+    return { frames, fw, fh };
+  }).catch(()=>null);
 }
 
 /* ── 부팅 ── */
@@ -202,12 +237,18 @@ async function boot(){
       .then(t=>{ if(t&&t.width>1) BTEX[p.name]=t; }).catch(()=>{})
   ));
 
+  // 플레이어 4방향 시트 + 동반자 시트 (있으면 사용, 없으면 폴백)
+  PLAYER_TEX = await loadPlayerSheet();
+  PETS[0].tex = await loadPetSheet('./assets/town/dog.png');
+  PETS[1].tex = await loadPetSheet('./assets/town/cat.png');
+
   // 컨테이너 구성
   world = new PIXI.Container();
   app.stage.addChild(world);
 
-  // 플레이어 스프라이트
-  player.spr = new PIXI.Sprite(charTex(0,0));
+  // 플레이어 스프라이트 — 시트가 있으면 4방향, 없으면 Kenney 정면 단일
+  const pt = PLAYER_TEX ? PLAYER_TEX.down[0] : charTex(0,0);
+  player.spr = new PIXI.Sprite(pt);
   player.spr.anchor.set(0.5, 1);
   player.spr.scale.set(SCALE);
 
@@ -386,6 +427,9 @@ function loadOverworld(){
   }
   MAP={kind:'over',w:W,h:H,ground,object,solid,buildings,npcs:[],project:null};
   player.wx=sx*16+8; player.wy=sy*16+14; player.dir='down';
+  // 동반자가 처음부터 따라오도록 위치 이력을 스폰 지점으로 채움
+  trail = [];
+  for(let i=0;i<TRAIL_MAX;i++) trail.push({wx:player.wx, wy:player.wy, dir:'down'});
   rebuildWorld();
 }
 
@@ -431,6 +475,7 @@ function loadInterior(project){
           buildings:[], npcs, project,
           exit:{ tx:exitTx, ty:h-2 }, board };
   player.wx = exitTx*16 + 8; player.wy = (h-2)*16 + 14; player.dir='up';
+  trail = []; // 동반자는 인테리어 따라 들어오지 않음
   rebuildWorld();
 }
 
@@ -515,6 +560,28 @@ function rebuildWorld(){
     nt.anchor.set(0.5,1); n.label = nt; actorC.addChild(nt);
   });
 
+  // 동반자(해치·해삐) — 오버월드에서만. 시트 있으면 스프라이트, 없으면 이모지 폴백
+  if(MAP.kind==='over'){
+    PETS.forEach(pet=>{
+      if(pet.tex){
+        pet.spr = new PIXI.Sprite(pet.tex.frames[0]);
+        pet.spr.anchor.set(0.5,1);
+      } else {
+        pet.spr = new PIXI.Text(pet.emoji, { fontSize: 36 });
+        pet.spr.anchor.set(0.5,1);
+      }
+      pet.lbl = new PIXI.Text(pet.name, {
+        fontFamily:'Inter,sans-serif', fontSize:10, fontWeight:'700',
+        fill:0xffffff, stroke:0x16261a, strokeThickness:4
+      });
+      pet.lbl.anchor.set(0.5,1);
+      actorC.addChild(pet.spr);
+      actorC.addChild(pet.lbl);
+    });
+  } else {
+    PETS.forEach(p=>{ p.spr=null; p.lbl=null; });
+  }
+
   actorC.addChild(player.spr);
   world.addChild(groundC, objectC, actorC);
 }
@@ -585,12 +652,26 @@ function movePlayer(dt){
     player.animT += dt;
     if(player.animT>140){ player.animT=0; player.frame^=1; }
   } else { player.frame=0; player.animT=0; }
-  // 스프라이트 갱신
-  player.spr.texture = charTex(player.frame, 0);
-  player.spr.scale.x = player.dir==='left' ? -SCALE : SCALE;
+  // 스프라이트 갱신 — 4방향 시트 있으면 방향별 텍스처, 없으면 정면+좌우 플립
+  if(PLAYER_TEX){
+    const frames = PLAYER_TEX[player.dir] || PLAYER_TEX.down;
+    player.spr.texture = frames[player.frame % frames.length];
+    const s = TS / PLAYER_TEX.fh;
+    player.spr.scale.set(s);
+  } else {
+    player.spr.texture = charTex(player.frame, 0);
+    const s = TS / 16;
+    player.spr.scale.x = player.dir==='left' ? -s : s;
+    player.spr.scale.y = s;
+  }
   player.spr.x = player.wx*SCALE;
   player.spr.y = player.wy*SCALE + (player.moving && player.frame ? -2 : 0);
   player.spr.zIndex = player.wy;
+  // 동반자 추적용 위치 이력
+  if(MAP && MAP.kind==='over'){
+    trail.push({wx:player.wx, wy:player.wy, dir:player.dir});
+    if(trail.length > TRAIL_MAX) trail.shift();
+  }
 }
 
 function updateActors(dt){
@@ -599,8 +680,33 @@ function updateActors(dt){
     n.spr.x = n.wx*SCALE;
     n.spr.y = n.wy*SCALE + Math.sin(n.bobT*3)*2 - 1;
     n.spr.zIndex = n.wy;
-    if(n.label){ n.label.x=n.wx*SCALE; n.label.y=n.spr.y - 50; }
+    if(n.label){ n.label.x=n.wx*SCALE; n.label.y=n.spr.y - (TS+4); }
   });
+  // 동반자(해치·해삐) — 위치 이력에서 N프레임 뒤를 추적
+  if(MAP.kind==='over'){
+    PETS.forEach(p=>{ if(p.spr) updatePet(p, dt); });
+  }
+}
+function updatePet(pet, dt){
+  const i = Math.max(0, trail.length - pet.delay);
+  const t = trail[i];
+  if(t){ pet.wx = t.wx; pet.wy = t.wy; pet.dir = t.dir; }
+  pet.bobT += dt/1000;
+  if(pet.tex){
+    pet.animT += dt;
+    if(pet.animT > 200){ pet.animT = 0; pet.frame ^= 1; }
+    pet.spr.texture = pet.tex.frames[pet.frame % pet.tex.frames.length];
+    const s = (TS * 0.7) / pet.tex.fh;
+    pet.spr.scale.x = pet.dir==='left' ? -s : s;
+    pet.spr.scale.y = s;
+  }
+  pet.spr.x = pet.wx * SCALE;
+  pet.spr.y = pet.wy * SCALE + Math.sin(pet.bobT*5)*1.5;
+  pet.spr.zIndex = pet.wy;
+  if(pet.lbl){
+    pet.lbl.x = pet.wx * SCALE;
+    pet.lbl.y = pet.spr.y - (pet.tex ? TS*0.7 + 6 : 40);
+  }
 }
 
 function updateCamera(){
