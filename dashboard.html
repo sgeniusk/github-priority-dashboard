@@ -1274,22 +1274,84 @@ const FALLBACK_PROJECTS = {
         }
       ],
       "url": "https://github.com/sgeniusk/Nodeloom"
+    },
+    {
+      "rank": 12,
+      "name": "design-system-school",
+      "displayName": "AI 디자인 시스템 스쿨",
+      "icon": "🎨",
+      "category": "content",
+      "visibility": "public",
+      "tool": "claude",
+      "status": "active",
+      "sprint": "C",
+      "sprintStatus": "planned",
+      "stack": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind",
+        "MDX"
+      ],
+      "progress": {
+        "docs": 10,
+        "skeleton": 10,
+        "features": 0,
+        "alpha": 0,
+        "total": 20
+      },
+      "commits": 16,
+      "lastUpdate": "2026-05-21T11:17Z",
+      "firstCommit": "2026-05-18",
+      "daysActive": 3,
+      "eta": "4-6주",
+      "etaClass": "mid",
+      "rationale": "AI 기반 디자인 시스템 구축을 배우는 교육 콘텐츠 프로젝트.",
+      "risks": [
+        "교육 매뉴얼 분량",
+        "실습 예제 코드 관리"
+      ],
+      "nextActions": [
+        "PRD 작성 및 로드맵 수립",
+        "Next.js 기본 스캐폴딩 설정"
+      ],
+      "agents": [
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "claude",
+          "task": "PRD 작성 및 로드맵 수립"
+        },
+        {
+          "name": "구현",
+          "role": "기능·하네스",
+          "tool": "claude",
+          "task": "Next.js 기본 스캐폴딩 설정"
+        },
+        {
+          "name": "검증",
+          "role": "테스트·QA",
+          "tool": "claude",
+          "task": "콘텐츠 유효성 확인"
+        }
+      ],
+      "url": "https://github.com/sgeniusk/design-system-school"
     }
   ]
 };
 const FALLBACK_SUGGESTIONS = {
   "_comment": "/coach 및 /refresh 슬래시 커맨드가 생성하는 분석·제안 데이터. 대시보드의 '제안 / 코칭' 패널이 읽는다. 수동 편집보다 커맨드 재생성을 권장.",
-  "generatedAt": "2026-05-18",
+  "generatedAt": "2026-05-21",
   "items": [
     {
       "repo": "tteuniyu-ios",
       "type": "stall",
       "severity": "high",
-      "title": "Sprint A 정체 — 6일째 멈춤",
-      "detail": "Sprint A에 배정된 채 6일째 활동이 없습니다. 같은 Sprint A의 Formi는 매일 활동 중이라 동반 마감 일정이 어긋날 위험이 큽니다.",
+      "title": "Sprint A 정체 — 9일째 멈춤",
+      "detail": "Sprint A에 배정된 채 9일째 활동이 없습니다. 같은 Sprint A의 Formi는 매일 활동 중이라 동반 마감 일정이 어긋날 위험이 큽니다.",
       "evidence": [
-        "마지막 푸시 2026-05-12 — 6일 경과",
-        "커밋 5 / 활동 5일 — 일평균 1.0",
+        "마지막 푸시 2026-05-12 — 9일 경과",
+        "커밋 5 / 활동 10일 — 일평균 0.5",
         "Sprint A · sprintStatus inProgress · rank 2"
       ],
       "confidence": "high",
@@ -1304,10 +1366,10 @@ const FALLBACK_SUGGESTIONS = {
       "repo": "BookCircle",
       "type": "stall",
       "severity": "warn",
-      "title": "5일째 활동 없음 — defer라 우선순위는 낮음",
-      "detail": "5일째 활동이 없고 일평균 커밋도 저속입니다. 다만 Sprint defer로 의도적 후순위라, 핵심 게임·앱 마감 전까지는 현 상태 유지가 합리적입니다.",
+      "title": "8일째 활동 없음 — defer라 우선순위는 낮음",
+      "detail": "8일째 활동이 없고 일평균 커밋도 저속입니다. 다만 Sprint defer로 의도적 후순위라, 핵심 게임·앱 마감 전까지는 현 상태 유지가 합리적입니다.",
       "evidence": [
-        "마지막 푸시 2026-05-13 — 5일 경과",
+        "마지막 푸시 2026-05-13 — 8일 경과",
         "커밋 3 / 활동 6일 — 일평균 0.5 (저속)",
         "Sprint defer · rank 9"
       ],
@@ -1326,14 +1388,33 @@ const FALLBACK_SUGGESTIONS = {
       "detail": "진척도 70%로 활성 프로젝트 1위입니다. 문서·골격이 탄탄하고 알파만 미완이라, 알파 빌드 하나로 완성 단계에 진입할 수 있습니다.",
       "evidence": [
         "진척도 70% — 활성 9개 중 1위",
-        "문서 20/20 · 골격 25/30 · 기능 15/30 · 알파 10/20",
-        "커밋 81 / 활동 7일 — 일평균 11.6 (최상위 속도)"
+        "문서 20/20 · 골격 25/30 · 기능 15/30 · alpha 10/20",
+        "커밋 133 / 활동 8일 — 일평균 16.6 (최상위 속도)"
       ],
       "confidence": "high",
       "recommendation": "알파(10/20)가 유일한 미완 영역 — Expo iOS 알파 빌드 1회로 완성 단계 진입이 가능하니 이걸 최우선에 둔다.",
       "actions": [
         "mobile/README.md 기준 Expo iOS 알파 빌드 산출",
         "iOS TestFlight 등록 후 alpha 사용자 피드백 수집"
+      ]
+    },
+    {
+      "repo": "design-system-school",
+      "type": "coach",
+      "severity": "info",
+      "title": "신규 등록 — 초기 골격 형성 단계",
+      "detail": "새 프로젝트 'AI 디자인 시스템 스쿨'이 등록되었습니다. 초기 문서화 및 기본 Next.js 골격을 설계하는 단계입니다.",
+      "evidence": [
+        "진척도 20% — 신규 등록",
+        "문서 10/20 · 골격 10/30 · 기능 0/30 · alpha 0/20",
+        "커밋 16 / 활동 3일 — 일평균 5.3"
+      ],
+      "confidence": "high",
+      "recommendation": "초기 기획과 기초 스캐폴딩 설정이 완료되면 로드맵에 맞추어 콘텐츠 채우기를 진행한다.",
+      "actions": [
+        "PRD 작성 및 로드맵 수립",
+        "Next.js 기본 스캐폴딩 설정",
+        "콘텐츠 유효성 확인"
       ]
     },
     {
@@ -1345,7 +1426,7 @@ const FALLBACK_SUGGESTIONS = {
       "evidence": [
         "기능 5/30 (17%) — 활성 프로젝트 중 최저",
         "문서 20/20 · 골격 20/30은 양호",
-        "활동 20일 / 커밋 21 — 일평균 1.1"
+        "활동 19일 / 커밋 72 — 일평균 3.8"
       ],
       "confidence": "high",
       "recommendation": "골격은 충분하니 32개 레슨 본문 채움이 핵심 — Phase별 우선 레슨부터 깊이 완성해 기능 점수를 끌어올린다.",
@@ -2244,9 +2325,9 @@ const FALLBACK_HISTORY = {
     },
     {
       "date": "2026-05-21",
-      "avgProgress": 52,
-      "totalCommits": 696,
-      "active": 10,
+      "avgProgress": 49,
+      "totalCommits": 712,
+      "active": 11,
       "projects": {
         "habit": {
           "total": 70,
@@ -2291,6 +2372,10 @@ const FALLBACK_HISTORY = {
         "Nodeloom": {
           "total": 56,
           "commits": 42
+        },
+        "design-system-school": {
+          "total": 20,
+          "commits": 16
         }
       }
     }
@@ -2322,6 +2407,12 @@ const FALLBACK_ACTIVITY = {
       "date": "2026-05-21T11:25:27Z"
     },
     {
+      "repo": "design-system-school",
+      "sha": "5926c25",
+      "message": "Phase 9: design-spec extraction tool",
+      "date": "2026-05-21T11:17:42Z"
+    },
+    {
       "repo": "ai-builder-school",
       "sha": "9a4532b",
       "message": "feat(special): v2.0 특강 체계 + 첫 특강 \"프런티어 AI 지형 2026\" (스펙 3) (#68)",
@@ -2332,6 +2423,36 @@ const FALLBACK_ACTIVITY = {
       "sha": "c499287",
       "message": "Add battlefield combat feedback sample slots",
       "date": "2026-05-21T11:13:14Z"
+    },
+    {
+      "repo": "design-system-school",
+      "sha": "6346f4a",
+      "message": "Phase 8: ontology graph mobile polish",
+      "date": "2026-05-21T11:04:33Z"
+    },
+    {
+      "repo": "design-system-school",
+      "sha": "ccddc1d",
+      "message": "Phase 7: AI Builder School cross-link",
+      "date": "2026-05-21T11:02:47Z"
+    },
+    {
+      "repo": "design-system-school",
+      "sha": "d178bda",
+      "message": "Phase 6: theme-aware TokenDemo",
+      "date": "2026-05-21T10:59:34Z"
+    },
+    {
+      "repo": "design-system-school",
+      "sha": "28ffe8a",
+      "message": "Phase 5: learn paths include patterns",
+      "date": "2026-05-21T10:37:50Z"
+    },
+    {
+      "repo": "design-system-school",
+      "sha": "7b526d9",
+      "message": "Phase 4: analysis→pattern edges",
+      "date": "2026-05-21T10:25:02Z"
     },
     {
       "repo": "sam-defender-logue",
@@ -2380,6 +2501,12 @@ const FALLBACK_ACTIVITY = {
       "sha": "e07a5d8",
       "message": "Reflect roadmap review feedback",
       "date": "2026-05-21T04:53:30Z"
+    },
+    {
+      "repo": "design-system-school",
+      "sha": "e00a097",
+      "message": "Add project harness — feature_list, progress, handoff, init.sh",
+      "date": "2026-05-20T23:15:30Z"
     },
     {
       "repo": "ai-company-tycoon-boundaryless",
@@ -2482,6 +2609,12 @@ const FALLBACK_ACTIVITY = {
       "sha": "b9f8310",
       "message": "Add room memory story badges",
       "date": "2026-05-20T14:47:58Z"
+    },
+    {
+      "repo": "design-system-school",
+      "sha": "c57d16f",
+      "message": "Phase 3b: dark mode via theming tokens",
+      "date": "2026-05-20T01:20:00Z"
     },
     {
       "repo": "three-kingdoms-deckbuilder",

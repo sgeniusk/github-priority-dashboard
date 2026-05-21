@@ -21,6 +21,12 @@
       "date": "2026-05-21T11:25:27Z"
     },
     {
+      "repo": "design-system-school",
+      "sha": "5926c25",
+      "message": "Phase 9: design-spec extraction tool",
+      "date": "2026-05-21T11:17:42Z"
+    },
+    {
       "repo": "ai-builder-school",
       "sha": "9a4532b",
       "message": "feat(special): v2.0 특강 체계 + 첫 특강 \"프런티어 AI 지형 2026\" (스펙 3) (#68)",
@@ -31,6 +37,36 @@
       "sha": "c499287",
       "message": "Add battlefield combat feedback sample slots",
       "date": "2026-05-21T11:13:14Z"
+    },
+    {
+      "repo": "design-system-school",
+      "sha": "6346f4a",
+      "message": "Phase 8: ontology graph mobile polish",
+      "date": "2026-05-21T11:04:33Z"
+    },
+    {
+      "repo": "design-system-school",
+      "sha": "ccddc1d",
+      "message": "Phase 7: AI Builder School cross-link",
+      "date": "2026-05-21T11:02:47Z"
+    },
+    {
+      "repo": "design-system-school",
+      "sha": "d178bda",
+      "message": "Phase 6: theme-aware TokenDemo",
+      "date": "2026-05-21T10:59:34Z"
+    },
+    {
+      "repo": "design-system-school",
+      "sha": "28ffe8a",
+      "message": "Phase 5: learn paths include patterns",
+      "date": "2026-05-21T10:37:50Z"
+    },
+    {
+      "repo": "design-system-school",
+      "sha": "7b526d9",
+      "message": "Phase 4: analysis→pattern edges",
+      "date": "2026-05-21T10:25:02Z"
     },
     {
       "repo": "sam-defender-logue",
@@ -79,6 +115,12 @@
       "sha": "e07a5d8",
       "message": "Reflect roadmap review feedback",
       "date": "2026-05-21T04:53:30Z"
+    },
+    {
+      "repo": "design-system-school",
+      "sha": "e00a097",
+      "message": "Add project harness — feature_list, progress, handoff, init.sh",
+      "date": "2026-05-20T23:15:30Z"
     },
     {
       "repo": "ai-company-tycoon-boundaryless",
@@ -181,6 +223,12 @@
       "sha": "b9f8310",
       "message": "Add room memory story badges",
       "date": "2026-05-20T14:47:58Z"
+    },
+    {
+      "repo": "design-system-school",
+      "sha": "c57d16f",
+      "message": "Phase 3b: dark mode via theming tokens",
+      "date": "2026-05-20T01:20:00Z"
     },
     {
       "repo": "three-kingdoms-deckbuilder",

@@ -687,6 +687,68 @@
         }
       ],
       "url": "https://github.com/sgeniusk/Nodeloom"
+    },
+    {
+      "rank": 12,
+      "name": "design-system-school",
+      "displayName": "AI 디자인 시스템 스쿨",
+      "icon": "🎨",
+      "category": "content",
+      "visibility": "public",
+      "tool": "claude",
+      "status": "active",
+      "sprint": "C",
+      "sprintStatus": "planned",
+      "stack": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind",
+        "MDX"
+      ],
+      "progress": {
+        "docs": 10,
+        "skeleton": 10,
+        "features": 0,
+        "alpha": 0,
+        "total": 20
+      },
+      "commits": 16,
+      "lastUpdate": "2026-05-21T11:17Z",
+      "firstCommit": "2026-05-18",
+      "daysActive": 3,
+      "eta": "4-6주",
+      "etaClass": "mid",
+      "rationale": "AI 기반 디자인 시스템 구축을 배우는 교육 콘텐츠 프로젝트.",
+      "risks": [
+        "교육 매뉴얼 분량",
+        "실습 예제 코드 관리"
+      ],
+      "nextActions": [
+        "PRD 작성 및 로드맵 수립",
+        "Next.js 기본 스캐폴딩 설정"
+      ],
+      "agents": [
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "claude",
+          "task": "PRD 작성 및 로드맵 수립"
+        },
+        {
+          "name": "구현",
+          "role": "기능·하네스",
+          "tool": "claude",
+          "task": "Next.js 기본 스캐폴딩 설정"
+        },
+        {
+          "name": "검증",
+          "role": "테스트·QA",
+          "tool": "claude",
+          "task": "콘텐츠 유효성 확인"
+        }
+      ],
+      "url": "https://github.com/sgeniusk/design-system-school"
     }
   ]
 }
