@@ -146,6 +146,7 @@ const PETS = [
   { id:'haechi', name:'해치', emoji:'🐶', delay:14, tex:null, wx:0, wy:0, dir:'down', frame:0, animT:0, bobT:0, spr:null, lbl:null },
   { id:'happy',  name:'해삐', emoji:'🐱', delay:26, tex:null, wx:0, wy:0, dir:'down', frame:0, animT:0, bobT:0, spr:null, lbl:null }
 ];
+let OBJ_TEX = {};               // 환경 오브젝트 커스텀 텍스처 (tree/water/mush) — 있으면 사용, 없으면 Kenney 폴백
 
 /* ── 텍스처 헬퍼 ── */
 function tileTex(idx){
@@ -194,6 +195,10 @@ function loadPetSheet(url){
     return { frames, fw, fh };
   }).catch(()=>null);
 }
+// 단일 텍스처 로더 (나무·물·버섯 같은 환경 오브젝트)
+function loadTex(url){
+  return PIXI.Assets.load(url).then(t=>(t&&t.width>1)?t:null).catch(()=>null);
+}
 
 /* ── 부팅 ── */
 async function boot(){
@@ -241,6 +246,11 @@ async function boot(){
   PLAYER_TEX = await loadPlayerSheet();
   PETS[0].tex = await loadPetSheet('./assets/town/dog.png');
   PETS[1].tex = await loadPetSheet('./assets/town/cat.png');
+
+  // 환경 오브젝트 커스텀 텍스처 (있으면 사용, 없으면 Kenney/Graphics 폴백)
+  OBJ_TEX.tree  = await loadTex('./assets/town/tree.png');
+  OBJ_TEX.water = await loadTex('./assets/town/water.png');
+  OBJ_TEX.mush  = await loadTex('./assets/town/mush.png');
 
   // 컨테이너 구성
   world = new PIXI.Container();
@@ -490,28 +500,46 @@ function rebuildWorld(){
   for(let y=0;y<MAP.h;y++){
     for(let x=0;x<MAP.w;x++){
       const gt = MAP.ground[y][x];
+      // 지면 — 물은 커스텀 텍스처가 있으면 sprite, 없으면 파란 면(Graphics) 폴백
       if(gt===T.WATER){
-        // 물 — 파란 면으로 직접 그림 (Tiny Town엔 물 타일이 없음)
-        const wg = new PIXI.Graphics();
-        wg.beginFill((x+y)%2 ? 0x57a2d6 : 0x4a8cc6);
-        wg.drawRect(x*TS, y*TS, TS, TS); wg.endFill();
-        groundC.addChild(wg);
+        if(OBJ_TEX.water){
+          const s = new PIXI.Sprite(OBJ_TEX.water);
+          s.scale.set(TS / OBJ_TEX.water.height);
+          s.x = x*TS; s.y = y*TS; groundC.addChild(s);
+        } else {
+          const wg = new PIXI.Graphics();
+          wg.beginFill((x+y)%2 ? 0x57a2d6 : 0x4a8cc6);
+          wg.drawRect(x*TS, y*TS, TS, TS); wg.endFill();
+          groundC.addChild(wg);
+        }
       } else {
         const g = tileSprite(gt);
         g.x = x*TS; g.y = y*TS; groundC.addChild(g);
       }
+      // 오브젝트 — 나무·버섯은 커스텀 텍스처 가능
       const o = MAP.object[y][x];
       if(o!==-1){
-        const s = tileSprite(o);
         if(T.TREES.indexOf(o)>=0){
-          // 나무는 크게 — 타일 바닥에 뿌리내리고 위로 솟게
-          s.scale.set(SCALE*1.7);
+          // 나무 — 큰 디테일 스프라이트 (커스텀) 또는 Kenney 28 × 1.7배 폴백
+          let s;
+          if(OBJ_TEX.tree){
+            s = new PIXI.Sprite(OBJ_TEX.tree);
+            s.scale.set((TS*1.7) / OBJ_TEX.tree.height);
+          } else {
+            s = tileSprite(o);
+            s.scale.set(SCALE*1.7);
+          }
           s.anchor.set(0.5,1);
           s.x = x*TS + TS/2; s.y = y*TS + TS + 4;
+          objectC.addChild(s);
+        } else if(o===T.MUSH && OBJ_TEX.mush){
+          const s = new PIXI.Sprite(OBJ_TEX.mush);
+          s.scale.set(TS / OBJ_TEX.mush.height);
+          s.x = x*TS; s.y = y*TS; objectC.addChild(s);
         } else {
-          s.x = x*TS; s.y = y*TS;
+          const s = tileSprite(o);
+          s.x = x*TS; s.y = y*TS; objectC.addChild(s);
         }
-        objectC.addChild(s);
       }
     }
   }
