@@ -2,7 +2,7 @@
 
 다음 세션이 이 한 페이지만 보고도 어디까지 했고 뭘 이어가면 되는지 알 수 있도록 유지한다. 상세 백로그는 `feature_list.json`.
 
-**Last Updated**: 2026-05-21 (하네스 재정비 + 5/20 수동 /refresh 후)
+**Last Updated**: 2026-05-21 (커스텀 스프라이트 통합 및 대시보드 동기화 완료)
 
 ## Current Objective — v2.0 완성형 청사진 에이전트 (inProgress)
 
@@ -13,6 +13,8 @@
 **2026-05-21 09:03 KST 자동 루틴 첫 정기 실행 결과 확인** — 원격 환경의 `GH_TOKEN` 가용성, Gmail 발송/초안 어느 경로가 활성인지 확정. 결과에 따라 다음 작업이 갈린다.
 
 ## 직전에 푼 것
+
+- **커스텀 스프라이트 통합(v1.5.1)** (2026-05-21) — 곰곰 플레이어, 6개 NPC, 6개 가구, 8개 환경 커스텀 스프라이트(총 14종) 통합 완료. depth-sorting(Y-Sorting) 개선 및 dashboard.html의 FALLBACK_* 상수 동기화 완료.
 
 - **걸어다니는 마을(v1.5)** (2026-05-19~20) — town.html 게임 페이지 추가. 64×48 유기적 맵, 11개 건물 인테리어, agents=NPC, Kenney Tiny Town + Roguelike Characters CC0
 - **데이터 드리프트 교정** (2026-05-19) — story-x-alpha→story-x-beta 이름 교정, Nodeloom 신규 등록(rank 11, 진척도 56% 추정)
@@ -33,8 +35,8 @@
 
 | 항목 | 상태 | 마지막 확인 |
 | --- | --- | --- |
-| `meta.asOf` | 2026-05-20 | refresh-progress.mjs 실행 후 |
-| `history.json` 스냅샷 | 2개 (5/16, 5/20) | 추세 차트 라인 11개 렌더 확인 |
+| `meta.asOf` | 2026-05-21 | JSON 무결성 및 sync_fallbacks.py 검증 완료 |
+| `history.json` 스냅샷 | 3개 (5/16, 5/20, 5/21) | 추세 차트 라인 11개 렌더 확인 |
 | `activity.json` 커밋 | 80건 | '활동' 탭 표시 확인 |
 | 콘솔 에러 | 0 | Playwright Chromium에서 전 탭 |
 | GitHub Pages 배포 | success | 최근 main push 직후 |
