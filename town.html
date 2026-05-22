@@ -1105,7 +1105,19 @@ function updateActors(dt){
 function updatePet(pet, dt){
   const i = Math.max(0, trail.length - pet.delay);
   const t = trail[i];
-  if(t){ pet.wx = t.wx; pet.wy = t.wy; pet.dir = t.dir; }
+  if(t){
+    let ox = 0, oy = 0;
+    if(pet.id === 'haechi'){
+      ox = 10;  // 오른쪽 뒤
+      oy = -4;  // 약간 위(뒤)
+    } else if(pet.id === 'happy'){
+      ox = -10; // 왼쪽 뒤
+      oy = -4;  // 약간 위(뒤)
+    }
+    pet.wx = t.wx + ox;
+    pet.wy = t.wy + oy;
+    pet.dir = t.dir;
+  }
   pet.bobT += dt/1000;
   if(pet.tex){
     pet.animT += dt;
