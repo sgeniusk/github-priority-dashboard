@@ -160,7 +160,7 @@
     {
       "date": "2026-05-23",
       "avgProgress": 49,
-      "totalCommits": 761,
+      "totalCommits": 764,
       "active": 11,
       "projects": {
         "habit": {
@@ -181,7 +181,7 @@
         },
         "three-kingdoms-deckbuilder": {
           "total": 55,
-          "commits": 86
+          "commits": 89
         },
         "ai-builder-school": {
           "total": 45,
