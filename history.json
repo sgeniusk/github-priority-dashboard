@@ -160,12 +160,12 @@
     {
       "date": "2026-05-23",
       "avgProgress": 49,
-      "totalCommits": 764,
+      "totalCommits": 792,
       "active": 11,
       "projects": {
         "habit": {
           "total": 70,
-          "commits": 166
+          "commits": 193
         },
         "tteuniyu-ios": {
           "total": 65,
@@ -181,7 +181,7 @@
         },
         "three-kingdoms-deckbuilder": {
           "total": 55,
-          "commits": 89
+          "commits": 90
         },
         "ai-builder-school": {
           "total": 45,

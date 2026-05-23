@@ -3,6 +3,60 @@
   "asOf": "2026-05-23",
   "commits": [
     {
+      "repo": "habit",
+      "sha": "e69ab77",
+      "message": "Refresh roadmap and next development plan",
+      "date": "2026-05-23T22:19:40Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "ca41433",
+      "message": "Make proof scorecard navigate sections",
+      "date": "2026-05-23T15:07:40Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "aff6696",
+      "message": "Add proof session scorecard",
+      "date": "2026-05-23T15:04:30Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "c3a96f5",
+      "message": "Add sectioned proof report mode",
+      "date": "2026-05-23T14:56:34Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "d6eed60",
+      "message": "Add proof run phone checklist",
+      "date": "2026-05-23T14:47:13Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "4585d6b",
+      "message": "Add proof run handoff summary",
+      "date": "2026-05-23T14:42:11Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "0cd4114",
+      "message": "Add proof run session controls",
+      "date": "2026-05-23T14:28:39Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "d85e322",
+      "message": "Add proof run walkthrough",
+      "date": "2026-05-23T13:24:09Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "168c678",
+      "message": "fix: render commander cards correctly",
+      "date": "2026-05-23T10:32:31Z"
+    },
+    {
       "repo": "three-kingdoms-deckbuilder",
       "sha": "b714762",
       "message": "feat: build 53 command sheet onboarding",
@@ -21,40 +75,10 @@
       "date": "2026-05-23T07:23:30Z"
     },
     {
-      "repo": "habit",
-      "sha": "2db3028",
-      "message": "Add Formi tab icon system",
-      "date": "2026-05-23T05:54:48Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "3563269",
-      "message": "Add action strip QA runbook",
-      "date": "2026-05-23T05:22:42Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "e31d8bb",
-      "message": "Add action strip runtime gate",
-      "date": "2026-05-23T04:49:35Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "634cdcb",
-      "message": "Add action strip QA share payload",
-      "date": "2026-05-23T04:38:48Z"
-    },
-    {
       "repo": "ai-builder-school",
       "sha": "5dceae6",
       "message": "feat(specials): 외부 큐레이션 특강 2개 + 원전 박스 + 슬라이드 밀도 검증",
       "date": "2026-05-23T04:04:01Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "8cbba84",
-      "message": "Add action strip QA capture",
-      "date": "2026-05-23T03:54:50Z"
     },
     {
       "repo": "ai-builder-school",
@@ -69,28 +93,10 @@
       "date": "2026-05-23T03:05:21Z"
     },
     {
-      "repo": "habit",
-      "sha": "03b4b19",
-      "message": "Add room scale action strip QA",
-      "date": "2026-05-23T02:54:46Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "dd3a86d",
-      "message": "Add action strip QA rail",
-      "date": "2026-05-23T02:42:49Z"
-    },
-    {
       "repo": "ai-builder-school",
       "sha": "eab5d9d",
       "message": "feat(stage-1): v2.0 확장 — 13 레슨 + 1a/1b/1c sub-group + 옛 stage-7/8 mdx 정리",
       "date": "2026-05-22T07:30:26Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "dadd530",
-      "message": "Play accepted Formi action strips",
-      "date": "2026-05-22T07:05:39Z"
     },
     {
       "repo": "ai-builder-school",
@@ -331,12 +337,6 @@
       "sha": "c845e11",
       "message": "feat: build 47 Act I Pressure",
       "date": "2026-05-19T02:44:37Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "c3f6705",
-      "message": "feat: build 46 Reward Loop Clarity",
-      "date": "2026-05-19T02:37:16Z"
     },
     {
       "repo": "samguk-idle-prototype",
