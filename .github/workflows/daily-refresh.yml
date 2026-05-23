@@ -1,0 +1,58 @@
+name: daily-refresh
+
+# 매일 08:03 KST(23:03 UTC) — refresh-progress.mjs를 돌려 projects.json·
+# history.json·activity.json을 갱신하고, 변경이 있으면 한 커밋으로 푸시.
+# claude.ai 루틴이 원격 환경에서 토큰 없이 매일 무동작이던 문제를 대체.
+#
+# 필수 시크릿:
+#   GH_PAT_REFRESH — sgeniusk 계정의 비공개 리포 11개를 읽을 수 있는
+#   fine-grained PAT (Repository access = All repos owned by sgeniusk,
+#   Permissions = Contents: Read-only, Metadata: Read-only). 이 워크플로우의
+#   푸시 권한은 본 리포 기본 GITHUB_TOKEN으로 충분.
+
+on:
+  schedule:
+    - cron: '3 23 * * *'   # 08:03 KST
+  workflow_dispatch:        # 수동 트리거 허용 — 디버그·재실행용
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run refresh-progress.mjs
+        env:
+          # GH_PAT_REFRESH가 없으면 기본 GITHUB_TOKEN으로 폴백 — public 리포만 수집됨
+          GH_TOKEN: ${{ secrets.GH_PAT_REFRESH || secrets.GITHUB_TOKEN }}
+        run: node scripts/refresh-progress.mjs
+
+      - name: Commit & push if changed
+        run: |
+          if [ -z "$(git status --porcelain projects.json history.json activity.json)" ]; then
+            echo "✓ 변경 없음 — 커밋 건너뜀"
+            exit 0
+          fi
+          git config user.name  'dashboard-bot'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add projects.json history.json activity.json
+          git commit -m "Daily auto-refresh — $(date -u +'%Y-%m-%d')"
+          git push
