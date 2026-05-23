@@ -1,36 +1,108 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-05-21",
+  "asOf": "2026-05-23",
   "commits": [
     {
-      "repo": "ai-builder-school",
-      "sha": "e06fe65",
-      "message": "fix(special): 모든 슬라이드가 stage 안에 들어가게 4:3 + 콘텐츠 정리",
-      "date": "2026-05-21T12:08:16Z"
+      "repo": "habit",
+      "sha": "2db3028",
+      "message": "Add Formi tab icon system",
+      "date": "2026-05-23T05:54:48Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "3563269",
+      "message": "Add action strip QA runbook",
+      "date": "2026-05-23T05:22:42Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "e31d8bb",
+      "message": "Add action strip runtime gate",
+      "date": "2026-05-23T04:49:35Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "634cdcb",
+      "message": "Add action strip QA share payload",
+      "date": "2026-05-23T04:38:48Z"
     },
     {
       "repo": "ai-builder-school",
-      "sha": "71e85c1",
-      "message": "docs(spec): v2.0 레슨 통합·심화 스펙 2 초안 + list-lessons 유틸",
-      "date": "2026-05-21T11:25:29Z"
+      "sha": "5dceae6",
+      "message": "feat(specials): 외부 큐레이션 특강 2개 + 원전 박스 + 슬라이드 밀도 검증",
+      "date": "2026-05-23T04:04:01Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "8cbba84",
+      "message": "Add action strip QA capture",
+      "date": "2026-05-23T03:54:50Z"
     },
     {
       "repo": "ai-builder-school",
-      "sha": "8339a23",
-      "message": "chore(policy): switch to main-direct branch policy",
-      "date": "2026-05-21T11:25:27Z"
+      "sha": "c59fd90",
+      "message": "chore(templates): unused ALL_JOURNEYS 상수 제거",
+      "date": "2026-05-23T03:50:46Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "cd96320",
+      "message": "feat(journeys): 6 → 5 — Adopter 흡수 + Explorer를 Native로 대체",
+      "date": "2026-05-23T03:05:21Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "03b4b19",
+      "message": "Add room scale action strip QA",
+      "date": "2026-05-23T02:54:46Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "dd3a86d",
+      "message": "Add action strip QA rail",
+      "date": "2026-05-23T02:42:49Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "eab5d9d",
+      "message": "feat(stage-1): v2.0 확장 — 13 레슨 + 1a/1b/1c sub-group + 옛 stage-7/8 mdx 정리",
+      "date": "2026-05-22T07:30:26Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "dadd530",
+      "message": "Play accepted Formi action strips",
+      "date": "2026-05-22T07:05:39Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "39b3435",
+      "message": "feat(stage): Stage 1~6 outro 새 6 Stage 구조로 갱신",
+      "date": "2026-05-22T04:35:04Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "9c30438",
+      "message": "chore(stage): Stage 2/6 라벨 변경",
+      "date": "2026-05-22T00:54:00Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "dcb2566",
+      "message": "feat(stage): Stage 8→6 통합 마이그레이션 — Phase A1",
+      "date": "2026-05-22T00:50:32Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "fc51a14",
+      "message": "fix(stage): stage-bodies에 5~8 intro/outro 등록 누락 보정",
+      "date": "2026-05-22T00:26:57Z"
     },
     {
       "repo": "design-system-school",
       "sha": "5926c25",
       "message": "Phase 9: design-spec extraction tool",
       "date": "2026-05-21T11:17:42Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "9a4532b",
-      "message": "feat(special): v2.0 특강 체계 + 첫 특강 \"프런티어 AI 지형 2026\" (스펙 3) (#68)",
-      "date": "2026-05-21T11:14:32Z"
     },
     {
       "repo": "sam-defender-logue",
@@ -111,12 +183,6 @@
       "date": "2026-05-21T05:10:03Z"
     },
     {
-      "repo": "habit",
-      "sha": "e07a5d8",
-      "message": "Reflect roadmap review feedback",
-      "date": "2026-05-21T04:53:30Z"
-    },
-    {
       "repo": "design-system-school",
       "sha": "e00a097",
       "message": "Add project harness — feature_list, progress, handoff, init.sh",
@@ -133,12 +199,6 @@
       "sha": "5c821e1",
       "message": "Ship v0.83 screen mode split",
       "date": "2026-05-20T16:43:56Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "8af5c65",
-      "message": "Update roadmap and handoff for session closeout",
-      "date": "2026-05-20T16:33:09Z"
     },
     {
       "repo": "ai-company-tycoon-boundaryless",
@@ -159,28 +219,10 @@
       "date": "2026-05-20T16:08:19Z"
     },
     {
-      "repo": "habit",
-      "sha": "c8d2545",
-      "message": "Add Formi image2 prompt batch",
-      "date": "2026-05-20T16:06:52Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "2c9fbbd",
-      "message": "Add room prop atlas slicer",
-      "date": "2026-05-20T16:02:04Z"
-    },
-    {
       "repo": "Nodeloom",
       "sha": "fc08b81",
       "message": "하네스 엔지니어링 정비 — 5개 subsystem 100/100",
       "date": "2026-05-20T15:55:06Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "814f1c0",
-      "message": "Add Formi evolution asset pipeline",
-      "date": "2026-05-20T15:50:31Z"
     },
     {
       "repo": "ai-company-tycoon-boundaryless",
@@ -195,12 +237,6 @@
       "date": "2026-05-20T15:40:46Z"
     },
     {
-      "repo": "habit",
-      "sha": "37a9069",
-      "message": "Add contextual snap reactions",
-      "date": "2026-05-20T15:34:40Z"
-    },
-    {
       "repo": "ai-company-tycoon-boundaryless",
       "sha": "bf04303",
       "message": "Update v0.54 session handoff",
@@ -211,18 +247,6 @@
       "sha": "eca92b8",
       "message": "Add v0.54 office art import pipeline",
       "date": "2026-05-20T15:20:53Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "e835c85",
-      "message": "Add room prop asset request queue",
-      "date": "2026-05-20T15:13:30Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "b9f8310",
-      "message": "Add room memory story badges",
-      "date": "2026-05-20T14:47:58Z"
     },
     {
       "repo": "design-system-school",
@@ -315,12 +339,6 @@
       "date": "2026-05-19T02:00:50Z"
     },
     {
-      "repo": "ai-builder-school",
-      "sha": "34ff544",
-      "message": "chore: gitignore .claude/launch.json (#67)",
-      "date": "2026-05-19T01:11:51Z"
-    },
-    {
       "repo": "samguk-idle-prototype",
       "sha": "856e7c8",
       "message": "Document v0.71 handoff state",
@@ -331,24 +349,6 @@
       "sha": "4f12a1d",
       "message": "Expand alpha 0.71 battlefield view",
       "date": "2026-05-18T22:46:45Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "a037b99",
-      "message": "chore: bump version to 1.0.1 (#66)",
-      "date": "2026-05-18T18:04:39Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "d8d36d5",
-      "message": "feat: add per-journey pixel-art landmarks to journey hero (#65)",
-      "date": "2026-05-18T17:16:09Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "efef37d",
-      "message": "v1.0 리뷰 폴리시 — 탐험가 카드·히어로 버튼·여정 풍경 (#64)",
-      "date": "2026-05-18T16:55:56Z"
     },
     {
       "repo": "Nodeloom",
