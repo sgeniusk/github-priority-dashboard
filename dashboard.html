@@ -303,6 +303,9 @@ footer{border-top:1px solid var(--border);padding:18px 28px;max-width:1460px;mar
 /* ── TAB PANELS ── */
 section[data-tab]{display:none}
 section[data-tab].tab-on{display:block;animation:fadein .24s ease}
+.town-frame-wrap{background:#0e1430;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow)}
+.town-frame-wrap iframe{display:block;width:100%;height:calc(100vh - 170px);min-height:560px;border:0;background:#0e1430}
+.ext-link:hover{text-decoration:underline!important}
 @keyframes fadein{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
 .nav-link.on,.nav-link.on:hover{background:var(--electric);color:#fff}
 
@@ -383,15 +386,14 @@ header,.modal-box{
   <div class="spacer"></div>
   <nav class="nav-links" role="tablist" aria-label="대시보드 탭">
     <button class="nav-link" role="tab" aria-selected="false" data-tab="blueprint" onclick="showTab('blueprint')">청사진</button>
+    <button class="nav-link" role="tab" aria-selected="false" data-tab="town" onclick="showTab('town')">마을</button>
     <button class="nav-link" role="tab" aria-selected="false" data-tab="table" onclick="showTab('table')">순위</button>
     <button class="nav-link" role="tab" aria-selected="false" data-tab="suggest" onclick="showTab('suggest')">제안</button>
     <button class="nav-link" role="tab" aria-selected="false" data-tab="activity" onclick="showTab('activity')">활동</button>
     <button class="nav-link" role="tab" aria-selected="false" data-tab="charts" onclick="showTab('charts')">분석</button>
     <button class="nav-link" role="tab" aria-selected="false" data-tab="sprint" onclick="showTab('sprint')">스프린트</button>
-    <a class="nav-link" href="town.html" aria-label="걸어다니는 프로젝트 마을 게임 열기">마을 ↗</a>
     <button class="nav-link" role="tab" aria-selected="false" data-tab="usage" onclick="showTab('usage')">사용량 및 설정</button>
   </nav>
-  <button class="icon-btn" id="refreshBtn" title="새로고침 + 분석" aria-label="데이터 새로고침 및 분석">↻</button>
   <button class="icon-btn" id="themeBtn" title="테마 전환" aria-label="라이트/다크 테마 전환">🌙</button>
 </header>
 
@@ -409,6 +411,12 @@ header,.modal-box{
       <p class="hint">진척도 높은 순으로 전 프로젝트를 한눈에. 각 카드의 문서 버튼으로 PRD·로드맵·로그를 볼 수 있어.</p>
       <div id="blueprintBody"></div>
     </div>
+  </section>
+
+  <!-- Walkable town — town.html을 보드 안 창(iframe)으로 실행 -->
+  <section id="sec-town" data-tab="town">
+    <div class="sec-label">마을 — 걸어다니는 프로젝트 마을 <a class="ext-link" href="./town.html" target="_blank" rel="noopener" aria-label="새 창에서 마을 열기" style="font-style:normal;font-weight:600;letter-spacing:0;text-transform:none;color:var(--electric);text-decoration:none;margin-left:6px;font-size:11px">새 창 ↗</a><span></span></div>
+    <div class="town-frame-wrap"><iframe id="townFrame" title="프로젝트 마을 게임" loading="lazy" data-src="./town.html" sandbox="allow-scripts allow-same-origin"></iframe></div>
   </section>
 
   <!-- Filters -->
@@ -2020,25 +2028,7 @@ function analyzeProjects(){
   items.sort((a,b)=>order[a.severity]-order[b.severity]);
   return { generatedAt:new Date().toISOString().slice(0,16).replace('T',' '), source:'browser', items };
 }
-async function doRefresh(){
-  const btn=document.getElementById('refreshBtn');
-  btn.classList.add('spin');
-  try{
-    const [pj,uj]=await Promise.all([
-      loadJSON('./projects.json',FALLBACK_PROJECTS),
-      loadJSON('./usage.json',FALLBACK_USAGE)
-    ]);
-    P=(pj.projects||[]).map(mapProject);
-    usageData=uj||{tools:[]};
-    (usageData.tools||[]).forEach(t=>{ if(!usage[t.tool]) usage[t.tool]={pct:t.usedPercent||0,reset:t.cycleResetDate||''}; });
-    SUG=analyzeProjects();
-    renderMasterBoard(); renderKPI(); renderFilters(); renderTable(); renderSuggest(); renderSprint(); renderUsage();
-    renderStacked(); renderDonut(); renderScatter(); renderTrend();
-  } finally {
-    setTimeout(()=>btn.classList.remove('spin'),400);
-  }
-}
-document.getElementById('refreshBtn').addEventListener('click',doRefresh);
+/* 새로고침은 매일 08:03 KST 원격 루틴이 자동 수행한다 (claude.ai/code/routines). 수동 새로고침 버튼은 제거됨 — 페이지 reload로 충분. */
 
 /* ── 진척도 측정 기준 도움말 모달 ── */
 // 모달 포커스 관리 — 열 때 닫기 버튼으로 포커스 이동, 닫을 때 원위치 복원
@@ -2061,7 +2051,7 @@ document.addEventListener('keydown',e=>{ if(e.key==='Escape'){closeHelp();closeD
 const GLOSSARY = {
   '스프린트': '<b>스프린트</b>는 docs/sprint-plan.md의 4-6주 추천 스케줄 단위입니다. Sprint A·B·C·D는 각각 1-2주·2-3주·3-5주·5-8주 구간이고, 한 구간에 프로젝트 2개씩 묶어 동반 마감합니다. Defer는 후순위(보류). 애자일의 "스프린트"(고정 작업 기간)에서 온 용어입니다.',
   '진척도': '진척도 = 문서(0-20) + 골격(0-30) + 기능(0-30) + 알파(0-20) = 0-100점. 골격은 하네스 엔지니어링·서브에이전트 구성 완성도를 봅니다. 순위 탭 범례의 "측정 기준" 버튼에서 단계별 채점 기준을 볼 수 있습니다.',
-  '제안/코칭': '/coach·/refresh 커맨드나 헤더의 ↻ 버튼이 생성하는 분석입니다. 정체된 프로젝트, 막힌 단계, 다음 액션을 자동 진단합니다. STALL=정체 경고, COACH=일반 코칭.',
+  '제안/코칭': '/coach·/refresh 커맨드가 생성하는 분석입니다 (매일 08:03 KST 원격 루틴이 자동 실행). 정체된 프로젝트, 막힌 단계, 다음 액션을 자동 진단합니다. STALL=정체 경고, COACH=일반 코칭.',
   '마스터 보드': '추적 중인 전 프로젝트를 진척도 높은 순으로 한눈에 보는 카드 그리드입니다. 각 카드의 "문서" 버튼으로 PRD·로드맵·로그를 엽니다.',
   '정체': '마지막 GitHub 활동이 4-5일 이상 없는 상태입니다. 진행 중인 프로젝트가 정체되면 일정 지연 신호이며, 같은 스프린트의 동반 프로젝트에도 영향을 줍니다.'
 };
@@ -2087,6 +2077,11 @@ function showTab(name){
   window.scrollTo(0,0);
   // 차트는 패널이 보일 때 폭이 잡히므로 분석 탭 전환 시 재렌더
   if(name==='charts'){ renderStacked(); renderDonut(); renderScatter(); renderTrend(); }
+  // 마을 iframe은 첫 진입 시에만 로드 (lazy)
+  if(name==='town'){
+    const fr = document.getElementById('townFrame');
+    if(fr && !fr.getAttribute('src') && fr.dataset.src){ fr.setAttribute('src', fr.dataset.src); }
+  }
 }
 window.showTab = showTab;
 // 탭 화살표 키 내비게이션 (tablist 표준)
