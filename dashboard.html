@@ -1344,6 +1344,129 @@ const FALLBACK_PROJECTS = {
         }
       ],
       "url": "https://github.com/sgeniusk/design-system-school"
+    },
+    {
+      "rank": 13,
+      "name": "cmds-daily-briefing",
+      "displayName": "해치의 데일리 브리핑",
+      "icon": "📰",
+      "category": "app",
+      "visibility": "private",
+      "tool": "claude",
+      "status": "active",
+      "sprint": "B",
+      "sprintStatus": "inProgress",
+      "stack": [
+        "Next.js",
+        "Vercel",
+        "TypeScript",
+        "Hermes action queue"
+      ],
+      "progress": {
+        "docs": 12,
+        "skeleton": 22,
+        "features": 14,
+        "alpha": 4,
+        "total": 52
+      },
+      "commits": 27,
+      "lastUpdate": "2026-05-27T00:00Z",
+      "firstCommit": "2026-05-21",
+      "daysActive": 6,
+      "eta": "2-3주",
+      "etaClass": "near",
+      "rationale": "해치가 CMDS 1일 브리핑을 날짜별 웹 페이지로 렌더링하는 Vercel 앱. 백상현 daily page 영감의 에디토리얼 UI, /daily/YYYY-MM-DD 라우트. 카드별 검토 액션을 Hermes action queue로 넘기는 통합 진행 중. Production URL 가동.",
+      "risks": [
+        "Hermes action queue 통합 안정성",
+        "daily 페이지 데이터 소스 일관성",
+        "에디토리얼 레퍼런스 UI 재현 폭"
+      ],
+      "nextActions": [
+        "V1 에디토리얼 UI 마감",
+        "Hermes action queue 통합 종단 테스트",
+        "최근 7일·30일 인덱스 페이지"
+      ],
+      "agents": [
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "claude",
+          "task": "V1 에디토리얼 UI 마감"
+        },
+        {
+          "name": "구현",
+          "role": "기능·하네스",
+          "tool": "claude",
+          "task": "Hermes action queue 통합 종단 테스트"
+        },
+        {
+          "name": "검증",
+          "role": "테스트·QA",
+          "tool": "claude",
+          "task": "최근 7일·30일 인덱스 페이지"
+        }
+      ],
+      "url": "https://github.com/sgeniusk/cmds-daily-briefing"
+    },
+    {
+      "rank": 14,
+      "name": "Timeer",
+      "displayName": "Timeer",
+      "icon": "⏰",
+      "category": "app",
+      "visibility": "private",
+      "tool": "claude",
+      "status": "active",
+      "sprint": "defer",
+      "sprintStatus": "planned",
+      "stack": [
+        "React",
+        "Vite"
+      ],
+      "progress": {
+        "docs": 2,
+        "skeleton": 5,
+        "features": 0,
+        "alpha": 0,
+        "total": 7
+      },
+      "commits": 1,
+      "lastUpdate": "2026-05-20T00:00Z",
+      "firstCommit": "2026-05-20",
+      "daysActive": 7,
+      "eta": "미정",
+      "etaClass": "long",
+      "rationale": "Vite + React 스캐폴드만 존재. README가 Vite 기본 템플릿 그대로 — PRD·컨셉 단계, 산출물 없음.",
+      "risks": [
+        "PRD 미작성 — 스코프·목표 미정",
+        "스캐폴드 외 산출물 없음"
+      ],
+      "nextActions": [
+        "PRD 작성 — 어떤 타이머인지 정의",
+        "MVP 기능 1개 정의",
+        "스캐폴드를 실 코드로 채우기"
+      ],
+      "agents": [
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "claude",
+          "task": "PRD 작성 — 어떤 타이머인지 정의"
+        },
+        {
+          "name": "구현",
+          "role": "기능·하네스",
+          "tool": "claude",
+          "task": "MVP 기능 1개 정의"
+        },
+        {
+          "name": "검증",
+          "role": "테스트·QA",
+          "tool": "claude",
+          "task": "스캐폴드를 실 코드로 채우기"
+        }
+      ],
+      "url": "https://github.com/sgeniusk/Timeer"
     }
   ]
 };

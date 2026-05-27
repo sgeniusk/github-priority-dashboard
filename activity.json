@@ -3,6 +3,54 @@
   "asOf": "2026-05-27",
   "commits": [
     {
+      "repo": "cmds-daily-briefing",
+      "sha": "46f1f39",
+      "message": "Add 2026-05-27 build note",
+      "date": "2026-05-27T13:59:24Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "a4be878",
+      "message": "Add May 27 CMDS research briefing",
+      "date": "2026-05-27T11:43:44Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "13cea7b",
+      "message": "content(stage-1): ai-collaboration-mindset 본문 보강 — stub 37줄 → 92줄",
+      "date": "2026-05-27T07:24:27Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "e14fd37",
+      "message": "content(stage-1): ai-delegation-decision 본문 보강 — stub 36줄 → 96줄",
+      "date": "2026-05-27T05:36:04Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "deb4064",
+      "message": "content(stage-1): cost-monitoring-in-production 본문 보강 — stub 34줄 → 84줄",
+      "date": "2026-05-27T05:32:09Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "6c56670",
+      "message": "feat(reading-rail): 사이드바를 본문·빌드·검증·회고 4단계로 — 본문 hidden anchor 추가",
+      "date": "2026-05-27T00:36:24Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "6761c00",
+      "message": "v0.57 closeout: sync root state to v0.57-alpha (next milestone unselected)",
+      "date": "2026-05-27T00:29:44Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "e42f4ad",
+      "message": "refactor(lesson-page): MDX 정본 + 산출물 칩 + 빌드 친절 멘트 + 회고 마무리",
+      "date": "2026-05-27T00:25:51Z"
+    },
+    {
       "repo": "ai-company-tycoon-boundaryless",
       "sha": "bc75b7d",
       "message": "v0.57 #9: reward-choice rarity differentiation (rare/epic glow + badge)",
@@ -57,12 +105,6 @@
       "date": "2026-05-26T14:56:30Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "204330c",
-      "message": "v0.57 #2: card → effects arrow flow in launch-impact",
-      "date": "2026-05-26T14:54:43Z"
-    },
-    {
       "repo": "habit",
       "sha": "6b769c7",
       "message": "Trim duplicated run section cards from proof mode",
@@ -105,12 +147,6 @@
       "date": "2026-05-26T06:47:17Z"
     },
     {
-      "repo": "ai-builder-school",
-      "sha": "44e6b8d",
-      "message": "feat(journeys): 5 → 6 — Starter(입문) + AI Native(마스터) 분리",
-      "date": "2026-05-26T02:13:01Z"
-    },
-    {
       "repo": "habit",
       "sha": "a407144",
       "message": "Refresh Claude Code handoff",
@@ -121,6 +157,42 @@
       "sha": "6b74580",
       "message": "Connect Home to the Today loop action model",
       "date": "2026-05-25T23:58:00Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "90e2f5c",
+      "message": "Add May 26 CMDS research briefing",
+      "date": "2026-05-25T23:34:57Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "b950616",
+      "message": "Add May 25 build note",
+      "date": "2026-05-25T13:52:50Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "616bc29",
+      "message": "Add May 25 light research briefing",
+      "date": "2026-05-24T23:36:10Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "279bf3a",
+      "message": "Update Hatchi build note for 2026-05-24",
+      "date": "2026-05-24T13:59:49Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "1b5ce56",
+      "message": "Add weekend light daily briefing",
+      "date": "2026-05-24T01:36:08Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "c7dbbba",
+      "message": "Unify daily briefing console and add archive",
+      "date": "2026-05-23T15:16:51Z"
     },
     {
       "repo": "three-kingdoms-deckbuilder",
@@ -145,30 +217,6 @@
       "sha": "961e548",
       "message": "feat: build 51 living backdrop review",
       "date": "2026-05-23T07:23:30Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "5dceae6",
-      "message": "feat(specials): 외부 큐레이션 특강 2개 + 원전 박스 + 슬라이드 밀도 검증",
-      "date": "2026-05-23T04:04:01Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "c59fd90",
-      "message": "chore(templates): unused ALL_JOURNEYS 상수 제거",
-      "date": "2026-05-23T03:50:46Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "cd96320",
-      "message": "feat(journeys): 6 → 5 — Adopter 흡수 + Explorer를 Native로 대체",
-      "date": "2026-05-23T03:05:21Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "eab5d9d",
-      "message": "feat(stage-1): v2.0 확장 — 13 레슨 + 1a/1b/1c sub-group + 옛 stage-7/8 mdx 정리",
-      "date": "2026-05-22T07:30:26Z"
     },
     {
       "repo": "design-system-school",
@@ -259,6 +307,12 @@
       "sha": "e00a097",
       "message": "Add project harness — feature_list, progress, handoff, init.sh",
       "date": "2026-05-20T23:15:30Z"
+    },
+    {
+      "repo": "Timeer",
+      "sha": "a785d46",
+      "message": "feat: init Vite React project with TDS theme and 2D canvas orb timer",
+      "date": "2026-05-20T16:51:21Z"
     },
     {
       "repo": "samguk-idle-prototype",

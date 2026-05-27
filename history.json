@@ -160,12 +160,12 @@
     {
       "date": "2026-05-23",
       "avgProgress": 49,
-      "totalCommits": 792,
+      "totalCommits": 764,
       "active": 11,
       "projects": {
         "habit": {
           "total": 70,
-          "commits": 193
+          "commits": 166
         },
         "tteuniyu-ios": {
           "total": 65,
@@ -181,119 +181,7 @@
         },
         "three-kingdoms-deckbuilder": {
           "total": 55,
-          "commits": 90
-        },
-        "ai-builder-school": {
-          "total": 45,
-          "commits": 88
-        },
-        "ai-company-tycoon-boundaryless": {
-          "total": 40,
-          "commits": 118
-        },
-        "story-x-beta": {
-          "total": 45,
-          "commits": 58
-        },
-        "BookCircle": {
-          "total": 20,
-          "commits": 3
-        },
-        "jewelry-webtoon-cloud": {
-          "total": 20,
-          "commits": 18
-        },
-        "Nodeloom": {
-          "total": 56,
-          "commits": 42
-        },
-        "design-system-school": {
-          "total": 20,
-          "commits": 16
-        }
-      }
-    },
-    {
-      "date": "2026-05-24",
-      "avgProgress": 49,
-      "totalCommits": 792,
-      "active": 11,
-      "projects": {
-        "habit": {
-          "total": 70,
-          "commits": 193
-        },
-        "tteuniyu-ios": {
-          "total": 65,
-          "commits": 5
-        },
-        "sam-defender-logue": {
-          "total": 60,
-          "commits": 68
-        },
-        "samguk-idle-prototype": {
-          "total": 60,
-          "commits": 93
-        },
-        "three-kingdoms-deckbuilder": {
-          "total": 55,
-          "commits": 90
-        },
-        "ai-builder-school": {
-          "total": 45,
-          "commits": 88
-        },
-        "ai-company-tycoon-boundaryless": {
-          "total": 40,
-          "commits": 118
-        },
-        "story-x-beta": {
-          "total": 45,
-          "commits": 58
-        },
-        "BookCircle": {
-          "total": 20,
-          "commits": 3
-        },
-        "jewelry-webtoon-cloud": {
-          "total": 20,
-          "commits": 18
-        },
-        "Nodeloom": {
-          "total": 56,
-          "commits": 42
-        },
-        "design-system-school": {
-          "total": 20,
-          "commits": 16
-        }
-      }
-    },
-    {
-      "date": "2026-05-26",
-      "avgProgress": 49,
-      "totalCommits": 792,
-      "active": 11,
-      "projects": {
-        "habit": {
-          "total": 70,
-          "commits": 193
-        },
-        "tteuniyu-ios": {
-          "total": 65,
-          "commits": 5
-        },
-        "sam-defender-logue": {
-          "total": 60,
-          "commits": 68
-        },
-        "samguk-idle-prototype": {
-          "total": 60,
-          "commits": 93
-        },
-        "three-kingdoms-deckbuilder": {
-          "total": 55,
-          "commits": 90
+          "commits": 89
         },
         "ai-builder-school": {
           "total": 45,
@@ -327,9 +215,9 @@
     },
     {
       "date": "2026-05-27",
-      "avgProgress": 49,
-      "totalCommits": 833,
-      "active": 11,
+      "avgProgress": 46,
+      "totalCommits": 867,
+      "active": 13,
       "projects": {
         "habit": {
           "total": 70,
@@ -353,11 +241,11 @@
         },
         "ai-builder-school": {
           "total": 45,
-          "commits": 92
+          "commits": 97
         },
         "ai-company-tycoon-boundaryless": {
           "total": 40,
-          "commits": 133
+          "commits": 134
         },
         "story-x-beta": {
           "total": 45,
@@ -378,6 +266,14 @@
         "design-system-school": {
           "total": 20,
           "commits": 16
+        },
+        "cmds-daily-briefing": {
+          "total": 52,
+          "commits": 27
+        },
+        "Timeer": {
+          "total": 7,
+          "commits": 1
         }
       }
     }
