@@ -1,54 +1,126 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-05-26",
+  "asOf": "2026-05-27",
   "commits": [
     {
-      "repo": "habit",
-      "sha": "e69ab77",
-      "message": "Refresh roadmap and next development plan",
-      "date": "2026-05-23T22:19:40Z"
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "bc75b7d",
+      "message": "v0.57 #9: reward-choice rarity differentiation (rare/epic glow + badge)",
+      "date": "2026-05-26T23:38:18Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "e280f4e",
+      "message": "v0.57 #8: release progress meter inside issue result ribbon",
+      "date": "2026-05-26T16:13:02Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "2a77039",
+      "message": "v0.57 #7: year-two kickoff entry animation + next-30min arrow flow",
+      "date": "2026-05-26T15:59:21Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "565d40d",
+      "message": "refactor(stage-1): 자가진단 lesson → template 강등 + Stage 통합 산출물 칩",
+      "date": "2026-05-26T15:43:08Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "a38315a",
+      "message": "v0.57 #6: reward-choice card → effects arrow flow",
+      "date": "2026-05-26T15:42:10Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "7b19c81",
+      "message": "feat(stage-1): 자가진단 신규 레슨 + 명제식 제목 + 회고 — Ch01 인사이트 적용",
+      "date": "2026-05-26T15:07:26Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "9493f24",
+      "message": "v0.57 #5: first-screen entry animation + first-hire pulse",
+      "date": "2026-05-26T14:59:33Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "5078ceb",
+      "message": "v0.57 #3: expand products.json to 30 entries (Codex CLI 위임)",
+      "date": "2026-05-26T14:59:33Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "9f5efe8",
+      "message": "v0.57 #4: ease burnout aftermath penalty for early-game pacing",
+      "date": "2026-05-26T14:56:30Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "204330c",
+      "message": "v0.57 #2: card → effects arrow flow in launch-impact",
+      "date": "2026-05-26T14:54:43Z"
     },
     {
       "repo": "habit",
-      "sha": "ca41433",
-      "message": "Make proof scorecard navigate sections",
-      "date": "2026-05-23T15:07:40Z"
+      "sha": "6b769c7",
+      "message": "Trim duplicated run section cards from proof mode",
+      "date": "2026-05-26T14:33:35Z"
     },
     {
       "repo": "habit",
-      "sha": "aff6696",
-      "message": "Add proof session scorecard",
-      "date": "2026-05-23T15:04:30Z"
+      "sha": "1ef1ccf",
+      "message": "Redirect proof scorecard next action to FOCUSED VIEW",
+      "date": "2026-05-26T14:25:14Z"
     },
     {
       "repo": "habit",
-      "sha": "c3a96f5",
-      "message": "Add sectioned proof report mode",
-      "date": "2026-05-23T14:56:34Z"
+      "sha": "3a293b8",
+      "message": "Add dismissible PROOF OF ONE intro card",
+      "date": "2026-05-26T14:18:46Z"
     },
     {
       "repo": "habit",
-      "sha": "d6eed60",
-      "message": "Add proof run phone checklist",
-      "date": "2026-05-23T14:47:13Z"
+      "sha": "6f97c10",
+      "message": "Add extended action strip set to AGY packet",
+      "date": "2026-05-26T14:09:07Z"
     },
     {
       "repo": "habit",
-      "sha": "4585d6b",
-      "message": "Add proof run handoff summary",
-      "date": "2026-05-23T14:42:11Z"
+      "sha": "52638d1",
+      "message": "Collapse phone proof live session when idle",
+      "date": "2026-05-26T13:03:41Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "1e49f30",
+      "message": "feat(stage-1): 인트로 재작성 — 6 여정별 진입 + AI 강약 판단지",
+      "date": "2026-05-26T11:40:46Z"
     },
     {
       "repo": "habit",
-      "sha": "0cd4114",
-      "message": "Add proof run session controls",
-      "date": "2026-05-23T14:28:39Z"
+      "sha": "7fadccd",
+      "message": "Add Codex delegation packet for report proof friction",
+      "date": "2026-05-26T06:47:17Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "44e6b8d",
+      "message": "feat(journeys): 5 → 6 — Starter(입문) + AI Native(마스터) 분리",
+      "date": "2026-05-26T02:13:01Z"
     },
     {
       "repo": "habit",
-      "sha": "d85e322",
-      "message": "Add proof run walkthrough",
-      "date": "2026-05-23T13:24:09Z"
+      "sha": "a407144",
+      "message": "Refresh Claude Code handoff",
+      "date": "2026-05-26T01:33:21Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "6b74580",
+      "message": "Connect Home to the Today loop action model",
+      "date": "2026-05-25T23:58:00Z"
     },
     {
       "repo": "three-kingdoms-deckbuilder",
@@ -97,30 +169,6 @@
       "sha": "eab5d9d",
       "message": "feat(stage-1): v2.0 확장 — 13 레슨 + 1a/1b/1c sub-group + 옛 stage-7/8 mdx 정리",
       "date": "2026-05-22T07:30:26Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "39b3435",
-      "message": "feat(stage): Stage 1~6 outro 새 6 Stage 구조로 갱신",
-      "date": "2026-05-22T04:35:04Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "9c30438",
-      "message": "chore(stage): Stage 2/6 라벨 변경",
-      "date": "2026-05-22T00:54:00Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "dcb2566",
-      "message": "feat(stage): Stage 8→6 통합 마이그레이션 — Phase A1",
-      "date": "2026-05-22T00:50:32Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "fc51a14",
-      "message": "fix(stage): stage-bodies에 5~8 intro/outro 등록 누락 보정",
-      "date": "2026-05-22T00:26:57Z"
     },
     {
       "repo": "design-system-school",
@@ -213,64 +261,16 @@
       "date": "2026-05-20T23:15:30Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "538c174",
-      "message": "Refocus roadmap on playtest slice",
-      "date": "2026-05-20T22:56:04Z"
-    },
-    {
       "repo": "samguk-idle-prototype",
       "sha": "5c821e1",
       "message": "Ship v0.83 screen mode split",
       "date": "2026-05-20T16:43:56Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "ac142b3",
-      "message": "Update end of day v0.55 plan",
-      "date": "2026-05-20T16:13:11Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "669e6a0",
-      "message": "Update v0.55 mobile handoff",
-      "date": "2026-05-20T16:09:12Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "df57811",
-      "message": "Polish v0.55 mobile command hand QA",
-      "date": "2026-05-20T16:08:19Z"
-    },
-    {
       "repo": "Nodeloom",
       "sha": "fc08b81",
       "message": "하네스 엔지니어링 정비 — 5개 subsystem 100/100",
       "date": "2026-05-20T15:55:06Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "41348e0",
-      "message": "Update v0.55 session handoff",
-      "date": "2026-05-20T15:44:22Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "fb0a6fc",
-      "message": "Add v0.55 office visuals screenshot QA",
-      "date": "2026-05-20T15:40:46Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "bf04303",
-      "message": "Update v0.54 session handoff",
-      "date": "2026-05-20T15:23:50Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "eca92b8",
-      "message": "Add v0.54 office art import pipeline",
-      "date": "2026-05-20T15:20:53Z"
     },
     {
       "repo": "design-system-school",
