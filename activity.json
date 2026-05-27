@@ -4,6 +4,12 @@
   "commits": [
     {
       "repo": "cmds-daily-briefing",
+      "sha": "8fd91ae",
+      "message": "Add May 28 research briefing",
+      "date": "2026-05-27T23:38:26Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
       "sha": "46f1f39",
       "message": "Add 2026-05-27 build note",
       "date": "2026-05-27T13:59:24Z"
@@ -187,12 +193,6 @@
       "sha": "1b5ce56",
       "message": "Add weekend light daily briefing",
       "date": "2026-05-24T01:36:08Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "c7dbbba",
-      "message": "Unify daily briefing console and add archive",
-      "date": "2026-05-23T15:16:51Z"
     },
     {
       "repo": "three-kingdoms-deckbuilder",
