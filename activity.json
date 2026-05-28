@@ -1,7 +1,115 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-05-27",
+  "asOf": "2026-05-28",
   "commits": [
+    {
+      "repo": "chaekdam",
+      "sha": "8f0decd",
+      "message": "feat: Phase 1 — Supabase Auth (Google OAuth) + initial schema",
+      "date": "2026-05-28T17:11:21Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "8736319",
+      "message": "feat(W2-03): RunState 라이프 + 동전 시스템 + EventBus 구독",
+      "date": "2026-05-28T16:59:25Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "d83a6df",
+      "message": "feat(W2-02): Brick.gd type별 분기 — REFLECT/SHIELDED/EXPLOSIVE/MOVING",
+      "date": "2026-05-28T16:31:59Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "f67d6d1",
+      "message": "content(stage-1): 13 레슨에 buildIntro·reflectionOutro 강사 멘트 주입",
+      "date": "2026-05-28T09:14:26Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "8420c9e",
+      "message": "content: 옛 레슨 \\\"## 다음 레슨\\\" 일괄 제거 + terminal-first-day 압축",
+      "date": "2026-05-28T09:11:34Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "51aab87",
+      "message": "chore(stage-1): git/github 레슨 estimatedMinutes 현실 반영",
+      "date": "2026-05-28T08:56:03Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "39836fa",
+      "message": "feat(W2-01): 결계 5종 BrickData .tres + 로딩 검증 테스트",
+      "date": "2026-05-28T08:56:01Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "db51f34",
+      "message": "M9 디자인 핸드오프 패키지 + production 데모 + GitHub 동기화",
+      "date": "2026-05-28T08:47:04Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "d66604b",
+      "message": "docs(W1-05): report.md에 Claude 사후 수정 섹션 추가",
+      "date": "2026-05-28T02:04:30Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "2f9166b",
+      "message": "feat(W1-05): Ball ↔ Brick 충돌 통합 + 통합 테스트",
+      "date": "2026-05-28T02:03:35Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "c08c0e9",
+      "message": "chore: rename project from fable to chaekdam (책담)",
+      "date": "2026-05-28T00:46:39Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "f81a0cf",
+      "message": "feat(W1-04): Brick 베이스 + BrickData Resource + 단위 테스트",
+      "date": "2026-05-28T00:22:37Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "8fd91ae",
+      "message": "Add May 28 research briefing",
+      "date": "2026-05-27T23:38:26Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "faf5d38",
+      "message": "chore: .gitignore에 .omc/ 추가",
+      "date": "2026-05-27T18:21:58Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "b52a754",
+      "message": "feat(W1-03): Paddle 컨트롤러 + 단위 테스트",
+      "date": "2026-05-27T18:21:20Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "753cffe",
+      "message": "chore: gitignore agent harness state and accept Next auto tsconfig jsx update",
+      "date": "2026-05-27T17:15:48Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "7a05dcd",
+      "message": "chore: bootstrap Next.js 16 + Tailwind v4 + shadcn/ui (Phase 0)",
+      "date": "2026-05-27T17:11:40Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "bc9f803",
+      "message": "M8.5~6 · 매체 선택 Linear 다크 + 편집기 폴리시 · M9 핸드오프 준비로 인계",
+      "date": "2026-05-27T14:04:06Z"
+    },
     {
       "repo": "cmds-daily-briefing",
       "sha": "8fd91ae",
@@ -15,6 +123,30 @@
       "date": "2026-05-27T13:59:24Z"
     },
     {
+      "repo": "story-x-beta",
+      "sha": "aeb232b",
+      "message": "M8.2~4 · UI 통합 3 카드 (게이트·매체·온톨로지)",
+      "date": "2026-05-27T13:10:40Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "33056a1",
+      "message": "M8.1 UI 통합 1차 컷 · 하네스 진단 카드",
+      "date": "2026-05-27T12:19:34Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "6f15448",
+      "message": "M4.H 청크 H 완료 · M4 8/8 완료",
+      "date": "2026-05-27T12:14:25Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "874f3c1",
+      "message": "M4.H 청크 H · 통합·리팩터 (1차 컷 · 핵심 3 작업)",
+      "date": "2026-05-27T11:50:52Z"
+    },
+    {
       "repo": "cmds-daily-briefing",
       "sha": "a4be878",
       "message": "Add May 27 CMDS research briefing",
@@ -25,6 +157,18 @@
       "sha": "13cea7b",
       "message": "content(stage-1): ai-collaboration-mindset 본문 보강 — stub 37줄 → 92줄",
       "date": "2026-05-27T07:24:27Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "5dd9758",
+      "message": "M4.G 청크 G · 매체 투영 (Layer 7)",
+      "date": "2026-05-27T06:43:21Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "f590ecc",
+      "message": "M4.F 청크 F · 에이전트 실행 엔진 (Layer 5)",
+      "date": "2026-05-27T06:28:16Z"
     },
     {
       "repo": "ai-builder-school",
@@ -75,22 +219,10 @@
       "date": "2026-05-26T15:59:21Z"
     },
     {
-      "repo": "ai-builder-school",
-      "sha": "565d40d",
-      "message": "refactor(stage-1): 자가진단 lesson → template 강등 + Stage 통합 산출물 칩",
-      "date": "2026-05-26T15:43:08Z"
-    },
-    {
       "repo": "ai-company-tycoon-boundaryless",
       "sha": "a38315a",
       "message": "v0.57 #6: reward-choice card → effects arrow flow",
       "date": "2026-05-26T15:42:10Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "7b19c81",
-      "message": "feat(stage-1): 자가진단 신규 레슨 + 명제식 제목 + 회고 — Ch01 인사이트 적용",
-      "date": "2026-05-26T15:07:26Z"
     },
     {
       "repo": "ai-company-tycoon-boundaryless",
@@ -139,12 +271,6 @@
       "sha": "52638d1",
       "message": "Collapse phone proof live session when idle",
       "date": "2026-05-26T13:03:41Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "1e49f30",
-      "message": "feat(stage-1): 인트로 재작성 — 6 여정별 진입 + AI 강약 판단지",
-      "date": "2026-05-26T11:40:46Z"
     },
     {
       "repo": "habit",
@@ -439,54 +565,6 @@
       "sha": "5442b61",
       "message": "Add adventure failure recovery actions",
       "date": "2026-05-18T05:31:07Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "7f4685e",
-      "message": "Merge pull request #1 from sgeniusk/claude/frosty-vaughan-e476f9",
-      "date": "2026-05-15T16:27:16Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "3bdb05f",
-      "message": "Phase 3-(A) start + agent org chart: drop redundant command-strip, archive org",
-      "date": "2026-05-15T16:23:33Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "ab0bd0f",
-      "message": "Phase 3-(바): add a medium-specific champion to the writer-team sidebar",
-      "date": "2026-05-15T15:36:05Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "70b2663",
-      "message": "Phase 3-(사)+(나2): open-ended interview note + audiobook narration timer",
-      "date": "2026-05-15T15:32:34Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "b66336e",
-      "message": "Phase 3-(마)+(다): writer-team revise/block label + essay fact-protection note",
-      "date": "2026-05-15T15:30:17Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "6b9a02d",
-      "message": "style: switch storyx-page canvas to warm paper for framer-calm unity",
-      "date": "2026-05-15T15:10:48Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "d854882",
-      "message": "Phase 3-quick + Cowork test log: adapt action copy per medium, archive 5-persona feedback",
-      "date": "2026-05-15T15:09:06Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "106efca",
-      "message": "style: snap gap and single-value padding to 8-step sx-space scale",
-      "date": "2026-05-15T15:08:55Z"
     },
     {
       "repo": "jewelry-webtoon-cloud",
