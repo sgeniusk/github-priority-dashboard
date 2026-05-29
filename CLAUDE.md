@@ -25,7 +25,7 @@
 
 - **JSON 무결성** — `projects.json`·`suggestions.json`·`usage.json`·`history.json`·`activity.json`이 모두 `JSON.parse` 통과 (`bash init.sh`로 한 번에 검증)
 - **콘솔 에러 0** — `dashboard.html`을 브라우저에서 열어 모든 탭(청사진/순위/제안/활동/분석/스프린트/사용량 및 설정) 전환 시 콘솔 에러 없음
-- **FALLBACK 동기화** — `projects.json`·`suggestions.json`·`usage.json`을 갱신했으면 `dashboard.html`의 `FALLBACK_*` 상수도 verbatim 동기화 (`/refresh`가 자동 처리; `FALLBACK_HISTORY`·`FALLBACK_ACTIVITY`는 동기화 대상 아님)
+- **FALLBACK 동기화** — `projects.json`·`suggestions.json`·`usage.json`을 갱신했으면 `dashboard.html`의 `FALLBACK_*` 상수도 verbatim 동기화 (`/refresh`가 자동 처리; `FALLBACK_HISTORY`·`FALLBACK_ACTIVITY`는 동기화 대상 아님). `report.html`의 `FALLBACK_JOURNAL`은 `/report`가 `journal.json`과 verbatim 동기화한다
 - **배포** — `main` push 후 `.github/workflows/deploy.yml`이 success로 끝남
 - **상태 갱신** — 의미 있는 작업이라면 `progress.md`의 '현재 작업'·'다음 액션'을 갱신, 새 feature는 `feature_list.json`에 추가
 - **변경 금지 항목 준수** — 아래 '절대 하지 말 것' 위반 0건

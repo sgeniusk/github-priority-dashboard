@@ -1,16 +1,16 @@
 // sgeniusk GitHub 리포 활동을 수집해 projects.json을 갱신하는 스크립트
 //
 // 사용법
-//   node scripts/refresh-progress.mjs                 # projects.json 갱신 + history/activity 저장
+//   node scripts/refresh-progress.mjs                 # projects.json 갱신 + history/activity/journal 저장
 //   node scripts/refresh-progress.mjs --dry-run       # 변경 diff만 출력, 저장 안 함
 //   node scripts/refresh-progress.mjs --activity-only # activity.json(통합 커밋 피드)만 갱신
 //
 // 인증 — GH_TOKEN 환경변수가 있으면 사용, 없으면 `gh auth token` 셸 호출.
 // 자동 갱신 대상: lastUpdate, commits, firstCommit, daysActive, meta.asOf.
 // tool/status/breakdown 등 다른 필드는 절대 건드리지 않는다.
-// 실행 시 history.json 진척도 스냅샷과 activity.json 통합 커밋 피드도 갱신한다 (--dry-run 시 제외).
+// 실행 시 history.json 진척도 스냅샷, activity.json 통합 커밋 피드, journal.json 일지 아카이브도 갱신한다 (--dry-run 시 제외).
 
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { execSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
@@ -19,6 +19,8 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const JSON_PATH = join(ROOT, 'projects.json');
 const HISTORY_PATH = join(ROOT, 'history.json');
 const ACTIVITY_PATH = join(ROOT, 'activity.json');
+const REPORTS_PATH = join(ROOT, 'reports.json');
+const JOURNAL_PATH = join(ROOT, 'journal.json');
 const DRY_RUN = process.argv.includes('--dry-run');
 const ACTIVITY_ONLY = process.argv.includes('--activity-only');
 const COMMITS_PER_REPO = 8;
@@ -28,6 +30,7 @@ function getToken() {
   try {
     return execSync('gh auth token', { encoding: 'utf8' }).trim();
   } catch {
+    if (DRY_RUN) return '';
     console.error('인증 토큰을 찾을 수 없습니다. GH_TOKEN을 설정하거나 `gh auth login`을 실행하세요.');
     process.exit(1);
   }
@@ -36,7 +39,7 @@ function getToken() {
 const TOKEN = getToken();
 const API = 'https://api.github.com';
 const HEADERS = {
-  Authorization: `token ${TOKEN}`,
+  ...(TOKEN ? { Authorization: `token ${TOKEN}` } : {}),
   Accept: 'application/vnd.github+json',
   'User-Agent': 'github-priority-dashboard-refresh',
 };
@@ -98,6 +101,42 @@ function upsertHistory(data) {
   if (hist.snapshots.length > 90) hist.snapshots = hist.snapshots.slice(-90);
   writeFileSync(HISTORY_PATH, JSON.stringify(hist, null, 2) + '\n');
   return `history.json 스냅샷 upsert — ${snap.date} (avg ${snap.avgProgress}%, 총 커밋 ${snap.totalCommits}), 스냅샷 ${hist.snapshots.length}개.`;
+}
+
+// 오늘 reports.json 줄글을 journal.json에 upsert한다 (같은 날짜면 교체, 최근 180개 유지).
+function upsertJournal(data, { dryRun = false } = {}) {
+  if (!existsSync(REPORTS_PATH)) {
+    return 'journal.json 일지 upsert 스킵 — reports.json이 없습니다.';
+  }
+
+  const reports = JSON.parse(readFileSync(REPORTS_PATH, 'utf8'));
+  let journal;
+  try {
+    journal = JSON.parse(readFileSync(JOURNAL_PATH, 'utf8'));
+  } catch {
+    journal = {
+      _comment: '일자별 프로젝트 일지 아카이브. refresh-progress.mjs와 /report가 그날의 reports.json 줄글을 entries에 date별로 upsert한다(같은 날짜면 교체). report.html이 날짜 선택으로 읽는다. 최근 180개 유지.',
+      entries: [],
+    };
+  }
+
+  if (!Array.isArray(journal.entries)) journal.entries = [];
+  const entry = {
+    date: data.meta.asOf,
+    generatedAt: reports.generatedAt,
+    intro: reports.intro,
+    fields: reports.fields,
+  };
+  const index = journal.entries.findIndex((item) => item.date === entry.date);
+  if (index >= 0) journal.entries[index] = entry; else journal.entries.push(entry);
+  journal.entries.sort((a, b) => a.date.localeCompare(b.date));
+  if (journal.entries.length > 180) journal.entries = journal.entries.slice(-180);
+
+  if (!dryRun) {
+    writeFileSync(JOURNAL_PATH, JSON.stringify(journal, null, 2) + '\n');
+  }
+
+  return `${dryRun ? '[dry-run] ' : ''}journal.json 일지 upsert — ${entry.date}, entries ${journal.entries.length}개.`;
 }
 
 // 리포의 최근 커밋 N개 — 목록 엔드포인트(sha·message·date). 통합 활동 피드용.
@@ -196,7 +235,8 @@ async function main() {
   }
 
   if (DRY_RUN) {
-    console.log('[dry-run] projects.json·history.json은 저장하지 않습니다.');
+    console.log('[dry-run] projects.json·history.json·journal.json은 저장하지 않습니다.');
+    console.log(upsertJournal(data, { dryRun: true }));
     return;
   }
   if (changes.length > 0) {
@@ -204,6 +244,7 @@ async function main() {
     console.log('\nprojects.json 저장 완료.');
   }
   console.log(upsertHistory(data));
+  console.log(upsertJournal(data));
 }
 
 main().catch((err) => {

@@ -10,7 +10,7 @@ err() { printf "  \033[31m✗\033[0m %s\n" "$1"; }
 
 echo "▶ JSON 무결성"
 fail=0
-for f in projects.json suggestions.json usage.json history.json activity.json; do
+for f in projects.json suggestions.json usage.json history.json activity.json reports.json journal.json; do
   if [ -f "$f" ]; then
     if node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null; then
       ok "$f"
