@@ -1,7 +1,55 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-05-28",
+  "asOf": "2026-05-29",
   "commits": [
+    {
+      "repo": "honbul",
+      "sha": "3466880",
+      "message": "feat(W3-01): CardData + CardEffect + DeckRuntime + 4 effect 자식 베이스",
+      "date": "2026-05-29T00:06:45Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "cd78d03",
+      "message": "Add May 29 research briefing",
+      "date": "2026-05-28T23:35:53Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "6b0dd79",
+      "message": "docs: expand README with full roadmap (Phase 2–7) and recorded decisions",
+      "date": "2026-05-28T18:03:48Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "8586324",
+      "message": "feat(W2-07): Battle.tscn 본격 통합 — W2 Phase 종료",
+      "date": "2026-05-28T17:39:36Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "8a7d9b9",
+      "message": "feat(W2-06): StageRunner + ResultPanel — 스테이지 클리어/실패 판정 + 결과 placeholder UI",
+      "date": "2026-05-28T17:29:46Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "5fc22a3",
+      "message": "fix: sync pnpm-lock.yaml with package.json",
+      "date": "2026-05-28T17:27:41Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "c1dc148",
+      "message": "docs(W2-05): report.md에 Claude 검증 섹션 추가",
+      "date": "2026-05-28T17:21:06Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "ed4bf49",
+      "message": "feat(W2-05): HUD UI — life/coin 라벨 + EventBus 구독",
+      "date": "2026-05-28T17:20:36Z"
+    },
     {
       "repo": "chaekdam",
       "sha": "8f0decd",
@@ -51,46 +99,16 @@
       "date": "2026-05-28T08:47:04Z"
     },
     {
-      "repo": "honbul",
-      "sha": "d66604b",
-      "message": "docs(W1-05): report.md에 Claude 사후 수정 섹션 추가",
-      "date": "2026-05-28T02:04:30Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "2f9166b",
-      "message": "feat(W1-05): Ball ↔ Brick 충돌 통합 + 통합 테스트",
-      "date": "2026-05-28T02:03:35Z"
-    },
-    {
       "repo": "chaekdam",
       "sha": "c08c0e9",
       "message": "chore: rename project from fable to chaekdam (책담)",
       "date": "2026-05-28T00:46:39Z"
     },
     {
-      "repo": "honbul",
-      "sha": "f81a0cf",
-      "message": "feat(W1-04): Brick 베이스 + BrickData Resource + 단위 테스트",
-      "date": "2026-05-28T00:22:37Z"
-    },
-    {
       "repo": "cmds-daily-briefing",
       "sha": "8fd91ae",
       "message": "Add May 28 research briefing",
       "date": "2026-05-27T23:38:26Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "faf5d38",
-      "message": "chore: .gitignore에 .omc/ 추가",
-      "date": "2026-05-27T18:21:58Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "b52a754",
-      "message": "feat(W1-03): Paddle 컨트롤러 + 단위 테스트",
-      "date": "2026-05-27T18:21:20Z"
     },
     {
       "repo": "chaekdam",
@@ -109,12 +127,6 @@
       "sha": "bc9f803",
       "message": "M8.5~6 · 매체 선택 Linear 다크 + 편집기 폴리시 · M9 핸드오프 준비로 인계",
       "date": "2026-05-27T14:04:06Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "8fd91ae",
-      "message": "Add May 28 research briefing",
-      "date": "2026-05-27T23:38:26Z"
     },
     {
       "repo": "cmds-daily-briefing",
@@ -313,12 +325,6 @@
       "sha": "279bf3a",
       "message": "Update Hatchi build note for 2026-05-24",
       "date": "2026-05-24T13:59:49Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "1b5ce56",
-      "message": "Add weekend light daily briefing",
-      "date": "2026-05-24T01:36:08Z"
     },
     {
       "repo": "three-kingdoms-deckbuilder",
