@@ -19,7 +19,7 @@
   --t2:#5a5a72; --border:#e6e6f0; --shadow:0 1px 4px rgba(12,23,84,.07);
 
   /* Stage colors */
-  --s1:#eaebf8; --s2:#d9d4ff; --s3:#ffc13a; --s4:#2545ff;
+  --s1:#b7c1ff; --s2:#8f79ff; --s3:#ffc13a; --s4:#2545ff;
 
   --font:'Inter',system-ui,sans-serif;
   --r:16px; --rp:100px;
@@ -105,9 +105,22 @@ section{margin-bottom:48px}
 .prog-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
 .prog-pct{font-size:13px;font-weight:700}
 .sprint-lbl{font-size:10px;color:var(--t2);font-weight:600}
-.stk-bar{height:10px;border-radius:var(--rp);display:flex;overflow:hidden;background:var(--border)}
+.stk-bar{height:17px;border-radius:var(--rp);display:flex;overflow:hidden;background:var(--border)}
 .seg{height:100%;transition:width .6s cubic-bezier(.4,0,.2,1)}
 .s1{background:var(--s1)}.s2{background:var(--s2)}.s3{background:var(--s3)}.s4{background:var(--s4)}
+.prog-breakdown{font-size:10.5px;color:var(--t2);line-height:1.35;white-space:normal}
+.prog-metrics{display:flex;align-items:center;gap:5px;flex-wrap:wrap;justify-content:flex-end}
+.momentum-chip,.blocker-chip{display:inline-flex;align-items:center;border-radius:var(--rp);padding:2px 7px;font-size:10px;font-weight:700;line-height:1.2;white-space:nowrap}
+.momentum-chip.up{background:rgba(31,157,77,.13);color:#1f8c47}
+.momentum-chip.down{background:rgba(255,91,34,.14);color:var(--orange)}
+.momentum-chip.flat{background:var(--cool-gray);color:var(--t2)}
+.momentum-chip.commit-fresh{background:rgba(31,157,77,.13);color:#1f8c47}
+.momentum-chip.commit-idle{background:var(--cool-gray);color:var(--t2)}
+.momentum-chip.commit-dormant{background:rgba(255,193,58,.18);color:#7a4d00}
+[data-theme=dark] .momentum-chip.up{color:#58d184}
+[data-theme=dark] .momentum-chip.commit-fresh{color:#58d184}
+[data-theme=dark] .momentum-chip.commit-dormant{color:#ffc13a}
+.blocker-chip{background:rgba(255,91,34,.16);color:var(--orange);max-width:160px;overflow:hidden;text-overflow:ellipsis}
 .cm-val{font-size:13px;font-weight:600;display:flex;flex-direction:column;gap:1px}
 .cm-lbl{font-size:9px;color:var(--t2);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
 .eta-val{font-size:12px;color:var(--t2)}
@@ -265,6 +278,7 @@ footer{border-top:1px solid var(--border);padding:18px 28px;max-width:1460px;mar
 .mb-pct{font-size:26px;font-weight:700;letter-spacing:-1px;line-height:1}
 .mb-pct small{font-size:13px;font-weight:600;letter-spacing:0}
 .mb-sprint{font-size:11px;font-weight:700}
+.mb-chiprow{display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin-top:8px;min-height:18px}
 .mb-meta{display:flex;justify-content:space-between;font-size:11px;color:var(--t2);margin-top:9px}
 .mb-next{font-size:11px;color:var(--t2);line-height:1.5;margin-top:8px;min-height:33px}
 .mb-doc{margin-top:11px;width:100%;background:none;border:1px solid var(--border);border-radius:8px;padding:8px;font-size:11px;font-weight:600;color:var(--electric);cursor:pointer;font-family:var(--font);transition:background .15s,border-color .15s}
@@ -370,7 +384,7 @@ header,.modal-box{
   .exp-inner{padding-left:16px}
 }
 </style>
-<script>document.documentElement.setAttribute("data-theme",localStorage.getItem("theme")||"light");</script>
+<script type="application/javascript">document.documentElement.setAttribute("data-theme",localStorage.getItem("theme")||"light");</script>
 </head>
 <body>
 
@@ -382,7 +396,7 @@ header,.modal-box{
     <span class="logo-name">sgeniusk</span>
   </a>
   <span class="hbadge">프로젝트 우선순위 대시보드</span>
-  <span class="hbadge" style="background:rgba(255,193,58,.18);color:#7a4d00">v1.1 · 2026-05-16</span>
+  <span class="hbadge" id="dataBadge" style="background:rgba(255,193,58,.18);color:#7a4d00">v2.1 · 데이터 기준일 로드 중</span>
   <div class="spacer"></div>
   <nav class="nav-links" role="tablist" aria-label="대시보드 탭">
     <button class="nav-link" role="tab" aria-selected="false" data-tab="blueprint" onclick="showTab('blueprint')">청사진</button>
@@ -393,6 +407,7 @@ header,.modal-box{
     <button class="nav-link" role="tab" aria-selected="false" data-tab="charts" onclick="showTab('charts')">분석</button>
     <button class="nav-link" role="tab" aria-selected="false" data-tab="sprint" onclick="showTab('sprint')">스프린트</button>
     <button class="nav-link" role="tab" aria-selected="false" data-tab="usage" onclick="showTab('usage')">사용량 및 설정</button>
+    <a class="nav-link" href="report.html">보고서</a>
   </nav>
   <button class="icon-btn" id="themeBtn" title="테마 전환" aria-label="라이트/다크 테마 전환">🌙</button>
 </header>
@@ -1761,7 +1776,7 @@ function mapProject(p) {
 }
 
 /* ── 데이터 (init에서 fetch 후 채움) ── */
-let P = [], SUG = { items: [] }, usageData = { tools: [] };
+let P = [], SUG = { items: [] }, META = {}, usageData = { tools: [] };
 
 const SPRINTS = {
   'A':{lbl:'Sprint A',sub:'1-2주',c:'#6c5ce7'},
@@ -1775,6 +1790,66 @@ const TCLS  = {'Claude':'t-cl','Claude+Codex':'t-hy','Codex':'t-co','Hermes Agen
 
 const pct = p => p.d + p.sc + p.fn + p.al;
 const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const esc = s => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const STAGES = [
+  { key:'d', label:'문서', detail:'PRD·Spec', max:20, cls:'s1' },
+  { key:'sc', label:'골격', detail:'하네스·서브에이전트', max:30, cls:'s2' },
+  { key:'fn', label:'기능', detail:'핵심 기능', max:30, cls:'s3' },
+  { key:'al', label:'알파', detail:'검증·폴리시', max:20, cls:'s4' }
+];
+function progressBreakdown(p) {
+  return STAGES.map(s=>`${s.label} ${p[s.key] || 0}`).join(' · ');
+}
+function progressBar(p) {
+  return `<div class="stk-bar" aria-label="${esc(progressBreakdown(p))}">${STAGES.map(s=>{
+    const v = p[s.key] || 0;
+    return `<div class="seg ${s.cls}" style="width:${v}%" title="${esc(`${s.label} ${s.detail} ${v}/${s.max}`)}"></div>`;
+  }).join('')}</div><div class="prog-breakdown">${progressBreakdown(p)}</div>`;
+}
+function daysBetween(a,b) {
+  const da = new Date(a + 'T00:00:00Z'), db = new Date(b + 'T00:00:00Z');
+  if (Number.isNaN(da.getTime()) || Number.isNaN(db.getTime())) return null;
+  return Math.max(0, Math.round((db - da) / 86400000));
+}
+function projectMomentum(repo) {
+  const snaps = ((HIST && HIST.snapshots) || []).filter(sn=>sn && sn.date && sn.projects && sn.projects[repo]);
+  if (snaps.length < 2) return null;
+  const latest = snaps[snaps.length - 1], current = Number(latest.projects[repo].total || 0);
+  const latestDate = new Date(latest.date + 'T00:00:00Z');
+  const targetTime = latestDate.getTime() - 7 * 86400000;
+  let base = snaps[0], baseDist = Infinity;
+  snaps.slice(0, -1).forEach(sn=>{
+    const dist = Math.abs(new Date(sn.date + 'T00:00:00Z').getTime() - targetTime);
+    if (dist < baseDist) { base = sn; baseDist = dist; }
+  });
+  const weekly = current - Number(base.projects[repo].total || 0);
+  return { weekly, baseDate:base.date, latestDate:latest.date };
+}
+function commitRecencyHTML(p) {
+  const d = daysBetween(p.last, META.asOf || p.last);
+  if (d === null) return '<span class="momentum-chip commit-idle" title="마지막 커밋 날짜 없음">커밋일 없음</span>';
+  const cls = d <= 3 ? 'commit-fresh' : (d >= 14 ? 'commit-dormant' : 'commit-idle');
+  const text = d === 0 ? '오늘 커밋' : (d === 1 ? '어제 커밋' : `커밋 ${d}일 전`);
+  return `<span class="momentum-chip ${cls}" title="${esc(`마지막 커밋 ${p.last} · 데이터 기준 ${META.asOf || '-'}`)}">${text}</span>`;
+}
+function momentumHTML(p) {
+  const m = projectMomentum(p.repo);
+  const score = m ? (() => {
+    const wCls = m.weekly > 0 ? 'up' : (m.weekly < 0 ? 'down' : 'flat');
+    const wText = m.weekly > 0 ? `▲ +${m.weekly}` : (m.weekly < 0 ? `▼ ${m.weekly}` : '보합');
+    return `<span class="momentum-chip ${wCls}" title="${esc(`${m.baseDate} 대비 ${m.latestDate} 점수 변화`)}">${wText}</span>`;
+  })() : '';
+  return score + commitRecencyHTML(p);
+}
+function blockerHTML(p) {
+  const hit = ((SUG && SUG.items) || []).find(it=>it && it.repo===p.repo && it.severity==='high');
+  if (!hit) return '';
+  return `<span class="blocker-chip" title="${esc(hit.title || '정체')}">⚠ 정체${hit.title ? ' · '+esc(hit.title) : ''}</span>`;
+}
+function renderDataBadge() {
+  const el = document.getElementById('dataBadge');
+  if (el) el.textContent = `v2.1 · 데이터 ${META.asOf || '-'} 기준`;
+}
 
 /* ── STATE ── */
 let ST = { cat:'전체', tool:'전체', status:'활성', sort:'진척도', search:'', exp:new Set() };
@@ -1858,14 +1933,12 @@ function renderTable() {
         <div class="prog-wrap">
           <div class="prog-top">
             <span class="prog-pct">${tot}%</span>
-            <span class="sprint-lbl" style="color:${spcfg.c}">${sp==='Defer'?'Defer':'Sprint '+sp}</span>
+            <span class="prog-metrics">
+              ${momentumHTML(p)}
+              <span class="sprint-lbl" style="color:${spcfg.c}">${sp==='Defer'?'Defer':'Sprint '+sp}</span>
+            </span>
           </div>
-          <div class="stk-bar">
-            <div class="seg s1" style="width:${p.d}%"></div>
-            <div class="seg s2" style="width:${p.sc}%"></div>
-            <div class="seg s3" style="width:${p.fn}%"></div>
-            <div class="seg s4" style="width:${p.al}%"></div>
-          </div>
+          ${progressBar(p)}
         </div>
         <div class="cm-val"><span class="cm-lbl">커밋</span>${p.commits}</div>
         <span class="eta-val">${p.eta}</span>
@@ -2382,12 +2455,8 @@ function renderMasterBoard(){
         <span class="mb-pct">${tot}<small>%</small></span>
         <span class="mb-sprint" style="color:${spcfg.c}">${sp==='Defer'?'Defer':'Sprint '+sp}</span>
       </div>
-      <div class="stk-bar">
-        <div class="seg s1" style="width:${p.d}%"></div>
-        <div class="seg s2" style="width:${p.sc}%"></div>
-        <div class="seg s3" style="width:${p.fn}%"></div>
-        <div class="seg s4" style="width:${p.al}%"></div>
-      </div>
+      ${progressBar(p)}
+      <div class="mb-chiprow">${momentumHTML(p)}${blockerHTML(p)}</div>
       <div class="mb-meta"><span>${p.type}</span><span>예상 ${p.eta}</span></div>
       <div class="mb-next">▸ ${p.next}</div>
       <button class="mb-doc" onclick="openDocs('${p.repo}')">문서 ▸ PRD · 로드맵 · 로그</button>
@@ -3263,11 +3332,13 @@ async function init() {
     loadJSON('./history.json',FALLBACK_HISTORY),
     loadJSON('./activity.json',FALLBACK_ACTIVITY)
   ]);
+  META = (pj && pj.meta) || {};
   P = (pj.projects||[]).map(mapProject);
   SUG = sj || { items:[] };
   usageData = uj || { tools:[] };
   HIST = hist || { snapshots:[] };
   ACT = act || { commits:[] };
+  renderDataBadge();
 
   // 스프린트 보드 카드 위치 시드 (localStorage가 비어 있을 때만)
   if (!Object.keys(spPos).length) P.forEach(p=>spPos[p.id]=p.sprint);

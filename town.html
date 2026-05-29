@@ -108,7 +108,7 @@
 
 /* ── 상수 ── */
 const TILE = 16, SCALE = 4, TS = TILE * SCALE;          // 렌더 타일 64px (스타듀급 줌)
-const MAPW = 64, MAPH = 48;                              // 오버월드 크기(타일)
+const MAPW = 82, MAPH = 70;                              // 오버월드 크기(타일)
 const SPEED = 2.0;                                       // 이동 속도(미스케일 px/프레임)
 
 // Kenney Tiny Town 타일 인덱스 (12열, idx = row*12 + col)
@@ -309,8 +309,22 @@ function showError(msg){
 function mulberry(a){ return function(){ a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296; }; }
 function inB(G,x,y){ return x>=0&&y>=0&&x<G.W&&y<G.H; }
 function isVeg(i){ return T.TREES.indexOf(i)>=0||i===T.MUSH; }
+function markClear(G,x,y){
+  if(!inB(G,x,y)) return;
+  if(!G.clear) G.clear = Array.from({length:G.H},()=>Array(G.W).fill(false));
+  G.clear[y][x] = true;
+}
+function isClear(G,x,y){ return !!(G.clear && inB(G,x,y) && G.clear[y][x]); }
+function clearWalkTile(G,x,y,groundTile){
+  if(!inB(G,x,y)) return;
+  G.object[y][x] = -1;
+  G.solid[y][x] = 0;
+  if(G.ground[y][x] !== T.WATER) G.ground[y][x] = groundTile == null ? 0 : groundTile;
+  markClear(G,x,y);
+}
 function putTree(G,x,y,rnd){
   if(!inB(G,x,y)||G.object[y][x]!==-1)return;
+  if(isClear(G,x,y))return;
   if(G.ground[y][x]===T.WATER||G.ground[y][x]===T.SHORE)return;
   G.object[y][x]=T.TREES[(rnd()*T.TREES.length)|0]; G.solid[y][x]=1;
 }
@@ -329,43 +343,90 @@ function carvePond(G,p,rnd){
 function grove(G,cx,cy,r,rnd){
   for(let y=cy-r;y<=cy+r;y++)for(let x=cx-r;x<=cx+r;x++){
     if(!inB(G,x,y))continue;
+    if(isClear(G,x,y))continue;
     if(Math.hypot(x-cx,y-cy)+rnd()*1.6<r && rnd()<0.82) putTree(G,x,y,rnd);
   }
 }
-// 굽이치는 흙길 — 폴리라인 위를 두툼한 브러시로
+function setRoad(G,x,y){
+  if(!inB(G,x,y)) return;
+  if(G.ground[y][x]===T.WATER){
+    G.object[y][x] = T.BRIDGE;
+    G.solid[y][x] = 0;
+    markClear(G,x,y);
+    return;
+  }
+  if(G.solid[y][x] && G.object[y][x]===-1) return;
+  if(G.object[y][x]!==-1 && !isVeg(G.object[y][x]) && G.object[y][x]!==T.BRIDGE) return;
+  clearWalkTile(G,x,y,T.DIRT[(x*3+y*7)%T.DIRT.length]);
+}
+function roadBrush(G,x,y,axis){
+  if(axis==='v'){
+    setRoad(G,x,y);
+    setRoad(G,x+1,y);
+  } else {
+    setRoad(G,x,y);
+    setRoad(G,x,y+1);
+  }
+}
+// 또렷한 흙길 — 축 정렬 2타일 리본만 칠함
 function carvePath(G,wp){
   for(let i=0;i<wp.length-1;i++){
     const a=wp[i],b=wp[i+1];
-    const steps=Math.max(Math.abs(b[0]-a[0]),Math.abs(b[1]-a[1]))*3+1;
-    for(let s=0;s<=steps;s++){
-      const t=s/steps, cx=a[0]+(b[0]-a[0])*t, cy=a[1]+(b[1]-a[1])*t, w=1.6;
-      for(let y=Math.floor(cy-w);y<=Math.ceil(cy+w);y++)
-      for(let x=Math.floor(cx-w);x<=Math.ceil(cx+w);x++){
-        if(!inB(G,x,y)||Math.hypot(x-cx,y-cy)>w)continue;
-        if(G.ground[y][x]===T.WATER||G.ground[y][x]===T.SHORE)continue;
-        if(G.object[y][x]!==-1 && !isVeg(G.object[y][x]))continue;   // 건물 보존
-        G.object[y][x]=-1; G.solid[y][x]=0;
-        G.ground[y][x]=T.DIRT[(x*3+y*7)%T.DIRT.length];
-      }
+    if(a[0]===b[0]){
+      const sy=Math.min(a[1],b[1]), ey=Math.max(a[1],b[1]);
+      for(let y=sy;y<=ey;y++) roadBrush(G,a[0],y,'v');
+    } else if(a[1]===b[1]){
+      const sx=Math.min(a[0],b[0]), ex=Math.max(a[0],b[0]);
+      for(let x=sx;x<=ex;x++) roadBrush(G,x,a[1],'h');
+    } else {
+      const mid=[b[0],a[1]];
+      carvePath(G,[a,mid,b]);
     }
   }
 }
-// 유기적 산포 — 꽃·덤불·버섯·나무
+function clearPlot(G,bx,by,w,h){
+  for(let y=by-2;y<=by+h+2;y++)for(let x=bx-2;x<=bx+w+1;x++){
+    if(!inB(G,x,y)) continue;
+    if(G.ground[y][x]!==T.WATER){
+      G.object[y][x] = -1;
+      G.solid[y][x] = 0;
+      G.ground[y][x] = 0;
+      markClear(G,x,y);
+    }
+  }
+}
+function addRoadNetwork(G,buildings){
+  const spawn = [41,28];
+  carvePath(G,[[41,28],[41,17],[23,17],[23,34],[41,34],[63,34],[63,60]]);
+  carvePath(G,[[41,28],[55,28],[55,10],[63,10]]);
+  carvePath(G,[[41,28],[28,28],[28,60],[12,60]]);
+  buildings.forEach(b=>{
+    const door = [b.trigTx,b.trigTy];
+    const cat = b.project.category || 'app';
+    let hub = cat==='game' ? [23,b.trigTy] : cat==='content' ? [b.trigTx,60] : [55,b.trigTy];
+    if(cat==='app' && b.trigTy>34) hub = [63,b.trigTy];
+    carvePath(G,[hub,door]);
+    for(let y=b.trigTy;y<=b.trigTy+2;y++)for(let x=b.trigTx-1;x<=b.trigTx+1;x++) setRoad(G,x,y);
+  });
+  for(let y=spawn[1]-1;y<=spawn[1]+1;y++)for(let x=spawn[0]-1;x<=spawn[0]+1;x++) setRoad(G,x,y);
+}
+// 절제된 산포 — 길/플롯을 피해 길가와 빈 잔디에만 배치
 function scatterDeco(G,rnd){
-  for(let i=0;i<900;i++){
+  for(let i=0;i<520;i++){
     const x=(rnd()*G.W)|0, y=(rnd()*G.H)|0;
     if(!inB(G,x,y)||G.object[y][x]!==-1)continue;
     const g=G.ground[y][x];
     if(g===T.WATER||g===T.SHORE)continue;
-    if(T.DIRT.indexOf(g)>=0){ if(rnd()<0.05) G.object[y][x]=T.MUSH; continue; }
+    if(isClear(G,x,y)||T.DIRT.indexOf(g)>=0) continue;
     const r=rnd();
-    if(r<0.40) putTree(G,x,y,rnd);
-    else if(r<0.50) G.object[y][x]=T.MUSH;
-    else if(r<0.74) G.ground[y][x]=2;
+    if(r<0.12) putTree(G,x,y,rnd);
+    else if(r<0.20) G.object[y][x]=T.MUSH;
+    else if(r<0.42) G.ground[y][x]=2;
   }
 }
 // 건물 — w×h 발자국만 solid로 표시. 그림은 rebuildWorld의 drawBuildingVisual이 담당
 function placeBuilding(G,bx,by,w,h,style,project,buildings){
+  clearPlot(G,bx,by,w,h);
   for(let cx=0;cx<w;cx++)for(let ry=0;ry<h;ry++){
     if(inB(G,bx+cx,by+ry)){
       G.object[by+ry][bx+cx]=-1; G.solid[by+ry][bx+cx]=1; G.ground[by+ry][bx+cx]=0;
@@ -413,9 +474,18 @@ function drawBuildingVisual(b){
 
 function generateAndPlaceBuildings(G, projs, buildings, rnd){
   const REGIONS = {
-    game:    { x:3,  y:3,  w:26, h:14, roof:'gy' },
-    app:     { x:30, y:3,  w:30, h:24, roof:'rd' },
-    content: { x:3,  y:28, w:56, h:16, roof:'gy' }
+    game: {
+      roof:'gy',
+      plots:[[7,7],[22,7],[7,20],[22,20],[7,33],[22,33]]
+    },
+    app: {
+      roof:'rd',
+      plots:[[47,7],[62,7],[47,17],[62,17],[47,27],[62,27],[47,37],[62,37],[47,47]]
+    },
+    content: {
+      roof:'gy',
+      plots:[[12,55],[32,55],[52,55],[67,55]]
+    }
   };
   ['game','app','content'].forEach(cat=>{
     const reg = REGIONS[cat];
@@ -425,28 +495,17 @@ function generateAndPlaceBuildings(G, projs, buildings, rnd){
       const w = (idx % 3 === 0) ? 6 : 5;
       const h = (idx % 2 === 0) ? 5 : 4;
       const style = (idx % 2 === 0) ? reg.roof : (reg.roof==='gy'?'rd':'gy');
-      let placed = false;
-      for(let tries=0; tries<800 && !placed; tries++){
-        const bx = reg.x + Math.floor(rnd() * Math.max(1, reg.w - w));
-        const by = reg.y + Math.floor(rnd() * Math.max(1, reg.h - h));
-        if(buildingFits(bx, by, w, h, buildings)){
-          placeBuilding(G, bx, by, w, h, style, p, buildings);
-          placed = true;
-        }
+      const plot = reg.plots[idx];
+      if(!plot || !buildingFits(plot[0], plot[1], w, h, buildings)){
+        console.warn('town: 건물 배치 실패 —', p.name, '(플롯 부족 또는 겹침)');
+        return;
       }
-      if(!placed) console.warn('town: 건물 배치 실패 —', p.name, '(동네 공간 부족 — 영역 확장 필요)');
+      placeBuilding(G, plot[0], plot[1], w, h, style, p, buildings);
     });
   });
 }
 function buildingFits(bx, by, w, h, buildings){
   if(bx < 2 || by < 2 || bx+w > MAPW-2 || by+h+1 > MAPH-2) return false;          // 맵 경계 + 트리거 칸
-  // 호수 회피 (트리거 행 포함, 약간 여유)
-  for(let dx=-1; dx<=w; dx++) for(let dy=-1; dy<=h+1; dy++){
-    const nx=(bx+dx-38)/8, ny=(by+dy-33)/6;
-    if(nx*nx+ny*ny < 1.45) return false;
-  }
-  // 스폰 회피 (32, 14)
-  if(bx-2 <= 32 && 32 <= bx+w+1 && by-2 <= 14 && 14 <= by+h+2) return false;
   // 다른 건물과 1타일 여유 두고 겹침 방지
   for(const b of buildings){
     if(bx + w + 1 < b.bx) continue;
@@ -468,82 +527,55 @@ function loadOverworld(){
       object[y][x]=-1; solid[y][x]=0;
     }
   }
-  const G={ground,object,solid,W,H};
+  const G={ground,object,solid,W,H,clear:Array.from({length:H},()=>Array(W).fill(false))};
   // 1) 불규칙한 숲 테두리
   for(let y=0;y<H;y++)for(let x=0;x<W;x++){
     const d=Math.min(x,y,W-1-x,H-1-y);
     if(d < 3 + rnd()*3) putTree(G,x,y,rnd);
   }
-  // 2) 연못
-  carvePond(G,{cx:38,cy:33,rx:8,ry:6},rnd);
-  // 3) 숲 군락
-  [[12,28,4],[55,13,4],[56,40,5],[30,43,3],[45,41,3]].forEach(g=>grove(G,g[0],g[1],g[2],rnd));
-  // 4) 건물 — 동네별 영역에 동적 배치 (projects 개수 자동 적응)
-  const buildings=[];
-  generateAndPlaceBuildings(G, projects, buildings, rnd);
-
-  // 4b) 추가 지형 및 구조물 배치 (Stream, Bridge, Fence, Sign)
-  // Stream & Shore
-  for (let y = 11; y <= 27; y++) {
-    for (let x = 37; x <= 38; x++) {
+  // 2) 연못과 하천 — 다리 외에는 막힌 물로 읽히게 유지
+  carvePond(G,{cx:70,cy:61,rx:7,ry:5},rnd);
+  for (let y = 12; y <= 25; y++) {
+    for (let x = 39; x <= 40; x++) {
       if (inB(G, x, y)) {
         G.ground[y][x] = T.WATER;
         G.object[y][x] = -1;
         G.solid[y][x] = 1;
       }
     }
-    if (inB(G, 36, y) && G.ground[y][36] !== T.WATER) {
-      G.ground[y][36] = T.SHORE;
-      G.object[y][36] = -1;
-      G.solid[y][36] = 0;
-    }
-    if (inB(G, 39, y) && G.ground[y][39] !== T.WATER) {
-      G.ground[y][39] = T.SHORE;
-      G.object[y][39] = -1;
-      G.solid[y][39] = 0;
-    }
-  }
-  // Bridge (overrides solid=1)
-  for (let y = 13; y <= 14; y++) {
-    for (let x = 37; x <= 38; x++) {
-      if (inB(G, x, y)) {
-        G.object[y][x] = T.BRIDGE;
+    [38, 41].forEach(x=>{
+      if (inB(G, x, y) && G.ground[y][x] !== T.WATER) {
+        G.ground[y][x] = T.SHORE;
+        G.object[y][x] = -1;
         G.solid[y][x] = 0;
       }
-    }
+    });
   }
-  // Fence around building yard
-  for (let y = 7; y <= 11; y++) {
-    setB(G, 6, y, T.FENCE);
-    setB(G, 15, y, T.FENCE);
-  }
-  for (let x = 6; x <= 9; x++) {
-    setB(G, x, 12, T.FENCE);
-  }
-  for (let x = 13; x <= 15; x++) {
-    setB(G, x, 12, T.FENCE);
-  }
-  // Signposts
-  setB(G, 30, 12, T.SIGN);
-  setB(G, 24, 20, T.SIGN);
-  // 5) 굽이치는 길
-  [
-    [[32,4],[31,13],[26,19],[23,27],[24,42]],
-    [[31,13],[42,14],[52,15],[57,24]],
-    [[26,19],[13,21],[11,33]],
-    [[23,27],[19,38]],
-    [[42,14],[39,21],[44,27]]
-  ].forEach(wp=>carvePath(G,wp));
-  // 6) 유기적 산포
+  // 3) 숲 군락
+  [[40,5,3],[40,51,4],[5,28,4],[76,20,4],[75,37,3],[40,40,3],[5,62,3]].forEach(g=>grove(G,g[0],g[1],g[2],rnd));
+  // 4) 건물 — 동네별 고정 플롯에 rank순 배치
+  const buildings=[];
+  generateAndPlaceBuildings(G, projects, buildings, rnd);
+  // 5) 스폰·동네·문 앞을 잇는 고정 도로망
+  addRoadNetwork(G,buildings);
+  // 6) 구역 안내 사인과 낮은 울타리
+  [[20,15],[58,25],[31,62],[44,31],[66,32]].forEach(([x,y])=>{
+    if(!isClear(G,x,y)) setB(G,x,y,T.SIGN);
+  });
+  [[4,6,4,51],[37,9,37,53],[78,8,78,54]].forEach(([x1,y1,x2,y2])=>{
+    if(x1===x2){ for(let y=y1;y<=y2;y+=2) if(!isClear(G,x1,y)) setB(G,x1,y,T.FENCE); }
+    else { for(let x=x1;x<=x2;x+=2) if(!isClear(G,x,y1)) setB(G,x,y1,T.FENCE); }
+  });
+  // 7) 길을 침범하지 않는 장식
   scatterDeco(G,rnd);
   // 입장 트리거 칸 + 스폰 지점은 걸을 수 있게 비움
   buildings.forEach(b=>{
-    if(inB(G,b.trigTx,b.trigTy)){ G.object[b.trigTy][b.trigTx]=-1; G.solid[b.trigTy][b.trigTx]=0; }
+    if(inB(G,b.trigTx,b.trigTy)){ setRoad(G,b.trigTx,b.trigTy); }
   });
-  const sx=32, sy=14;
+  const sx=41, sy=28;
   for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++){
     if(inB(G,sx+dx,sy+dy) && ground[sy+dy][sx+dx]!==T.WATER){
-      object[sy+dy][sx+dx]=-1; solid[sy+dy][sx+dx]=0;
+      setRoad(G,sx+dx,sy+dy);
     }
   }
   MAP={kind:'over',w:W,h:H,ground,object,solid,buildings,npcs:[],project:null};
@@ -895,13 +927,30 @@ function rebuildWorld(){
   MAP.buildings.forEach(b=>{
     const p = b.project;
     drawBuildingVisual(b);
-    const lbl = new PIXI.Text((p.icon?p.icon+' ':'')+(p.displayName||p.name), {
-      fontFamily:'Inter,sans-serif', fontSize:11, fontWeight:'700',
-      fill:0xffffff, stroke:0x16261a, strokeThickness:4, align:'center'
+    const total = projectProgress(p);
+    const labelText = (p.displayName||p.name)+'  '+total+'%'+(p.status==='paused'?' · 일시중단':'');
+    const col = TOOLC[p.tool] || TOOLC.claude;
+    const label = new PIXI.Container();
+    const txt = new PIXI.Text(labelText, {
+      fontFamily:'Inter,sans-serif', fontSize:12, fontWeight:'800',
+      fill:p.status==='paused'?0xc8c8c8:0xffffff, stroke:0x0d160d, strokeThickness:4, align:'center'
     });
-    lbl.anchor.set(0.5,1);
-    lbl.x = (b.bx+b.w/2)*TS; lbl.y = b.by*TS - 3;
-    objectC.addChild(lbl);
+    txt.anchor.set(0.5,0.5);
+    const padX = 11, padY = 5;
+    const bg = new PIXI.Graphics();
+    bg.lineStyle(2, col, p.status==='paused'?0.55:1);
+    bg.beginFill(0x16261a, p.status==='paused'?0.74:0.9);
+    bg.drawRoundedRect(-txt.width/2-padX, -txt.height/2-padY, txt.width+padX*2, txt.height+padY*2, 6);
+    bg.endFill();
+    const dot = new PIXI.Graphics();
+    dot.beginFill(col, p.status==='paused'?0.55:1);
+    dot.drawCircle(-txt.width/2-padX+8, 0, 4);
+    dot.endFill();
+    txt.x = 6;
+    label.addChild(bg,dot,txt);
+    label.x = (b.bx+b.w/2)*TS;
+    label.y = b.by*TS - 15;
+    objectC.addChild(label);
     if(p.status==='paused'){
       const cone = new PIXI.Text('🚧',{fontSize:24});
       cone.anchor.set(0.5,0.5);
@@ -981,6 +1030,11 @@ function agentsOf(p){
   if(p.agents && p.agents.length) return p.agents;
   const tool = p.tool==='hybrid' ? 'claude' : (p.tool||'claude');
   return [{ name:TOOLLBL[p.tool]||'개발', role:'개발', tool }];
+}
+function projectProgress(p){
+  const pr = p.progress || {};
+  const total = pr.total != null ? pr.total : (pr.docs||0)+(pr.skeleton||0)+(pr.features||0)+(pr.alpha||0);
+  return Math.max(0, Math.min(100, Math.round(total)));
 }
 
 /* ── 입력 ── */

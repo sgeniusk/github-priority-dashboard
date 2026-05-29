@@ -8,3 +8,6 @@
 .claude/*
 !.claude/commands/
 .playwright-mcp/
+
+# Codex run transcripts (transient)
+codex/*.log

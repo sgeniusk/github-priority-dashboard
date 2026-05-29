@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>프로젝트 일지</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Noto+Serif+KR:wght@400;500&family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --parchment:#f5f4ed;
+  --ivory:#faf9f5;
+  --ink:#1B365D;
+  --text:#141413;
+  --secondary:#3d3d3a;
+  --sub:#504e49;
+  --meta:#6b6a64;
+  --border:#e8e6dc;
+  --border-soft:#e5e3d8;
+  --serif:"Nanum Myeongjo","Noto Serif KR","Apple SD Gothic Neo",Georgia,serif;
+  --sans:"Noto Sans KR","Apple SD Gothic Neo",system-ui,sans-serif;
+  --shadow:0 18px 44px rgba(64,58,40,.055),0 1px 0 rgba(64,58,40,.035);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  min-height:100vh;
+  background:var(--parchment);
+  color:var(--text);
+  font-family:var(--serif);
+  font-size:17px;
+  line-height:1.55;
+  letter-spacing:0;
+}
+a{color:inherit}
+.page{
+  width:min(100%,980px);
+  margin:0 auto;
+  padding:28px 24px 84px;
+}
+.top-link{
+  display:inline-flex;
+  align-items:center;
+  min-height:34px;
+  margin-bottom:54px;
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:13px;
+  font-weight:500;
+  text-decoration:none;
+}
+.top-link:hover{text-decoration:underline;text-underline-offset:4px}
+.hero{
+  max-width:720px;
+  margin:0 auto 72px;
+}
+.eyebrow{
+  margin:0 0 14px;
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.12em;
+}
+h1,h2,h3,p{margin:0}
+h1{
+  font-size:clamp(40px,7vw,72px);
+  font-weight:500;
+  line-height:1.15;
+  color:var(--text);
+}
+.meta-line{
+  margin-top:18px;
+  color:var(--meta);
+  font-family:var(--sans);
+  font-size:13px;
+  line-height:1.45;
+}
+.intro{
+  margin-top:32px;
+  color:var(--secondary);
+  font-size:20px;
+  line-height:1.55;
+  font-style:italic;
+}
+.field{
+  max-width:760px;
+  margin:0 auto 88px;
+}
+.field:last-child{margin-bottom:0}
+.field-head{
+  display:grid;
+  grid-template-columns:34px 1fr;
+  gap:14px 16px;
+  align-items:start;
+  margin-bottom:30px;
+  padding-top:34px;
+  border-top:1px solid var(--border);
+}
+.field-icon{
+  color:var(--ink);
+  font-size:24px;
+  line-height:1.1;
+  filter:grayscale(1) sepia(.12);
+}
+.field-title{
+  color:var(--text);
+  font-size:31px;
+  font-weight:500;
+  line-height:1.2;
+}
+.field-intro{
+  grid-column:2;
+  color:var(--sub);
+  font-size:16px;
+  line-height:1.55;
+}
+.service{
+  position:relative;
+  margin:0 0 22px;
+  padding:28px 30px 30px;
+  background:var(--ivory);
+  border:1px solid var(--border);
+  border-radius:8px;
+  box-shadow:var(--shadow);
+}
+.service::before{
+  content:"";
+  position:absolute;
+  left:-1px;
+  top:24px;
+  bottom:24px;
+  width:3px;
+  background:var(--ink);
+  border-radius:0 2px 2px 0;
+}
+.service-header{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:16px;
+  align-items:start;
+  margin-bottom:18px;
+}
+.title-row{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:8px 10px;
+}
+.service h3{
+  color:var(--text);
+  font-size:25px;
+  font-weight:500;
+  line-height:1.25;
+}
+.tool,.paused{
+  display:inline-flex;
+  align-items:center;
+  min-height:24px;
+  padding:3px 9px;
+  border-radius:999px;
+  font-family:var(--sans);
+  font-size:11px;
+  font-weight:600;
+  line-height:1.2;
+}
+.tool{
+  color:var(--ink);
+  background:#E4ECF5;
+}
+.paused{
+  color:var(--meta);
+  background:transparent;
+  border:1px dashed var(--meta);
+}
+.progress-mini{
+  width:104px;
+  padding-top:3px;
+}
+.pct{
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:13px;
+  font-weight:600;
+  text-align:right;
+}
+.bar{
+  height:5px;
+  margin-top:8px;
+  overflow:hidden;
+  background:var(--border-soft);
+  border-radius:999px;
+}
+.bar span{
+  display:block;
+  height:100%;
+  width:var(--value);
+  background:var(--ink);
+  border-radius:999px;
+}
+.copy{
+  display:grid;
+  gap:15px;
+  max-width:680px;
+}
+.body,.goal,.progress{
+  color:var(--secondary);
+  font-size:16.5px;
+  line-height:1.55;
+}
+.goal{color:var(--sub)}
+.progress{
+  color:var(--secondary);
+  font-family:var(--sans);
+  font-size:14px;
+}
+.advice{
+  margin-top:2px;
+  padding:14px 16px 14px 18px;
+  color:var(--secondary);
+  background:var(--parchment);
+  border-left:3px solid var(--ink);
+  border-radius:0 6px 6px 0;
+  font-size:15.5px;
+  line-height:1.55;
+}
+.loading,.error{
+  max-width:680px;
+  margin:80px auto;
+  color:var(--meta);
+  font-family:var(--sans);
+  font-size:14px;
+}
+footer{
+  max-width:680px;
+  margin:72px auto 0;
+  padding-top:22px;
+  border-top:1px solid var(--border);
+  color:var(--meta);
+  font-family:var(--sans);
+  font-size:12px;
+  line-height:1.5;
+}
+@media (max-width:720px){
+  body{font-size:16px}
+  .page{padding:22px 18px 62px}
+  .top-link{margin-bottom:42px}
+  .hero{margin-bottom:58px}
+  .intro{font-size:18px}
+  .field{margin-bottom:66px}
+  .field-head{grid-template-columns:28px 1fr;gap:10px 12px}
+  .field-title{font-size:27px}
+  .service{padding:24px 20px 24px}
+  .service-header{grid-template-columns:1fr}
+  .progress-mini{width:100%;max-width:170px}
+  .pct{text-align:left}
+  .service h3{font-size:22px}
+}
+</style>
+</head>
+<body>
+<main class="page">
+  <a class="top-link" href="dashboard.html">← 대시보드</a>
+  <header class="hero" id="hero">
+    <p class="eyebrow">PROJECT JOURNAL</p>
+    <h1>프로젝트 일지</h1>
+    <p class="meta-line" id="metaLine">데이터를 불러오는 중</p>
+    <p class="intro" id="intro"></p>
+  </header>
+  <div id="reportRoot" aria-live="polite">
+    <p class="loading">보고서를 불러오는 중입니다.</p>
+  </div>
+  <footer id="footerMeta"></footer>
+</main>
+
+<script>
+/* ── FALLBACK 데이터 (fetch 실패 시 — file:// 등에서 사용) ── */
+const FALLBACK_REPORTS = {
+  "_comment": "보고서(report.html)가 읽는 분야별 줄글 데이터. 1인칭 존댓말 블로그/다이어리체. 서비스 하나당 body(내용 2~3줄)·goal(목표·방향 2줄)·progress(진척 1줄)·advice(조언 1줄). /report 커맨드로 갱신하며, report.html의 FALLBACK_REPORTS와 verbatim 동기화한다. 진척 수치·status·tool은 projects.json에서 따온다(부풀리지 않음).",
+  "generatedAt": "2026-05-28",
+  "meta": { "asOf": "2026-05-28", "owner": "sgeniusk", "ownerName": "Gomgomee" },
+  "intro": "제가 지금 짓고 있는 서비스들을 분야별로 묶어 한 편의 일지처럼 정리했습니다. 각 서비스마다 무엇을 만들고 있는지, 어디로 가려 하는지, 지금 어디쯤인지, 그리고 다음 한 걸음을 적어두었습니다.",
+  "fields": [
+    {
+      "key": "game",
+      "label": "게임",
+      "icon": "🎮",
+      "intro": "제가 만드는 게임들입니다. 삼국지에서 한국 신화까지 소재가 넓고, 장르도 디펜스·방치형·덱빌딩·타이쿤으로 갈래가 많습니다.",
+      "services": [
+        {
+          "repo": "sam-defender-logue",
+          "name": "삼국지: 시즈폴 (Siege Fall)",
+          "tool": "codex",
+          "status": "active",
+          "total": 60,
+          "body": "삼국지를 배경으로 한 디펜스형 게임입니다. P1부터 P25까지 작업 항목을 차곡차곡 정리하며 알파 플레이어블 슬라이스까지 만들었고, 가상 플레이테스트도 두 번 돌려봤습니다. 다국어 기반과 하드 난이도 승률 게이트까지 손을 댔습니다.",
+          "goal": "혼자서도 끝까지 다듬을 수 있도록, 콘텐츠를 데이터로 굴리는 단단한 하네스를 갖춘 게임을 목표로 합니다. 합성 플레이테스트로 밸런스를 검증하며 알파를 완성하는 방향입니다.",
+          "progress": "진척 60%, 알파 슬라이스는 도는데 백로그 20여 개가 쌓여 정리가 필요한 단계입니다.",
+          "advice": "콘텐츠 데이터와 마크다운 ID 불일치부터 잡으시길. 하네스가 어긋난 채로 항목을 늘리면 백로그만 더 무거워집니다."
+        },
+        {
+          "repo": "samguk-idle-prototype",
+          "name": "전지적 군주 시점",
+          "tool": "codex",
+          "status": "active",
+          "total": 60,
+          "body": "방치형 RPG입니다. 현재 v0.15.0-alpha를 기준선으로 알파 하네스(npm run harness:alpha)를 돌리고 있고, Vercel 자동 배포 후보 URL까지 준비해뒀습니다. CHANGELOG 체계도 자리를 잡았습니다.",
+          "goal": "짧게 들어와도, 하루 종일 켜둬도 각각 보람이 있는 방치형 게임을 목표로 합니다. 긴 세션에서도 진행감과 보상이 끊기지 않는 곡선을 잡아가는 방향입니다.",
+          "progress": "진척 60%, 하네스와 배포 골격은 탄탄하고 이제 밸런스 튜닝이 본게임입니다.",
+          "advice": "20분과 24시간 세션을 합성 플레이테스트로 함께 돌려보시길. 방치형은 결국 시간 곡선이 재미를 결정합니다."
+        },
+        {
+          "repo": "three-kingdoms-deckbuilder",
+          "name": "군령: 책략의 전장 (Warlord's Command)",
+          "tool": "hermes",
+          "status": "active",
+          "total": 55,
+          "body": "삼국지 진영을 고르는 슬레이 더 스파이어형 덱빌딩 게임입니다. 드로우·에너지·포지션·가드·사기·적 의도·진영(촉·위·오) 선택까지 코어 메커니즘이 다 돌아가서, 한 판 캠페인을 끝까지 플레이할 수 있습니다.",
+          "goal": "1회 캠페인을 넘어 영웅·카드·이벤트 볼륨이 충분한 본격 덱빌더를 목표로 합니다. 코에이 자산을 피한 오리지널 비주얼로 출시까지 가는 방향입니다.",
+          "progress": "진척 55%, 게임은 이미 재미있게 도는데 아트와 콘텐츠 볼륨이 다음 산입니다.",
+          "advice": "오리지널 시각 디자인 결정을 미루지 마시길. 라이선스 리스크를 빨리 걷어내야 스팀 위시리스트까지 안전하게 갑니다."
+        },
+        {
+          "repo": "ai-company-tycoon-boundaryless",
+          "name": "AI 컴퍼니 타이쿤",
+          "tool": "codex",
+          "status": "active",
+          "total": 40,
+          "body": "게임 회사를 키우는 경영 타이쿤입니다. Godot에서 웹 네이티브로 과감히 재시작했고, PRD·벤치마크(Game Dev Story)·제작 하네스·12인 합성 플레이테스트 프로토콜까지 문서를 단단히 깔았습니다. 다만 실제 게임 코드는 아직 초기입니다.",
+          "goal": "카이로소프트식 경영 재미를 웹에서 가볍게 즐기는 타이쿤을 목표로 합니다. 성장과 압박의 균형을 잡는 게 핵심 방향입니다.",
+          "progress": "진척 40%, 골격과 문서는 풍부한데 '실제로 플레이되는 코드'가 병목입니다.",
+          "advice": "MVP 1 마일스톤에 커밋을 몰아주시길. 정비 작업보다 한 판이라도 돌아가는 코드가 지금 가장 급합니다."
+        },
+        {
+          "repo": "honbul",
+          "name": "혼불 (Honbul)",
+          "tool": "hybrid",
+          "status": "active",
+          "total": 19,
+          "body": "한국 신화의 삼계(명부·인간계·천계)를 무대로 한 벽돌깨기 + 덱빌딩 + 로그라이크 모바일 게임입니다. 아직 프리프로덕션(Design Draft v0.2)이라 엔진·아트·테마·F2P 정책·컨트롤 같은 핵심 설계는 확정했지만 Godot 코드는 0입니다.",
+          "goal": "타이탄 브레이커·슬레이 더 스파이어·브로타토·페글의 손맛을 한국 신화로 엮은 한 손 플레이 모바일 게임을 목표로 합니다. Claude 하네스 + Codex 실행 워크플로우로 만들어가는 방향입니다.",
+          "progress": "진척 19%, 설계는 섰고 이제 첫 Godot 슬라이스를 떠야 할 출발선입니다.",
+          "advice": "세 장르를 한꺼번에 붙이기 전에 벽돌깨기 코어 슬라이스부터 손에 쥐어보시길. 스코프가 넓은 만큼 페이퍼 프로토타입으로 30분 런 페이싱을 먼저 확인하면 좋겠습니다."
+        }
+      ]
+    },
+    {
+      "key": "app",
+      "label": "앱",
+      "icon": "📱",
+      "intro": "일상과 생산성을 돕는 앱들입니다. 습관·이슈·사고 정리·독서·창작까지 다양한 결을 다룹니다.",
+      "services": [
+        {
+          "repo": "habit",
+          "name": "Formi (포미)",
+          "tool": "codex",
+          "status": "active",
+          "total": 70,
+          "body": "습관을 스냅 사진으로 남기고 AI가 그 패턴을 읽어주는 앱입니다. 웹 프로토타입으로 핵심 가설을 다 검증했고 10명 알파 테스터 평가까지 마쳤습니다. 지금은 Expo로 네이티브를 붙이는 단계이고, CI 하네스와 다국어까지 깔려 골격이 단단합니다.",
+          "goal": "기록이 부담이 아니라 재미가 되는 습관 앱을 목표로 합니다. 사진 한 장으로 끝나는 가벼움이 방향입니다.",
+          "progress": "진척 70%, 알파 게이트 하나만 남아 완성에 가장 가깝습니다.",
+          "advice": "Expo iOS 알파 빌드 한 번이 완성 단계 진입의 열쇠입니다. 그 전에 알파 피드백에서 AI 분석 정확도에 대한 신뢰부터 확인하시길."
+        },
+        {
+          "repo": "tteuniyu-ios",
+          "name": "뜬이유 iOS",
+          "tool": "hybrid",
+          "status": "active",
+          "total": 65,
+          "body": "무엇이 왜 지금 뜨는지를 짚어주는 iOS 앱이고 위젯 확장까지 들어갑니다. Wave 1 기반과 Wave 3 통합(RisingIssuesView·ViewModel·XCTest)까지 끝냈고, 남은 건 시뮬레이터 스크린샷과 RFP 인수 기준 25개 자가 검증입니다.",
+          "goal": "왜 지금 이게 화제인지를 한눈에 보여주는 위젯형 이슈 앱을 목표로 합니다. 메인 monorepo와의 통합 시점을 가늠하며 다듬는 방향입니다.",
+          "progress": "진척 65%인데 9일째 멈춰 있어 같은 Sprint A의 Formi 동반 마감이 흔들릴 위험이 있습니다.",
+          "advice": "이번 주에 Xcode 빌드와 시뮬레이터 스크린샷을 끝내거나, 어렵다면 Sprint A 일정을 솔직하게 재조정하시길. 멈춤을 방치하는 게 가장 비쌉니다."
+        },
+        {
+          "repo": "Nodeloom",
+          "name": "Nodeloom",
+          "tool": "claude",
+          "status": "active",
+          "total": 56,
+          "body": "마인드맵과 아웃라이너를 한 트리로 공유하는 오프라인 퍼스트 사고 정리 도구입니다. 3일 만에 32커밋으로 두 뷰·스마트 붙여넣기·검색·Hoist·내보내기(MD/OPML/JSON/CSV)·CLI 파리티까지 구현했고, vitest 하네스와 20인 페르소나 사용성 분석 1차까지 반영했습니다.",
+          "goal": "XMind·OmniOutliner를 대신할, 같은 생각을 두 시점으로 오가는 도구를 목표로 합니다. 웹·CLI·데스크톱·AI 네 면을 오프라인 퍼스트로 묶는 방향입니다.",
+          "progress": "진척 56%, 구현 속도는 인상적이지만 네 면을 동시에 유지하는 스코프가 부담입니다.",
+          "advice": "20인 페르소나 알파 피드백의 B/C 우선순위부터 정리하시길. 대형 트리 렌더 성능(React Flow 가상화)도 사용성 체감을 크게 좌우합니다."
+        },
+        {
+          "repo": "cmds-daily-briefing",
+          "name": "해치의 데일리 브리핑",
+          "tool": "claude",
+          "status": "active",
+          "total": 52,
+          "body": "해치가 CMDS 하루 브리핑을 날짜별 웹 페이지로 렌더링하는 Vercel 앱입니다. 백상현 데일리 페이지에서 영감받은 에디토리얼 UI에 /daily/YYYY-MM-DD 라우트를 두었고, 카드별 검토 액션을 Hermes action queue로 넘기는 통합이 진행 중입니다. 프로덕션 URL도 떠 있습니다.",
+          "goal": "매일의 브리핑이 읽는 맛 있는 에디토리얼로 쌓이고, 거기서 바로 액션이 흘러가는 흐름을 목표로 합니다. Hermes 큐와의 연결을 다듬는 방향입니다.",
+          "progress": "진척 52%, 프로덕션은 떠 있고 V1 에디토리얼 UI 마감이 다음 고비입니다.",
+          "advice": "Hermes action queue 통합의 종단 테스트를 먼저 닫으시길. 데이터 소스 일관성이 흔들리면 매일 쌓이는 페이지가 어긋납니다."
+        },
+        {
+          "repo": "story-x-beta",
+          "name": "Story X",
+          "tool": "claude",
+          "status": "active",
+          "total": 45,
+          "body": "소설·에세이·오디오북·만화·뮤직비디오·교육영상까지 여러 매체를 받쳐주는 창작 엔진입니다. 프로젝트 청사진과 스토리 엔진(시리즈 바이블·캐논 레저), App.tsx UI까지 코드 골격이 올라왔고 Claude 서브에이전트로 운영합니다.",
+          "goal": "하나의 이야기를 여러 매체로 펼쳐내는 창작 플랫폼을 목표로 합니다. 캐논 충돌을 자동으로 잡아주는 안전한 연재를 향한 방향입니다.",
+          "progress": "진척 45%, 매체 폭이 넓어 스코프 자체가 가장 큰 리스크입니다.",
+          "advice": "매체 하나(웹툰이나 단편 만화)를 깊이 끝까지 완성해보시길. 골든 케이스 하나가 나머지 매체의 품질 기준이 됩니다."
+        },
+        {
+          "repo": "BookCircle",
+          "name": "BookCircle",
+          "tool": "claude",
+          "status": "active",
+          "total": 20,
+          "body": "독서 모임을 위한 앱입니다. 브리프·디자인 핸드오프·구현 스펙·Next.js 스캐폴드·랜딩과 데모 UI·Supabase placeholder·스키마 초안까지 갖췄고, 의도적으로 샘플 데이터로 시작했습니다.",
+          "goal": "모임 룸·투표·리뷰가 자연스럽게 도는 독서클럽 앱을 목표로 합니다. Supabase 실연결과 인증 흐름이 다음 분기점입니다.",
+          "progress": "진척 20%, sprint=defer로 의도적 후순위 상태입니다.",
+          "advice": "책담과 도메인이 겹치니 둘의 관계부터 정리하시길. 지금 끌어올리기보다 재개 트리거만 적어두면 충분합니다."
+        },
+        {
+          "repo": "chaekdam",
+          "name": "책담 (Chaekdam)",
+          "tool": "claude",
+          "status": "active",
+          "total": 19,
+          "body": "알라딘 API와 Supabase를 엮는 독서 클럽 앱입니다. Phase 0 부트스트랩(Next.js·TS strict·Tailwind·shadcn/ui·테마·랜딩)을 마쳤고, Supabase 인증과 책 검색 연동을 준비 중입니다.",
+          "goal": "책을 매개로 사람이 모이는 클럽 경험을 목표로 합니다. 인증과 데이터 모델을 먼저 세우는 방향입니다.",
+          "progress": "진척 19%, 부트스트랩은 끝났고 핵심 데이터 모델이 이제 시작입니다.",
+          "advice": "BookCircle과 도메인이 겹칩니다. 통합할지 별개로 갈지부터 정해야 두 프로젝트의 힘이 분산되지 않습니다."
+        },
+        {
+          "repo": "Timeer",
+          "name": "Timeer",
+          "tool": "claude",
+          "status": "active",
+          "total": 7,
+          "body": "아직 Vite + React 스캐폴드만 있는 타이머 앱입니다. README도 Vite 기본 템플릿 그대로라 PRD·컨셉 단계에 머물러 있습니다.",
+          "goal": "어떤 타이머인지부터 정의하는 게 출발입니다. 컨셉이 서야 방향도 생깁니다.",
+          "progress": "진척 7%, 사실상 빈 캔버스 상태입니다.",
+          "advice": "'집중 타이머인지, 습관 타이머인지'처럼 한 줄 정체성부터 적어보시길. MVP 기능 하나만 정하면 스캐폴드가 살아납니다."
+        }
+      ]
+    },
+    {
+      "key": "content",
+      "label": "콘텐츠",
+      "icon": "📚",
+      "intro": "가르치고 보여주는 콘텐츠 프로젝트들입니다. 교육 커리큘럼과 웹툰이 여기 모입니다.",
+      "services": [
+        {
+          "repo": "ai-builder-school",
+          "name": "AI Builder School",
+          "tool": "claude",
+          "status": "active",
+          "total": 45,
+          "body": "AI로 무언가를 만드는 법을 가르치는 교육 콘텐츠 프로젝트입니다. 12단계 커리큘럼 + 6개 여정 + 32개 레슨 골격을 세웠고, 페이지 맵과 콘텐츠 데이터 모델·무결성 검증까지 깔았습니다. 남은 건 콘텐츠 채움입니다.",
+          "goal": "초보자가 단계를 밟아 진짜 빌더가 되는 학교를 목표로 합니다. 골격 위에 32개 레슨 본문을 채워가는 방향입니다.",
+          "progress": "진척 45%, 구조는 충분하고 레슨 본문 작성량이 병목입니다.",
+          "advice": "Phase별 우선 레슨 4~5개부터 깊이 완성하시길. 본문이 채워질수록 기능 점수가 직접 올라갑니다."
+        },
+        {
+          "repo": "design-system-school",
+          "name": "AI 디자인 시스템 스쿨",
+          "tool": "claude",
+          "status": "active",
+          "total": 20,
+          "body": "AI 기반 디자인 시스템 구축을 배우는 교육 콘텐츠 프로젝트입니다. 신규 등록 단계라 초기 기획과 기초 스캐폴딩을 잡아가는 중입니다.",
+          "goal": "디자인 시스템을 AI와 함께 세우는 법을 가르치는 코스를 목표로 합니다. PRD와 로드맵을 먼저 세우는 방향입니다.",
+          "progress": "진척 20%, 초기 골격 형성 단계입니다.",
+          "advice": "PRD부터 또렷이 적으시길. AI Builder School과 커리큘럼 구조를 공유하면 콘텐츠 제작 비용을 크게 아낄 수 있습니다."
+        },
+        {
+          "repo": "jewelry-webtoon-cloud",
+          "name": "반짝상점 생존기",
+          "tool": "claude",
+          "status": "paused",
+          "total": 20,
+          "body": "웹툰 콘텐츠 프로젝트입니다. Month 01 산출물(세계관·시즌·학습 지도·법규 메모·스타일 가이드·캐릭터 시트·배경팩·파일럿 3편)을 완성한 상태에서, 사용자 결정으로 일시 중단했습니다.",
+          "goal": "세계관이 살아 있는 연재 웹툰을 목표로 합니다. 핵심 게임·앱 마감 뒤 재개하는 방향입니다.",
+          "progress": "진척 20%, 일시중단(paused) 상태이고 gh 토큰도 만료돼 있습니다.",
+          "advice": "재개 트리거를 명시해두시길('핵심 게임 2개 마감 후'처럼). 지금은 현재 산출물을 README에 잘 박아두는 것으로 충분합니다."
+        }
+      ]
+    }
+  ]
+};
+
+function text(tag, className, value){
+  const el = document.createElement(tag);
+  if(className) el.className = className;
+  el.textContent = value || "";
+  return el;
+}
+
+function renderReport(data){
+  const root = document.getElementById("reportRoot");
+  const intro = document.getElementById("intro");
+  const metaLine = document.getElementById("metaLine");
+  const footerMeta = document.getElementById("footerMeta");
+  const asOf = data.meta && data.meta.asOf ? data.meta.asOf : "";
+  const generatedAt = data.generatedAt || "";
+
+  intro.textContent = data.intro || "";
+  metaLine.textContent = `데이터 ${asOf} 기준 · 마지막 갱신 ${generatedAt}`;
+  footerMeta.textContent = `${data.meta && data.meta.ownerName ? data.meta.ownerName : ""} · ${data.fields.reduce((sum, field) => sum + field.services.length, 0)}개 서비스`;
+  root.replaceChildren();
+
+  data.fields.forEach(field => {
+    const section = document.createElement("section");
+    section.className = "field";
+
+    const head = document.createElement("div");
+    head.className = "field-head";
+    head.append(text("div","field-icon",field.icon));
+
+    const titleWrap = document.createElement("div");
+    titleWrap.append(text("h2","field-title",field.label));
+    head.append(titleWrap);
+    head.append(text("p","field-intro",field.intro));
+    section.append(head);
+
+    field.services.forEach(service => {
+      const article = document.createElement("article");
+      article.className = "service";
+
+      const serviceHeader = document.createElement("div");
+      serviceHeader.className = "service-header";
+
+      const titleRow = document.createElement("div");
+      titleRow.className = "title-row";
+      titleRow.append(text("h3","",service.name));
+      titleRow.append(text("span","tool",service.tool));
+      if(service.status === "paused"){
+        titleRow.append(text("span","paused","일시중단"));
+      }
+      serviceHeader.append(titleRow);
+
+      const progressMini = document.createElement("div");
+      progressMini.className = "progress-mini";
+      progressMini.append(text("div","pct",`${service.total}%`));
+      const bar = document.createElement("div");
+      bar.className = "bar";
+      const fill = document.createElement("span");
+      fill.style.setProperty("--value", `${service.total}%`);
+      bar.append(fill);
+      progressMini.append(bar);
+      serviceHeader.append(progressMini);
+
+      article.append(serviceHeader);
+
+      const copy = document.createElement("div");
+      copy.className = "copy";
+      copy.append(text("p","body",service.body));
+      copy.append(text("p","goal",service.goal));
+      copy.append(text("p","progress",service.progress));
+      copy.append(text("p","advice",service.advice));
+      article.append(copy);
+      section.append(article);
+    });
+
+    root.append(section);
+  });
+}
+
+async function loadReports(){
+  if(location.protocol === "file:") return FALLBACK_REPORTS;
+  try{
+    const response = await fetch("./reports.json",{cache:"no-store"});
+    if(!response.ok) throw new Error(`HTTP ${response.status}`);
+    return await response.json();
+  }catch(_error){
+    return FALLBACK_REPORTS;
+  }
+}
+
+loadReports()
+  .then(renderReport)
+  .catch(() => {
+    document.getElementById("reportRoot").innerHTML = '<p class="error">보고서를 표시하지 못했습니다.</p>';
+  });
+</script>
+</body>
+</html>

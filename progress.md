@@ -2,18 +2,22 @@
 
 다음 세션이 이 한 페이지만 보고도 어디까지 했고 뭘 이어가면 되는지 알 수 있도록 유지한다. 상세 백로그는 `feature_list.json`.
 
-**Last Updated**: 2026-05-21 (커스텀 스프라이트 통합 및 대시보드 동기화 완료)
+**Last Updated**: 2026-05-29 (v2.1 대시보드 가독성 + v2.3 kami 보고서 완료 — Codex 위임 하네스 도입)
 
-## Current Objective — None (v2.0 완성형 청사진 에이전트 마일스톤 완료)
+## Current Objective — None (v2.1·v2.2·v2.3 완료, 커밋·푸시 완료)
 
-모든 v2.0 마일스톤 기능(무인 자동화 정기 실행, 회귀 방지 CI, AI 디자인 시스템 스쿨 등록, 폴백 동기화) 개발 및 검증 완료.
+대시보드 가독성(v2.1)·타운 안정화(v2.2)·kami 보고서(v2.3) 모두 완료·검증·배포. 다음 작업 대기.
 
 ## Recommended Next Step
 
-**2026-05-22 09:03 KST 자동 루틴 첫 정기 실행 결과 확인** — 원격 환경의 `GH_TOKEN` 가용성, Gmail 발송/초안 어느 경로가 활성인지 확정.
+**다음 세션 시작 시 `bash init.sh` + 이 파일 확인.** 후보 — `/report` 줄글 갱신 자동화 점검, town 동네 입구 사인 라벨 다듬기, 신규 프로젝트 등록 시 town 플롯 자동 확장(현재 game6·app9·content4 슬롯) 여부 점검.
 
 ## 직전에 푼 것
 
+- **v2.2 타운 안정화·가독성** (2026-05-29) — `town.html`. 랜덤 재시도 배치 → 동네별 고정 플롯 그리드(game6·app9·content4)로 결정론적 배치, 맵 64×48→82×70 확장, 16채 전부 배치(honbul 포함, 배치 실패 0). 맵 양분하던 세로 강 제거(연못만 유지), 흙 비율 26.5%→11.6%로 잔디 위주 + 또렷한 흙길 리본, 건물에 이름+진척% 라벨·도구색·paused 흐림. 2회 codex 루프(초안→바닥/강 보완). Claude 라이브 검증(콘솔 0·16채 데이터 확인·이동/다리 건너기).
+- **v2.3 kami 보고서 페이지** (2026-05-29) — `report.html` 신규. 분야별(게임5·앱8·콘텐츠3) 16개 서비스를 1인칭 존댓말 블로그체로 줄글 표시(내용·목표·진척·조언). 줄글은 Claude가 `reports.json`에 작성, kami 룩(파치먼트·잉크블루·세리프) UI·대시보드 링크·`/report` 커맨드는 Codex 구현. advice는 잉크블루 좌측 바 콜아웃. 콘솔 0 검증.
+- **v2.1 대시보드 진척 가독성** (2026-05-29) — 4분할 바 가독성(높이 17px·라이트 색대비·`문서·골격·기능·알파` breakdown·세그먼트 툴팁), 모멘텀 칩(`보합`/`▲+N` + `커밋 N일 전` 색코딩, 점수기반 '정체' 오해 제거), 블로커 뱃지(suggestions high), 헤더 `v2.1·meta.asOf` 동적화. Codex 구현 + Claude 검증(라이트/다크·전탭 콘솔 0).
+- **Codex 위임 하네스 도입** (2026-05-29) — `docs/codex-harness.md`(분업 계약·구동 명령·불변식·검증 게이트) + `codex/brief-*.md`. 구현은 Codex(`codex exec --sandbox workspace-write`), 설계·검증은 Claude.
 - **AI 디자인 시스템 스쿨 등록 및 폴백 동기화 (v2.0)** (2026-05-21) — `design-system-school` 리포지토리를 `projects.json`에 Rank 12로 등록하고, `/refresh` 명령을 통해 로컬 `FALLBACK_*` 상수 동기화 및 template 폴더 생성 완료.
 - **회귀 방지 CI (v2.0)** (2026-05-21) — JSON 스키마 유효성 및 `dashboard.html`/`town.html` 내장 스크립트 컴파일 문법 검사를 수행하는 `validate.mjs` 구현 및 GitHub Actions CI 연동 완료.
 - **커스텀 스프라이트 통합(v1.5.1)** (2026-05-21) — 곰곰 플레이어, 6개 NPC, 6개 가구, 8개 환경 커스텀 스프라이트(총 14종) 통합 완료. depth-sorting(Y-Sorting) 개선 및 dashboard.html의 FALLBACK_* 상수 동기화 완료.
@@ -35,12 +39,15 @@
 
 | 항목 | 상태 | 마지막 확인 |
 | --- | --- | --- |
-| `meta.asOf` | 2026-05-21 | JSON 무결성 및 sync_fallbacks.py 검증 완료 |
-| `history.json` 스냅샷 | 3개 (5/16, 5/20, 5/21) | 추세 차트 라인 11개 렌더 확인 |
-| `activity.json` 커밋 | 80건 | '활동' 탭 표시 확인 |
-| 콘솔 에러 | 0 | Playwright Chromium에서 전 탭 |
-| GitHub Pages 배포 | success | 최근 main push 직후 |
-| /schedule 루틴 | enabled, next 2026-05-21T00:03Z | 미실행(첫 실행 대기) |
+| JSON 무결성 (6종 + reports.json) | 통과 | 2026-05-29 `bash init.sh` |
+| v2.1 카드 가독성 | 검증 | breakdown·모멘텀(`커밋 N일 전`)·블로커 뱃지 렌더, 라이트/다크 정상 |
+| v2.1 전 탭 콘솔 | 0 | preview에서 청사진~사용량 전환 |
+| v2.3 report.html | 검증 | 16서비스 4요소·advice 잉크블루 콜아웃·paused 표식, 콘솔 0 |
+| 대시보드 `보고서` 링크 | 정상 | `<a href=report.html>`, 청사진 탭 로직 무손상 |
+| v2.2 town 배치 | 16/16 | 데이터 조회 confirm(honbul 포함), 콘솔 `배치 실패` 0 |
+| v2.2 town 가독성 | 검증 | 잔디 위주·흙길 리본·강 제거, 이동/다리 건너기 동작 |
+| `meta.asOf` | 2026-05-28 | 헤더 배지 동적 표시 확인 (오늘 5/29 — /refresh 대기) |
+| 커밋/배포 | 미수행 | 사용자 요청 시 commit·push (현재 작업트리에만 존재) |
 
 ## Blockers (막혀 있는 항목)
 
