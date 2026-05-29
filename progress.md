@@ -2,17 +2,20 @@
 
 다음 세션이 이 한 페이지만 보고도 어디까지 했고 뭘 이어가면 되는지 알 수 있도록 유지한다. 상세 백로그는 `feature_list.json`.
 
-**Last Updated**: 2026-05-29 (v2.1 대시보드 가독성 + v2.3 kami 보고서 완료 — Codex 위임 하네스 도입)
+**Last Updated**: 2026-05-29 (v2.1~v2.4 완료·배포 — 대시보드 가독성·타운·kami 보고서·일지 아카이브 + BookCircle·Nodeloom 중단)
 
-## Current Objective — None (v2.1·v2.2·v2.3 완료, 커밋·푸시 완료)
+## Current Objective — None (v2.1·v2.2·v2.3·v2.4 완료, 커밋·푸시·배포 완료)
 
-대시보드 가독성(v2.1)·타운 안정화(v2.2)·kami 보고서(v2.3) 모두 완료·검증·배포. 다음 작업 대기.
+대시보드 가독성(v2.1)·타운 안정화(v2.2)·kami 보고서(v2.3)·일지 날짜별 아카이브(v2.4) 모두 완료·검증·배포. BookCircle·Nodeloom paused 처리. 다음 작업 대기.
 
 ## Recommended Next Step
 
-**다음 세션 시작 시 `bash init.sh` + 이 파일 확인.** 후보 — `/report` 줄글 갱신 자동화 점검, town 동네 입구 사인 라벨 다듬기, 신규 프로젝트 등록 시 town 플롯 자동 확장(현재 game6·app9·content4 슬롯) 여부 점검.
+**다음 세션 시작 시 `bash init.sh` + 이 파일 확인.** 후보 — 일지가 며칠 쌓인 뒤 report.html 날짜 전환 재확인, `/report` 줄글 갱신 자동화 점검, 신규 프로젝트 등록 시 town 플롯(game6·app9·content4 슬롯) 초과 시 자동 확장 점검.
 
 ## 직전에 푼 것
+
+- **v2.4 일지 날짜별 아카이브** (2026-05-29) — `journal.json`(entries[date]) + `report.html` '일지 날짜' 선택기. `refresh-progress.mjs`에 `upsertJournal()` 추가 — 매 refresh(cron 포함)마다 그날 reports.json 줄글을 date로 upsert(최근 180개, dry-run 안전). 날짜 고르면 그날 일지 kami 렌더. `/report`도 journal upsert. init.sh가 reports·journal 검증. Codex 구현 + Claude 검증(dry-run·날짜 선택기·콘솔 0).
+- **BookCircle·Nodeloom 일시중단** (2026-05-29) — status active→paused, pausedReason 추가, FALLBACK·reports 동기화. 활성 15→13. (CI가 pausedReason 필수라 1차 실패→보완.)
 
 - **v2.2 타운 안정화·가독성** (2026-05-29) — `town.html`. 랜덤 재시도 배치 → 동네별 고정 플롯 그리드(game6·app9·content4)로 결정론적 배치, 맵 64×48→82×70 확장, 16채 전부 배치(honbul 포함, 배치 실패 0). 맵 양분하던 세로 강 제거(연못만 유지), 흙 비율 26.5%→11.6%로 잔디 위주 + 또렷한 흙길 리본, 건물에 이름+진척% 라벨·도구색·paused 흐림. 2회 codex 루프(초안→바닥/강 보완). Claude 라이브 검증(콘솔 0·16채 데이터 확인·이동/다리 건너기).
 - **v2.3 kami 보고서 페이지** (2026-05-29) — `report.html` 신규. 분야별(게임5·앱8·콘텐츠3) 16개 서비스를 1인칭 존댓말 블로그체로 줄글 표시(내용·목표·진척·조언). 줄글은 Claude가 `reports.json`에 작성, kami 룩(파치먼트·잉크블루·세리프) UI·대시보드 링크·`/report` 커맨드는 Codex 구현. advice는 잉크블루 좌측 바 콜아웃. 콘솔 0 검증.
