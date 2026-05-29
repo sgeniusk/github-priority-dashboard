@@ -524,7 +524,7 @@
       "category": "app",
       "visibility": "private",
       "tool": "claude",
-      "status": "active",
+      "status": "paused",
       "sprint": "defer",
       "sprintStatus": "planned",
       "stack": [
@@ -631,7 +631,7 @@
       "category": "app",
       "visibility": "private",
       "tool": "claude",
-      "status": "active",
+      "status": "paused",
       "sprint": "C",
       "sprintStatus": "inProgress",
       "stack": [
