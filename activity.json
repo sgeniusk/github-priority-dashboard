@@ -1,12 +1,174 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-05-29",
+  "asOf": "2026-05-30",
   "commits": [
     {
+      "repo": "cmds-daily-briefing",
+      "sha": "334f965",
+      "message": "Add May 30 light briefing",
+      "date": "2026-05-29T23:34:30Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "191d7bc",
+      "message": "feat: build 165 playtest alpha seal",
+      "date": "2026-05-29T22:09:30Z"
+    },
+    {
       "repo": "honbul",
-      "sha": "3466880",
-      "message": "feat(W3-01): CardData + CardEffect + DeckRuntime + 4 effect 자식 베이스",
-      "date": "2026-05-29T00:06:45Z"
+      "sha": "47b5c4d",
+      "message": "feat(W7-09): 결계 HP 가시화 + 다양한 HP 배치 (실플레이 피드백 \"블럭마다 HP\")",
+      "date": "2026-05-29T16:30:08Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "fda5a5a",
+      "message": "feat: build 155 release-proof-seal",
+      "date": "2026-05-29T16:07:38Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "d147172",
+      "message": "fix(hotfix): 공 화면 경계 반사 — 좌/우/상단 벽에서 튕겨 돌아오게 (실플레이 버그)",
+      "date": "2026-05-29T16:03:12Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "791d14d",
+      "message": "feat: build 154 staged-command",
+      "date": "2026-05-29T16:02:26Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "d5583f9",
+      "message": "feat: build 153 aftercare-agency",
+      "date": "2026-05-29T15:53:27Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "68039aa",
+      "message": "feat: build 152 clear-war-table",
+      "date": "2026-05-29T15:46:06Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "9b4eed4",
+      "message": "feat(W7-08): 씬 플로우 배선 — MainMenu→맵→Battle→맵 (게임 루프 통합 최종)",
+      "date": "2026-05-29T15:45:37Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "8f888e6",
+      "message": "feat: build 151 ridge-ambush",
+      "date": "2026-05-29T15:37:40Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "a2fb4af",
+      "message": "feat: build 150 banner-orders",
+      "date": "2026-05-29T15:28:21Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "8f3bca4",
+      "message": "feat(W7-07): 보스 패턴 realize — 반사 결계/차사/투사체/연사 실제 생성 (게임 루프 통합 3단계)",
+      "date": "2026-05-29T15:23:13Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "cee09e5",
+      "message": "feat: build 149 payoff-pressure",
+      "date": "2026-05-29T15:18:42Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "057a4fe",
+      "message": "feat(W7-06): Battle 보스 스폰 — BOSS 스테이지에 진광왕 배치 (게임 루프 통합 2단계)",
+      "date": "2026-05-29T15:10:09Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "cb35d46",
+      "message": "feat(W7-05): 보스 처치 → 런 승리 와이어링 (게임 루프 통합 1단계)",
+      "date": "2026-05-29T14:58:20Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "d511ea1",
+      "message": "feat(W7-04): 런 승리 정산 — clear_run + 종료 중복 가드 (런 라이프사이클 폐합)",
+      "date": "2026-05-29T14:42:45Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "faff3b3",
+      "message": "feat(W7-03): 진광왕 보스 — HP 임계 3페이즈 + 페이즈별 패턴 + 천옥 보상",
+      "date": "2026-05-29T14:07:45Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "02680dc",
+      "message": "Merge: 지표 카드 폭 초과 수정 + 마진 검토 병렬화",
+      "date": "2026-05-29T12:10:54Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "88282f1",
+      "message": "perf(editor): 마진 전체 검토 5명 순차→병렬 (~80s→~16s)",
+      "date": "2026-05-29T12:09:05Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "9247c5d",
+      "message": "fix(editor): 지표 DataPanel 좌레일 폭 초과로 본문 가림 수정",
+      "date": "2026-05-29T12:09:00Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "db2d33a",
+      "message": "Merge pull request #3 from sgeniusk/design/margin-integration",
+      "date": "2026-05-29T11:57:49Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "dbd8d2a",
+      "message": "feat(editor): M10 Phase 3 — 마진 검토 pending skeleton + anchor 분산",
+      "date": "2026-05-29T11:57:01Z"
+    },
+    {
+      "repo": "design-system-school",
+      "sha": "070520e",
+      "message": "docs: backfill Phase 9 hash and add Phase 10 row to progress.md",
+      "date": "2026-05-29T09:55:37Z"
+    },
+    {
+      "repo": "design-system-school",
+      "sha": "62078e0",
+      "message": "docs: backfill Phase 9·10 commit hashes in progress.md",
+      "date": "2026-05-29T09:54:37Z"
+    },
+    {
+      "repo": "design-system-school",
+      "sha": "c81ab78",
+      "message": "Phase 10: ontology graph edge color coding",
+      "date": "2026-05-29T09:54:01Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "dc8e88b",
+      "message": "Merge pull request #2 from sgeniusk/design/margin-integration",
+      "date": "2026-05-29T06:21:54Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "58180b6",
+      "message": "docs: 제품 계획 보고서 HTML + 디자인 원본 폴더 정리",
+      "date": "2026-05-29T05:58:07Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "fa1ca79",
+      "message": "docs: M10 Phase 1+2 검증 통과 인계 노트 + 지표 탭 스크린샷",
+      "date": "2026-05-29T05:20:13Z"
     },
     {
       "repo": "cmds-daily-briefing",
@@ -21,52 +183,16 @@
       "date": "2026-05-28T18:03:48Z"
     },
     {
-      "repo": "honbul",
-      "sha": "8586324",
-      "message": "feat(W2-07): Battle.tscn 본격 통합 — W2 Phase 종료",
-      "date": "2026-05-28T17:39:36Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "8a7d9b9",
-      "message": "feat(W2-06): StageRunner + ResultPanel — 스테이지 클리어/실패 판정 + 결과 placeholder UI",
-      "date": "2026-05-28T17:29:46Z"
-    },
-    {
       "repo": "chaekdam",
       "sha": "5fc22a3",
       "message": "fix: sync pnpm-lock.yaml with package.json",
       "date": "2026-05-28T17:27:41Z"
     },
     {
-      "repo": "honbul",
-      "sha": "c1dc148",
-      "message": "docs(W2-05): report.md에 Claude 검증 섹션 추가",
-      "date": "2026-05-28T17:21:06Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "ed4bf49",
-      "message": "feat(W2-05): HUD UI — life/coin 라벨 + EventBus 구독",
-      "date": "2026-05-28T17:20:36Z"
-    },
-    {
       "repo": "chaekdam",
       "sha": "8f0decd",
       "message": "feat: Phase 1 — Supabase Auth (Google OAuth) + initial schema",
       "date": "2026-05-28T17:11:21Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "8736319",
-      "message": "feat(W2-03): RunState 라이프 + 동전 시스템 + EventBus 구독",
-      "date": "2026-05-28T16:59:25Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "d83a6df",
-      "message": "feat(W2-02): Brick.gd type별 분기 — REFLECT/SHIELDED/EXPLOSIVE/MOVING",
-      "date": "2026-05-28T16:31:59Z"
     },
     {
       "repo": "ai-builder-school",
@@ -85,18 +211,6 @@
       "sha": "51aab87",
       "message": "chore(stage-1): git/github 레슨 estimatedMinutes 현실 반영",
       "date": "2026-05-28T08:56:03Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "39836fa",
-      "message": "feat(W2-01): 결계 5종 BrickData .tres + 로딩 검증 테스트",
-      "date": "2026-05-28T08:56:01Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "db51f34",
-      "message": "M9 디자인 핸드오프 패키지 + production 데모 + GitHub 동기화",
-      "date": "2026-05-28T08:47:04Z"
     },
     {
       "repo": "chaekdam",
@@ -123,40 +237,10 @@
       "date": "2026-05-27T17:11:40Z"
     },
     {
-      "repo": "story-x-beta",
-      "sha": "bc9f803",
-      "message": "M8.5~6 · 매체 선택 Linear 다크 + 편집기 폴리시 · M9 핸드오프 준비로 인계",
-      "date": "2026-05-27T14:04:06Z"
-    },
-    {
       "repo": "cmds-daily-briefing",
       "sha": "46f1f39",
       "message": "Add 2026-05-27 build note",
       "date": "2026-05-27T13:59:24Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "aeb232b",
-      "message": "M8.2~4 · UI 통합 3 카드 (게이트·매체·온톨로지)",
-      "date": "2026-05-27T13:10:40Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "33056a1",
-      "message": "M8.1 UI 통합 1차 컷 · 하네스 진단 카드",
-      "date": "2026-05-27T12:19:34Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "6f15448",
-      "message": "M4.H 청크 H 완료 · M4 8/8 완료",
-      "date": "2026-05-27T12:14:25Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "874f3c1",
-      "message": "M4.H 청크 H · 통합·리팩터 (1차 컷 · 핵심 3 작업)",
-      "date": "2026-05-27T11:50:52Z"
     },
     {
       "repo": "cmds-daily-briefing",
@@ -169,18 +253,6 @@
       "sha": "13cea7b",
       "message": "content(stage-1): ai-collaboration-mindset 본문 보강 — stub 37줄 → 92줄",
       "date": "2026-05-27T07:24:27Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "5dd9758",
-      "message": "M4.G 청크 G · 매체 투영 (Layer 7)",
-      "date": "2026-05-27T06:43:21Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "f590ecc",
-      "message": "M4.F 청크 F · 에이전트 실행 엔진 (Layer 5)",
-      "date": "2026-05-27T06:28:16Z"
     },
     {
       "repo": "ai-builder-school",
@@ -321,36 +393,6 @@
       "date": "2026-05-24T23:36:10Z"
     },
     {
-      "repo": "cmds-daily-briefing",
-      "sha": "279bf3a",
-      "message": "Update Hatchi build note for 2026-05-24",
-      "date": "2026-05-24T13:59:49Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "168c678",
-      "message": "fix: render commander cards correctly",
-      "date": "2026-05-23T10:32:31Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "b714762",
-      "message": "feat: build 53 command sheet onboarding",
-      "date": "2026-05-23T08:56:55Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "37e589c",
-      "message": "feat: build 52 paper command polish",
-      "date": "2026-05-23T07:49:01Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "961e548",
-      "message": "feat: build 51 living backdrop review",
-      "date": "2026-05-23T07:23:30Z"
-    },
-    {
       "repo": "design-system-school",
       "sha": "5926c25",
       "message": "Phase 9: design-spec extraction tool",
@@ -385,12 +427,6 @@
       "sha": "28ffe8a",
       "message": "Phase 5: learn paths include patterns",
       "date": "2026-05-21T10:37:50Z"
-    },
-    {
-      "repo": "design-system-school",
-      "sha": "7b526d9",
-      "message": "Phase 4: analysis→pattern edges",
-      "date": "2026-05-21T10:25:02Z"
     },
     {
       "repo": "sam-defender-logue",
@@ -435,12 +471,6 @@
       "date": "2026-05-21T05:10:03Z"
     },
     {
-      "repo": "design-system-school",
-      "sha": "e00a097",
-      "message": "Add project harness — feature_list, progress, handoff, init.sh",
-      "date": "2026-05-20T23:15:30Z"
-    },
-    {
       "repo": "Timeer",
       "sha": "a785d46",
       "message": "feat: init Vite React project with TDS theme and 2D canvas orb timer",
@@ -457,24 +487,6 @@
       "sha": "fc08b81",
       "message": "하네스 엔지니어링 정비 — 5개 subsystem 100/100",
       "date": "2026-05-20T15:55:06Z"
-    },
-    {
-      "repo": "design-system-school",
-      "sha": "c57d16f",
-      "message": "Phase 3b: dark mode via theming tokens",
-      "date": "2026-05-20T01:20:00Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "342ccef",
-      "message": "feat: prepare art candidate prompts (build 50 Art Candidate Prompts)",
-      "date": "2026-05-19T13:03:43Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "03fb08f",
-      "message": "feat: clarify first faction pick (build 49 First Pick Clarity)",
-      "date": "2026-05-19T12:55:33Z"
     },
     {
       "repo": "Nodeloom",
@@ -511,18 +523,6 @@
       "sha": "92a807b",
       "message": "v1.2.0 — 마인드맵 이미지 내보내기 (PNG·SVG·PDF)",
       "date": "2026-05-19T03:06:33Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "ae485a5",
-      "message": "feat: build 48 Art Pipeline Hooks",
-      "date": "2026-05-19T02:52:36Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "c845e11",
-      "message": "feat: build 47 Act I Pressure",
-      "date": "2026-05-19T02:44:37Z"
     },
     {
       "repo": "samguk-idle-prototype",
