@@ -424,7 +424,7 @@
     {
       "date": "2026-05-30",
       "avgProgress": 43,
-      "totalCommits": 1100,
+      "totalCommits": 1335,
       "active": 13,
       "projects": {
         "habit": {
@@ -441,7 +441,7 @@
         },
         "samguk-idle-prototype": {
           "total": 60,
-          "commits": 93
+          "commits": 140
         },
         "three-kingdoms-deckbuilder": {
           "total": 55,
@@ -453,11 +453,11 @@
         },
         "ai-company-tycoon-boundaryless": {
           "total": 40,
-          "commits": 134
+          "commits": 294
         },
         "story-x-beta": {
           "total": 45,
-          "commits": 163
+          "commits": 170
         },
         "BookCircle": {
           "total": 20,
@@ -477,7 +477,7 @@
         },
         "cmds-daily-briefing": {
           "total": 52,
-          "commits": 30
+          "commits": 32
         },
         "Timeer": {
           "total": 7,
@@ -485,11 +485,11 @@
         },
         "chaekdam": {
           "total": 19,
-          "commits": 6
+          "commits": 15
         },
         "honbul": {
           "total": 19,
-          "commits": 47
+          "commits": 57
         }
       }
     }

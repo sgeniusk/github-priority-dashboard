@@ -3,6 +3,192 @@
   "asOf": "2026-05-30",
   "commits": [
     {
+      "repo": "samguk-idle-prototype",
+      "sha": "cc82318",
+      "message": "Preserve local proof flow before final external receipts",
+      "date": "2026-05-30T23:42:26Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "d7bca6b",
+      "message": "Add May 31 daily console briefing",
+      "date": "2026-05-30T23:34:14Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "2e324b6",
+      "message": "Add beta candidate local gate",
+      "date": "2026-05-30T23:19:22Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "244f3e9",
+      "message": "Expand flow smoke to completion routes",
+      "date": "2026-05-30T23:14:05Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "4b0b4a0",
+      "message": "Cover final result routes in flow smoke",
+      "date": "2026-05-30T23:09:46Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "0353d24",
+      "message": "Add flow smoke freshness check",
+      "date": "2026-05-30T23:07:05Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "2488107",
+      "message": "Add local browser flow smoke gate",
+      "date": "2026-05-30T23:04:13Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "38ba3d3",
+      "message": "Gate near-miss retry QA for beta",
+      "date": "2026-05-30T22:55:59Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "194468d",
+      "message": "Add near-miss retry QA entry",
+      "date": "2026-05-30T22:33:07Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "82b048f",
+      "message": "Focus ending retries on the next run",
+      "date": "2026-05-30T22:28:51Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "3d24f10",
+      "message": "Keep soft-launch blockers explicit",
+      "date": "2026-05-30T18:19:43Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "f6f3a34",
+      "message": "Keep final screenshot proof explicit",
+      "date": "2026-05-30T17:57:44Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "8c229a4",
+      "message": "Keep adventure auto-hunt inside the store frame",
+      "date": "2026-05-30T17:36:23Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "dc0eef8",
+      "message": "Keep village growth inside the first store frame",
+      "date": "2026-05-30T17:18:52Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "8b124d6",
+      "message": "Keep summon-growth inside the first store frame",
+      "date": "2026-05-30T17:05:17Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "e7cce70",
+      "message": "Soften strategic-war screenshots before final store capture",
+      "date": "2026-05-30T16:43:44Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "dea8846",
+      "message": "Keep war combat HUD from covering screenshot center",
+      "date": "2026-05-30T16:24:42Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "325cdf1",
+      "message": "docs(W8-03): 보고서 한국어 검증본으로 통합",
+      "date": "2026-05-30T14:15:10Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "3c98d58",
+      "message": "feat(W8-03): Ball 스폰 배선 — 단일 발사 + VolleyLauncher (피벗 3단계)",
+      "date": "2026-05-30T14:14:29Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "c6e3d08",
+      "message": "Add May 30 build note archive",
+      "date": "2026-05-30T13:54:35Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "c0b3bf7",
+      "message": "docs(W8-02): 보고서 한국어 검증본으로 통합",
+      "date": "2026-05-30T13:42:39Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "9e373df",
+      "message": "feat(W8-02): 적령 연속 하강 — 시간 기반 + 바닥 도달 라이프 소모 (피벗 2단계)",
+      "date": "2026-05-30T13:41:46Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "124613c",
+      "message": "docs(W8-01): 보고서 한국어 검증본으로 통합",
+      "date": "2026-05-30T10:53:43Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "75f63c3",
+      "message": "feat(W8-01): 턴 컨트롤러 — Ballz식 무더기 발사 + 턴 종료 (코어 루프 피벗 1단계)",
+      "date": "2026-05-30T10:52:09Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "dcf2b95",
+      "message": "feat(W7-13): 전투 HUD 마나 표시 — 라이프·동전·마나 3종 (레퍼런스 전투화면)",
+      "date": "2026-05-30T09:46:05Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "b25f657",
+      "message": "feat(W7-12): 그릇 해제 (영혼 소비) — 무인/자객/무당 영혼 잠금 해제",
+      "date": "2026-05-30T09:46:04Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "020dddc",
+      "message": "docs: A2 완료 인계 노트 갱신",
+      "date": "2026-05-30T08:53:49Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "47b15f9",
+      "message": "Merge: A2 주장 레저 + 주장-근거 하네스",
+      "date": "2026-05-30T08:53:13Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "31b114b",
+      "message": "feat(academic): A2 — 주장 레저 + 주장-근거 하네스",
+      "date": "2026-05-30T08:52:17Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "a89e34c",
+      "message": "Merge: A1 사회과학/학술 매체 골격 (academic 5번째 매체)",
+      "date": "2026-05-30T02:31:05Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "98d6221",
+      "message": "feat(academic): A1 — 사회과학/학술 매체 골격 추가",
+      "date": "2026-05-30T02:30:37Z"
+    },
+    {
       "repo": "cmds-daily-briefing",
       "sha": "334f965",
       "message": "Add May 30 light briefing",
@@ -15,22 +201,40 @@
       "date": "2026-05-29T22:09:30Z"
     },
     {
-      "repo": "honbul",
-      "sha": "47b5c4d",
-      "message": "feat(W7-09): 결계 HP 가시화 + 다양한 HP 배치 (실플레이 피드백 \"블럭마다 HP\")",
-      "date": "2026-05-29T16:30:08Z"
+      "repo": "chaekdam",
+      "sha": "0e251aa",
+      "message": "feat: Phase 7d — 실시간 대화 (Realtime)",
+      "date": "2026-05-29T20:12:01Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "d8ccfce",
+      "message": "feat: Phase 7c — 이미지 업로드 (Supabase Storage)",
+      "date": "2026-05-29T20:04:08Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "8ff9700",
+      "message": "feat: Phase 7b — 비공개 클럽 초대",
+      "date": "2026-05-29T19:52:17Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "950cffc",
+      "message": "feat: Phase 7a — OG/SEO + 메타데이터",
+      "date": "2026-05-29T16:33:26Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "41cf1f9",
+      "message": "feat: Phase 6 — 좋은 문장 (클럽 문장 월)",
+      "date": "2026-05-29T16:15:01Z"
     },
     {
       "repo": "three-kingdoms-deckbuilder",
       "sha": "fda5a5a",
       "message": "feat: build 155 release-proof-seal",
       "date": "2026-05-29T16:07:38Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "d147172",
-      "message": "fix(hotfix): 공 화면 경계 반사 — 좌/우/상단 벽에서 튕겨 돌아오게 (실플레이 버그)",
-      "date": "2026-05-29T16:03:12Z"
     },
     {
       "repo": "three-kingdoms-deckbuilder",
@@ -45,16 +249,16 @@
       "date": "2026-05-29T15:53:27Z"
     },
     {
+      "repo": "chaekdam",
+      "sha": "16bff3d",
+      "message": "feat: Phase 5 — 대화 (posts + comments)",
+      "date": "2026-05-29T15:47:05Z"
+    },
+    {
       "repo": "three-kingdoms-deckbuilder",
       "sha": "68039aa",
       "message": "feat: build 152 clear-war-table",
       "date": "2026-05-29T15:46:06Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "9b4eed4",
-      "message": "feat(W7-08): 씬 플로우 배선 — MainMenu→맵→Battle→맵 (게임 루프 통합 최종)",
-      "date": "2026-05-29T15:45:37Z"
     },
     {
       "repo": "three-kingdoms-deckbuilder",
@@ -69,70 +273,28 @@
       "date": "2026-05-29T15:28:21Z"
     },
     {
-      "repo": "honbul",
-      "sha": "8f3bca4",
-      "message": "feat(W7-07): 보스 패턴 realize — 반사 결계/차사/투사체/연사 실제 생성 (게임 루프 통합 3단계)",
-      "date": "2026-05-29T15:23:13Z"
-    },
-    {
       "repo": "three-kingdoms-deckbuilder",
       "sha": "cee09e5",
       "message": "feat: build 149 payoff-pressure",
       "date": "2026-05-29T15:18:42Z"
     },
     {
-      "repo": "honbul",
-      "sha": "057a4fe",
-      "message": "feat(W7-06): Battle 보스 스폰 — BOSS 스테이지에 진광왕 배치 (게임 루프 통합 2단계)",
-      "date": "2026-05-29T15:10:09Z"
+      "repo": "story-x-beta",
+      "sha": "e172350",
+      "message": "docs: 사회과학 로드맵 확정 결정 반영 (로컬 휴리스틱·영어 APA·academic 매체)",
+      "date": "2026-05-29T14:57:22Z"
     },
     {
-      "repo": "honbul",
-      "sha": "cb35d46",
-      "message": "feat(W7-05): 보스 처치 → 런 승리 와이어링 (게임 루프 통합 1단계)",
-      "date": "2026-05-29T14:58:20Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "d511ea1",
-      "message": "feat(W7-04): 런 승리 정산 — clear_run + 종료 중복 가드 (런 라이프사이클 폐합)",
-      "date": "2026-05-29T14:42:45Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "faff3b3",
-      "message": "feat(W7-03): 진광왕 보스 — HP 임계 3페이즈 + 페이즈별 패턴 + 천옥 보상",
-      "date": "2026-05-29T14:07:45Z"
+      "repo": "story-x-beta",
+      "sha": "d380f68",
+      "message": "docs: 사회과학 글쓰기 확장 로드맵 (검토용)",
+      "date": "2026-05-29T14:52:35Z"
     },
     {
       "repo": "story-x-beta",
       "sha": "02680dc",
       "message": "Merge: 지표 카드 폭 초과 수정 + 마진 검토 병렬화",
       "date": "2026-05-29T12:10:54Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "88282f1",
-      "message": "perf(editor): 마진 전체 검토 5명 순차→병렬 (~80s→~16s)",
-      "date": "2026-05-29T12:09:05Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "9247c5d",
-      "message": "fix(editor): 지표 DataPanel 좌레일 폭 초과로 본문 가림 수정",
-      "date": "2026-05-29T12:09:00Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "db2d33a",
-      "message": "Merge pull request #3 from sgeniusk/design/margin-integration",
-      "date": "2026-05-29T11:57:49Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "dbd8d2a",
-      "message": "feat(editor): M10 Phase 3 — 마진 검토 pending skeleton + anchor 분산",
-      "date": "2026-05-29T11:57:01Z"
     },
     {
       "repo": "design-system-school",
@@ -153,46 +315,22 @@
       "date": "2026-05-29T09:54:01Z"
     },
     {
-      "repo": "story-x-beta",
-      "sha": "dc8e88b",
-      "message": "Merge pull request #2 from sgeniusk/design/margin-integration",
-      "date": "2026-05-29T06:21:54Z"
+      "repo": "chaekdam",
+      "sha": "f1d666d",
+      "message": "feat: Phase 4 — 책 + 알라딘 (서재)",
+      "date": "2026-05-29T07:08:41Z"
     },
     {
-      "repo": "story-x-beta",
-      "sha": "58180b6",
-      "message": "docs: 제품 계획 보고서 HTML + 디자인 원본 폴더 정리",
-      "date": "2026-05-29T05:58:07Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "fa1ca79",
-      "message": "docs: M10 Phase 1+2 검증 통과 인계 노트 + 지표 탭 스크린샷",
-      "date": "2026-05-29T05:20:13Z"
+      "repo": "chaekdam",
+      "sha": "be9484e",
+      "message": "feat: Phase 3 — 클럽 (탐색·생성·상세·가입·설정)",
+      "date": "2026-05-29T05:55:11Z"
     },
     {
       "repo": "cmds-daily-briefing",
       "sha": "cd78d03",
       "message": "Add May 29 research briefing",
       "date": "2026-05-28T23:35:53Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "6b0dd79",
-      "message": "docs: expand README with full roadmap (Phase 2–7) and recorded decisions",
-      "date": "2026-05-28T18:03:48Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "5fc22a3",
-      "message": "fix: sync pnpm-lock.yaml with package.json",
-      "date": "2026-05-28T17:27:41Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "8f0decd",
-      "message": "feat: Phase 1 — Supabase Auth (Google OAuth) + initial schema",
-      "date": "2026-05-28T17:11:21Z"
     },
     {
       "repo": "ai-builder-school",
@@ -213,28 +351,10 @@
       "date": "2026-05-28T08:56:03Z"
     },
     {
-      "repo": "chaekdam",
-      "sha": "c08c0e9",
-      "message": "chore: rename project from fable to chaekdam (책담)",
-      "date": "2026-05-28T00:46:39Z"
-    },
-    {
       "repo": "cmds-daily-briefing",
       "sha": "8fd91ae",
       "message": "Add May 28 research briefing",
       "date": "2026-05-27T23:38:26Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "753cffe",
-      "message": "chore: gitignore agent harness state and accept Next auto tsconfig jsx update",
-      "date": "2026-05-27T17:15:48Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "7a05dcd",
-      "message": "chore: bootstrap Next.js 16 + Tailwind v4 + shadcn/ui (Phase 0)",
-      "date": "2026-05-27T17:11:40Z"
     },
     {
       "repo": "cmds-daily-briefing",
@@ -273,58 +393,10 @@
       "date": "2026-05-27T00:36:24Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "6761c00",
-      "message": "v0.57 closeout: sync root state to v0.57-alpha (next milestone unselected)",
-      "date": "2026-05-27T00:29:44Z"
-    },
-    {
       "repo": "ai-builder-school",
       "sha": "e42f4ad",
       "message": "refactor(lesson-page): MDX 정본 + 산출물 칩 + 빌드 친절 멘트 + 회고 마무리",
       "date": "2026-05-27T00:25:51Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "bc75b7d",
-      "message": "v0.57 #9: reward-choice rarity differentiation (rare/epic glow + badge)",
-      "date": "2026-05-26T23:38:18Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "e280f4e",
-      "message": "v0.57 #8: release progress meter inside issue result ribbon",
-      "date": "2026-05-26T16:13:02Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "2a77039",
-      "message": "v0.57 #7: year-two kickoff entry animation + next-30min arrow flow",
-      "date": "2026-05-26T15:59:21Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "a38315a",
-      "message": "v0.57 #6: reward-choice card → effects arrow flow",
-      "date": "2026-05-26T15:42:10Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "9493f24",
-      "message": "v0.57 #5: first-screen entry animation + first-hire pulse",
-      "date": "2026-05-26T14:59:33Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "5078ceb",
-      "message": "v0.57 #3: expand products.json to 30 entries (Codex CLI 위임)",
-      "date": "2026-05-26T14:59:33Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "9f5efe8",
-      "message": "v0.57 #4: ease burnout aftermath penalty for early-game pacing",
-      "date": "2026-05-26T14:56:30Z"
     },
     {
       "repo": "habit",
@@ -379,18 +451,6 @@
       "sha": "90e2f5c",
       "message": "Add May 26 CMDS research briefing",
       "date": "2026-05-25T23:34:57Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "b950616",
-      "message": "Add May 25 build note",
-      "date": "2026-05-25T13:52:50Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "616bc29",
-      "message": "Add May 25 light research briefing",
-      "date": "2026-05-24T23:36:10Z"
     },
     {
       "repo": "design-system-school",
@@ -477,12 +537,6 @@
       "date": "2026-05-20T16:51:21Z"
     },
     {
-      "repo": "samguk-idle-prototype",
-      "sha": "5c821e1",
-      "message": "Ship v0.83 screen mode split",
-      "date": "2026-05-20T16:43:56Z"
-    },
-    {
       "repo": "Nodeloom",
       "sha": "fc08b81",
       "message": "하네스 엔지니어링 정비 — 5개 subsystem 100/100",
@@ -525,52 +579,10 @@
       "date": "2026-05-19T03:06:33Z"
     },
     {
-      "repo": "samguk-idle-prototype",
-      "sha": "856e7c8",
-      "message": "Document v0.71 handoff state",
-      "date": "2026-05-18T23:07:55Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "4f12a1d",
-      "message": "Expand alpha 0.71 battlefield view",
-      "date": "2026-05-18T22:46:45Z"
-    },
-    {
       "repo": "Nodeloom",
       "sha": "08c9eac",
       "message": "v1.1.1 — 마인드맵 분기선이 세로로 뭉치던 버그 수정",
       "date": "2026-05-18T15:43:56Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "bb2dbb9",
-      "message": "Add alpha 0.70 command digest",
-      "date": "2026-05-18T15:15:40Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "f443517",
-      "message": "Add adventure return loop and tactical hints",
-      "date": "2026-05-18T12:32:07Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "5865b06",
-      "message": "Prioritize adventure reward growth followup",
-      "date": "2026-05-18T10:17:06Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "08c9921",
-      "message": "Add one-tap adventure idle claim",
-      "date": "2026-05-18T10:07:55Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "5442b61",
-      "message": "Add adventure failure recovery actions",
-      "date": "2026-05-18T05:31:07Z"
     },
     {
       "repo": "jewelry-webtoon-cloud",
