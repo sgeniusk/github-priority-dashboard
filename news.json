@@ -1,0 +1,82 @@
+{
+  "_comment": "대시보드 전체 뉴스 피드. refresh마다 history/activity 델타·정체·status 변화에서 자동 생성(하이브리드 — 헤드라인 템플릿). report.html이 읽는다. _state는 변화 감지용.",
+  "generatedAt": "2026-05-31",
+  "_state": {
+    "status": {
+      "habit": "active",
+      "tteuniyu-ios": "active",
+      "sam-defender-logue": "active",
+      "samguk-idle-prototype": "active",
+      "three-kingdoms-deckbuilder": "active",
+      "ai-builder-school": "active",
+      "ai-company-tycoon-boundaryless": "active",
+      "story-x-beta": "active",
+      "BookCircle": "paused",
+      "jewelry-webtoon-cloud": "paused",
+      "Nodeloom": "paused",
+      "design-system-school": "active",
+      "cmds-daily-briefing": "active",
+      "Timeer": "paused",
+      "chaekdam": "active",
+      "honbul": "active"
+    }
+  },
+  "items": [
+    {
+      "date": "2026-05-31",
+      "repo": "tteuniyu-ios",
+      "kind": "stall",
+      "headline": "뜬이유 iOS — Sprint A 정체 — 19일째 멈춤",
+      "detail": "Sprint A에 배정된 채 19일째 활동이 없습니다. 같은 Sprint A의 Formi는 알파 직전까지 와 있어 동반 마감 일정이 크게 어긋날 위험이 있습니다.",
+      "metric": "⚠ 위험"
+    },
+    {
+      "date": "2026-05-31",
+      "repo": "sam-defender-logue",
+      "kind": "stall",
+      "headline": "삼국지: 시즈폴 (Siege Fall) — Sprint B 정체 — 10일째 멈춤",
+      "detail": "알파 슬라이스는 도는데 10일째 새 커밋이 없습니다. 백로그 20여 개가 쌓인 채로 멈춰 있어 알파 마감이 늦어질 신호입니다.",
+      "metric": "주의"
+    },
+    {
+      "date": "2026-05-30",
+      "repo": "samguk-idle-prototype",
+      "kind": "surge",
+      "headline": "전지적 군주 시점, 커밋 +47로 가속",
+      "detail": "2026-05-29 이후 커밋이 47건 늘며 개발이 활발합니다.",
+      "metric": "+47 commits"
+    },
+    {
+      "date": "2026-05-30",
+      "repo": "three-kingdoms-deckbuilder",
+      "kind": "surge",
+      "headline": "군령: 책략의 전장 (Warlord's Command), 커밋 +66로 가속",
+      "detail": "2026-05-29 이후 커밋이 66건 늘며 개발이 활발합니다.",
+      "metric": "+66 commits"
+    },
+    {
+      "date": "2026-05-30",
+      "repo": "ai-company-tycoon-boundaryless",
+      "kind": "surge",
+      "headline": "AI 컴퍼니 타이쿤, 커밋 +160로 가속",
+      "detail": "2026-05-29 이후 커밋이 160건 늘며 개발이 활발합니다.",
+      "metric": "+160 commits"
+    },
+    {
+      "date": "2026-05-30",
+      "repo": "story-x-beta",
+      "kind": "surge",
+      "headline": "Story X, 커밋 +17로 가속",
+      "detail": "2026-05-29 이후 커밋이 17건 늘며 개발이 활발합니다.",
+      "metric": "+17 commits"
+    },
+    {
+      "date": "2026-05-30",
+      "repo": "honbul",
+      "kind": "surge",
+      "headline": "혼불 (Honbul), 커밋 +43로 가속",
+      "detail": "2026-05-29 이후 커밋이 43건 늘며 개발이 활발합니다.",
+      "metric": "+43 commits"
+    }
+  ]
+}

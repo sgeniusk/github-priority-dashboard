@@ -1,0 +1,2829 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>프로젝트 보고서</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Noto+Serif+KR:wght@400;500&family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --parchment:#f5f4ed;
+  --ivory:#faf9f5;
+  --ink:#1B365D;
+  --text:#141413;
+  --secondary:#3d3d3a;
+  --sub:#504e49;
+  --meta:#6b6a64;
+  --border:#e8e6dc;
+  --border-soft:#e5e3d8;
+  --serif:"Nanum Myeongjo","Noto Serif KR","Apple SD Gothic Neo",Georgia,serif;
+  --sans:"Noto Sans KR","Apple SD Gothic Neo",system-ui,sans-serif;
+  --shadow:0 18px 44px rgba(64,58,40,.055),0 1px 0 rgba(64,58,40,.035);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  min-height:100vh;
+  background:var(--parchment);
+  color:var(--text);
+  font-family:var(--serif);
+  font-size:17px;
+  line-height:1.55;
+  letter-spacing:0;
+}
+a{color:inherit}
+.page{
+  width:min(100%,1040px);
+  margin:0 auto;
+  padding:28px 24px 84px;
+}
+.top-nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 18px;
+  margin-bottom:54px;
+}
+.top-link{
+  display:inline-flex;
+  align-items:center;
+  min-height:34px;
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:13px;
+  font-weight:500;
+  text-decoration:none;
+}
+.top-link:hover{text-decoration:underline;text-underline-offset:4px}
+h1,h2,h3,p{margin:0}
+.hero{
+  max-width:820px;
+  margin:0 auto 46px;
+}
+.eyebrow{
+  margin:0 0 14px;
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.12em;
+}
+h1{
+  font-size:clamp(38px,6vw,68px);
+  font-weight:500;
+  line-height:1.15;
+  color:var(--text);
+}
+.meta-line{
+  margin-top:18px;
+  color:var(--meta);
+  font-family:var(--sans);
+  font-size:13px;
+  line-height:1.45;
+}
+.selector-row{
+  margin-top:26px;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:10px 14px;
+  font-family:var(--sans);
+}
+.selector-row label{
+  color:var(--ink);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.08em;
+}
+.selector-row select{
+  min-width:240px;
+  min-height:38px;
+  padding:7px 34px 7px 12px;
+  color:var(--ink);
+  background:var(--ivory);
+  border:1px solid var(--border);
+  border-radius:6px;
+  font-family:var(--sans);
+  font-size:14px;
+  font-weight:500;
+}
+.selector-row select:focus{outline:2px solid rgba(27,54,93,.2);outline-offset:2px}
+.panel{
+  max-width:820px;
+  margin:0 auto 24px;
+  padding:28px 30px 30px;
+  background:var(--ivory);
+  border:1px solid var(--border);
+  border-radius:8px;
+  box-shadow:var(--shadow);
+}
+.project-head{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:18px;
+  align-items:start;
+  margin-bottom:22px;
+}
+.title-row{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:8px 10px;
+}
+.tool,.status-pill,.timeline-kind{
+  display:inline-flex;
+  align-items:center;
+  min-height:24px;
+  padding:3px 9px;
+  border-radius:999px;
+  font-family:var(--sans);
+  font-size:11px;
+  font-weight:700;
+  line-height:1.2;
+}
+.tool{color:#fff;background:var(--tool,#1B365D)}
+.tool.claude{--tool:#ff5b22}
+.tool.codex{--tool:#3fb950}
+.tool.hermes{--tool:#bc8cff}
+.tool.hybrid{--tool:#39c5cf;color:#123237}
+.status-pill{color:var(--ink);background:#E4ECF5}
+.status-pill.paused{color:var(--meta);background:transparent;border:1px dashed var(--meta)}
+.progress-mini{width:136px;padding-top:3px}
+.pct{color:var(--ink);font-family:var(--sans);font-size:13px;font-weight:700;text-align:right}
+.bar{height:6px;margin-top:8px;overflow:hidden;background:var(--border-soft);border-radius:999px}
+.bar span{display:block;height:100%;width:var(--value);background:var(--ink);border-radius:999px}
+.copy{display:grid;gap:15px;max-width:720px}
+.body,.goal{color:var(--secondary);font-size:16.5px;line-height:1.6}
+.goal{color:var(--sub)}
+.section-title{
+  margin:0 0 18px;
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.08em;
+}
+.help-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:20px;
+}
+.callout{
+  padding:15px 17px 16px;
+  color:var(--secondary);
+  background:var(--parchment);
+  border-left:3px solid var(--ink);
+  border-radius:0 6px 6px 0;
+  font-size:15.5px;
+  line-height:1.55;
+}
+.help-list{
+  display:grid;
+  gap:10px;
+  margin:0;
+  padding:0;
+  list-style:none;
+  color:var(--secondary);
+  font-size:15px;
+}
+.help-list li{
+  padding-left:16px;
+  position:relative;
+}
+.help-list li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:.72em;
+  width:5px;
+  height:5px;
+  background:var(--ink);
+  border-radius:50%;
+}
+.blocker{
+  display:grid;
+  gap:6px;
+  padding:14px 0;
+  border-top:1px solid var(--border);
+}
+.blocker:first-child{padding-top:0;border-top:0}
+.blocker h3{
+  color:var(--text);
+  font-family:var(--sans);
+  font-size:15px;
+  font-weight:700;
+}
+.blocker p,.blocker li{
+  color:var(--secondary);
+  font-size:14.5px;
+  line-height:1.55;
+}
+.timeline{
+  max-width:820px;
+  margin:0 auto;
+}
+.timeline-item{
+  position:relative;
+  display:grid;
+  grid-template-columns:132px minmax(0,1fr);
+  gap:18px;
+  padding:0 0 24px;
+}
+.timeline-item::before{
+  content:"";
+  position:absolute;
+  left:123px;
+  top:8px;
+  bottom:0;
+  width:1px;
+  background:var(--border);
+}
+.timeline-item:last-child::before{display:none}
+.timeline-date{
+  color:var(--meta);
+  font-family:var(--sans);
+  font-size:12px;
+  line-height:1.4;
+  word-break:break-word;
+}
+.timeline-card{
+  position:relative;
+  padding:18px 20px 19px;
+  background:var(--ivory);
+  border:1px solid var(--border);
+  border-radius:8px;
+  box-shadow:var(--shadow);
+}
+.timeline-card::before{
+  content:"";
+  position:absolute;
+  left:-27px;
+  top:8px;
+  width:9px;
+  height:9px;
+  background:var(--ink);
+  border:2px solid var(--parchment);
+  border-radius:50%;
+}
+.timeline-kind{color:var(--ink);background:#E4ECF5;margin-bottom:9px}
+.timeline-kind.commit{color:#245229;background:#dff4e5}
+.timeline-kind.note{color:#5a3416;background:#ffe5d6}
+.timeline-text{color:var(--secondary);font-size:15.8px;line-height:1.55}
+.sha{margin-top:8px;color:var(--meta);font-family:var(--sans);font-size:12px}
+.empty,.error{
+  max-width:820px;
+  margin:70px auto;
+  color:var(--meta);
+  font-family:var(--sans);
+  font-size:14px;
+}
+footer{
+  max-width:820px;
+  margin:62px auto 0;
+  padding-top:22px;
+  border-top:1px solid var(--border);
+  color:var(--meta);
+  font-family:var(--sans);
+  font-size:12px;
+  line-height:1.5;
+}
+@media (max-width:760px){
+  body{font-size:16px}
+  .page{padding:22px 18px 62px}
+  .top-nav{margin-bottom:40px}
+  .panel{padding:24px 20px}
+  .project-head{grid-template-columns:1fr}
+  .progress-mini{width:100%;max-width:180px}
+  .pct{text-align:left}
+  .help-grid{grid-template-columns:1fr}
+  .timeline-item{grid-template-columns:1fr;gap:8px;padding-left:22px}
+  .timeline-item::before{left:4px}
+  .timeline-card::before{left:-23px}
+  .selector-row{align-items:flex-start;flex-direction:column}
+  .selector-row select{width:100%}
+}
+</style>
+</head>
+<body>
+<main class="page">
+  <nav class="top-nav" aria-label="보고서 이동">
+    <a class="top-link" href="report.html">← 뉴스</a>
+    <a class="top-link" href="dashboard.html">← 대시보드</a>
+  </nav>
+  <header class="hero">
+    <p class="eyebrow">PROJECT REPORT</p>
+    <h1 id="projectTitle">프로젝트 보고서</h1>
+    <p class="meta-line" id="projectMeta">데이터를 불러오는 중</p>
+    <div class="selector-row">
+      <label for="projectSelector">프로젝트 이동</label>
+      <select id="projectSelector" aria-label="프로젝트 선택"></select>
+    </div>
+  </header>
+  <section class="panel" id="headerPanel" aria-live="polite"></section>
+  <section class="panel" id="helpPanel"></section>
+  <section class="timeline" id="timelinePanel"></section>
+  <footer id="footerMeta"></footer>
+</main>
+
+<script type="application/json" id="fallback-projects">
+{
+  "$schema": "./projects.schema.md",
+  "meta": {
+    "owner": "sgeniusk",
+    "ownerName": "Gomgomee",
+    "asOf": "2026-05-31",
+    "priorityCriterion": "completionProximity",
+    "progressFormula": "docs(0-20) + skeleton(0-30) + features(0-30) + alpha(0-20) = 0-100",
+    "toolLegend": {
+      "claude": "Claude Code로 작성",
+      "codex": "Codex로 작성",
+      "hermes": "Hermes Agent로 작성",
+      "hybrid": "Claude + Codex 하이브리드"
+    }
+  },
+  "projects": [
+    {
+      "rank": 1,
+      "name": "habit",
+      "displayName": "Formi (포미)",
+      "icon": "🎯",
+      "category": "app",
+      "visibility": "public",
+      "tool": "codex",
+      "status": "active",
+      "sprint": "A",
+      "sprintStatus": "inProgress",
+      "stack": [
+        "TypeScript",
+        "Vite+React (web)",
+        "Expo SDK 54 (native)",
+        "Vitest"
+      ],
+      "progress": {
+        "docs": 20,
+        "skeleton": 25,
+        "features": 15,
+        "alpha": 10,
+        "total": 70
+      },
+      "commits": 215,
+      "lastUpdate": "2026-05-26T14:35Z",
+      "firstCommit": "2026-05-13",
+      "daysActive": 18,
+      "eta": "1-2주",
+      "etaClass": "near",
+      "rationale": "PRD(2026-05-13) 확정, Alpha report + 10-tester evaluation 완료. 웹 프로토타입 검증 끝. mobile/(Expo) 디렉토리로 네이티브 통합 진행 중. CI 하네스(npm run ci)와 i18n까지 셋업됨.",
+      "risks": [
+        "Expo SDK 54 + iOS 네이티브 빌드 안정화",
+        "스냅 카메라/스토리지 권한 흐름",
+        "AI 패턴 분석 정확도 (7일 리포트)"
+      ],
+      "nextActions": [
+        "mobile/README.md 기준 Expo 알파 빌드 산출",
+        "iOS TestFlight 등록 절차",
+        "캡쳐된 alpha 사용자 피드백 반영"
+      ],
+      "agents": [
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "claude",
+          "task": "mobile/README.md 기준 Expo 알파 빌드 산출"
+        },
+        {
+          "name": "구현",
+          "role": "기능·하네스",
+          "tool": "claude",
+          "task": "iOS TestFlight 등록 절차"
+        },
+        {
+          "name": "검증",
+          "role": "테스트·QA",
+          "tool": "claude",
+          "task": "캡쳐된 alpha 사용자 피드백 반영"
+        }
+      ],
+      "url": "https://github.com/sgeniusk/habit"
+    },
+    {
+      "rank": 2,
+      "name": "tteuniyu-ios",
+      "displayName": "뜬이유 iOS",
+      "icon": "📈",
+      "category": "app",
+      "visibility": "private",
+      "tool": "hybrid",
+      "status": "active",
+      "sprint": "A",
+      "sprintStatus": "inProgress",
+      "stack": [
+        "Swift",
+        "Widget Extension",
+        "xcodegen",
+        "harness/check.sh"
+      ],
+      "progress": {
+        "docs": 20,
+        "skeleton": 25,
+        "features": 20,
+        "alpha": 0,
+        "total": 65
+      },
+      "commits": 5,
+      "lastUpdate": "2026-05-12T08:40Z",
+      "firstCommit": "2026-05-11",
+      "daysActive": 20,
+      "eta": "1-2주",
+      "etaClass": "near",
+      "rationale": "Wave 1 Foundation 완료, Wave 3 통합도 RisingIssuesView/ViewModel/XCTest까지 끝. 남은 것은 시뮬레이터 스크린샷 + RFP §11 Acceptance Criteria 25개 자가 검증.",
+      "risks": [
+        "폰트 라이선스 (Pretendard/JetBrains Mono) 추가 작업",
+        "ADR-006 게이트 (Paid Intent ≥ 4% AND Waitlist ≥ 100) 미달 시 통합 보류",
+        "Codex Wave 2 4-agent 병렬 출력 통합"
+      ],
+      "nextActions": [
+        "Xcode 빌드 + 5 시뮬레이터 스크린샷 캡처",
+        "harness/check.sh CI 통과 확인",
+        "메인 monorepo와의 통합 시점 결정"
+      ],
+      "agents": [
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "claude",
+          "task": "Xcode 빌드 + 5 시뮬레이터 스크린샷 캡처"
+        },
+        {
+          "name": "구현",
+          "role": "기능·하네스",
+          "tool": "codex",
+          "task": "harness/check.sh CI 통과 확인"
+        },
+        {
+          "name": "검증",
+          "role": "테스트·QA",
+          "tool": "claude",
+          "task": "메인 monorepo와의 통합 시점 결정"
+        }
+      ],
+      "url": "https://github.com/sgeniusk/tteuniyu-ios"
+    },
+    {
+      "rank": 3,
+      "name": "sam-defender-logue",
+      "displayName": "삼국지: 시즈폴 (Siege Fall)",
+      "icon": "🛡️",
+      "category": "game",
+      "visibility": "private",
+      "tool": "codex",
+      "status": "active",
+      "sprint": "B",
+      "sprintStatus": "planned",
+      "stack": [
+        "TypeScript",
+        "browser harness",
+        "synthetic playtest"
+      ],
+      "progress": {
+        "docs": 20,
+        "skeleton": 20,
+        "features": 15,
+        "alpha": 5,
+        "total": 60
+      },
+      "commits": 68,
+      "lastUpdate": "2026-05-21T11:13Z",
+      "firstCommit": "2026-05-02",
+      "daysActive": 29,
+      "eta": "2-3주",
+      "etaClass": "near",
+      "rationale": "P1~P25까지 작업 항목 정리. 5/14, 5/15 연속 개발 진행 업데이트. 알파 플레이어블 슬라이스 완성, 가상 플레이테스트 보고 2회. 다국어 기반(P17), Hard 승률 게이트(P18)까지 진행.",
+      "risks": [
+        "콘텐츠 데이터 vs Markdown ID 불일치 (하네스 미완)",
+        "20+ 항목 백로그 누적",
+        "에셋 파이프라인(P2) 마무리"
+      ],
+      "nextActions": [
+        "P25 루트 정찰 예측 완성",
+        "알파 완료 백로그 정리",
+        "에셋 수입 하네스 자동화"
+      ],
+      "agents": [
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "codex",
+          "task": "P25 루트 정찰 예측 완성"
+        },
+        {
+          "name": "구현",
+          "role": "기능·하네스",
+          "tool": "codex",
+          "task": "알파 완료 백로그 정리"
+        },
+        {
+          "name": "플레이테스트",
+          "role": "플레이테스트·밸런스",
+          "tool": "codex",
+          "task": "에셋 수입 하네스 자동화"
+        }
+      ],
+      "url": "https://github.com/sgeniusk/sam-defender-logue"
+    },
+    {
+      "rank": 4,
+      "name": "samguk-idle-prototype",
+      "displayName": "전지적 군주 시점",
+      "icon": "👑",
+      "category": "game",
+      "visibility": "private",
+      "tool": "codex",
+      "status": "active",
+      "sprint": "B",
+      "sprintStatus": "planned",
+      "stack": [
+        "JavaScript",
+        "Vite",
+        "Vercel",
+        "alpha harness"
+      ],
+      "progress": {
+        "docs": 20,
+        "skeleton": 25,
+        "features": 15,
+        "alpha": 0,
+        "total": 60
+      },
+      "commits": 144,
+      "lastUpdate": "2026-05-31T04:04Z",
+      "firstCommit": "2026-05-14",
+      "daysActive": 17,
+      "eta": "2-3주",
+      "etaClass": "near",
+      "rationale": "현재 기준선 v0.15.0-alpha. 알파 하네스 npm run harness:alpha 운영 중. Vercel 자동 배포 후보 URL까지 준비됨. CHANGELOG 체계도 정착.",
+      "risks": [
+        "방치 RPG 밸런스 튜닝",
+        "장기 세션의 진행감/보상 곡선",
+        "모바일 가로형 UX 최적화"
+      ],
+      "nextActions": [
+        "v0.16-alpha 게이트 통과",
+        "Vercel 정식 도메인 연결",
+        "20분/24시간 세션 합성 플레이테스트"
+      ],
+      "agents": [
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "codex",
+          "task": "v0.16-alpha 게이트 통과"
+        },
+        {
+          "name": "구현",
+          "role": "기능·하네스",
+          "tool": "codex",
+          "task": "Vercel 정식 도메인 연결"
+        },
+        {
+          "name": "플레이테스트",
+          "role": "플레이테스트·밸런스",
+          "tool": "codex",
+          "task": "20분/24시간 세션 합성 플레이테스트"
+        }
+      ],
+      "url": "https://github.com/sgeniusk/samguk-idle-prototype"
+    },
+    {
+      "rank": 5,
+      "name": "three-kingdoms-deckbuilder",
+      "displayName": "군령: 책략의 전장 (Warlord's Command)",
+      "icon": "🃏",
+      "category": "game",
+      "visibility": "private",
+      "tool": "hermes",
+      "status": "active",
+      "sprint": "C",
+      "sprintStatus": "planned",
+      "stack": [
+        "Godot 4",
+        "GDScript",
+        "JSON data"
+      ],
+      "progress": {
+        "docs": 15,
+        "skeleton": 25,
+        "features": 15,
+        "alpha": 0,
+        "total": 55
+      },
+      "commits": 156,
+      "lastUpdate": "2026-05-29T22:09Z",
+      "firstCommit": "2026-05-15",
+      "daysActive": 16,
+      "eta": "3-5주",
+      "etaClass": "mid",
+      "rationale": "코어 메커니즘 완성: deck draw/discard, energy, position, guard, morale, enemy intents, faction selection (Shu/Wei/Wu), self-guard, vulnerable, branching route, edicts. Slay-the-Spire 형 1회 캠페인 플레이 가능.",
+      "risks": [
+        "아트/UI 임시 상태 (Koei 자산 회피 필수)",
+        "Web export 안정화",
+        "콘텐츠(영웅/카드/이벤트) 볼륨 확장 필요"
+      ],
+      "nextActions": [
+        "오리지널 시각 디자인 결정",
+        "Steam Wishlist 페이지 준비",
+        "Mac/iOS 빌드 점검"
+      ],
+      "agents": [
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "hermes",
+          "task": "오리지널 시각 디자인 결정"
+        },
+        {
+          "name": "구현",
+          "role": "기능·하네스",
+          "tool": "hermes",
+          "task": "Steam Wishlist 페이지 준비"
+        },
+        {
+          "name": "플레이테스트",
+          "role": "플레이테스트·밸런스",
+          "tool": "hermes",
+          "task": "Mac/iOS 빌드 점검"
+        }
+      ],
+      "url": "https://github.com/sgeniusk/three-kingdoms-deckbuilder"
+    },
+    {
+      "rank": 6,
+      "name": "ai-builder-school",
+      "displayName": "AI Builder School",
+      "icon": "🏫",
+      "category": "content",
+      "visibility": "public",
+      "tool": "claude",
+      "status": "active",
+      "sprint": "C",
+      "sprintStatus": "planned",
+      "stack": [
+        "Next.js 15",
+        "React 19",
+        "MDX",
+        "Tailwind"
+      ],
+      "progress": {
+        "docs": 20,
+        "skeleton": 20,
+        "features": 5,
+        "alpha": 0,
+        "total": 45
+      },
+      "commits": 100,
+      "lastUpdate": "2026-05-28T09:14Z",
+      "firstCommit": "2026-05-02",
+      "daysActive": 29,
+      "eta": "3-5주",
+      "etaClass": "mid",
+      "rationale": "12-phase 커리큘럼 + 6 여정 + 32 lesson 골격 완성. 페이지 맵(/start, /curriculum, /lessons, /tracks, /projects, /templates) 정의됨. 콘텐츠 데이터 모델 + 무결성 검증 셋업. 콘텐츠 채움이 남은 핵심 작업.",
+      "risks": [
+        "32 lesson 본문 작성량",
+        "MDX 콘텐츠 일관성/번역 관리",
+        "라이선스 미정"
+      ],
+      "nextActions": [
+        "Phase별 우선 레슨 4-5개 본문 완성",
+        "캡스톤 프로젝트 예시 작성",
+        "라이선스 결정"
+      ],
+      "agents": [
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "claude",
+          "task": "Phase별 우선 레슨 4-5개 본문 완성"
+        },
+        {
+          "name": "구현",
+          "role": "기능·하네스",
+          "tool": "claude",
+          "task": "캡스톤 프로젝트 예시 작성"
+        },
+        {
+          "name": "검증",
+          "role": "테스트·QA",
+          "tool": "claude",
+          "task": "라이선스 결정"
+        }
+      ],
+      "url": "https://github.com/sgeniusk/ai-builder-school"
+    },
+    {
+      "rank": 7,
+      "name": "ai-company-tycoon-boundaryless",
+      "displayName": "AI 컴퍼니 타이쿤",
+      "icon": "🏢",
+      "category": "game",
+      "visibility": "public",
+      "tool": "codex",
+      "status": "active",
+      "sprint": "D",
+      "sprintStatus": "planned",
+      "stack": [
+        "TypeScript",
+        "Vite+React",
+        "Vercel",
+        "PRD harness"
+      ],
+      "progress": {
+        "docs": 20,
+        "skeleton": 15,
+        "features": 5,
+        "alpha": 0,
+        "total": 40
+      },
+      "commits": 294,
+      "lastUpdate": "2026-05-30T23:19Z",
+      "firstCommit": "2026-05-14",
+      "daysActive": 17,
+      "eta": "4-6주",
+      "etaClass": "mid",
+      "rationale": "Godot에서 웹 네이티브로 재시작. PRD/벤치마크(Game Dev Story)/제작 하네스/합성 플레이테스트 12명 프로토콜 정리. MILESTONE_PLAN, AGENT_REVIEW_PROTOCOL까지 준비. 실제 게임 코드는 초기 단계.",
+      "risks": [
+        "벤치마크(카이로소프트식) 디테일 모방 한계",
+        "타이쿤 시뮬레이션의 균형감 (성장 vs 압박)",
+        "재시작 결정 후 자산 재활용"
+      ],
+      "nextActions": [
+        "MVP 1 마일스톤 마감",
+        "합성 플레이테스트 12명 1차",
+        "Vercel 미리보기 배포"
+      ],
+      "agents": [
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "codex",
+          "task": "MVP 1 마일스톤 마감"
+        },
+        {
+          "name": "구현",
+          "role": "기능·하네스",
+          "tool": "codex",
+          "task": "합성 플레이테스트 12명 1차"
+        },
+        {
+          "name": "플레이테스트",
+          "role": "플레이테스트·밸런스",
+          "tool": "codex",
+          "task": "Vercel 미리보기 배포"
+        }
+      ],
+      "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless"
+    },
+    {
+      "rank": 8,
+      "name": "story-x-beta",
+      "displayName": "Story X",
+      "icon": "📖",
+      "category": "app",
+      "visibility": "private",
+      "tool": "claude",
+      "status": "active",
+      "sprint": "D",
+      "sprintStatus": "planned",
+      "stack": [
+        "TypeScript",
+        "Vite+React",
+        "Vitest",
+        "Claude/Codex agents"
+      ],
+      "progress": {
+        "docs": 20,
+        "skeleton": 15,
+        "features": 10,
+        "alpha": 0,
+        "total": 45
+      },
+      "commits": 170,
+      "lastUpdate": "2026-05-30T08:53Z",
+      "firstCommit": "2026-05-14",
+      "daysActive": 17,
+      "eta": "5-7주",
+      "etaClass": "far",
+      "rationale": "Project blueprint, creative development engine, story engine (시리즈 바이블, 캐논 레저), App.tsx UI까지 코드 골격 진행. 다양한 매체(소설/에세이/오디오북/만화/뮤직비디오/교육영상) 지원이 목표. Claude Code 서브에이전트 운영.",
+      "risks": [
+        "매체별 워크플로우 폭이 넓음 (스코프 리스크)",
+        "에이전트 협업 결과물 품질 일관성",
+        "Canon 충돌 자동 감지의 정확도"
+      ],
+      "nextActions": [
+        "1개 매체(웹툰 or 단편 만화) 깊이 우선 완성",
+        "장편 연재 메모리 앵커 테스트",
+        "에이전트 출력 골든 케이스 정착"
+      ],
+      "agents": [
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "claude",
+          "task": "1개 매체(웹툰 or 단편 만화) 깊이 우선 완성"
+        },
+        {
+          "name": "구현",
+          "role": "기능·하네스",
+          "tool": "claude",
+          "task": "장편 연재 메모리 앵커 테스트"
+        },
+        {
+          "name": "검증",
+          "role": "테스트·QA",
+          "tool": "claude",
+          "task": "에이전트 출력 골든 케이스 정착"
+        }
+      ],
+      "url": "https://github.com/sgeniusk/story-x-beta"
+    },
+    {
+      "rank": 9,
+      "name": "BookCircle",
+      "displayName": "BookCircle",
+      "icon": "📚",
+      "category": "app",
+      "visibility": "private",
+      "tool": "claude",
+      "status": "paused",
+      "sprint": "defer",
+      "sprintStatus": "planned",
+      "pausedReason": "사용자 결정 — 일시중단 (책담과 도메인 중복, 추후 재개 검토)",
+      "stack": [
+        "Next.js App Router",
+        "TypeScript",
+        "Tailwind",
+        "Supabase (planned)"
+      ],
+      "progress": {
+        "docs": 10,
+        "skeleton": 10,
+        "features": 0,
+        "alpha": 0,
+        "total": 20
+      },
+      "commits": 3,
+      "lastUpdate": "2026-05-13T22:21Z",
+      "firstCommit": "2026-05-13",
+      "daysActive": 18,
+      "eta": "8-10주 (정상 추진 시)",
+      "etaClass": "long",
+      "rationale": "Initial brief + design handoff + implementation spec + Next.js 스캐폴드 + landing/demo UI + Supabase 클라이언트 placeholder + 스키마 초안 완료. 의도적으로 sample data로 시작. Supabase 실 연결과 인증 흐름이 다음 마일스톤.",
+      "risks": [
+        "Supabase 결정 (실 연결 vs 다른 BaaS)",
+        "독서클럽 도메인 정확도 (모임 룸/투표/리뷰)",
+        "다른 핵심 프로젝트 대비 우선순위 낮음"
+      ],
+      "nextActions": [
+        "로그인 방식 + 클럽 초대 모델 결정",
+        "Supabase 프로젝트 연결",
+        "투표/리뷰 슬라이스 1개 인증 흐름까지"
+      ],
+      "agents": [
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "claude",
+          "task": "로그인 방식 + 클럽 초대 모델 결정"
+        },
+        {
+          "name": "구현",
+          "role": "기능·하네스",
+          "tool": "claude",
+          "task": "Supabase 프로젝트 연결"
+        }
+      ],
+      "url": "https://github.com/sgeniusk/BookCircle"
+    },
+    {
+      "rank": 10,
+      "name": "jewelry-webtoon-cloud",
+      "displayName": "반짝상점 생존기",
+      "icon": "💎",
+      "category": "content",
+      "visibility": "private",
+      "tool": "claude",
+      "status": "paused",
+      "sprint": "defer",
+      "sprintStatus": "planned",
+      "pausedReason": "사용자 결정 — 핵심 게임/앱 마감 후 재개 검토",
+      "stack": [
+        "Markdown",
+        "이미지 생성 파이프라인"
+      ],
+      "progress": {
+        "docs": 20,
+        "skeleton": 0,
+        "features": 0,
+        "alpha": 0,
+        "total": 20
+      },
+      "commits": 18,
+      "lastUpdate": "2026-05-15T04:09Z",
+      "firstCommit": "2026-05-14",
+      "daysActive": 17,
+      "eta": "재개 후 8-12주",
+      "etaClass": "long",
+      "rationale": "Month 01 산출물(세계관/시즌/학습 지도/법규 메모/스타일 가이드/캐릭터 시트/배경팩/파일럿 3편) 완성. gh auth 토큰 만료 상태. 사용자 결정으로 일시 중단.",
+      "risks": [
+        "gh auth 토큰 만료 → 원격 푸시 끊김",
+        "재개 시점에 콘텐츠 일관성 회복 비용",
+        "이미지 생성 일관성 (캐릭터 표정/포즈)"
+      ],
+      "nextActions": [
+        "PAUSE: 재개 트리거 정의 (예: 핵심 게임 2개 마감 후)",
+        "gh auth 복구는 재개 시 처리",
+        "현재 산출물 README에 명시"
+      ],
+      "agents": [
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "claude",
+          "task": "PAUSE: 재개 트리거 정의 (예: 핵심 게임 2개 마감 후)"
+        }
+      ],
+      "url": "https://github.com/sgeniusk/jewelry-webtoon-cloud"
+    },
+    {
+      "rank": 11,
+      "name": "Nodeloom",
+      "displayName": "Nodeloom",
+      "icon": "🪢",
+      "category": "app",
+      "visibility": "private",
+      "tool": "claude",
+      "status": "paused",
+      "sprint": "C",
+      "sprintStatus": "inProgress",
+      "pausedReason": "사용자 결정 — 일시중단 (추후 재개 검토)",
+      "stack": [
+        "Next.js 16",
+        "React 19",
+        "TypeScript",
+        "Tailwind v4",
+        "Zustand",
+        "Electron"
+      ],
+      "progress": {
+        "docs": 13,
+        "skeleton": 22,
+        "features": 17,
+        "alpha": 4,
+        "total": 56
+      },
+      "commits": 42,
+      "lastUpdate": "2026-05-20T15:55Z",
+      "firstCommit": "2026-05-16",
+      "daysActive": 15,
+      "eta": "3-5주",
+      "etaClass": "mid",
+      "rationale": "마인드맵×아웃라이너 하이브리드 사고 정리 도구. 같은 트리를 두 뷰로 공유하는 오프라인 퍼스트 앱. 3일간 32커밋으로 두 뷰·스마트 붙여넣기·검색·Hoist·내보내기(MD/OPML/JSON/CSV)·CLI 파리티까지 구현. vitest 테스트 하네스와 XMind/OmniOutliner 벤치마크 문서 보유, 20인 페르소나 사용성 분석 1차 반영.",
+      "risks": [
+        "스코프 폭 — 웹·CLI·데스크톱·AI 4면 동시 유지",
+        "오프라인 퍼스트 동기화 충돌 처리",
+        "React Flow 대형 트리 렌더 성능"
+      ],
+      "nextActions": [
+        "알파 사용성 테스트 — 20인 페르소나 우선순위 B/C 반영",
+        "Electron 데스크톱 앱 안정화",
+        "대형 트리 렌더 성능 — React Flow 가상화"
+      ],
+      "agents": [
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "claude",
+          "task": "알파 사용성 테스트 — 20인 페르소나 우선순위 B/C 반영"
+        },
+        {
+          "name": "구현",
+          "role": "기능·하네스",
+          "tool": "claude",
+          "task": "Electron 데스크톱 앱 안정화"
+        },
+        {
+          "name": "검증",
+          "role": "테스트·QA",
+          "tool": "claude",
+          "task": "대형 트리 렌더 성능 — React Flow 가상화"
+        }
+      ],
+      "url": "https://github.com/sgeniusk/Nodeloom"
+    },
+    {
+      "rank": 12,
+      "name": "design-system-school",
+      "displayName": "AI 디자인 시스템 스쿨",
+      "icon": "🎨",
+      "category": "content",
+      "visibility": "public",
+      "tool": "claude",
+      "status": "active",
+      "sprint": "C",
+      "sprintStatus": "planned",
+      "stack": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind",
+        "MDX"
+      ],
+      "progress": {
+        "docs": 10,
+        "skeleton": 10,
+        "features": 0,
+        "alpha": 0,
+        "total": 20
+      },
+      "commits": 19,
+      "lastUpdate": "2026-05-29T09:55Z",
+      "firstCommit": "2026-05-18",
+      "daysActive": 13,
+      "eta": "4-6주",
+      "etaClass": "mid",
+      "rationale": "AI 기반 디자인 시스템 구축을 배우는 교육 콘텐츠 프로젝트.",
+      "risks": [
+        "교육 매뉴얼 분량",
+        "실습 예제 코드 관리"
+      ],
+      "nextActions": [
+        "PRD 작성 및 로드맵 수립",
+        "Next.js 기본 스캐폴딩 설정"
+      ],
+      "agents": [
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "claude",
+          "task": "PRD 작성 및 로드맵 수립"
+        },
+        {
+          "name": "구현",
+          "role": "기능·하네스",
+          "tool": "claude",
+          "task": "Next.js 기본 스캐폴딩 설정"
+        },
+        {
+          "name": "검증",
+          "role": "테스트·QA",
+          "tool": "claude",
+          "task": "콘텐츠 유효성 확인"
+        }
+      ],
+      "url": "https://github.com/sgeniusk/design-system-school"
+    },
+    {
+      "rank": 13,
+      "name": "cmds-daily-briefing",
+      "displayName": "해치의 데일리 브리핑",
+      "icon": "📰",
+      "category": "app",
+      "visibility": "private",
+      "tool": "claude",
+      "status": "active",
+      "sprint": "B",
+      "sprintStatus": "inProgress",
+      "stack": [
+        "Next.js",
+        "Vercel",
+        "TypeScript",
+        "Hermes action queue"
+      ],
+      "progress": {
+        "docs": 12,
+        "skeleton": 22,
+        "features": 14,
+        "alpha": 4,
+        "total": 52
+      },
+      "commits": 32,
+      "lastUpdate": "2026-05-30T23:34Z",
+      "firstCommit": "2026-05-21",
+      "daysActive": 10,
+      "eta": "2-3주",
+      "etaClass": "near",
+      "rationale": "해치가 CMDS 1일 브리핑을 날짜별 웹 페이지로 렌더링하는 Vercel 앱. 백상현 daily page 영감의 에디토리얼 UI, /daily/YYYY-MM-DD 라우트. 카드별 검토 액션을 Hermes action queue로 넘기는 통합 진행 중. Production URL 가동.",
+      "risks": [
+        "Hermes action queue 통합 안정성",
+        "daily 페이지 데이터 소스 일관성",
+        "에디토리얼 레퍼런스 UI 재현 폭"
+      ],
+      "nextActions": [
+        "V1 에디토리얼 UI 마감",
+        "Hermes action queue 통합 종단 테스트",
+        "최근 7일·30일 인덱스 페이지"
+      ],
+      "agents": [
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "claude",
+          "task": "V1 에디토리얼 UI 마감"
+        },
+        {
+          "name": "구현",
+          "role": "기능·하네스",
+          "tool": "claude",
+          "task": "Hermes action queue 통합 종단 테스트"
+        },
+        {
+          "name": "검증",
+          "role": "테스트·QA",
+          "tool": "claude",
+          "task": "최근 7일·30일 인덱스 페이지"
+        }
+      ],
+      "url": "https://github.com/sgeniusk/cmds-daily-briefing"
+    },
+    {
+      "rank": 14,
+      "name": "Timeer",
+      "displayName": "Timeer",
+      "icon": "⏰",
+      "category": "app",
+      "visibility": "private",
+      "tool": "claude",
+      "status": "paused",
+      "sprint": "defer",
+      "sprintStatus": "planned",
+      "pausedReason": "사용자 결정 — 일시중단 (PRD·컨셉 단계, 추후 재개 검토)",
+      "stack": [
+        "React",
+        "Vite"
+      ],
+      "progress": {
+        "docs": 2,
+        "skeleton": 5,
+        "features": 0,
+        "alpha": 0,
+        "total": 7
+      },
+      "commits": 1,
+      "lastUpdate": "2026-05-20T16:52Z",
+      "firstCommit": "2026-05-20",
+      "daysActive": 11,
+      "eta": "미정",
+      "etaClass": "long",
+      "rationale": "Vite + React 스캐폴드만 존재. README가 Vite 기본 템플릿 그대로 — PRD·컨셉 단계, 산출물 없음.",
+      "risks": [
+        "PRD 미작성 — 스코프·목표 미정",
+        "스캐폴드 외 산출물 없음"
+      ],
+      "nextActions": [
+        "PRD 작성 — 어떤 타이머인지 정의",
+        "MVP 기능 1개 정의",
+        "스캐폴드를 실 코드로 채우기"
+      ],
+      "agents": [
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "claude",
+          "task": "PRD 작성 — 어떤 타이머인지 정의"
+        },
+        {
+          "name": "구현",
+          "role": "기능·하네스",
+          "tool": "claude",
+          "task": "MVP 기능 1개 정의"
+        },
+        {
+          "name": "검증",
+          "role": "테스트·QA",
+          "tool": "claude",
+          "task": "스캐폴드를 실 코드로 채우기"
+        }
+      ],
+      "url": "https://github.com/sgeniusk/Timeer"
+    },
+    {
+      "rank": 15,
+      "name": "chaekdam",
+      "displayName": "책담 (Chaekdam)",
+      "icon": "📖",
+      "category": "app",
+      "visibility": "private",
+      "tool": "claude",
+      "status": "active",
+      "sprint": "C",
+      "sprintStatus": "inProgress",
+      "stack": [
+        "Next.js 15",
+        "TypeScript",
+        "Tailwind",
+        "shadcn/ui",
+        "Supabase",
+        "Aladin API"
+      ],
+      "progress": {
+        "docs": 6,
+        "skeleton": 10,
+        "features": 3,
+        "alpha": 0,
+        "total": 19
+      },
+      "commits": 15,
+      "lastUpdate": "2026-05-30T02:30Z",
+      "firstCommit": "2026-05-27",
+      "daysActive": 4,
+      "eta": "5-7주",
+      "etaClass": "far",
+      "rationale": "Phase 0 bootstrap 완료 — Next.js + TS strict + Tailwind + shadcn/ui 구조, 테마, 초기 랜딩 페이지. Supabase 인증·Aladin 책 검색 연동 준비. BookCircle과 도메인 겹치는 독서 클럽 신규 시도(BookCircle은 sprint=defer로 정체 상태).",
+      "risks": [
+        "BookCircle과 도메인 중복 — 한쪽으로 통합 결정 필요",
+        "Supabase 데이터 모델 정의",
+        "Aladin API 사용량·캐싱 설계"
+      ],
+      "nextActions": [
+        "Supabase 인증 + RLS 정책 설계",
+        "독서 클럽 모임 데이터 모델 1차 확정",
+        "BookCircle과 관계 정리 — 통합/별개 결정"
+      ],
+      "agents": [
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "claude",
+          "task": "Supabase 인증 + RLS 정책 설계"
+        },
+        {
+          "name": "구현",
+          "role": "기능·하네스",
+          "tool": "claude",
+          "task": "독서 클럽 모임 데이터 모델 1차 확정"
+        },
+        {
+          "name": "검증",
+          "role": "테스트·QA",
+          "tool": "claude",
+          "task": "BookCircle과 관계 정리 — 통합/별개 결정"
+        }
+      ],
+      "url": "https://github.com/sgeniusk/chaekdam"
+    },
+    {
+      "rank": 16,
+      "name": "honbul",
+      "displayName": "혼불 (Honbul)",
+      "icon": "🔥",
+      "category": "game",
+      "visibility": "private",
+      "tool": "hybrid",
+      "status": "active",
+      "sprint": "C",
+      "sprintStatus": "inProgress",
+      "stack": [
+        "Godot 4.3+",
+        "GDScript",
+        "한국 신화 IP",
+        "Mobile (Android → iOS)"
+      ],
+      "progress": {
+        "docs": 14,
+        "skeleton": 5,
+        "features": 0,
+        "alpha": 0,
+        "total": 19
+      },
+      "commits": 57,
+      "lastUpdate": "2026-05-30T14:15Z",
+      "firstCommit": "2026-05-27",
+      "daysActive": 4,
+      "eta": "8-12주",
+      "etaClass": "long",
+      "rationale": "Pre-production / Design Draft v0.2. 한국 신화 삼계(명부·인간계·천계)를 무대로 한 벽돌깨기 + 덱빌딩 + 로그라이크 모바일 게임. 핵심 설계 확정(엔진·아트·테마·F2P 정책·컨트롤). 영감: 타이탄 브레이커·Slay the Spire·Brotato·Peggle. 워크플로우: Claude 하네스 + Codex CLI 실행.",
+      "risks": [
+        "Pre-production 단계 — 실제 Godot 코드 0",
+        "스코프 폭(벽돌깨기 + 덱빌딩 + 로그라이크 융합) 통제",
+        "한국 신화 IP 정확성·문화 자문",
+        "모바일 터치 한 손 플레이 검증"
+      ],
+      "nextActions": [
+        "Godot 4.3+ 프로젝트 스캐폴드 + 벽돌깨기 코어 슬라이스",
+        "부적·술법 카드 모델 1차 정의",
+        "30분 런 페이싱 페이퍼 프로토타입"
+      ],
+      "agents": [
+        {
+          "name": "설계",
+          "role": "PRD·아키텍처",
+          "tool": "claude",
+          "task": "Godot 4.3+ 프로젝트 스캐폴드 + 벽돌깨기 코어 슬라이스"
+        },
+        {
+          "name": "구현",
+          "role": "기능·하네스",
+          "tool": "codex",
+          "task": "부적·술법 카드 모델 1차 정의"
+        },
+        {
+          "name": "플레이테스트",
+          "role": "플레이테스트·밸런스",
+          "tool": "codex",
+          "task": "30분 런 페이싱 페이퍼 프로토타입"
+        }
+      ],
+      "url": "https://github.com/sgeniusk/honbul"
+    }
+  ]
+}
+</script>
+<script type="application/json" id="fallback-reports">
+{
+  "_comment": "보고서(report.html)가 읽는 분야별 줄글 데이터. 1인칭 존댓말 블로그/다이어리체. 서비스 하나당 body(내용 2~3줄)·goal(목표·방향 2줄)·progress(진척 1줄)·advice(조언 1줄). /report 커맨드로 갱신하며, report.html의 FALLBACK_REPORTS와 verbatim 동기화한다. 진척 수치·status·tool은 projects.json에서 따온다(부풀리지 않음).",
+  "generatedAt": "2026-05-28",
+  "meta": {
+    "asOf": "2026-05-28",
+    "owner": "sgeniusk",
+    "ownerName": "Gomgomee"
+  },
+  "intro": "제가 지금 짓고 있는 서비스들을 분야별로 묶어 한 편의 일지처럼 정리했습니다. 각 서비스마다 무엇을 만들고 있는지, 어디로 가려 하는지, 지금 어디쯤인지, 그리고 다음 한 걸음을 적어두었습니다.",
+  "fields": [
+    {
+      "key": "game",
+      "label": "게임",
+      "icon": "🎮",
+      "intro": "제가 만드는 게임들입니다. 삼국지에서 한국 신화까지 소재가 넓고, 장르도 디펜스·방치형·덱빌딩·타이쿤으로 갈래가 많습니다.",
+      "services": [
+        {
+          "repo": "sam-defender-logue",
+          "name": "삼국지: 시즈폴 (Siege Fall)",
+          "tool": "codex",
+          "status": "active",
+          "total": 60,
+          "body": "삼국지를 배경으로 한 디펜스형 게임입니다. P1부터 P25까지 작업 항목을 차곡차곡 정리하며 알파 플레이어블 슬라이스까지 만들었고, 가상 플레이테스트도 두 번 돌려봤습니다. 다국어 기반과 하드 난이도 승률 게이트까지 손을 댔습니다.",
+          "goal": "혼자서도 끝까지 다듬을 수 있도록, 콘텐츠를 데이터로 굴리는 단단한 하네스를 갖춘 게임을 목표로 합니다. 합성 플레이테스트로 밸런스를 검증하며 알파를 완성하는 방향입니다.",
+          "progress": "진척 60%, 알파 슬라이스는 도는데 백로그 20여 개가 쌓여 정리가 필요한 단계입니다.",
+          "advice": "콘텐츠 데이터와 마크다운 ID 불일치부터 잡으시길. 하네스가 어긋난 채로 항목을 늘리면 백로그만 더 무거워집니다."
+        },
+        {
+          "repo": "samguk-idle-prototype",
+          "name": "전지적 군주 시점",
+          "tool": "codex",
+          "status": "active",
+          "total": 60,
+          "body": "방치형 RPG입니다. 현재 v0.15.0-alpha를 기준선으로 알파 하네스(npm run harness:alpha)를 돌리고 있고, Vercel 자동 배포 후보 URL까지 준비해뒀습니다. CHANGELOG 체계도 자리를 잡았습니다.",
+          "goal": "짧게 들어와도, 하루 종일 켜둬도 각각 보람이 있는 방치형 게임을 목표로 합니다. 긴 세션에서도 진행감과 보상이 끊기지 않는 곡선을 잡아가는 방향입니다.",
+          "progress": "진척 60%, 하네스와 배포 골격은 탄탄하고 이제 밸런스 튜닝이 본게임입니다.",
+          "advice": "20분과 24시간 세션을 합성 플레이테스트로 함께 돌려보시길. 방치형은 결국 시간 곡선이 재미를 결정합니다."
+        },
+        {
+          "repo": "three-kingdoms-deckbuilder",
+          "name": "군령: 책략의 전장 (Warlord's Command)",
+          "tool": "hermes",
+          "status": "active",
+          "total": 55,
+          "body": "삼국지 진영을 고르는 슬레이 더 스파이어형 덱빌딩 게임입니다. 드로우·에너지·포지션·가드·사기·적 의도·진영(촉·위·오) 선택까지 코어 메커니즘이 다 돌아가서, 한 판 캠페인을 끝까지 플레이할 수 있습니다.",
+          "goal": "1회 캠페인을 넘어 영웅·카드·이벤트 볼륨이 충분한 본격 덱빌더를 목표로 합니다. 코에이 자산을 피한 오리지널 비주얼로 출시까지 가는 방향입니다.",
+          "progress": "진척 55%, 게임은 이미 재미있게 도는데 아트와 콘텐츠 볼륨이 다음 산입니다.",
+          "advice": "오리지널 시각 디자인 결정을 미루지 마시길. 라이선스 리스크를 빨리 걷어내야 스팀 위시리스트까지 안전하게 갑니다."
+        },
+        {
+          "repo": "ai-company-tycoon-boundaryless",
+          "name": "AI 컴퍼니 타이쿤",
+          "tool": "codex",
+          "status": "active",
+          "total": 40,
+          "body": "게임 회사를 키우는 경영 타이쿤입니다. Godot에서 웹 네이티브로 과감히 재시작했고, PRD·벤치마크(Game Dev Story)·제작 하네스·12인 합성 플레이테스트 프로토콜까지 문서를 단단히 깔았습니다. 다만 실제 게임 코드는 아직 초기입니다.",
+          "goal": "카이로소프트식 경영 재미를 웹에서 가볍게 즐기는 타이쿤을 목표로 합니다. 성장과 압박의 균형을 잡는 게 핵심 방향입니다.",
+          "progress": "진척 40%, 골격과 문서는 풍부한데 '실제로 플레이되는 코드'가 병목입니다.",
+          "advice": "MVP 1 마일스톤에 커밋을 몰아주시길. 정비 작업보다 한 판이라도 돌아가는 코드가 지금 가장 급합니다."
+        },
+        {
+          "repo": "honbul",
+          "name": "혼불 (Honbul)",
+          "tool": "hybrid",
+          "status": "active",
+          "total": 19,
+          "body": "한국 신화의 삼계(명부·인간계·천계)를 무대로 한 벽돌깨기 + 덱빌딩 + 로그라이크 모바일 게임입니다. 아직 프리프로덕션(Design Draft v0.2)이라 엔진·아트·테마·F2P 정책·컨트롤 같은 핵심 설계는 확정했지만 Godot 코드는 0입니다.",
+          "goal": "타이탄 브레이커·슬레이 더 스파이어·브로타토·페글의 손맛을 한국 신화로 엮은 한 손 플레이 모바일 게임을 목표로 합니다. Claude 하네스 + Codex 실행 워크플로우로 만들어가는 방향입니다.",
+          "progress": "진척 19%, 설계는 섰고 이제 첫 Godot 슬라이스를 떠야 할 출발선입니다.",
+          "advice": "세 장르를 한꺼번에 붙이기 전에 벽돌깨기 코어 슬라이스부터 손에 쥐어보시길. 스코프가 넓은 만큼 페이퍼 프로토타입으로 30분 런 페이싱을 먼저 확인하면 좋겠습니다."
+        }
+      ]
+    },
+    {
+      "key": "app",
+      "label": "앱",
+      "icon": "📱",
+      "intro": "일상과 생산성을 돕는 앱들입니다. 습관·이슈·사고 정리·독서·창작까지 다양한 결을 다룹니다.",
+      "services": [
+        {
+          "repo": "habit",
+          "name": "Formi (포미)",
+          "tool": "codex",
+          "status": "active",
+          "total": 70,
+          "body": "습관을 스냅 사진으로 남기고 AI가 그 패턴을 읽어주는 앱입니다. 웹 프로토타입으로 핵심 가설을 다 검증했고 10명 알파 테스터 평가까지 마쳤습니다. 지금은 Expo로 네이티브를 붙이는 단계이고, CI 하네스와 다국어까지 깔려 골격이 단단합니다.",
+          "goal": "기록이 부담이 아니라 재미가 되는 습관 앱을 목표로 합니다. 사진 한 장으로 끝나는 가벼움이 방향입니다.",
+          "progress": "진척 70%, 알파 게이트 하나만 남아 완성에 가장 가깝습니다.",
+          "advice": "Expo iOS 알파 빌드 한 번이 완성 단계 진입의 열쇠입니다. 그 전에 알파 피드백에서 AI 분석 정확도에 대한 신뢰부터 확인하시길."
+        },
+        {
+          "repo": "tteuniyu-ios",
+          "name": "뜬이유 iOS",
+          "tool": "hybrid",
+          "status": "active",
+          "total": 65,
+          "body": "무엇이 왜 지금 뜨는지를 짚어주는 iOS 앱이고 위젯 확장까지 들어갑니다. Wave 1 기반과 Wave 3 통합(RisingIssuesView·ViewModel·XCTest)까지 끝냈고, 남은 건 시뮬레이터 스크린샷과 RFP 인수 기준 25개 자가 검증입니다.",
+          "goal": "왜 지금 이게 화제인지를 한눈에 보여주는 위젯형 이슈 앱을 목표로 합니다. 메인 monorepo와의 통합 시점을 가늠하며 다듬는 방향입니다.",
+          "progress": "진척 65%인데 9일째 멈춰 있어 같은 Sprint A의 Formi 동반 마감이 흔들릴 위험이 있습니다.",
+          "advice": "이번 주에 Xcode 빌드와 시뮬레이터 스크린샷을 끝내거나, 어렵다면 Sprint A 일정을 솔직하게 재조정하시길. 멈춤을 방치하는 게 가장 비쌉니다."
+        },
+        {
+          "repo": "Nodeloom",
+          "name": "Nodeloom",
+          "tool": "claude",
+          "status": "paused",
+          "total": 56,
+          "body": "마인드맵과 아웃라이너를 한 트리로 공유하는 오프라인 퍼스트 사고 정리 도구입니다. 3일 만에 32커밋으로 두 뷰·스마트 붙여넣기·검색·Hoist·내보내기(MD/OPML/JSON/CSV)·CLI 파리티까지 구현했고, vitest 하네스와 20인 페르소나 사용성 분석 1차까지 반영했습니다.",
+          "goal": "XMind·OmniOutliner를 대신할, 같은 생각을 두 시점으로 오가는 도구를 목표로 합니다. 웹·CLI·데스크톱·AI 네 면을 오프라인 퍼스트로 묶는 방향입니다.",
+          "progress": "진척 56%, 구현 속도는 인상적이지만 네 면을 동시에 유지하는 스코프가 부담입니다.",
+          "advice": "20인 페르소나 알파 피드백의 B/C 우선순위부터 정리하시길. 대형 트리 렌더 성능(React Flow 가상화)도 사용성 체감을 크게 좌우합니다."
+        },
+        {
+          "repo": "cmds-daily-briefing",
+          "name": "해치의 데일리 브리핑",
+          "tool": "claude",
+          "status": "active",
+          "total": 52,
+          "body": "해치가 CMDS 하루 브리핑을 날짜별 웹 페이지로 렌더링하는 Vercel 앱입니다. 백상현 데일리 페이지에서 영감받은 에디토리얼 UI에 /daily/YYYY-MM-DD 라우트를 두었고, 카드별 검토 액션을 Hermes action queue로 넘기는 통합이 진행 중입니다. 프로덕션 URL도 떠 있습니다.",
+          "goal": "매일의 브리핑이 읽는 맛 있는 에디토리얼로 쌓이고, 거기서 바로 액션이 흘러가는 흐름을 목표로 합니다. Hermes 큐와의 연결을 다듬는 방향입니다.",
+          "progress": "진척 52%, 프로덕션은 떠 있고 V1 에디토리얼 UI 마감이 다음 고비입니다.",
+          "advice": "Hermes action queue 통합의 종단 테스트를 먼저 닫으시길. 데이터 소스 일관성이 흔들리면 매일 쌓이는 페이지가 어긋납니다."
+        },
+        {
+          "repo": "story-x-beta",
+          "name": "Story X",
+          "tool": "claude",
+          "status": "active",
+          "total": 45,
+          "body": "소설·에세이·오디오북·만화·뮤직비디오·교육영상까지 여러 매체를 받쳐주는 창작 엔진입니다. 프로젝트 청사진과 스토리 엔진(시리즈 바이블·캐논 레저), App.tsx UI까지 코드 골격이 올라왔고 Claude 서브에이전트로 운영합니다.",
+          "goal": "하나의 이야기를 여러 매체로 펼쳐내는 창작 플랫폼을 목표로 합니다. 캐논 충돌을 자동으로 잡아주는 안전한 연재를 향한 방향입니다.",
+          "progress": "진척 45%, 매체 폭이 넓어 스코프 자체가 가장 큰 리스크입니다.",
+          "advice": "매체 하나(웹툰이나 단편 만화)를 깊이 끝까지 완성해보시길. 골든 케이스 하나가 나머지 매체의 품질 기준이 됩니다."
+        },
+        {
+          "repo": "BookCircle",
+          "name": "BookCircle",
+          "tool": "claude",
+          "status": "paused",
+          "total": 20,
+          "body": "독서 모임을 위한 앱입니다. 브리프·디자인 핸드오프·구현 스펙·Next.js 스캐폴드·랜딩과 데모 UI·Supabase placeholder·스키마 초안까지 갖췄고, 의도적으로 샘플 데이터로 시작했습니다.",
+          "goal": "모임 룸·투표·리뷰가 자연스럽게 도는 독서클럽 앱을 목표로 합니다. Supabase 실연결과 인증 흐름이 다음 분기점입니다.",
+          "progress": "진척 20%, sprint=defer로 의도적 후순위 상태입니다.",
+          "advice": "책담과 도메인이 겹치니 둘의 관계부터 정리하시길. 지금 끌어올리기보다 재개 트리거만 적어두면 충분합니다."
+        },
+        {
+          "repo": "chaekdam",
+          "name": "책담 (Chaekdam)",
+          "tool": "claude",
+          "status": "active",
+          "total": 19,
+          "body": "알라딘 API와 Supabase를 엮는 독서 클럽 앱입니다. Phase 0 부트스트랩(Next.js·TS strict·Tailwind·shadcn/ui·테마·랜딩)을 마쳤고, Supabase 인증과 책 검색 연동을 준비 중입니다.",
+          "goal": "책을 매개로 사람이 모이는 클럽 경험을 목표로 합니다. 인증과 데이터 모델을 먼저 세우는 방향입니다.",
+          "progress": "진척 19%, 부트스트랩은 끝났고 핵심 데이터 모델이 이제 시작입니다.",
+          "advice": "BookCircle과 도메인이 겹칩니다. 통합할지 별개로 갈지부터 정해야 두 프로젝트의 힘이 분산되지 않습니다."
+        },
+        {
+          "repo": "Timeer",
+          "name": "Timeer",
+          "tool": "claude",
+          "status": "paused",
+          "total": 7,
+          "body": "아직 Vite + React 스캐폴드만 있는 타이머 앱입니다. README도 Vite 기본 템플릿 그대로라 PRD·컨셉 단계에 머물러 있습니다.",
+          "goal": "어떤 타이머인지부터 정의하는 게 출발입니다. 컨셉이 서야 방향도 생깁니다.",
+          "progress": "진척 7%, 사실상 빈 캔버스 상태입니다.",
+          "advice": "'집중 타이머인지, 습관 타이머인지'처럼 한 줄 정체성부터 적어보시길. MVP 기능 하나만 정하면 스캐폴드가 살아납니다."
+        }
+      ]
+    },
+    {
+      "key": "content",
+      "label": "콘텐츠",
+      "icon": "📚",
+      "intro": "가르치고 보여주는 콘텐츠 프로젝트들입니다. 교육 커리큘럼과 웹툰이 여기 모입니다.",
+      "services": [
+        {
+          "repo": "ai-builder-school",
+          "name": "AI Builder School",
+          "tool": "claude",
+          "status": "active",
+          "total": 45,
+          "body": "AI로 무언가를 만드는 법을 가르치는 교육 콘텐츠 프로젝트입니다. 12단계 커리큘럼 + 6개 여정 + 32개 레슨 골격을 세웠고, 페이지 맵과 콘텐츠 데이터 모델·무결성 검증까지 깔았습니다. 남은 건 콘텐츠 채움입니다.",
+          "goal": "초보자가 단계를 밟아 진짜 빌더가 되는 학교를 목표로 합니다. 골격 위에 32개 레슨 본문을 채워가는 방향입니다.",
+          "progress": "진척 45%, 구조는 충분하고 레슨 본문 작성량이 병목입니다.",
+          "advice": "Phase별 우선 레슨 4~5개부터 깊이 완성하시길. 본문이 채워질수록 기능 점수가 직접 올라갑니다."
+        },
+        {
+          "repo": "design-system-school",
+          "name": "AI 디자인 시스템 스쿨",
+          "tool": "claude",
+          "status": "active",
+          "total": 20,
+          "body": "AI 기반 디자인 시스템 구축을 배우는 교육 콘텐츠 프로젝트입니다. 신규 등록 단계라 초기 기획과 기초 스캐폴딩을 잡아가는 중입니다.",
+          "goal": "디자인 시스템을 AI와 함께 세우는 법을 가르치는 코스를 목표로 합니다. PRD와 로드맵을 먼저 세우는 방향입니다.",
+          "progress": "진척 20%, 초기 골격 형성 단계입니다.",
+          "advice": "PRD부터 또렷이 적으시길. AI Builder School과 커리큘럼 구조를 공유하면 콘텐츠 제작 비용을 크게 아낄 수 있습니다."
+        },
+        {
+          "repo": "jewelry-webtoon-cloud",
+          "name": "반짝상점 생존기",
+          "tool": "claude",
+          "status": "paused",
+          "total": 20,
+          "body": "웹툰 콘텐츠 프로젝트입니다. Month 01 산출물(세계관·시즌·학습 지도·법규 메모·스타일 가이드·캐릭터 시트·배경팩·파일럿 3편)을 완성한 상태에서, 사용자 결정으로 일시 중단했습니다.",
+          "goal": "세계관이 살아 있는 연재 웹툰을 목표로 합니다. 핵심 게임·앱 마감 뒤 재개하는 방향입니다.",
+          "progress": "진척 20%, 일시중단(paused) 상태이고 gh 토큰도 만료돼 있습니다.",
+          "advice": "재개 트리거를 명시해두시길('핵심 게임 2개 마감 후'처럼). 지금은 현재 산출물을 README에 잘 박아두는 것으로 충분합니다."
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script type="application/json" id="fallback-suggestions">
+{
+  "_comment": "/coach 및 /refresh 슬래시 커맨드가 생성하는 분석·제안 데이터. 대시보드의 '제안 / 코칭' 패널이 읽는다. 수동 편집보다 커맨드 재생성을 권장. paused 프로젝트는 정체 경고 대상에서 제외한다.",
+  "generatedAt": "2026-05-31",
+  "items": [
+    {
+      "repo": "tteuniyu-ios",
+      "type": "stall",
+      "severity": "high",
+      "title": "Sprint A 정체 — 19일째 멈춤",
+      "detail": "Sprint A에 배정된 채 19일째 활동이 없습니다. 같은 Sprint A의 Formi는 알파 직전까지 와 있어 동반 마감 일정이 크게 어긋날 위험이 있습니다.",
+      "evidence": [
+        "마지막 푸시 2026-05-12 — asOf 2026-05-31 기준 19일 경과",
+        "커밋 5 / Sprint A · sprintStatus inProgress · rank 2",
+        "남은 작업은 시뮬레이터 스크린샷 + RFP 인수 기준 25개 자가 검증"
+      ],
+      "confidence": "high",
+      "recommendation": "이번 주 안에 Xcode 빌드·시뮬레이터 스크린샷을 끝내 Sprint A를 닫거나, 어렵다면 Sprint A 일정을 명시적으로 재조정한다. 멈춤을 방치하는 게 가장 비싸다.",
+      "actions": [
+        "Xcode 빌드 + 5개 시뮬레이터 스크린샷 캡처",
+        "harness/check.sh CI 통과 확인",
+        "메인 monorepo 통합 시점 결정 또는 Sprint 재배정"
+      ]
+    },
+    {
+      "repo": "sam-defender-logue",
+      "type": "stall",
+      "severity": "warn",
+      "title": "Sprint B 정체 — 10일째 멈춤",
+      "detail": "알파 슬라이스는 도는데 10일째 새 커밋이 없습니다. 백로그 20여 개가 쌓인 채로 멈춰 있어 알파 마감이 늦어질 신호입니다.",
+      "evidence": [
+        "마지막 푸시 2026-05-21 — 10일 경과",
+        "total 60 · Sprint B · 백로그 20+ 누적",
+        "콘텐츠 데이터 vs 마크다운 ID 불일치(하네스 미완) 리스크"
+      ],
+      "confidence": "med",
+      "recommendation": "콘텐츠 데이터·마크다운 ID 불일치부터 잡고 백로그를 P25 루트 정찰 예측 완성 중심으로 정리한다.",
+      "actions": [
+        "콘텐츠 ID 불일치 하네스 정리",
+        "P25 루트 정찰 예측 완성",
+        "알파 완료 백로그 우선순위화"
+      ]
+    },
+    {
+      "repo": "habit",
+      "type": "coach",
+      "severity": "info",
+      "title": "완성 최근접 — 알파 게이트만 남음",
+      "detail": "알파(10/20)가 유일한 미완 영역이라 완성에 가장 가깝습니다. Expo iOS 알파 빌드 1회로 완성 단계 진입이 가능합니다.",
+      "evidence": [
+        "total 70 · Sprint A · 마지막 커밋 5일 이내",
+        "웹 프로토타입 + 10인 알파 평가 완료",
+        "CI 하네스·i18n까지 셋업됨"
+      ],
+      "confidence": "high",
+      "recommendation": "Expo iOS 알파 빌드를 최우선에 둔다. 그 전에 알파 피드백에서 AI 패턴 분석 정확도에 대한 신뢰부터 확인한다.",
+      "actions": [
+        "mobile/README.md 기준 Expo 알파 빌드 산출",
+        "iOS TestFlight 등록 절차",
+        "알파 사용자 피드백 반영"
+      ]
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "type": "coach",
+      "severity": "info",
+      "title": "기능 병목 — 커밋은 활발하나 동작 코드가 적음",
+      "detail": "커밋 294로 매우 활발하지만 정비·문서 작업에 쏠려 '실제로 플레이되는 코드'가 병목입니다. 골격·문서는 풍부한데 게임 코드는 아직 초기입니다.",
+      "evidence": [
+        "total 40 · 마지막 커밋 1일 이내 · 커밋 294",
+        "PRD·벤치마크·제작 하네스·12인 플레이테스트 프로토콜 완비",
+        "실제 게임 코드 초기 단계"
+      ],
+      "confidence": "med",
+      "recommendation": "MVP 1 마일스톤에 커밋을 몰아 한 판이라도 플레이되는 코드를 먼저 만든다.",
+      "actions": [
+        "MVP 1 마일스톤 마감",
+        "합성 플레이테스트 12명 1차",
+        "Vercel 미리보기 배포"
+      ]
+    },
+    {
+      "repo": "ai-builder-school",
+      "type": "coach",
+      "severity": "info",
+      "title": "기능 단계 병목 — 32개 레슨 본문 채움",
+      "detail": "12단계 커리큘럼·6여정·32레슨 골격과 데이터 모델은 충분하니, 이제 레슨 본문 작성량이 기능 점수의 병목입니다.",
+      "evidence": [
+        "total 45 · Sprint C · 마지막 커밋 3일 이내",
+        "페이지 맵·콘텐츠 데이터 모델·무결성 검증 셋업",
+        "32 레슨 본문 미작성"
+      ],
+      "confidence": "high",
+      "recommendation": "Phase별 우선 레슨 4~5개부터 깊이 완성해 기능 점수를 끌어올린다.",
+      "actions": [
+        "Phase별 우선 레슨 4-5개 본문 완성",
+        "캡스톤 프로젝트 예시 작성",
+        "라이선스 결정"
+      ]
+    },
+    {
+      "repo": "honbul",
+      "type": "coach",
+      "severity": "info",
+      "title": "본격 착수 — 커밋 14→57로 가속",
+      "detail": "프리프로덕션에서 벗어나 커밋이 14에서 57로 늘며 본격 구현이 시작됐습니다. 스코프(벽돌깨기+덱빌딩+로그라이크)가 넓은 만큼 코어부터 잡는 게 중요합니다.",
+      "evidence": [
+        "total 19 · Sprint C · 마지막 커밋 1일 이내 · 커밋 57",
+        "엔진·아트·테마·F2P 정책 설계 확정",
+        "세 장르 융합 — 스코프 통제 리스크"
+      ],
+      "confidence": "med",
+      "recommendation": "벽돌깨기 코어 슬라이스부터 손에 쥐고, 30분 런 페이싱을 페이퍼 프로토타입으로 먼저 검증한다.",
+      "actions": [
+        "Godot 벽돌깨기 코어 슬라이스",
+        "부적·술법 카드 모델 1차 정의",
+        "30분 런 페이싱 페이퍼 프로토타입"
+      ]
+    },
+    {
+      "repo": "chaekdam",
+      "type": "coach",
+      "severity": "info",
+      "title": "신규 가속 — BookCircle과 도메인 정리 필요",
+      "detail": "Phase 0 부트스트랩 후 커밋 6→15로 빠르게 움직이고 있습니다. 다만 일시중단된 BookCircle과 독서 클럽 도메인이 겹쳐 관계를 먼저 정리해야 힘이 분산되지 않습니다.",
+      "evidence": [
+        "total 19 · Sprint C · 마지막 커밋 1일 이내 · 커밋 15",
+        "Next.js·Supabase·Aladin API 부트스트랩 완료",
+        "BookCircle(paused)과 도메인 중복"
+      ],
+      "confidence": "med",
+      "recommendation": "BookCircle과 통합할지 별개로 갈지부터 결정하고, Supabase 인증·RLS와 모임 데이터 모델을 먼저 세운다.",
+      "actions": [
+        "BookCircle과 관계 정리 — 통합/별개 결정",
+        "Supabase 인증 + RLS 정책 설계",
+        "독서 클럽 모임 데이터 모델 1차 확정"
+      ]
+    }
+  ]
+}
+</script>
+<script type="application/json" id="fallback-logs">
+{
+  "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·진척 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
+  "generatedAt": "2026-05-31",
+  "logs": {
+    "habit": [
+      {
+        "date": "2026-05-25T23:58:00Z",
+        "kind": "commit",
+        "text": "Connect Home to the Today loop action model",
+        "sha": "6b74580"
+      },
+      {
+        "date": "2026-05-26T01:33:21Z",
+        "kind": "commit",
+        "text": "Refresh Claude Code handoff",
+        "sha": "a407144"
+      },
+      {
+        "date": "2026-05-26T06:47:17Z",
+        "kind": "commit",
+        "text": "Add Codex delegation packet for report proof friction",
+        "sha": "7fadccd"
+      },
+      {
+        "date": "2026-05-26T13:03:41Z",
+        "kind": "commit",
+        "text": "Collapse phone proof live session when idle",
+        "sha": "52638d1"
+      },
+      {
+        "date": "2026-05-26T14:09:07Z",
+        "kind": "commit",
+        "text": "Add extended action strip set to AGY packet",
+        "sha": "6f97c10"
+      },
+      {
+        "date": "2026-05-26T14:18:46Z",
+        "kind": "commit",
+        "text": "Add dismissible PROOF OF ONE intro card",
+        "sha": "3a293b8"
+      },
+      {
+        "date": "2026-05-26T14:25:14Z",
+        "kind": "commit",
+        "text": "Redirect proof scorecard next action to FOCUSED VIEW",
+        "sha": "1ef1ccf"
+      },
+      {
+        "date": "2026-05-26T14:33:35Z",
+        "kind": "commit",
+        "text": "Trim duplicated run section cards from proof mode",
+        "sha": "6b769c7"
+      },
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "Expo iOS 알파 빌드 한 번이 완성 단계 진입의 열쇠입니다. 그 전에 알파 피드백에서 AI 분석 정확도에 대한 신뢰부터 확인하시길."
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 70%"
+      }
+    ],
+    "tteuniyu-ios": [
+      {
+        "date": "2026-05-11T11:46:53Z",
+        "kind": "commit",
+        "text": "Initial commit",
+        "sha": "3c326be"
+      },
+      {
+        "date": "2026-05-11T15:28:24Z",
+        "kind": "commit",
+        "text": "Wave 2 Bulk impl — Codex 4 agent 병렬 결과 (1,379 LOC Swift) (#1)",
+        "sha": "6b249f6"
+      },
+      {
+        "date": "2026-05-11T23:27:08Z",
+        "kind": "commit",
+        "text": "Wave 3 Integration — RisingIssuesView + ViewModel + XCTest 30+ (#2)",
+        "sha": "f075158"
+      },
+      {
+        "date": "2026-05-12T06:54:01Z",
+        "kind": "commit",
+        "text": "Wave 4 — Xcode 빌드 수정 4건 (Info.plist + Category 명시 + INFOPLIST_FILE) (#3)",
+        "sha": "1a44683"
+      },
+      {
+        "date": "2026-05-12T08:40:24Z",
+        "kind": "commit",
+        "text": "Wave 5 — Mock data fallback + 브랜드 \"뜬 이유\" + UX 개선 (#4)",
+        "sha": "4541274"
+      },
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "이번 주에 Xcode 빌드와 시뮬레이터 스크린샷을 끝내거나, 어렵다면 Sprint A 일정을 솔직하게 재조정하시길. 멈춤을 방치하는 게 가장 비쌉니다."
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 65%"
+      }
+    ],
+    "sam-defender-logue": [
+      {
+        "date": "2026-05-21T05:10:03Z",
+        "kind": "commit",
+        "text": "Add battlefield core combat proof gate",
+        "sha": "ded91e5"
+      },
+      {
+        "date": "2026-05-21T05:24:53Z",
+        "kind": "commit",
+        "text": "Add battlefield sortie direct focus",
+        "sha": "91bd817"
+      },
+      {
+        "date": "2026-05-21T05:45:29Z",
+        "kind": "commit",
+        "text": "Add battlefield terrain asset adapter",
+        "sha": "f53a0e4"
+      },
+      {
+        "date": "2026-05-21T06:00:57Z",
+        "kind": "commit",
+        "text": "Add battlefield manual fun gate",
+        "sha": "fafdf95"
+      },
+      {
+        "date": "2026-05-21T06:21:18Z",
+        "kind": "commit",
+        "text": "Add battlefield graphics tone plan",
+        "sha": "0c7ef35"
+      },
+      {
+        "date": "2026-05-21T07:51:43Z",
+        "kind": "commit",
+        "text": "Import first battlefield terrain sign asset",
+        "sha": "084617c"
+      },
+      {
+        "date": "2026-05-21T08:22:59Z",
+        "kind": "commit",
+        "text": "Add battlefield combat tempo readiness",
+        "sha": "2d95477"
+      },
+      {
+        "date": "2026-05-21T11:13:14Z",
+        "kind": "commit",
+        "text": "Add battlefield combat feedback sample slots",
+        "sha": "c499287"
+      },
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "콘텐츠 데이터와 마크다운 ID 불일치부터 잡으시길. 하네스가 어긋난 채로 항목을 늘리면 백로그만 더 무거워집니다."
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 60%"
+      }
+    ],
+    "samguk-idle-prototype": [
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "20분과 24시간 세션을 합성 플레이테스트로 함께 돌려보시길. 방치형은 결국 시간 곡선이 재미를 결정합니다."
+      },
+      {
+        "date": "2026-05-30T17:36:23Z",
+        "kind": "commit",
+        "text": "Keep adventure auto-hunt inside the store frame",
+        "sha": "8c229a4"
+      },
+      {
+        "date": "2026-05-30T17:57:44Z",
+        "kind": "commit",
+        "text": "Keep final screenshot proof explicit",
+        "sha": "f6f3a34"
+      },
+      {
+        "date": "2026-05-30T18:19:43Z",
+        "kind": "commit",
+        "text": "Keep soft-launch blockers explicit",
+        "sha": "3d24f10"
+      },
+      {
+        "date": "2026-05-30T23:42:26Z",
+        "kind": "commit",
+        "text": "Preserve local proof flow before final external receipts",
+        "sha": "cc82318"
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 60% · 커밋 +4"
+      },
+      {
+        "date": "2026-05-31T01:52:27Z",
+        "kind": "commit",
+        "text": "Keep local launch rehearsal visible before final proof",
+        "sha": "df1fe8c"
+      },
+      {
+        "date": "2026-05-31T02:43:05Z",
+        "kind": "commit",
+        "text": "Prove daily retention can restart locally before final proof",
+        "sha": "a523fda"
+      },
+      {
+        "date": "2026-05-31T03:21:04Z",
+        "kind": "commit",
+        "text": "Expose the daily return loop as an actionable route",
+        "sha": "c673c97"
+      },
+      {
+        "date": "2026-05-31T04:04:19Z",
+        "kind": "commit",
+        "text": "Centralize readiness metadata to remove report drift",
+        "sha": "4786aa1"
+      }
+    ],
+    "three-kingdoms-deckbuilder": [
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "오리지널 시각 디자인 결정을 미루지 마시길. 라이선스 리스크를 빨리 걷어내야 스팀 위시리스트까지 안전하게 갑니다."
+      },
+      {
+        "date": "2026-05-29T15:18:42Z",
+        "kind": "commit",
+        "text": "feat: build 149 payoff-pressure",
+        "sha": "cee09e5"
+      },
+      {
+        "date": "2026-05-29T15:28:21Z",
+        "kind": "commit",
+        "text": "feat: build 150 banner-orders",
+        "sha": "a2fb4af"
+      },
+      {
+        "date": "2026-05-29T15:37:40Z",
+        "kind": "commit",
+        "text": "feat: build 151 ridge-ambush",
+        "sha": "8f888e6"
+      },
+      {
+        "date": "2026-05-29T15:46:06Z",
+        "kind": "commit",
+        "text": "feat: build 152 clear-war-table",
+        "sha": "68039aa"
+      },
+      {
+        "date": "2026-05-29T15:53:27Z",
+        "kind": "commit",
+        "text": "feat: build 153 aftercare-agency",
+        "sha": "d5583f9"
+      },
+      {
+        "date": "2026-05-29T16:02:26Z",
+        "kind": "commit",
+        "text": "feat: build 154 staged-command",
+        "sha": "791d14d"
+      },
+      {
+        "date": "2026-05-29T16:07:38Z",
+        "kind": "commit",
+        "text": "feat: build 155 release-proof-seal",
+        "sha": "fda5a5a"
+      },
+      {
+        "date": "2026-05-29T22:09:30Z",
+        "kind": "commit",
+        "text": "feat: build 165 playtest alpha seal",
+        "sha": "191d7bc"
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 55%"
+      }
+    ],
+    "ai-builder-school": [
+      {
+        "date": "2026-05-27T00:25:51Z",
+        "kind": "commit",
+        "text": "refactor(lesson-page): MDX 정본 + 산출물 칩 + 빌드 친절 멘트 + 회고 마무리",
+        "sha": "e42f4ad"
+      },
+      {
+        "date": "2026-05-27T00:36:24Z",
+        "kind": "commit",
+        "text": "feat(reading-rail): 사이드바를 본문·빌드·검증·회고 4단계로 — 본문 hidden anchor 추가",
+        "sha": "6c56670"
+      },
+      {
+        "date": "2026-05-27T05:32:09Z",
+        "kind": "commit",
+        "text": "content(stage-1): cost-monitoring-in-production 본문 보강 — stub 34줄 → 84줄",
+        "sha": "deb4064"
+      },
+      {
+        "date": "2026-05-27T05:36:04Z",
+        "kind": "commit",
+        "text": "content(stage-1): ai-delegation-decision 본문 보강 — stub 36줄 → 96줄",
+        "sha": "e14fd37"
+      },
+      {
+        "date": "2026-05-27T07:24:27Z",
+        "kind": "commit",
+        "text": "content(stage-1): ai-collaboration-mindset 본문 보강 — stub 37줄 → 92줄",
+        "sha": "13cea7b"
+      },
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "Phase별 우선 레슨 4~5개부터 깊이 완성하시길. 본문이 채워질수록 기능 점수가 직접 올라갑니다."
+      },
+      {
+        "date": "2026-05-28T08:56:03Z",
+        "kind": "commit",
+        "text": "chore(stage-1): git/github 레슨 estimatedMinutes 현실 반영",
+        "sha": "51aab87"
+      },
+      {
+        "date": "2026-05-28T09:11:34Z",
+        "kind": "commit",
+        "text": "content: 옛 레슨 \\\"## 다음 레슨\\\" 일괄 제거 + terminal-first-day 압축",
+        "sha": "8420c9e"
+      },
+      {
+        "date": "2026-05-28T09:14:26Z",
+        "kind": "commit",
+        "text": "content(stage-1): 13 레슨에 buildIntro·reflectionOutro 강사 멘트 주입",
+        "sha": "f67d6d1"
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 45%"
+      }
+    ],
+    "ai-company-tycoon-boundaryless": [
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "MVP 1 마일스톤에 커밋을 몰아주시길. 정비 작업보다 한 판이라도 돌아가는 코드가 지금 가장 급합니다."
+      },
+      {
+        "date": "2026-05-30T22:28:51Z",
+        "kind": "commit",
+        "text": "Focus ending retries on the next run",
+        "sha": "82b048f"
+      },
+      {
+        "date": "2026-05-30T22:33:07Z",
+        "kind": "commit",
+        "text": "Add near-miss retry QA entry",
+        "sha": "194468d"
+      },
+      {
+        "date": "2026-05-30T22:55:59Z",
+        "kind": "commit",
+        "text": "Gate near-miss retry QA for beta",
+        "sha": "38ba3d3"
+      },
+      {
+        "date": "2026-05-30T23:04:13Z",
+        "kind": "commit",
+        "text": "Add local browser flow smoke gate",
+        "sha": "2488107"
+      },
+      {
+        "date": "2026-05-30T23:07:05Z",
+        "kind": "commit",
+        "text": "Add flow smoke freshness check",
+        "sha": "0353d24"
+      },
+      {
+        "date": "2026-05-30T23:09:46Z",
+        "kind": "commit",
+        "text": "Cover final result routes in flow smoke",
+        "sha": "4b0b4a0"
+      },
+      {
+        "date": "2026-05-30T23:14:05Z",
+        "kind": "commit",
+        "text": "Expand flow smoke to completion routes",
+        "sha": "244f3e9"
+      },
+      {
+        "date": "2026-05-30T23:19:22Z",
+        "kind": "commit",
+        "text": "Add beta candidate local gate",
+        "sha": "2e324b6"
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 40%"
+      }
+    ],
+    "story-x-beta": [
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "매체 하나(웹툰이나 단편 만화)를 깊이 끝까지 완성해보시길. 골든 케이스 하나가 나머지 매체의 품질 기준이 됩니다."
+      },
+      {
+        "date": "2026-05-29T12:10:54Z",
+        "kind": "commit",
+        "text": "Merge: 지표 카드 폭 초과 수정 + 마진 검토 병렬화",
+        "sha": "02680dc"
+      },
+      {
+        "date": "2026-05-29T14:52:35Z",
+        "kind": "commit",
+        "text": "docs: 사회과학 글쓰기 확장 로드맵 (검토용)",
+        "sha": "d380f68"
+      },
+      {
+        "date": "2026-05-29T14:57:22Z",
+        "kind": "commit",
+        "text": "docs: 사회과학 로드맵 확정 결정 반영 (로컬 휴리스틱·영어 APA·academic 매체)",
+        "sha": "e172350"
+      },
+      {
+        "date": "2026-05-30T02:30:37Z",
+        "kind": "commit",
+        "text": "feat(academic): A1 — 사회과학/학술 매체 골격 추가",
+        "sha": "98d6221"
+      },
+      {
+        "date": "2026-05-30T02:31:05Z",
+        "kind": "commit",
+        "text": "Merge: A1 사회과학/학술 매체 골격 (academic 5번째 매체)",
+        "sha": "a89e34c"
+      },
+      {
+        "date": "2026-05-30T08:52:17Z",
+        "kind": "commit",
+        "text": "feat(academic): A2 — 주장 레저 + 주장-근거 하네스",
+        "sha": "31b114b"
+      },
+      {
+        "date": "2026-05-30T08:53:13Z",
+        "kind": "commit",
+        "text": "Merge: A2 주장 레저 + 주장-근거 하네스",
+        "sha": "47b15f9"
+      },
+      {
+        "date": "2026-05-30T08:53:49Z",
+        "kind": "commit",
+        "text": "docs: A2 완료 인계 노트 갱신",
+        "sha": "020dddc"
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 45%"
+      }
+    ],
+    "BookCircle": [
+      {
+        "date": "2026-05-13T14:27:24Z",
+        "kind": "commit",
+        "text": "Initial BookCircle scaffold",
+        "sha": "58bb89b"
+      },
+      {
+        "date": "2026-05-13T14:32:12Z",
+        "kind": "commit",
+        "text": "Add health endpoint for deployment",
+        "sha": "cd3b768"
+      },
+      {
+        "date": "2026-05-13T22:21:57Z",
+        "kind": "commit",
+        "text": "Trigger Vercel deployment with verified author",
+        "sha": "5eb5c37"
+      },
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "책담과 도메인이 겹치니 둘의 관계부터 정리하시길. 지금 끌어올리기보다 재개 트리거만 적어두면 충분합니다."
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 20%"
+      }
+    ],
+    "jewelry-webtoon-cloud": [
+      {
+        "date": "2026-05-15T02:38:05Z",
+        "kind": "commit",
+        "text": "feat: replace ep001 evening panels with png art",
+        "sha": "bcaa2f3"
+      },
+      {
+        "date": "2026-05-15T03:00:07Z",
+        "kind": "commit",
+        "text": "feat: complete ep001 png art pass",
+        "sha": "dafe921"
+      },
+      {
+        "date": "2026-05-15T03:32:31Z",
+        "kind": "commit",
+        "text": "fix: gate reader behind cover actions",
+        "sha": "de45c29"
+      },
+      {
+        "date": "2026-05-15T03:40:14Z",
+        "kind": "commit",
+        "text": "fix: support direct file preview",
+        "sha": "af611ee"
+      },
+      {
+        "date": "2026-05-15T03:44:52Z",
+        "kind": "commit",
+        "text": "fix: stabilize cover and reader layout",
+        "sha": "022f325"
+      },
+      {
+        "date": "2026-05-15T03:55:15Z",
+        "kind": "commit",
+        "text": "fix: compact episode reader",
+        "sha": "4ced752"
+      },
+      {
+        "date": "2026-05-15T04:00:14Z",
+        "kind": "commit",
+        "text": "fix: tighten reader navigation",
+        "sha": "3f09d0e"
+      },
+      {
+        "date": "2026-05-15T04:03:52Z",
+        "kind": "commit",
+        "text": "fix: scale episode navigation content",
+        "sha": "5a0c61b"
+      },
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "재개 트리거를 명시해두시길('핵심 게임 2개 마감 후'처럼). 지금은 현재 산출물을 README에 잘 박아두는 것으로 충분합니다."
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 20%"
+      }
+    ],
+    "Nodeloom": [
+      {
+        "date": "2026-05-18T15:43:56Z",
+        "kind": "commit",
+        "text": "v1.1.1 — 마인드맵 분기선이 세로로 뭉치던 버그 수정",
+        "sha": "08c9eac"
+      },
+      {
+        "date": "2026-05-19T03:06:33Z",
+        "kind": "commit",
+        "text": "v1.2.0 — 마인드맵 이미지 내보내기 (PNG·SVG·PDF)",
+        "sha": "92a807b"
+      },
+      {
+        "date": "2026-05-19T04:23:59Z",
+        "kind": "commit",
+        "text": "v1.3.0 — XMind 벤치마크: 템플릿·노드 모양 확장",
+        "sha": "65198ac"
+      },
+      {
+        "date": "2026-05-19T11:18:36Z",
+        "kind": "commit",
+        "text": "v1.3.1 — 밑줄 분기선 분리 + 단색 모드 색 불일치 수정",
+        "sha": "f664138"
+      },
+      {
+        "date": "2026-05-19T11:31:39Z",
+        "kind": "commit",
+        "text": "v1.3.2 — 분기선이 노드에서 떨어져 끝나던 갭 수정",
+        "sha": "719f261"
+      },
+      {
+        "date": "2026-05-19T11:55:57Z",
+        "kind": "commit",
+        "text": "v1.3.3 — 밑줄형 분기선과 밑줄의 중심선 어긋남 수정",
+        "sha": "3d0f2c1"
+      },
+      {
+        "date": "2026-05-19T12:08:24Z",
+        "kind": "commit",
+        "text": "v1.3.4 — 노드 자식 추가 버튼 + 분기선 z-순서",
+        "sha": "33f7a01"
+      },
+      {
+        "date": "2026-05-20T15:55:06Z",
+        "kind": "commit",
+        "text": "하네스 엔지니어링 정비 — 5개 subsystem 100/100",
+        "sha": "fc08b81"
+      },
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "20인 페르소나 알파 피드백의 B/C 우선순위부터 정리하시길. 대형 트리 렌더 성능(React Flow 가상화)도 사용성 체감을 크게 좌우합니다."
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 56%"
+      }
+    ],
+    "design-system-school": [
+      {
+        "date": "2026-05-21T10:37:50Z",
+        "kind": "commit",
+        "text": "Phase 5: learn paths include patterns",
+        "sha": "28ffe8a"
+      },
+      {
+        "date": "2026-05-21T10:59:34Z",
+        "kind": "commit",
+        "text": "Phase 6: theme-aware TokenDemo",
+        "sha": "d178bda"
+      },
+      {
+        "date": "2026-05-21T11:02:47Z",
+        "kind": "commit",
+        "text": "Phase 7: AI Builder School cross-link",
+        "sha": "ccddc1d"
+      },
+      {
+        "date": "2026-05-21T11:04:33Z",
+        "kind": "commit",
+        "text": "Phase 8: ontology graph mobile polish",
+        "sha": "6346f4a"
+      },
+      {
+        "date": "2026-05-21T11:17:42Z",
+        "kind": "commit",
+        "text": "Phase 9: design-spec extraction tool",
+        "sha": "5926c25"
+      },
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "PRD부터 또렷이 적으시길. AI Builder School과 커리큘럼 구조를 공유하면 콘텐츠 제작 비용을 크게 아낄 수 있습니다."
+      },
+      {
+        "date": "2026-05-29T09:54:01Z",
+        "kind": "commit",
+        "text": "Phase 10: ontology graph edge color coding",
+        "sha": "c81ab78"
+      },
+      {
+        "date": "2026-05-29T09:54:37Z",
+        "kind": "commit",
+        "text": "docs: backfill Phase 9·10 commit hashes in progress.md",
+        "sha": "62078e0"
+      },
+      {
+        "date": "2026-05-29T09:55:37Z",
+        "kind": "commit",
+        "text": "docs: backfill Phase 9 hash and add Phase 10 row to progress.md",
+        "sha": "070520e"
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 20%"
+      }
+    ],
+    "cmds-daily-briefing": [
+      {
+        "date": "2026-05-25T23:34:57Z",
+        "kind": "commit",
+        "text": "Add May 26 CMDS research briefing",
+        "sha": "90e2f5c"
+      },
+      {
+        "date": "2026-05-27T11:43:44Z",
+        "kind": "commit",
+        "text": "Add May 27 CMDS research briefing",
+        "sha": "a4be878"
+      },
+      {
+        "date": "2026-05-27T13:59:24Z",
+        "kind": "commit",
+        "text": "Add 2026-05-27 build note",
+        "sha": "46f1f39"
+      },
+      {
+        "date": "2026-05-27T23:38:26Z",
+        "kind": "commit",
+        "text": "Add May 28 research briefing",
+        "sha": "8fd91ae"
+      },
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "Hermes action queue 통합의 종단 테스트를 먼저 닫으시길. 데이터 소스 일관성이 흔들리면 매일 쌓이는 페이지가 어긋납니다."
+      },
+      {
+        "date": "2026-05-28T23:35:53Z",
+        "kind": "commit",
+        "text": "Add May 29 research briefing",
+        "sha": "cd78d03"
+      },
+      {
+        "date": "2026-05-29T23:34:30Z",
+        "kind": "commit",
+        "text": "Add May 30 light briefing",
+        "sha": "334f965"
+      },
+      {
+        "date": "2026-05-30T13:54:35Z",
+        "kind": "commit",
+        "text": "Add May 30 build note archive",
+        "sha": "c6e3d08"
+      },
+      {
+        "date": "2026-05-30T23:34:14Z",
+        "kind": "commit",
+        "text": "Add May 31 daily console briefing",
+        "sha": "d7bca6b"
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 52%"
+      }
+    ],
+    "Timeer": [
+      {
+        "date": "2026-05-20T16:51:21Z",
+        "kind": "commit",
+        "text": "feat: init Vite React project with TDS theme and 2D canvas orb timer",
+        "sha": "a785d46"
+      },
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "'집중 타이머인지, 습관 타이머인지'처럼 한 줄 정체성부터 적어보시길. MVP 기능 하나만 정하면 스캐폴드가 살아납니다."
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 7%"
+      }
+    ],
+    "chaekdam": [
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "BookCircle과 도메인이 겹칩니다. 통합할지 별개로 갈지부터 정해야 두 프로젝트의 힘이 분산되지 않습니다."
+      },
+      {
+        "date": "2026-05-29T05:55:11Z",
+        "kind": "commit",
+        "text": "feat: Phase 3 — 클럽 (탐색·생성·상세·가입·설정)",
+        "sha": "be9484e"
+      },
+      {
+        "date": "2026-05-29T07:08:41Z",
+        "kind": "commit",
+        "text": "feat: Phase 4 — 책 + 알라딘 (서재)",
+        "sha": "f1d666d"
+      },
+      {
+        "date": "2026-05-29T15:47:05Z",
+        "kind": "commit",
+        "text": "feat: Phase 5 — 대화 (posts + comments)",
+        "sha": "16bff3d"
+      },
+      {
+        "date": "2026-05-29T16:15:01Z",
+        "kind": "commit",
+        "text": "feat: Phase 6 — 좋은 문장 (클럽 문장 월)",
+        "sha": "41cf1f9"
+      },
+      {
+        "date": "2026-05-29T16:33:26Z",
+        "kind": "commit",
+        "text": "feat: Phase 7a — OG/SEO + 메타데이터",
+        "sha": "950cffc"
+      },
+      {
+        "date": "2026-05-29T19:52:17Z",
+        "kind": "commit",
+        "text": "feat: Phase 7b — 비공개 클럽 초대",
+        "sha": "8ff9700"
+      },
+      {
+        "date": "2026-05-29T20:04:08Z",
+        "kind": "commit",
+        "text": "feat: Phase 7c — 이미지 업로드 (Supabase Storage)",
+        "sha": "d8ccfce"
+      },
+      {
+        "date": "2026-05-29T20:12:01Z",
+        "kind": "commit",
+        "text": "feat: Phase 7d — 실시간 대화 (Realtime)",
+        "sha": "0e251aa"
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 19%"
+      }
+    ],
+    "honbul": [
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "세 장르를 한꺼번에 붙이기 전에 벽돌깨기 코어 슬라이스부터 손에 쥐어보시길. 스코프가 넓은 만큼 페이퍼 프로토타입으로 30분 런 페이싱을 먼저 확인하면 좋겠습니다."
+      },
+      {
+        "date": "2026-05-30T09:46:04Z",
+        "kind": "commit",
+        "text": "feat(W7-12): 그릇 해제 (영혼 소비) — 무인/자객/무당 영혼 잠금 해제",
+        "sha": "b25f657"
+      },
+      {
+        "date": "2026-05-30T09:46:05Z",
+        "kind": "commit",
+        "text": "feat(W7-13): 전투 HUD 마나 표시 — 라이프·동전·마나 3종 (레퍼런스 전투화면)",
+        "sha": "dcf2b95"
+      },
+      {
+        "date": "2026-05-30T10:52:09Z",
+        "kind": "commit",
+        "text": "feat(W8-01): 턴 컨트롤러 — Ballz식 무더기 발사 + 턴 종료 (코어 루프 피벗 1단계)",
+        "sha": "75f63c3"
+      },
+      {
+        "date": "2026-05-30T10:53:43Z",
+        "kind": "commit",
+        "text": "docs(W8-01): 보고서 한국어 검증본으로 통합",
+        "sha": "124613c"
+      },
+      {
+        "date": "2026-05-30T13:41:46Z",
+        "kind": "commit",
+        "text": "feat(W8-02): 적령 연속 하강 — 시간 기반 + 바닥 도달 라이프 소모 (피벗 2단계)",
+        "sha": "9e373df"
+      },
+      {
+        "date": "2026-05-30T13:42:39Z",
+        "kind": "commit",
+        "text": "docs(W8-02): 보고서 한국어 검증본으로 통합",
+        "sha": "c0b3bf7"
+      },
+      {
+        "date": "2026-05-30T14:14:29Z",
+        "kind": "commit",
+        "text": "feat(W8-03): Ball 스폰 배선 — 단일 발사 + VolleyLauncher (피벗 3단계)",
+        "sha": "3c98d58"
+      },
+      {
+        "date": "2026-05-30T14:15:10Z",
+        "kind": "commit",
+        "text": "docs(W8-03): 보고서 한국어 검증본으로 통합",
+        "sha": "325cdf1"
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 19%"
+      }
+    ]
+  }
+}
+</script>
+<script>
+function readSeed(id){
+  return JSON.parse(document.getElementById(id).textContent);
+}
+const FALLBACK_PROJECTS = readSeed("fallback-projects");
+const FALLBACK_REPORTS = readSeed("fallback-reports");
+const FALLBACK_SUGGESTIONS = readSeed("fallback-suggestions");
+const FALLBACK_LOGS = readSeed("fallback-logs");
+
+const STATUS_LABELS = { paused:"일시중단" };
+
+function text(tag, className, value){
+  const el = document.createElement(tag);
+  if(className) el.className = className;
+  el.textContent = value || "";
+  return el;
+}
+
+function loadJson(path, fallback){
+  if(location.protocol === "file:") return Promise.resolve(fallback);
+  return fetch(path, { cache:"no-store" })
+    .then(function(response){
+      if(!response.ok) throw new Error("HTTP " + response.status);
+      return response.json();
+    })
+    .catch(function(){ return fallback; });
+}
+
+function allReportServices(reports){
+  const fields = Array.isArray(reports.fields) ? reports.fields : [];
+  return fields.flatMap(function(field){ return Array.isArray(field.services) ? field.services : []; });
+}
+
+function projectName(project, service, repo){
+  return (service && service.name) || (project && project.displayName) || repo || "프로젝트 보고서";
+}
+
+function chooseRepo(projectsData){
+  const projects = Array.isArray(projectsData.projects) ? projectsData.projects : [];
+  const queryRepo = new URLSearchParams(location.search).get("repo");
+  if(queryRepo && projects.some(function(project){ return project.name === queryRepo; })) return queryRepo;
+  const active = projects.find(function(project){ return project.status === "active"; });
+  return (active || projects[0] || {}).name || "";
+}
+
+function setSelector(projects, repo, state){
+  const selector = document.getElementById("projectSelector");
+  selector.replaceChildren();
+  projects.slice().sort(function(a, b){ return (a.rank || 0) - (b.rank || 0); }).forEach(function(project){
+    const option = document.createElement("option");
+    option.value = project.name;
+    option.textContent = project.displayName || project.name;
+    selector.append(option);
+  });
+  selector.value = repo;
+  selector.onchange = function(){
+    const nextRepo = selector.value;
+    const url = new URL(location.href);
+    url.searchParams.set("repo", nextRepo);
+    history.pushState({ repo: nextRepo }, "", url);
+    renderProject(nextRepo, state);
+  };
+}
+
+function renderHeader(repo, project, service, reportsData){
+  const panel = document.getElementById("headerPanel");
+  const title = document.getElementById("projectTitle");
+  const meta = document.getElementById("projectMeta");
+  const footer = document.getElementById("footerMeta");
+  const name = projectName(project, service, repo);
+  const tool = (service && service.tool) || (project && project.tool) || "";
+  const status = (service && service.status) || (project && project.status) || "";
+  const total = Number((service && service.total) || (project && project.progress && project.progress.total) || 0);
+
+  title.textContent = name;
+  meta.textContent = "데이터 " + ((reportsData.meta && reportsData.meta.asOf) || reportsData.generatedAt || "기준일 없음") + " 기준";
+  footer.textContent = repo + " · " + total + "%";
+  document.title = name + " · 프로젝트 보고서";
+  panel.replaceChildren();
+
+  const head = document.createElement("div");
+  head.className = "project-head";
+
+  const left = document.createElement("div");
+  const row = document.createElement("div");
+  row.className = "title-row";
+  row.append(text("span", "tool " + tool, tool));
+  const statusClass = status === "paused" ? "status-pill paused" : "status-pill";
+  row.append(text("span", statusClass, STATUS_LABELS[status] || status));
+  left.append(row);
+  head.append(left);
+
+  const progress = document.createElement("div");
+  progress.className = "progress-mini";
+  progress.append(text("div", "pct", total + "%"));
+  const bar = document.createElement("div");
+  bar.className = "bar";
+  const fill = document.createElement("span");
+  fill.style.setProperty("--value", Math.max(0, Math.min(100, total)) + "%");
+  bar.append(fill);
+  progress.append(bar);
+  head.append(progress);
+  panel.append(head);
+
+  const copy = document.createElement("div");
+  copy.className = "copy";
+  if(service && service.body) copy.append(text("p", "body", service.body));
+  if(service && service.goal) copy.append(text("p", "goal", service.goal));
+  panel.append(copy);
+}
+
+function appendList(parent, items){
+  if(!Array.isArray(items) || items.length === 0) return false;
+  const ul = document.createElement("ul");
+  ul.className = "help-list";
+  items.forEach(function(item){ ul.append(text("li", "", item)); });
+  parent.append(ul);
+  return true;
+}
+
+function renderHelp(project, service, suggestions){
+  const panel = document.getElementById("helpPanel");
+  panel.replaceChildren();
+  panel.append(text("h2", "section-title", "도움 패널"));
+
+  const grid = document.createElement("div");
+  grid.className = "help-grid";
+
+  const left = document.createElement("div");
+  if(service && service.advice){
+    left.append(text("p", "callout", service.advice));
+  }
+  left.append(text("h3", "section-title", "다음 액션"));
+  if(!appendList(left, project && project.nextActions)){
+    left.append(text("p", "empty", "등록된 다음 액션이 없습니다."));
+  }
+
+  const right = document.createElement("div");
+  right.append(text("h3", "section-title", "블로커와 정체 신호"));
+  let hasBlocker = false;
+  if(project && Array.isArray(project.risks) && project.risks.length){
+    const block = document.createElement("div");
+    block.className = "blocker";
+    block.append(text("h3", "", "리스크"));
+    appendList(block, project.risks);
+    right.append(block);
+    hasBlocker = true;
+  }
+  suggestions.forEach(function(item){
+    const block = document.createElement("div");
+    block.className = "blocker";
+    block.append(text("h3", "", item.title));
+    if(item.detail) block.append(text("p", "", item.detail));
+    if(item.recommendation) block.append(text("p", "", item.recommendation));
+    appendList(block, item.actions);
+    right.append(block);
+    hasBlocker = true;
+  });
+  if(!hasBlocker){
+    right.append(text("p", "empty", "표시할 블로커가 없습니다."));
+  }
+
+  grid.append(left, right);
+  panel.append(grid);
+}
+
+function timelineLabel(entry){
+  if(entry.kind === "commit") return "커밋";
+  if(entry.kind === "progress") return "진척 변동";
+  if(entry.kind === "note") return entry.label || "조언";
+  return entry.kind || "기록";
+}
+
+function renderTimeline(repo, logsData){
+  const root = document.getElementById("timelinePanel");
+  root.replaceChildren();
+  root.append(text("h2", "section-title", "누적 타임라인"));
+  const logs = (logsData && logsData.logs) || {};
+  const entries = logs[repo] || [];
+  const sorted = entries.slice().sort(function(a, b){ return (b.date || "").localeCompare(a.date || ""); });
+
+  if(sorted.length === 0){
+    root.append(text("p", "empty", "아직 누적 로그가 없습니다."));
+    return;
+  }
+
+  sorted.forEach(function(entry){
+    const item = document.createElement("article");
+    item.className = "timeline-item";
+    item.append(text("div", "timeline-date", entry.date));
+
+    const card = document.createElement("div");
+    card.className = "timeline-card";
+    card.append(text("span", "timeline-kind " + (entry.kind || ""), timelineLabel(entry)));
+    card.append(text("p", "timeline-text", entry.text));
+    if(entry.sha) card.append(text("p", "sha", entry.sha));
+    item.append(card);
+    root.append(item);
+  });
+}
+
+function renderProject(repo, state){
+  const projects = Array.isArray(state.projects.projects) ? state.projects.projects : [];
+  const services = allReportServices(state.reports);
+  const project = projects.find(function(item){ return item.name === repo; });
+  const service = services.find(function(item){ return item.repo === repo; });
+  const suggestions = ((state.suggestions && state.suggestions.items) || []).filter(function(item){ return item.repo === repo; });
+
+  if(!repo || (!project && !service)){
+    document.getElementById("headerPanel").innerHTML = '<p class="error">표시할 프로젝트를 찾지 못했습니다.</p>';
+    document.getElementById("helpPanel").replaceChildren();
+    document.getElementById("timelinePanel").replaceChildren();
+    return;
+  }
+
+  document.getElementById("projectSelector").value = repo;
+  renderHeader(repo, project, service, state.reports);
+  renderHelp(project, service, suggestions);
+  renderTimeline(repo, state.logs);
+}
+
+Promise.all([
+  loadJson("./projects.json", FALLBACK_PROJECTS),
+  loadJson("./reports.json", FALLBACK_REPORTS),
+  loadJson("./suggestions.json", FALLBACK_SUGGESTIONS),
+  loadJson("./project-logs.json", FALLBACK_LOGS)
+]).then(function(values){
+  const state = { projects:values[0], reports:values[1], suggestions:values[2], logs:values[3] };
+  const repo = chooseRepo(state.projects);
+  const projects = Array.isArray(state.projects.projects) ? state.projects.projects : [];
+  setSelector(projects, repo, state);
+  renderProject(repo, state);
+  window.onpopstate = function(){ renderProject(chooseRepo(state.projects), state); };
+}).catch(function(){
+  document.getElementById("headerPanel").innerHTML = '<p class="error">프로젝트 보고서를 표시하지 못했습니다.</p>';
+});
+</script>
+</body>
+</html>
