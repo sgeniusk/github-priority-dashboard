@@ -1,6 +1,6 @@
 {
   "_comment": "github-priority-dashboard 자체의 개발 백로그 (v1.0→v2.x). projects.json은 '추적되는 프로젝트'들, 이 파일은 '이 워크스페이스 자체'의 마일스톤이다. 새 세션은 active 항목부터 보면 된다. v2.1+는 Codex 위임 하네스(docs/codex-harness.md)로 진행 — 구현 Codex, 설계·검증 Claude.",
-  "active": "v2.5-news-and-project-logs",
+  "active": "",
   "features": [
     {
       "id": "v1.0-baseline",
@@ -127,7 +127,7 @@
     {
       "id": "v2.5-news-and-project-logs",
       "name": "v2.5 뉴스 피드 + 프로젝트별 누적 보고서",
-      "status": "inProgress",
+      "status": "done",
       "description": "기존 일지(날짜별 같은 손글 스냅샷)가 정태적·반복적이라 폐기하고 둘로 분리. ① 전체=뉴스 피드(report.html) — history/activity 델타·정체·status 변화에서 자동 이벤트 도출(하이브리드, scripts/report-gen.mjs buildNews), 매 refresh 동적 갱신. ② 개별=프로젝트별 페이지(project-report.html?repo=) — 헤더(reports body/goal)+도움 패널(advice·nextActions·블로커)+누적 타임라인(project-logs.json: 커밋 devlog + 진척 + 큐레이션 note). 데이터·생성로직·시드는 Claude(report-gen.mjs·news.json·project-logs.json), 뷰·refresh연동은 Codex. journal.json은 폐기.",
       "dependencies": ["v2.4-journal-archive"],
       "doneCriteria": [

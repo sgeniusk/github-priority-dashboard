@@ -2,7 +2,7 @@
 
 다음 세션이 이 한 페이지만 보고도 어디까지 했고 뭘 이어가면 되는지 알 수 있도록 유지한다. 상세 백로그는 `feature_list.json`.
 
-**Last Updated**: 2026-05-31 (데이터 refresh — asOf 5/31, Timeer 중단 추가 / v2.1~v2.4 배포 완료 상태 유지)
+**Last Updated**: 2026-05-31 (v2.5 뉴스 피드 + 프로젝트별 누적 보고서 배포 — 정태적 일지 폐기)
 
 ## Current Objective — None (v2.1·v2.2·v2.3·v2.4 완료, 커밋·푸시·배포 완료)
 
@@ -13,6 +13,8 @@
 **다음 세션 시작 시 `bash init.sh` + 이 파일 확인.** 후보 — 일지가 며칠 쌓인 뒤 report.html 날짜 전환 재확인, `/report` 줄글 갱신 자동화 점검, 신규 프로젝트 등록 시 town 플롯(game6·app9·content4 슬롯) 초과 시 자동 확장 점검.
 
 ## 직전에 푼 것
+
+- **v2.5 뉴스 피드 + 프로젝트별 누적 보고서** (2026-05-31) — 정태적·반복적이던 일지(날짜별 같은 손글 스냅샷) 폐기. ① report.html = 뉴스 피드(news.json) — history/activity 델타·정체·status에서 자동 이벤트(하이브리드), 날짜 그룹·kind 뱃지, 프로젝트명→project-report.html?repo= 링크. ② project-report.html 신규 = 프로젝트별 페이지(헤더+도움 패널[다음액션·블로커·리스크·제안]+누적 타임라인[커밋 devlog+진척+조언 노트]). scripts/report-gen.mjs(buildNews/buildLogs)를 refresh가 매번 호출(dry-run 안전), journal upsert 제거. 데이터·생성·시드 Claude, 뷰·연동 Codex. FALLBACK seed 전부 일치·콘솔 0·validate·check-report-pages 통과·배포 success.
 
 - **데이터 refresh + Timeer 중단** (2026-05-31) — `/refresh` 절차로 GitHub 활동 갱신(asOf 5/29→5/31, 커밋/lastUpdate 33건, history 8개 스냅샷, journal 2026-05-31 entry 누적 → report 날짜 선택기 5/31·5/29 2개). Timeer status active→paused(+pausedReason), 활성 13→12·일시중단 4개. suggestions 재생성(tteuniyu 19일 정체로 악화, sam-defender 10일 정체 추가, paused 3개 정체 경고 제외, honbul·chaekdam 신규 가속 반영). FALLBACK_PROJECTS·SUGGESTIONS·JOURNAL 전부 verbatim 동기화.
 
