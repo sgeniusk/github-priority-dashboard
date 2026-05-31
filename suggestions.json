@@ -1,42 +1,43 @@
 {
-  "_comment": "/coach 및 /refresh 슬래시 커맨드가 생성하는 분석·제안 데이터. 대시보드의 '제안 / 코칭' 패널이 읽는다. 수동 편집보다 커맨드 재생성을 권장.",
-  "generatedAt": "2026-05-21",
+  "_comment": "/coach 및 /refresh 슬래시 커맨드가 생성하는 분석·제안 데이터. 대시보드의 '제안 / 코칭' 패널이 읽는다. 수동 편집보다 커맨드 재생성을 권장. paused 프로젝트는 정체 경고 대상에서 제외한다.",
+  "generatedAt": "2026-05-31",
   "items": [
     {
       "repo": "tteuniyu-ios",
       "type": "stall",
       "severity": "high",
-      "title": "Sprint A 정체 — 9일째 멈춤",
-      "detail": "Sprint A에 배정된 채 9일째 활동이 없습니다. 같은 Sprint A의 Formi는 매일 활동 중이라 동반 마감 일정이 어긋날 위험이 큽니다.",
+      "title": "Sprint A 정체 — 19일째 멈춤",
+      "detail": "Sprint A에 배정된 채 19일째 활동이 없습니다. 같은 Sprint A의 Formi는 알파 직전까지 와 있어 동반 마감 일정이 크게 어긋날 위험이 있습니다.",
       "evidence": [
-        "마지막 푸시 2026-05-12 — 9일 경과",
-        "커밋 5 / 활동 10일 — 일평균 0.5",
-        "Sprint A · sprintStatus inProgress · rank 2"
+        "마지막 푸시 2026-05-12 — asOf 2026-05-31 기준 19일 경과",
+        "커밋 5 / Sprint A · sprintStatus inProgress · rank 2",
+        "남은 작업은 시뮬레이터 스크린샷 + RFP 인수 기준 25개 자가 검증"
       ],
       "confidence": "high",
-      "recommendation": "Sprint A 동반 마감(Formi)에 직접 영향 — 이번 주 안에 Xcode 빌드·시뮬레이터 스크린샷을 끝내거나, 어렵다면 Sprint A 일정을 명시적으로 재조정한다.",
+      "recommendation": "이번 주 안에 Xcode 빌드·시뮬레이터 스크린샷을 끝내 Sprint A를 닫거나, 어렵다면 Sprint A 일정을 명시적으로 재조정한다. 멈춤을 방치하는 게 가장 비싸다.",
       "actions": [
         "Xcode 빌드 + 5개 시뮬레이터 스크린샷 캡처",
         "harness/check.sh CI 통과 확인",
-        "RFP §11 Acceptance Criteria 25개 자가검증 착수"
+        "메인 monorepo 통합 시점 결정 또는 Sprint 재배정"
       ]
     },
     {
-      "repo": "BookCircle",
+      "repo": "sam-defender-logue",
       "type": "stall",
       "severity": "warn",
-      "title": "8일째 활동 없음 — defer라 우선순위는 낮음",
-      "detail": "8일째 활동이 없고 일평균 커밋도 저속입니다. 다만 Sprint defer로 의도적 후순위라, 핵심 게임·앱 마감 전까지는 현 상태 유지가 합리적입니다.",
+      "title": "Sprint B 정체 — 10일째 멈춤",
+      "detail": "알파 슬라이스는 도는데 10일째 새 커밋이 없습니다. 백로그 20여 개가 쌓인 채로 멈춰 있어 알파 마감이 늦어질 신호입니다.",
       "evidence": [
-        "마지막 푸시 2026-05-13 — 8일 경과",
-        "커밋 3 / 활동 6일 — 일평균 0.5 (저속)",
-        "Sprint defer · rank 9"
+        "마지막 푸시 2026-05-21 — 10일 경과",
+        "total 60 · Sprint B · 백로그 20+ 누적",
+        "콘텐츠 데이터 vs 마크다운 ID 불일치(하네스 미완) 리스크"
       ],
-      "confidence": "high",
-      "recommendation": "defer 상태라 지금 끌어올릴 필요는 없다 — 핵심 게임·앱 마감 후 재개 트리거만 적어두면 충분하다.",
+      "confidence": "med",
+      "recommendation": "콘텐츠 데이터·마크다운 ID 불일치부터 잡고 백로그를 P25 루트 정찰 예측 완성 중심으로 정리한다.",
       "actions": [
-        "로그인 방식 + 클럽 초대 모델 결정",
-        "Supabase 프로젝트 연결"
+        "콘텐츠 ID 불일치 하네스 정리",
+        "P25 루트 정찰 예측 완성",
+        "알파 완료 백로그 우선순위화"
       ]
     },
     {
@@ -44,72 +45,94 @@
       "type": "coach",
       "severity": "info",
       "title": "완성 최근접 — 알파 게이트만 남음",
-      "detail": "진척도 70%로 활성 프로젝트 1위입니다. 문서·골격이 탄탄하고 알파만 미완이라, 알파 빌드 하나로 완성 단계에 진입할 수 있습니다.",
+      "detail": "알파(10/20)가 유일한 미완 영역이라 완성에 가장 가깝습니다. Expo iOS 알파 빌드 1회로 완성 단계 진입이 가능합니다.",
       "evidence": [
-        "진척도 70% — 활성 9개 중 1위",
-        "문서 20/20 · 골격 25/30 · 기능 15/30 · alpha 10/20",
-        "커밋 133 / 활동 8일 — 일평균 16.6 (최상위 속도)"
+        "total 70 · Sprint A · 마지막 커밋 5일 이내",
+        "웹 프로토타입 + 10인 알파 평가 완료",
+        "CI 하네스·i18n까지 셋업됨"
       ],
       "confidence": "high",
-      "recommendation": "알파(10/20)가 유일한 미완 영역 — Expo iOS 알파 빌드 1회로 완성 단계 진입이 가능하니 이걸 최우선에 둔다.",
+      "recommendation": "Expo iOS 알파 빌드를 최우선에 둔다. 그 전에 알파 피드백에서 AI 패턴 분석 정확도에 대한 신뢰부터 확인한다.",
       "actions": [
-        "mobile/README.md 기준 Expo iOS 알파 빌드 산출",
-        "iOS TestFlight 등록 후 alpha 사용자 피드백 수집"
-      ]
-    },
-    {
-      "repo": "design-system-school",
-      "type": "coach",
-      "severity": "info",
-      "title": "신규 등록 — 초기 골격 형성 단계",
-      "detail": "새 프로젝트 'AI 디자인 시스템 스쿨'이 등록되었습니다. 초기 문서화 및 기본 Next.js 골격을 설계하는 단계입니다.",
-      "evidence": [
-        "진척도 20% — 신규 등록",
-        "문서 10/20 · 골격 10/30 · 기능 0/30 · alpha 0/20",
-        "커밋 16 / 활동 3일 — 일평균 5.3"
-      ],
-      "confidence": "high",
-      "recommendation": "초기 기획과 기초 스캐폴딩 설정이 완료되면 로드맵에 맞추어 콘텐츠 채우기를 진행한다.",
-      "actions": [
-        "PRD 작성 및 로드맵 수립",
-        "Next.js 기본 스캐폴딩 설정",
-        "콘텐츠 유효성 확인"
-      ]
-    },
-    {
-      "repo": "ai-builder-school",
-      "type": "coach",
-      "severity": "info",
-      "title": "기능 단계가 병목 — 5/30",
-      "detail": "골격과 페이지 맵은 섰지만 32개 레슨 본문이 비어 실제 동작 비율이 낮습니다. 콘텐츠 채움 속도가 완성의 관건입니다.",
-      "evidence": [
-        "기능 5/30 (17%) — 활성 프로젝트 중 최저",
-        "문서 20/20 · 골격 20/30은 양호",
-        "활동 19일 / 커밋 72 — 일평균 3.8"
-      ],
-      "confidence": "high",
-      "recommendation": "골격은 충분하니 32개 레슨 본문 채움이 핵심 — Phase별 우선 레슨부터 깊이 완성해 기능 점수를 끌어올린다.",
-      "actions": [
-        "Phase별 우선 레슨 4-5개 본문 완성",
-        "캡스톤 프로젝트 예시 작성"
+        "mobile/README.md 기준 Expo 알파 빌드 산출",
+        "iOS TestFlight 등록 절차",
+        "알파 사용자 피드백 반영"
       ]
     },
     {
       "repo": "ai-company-tycoon-boundaryless",
       "type": "coach",
       "severity": "info",
-      "title": "기능 병목 — 골격 대비 동작 코드 부족",
-      "detail": "커밋은 활발하지만 PRD·하네스 정비에 쏠려 있어 실제 게임 코드가 초기 단계입니다. Godot→웹 재시작 직후라 진척도가 40%에 머뭅니다.",
+      "title": "기능 병목 — 커밋은 활발하나 동작 코드가 적음",
+      "detail": "커밋 294로 매우 활발하지만 정비·문서 작업에 쏠려 '실제로 플레이되는 코드'가 병목입니다. 골격·문서는 풍부한데 게임 코드는 아직 초기입니다.",
       "evidence": [
-        "기능 5/30 · 골격 15/30 — 둘 다 낮음",
-        "진척도 40% — 활성 중 최하위권",
-        "커밋 51 / 활동 7일 — 일평균 7.3 (활발)"
+        "total 40 · 마지막 커밋 1일 이내 · 커밋 294",
+        "PRD·벤치마크·제작 하네스·12인 플레이테스트 프로토콜 완비",
+        "실제 게임 코드 초기 단계"
       ],
-      "confidence": "medium",
-      "recommendation": "커밋은 활발하나 정비 작업에 쏠려 있다 — MVP 1 마일스톤으로 '실제 플레이되는 코드'에 커밋을 집중시킨다.",
+      "confidence": "med",
+      "recommendation": "MVP 1 마일스톤에 커밋을 몰아 한 판이라도 플레이되는 코드를 먼저 만든다.",
       "actions": [
         "MVP 1 마일스톤 마감",
-        "합성 플레이테스트 12명 1차 실행"
+        "합성 플레이테스트 12명 1차",
+        "Vercel 미리보기 배포"
+      ]
+    },
+    {
+      "repo": "ai-builder-school",
+      "type": "coach",
+      "severity": "info",
+      "title": "기능 단계 병목 — 32개 레슨 본문 채움",
+      "detail": "12단계 커리큘럼·6여정·32레슨 골격과 데이터 모델은 충분하니, 이제 레슨 본문 작성량이 기능 점수의 병목입니다.",
+      "evidence": [
+        "total 45 · Sprint C · 마지막 커밋 3일 이내",
+        "페이지 맵·콘텐츠 데이터 모델·무결성 검증 셋업",
+        "32 레슨 본문 미작성"
+      ],
+      "confidence": "high",
+      "recommendation": "Phase별 우선 레슨 4~5개부터 깊이 완성해 기능 점수를 끌어올린다.",
+      "actions": [
+        "Phase별 우선 레슨 4-5개 본문 완성",
+        "캡스톤 프로젝트 예시 작성",
+        "라이선스 결정"
+      ]
+    },
+    {
+      "repo": "honbul",
+      "type": "coach",
+      "severity": "info",
+      "title": "본격 착수 — 커밋 14→57로 가속",
+      "detail": "프리프로덕션에서 벗어나 커밋이 14에서 57로 늘며 본격 구현이 시작됐습니다. 스코프(벽돌깨기+덱빌딩+로그라이크)가 넓은 만큼 코어부터 잡는 게 중요합니다.",
+      "evidence": [
+        "total 19 · Sprint C · 마지막 커밋 1일 이내 · 커밋 57",
+        "엔진·아트·테마·F2P 정책 설계 확정",
+        "세 장르 융합 — 스코프 통제 리스크"
+      ],
+      "confidence": "med",
+      "recommendation": "벽돌깨기 코어 슬라이스부터 손에 쥐고, 30분 런 페이싱을 페이퍼 프로토타입으로 먼저 검증한다.",
+      "actions": [
+        "Godot 벽돌깨기 코어 슬라이스",
+        "부적·술법 카드 모델 1차 정의",
+        "30분 런 페이싱 페이퍼 프로토타입"
+      ]
+    },
+    {
+      "repo": "chaekdam",
+      "type": "coach",
+      "severity": "info",
+      "title": "신규 가속 — BookCircle과 도메인 정리 필요",
+      "detail": "Phase 0 부트스트랩 후 커밋 6→15로 빠르게 움직이고 있습니다. 다만 일시중단된 BookCircle과 독서 클럽 도메인이 겹쳐 관계를 먼저 정리해야 힘이 분산되지 않습니다.",
+      "evidence": [
+        "total 19 · Sprint C · 마지막 커밋 1일 이내 · 커밋 15",
+        "Next.js·Supabase·Aladin API 부트스트랩 완료",
+        "BookCircle(paused)과 도메인 중복"
+      ],
+      "confidence": "med",
+      "recommendation": "BookCircle과 통합할지 별개로 갈지부터 결정하고, Supabase 인증·RLS와 모임 데이터 모델을 먼저 세운다.",
+      "actions": [
+        "BookCircle과 관계 정리 — 통합/별개 결정",
+        "Supabase 인증 + RLS 정책 설계",
+        "독서 클럽 모임 데이터 모델 1차 확정"
       ]
     }
   ]

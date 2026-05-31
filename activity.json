@@ -1,7 +1,31 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-05-30",
+  "asOf": "2026-05-31",
   "commits": [
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "4786aa1",
+      "message": "Centralize readiness metadata to remove report drift",
+      "date": "2026-05-31T04:04:19Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "c673c97",
+      "message": "Expose the daily return loop as an actionable route",
+      "date": "2026-05-31T03:21:04Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "a523fda",
+      "message": "Prove daily retention can restart locally before final proof",
+      "date": "2026-05-31T02:43:05Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "df1fe8c",
+      "message": "Keep local launch rehearsal visible before final proof",
+      "date": "2026-05-31T01:52:27Z"
+    },
     {
       "repo": "samguk-idle-prototype",
       "sha": "cc82318",
@@ -79,30 +103,6 @@
       "sha": "8c229a4",
       "message": "Keep adventure auto-hunt inside the store frame",
       "date": "2026-05-30T17:36:23Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "dc0eef8",
-      "message": "Keep village growth inside the first store frame",
-      "date": "2026-05-30T17:18:52Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "8b124d6",
-      "message": "Keep summon-growth inside the first store frame",
-      "date": "2026-05-30T17:05:17Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "e7cce70",
-      "message": "Soften strategic-war screenshots before final store capture",
-      "date": "2026-05-30T16:43:44Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "dea8846",
-      "message": "Keep war combat HUD from covering screenshot center",
-      "date": "2026-05-30T16:24:42Z"
     },
     {
       "repo": "honbul",

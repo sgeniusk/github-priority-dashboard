@@ -154,7 +154,7 @@
           "repo": "Timeer",
           "name": "Timeer",
           "tool": "claude",
-          "status": "active",
+          "status": "paused",
           "total": 7,
           "body": "아직 Vite + React 스캐폴드만 있는 타이머 앱입니다. README도 Vite 기본 템플릿 그대로라 PRD·컨셉 단계에 머물러 있습니다.",
           "goal": "어떤 타이머인지부터 정의하는 게 출발입니다. 컨셉이 서야 방향도 생깁니다.",

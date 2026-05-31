@@ -2,7 +2,7 @@
 
 다음 세션이 이 한 페이지만 보고도 어디까지 했고 뭘 이어가면 되는지 알 수 있도록 유지한다. 상세 백로그는 `feature_list.json`.
 
-**Last Updated**: 2026-05-29 (v2.1~v2.4 완료·배포 — 대시보드 가독성·타운·kami 보고서·일지 아카이브 + BookCircle·Nodeloom 중단)
+**Last Updated**: 2026-05-31 (데이터 refresh — asOf 5/31, Timeer 중단 추가 / v2.1~v2.4 배포 완료 상태 유지)
 
 ## Current Objective — None (v2.1·v2.2·v2.3·v2.4 완료, 커밋·푸시·배포 완료)
 
@@ -13,6 +13,8 @@
 **다음 세션 시작 시 `bash init.sh` + 이 파일 확인.** 후보 — 일지가 며칠 쌓인 뒤 report.html 날짜 전환 재확인, `/report` 줄글 갱신 자동화 점검, 신규 프로젝트 등록 시 town 플롯(game6·app9·content4 슬롯) 초과 시 자동 확장 점검.
 
 ## 직전에 푼 것
+
+- **데이터 refresh + Timeer 중단** (2026-05-31) — `/refresh` 절차로 GitHub 활동 갱신(asOf 5/29→5/31, 커밋/lastUpdate 33건, history 8개 스냅샷, journal 2026-05-31 entry 누적 → report 날짜 선택기 5/31·5/29 2개). Timeer status active→paused(+pausedReason), 활성 13→12·일시중단 4개. suggestions 재생성(tteuniyu 19일 정체로 악화, sam-defender 10일 정체 추가, paused 3개 정체 경고 제외, honbul·chaekdam 신규 가속 반영). FALLBACK_PROJECTS·SUGGESTIONS·JOURNAL 전부 verbatim 동기화.
 
 - **v2.4 일지 날짜별 아카이브** (2026-05-29) — `journal.json`(entries[date]) + `report.html` '일지 날짜' 선택기. `refresh-progress.mjs`에 `upsertJournal()` 추가 — 매 refresh(cron 포함)마다 그날 reports.json 줄글을 date로 upsert(최근 180개, dry-run 안전). 날짜 고르면 그날 일지 kami 렌더. `/report`도 journal upsert. init.sh가 reports·journal 검증. Codex 구현 + Claude 검증(dry-run·날짜 선택기·콘솔 0).
 - **BookCircle·Nodeloom 일시중단** (2026-05-29) — status active→paused, pausedReason 추가, FALLBACK·reports 동기화. 활성 15→13. (CI가 pausedReason 필수라 1차 실패→보완.)
