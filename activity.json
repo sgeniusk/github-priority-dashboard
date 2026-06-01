@@ -1,108 +1,228 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-05-31",
+  "asOf": "2026-06-01",
   "commits": [
     {
-      "repo": "samguk-idle-prototype",
-      "sha": "4786aa1",
-      "message": "Centralize readiness metadata to remove report drift",
-      "date": "2026-05-31T04:04:19Z"
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "945bd7d",
+      "message": "Dock events without swallowing the office",
+      "date": "2026-05-31T23:55:26Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "2d18558",
+      "message": "Add June 1 daily console briefing",
+      "date": "2026-05-31T23:35:05Z"
     },
     {
       "repo": "samguk-idle-prototype",
-      "sha": "c673c97",
-      "message": "Expose the daily return loop as an actionable route",
-      "date": "2026-05-31T03:21:04Z"
+      "sha": "0cea438",
+      "message": "Make adventure combat read tactical instead of decorative",
+      "date": "2026-05-31T23:22:33Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "d09042b",
+      "message": "Make office objects feel like working pixel machines",
+      "date": "2026-05-31T23:01:18Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "8a685bb",
+      "message": "Make the office read as a lively pixel workfloor",
+      "date": "2026-05-31T22:47:01Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "64b9a86",
+      "message": "Make the mobile office read as a complete pixel toybox",
+      "date": "2026-05-31T22:35:45Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "0efb7a3",
+      "message": "Clarify Build 216 release labels",
+      "date": "2026-05-31T20:35:08Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "d39e113",
+      "message": "Build 216 command strike fallback proof",
+      "date": "2026-05-31T20:28:40Z"
     },
     {
       "repo": "samguk-idle-prototype",
-      "sha": "a523fda",
-      "message": "Prove daily retention can restart locally before final proof",
-      "date": "2026-05-31T02:43:05Z"
+      "sha": "23ed0c9",
+      "message": "Keep adventure combat controls physically clickable",
+      "date": "2026-05-31T15:04:23Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "36c1487",
+      "message": "Keep office incidents from burying the playfield",
+      "date": "2026-05-31T14:41:21Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "1c652fa",
+      "message": "Merge: A5 학술 퍼블리시 — 사회과학 확장 A1~A5 완결",
+      "date": "2026-05-31T14:33:05Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "513b50e",
+      "message": "feat(academic): A5 — 학술 퍼블리시 (사회과학 로드맵 완결)",
+      "date": "2026-05-31T14:33:05Z"
     },
     {
       "repo": "samguk-idle-prototype",
-      "sha": "df1fe8c",
-      "message": "Keep local launch rehearsal visible before final proof",
-      "date": "2026-05-31T01:52:27Z"
+      "sha": "5211b43",
+      "message": "Refine prototype feature flow",
+      "date": "2026-05-31T14:27:40Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "27644f5",
+      "message": "fix: keep command strike as basic fallback",
+      "date": "2026-05-31T14:20:29Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "3c8ba7a",
+      "message": "Merge: A4 반론 무결성 + 연구 윤리 게이트",
+      "date": "2026-05-31T14:19:21Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "3c8861b",
+      "message": "feat(academic): A4 — 반론 무결성 + 연구 윤리 게이트",
+      "date": "2026-05-31T14:19:21Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "a9da35d",
+      "message": "Build 215 command strike fallback",
+      "date": "2026-05-31T14:12:40Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "d90cff2",
+      "message": "Merge: A3 인용 무결성 게이트 (환각 인용 탐지)",
+      "date": "2026-05-31T14:08:00Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "5c7b846",
+      "message": "feat(academic): A3 — 인용 무결성 게이트 + 환각 인용 탐지",
+      "date": "2026-05-31T14:08:00Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "6e5f3a0",
+      "message": "Make office work loops read as comic pixel motion",
+      "date": "2026-05-31T13:54:32Z"
     },
     {
       "repo": "samguk-idle-prototype",
-      "sha": "cc82318",
-      "message": "Preserve local proof flow before final external receipts",
-      "date": "2026-05-30T23:42:26Z"
+      "sha": "9b031cb",
+      "message": "Prove the daily return route can finish without duplicate rewards",
+      "date": "2026-05-31T13:36:16Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "1509806",
+      "message": "Make research capabilities carry tech icon art",
+      "date": "2026-05-31T13:33:51Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "5df72a1",
+      "message": "feat(W8-07): 턴제 일시정지 + 패들 마우스 추종 + 예측선 게이팅 (실플레이 피드백)",
+      "date": "2026-05-31T13:30:53Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "ea9e90b",
+      "message": "Make product domains read as visual market cards",
+      "date": "2026-05-31T13:24:17Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "8a7b11d",
+      "message": "feat(W8-06): Battle.tscn 턴제 배선 — 코어 루프 피벗 완성 (마지막 조립)",
+      "date": "2026-05-31T12:57:57Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "c6bd5bd",
+      "message": "Keep daily return continuation obvious after the receipt",
+      "date": "2026-05-31T12:53:56Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "2b0b487",
+      "message": "Keep daily route execution visible after the tap",
+      "date": "2026-05-31T12:13:29Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "f177303",
+      "message": "Build 214 command asset pass",
+      "date": "2026-05-31T08:49:35Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "2d925ff",
+      "message": "Build 213 safe run resume",
+      "date": "2026-05-31T07:07:35Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "dc812e4",
+      "message": "Build 212 regression drill",
+      "date": "2026-05-31T06:38:32Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "f6eb17c",
+      "message": "Let returning players advance from the command board with one safe tap",
+      "date": "2026-05-31T06:27:12Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "f376ec6",
+      "message": "feat(W8-05): AimController 턴제 모드 — 발사 책임 이전 (피벗 5단계)",
+      "date": "2026-05-31T05:57:41Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "b046121",
+      "message": "docs(W8-04): 보고서 한국어 검증본으로 통합",
+      "date": "2026-05-31T05:49:18Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "209f094",
+      "message": "feat(W8-04): BattleTurnCoordinator — 4 골격 조율 로직 (피벗 4단계)",
+      "date": "2026-05-31T05:48:26Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "5896efe",
+      "message": "Keep daily return players moving through the local proof chain",
+      "date": "2026-05-31T05:43:13Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "4f807ed",
+      "message": "Build 211 audio foundation",
+      "date": "2026-05-30T23:51:41Z"
     },
     {
       "repo": "cmds-daily-briefing",
       "sha": "d7bca6b",
       "message": "Add May 31 daily console briefing",
       "date": "2026-05-30T23:34:14Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "2e324b6",
-      "message": "Add beta candidate local gate",
-      "date": "2026-05-30T23:19:22Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "244f3e9",
-      "message": "Expand flow smoke to completion routes",
-      "date": "2026-05-30T23:14:05Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "4b0b4a0",
-      "message": "Cover final result routes in flow smoke",
-      "date": "2026-05-30T23:09:46Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "0353d24",
-      "message": "Add flow smoke freshness check",
-      "date": "2026-05-30T23:07:05Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "2488107",
-      "message": "Add local browser flow smoke gate",
-      "date": "2026-05-30T23:04:13Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "38ba3d3",
-      "message": "Gate near-miss retry QA for beta",
-      "date": "2026-05-30T22:55:59Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "194468d",
-      "message": "Add near-miss retry QA entry",
-      "date": "2026-05-30T22:33:07Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "82b048f",
-      "message": "Focus ending retries on the next run",
-      "date": "2026-05-30T22:28:51Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "3d24f10",
-      "message": "Keep soft-launch blockers explicit",
-      "date": "2026-05-30T18:19:43Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "f6f3a34",
-      "message": "Keep final screenshot proof explicit",
-      "date": "2026-05-30T17:57:44Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "8c229a4",
-      "message": "Keep adventure auto-hunt inside the store frame",
-      "date": "2026-05-30T17:36:23Z"
     },
     {
       "repo": "honbul",
@@ -129,36 +249,6 @@
       "date": "2026-05-30T13:42:39Z"
     },
     {
-      "repo": "honbul",
-      "sha": "9e373df",
-      "message": "feat(W8-02): 적령 연속 하강 — 시간 기반 + 바닥 도달 라이프 소모 (피벗 2단계)",
-      "date": "2026-05-30T13:41:46Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "124613c",
-      "message": "docs(W8-01): 보고서 한국어 검증본으로 통합",
-      "date": "2026-05-30T10:53:43Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "75f63c3",
-      "message": "feat(W8-01): 턴 컨트롤러 — Ballz식 무더기 발사 + 턴 종료 (코어 루프 피벗 1단계)",
-      "date": "2026-05-30T10:52:09Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "dcf2b95",
-      "message": "feat(W7-13): 전투 HUD 마나 표시 — 라이프·동전·마나 3종 (레퍼런스 전투화면)",
-      "date": "2026-05-30T09:46:05Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "b25f657",
-      "message": "feat(W7-12): 그릇 해제 (영혼 소비) — 무인/자객/무당 영혼 잠금 해제",
-      "date": "2026-05-30T09:46:04Z"
-    },
-    {
       "repo": "story-x-beta",
       "sha": "020dddc",
       "message": "docs: A2 완료 인계 노트 갱신",
@@ -171,34 +261,10 @@
       "date": "2026-05-30T08:53:13Z"
     },
     {
-      "repo": "story-x-beta",
-      "sha": "31b114b",
-      "message": "feat(academic): A2 — 주장 레저 + 주장-근거 하네스",
-      "date": "2026-05-30T08:52:17Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "a89e34c",
-      "message": "Merge: A1 사회과학/학술 매체 골격 (academic 5번째 매체)",
-      "date": "2026-05-30T02:31:05Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "98d6221",
-      "message": "feat(academic): A1 — 사회과학/학술 매체 골격 추가",
-      "date": "2026-05-30T02:30:37Z"
-    },
-    {
       "repo": "cmds-daily-briefing",
       "sha": "334f965",
       "message": "Add May 30 light briefing",
       "date": "2026-05-29T23:34:30Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "191d7bc",
-      "message": "feat: build 165 playtest alpha seal",
-      "date": "2026-05-29T22:09:30Z"
     },
     {
       "repo": "chaekdam",
@@ -231,70 +297,10 @@
       "date": "2026-05-29T16:15:01Z"
     },
     {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "fda5a5a",
-      "message": "feat: build 155 release-proof-seal",
-      "date": "2026-05-29T16:07:38Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "791d14d",
-      "message": "feat: build 154 staged-command",
-      "date": "2026-05-29T16:02:26Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "d5583f9",
-      "message": "feat: build 153 aftercare-agency",
-      "date": "2026-05-29T15:53:27Z"
-    },
-    {
       "repo": "chaekdam",
       "sha": "16bff3d",
       "message": "feat: Phase 5 — 대화 (posts + comments)",
       "date": "2026-05-29T15:47:05Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "68039aa",
-      "message": "feat: build 152 clear-war-table",
-      "date": "2026-05-29T15:46:06Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "8f888e6",
-      "message": "feat: build 151 ridge-ambush",
-      "date": "2026-05-29T15:37:40Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "a2fb4af",
-      "message": "feat: build 150 banner-orders",
-      "date": "2026-05-29T15:28:21Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "cee09e5",
-      "message": "feat: build 149 payoff-pressure",
-      "date": "2026-05-29T15:18:42Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "e172350",
-      "message": "docs: 사회과학 로드맵 확정 결정 반영 (로컬 휴리스틱·영어 APA·academic 매체)",
-      "date": "2026-05-29T14:57:22Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "d380f68",
-      "message": "docs: 사회과학 글쓰기 확장 로드맵 (검토용)",
-      "date": "2026-05-29T14:52:35Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "02680dc",
-      "message": "Merge: 지표 카드 폭 초과 수정 + 마진 검토 병렬화",
-      "date": "2026-05-29T12:10:54Z"
     },
     {
       "repo": "design-system-school",
@@ -445,12 +451,6 @@
       "sha": "6b74580",
       "message": "Connect Home to the Today loop action model",
       "date": "2026-05-25T23:58:00Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "90e2f5c",
-      "message": "Add May 26 CMDS research briefing",
-      "date": "2026-05-25T23:34:57Z"
     },
     {
       "repo": "design-system-school",
