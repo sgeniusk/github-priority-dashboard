@@ -1,12 +1,240 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-06-01",
+  "asOf": "2026-06-02",
   "commits": [
     {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "eab0b0f",
+      "message": "Add game development QA pipeline",
+      "date": "2026-06-01T23:56:28Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "7ef0ac2",
+      "message": "W8-24 장비 시스템 백본 — 수치 모디파이어 수집·장착",
+      "date": "2026-06-01T23:01:59Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "097a86b",
+      "message": "fix: bundle Korean UI font for web",
+      "date": "2026-06-01T22:47:43Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "97bdb1a",
+      "message": "chore: ignore local environment files",
+      "date": "2026-06-01T22:41:53Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "06f075b",
+      "message": "W8-23 장수(그릇) 특성 연결 — 그릇별 공 거동",
+      "date": "2026-06-01T22:36:07Z"
+    },
+    {
       "repo": "ai-company-tycoon-boundaryless",
-      "sha": "945bd7d",
-      "message": "Dock events without swallowing the office",
-      "date": "2026-05-31T23:55:26Z"
+      "sha": "694c44c",
+      "message": "Design the office-first menu popup redesign",
+      "date": "2026-06-01T22:33:48Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "84d0953",
+      "message": "Align agent split with completion harness",
+      "date": "2026-06-01T22:29:36Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "f672f63",
+      "message": "W8-22 공 거동 기술 1 — 크기·폭발 (Ball 모디파이어 기반)",
+      "date": "2026-06-01T22:22:55Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "397ba67",
+      "message": "Ship the v1.0-beta preview and write the release report",
+      "date": "2026-06-01T22:21:01Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "fa05aef",
+      "message": "build 219: add live web smoke receipt",
+      "date": "2026-06-01T18:17:05Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "39b0056",
+      "message": "Mark the polish track shipped and hold at the RC gate",
+      "date": "2026-06-01T17:19:42Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "ab4e8cc",
+      "message": "Trim the entry bundle under the chunk warning",
+      "date": "2026-06-01T17:17:00Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "f2b503e",
+      "message": "Let the keyboard close the celebration overlays",
+      "date": "2026-06-01T17:09:59Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "c2e1503",
+      "message": "Make the overlay dismiss buttons feel pressable",
+      "date": "2026-06-01T17:01:00Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "620c8ee",
+      "message": "Mark the pixel sweep shipped and turn to interaction finish",
+      "date": "2026-06-01T16:49:25Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "ba5b0b0",
+      "message": "Unify the pixel corners and snap the game motion",
+      "date": "2026-06-01T16:17:30Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "166a010",
+      "message": "W8-21 패들 하이브리드 반사 — 부위별 각도 (아르카노이드)",
+      "date": "2026-06-01T16:11:16Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "0e14b35",
+      "message": "docs: 볼핏 벤치마크 + 장수·장비 메타 설계안",
+      "date": "2026-06-01T15:41:04Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "f022470",
+      "message": "W8-20 발사 펄스 타이밍 — 회수 시점으로 이동",
+      "date": "2026-06-01T15:28:12Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "ae3007e",
+      "message": "W8-19 승리 조건 수정 — 보스 처치로만 승리",
+      "date": "2026-06-01T15:25:10Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "d9de7c1",
+      "message": "W8-18 중간보스·보스 관문 — 진행 모델 완성",
+      "date": "2026-06-01T15:13:34Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "c6878cf",
+      "message": "Build 218 scout timing receipt",
+      "date": "2026-06-01T14:06:05Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "c55ed43",
+      "message": "Build 218 beta readiness gate",
+      "date": "2026-06-01T14:04:31Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "4e299fd",
+      "message": "Merge adventure command timing runtime",
+      "date": "2026-06-01T12:55:31Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "46d6590",
+      "message": "Prepare v1.00.28 handoff for merge",
+      "date": "2026-06-01T12:55:14Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "cd05cbc",
+      "message": "docs(asset-beta): prepare Claude handoff after 0.7.15",
+      "date": "2026-06-01T12:52:54Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "63f1bf8",
+      "message": "feat(asset-beta): land combat reactions on battlefield sprites",
+      "date": "2026-06-01T11:30:10Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "e071cb2",
+      "message": "feat(asset-beta): make combat actions readable on the playfield",
+      "date": "2026-06-01T09:54:32Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "68fab86",
+      "message": "Make adventure commands choose tactical timing",
+      "date": "2026-06-01T09:53:20Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "e82cb99",
+      "message": "feat(asset-beta): reduce battlefield clutter with anchored units",
+      "date": "2026-06-01T09:20:46Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "5f71abb",
+      "message": "test: add first route continuation proof",
+      "date": "2026-06-01T09:11:52Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "d167080",
+      "message": "Make adventure combat run through engine commands",
+      "date": "2026-06-01T08:51:43Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "fde54c7",
+      "message": "feat(asset-beta): show reward effects on the battlefield",
+      "date": "2026-06-01T08:50:04Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "13eef6c",
+      "message": "feat(asset-beta): keep reward prep inside the playable battlefield",
+      "date": "2026-06-01T08:15:04Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "792d08d",
+      "message": "Make adventure waves settle into the next fight",
+      "date": "2026-06-01T07:59:35Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "d14edaa",
+      "message": "feat(asset-beta): make the battlefield read as the real game screen",
+      "date": "2026-06-01T07:52:54Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "e73e2c5",
+      "message": "feat(asset-beta): make wave launch land in debrief",
+      "date": "2026-06-01T00:48:02Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "c16499b",
+      "message": "Make adventure combat answer enemy skills",
+      "date": "2026-06-01T00:42:47Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "fcce8c8",
+      "message": "Make adventure combat resolve kills and drops",
+      "date": "2026-06-01T00:06:29Z"
     },
     {
       "repo": "cmds-daily-briefing",
@@ -21,48 +249,6 @@
       "date": "2026-05-31T23:22:33Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "d09042b",
-      "message": "Make office objects feel like working pixel machines",
-      "date": "2026-05-31T23:01:18Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "8a685bb",
-      "message": "Make the office read as a lively pixel workfloor",
-      "date": "2026-05-31T22:47:01Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "64b9a86",
-      "message": "Make the mobile office read as a complete pixel toybox",
-      "date": "2026-05-31T22:35:45Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "0efb7a3",
-      "message": "Clarify Build 216 release labels",
-      "date": "2026-05-31T20:35:08Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "d39e113",
-      "message": "Build 216 command strike fallback proof",
-      "date": "2026-05-31T20:28:40Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "23ed0c9",
-      "message": "Keep adventure combat controls physically clickable",
-      "date": "2026-05-31T15:04:23Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "36c1487",
-      "message": "Keep office incidents from burying the playfield",
-      "date": "2026-05-31T14:41:21Z"
-    },
-    {
       "repo": "story-x-beta",
       "sha": "1c652fa",
       "message": "Merge: A5 학술 퍼블리시 — 사회과학 확장 A1~A5 완결",
@@ -73,18 +259,6 @@
       "sha": "513b50e",
       "message": "feat(academic): A5 — 학술 퍼블리시 (사회과학 로드맵 완결)",
       "date": "2026-05-31T14:33:05Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "5211b43",
-      "message": "Refine prototype feature flow",
-      "date": "2026-05-31T14:27:40Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "27644f5",
-      "message": "fix: keep command strike as basic fallback",
-      "date": "2026-05-31T14:20:29Z"
     },
     {
       "repo": "story-x-beta",
@@ -99,12 +273,6 @@
       "date": "2026-05-31T14:19:21Z"
     },
     {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "a9da35d",
-      "message": "Build 215 command strike fallback",
-      "date": "2026-05-31T14:12:40Z"
-    },
-    {
       "repo": "story-x-beta",
       "sha": "d90cff2",
       "message": "Merge: A3 인용 무결성 게이트 (환각 인용 탐지)",
@@ -117,136 +285,16 @@
       "date": "2026-05-31T14:08:00Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "6e5f3a0",
-      "message": "Make office work loops read as comic pixel motion",
-      "date": "2026-05-31T13:54:32Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "9b031cb",
-      "message": "Prove the daily return route can finish without duplicate rewards",
-      "date": "2026-05-31T13:36:16Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "1509806",
-      "message": "Make research capabilities carry tech icon art",
-      "date": "2026-05-31T13:33:51Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "5df72a1",
-      "message": "feat(W8-07): 턴제 일시정지 + 패들 마우스 추종 + 예측선 게이팅 (실플레이 피드백)",
-      "date": "2026-05-31T13:30:53Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "ea9e90b",
-      "message": "Make product domains read as visual market cards",
-      "date": "2026-05-31T13:24:17Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "8a7b11d",
-      "message": "feat(W8-06): Battle.tscn 턴제 배선 — 코어 루프 피벗 완성 (마지막 조립)",
-      "date": "2026-05-31T12:57:57Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "c6bd5bd",
-      "message": "Keep daily return continuation obvious after the receipt",
-      "date": "2026-05-31T12:53:56Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "2b0b487",
-      "message": "Keep daily route execution visible after the tap",
-      "date": "2026-05-31T12:13:29Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "f177303",
-      "message": "Build 214 command asset pass",
-      "date": "2026-05-31T08:49:35Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "2d925ff",
-      "message": "Build 213 safe run resume",
-      "date": "2026-05-31T07:07:35Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "dc812e4",
-      "message": "Build 212 regression drill",
-      "date": "2026-05-31T06:38:32Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "f6eb17c",
-      "message": "Let returning players advance from the command board with one safe tap",
-      "date": "2026-05-31T06:27:12Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "f376ec6",
-      "message": "feat(W8-05): AimController 턴제 모드 — 발사 책임 이전 (피벗 5단계)",
-      "date": "2026-05-31T05:57:41Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "b046121",
-      "message": "docs(W8-04): 보고서 한국어 검증본으로 통합",
-      "date": "2026-05-31T05:49:18Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "209f094",
-      "message": "feat(W8-04): BattleTurnCoordinator — 4 골격 조율 로직 (피벗 4단계)",
-      "date": "2026-05-31T05:48:26Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "5896efe",
-      "message": "Keep daily return players moving through the local proof chain",
-      "date": "2026-05-31T05:43:13Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "4f807ed",
-      "message": "Build 211 audio foundation",
-      "date": "2026-05-30T23:51:41Z"
-    },
-    {
       "repo": "cmds-daily-briefing",
       "sha": "d7bca6b",
       "message": "Add May 31 daily console briefing",
       "date": "2026-05-30T23:34:14Z"
     },
     {
-      "repo": "honbul",
-      "sha": "325cdf1",
-      "message": "docs(W8-03): 보고서 한국어 검증본으로 통합",
-      "date": "2026-05-30T14:15:10Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "3c98d58",
-      "message": "feat(W8-03): Ball 스폰 배선 — 단일 발사 + VolleyLauncher (피벗 3단계)",
-      "date": "2026-05-30T14:14:29Z"
-    },
-    {
       "repo": "cmds-daily-briefing",
       "sha": "c6e3d08",
       "message": "Add May 30 build note archive",
       "date": "2026-05-30T13:54:35Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "c0b3bf7",
-      "message": "docs(W8-02): 보고서 한국어 검증본으로 통합",
-      "date": "2026-05-30T13:42:39Z"
     },
     {
       "repo": "story-x-beta",
@@ -459,12 +507,6 @@
       "date": "2026-05-21T11:17:42Z"
     },
     {
-      "repo": "sam-defender-logue",
-      "sha": "c499287",
-      "message": "Add battlefield combat feedback sample slots",
-      "date": "2026-05-21T11:13:14Z"
-    },
-    {
       "repo": "design-system-school",
       "sha": "6346f4a",
       "message": "Phase 8: ontology graph mobile polish",
@@ -487,48 +529,6 @@
       "sha": "28ffe8a",
       "message": "Phase 5: learn paths include patterns",
       "date": "2026-05-21T10:37:50Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "2d95477",
-      "message": "Add battlefield combat tempo readiness",
-      "date": "2026-05-21T08:22:59Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "084617c",
-      "message": "Import first battlefield terrain sign asset",
-      "date": "2026-05-21T07:51:43Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "0c7ef35",
-      "message": "Add battlefield graphics tone plan",
-      "date": "2026-05-21T06:21:18Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "fafdf95",
-      "message": "Add battlefield manual fun gate",
-      "date": "2026-05-21T06:00:57Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "f53a0e4",
-      "message": "Add battlefield terrain asset adapter",
-      "date": "2026-05-21T05:45:29Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "91bd817",
-      "message": "Add battlefield sortie direct focus",
-      "date": "2026-05-21T05:24:53Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "ded91e5",
-      "message": "Add battlefield core combat proof gate",
-      "date": "2026-05-21T05:10:03Z"
     },
     {
       "repo": "Timeer",
