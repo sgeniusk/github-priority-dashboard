@@ -2,7 +2,7 @@
 
 다음 세션이 이 한 페이지만 보고도 어디까지 했고 뭘 이어가면 되는지 알 수 있도록 유지한다. 상세 백로그는 `feature_list.json`.
 
-**Last Updated**: 2026-05-31 (v2.5 뉴스 피드 + 프로젝트별 누적 보고서 배포 — 정태적 일지 폐기)
+**Last Updated**: 2026-05-31 (v2.6 대시보드 중복 정리 — 탭 8→5)
 
 ## Current Objective — None (v2.1·v2.2·v2.3·v2.4 완료, 커밋·푸시·배포 완료)
 
@@ -13,6 +13,8 @@
 **다음 세션 시작 시 `bash init.sh` + 이 파일 확인.** 후보 — 일지가 며칠 쌓인 뒤 report.html 날짜 전환 재확인, `/report` 줄글 갱신 자동화 점검, 신규 프로젝트 등록 시 town 플롯(game6·app9·content4 슬롯) 초과 시 자동 확장 점검.
 
 ## 직전에 푼 것
+
+- **v2.6 대시보드 중복 정리** (2026-05-31) — 뉴스 피드·프로젝트 페이지와 겹치는 탭 제거. 활동(→뉴스 surge·프로젝트 타임라인)·제안(→뉴스 stall·도움 패널)·순위(→청사진에 정렬/필터/검색 이식) 탭 삭제, 분석은 추세·스택만(도넛·산점 제거). 탭 8→5(청사진·마을·분석·스프린트·사용량). 청사진 블로커·모멘텀·SUG·HIST 보존. 콘솔 0·validate·init.sh 통과. (codex 구동이 자체검증 중 중단됐으나 구현은 온전 — Claude가 라이브 검증 완료.)
 
 - **v2.5 뉴스 피드 + 프로젝트별 누적 보고서** (2026-05-31) — 정태적·반복적이던 일지(날짜별 같은 손글 스냅샷) 폐기. ① report.html = 뉴스 피드(news.json) — history/activity 델타·정체·status에서 자동 이벤트(하이브리드), 날짜 그룹·kind 뱃지, 프로젝트명→project-report.html?repo= 링크. ② project-report.html 신규 = 프로젝트별 페이지(헤더+도움 패널[다음액션·블로커·리스크·제안]+누적 타임라인[커밋 devlog+진척+조언 노트]). scripts/report-gen.mjs(buildNews/buildLogs)를 refresh가 매번 호출(dry-run 안전), journal upsert 제거. 데이터·생성·시드 Claude, 뷰·연동 Codex. FALLBACK seed 전부 일치·콘솔 0·validate·check-report-pages 통과·배포 success.
 

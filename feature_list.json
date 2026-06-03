@@ -137,6 +137,20 @@
         "file:// 폴백 렌더, 콘솔 0, init.sh 통과"
       ],
       "openQuestions": []
+    },
+    {
+      "id": "v2.6-dashboard-dedupe",
+      "name": "v2.6 대시보드 중복 정리 (탭 8→5)",
+      "status": "done",
+      "description": "뉴스 피드·프로젝트 페이지(v2.5)와 겹치는 탭 정리. ① 활동 탭 제거(뉴스 surge+프로젝트 타임라인 대체) ② 제안 탭 제거(뉴스 stall+프로젝트 도움 패널 대체) ③ 순위 탭 제거+정렬/필터/검색을 청사진으로 이식(getList를 renderMasterBoard에 연결) ④ 분석 차트 축소(추세·스택만, 도넛·산점 제거). 결과 5탭(청사진·마을·분석·스프린트·사용량). 공유 헬퍼·SUG·HIST 보존. 구현 Codex, 검증 Claude.",
+      "dependencies": ["v2.5-news-and-project-logs"],
+      "doneCriteria": [
+        "내비 5탭, 활동·제안·순위 제거",
+        "청사진에 정렬·필터·검색 동작(getList), 카드 가독성·블로커·모멘텀 유지",
+        "분석 추세·스택만, 깨짐 없음",
+        "콘솔 0·init.sh·validate 통과"
+      ],
+      "openQuestions": []
     }
   ]
 }

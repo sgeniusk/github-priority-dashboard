@@ -67,7 +67,7 @@ section{margin-bottom:48px}
 .kpi-tag{display:inline-flex;align-items:center;margin-top:10px;background:var(--cool-gray);color:var(--navy);border-radius:var(--rp);padding:2px 10px;font-size:10px;font-weight:600}
 
 /* ── FILTER BAR ── */
-.filter-bar{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:12px 16px;display:flex;flex-wrap:nowrap;gap:8px;align-items:center;box-shadow:var(--shadow);overflow-x:auto}
+.filter-bar{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:12px 16px;margin-bottom:14px;display:flex;flex-wrap:nowrap;gap:8px;align-items:center;box-shadow:var(--shadow);overflow-x:auto}
 .f-lbl{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--t2);flex-shrink:0}
 .f-group{display:flex;gap:4px;flex-wrap:nowrap;align-items:center}
 .f-div{width:1px;height:20px;background:var(--border);flex-shrink:0}
@@ -79,19 +79,7 @@ section{margin-bottom:48px}
 .search-input:focus{border-color:var(--electric);width:270px}
 .search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--t2);pointer-events:none;font-size:13px}
 
-/* ── TABLE ── */
-.tbl-wrap{background:var(--surface);border-radius:var(--r);border:1px solid var(--border);overflow:hidden;box-shadow:var(--shadow)}
-.tbl-head{display:grid;grid-template-columns:44px minmax(130px,1fr) 122px 76px 1.5fr 70px 86px 44px;padding:10px 20px;background:var(--bg);border-bottom:2px solid var(--border);gap:10px;align-items:center}
-.th{font-size:10px;font-weight:700;color:var(--t2);text-transform:uppercase;letter-spacing:.08em;cursor:pointer;display:flex;align-items:center;gap:3px;user-select:none;transition:color .15s;white-space:nowrap}
-.th:hover,.th.sorted{color:var(--electric)}
-.row-wrap{border-bottom:1px solid var(--border)}
-.row-wrap:last-child{border:none}
-.tbl-row{display:grid;grid-template-columns:44px minmax(130px,1fr) 122px 76px 1.5fr 70px 86px 44px;padding:13px 20px;gap:10px;align-items:center;cursor:pointer;transition:background .15s}
-.tbl-row:hover{background:rgba(37,69,255,.03)}
-.tbl-row.exp{background:rgba(37,69,255,.05)}
-.rank{font-size:15px;font-weight:700;color:var(--t2);line-height:1}
-.rank.hi{color:var(--electric)}
-.pname{font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px;min-width:0}
+/* ── PROJECT BADGES ── */
 .picon{flex-shrink:0;width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;font-size:15px;background:rgba(127,127,140,.13);border-radius:8px;line-height:1}
 .mb-name .picon{width:30px;height:30px;font-size:17px;border-radius:9px}
 .susp-tag{background:rgba(0,0,0,.07);color:var(--t2);border-radius:4px;padding:1px 5px;font-size:9px;font-weight:700;text-transform:uppercase;flex-shrink:0}
@@ -100,16 +88,10 @@ section{margin-bottom:48px}
 .t-co{background:var(--navy);color:#fff}
 .t-he{background:var(--yellow);color:var(--black)}
 .t-hy{background:var(--orange);color:#fff}
-.typbg{display:inline-flex;border-radius:5px;padding:2px 8px;font-size:11px;font-weight:500;background:var(--cool-gray);color:var(--navy)}
-.prog-wrap{display:flex;flex-direction:column;gap:3px;min-width:0}
-.prog-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
-.prog-pct{font-size:13px;font-weight:700}
-.sprint-lbl{font-size:10px;color:var(--t2);font-weight:600}
 .stk-bar{height:17px;border-radius:var(--rp);display:flex;overflow:hidden;background:var(--border)}
 .seg{height:100%;transition:width .6s cubic-bezier(.4,0,.2,1)}
 .s1{background:var(--s1)}.s2{background:var(--s2)}.s3{background:var(--s3)}.s4{background:var(--s4)}
 .prog-breakdown{font-size:10.5px;color:var(--t2);line-height:1.35;white-space:normal}
-.prog-metrics{display:flex;align-items:center;gap:5px;flex-wrap:wrap;justify-content:flex-end}
 .momentum-chip,.blocker-chip{display:inline-flex;align-items:center;border-radius:var(--rp);padding:2px 7px;font-size:10px;font-weight:700;line-height:1.2;white-space:nowrap}
 .momentum-chip.up{background:rgba(31,157,77,.13);color:#1f8c47}
 .momentum-chip.down{background:rgba(255,91,34,.14);color:var(--orange)}
@@ -121,31 +103,12 @@ section{margin-bottom:48px}
 [data-theme=dark] .momentum-chip.commit-fresh{color:#58d184}
 [data-theme=dark] .momentum-chip.commit-dormant{color:#ffc13a}
 .blocker-chip{background:rgba(255,91,34,.16);color:var(--orange);max-width:160px;overflow:hidden;text-overflow:ellipsis}
-.cm-val{font-size:13px;font-weight:600;display:flex;flex-direction:column;gap:1px}
-.cm-lbl{font-size:9px;color:var(--t2);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
-.eta-val{font-size:12px;color:var(--t2)}
-.exp-btn{width:28px;height:28px;border-radius:7px;border:1px solid var(--border);background:none;cursor:pointer;display:grid;place-items:center;color:var(--t2);font-size:10px;transition:all .15s;font-family:var(--font)}
-.exp-btn:hover{border-color:var(--electric);color:var(--electric)}
-.tbl-row.exp .exp-btn{background:var(--electric);color:#fff;border-color:var(--electric)}
-/* Expand */
-.exp-body{max-height:0;overflow:hidden;transition:max-height .38s cubic-bezier(.4,0,.2,1)}
-.exp-body.open{max-height:190px}
-.exp-inner{padding:14px 20px 20px 74px;display:grid;grid-template-columns:1fr 1fr;gap:24px;border-top:1px solid var(--border)}
-.brk-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--t2);margin-bottom:10px}
-.brk-row{display:flex;align-items:center;gap:10px;margin-bottom:7px}
-.brk-lbl{font-size:11px;color:var(--t2);width:54px;text-align:right;flex-shrink:0}
-.brk-track{flex:1;height:6px;background:var(--border);border-radius:var(--rp);overflow:hidden}
-.brk-fill{height:100%;border-radius:var(--rp);transition:width .5s .1s cubic-bezier(.4,0,.2,1)}
-.brk-score{font-size:11px;font-weight:700;width:34px;flex-shrink:0;color:var(--text)}
-.nxt-box{background:var(--bg);border-radius:10px;padding:12px 14px;border-left:3px solid var(--electric)}
-.nxt-txt{font-size:13px;line-height:1.5}
-.nxt-meta{font-size:11px;color:var(--t2);margin-top:8px}
 .legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;padding:0 2px}
 .leg-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--t2)}
 .leg-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}
 
 /* ── CHARTS ── */
-.charts-grid{display:grid;grid-template-columns:2.1fr 1fr 1fr;gap:14px}
+.charts-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
 .chart-card{background:var(--surface);border-radius:var(--r);border:1px solid var(--border);padding:22px 22px 18px;box-shadow:var(--shadow)}
 .chart-title{font-size:13px;font-weight:700;margin-bottom:16px;color:var(--text)}
 
@@ -208,44 +171,8 @@ footer{border-top:1px solid var(--border);padding:18px 28px;max-width:1460px;mar
 /* ── EMPTY STATE ── */
 .empty{padding:48px;text-align:center;color:var(--t2);font-size:14px}
 /* Remove opacity animation from non-KPI sections */
-.tbl-wrap,.filter-bar,.chart-card,.spcol,.usage-card{opacity:1!important;transform:none!important;animation:none!important}
-
-/* ── SUGGESTIONS ── */
-.sug-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
-.sug-card{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--electric);border-radius:var(--r);padding:16px 18px;box-shadow:var(--shadow)}
-.sug-card.sev-high{border-left-color:var(--orange)}
-.sug-card.sev-warn{border-left-color:var(--yellow)}
-.sug-card.sev-info{border-left-color:var(--electric)}
-.sug-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:9px}
-.sug-type{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;border-radius:var(--rp);padding:3px 10px;background:var(--cool-gray);color:var(--navy)}
-.sug-repo{font-size:11px;color:var(--t2);font-weight:600;white-space:nowrap}
-.sug-title{font-size:14px;font-weight:700;margin-bottom:6px;line-height:1.35}
-.sug-detail{font-size:12px;color:var(--t2);line-height:1.6;margin-bottom:0}
-.sug-actions{list-style:none;display:flex;flex-direction:column;gap:6px}
-.sug-actions li{font-size:12px;padding-left:16px;position:relative;line-height:1.45}
-.sug-actions li::before{content:'\2192';position:absolute;left:0;color:var(--electric);font-weight:700}
-.sug-empty{padding:32px;text-align:center;color:var(--t2);font-size:13px}
-.sug-conf{font-size:9px;font-weight:700;border-radius:var(--rp);padding:3px 8px;letter-spacing:.02em;white-space:nowrap}
-.sug-conf.c-high{background:var(--electric);color:#fff}
-.sug-conf.c-medium{background:var(--cool-gray);color:var(--navy)}
-.sug-conf.c-low{background:transparent;color:var(--t2);border:1px solid var(--border)}
-.sug-seclbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--t2);margin:13px 0 6px}
-.sug-evidence{list-style:none;display:flex;flex-direction:column;gap:5px;margin:0}
-.sug-evidence li{font-size:11.5px;color:var(--t2);padding-left:13px;position:relative;line-height:1.5}
-.sug-evidence li::before{content:'\00b7';position:absolute;left:4px;color:var(--electric);font-weight:700}
-.sug-rec{font-size:12px;line-height:1.55;background:var(--cool-gray);border-radius:8px;padding:9px 11px;margin-top:13px}
-.sug-rec b{display:block;color:var(--electric);font-size:9px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
-.act-feed{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;box-shadow:var(--shadow)}
-.act-day{margin-bottom:18px}
-.act-day:last-child{margin-bottom:0}
-.act-date{font-size:11px;font-weight:700;color:var(--t2);text-transform:uppercase;letter-spacing:.05em;padding-bottom:7px;border-bottom:1px solid var(--border);margin-bottom:6px}
-.act-count{color:var(--electric);margin-left:6px}
-.act-row{display:flex;align-items:center;gap:10px;padding:7px 8px;border-radius:8px;text-decoration:none;color:var(--t1);transition:background .12s}
-.act-row:hover{background:rgba(127,127,140,.09)}
-.act-icon{flex-shrink:0;width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;font-size:13px;background:rgba(127,127,140,.13);border-radius:6px}
-.act-msg{flex:1;font-size:12.5px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.act-repo{flex-shrink:0;font-size:11px;color:var(--t2);font-weight:600}
-.act-sha{flex-shrink:0;font-size:10px;color:var(--t2);font-family:ui-monospace,Menlo,monospace;opacity:.7}
+.filter-bar,.chart-card,.spcol,.usage-card{opacity:1!important;transform:none!important;animation:none!important}
+.panel-empty{padding:32px;text-align:center;color:var(--t2);font-size:13px}
 
 /* ── A11Y ── */
 :focus-visible{outline:2px solid var(--electric);outline-offset:2px;border-radius:4px}
@@ -349,7 +276,6 @@ header,.modal-box{
 .card,.kpi-card,.chart-card,.usage-card{background:var(--glass)}
 .kpi-card,.card,.chart-card,.usage-card{box-shadow:inset 0 1px 0 rgba(255,255,255,.4), var(--shadow)}
 .modal-overlay{-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
-.tbl-row:focus-visible{outline-offset:-2px}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
 }
@@ -360,8 +286,6 @@ header,.modal-box{
   .kpi-grid{grid-template-columns:repeat(3,1fr)}
   .charts-grid{grid-template-columns:1fr}
   .sprint-board{grid-template-columns:repeat(3,1fr)}
-  .exp-inner{grid-template-columns:1fr;padding-left:20px;gap:14px}
-  .exp-body.open{max-height:460px}
 }
 @media (max-width:640px){
   body{font-size:13px}
@@ -377,11 +301,6 @@ header,.modal-box{
   .kpi-num{font-size:32px}
   .usage-grid,.inp-row{grid-template-columns:1fr}
   .sprint-board{grid-template-columns:1fr}
-  /* 테이블 — 핵심 4열(#·프로젝트·진척도·펼침)만 노출, 나머지는 행 펼침에서 확인 */
-  .tbl-head,.tbl-row{grid-template-columns:32px minmax(0,1fr) 92px 34px;padding-left:14px;padding-right:14px}
-  .tbl-head .th:nth-child(3),.tbl-head .th:nth-child(4),.tbl-head .th:nth-child(6),.tbl-head .th:nth-child(7),
-  .tbl-row>:nth-child(3),.tbl-row>:nth-child(4),.tbl-row>:nth-child(6),.tbl-row>:nth-child(7){display:none}
-  .exp-inner{padding-left:16px}
 }
 </style>
 <script type="application/javascript">document.documentElement.setAttribute("data-theme",localStorage.getItem("theme")||"light");</script>
@@ -401,9 +320,6 @@ header,.modal-box{
   <nav class="nav-links" role="tablist" aria-label="대시보드 탭">
     <button class="nav-link" role="tab" aria-selected="false" data-tab="blueprint" onclick="showTab('blueprint')">청사진</button>
     <button class="nav-link" role="tab" aria-selected="false" data-tab="town" onclick="showTab('town')">마을</button>
-    <button class="nav-link" role="tab" aria-selected="false" data-tab="table" onclick="showTab('table')">순위</button>
-    <button class="nav-link" role="tab" aria-selected="false" data-tab="suggest" onclick="showTab('suggest')">제안</button>
-    <button class="nav-link" role="tab" aria-selected="false" data-tab="activity" onclick="showTab('activity')">활동</button>
     <button class="nav-link" role="tab" aria-selected="false" data-tab="charts" onclick="showTab('charts')">분석</button>
     <button class="nav-link" role="tab" aria-selected="false" data-tab="sprint" onclick="showTab('sprint')">스프린트</button>
     <button class="nav-link" role="tab" aria-selected="false" data-tab="usage" onclick="showTab('usage')">사용량 및 설정</button>
@@ -422,20 +338,6 @@ header,.modal-box{
   <!-- Blueprint -->
   <section id="sec-blueprint" data-tab="blueprint">
     <div class="sec-label">청사진 — 프로젝트 마스터 보드 <button class="info-i" onclick="openGlossary('마스터 보드')" aria-label="용어 설명">i</button><em id="bpMeta" style="font-style:normal;font-weight:600;letter-spacing:0;text-transform:none"></em><span></span></div>
-    <div class="card">
-      <p class="hint">진척도 높은 순으로 전 프로젝트를 한눈에. 각 카드의 문서 버튼으로 PRD·로드맵·로그를 볼 수 있어.</p>
-      <div id="blueprintBody"></div>
-    </div>
-  </section>
-
-  <!-- Walkable town — town.html을 보드 안 창(iframe)으로 실행 -->
-  <section id="sec-town" data-tab="town">
-    <div class="sec-label">마을 — 걸어다니는 프로젝트 마을 <a class="ext-link" href="./town.html" target="_blank" rel="noopener" aria-label="새 창에서 마을 열기" style="font-style:normal;font-weight:600;letter-spacing:0;text-transform:none;color:var(--electric);text-decoration:none;margin-left:6px;font-size:11px">새 창 ↗</a><span></span></div>
-    <div class="town-frame-wrap"><iframe id="townFrame" title="프로젝트 마을 게임" loading="lazy" data-src="./town.html" sandbox="allow-scripts allow-same-origin"></iframe></div>
-  </section>
-
-  <!-- Filters -->
-  <section data-tab="table">
     <div class="filter-bar">
       <span class="f-lbl">카테고리</span>
       <div class="f-group" id="fCat"></div>
@@ -453,43 +355,16 @@ header,.modal-box{
         <input class="search-input" id="sInput" placeholder="프로젝트 검색..." type="search" autocomplete="off">
       </div>
     </div>
-  </section>
-
-  <!-- Table -->
-  <section id="sec-table" data-tab="table">
-    <div class="sec-label">완성 임박도 순위 <span></span></div>
-    <div class="tbl-wrap">
-      <div class="tbl-head">
-        <span class="th">#</span>
-        <span class="th" data-s="name">프로젝트</span>
-        <span class="th" data-s="tool">도구</span>
-        <span class="th" data-s="type">유형</span>
-        <span class="th" data-s="pct">진척도 ↕</span>
-        <span class="th" data-s="commits">커밋 ↕</span>
-        <span class="th">예상 완료</span>
-        <span class="th"></span>
-      </div>
-      <div id="tblBody"></div>
-    </div>
-    <div class="legend">
-      <div class="leg-item"><div class="leg-dot" style="background:var(--s1)"></div>문서 PRD·Spec (0-20)</div>
-      <div class="leg-item"><div class="leg-dot" style="background:var(--s2)"></div>골격 하네스·서브에이전트 (0-30)</div>
-      <div class="leg-item"><div class="leg-dot" style="background:var(--s3)"></div>핵심 기능 (0-30)</div>
-      <div class="leg-item"><div class="leg-dot" style="background:var(--s4)"></div>알파·폴리시 (0-20)</div>
-      <button class="help-link" onclick="openHelp()" aria-label="진척도 측정 기준 보기">측정 기준 ⓘ</button>
+    <div class="card">
+      <p class="hint">정렬·필터·검색으로 전 프로젝트를 한눈에. 각 카드의 문서 버튼으로 PRD·로드맵·로그를 볼 수 있어.</p>
+      <div id="blueprintBody"></div>
     </div>
   </section>
 
-  <!-- Suggestions -->
-  <section id="sec-suggest" data-tab="suggest">
-    <div class="sec-label">제안 / 코칭 <button class="info-i" onclick="openGlossary('제안/코칭')" aria-label="용어 설명">i</button><em id="sugMeta" style="font-style:normal;font-weight:600;letter-spacing:0;text-transform:none"></em><span></span></div>
-    <div class="sug-grid" id="sugGrid"></div>
-  </section>
-
-  <!-- Activity feed -->
-  <section id="sec-activity" data-tab="activity">
-    <div class="sec-label">활동 — 통합 커밋 피드<em id="actMeta" style="font-style:normal;font-weight:600;letter-spacing:0;text-transform:none"></em><span></span></div>
-    <div class="act-feed" id="actFeed"></div>
+  <!-- Walkable town — town.html을 보드 안 창(iframe)으로 실행 -->
+  <section id="sec-town" data-tab="town">
+    <div class="sec-label">마을 — 걸어다니는 프로젝트 마을 <a class="ext-link" href="./town.html" target="_blank" rel="noopener" aria-label="새 창에서 마을 열기" style="font-style:normal;font-weight:600;letter-spacing:0;text-transform:none;color:var(--electric);text-decoration:none;margin-left:6px;font-size:11px">새 창 ↗</a><span></span></div>
+    <div class="town-frame-wrap"><iframe id="townFrame" title="프로젝트 마을 게임" loading="lazy" data-src="./town.html" sandbox="allow-scripts allow-same-origin"></iframe></div>
   </section>
 
   <!-- Charts -->
@@ -502,26 +377,16 @@ header,.modal-box{
         <div class="legend" id="stackLeg"></div>
       </div>
       <div class="chart-card">
-        <div class="chart-title">도구별 분포</div>
-        <svg id="donutC" width="100%" height="170" viewBox="0 0 200 170" role="img" aria-label="도구별 활성 프로젝트 분포 도넛 차트"></svg>
-        <div class="legend" id="donutLeg"></div>
+        <div class="chart-title" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+          <span>프로젝트별 추세</span>
+          <em id="trendMeta" style="font-style:normal;font-weight:500;color:var(--t2);font-size:11px"></em>
+          <span style="flex:1"></span>
+          <button class="doc-subtab on" data-tm="progress" onclick="setTrendMetric('progress')">진척도</button>
+          <button class="doc-subtab" data-tm="commits" onclick="setTrendMetric('commits')">커밋수</button>
+        </div>
+        <svg id="trendC" width="100%" height="240" role="img" aria-label="프로젝트별 진척도·커밋 추세 선차트"></svg>
+        <div class="legend" id="trendLeg"></div>
       </div>
-      <div class="chart-card">
-        <div class="chart-title">진척도 × 커밋 매트릭스</div>
-        <svg id="scatterC" width="100%" height="268" role="img" aria-label="진척도 × 커밋 수 산점도"></svg>
-        <div class="legend" id="scatterLeg"></div>
-      </div>
-    </div>
-    <div class="chart-card" style="margin-top:14px">
-      <div class="chart-title" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-        <span>프로젝트별 추세</span>
-        <em id="trendMeta" style="font-style:normal;font-weight:500;color:var(--t2);font-size:11px"></em>
-        <span style="flex:1"></span>
-        <button class="doc-subtab on" data-tm="progress" onclick="setTrendMetric('progress')">진척도</button>
-        <button class="doc-subtab" data-tm="commits" onclick="setTrendMetric('commits')">커밋수</button>
-      </div>
-      <svg id="trendC" width="100%" height="240" role="img" aria-label="프로젝트별 진척도·커밋 추세 선차트"></svg>
-      <div class="legend" id="trendLeg"></div>
     </div>
   </section>
 
@@ -1618,7 +1483,7 @@ const FALLBACK_PROJECTS = {
   ]
 };
 const FALLBACK_SUGGESTIONS = {
-  "_comment": "/coach 및 /refresh 슬래시 커맨드가 생성하는 분석·제안 데이터. 대시보드의 '제안 / 코칭' 패널이 읽는다. 수동 편집보다 커맨드 재생성을 권장. paused 프로젝트는 정체 경고 대상에서 제외한다.",
+  "_comment": "/coach 및 /refresh 슬래시 커맨드가 생성하는 분석 데이터. 청사진 블로커 뱃지가 읽는다. 수동 편집보다 커맨드 재생성을 권장. paused 프로젝트는 정체 경고 대상에서 제외한다.",
   "generatedAt": "2026-05-31",
   "items": [
     {
@@ -1878,7 +1743,7 @@ function renderDataBadge() {
 }
 
 /* ── STATE ── */
-let ST = { cat:'전체', tool:'전체', status:'활성', sort:'진척도', search:'', exp:new Set() };
+let ST = { cat:'전체', tool:'전체', status:'활성', sort:'진척도', search:'' };
 let spPos = {}, usage = {};
 try { spPos = JSON.parse(localStorage.getItem('sd')||'{}'); } catch(e){}
 try { usage = JSON.parse(localStorage.getItem('ud')||'{}'); } catch(e){}
@@ -1927,7 +1792,7 @@ function renderFilters() {
   mk('fStatus','status',['활성','전체']);
   mk('fSort','sort',['진척도','커밋','최근 활동']);
 }
-window.setF = (k,v)=>{ ST[k]=v; renderFilters(); renderTable(); };
+window.setF = (k,v)=>{ ST[k]=v; renderFilters(); renderMasterBoard(); };
 
 /* ── FILTERED LIST ── */
 function getList() {
@@ -1940,95 +1805,6 @@ function getList() {
   else if (ST.sort==='커밋') ps.sort((a,b)=>b.commits-a.commits);
   else ps.sort((a,b)=>(b.last||'').localeCompare(a.last||''));
   return ps;
-}
-
-/* ── TABLE ── */
-function renderTable() {
-  const ps = getList();
-  if (!ps.length) { document.getElementById('tblBody').innerHTML='<div class="empty">검색 결과가 없습니다</div>'; return; }
-  document.getElementById('tblBody').innerHTML = ps.map((p,i)=>{
-    const tot = pct(p), ex = ST.exp.has(p.id), sp = spPos[p.id]||p.sprint;
-    const spcfg = SPRINTS[sp]||SPRINTS['A'];
-    return `
-    <div class="row-wrap">
-      <div class="tbl-row${ex?' exp':''}" id="trow-${p.id}" role="button" tabindex="0" aria-expanded="${ex}" aria-label="${p.nm} 상세 ${ex?'접기':'펼치기'}" onclick="togExp(${p.id})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();togExp(${p.id})}">
-        <span class="rank${i<3?' hi':''}">${i+1}</span>
-        <span class="pname"><span class="picon">${p.icon||'📦'}</span>${p.nm}${p.st==='suspended'?'<span class="susp-tag">중단</span>':''}</span>
-        <span class="tbadge ${TCLS[p.tool]||'t-cl'}">${p.tool}</span>
-        <span class="typbg">${p.type}</span>
-        <div class="prog-wrap">
-          <div class="prog-top">
-            <span class="prog-pct">${tot}%</span>
-            <span class="prog-metrics">
-              ${momentumHTML(p)}
-              <span class="sprint-lbl" style="color:${spcfg.c}">${sp==='Defer'?'Defer':'Sprint '+sp}</span>
-            </span>
-          </div>
-          ${progressBar(p)}
-        </div>
-        <div class="cm-val"><span class="cm-lbl">커밋</span>${p.commits}</div>
-        <span class="eta-val">${p.eta}</span>
-        <button class="exp-btn" onclick="event.stopPropagation();togExp(${p.id})">${ex?'▲':'▼'}</button>
-      </div>
-      <div class="exp-body${ex?' open':''}">
-        <div class="exp-inner">
-          <div>
-            <div class="brk-title">진척도 분해</div>
-            ${[['문서',p.d,20,'var(--s1)'],['골격',p.sc,30,'var(--s2)'],['기능',p.fn,30,'var(--s3)'],['알파',p.al,20,'var(--s4)']].map(([l,v,m,c])=>`
-            <div class="brk-row">
-              <span class="brk-lbl">${l}</span>
-              <div class="brk-track"><div class="brk-fill" style="width:${Math.round(v/m*100)}%;background:${c}"></div></div>
-              <span class="brk-score">${v}/${m}</span>
-            </div>`).join('')}
-          </div>
-          <div>
-            <div class="brk-title">다음 액션</div>
-            <div class="nxt-box"><div class="nxt-txt">${p.next}</div></div>
-            <div class="nxt-meta">최근: ${p.last||'-'} · <a href="https://github.com/sgeniusk/${p.repo}" target="_blank" rel="noopener" style="color:var(--electric)">${p.repo} ↗</a></div>
-          </div>
-        </div>
-      </div>
-    </div>`;
-  }).join('');
-
-  requestAnimationFrame(()=>{
-    document.querySelectorAll('.seg').forEach(el=>{
-      const w=el.style.width; el.style.width='0';
-      requestAnimationFrame(()=>requestAnimationFrame(()=>el.style.width=w));
-    });
-  });
-}
-window.togExp = id => { ST.exp.has(id)?ST.exp.delete(id):ST.exp.add(id); renderTable(); document.getElementById('trow-'+id)?.focus(); };
-
-/* ── 제안 / 코칭 ── */
-function renderSuggest() {
-  const items = (SUG && SUG.items) || [];
-  const meta = document.getElementById('sugMeta');
-  if (meta) meta.textContent = items.length ? ` · ${items.length}건 · ${SUG.generatedAt||''}${SUG.source==='browser'?' · 브라우저 분석':''}` : '';
-  const grid = document.getElementById('sugGrid');
-  if (!items.length) { grid.innerHTML='<div class="sug-empty">제안이 없습니다. /coach 또는 /refresh로 분석을 생성하세요.</div>'; return; }
-  const TY = { coach:'Coach', stall:'Stall', idea:'Idea' };
-  const CONF = { high:'확신 높음', medium:'확신 보통', low:'확신 낮음' };
-  grid.innerHTML = items.map(it=>{
-    const sev = ['high','warn','info'].includes(it.severity) ? it.severity : 'info';
-    const proj = P.find(p=>p.repo===it.repo);
-    const conf = ['high','medium','low'].includes(it.confidence) ? it.confidence : '';
-    const ev = Array.isArray(it.evidence) ? it.evidence.filter(Boolean) : [];
-    return `<div class="sug-card sev-${sev}">
-      <div class="sug-top">
-        <span style="display:flex;gap:6px;align-items:center;min-width:0">
-          <span class="sug-type">${TY[it.type]||it.type||''}</span>
-          ${conf?`<span class="sug-conf c-${conf}">${CONF[conf]}</span>`:''}
-        </span>
-        <span class="sug-repo">${proj?proj.nm:(it.repo||'')}</span>
-      </div>
-      <div class="sug-title">${it.title||''}</div>
-      <div class="sug-detail">${it.detail||''}</div>
-      ${ev.length?`<div class="sug-seclbl">근거</div><ul class="sug-evidence">${ev.map(e=>`<li>${e}</li>`).join('')}</ul>`:''}
-      ${it.recommendation?`<div class="sug-rec"><b>권고</b>${it.recommendation}</div>`:''}
-      ${Array.isArray(it.actions)&&it.actions.length?`<div class="sug-seclbl">다음 액션</div><ul class="sug-actions">${it.actions.map(a=>`<li>${a}</li>`).join('')}</ul>`:''}
-    </div>`;
-  }).join('');
 }
 
 /* ── STACKED BAR CHART ── */
@@ -2073,71 +1849,6 @@ function renderStacked() {
   el.setAttribute('viewBox',`0 0 ${W} ${H}`);
   el.innerHTML = s;
   document.getElementById('stackLeg').innerHTML = ['문서','골격','기능','알파'].map((l,i)=>`<div class="leg-item"><div class="leg-dot" style="background:${COLS[i]}"></div>${l}</div>`).join('');
-}
-
-/* ── DONUT CHART ── */
-function renderDonut() {
-  const counts = {};
-  P.filter(p=>p.st==='active').forEach(p=>counts[p.tool]=(counts[p.tool]||0)+1);
-  const entries = Object.entries(counts).sort((a,b)=>b[1]-a[1]);
-  const total = entries.reduce((s,[,v])=>s+v,0);
-  if (!total) { document.getElementById('donutC').innerHTML=''; document.getElementById('donutLeg').innerHTML=''; return; }
-  const cx=100,cy=84,R=64,r=36;
-  let ang=-Math.PI/2, s='', leg='';
-  const isDark = document.documentElement.getAttribute('data-theme')==='dark';
-  const textFill = isDark ? '#ece8ff' : '#171417';
-  const t2Fill   = isDark ? '#8890b8' : '#5a5a72';
-
-  entries.forEach(([tool,cnt])=>{
-    const clr = TCOLS[tool]||'#999', a=cnt/total*Math.PI*2, ea=ang+a, lg=a>Math.PI?1:0;
-    const pt=(a,r)=>[cx+r*Math.cos(a),cy+r*Math.sin(a)];
-    const [x1,y1]=pt(ang,R),[x2,y2]=pt(ea,R),[xi1,yi1]=pt(ang,r),[xi2,yi2]=pt(ea,r);
-    s += `<path d="M${xi1},${yi1}L${x1},${y1}A${R},${R} 0 ${lg},1 ${x2},${y2}L${xi2},${yi2}A${r},${r} 0 ${lg},0 ${xi1},${yi1}Z" fill="${clr}" opacity=".88" style="cursor:pointer;transition:opacity .15s" onmouseenter="this.style.opacity=1;showTip(event,'${tool}: ${cnt}개 (${Math.round(cnt/total*100)}%)')" onmouseleave="this.style.opacity=.88;hideTip()"/>`;
-    leg += `<div class="leg-item"><div class="leg-dot" style="background:${clr}"></div>${tool}: ${cnt}</div>`;
-    ang=ea;
-  });
-  s += `<text x="${cx}" y="${cy-4}" text-anchor="middle" font-size="22" font-weight="700" fill="${textFill}" font-family="Inter,sans-serif">${total}</text>`;
-  s += `<text x="${cx}" y="${cy+14}" text-anchor="middle" font-size="10" fill="${t2Fill}" font-family="Inter,sans-serif">활성 프로젝트</text>`;
-  document.getElementById('donutC').innerHTML = s;
-  document.getElementById('donutLeg').innerHTML = leg;
-}
-
-/* ── SCATTER CHART ── */
-function renderScatter() {
-  const el = document.getElementById('scatterC');
-  const W = Math.max(el.parentElement.clientWidth - 44, 200);
-  const H=268,pL=36,pR=16,pT=18,pB=30;
-  const ps=P.filter(p=>p.st==='active');
-  if (!ps.length) { el.innerHTML=''; document.getElementById('scatterLeg').innerHTML=''; return; }
-  const maxC=Math.max(...ps.map(p=>p.commits),1);
-  const isDark=document.documentElement.getAttribute('data-theme')==='dark';
-  const textFill=isDark?'#ece8ff':'#171417', t2Fill=isDark?'#8890b8':'#5a5a72', borderCl=isDark?'#1c2550':'#e6e6f0';
-  let s='';
-
-  s+=`<line x1="${pL}" y1="${pT}" x2="${pL}" y2="${H-pB}" stroke="${borderCl}" stroke-width="1"/>`;
-  s+=`<line x1="${pL}" y1="${H-pB}" x2="${W-pR}" y2="${H-pB}" stroke="${borderCl}" stroke-width="1"/>`;
-  [0,25,50,75,100].forEach(v=>{
-    const x=pL+v/100*(W-pL-pR);
-    s+=`<line x1="${x}" y1="${pT}" x2="${x}" y2="${H-pB}" stroke="${borderCl}" stroke-width="1" stroke-dasharray="3,3"/>`;
-    s+=`<text x="${x}" y="${H-10}" text-anchor="middle" font-size="9" fill="${t2Fill}" font-family="Inter,sans-serif">${v}</text>`;
-  });
-  s+=`<text x="${pL-4}" y="${pT+6}" text-anchor="end" font-size="9" fill="${t2Fill}" font-family="Inter,sans-serif">커밋</text>`;
-  s+=`<text x="${W-pR}" y="${H-10}" text-anchor="end" font-size="9" fill="${t2Fill}" font-family="Inter,sans-serif">진척도</text>`;
-
-  const x60=pL+0.6*(W-pL-pR);
-  s+=`<line x1="${x60}" y1="${pT}" x2="${x60}" y2="${H-pB}" stroke="#ff5b22" stroke-width="1.5" stroke-dasharray="4,3" opacity=".5"/>`;
-
-  ps.forEach(p=>{
-    const tot=pct(p),cx2=pL+tot/100*(W-pL-pR),cy2=pT+(1-p.commits/maxC)*(H-pT-pB);
-    const clr=TCOLS[p.tool]||'#999', nm=p.nm.length>9?p.nm.slice(0,8)+'…':p.nm;
-    s+=`<circle cx="${cx2}" cy="${cy2}" r="7" fill="${clr}" opacity=".85" style="cursor:pointer;transition:r .15s" onmouseenter="this.setAttribute('r','9');showTip(event,'${p.nm} | 진척도: ${tot}% | 커밋: ${p.commits}')" onmouseleave="this.setAttribute('r','7');hideTip()"/>`;
-    s+=`<text x="${cx2}" y="${cy2-11}" text-anchor="middle" font-size="9" fill="${textFill}" font-family="Inter,sans-serif">${nm}</text>`;
-  });
-
-  el.setAttribute('viewBox',`0 0 ${W} ${H}`);
-  el.innerHTML=s;
-  const tools=[...new Set(ps.map(p=>p.tool))];
-  document.getElementById('scatterLeg').innerHTML=tools.map(t=>`<div class="leg-item"><div class="leg-dot" style="background:${TCOLS[t]};border-radius:50%"></div>${t}</div>`).join('');
 }
 
 /* ── SPRINT BOARD ── */
@@ -2186,8 +1897,8 @@ window.dStart=(e,id)=>{ dragId=id; setTimeout(()=>document.getElementById('sc-'+
 window.dEnd=e=>{ document.querySelectorAll('.spcard').forEach(c=>c.classList.remove('dragging')); document.querySelectorAll('.spcol').forEach(c=>c.classList.remove('dov')); };
 window.dragO=(e,k)=>{ e.preventDefault(); e.currentTarget.classList.add('dov'); };
 window.dragL=e=>e.currentTarget.classList.remove('dov');
-window.dropC=(e,k)=>{ e.preventDefault(); if(dragId!==null){ spPos[dragId]=k; localStorage.setItem('sd',JSON.stringify(spPos)); renderSprint(); renderTable(); } dragId=null; };
-window.resetSprint=()=>{ P.forEach(p=>spPos[p.id]=p.sprint); localStorage.setItem('sd',JSON.stringify(spPos)); renderSprint(); renderTable(); };
+window.dropC=(e,k)=>{ e.preventDefault(); if(dragId!==null){ spPos[dragId]=k; localStorage.setItem('sd',JSON.stringify(spPos)); renderSprint(); renderMasterBoard(); } dragId=null; };
+window.resetSprint=()=>{ P.forEach(p=>spPos[p.id]=p.sprint); localStorage.setItem('sd',JSON.stringify(spPos)); renderSprint(); renderMasterBoard(); };
 
 /* ── USAGE TRACKER ── */
 // AI 서비스 브랜드 — 이름 매칭으로 로고 색·약자 자동 지정
@@ -2325,11 +2036,11 @@ document.getElementById('themeBtn').addEventListener('click',()=>{
   d.setAttribute('data-theme',next);
   localStorage.setItem('theme',next);
   document.getElementById('themeBtn').textContent=dark?'🌙':'☀️';
-  setTimeout(()=>{ renderStacked(); renderDonut(); renderScatter(); renderTrend(); },80);
+  setTimeout(()=>{ renderStacked(); renderTrend(); },80);
 });
 
 /* ── SEARCH ── */
-document.getElementById('sInput').addEventListener('input',e=>{ ST.search=e.target.value; renderTable(); });
+document.getElementById('sInput').addEventListener('input',e=>{ ST.search=e.target.value; renderMasterBoard(); });
 
 /* ── 새로고침 + 클라이언트 분석 ── */
 function daysSince(dateStr){
@@ -2401,8 +2112,7 @@ document.addEventListener('keydown',e=>{ if(e.key==='Escape'){closeHelp();closeD
 /* ── 용어 설명 글로서리 ── */
 const GLOSSARY = {
   '스프린트': '<b>스프린트</b>는 docs/sprint-plan.md의 4-6주 추천 스케줄 단위입니다. Sprint A·B·C·D는 각각 1-2주·2-3주·3-5주·5-8주 구간이고, 한 구간에 프로젝트 2개씩 묶어 동반 마감합니다. Defer는 후순위(보류). 애자일의 "스프린트"(고정 작업 기간)에서 온 용어입니다.',
-  '진척도': '진척도 = 문서(0-20) + 골격(0-30) + 기능(0-30) + 알파(0-20) = 0-100점. 골격은 하네스 엔지니어링·서브에이전트 구성 완성도를 봅니다. 순위 탭 범례의 "측정 기준" 버튼에서 단계별 채점 기준을 볼 수 있습니다.',
-  '제안/코칭': '/coach·/refresh 커맨드가 생성하는 분석입니다 (매일 08:03 KST 원격 루틴이 자동 실행). 정체된 프로젝트, 막힌 단계, 다음 액션을 자동 진단합니다. STALL=정체 경고, COACH=일반 코칭.',
+  '진척도': '진척도 = 문서(0-20) + 골격(0-30) + 기능(0-30) + 알파(0-20) = 0-100점. 골격은 하네스 엔지니어링·서브에이전트 구성 완성도를 봅니다.',
   '마스터 보드': '추적 중인 전 프로젝트를 진척도 높은 순으로 한눈에 보는 카드 그리드입니다. 각 카드의 "문서" 버튼으로 PRD·로드맵·로그를 엽니다.',
   '정체': '마지막 GitHub 활동이 4-5일 이상 없는 상태입니다. 진행 중인 프로젝트가 정체되면 일정 지연 신호이며, 같은 스프린트의 동반 프로젝트에도 영향을 줍니다.'
 };
@@ -2414,7 +2124,10 @@ window.openGlossary = (term)=>{
 window.closeGlossary = ()=>closeModal('glossaryModal');
 
 /* ── 탭 전환 (파일철 레이아웃) ── */
+const VALID_TABS = new Set(['blueprint','town','charts','sprint','usage']);
+function normalizeTab(name){ return VALID_TABS.has(name) ? name : 'blueprint'; }
 function showTab(name){
+  name = normalizeTab(name);
   document.querySelectorAll('section[data-tab]').forEach(s=>{
     s.classList.toggle('tab-on', s.dataset.tab===name);
   });
@@ -2427,7 +2140,7 @@ function showTab(name){
   try { localStorage.setItem('tab', name); } catch(e){}
   window.scrollTo(0,0);
   // 차트는 패널이 보일 때 폭이 잡히므로 분석 탭 전환 시 재렌더
-  if(name==='charts'){ renderStacked(); renderDonut(); renderScatter(); renderTrend(); }
+  if(name==='charts'){ renderStacked(); renderTrend(); }
   // 마을 iframe은 첫 진입 시에만 로드 (lazy)
   if(name==='town'){
     const fr = document.getElementById('townFrame');
@@ -2465,10 +2178,10 @@ document.querySelectorAll('header .nav-link[href^="#"]').forEach(a=>{
 function renderMasterBoard(){
   const wrap = document.getElementById('blueprintBody');
   if(!wrap) return;
-  const ps = [...P].sort((a,b)=>pct(b)-pct(a));
+  const ps = getList();
   const meta = document.getElementById('bpMeta');
-  if(meta) meta.textContent = ps.length ? ` · 활성 ${ps.filter(p=>p.st==='active').length} / 전체 ${ps.length}` : '';
-  if(!ps.length){ wrap.innerHTML = '<div class="empty">프로젝트 없음</div>'; return; }
+  if(meta) meta.textContent = P.length ? ` · 표시 ${ps.length} / 전체 ${P.length}` : '';
+  if(!ps.length){ wrap.innerHTML = '<div class="empty">검색 결과가 없습니다</div>'; return; }
   wrap.innerHTML = ps.map(p=>{
     const tot = pct(p), sp = spPos[p.id]||p.sprint;
     const spcfg = SPRINTS[sp] || SPRINTS['A'];
@@ -2523,13 +2236,13 @@ window.openDocs = (repo)=>{
 window.closeDocs = ()=>closeModal('docModal');
 async function loadDocInto(elId, file){
   const el = document.getElementById(elId);
-  el.innerHTML = '<div class="sug-empty">불러오는 중…</div>';
+  el.innerHTML = '<div class="panel-empty">불러오는 중…</div>';
   try{
     const r = await fetch(`projects/${docRepo}/${file}`,{cache:'no-store'});
     if(!r.ok) throw new Error('HTTP '+r.status);
     el.innerHTML = mdToHtml(await r.text());
   }catch(e){
-    el.innerHTML = '<div class="sug-empty">문서를 불러올 수 없습니다. file:// 에서는 npx serve 또는 배포 URL로 열어주세요.</div>';
+    el.innerHTML = '<div class="panel-empty">문서를 불러올 수 없습니다. file:// 에서는 npx serve 또는 배포 URL로 열어주세요.</div>';
   }
 }
 function renderRoadmapBoard(items){
@@ -2542,21 +2255,21 @@ function renderRoadmapBoard(items){
       ${its.map(i=>`<div class="rm-item">${i.t}</div>`).join('')}
     </div>`;
   }).join('');
-  return html || '<div class="sug-empty">로드맵 항목이 없습니다. /sync-project로 실제 로드맵을 채우세요.</div>';
+  return html || '<div class="panel-empty">로드맵 항목이 없습니다. /sync-project로 실제 로드맵을 채우세요.</div>';
 }
 window.showDocSub = async (sub)=>{
   docSub = sub;
   document.querySelectorAll('.doc-subtab').forEach(t=>t.classList.toggle('on', t.dataset.sub===sub));
   const el = document.getElementById('docRight');
   if(sub==='log'){ loadDocInto('docRight','log.md'); return; }
-  el.innerHTML = '<div class="sug-empty">불러오는 중…</div>';
+  el.innerHTML = '<div class="panel-empty">불러오는 중…</div>';
   try{
     const r = await fetch(`projects/${docRepo}/project.json`,{cache:'no-store'});
     if(!r.ok) throw new Error('HTTP '+r.status);
     const pj = await r.json();
     el.innerHTML = renderRoadmapBoard(pj.roadmap);
   }catch(e){
-    el.innerHTML = '<div class="sug-empty">로드맵을 불러올 수 없습니다. npx serve 또는 배포 URL로 열어주세요.</div>';
+    el.innerHTML = '<div class="panel-empty">로드맵을 불러올 수 없습니다. npx serve 또는 배포 URL로 열어주세요.</div>';
   }
 };
 
@@ -2727,7 +2440,7 @@ let HIST = FALLBACK_HISTORY;
 
 /* ── ACTIVITY — 통합 커밋 피드 ── */
 const FALLBACK_ACTIVITY = {
-  "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
+  "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다.",
   "asOf": "2026-05-21",
   "commits": [
     {
@@ -3261,37 +2974,6 @@ const FALLBACK_ACTIVITY = {
   ]
 };
 let ACT = FALLBACK_ACTIVITY;
-function renderActivity(){
-  const el = document.getElementById('actFeed'), meta = document.getElementById('actMeta');
-  if(!el) return;
-  const commits = (ACT && ACT.commits) || [];
-  if(meta) meta.textContent = commits.length ? ` · ${commits.length}건` : '';
-  if(!commits.length){
-    el.innerHTML = '<div class="sug-empty">활동 데이터가 없습니다. /refresh로 통합 커밋 피드를 수집하세요. (file://에서는 npx serve 또는 배포 URL로 열어주세요.)</div>';
-    return;
-  }
-  const esc = s => (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-  const byDate = {};
-  commits.forEach(c=>{ const d=(c.date||'').slice(0,10); if(d)(byDate[d]=byDate[d]||[]).push(c); });
-  const dates = Object.keys(byDate).sort((a,b)=>b.localeCompare(a));
-  el.innerHTML = dates.map(d=>{
-    const list = byDate[d];
-    return `<div class="act-day">
-      <div class="act-date">${d}<span class="act-count">${list.length}커밋</span></div>
-      ${list.map(c=>{
-        const proj = P.find(p=>p.repo===c.repo);
-        const icon = proj ? (proj.icon||'📦') : '📦';
-        const nm = proj ? proj.nm : (c.repo||'');
-        return `<a class="act-row" href="https://github.com/sgeniusk/${c.repo}/commit/${c.sha}" target="_blank" rel="noopener">
-          <span class="act-icon">${icon}</span>
-          <span class="act-msg">${esc(c.message)}</span>
-          <span class="act-sha">${c.sha||''}</span>
-          <span class="act-repo">${esc(nm)}</span>
-        </a>`;
-      }).join('')}
-    </div>`;
-  }).join('');
-}
 
 let trendMetric = 'progress';
 const TREND_COLORS = ['#2545ff','#ff5b22','#0c1754','#e0a500','#1f9d4d','#9b51e0','#e0457b','#00a3a3','#5b6b8c','#c13515'];
@@ -3371,10 +3053,10 @@ async function init() {
   // 사용량 기준값 시드 (사용자 입력이 없을 때만)
   (usageData.tools||[]).forEach(t=>{ if(!usage[t.tool]) usage[t.tool]={pct:t.usedPercent||0,reset:t.cycleResetDate||''}; });
 
-  renderMasterBoard(); renderKPI(); renderFilters(); renderTable(); renderSuggest(); renderActivity(); renderSprint(); renderUsage();
+  renderMasterBoard(); renderKPI(); renderFilters(); renderSprint(); renderUsage();
   showTab(localStorage.getItem('tab') || 'blueprint');
-  setTimeout(()=>{ renderStacked(); renderDonut(); renderScatter(); renderTrend(); }, 200);
-  let rt; window.addEventListener('resize',()=>{ clearTimeout(rt); rt=setTimeout(()=>{ renderStacked(); renderScatter(); renderTrend(); },200); });
+  setTimeout(()=>{ renderStacked(); renderTrend(); }, 200);
+  let rt; window.addEventListener('resize',()=>{ clearTimeout(rt); rt=setTimeout(()=>{ renderStacked(); renderTrend(); },200); });
 }
 
 if (document.readyState==='complete' || document.readyState==='interactive') { init(); }
