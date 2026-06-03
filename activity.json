@@ -1,7 +1,61 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-06-02",
+  "asOf": "2026-06-03",
   "commits": [
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "81a2362",
+      "message": "Add June 3 daily console briefing",
+      "date": "2026-06-02T23:38:21Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "ecc48ed",
+      "message": "Lift the office by emptying the top bar",
+      "date": "2026-06-02T11:49:08Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "7668b5c",
+      "message": "fix: exclude local cache from web export",
+      "date": "2026-06-02T11:23:54Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "f57fddf",
+      "message": "feat: add opening order onboarding",
+      "date": "2026-06-02T11:22:56Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "64b5321",
+      "message": "Give the office the whole stage",
+      "date": "2026-06-02T03:06:40Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "0c7e07c",
+      "message": "chore: add asset catalog safety foundation",
+      "date": "2026-06-02T03:00:26Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "deb7c9d",
+      "message": "Swap the menu column for a popup launcher",
+      "date": "2026-06-02T02:44:25Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "06415a3",
+      "message": "Review the menu IA and pin the office-first popup design",
+      "date": "2026-06-02T02:25:38Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "82dc46c",
+      "message": "W8-25 장착 UI + 시작 장비 지급 — 장비 시스템 완결",
+      "date": "2026-06-02T01:15:43Z"
+    },
     {
       "repo": "three-kingdoms-deckbuilder",
       "sha": "eab0b0f",
@@ -75,30 +129,6 @@
       "date": "2026-06-01T17:17:00Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "f2b503e",
-      "message": "Let the keyboard close the celebration overlays",
-      "date": "2026-06-01T17:09:59Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "c2e1503",
-      "message": "Make the overlay dismiss buttons feel pressable",
-      "date": "2026-06-01T17:01:00Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "620c8ee",
-      "message": "Mark the pixel sweep shipped and turn to interaction finish",
-      "date": "2026-06-01T16:49:25Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "ba5b0b0",
-      "message": "Unify the pixel corners and snap the game motion",
-      "date": "2026-06-01T16:17:30Z"
-    },
-    {
       "repo": "honbul",
       "sha": "166a010",
       "message": "W8-21 패들 하이브리드 반사 — 부위별 각도 (아르카노이드)",
@@ -121,24 +151,6 @@
       "sha": "ae3007e",
       "message": "W8-19 승리 조건 수정 — 보스 처치로만 승리",
       "date": "2026-06-01T15:25:10Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "d9de7c1",
-      "message": "W8-18 중간보스·보스 관문 — 진행 모델 완성",
-      "date": "2026-06-01T15:13:34Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "c6878cf",
-      "message": "Build 218 scout timing receipt",
-      "date": "2026-06-01T14:06:05Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "c55ed43",
-      "message": "Build 218 beta readiness gate",
-      "date": "2026-06-01T14:04:31Z"
     },
     {
       "repo": "samguk-idle-prototype",
@@ -181,12 +193,6 @@
       "sha": "e82cb99",
       "message": "feat(asset-beta): reduce battlefield clutter with anchored units",
       "date": "2026-06-01T09:20:46Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "5f71abb",
-      "message": "test: add first route continuation proof",
-      "date": "2026-06-01T09:11:52Z"
     },
     {
       "repo": "samguk-idle-prototype",
@@ -415,12 +421,6 @@
       "sha": "46f1f39",
       "message": "Add 2026-05-27 build note",
       "date": "2026-05-27T13:59:24Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "a4be878",
-      "message": "Add May 27 CMDS research briefing",
-      "date": "2026-05-27T11:43:44Z"
     },
     {
       "repo": "ai-builder-school",
