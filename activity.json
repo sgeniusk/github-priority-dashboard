@@ -1,7 +1,61 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-06-03",
+  "asOf": "2026-06-04",
   "commits": [
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "a2836ac",
+      "message": "Plan the v1.0 redesign completion and queue the Codex blocks",
+      "date": "2026-06-03T23:47:08Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "645e6a2",
+      "message": "Add June 4 daily console briefing",
+      "date": "2026-06-03T23:34:22Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "dc615eb",
+      "message": "Take the strategy hand out of the command row and label the controls",
+      "date": "2026-06-03T23:07:32Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "4755ed6",
+      "message": "장비가 런 보상 루프로 유입되게 한다",
+      "date": "2026-06-03T16:31:42Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "8c77563",
+      "message": "Label the advance-month button on desktop",
+      "date": "2026-06-03T16:25:42Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "1e9fd66",
+      "message": "docs: 세션 마무리 + Codex 앱 핸드오프 (HANDOFF.md)",
+      "date": "2026-06-03T16:08:25Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "054faa7",
+      "message": "docs: rank5 인계 프롬프트 + 상태 문서 갱신 (M11 세션 마무리)",
+      "date": "2026-06-03T13:36:57Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "8d3aca2",
+      "message": "feat(harness): M11 rank1~4 + M12 Codex 로컬 연결 (멀티에이전트 검토 정비)",
+      "date": "2026-06-03T13:27:33Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "778e91b",
+      "message": "chore: make Vercel secret ignore explicit",
+      "date": "2026-06-03T03:49:19Z"
+    },
     {
       "repo": "cmds-daily-briefing",
       "sha": "81a2362",
@@ -105,30 +159,6 @@
       "date": "2026-06-01T22:22:55Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "397ba67",
-      "message": "Ship the v1.0-beta preview and write the release report",
-      "date": "2026-06-01T22:21:01Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "fa05aef",
-      "message": "build 219: add live web smoke receipt",
-      "date": "2026-06-01T18:17:05Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "39b0056",
-      "message": "Mark the polish track shipped and hold at the RC gate",
-      "date": "2026-06-01T17:19:42Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "ab4e8cc",
-      "message": "Trim the entry bundle under the chunk warning",
-      "date": "2026-06-01T17:17:00Z"
-    },
-    {
       "repo": "honbul",
       "sha": "166a010",
       "message": "W8-21 패들 하이브리드 반사 — 부위별 각도 (아르카노이드)",
@@ -139,18 +169,6 @@
       "sha": "0e14b35",
       "message": "docs: 볼핏 벤치마크 + 장수·장비 메타 설계안",
       "date": "2026-06-01T15:41:04Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "f022470",
-      "message": "W8-20 발사 펄스 타이밍 — 회수 시점으로 이동",
-      "date": "2026-06-01T15:28:12Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "ae3007e",
-      "message": "W8-19 승리 조건 수정 — 보스 처치로만 승리",
-      "date": "2026-06-01T15:25:10Z"
     },
     {
       "repo": "samguk-idle-prototype",
@@ -303,18 +321,6 @@
       "date": "2026-05-30T13:54:35Z"
     },
     {
-      "repo": "story-x-beta",
-      "sha": "020dddc",
-      "message": "docs: A2 완료 인계 노트 갱신",
-      "date": "2026-05-30T08:53:49Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "47b15f9",
-      "message": "Merge: A2 주장 레저 + 주장-근거 하네스",
-      "date": "2026-05-30T08:53:13Z"
-    },
-    {
       "repo": "cmds-daily-briefing",
       "sha": "334f965",
       "message": "Add May 30 light briefing",
@@ -415,12 +421,6 @@
       "sha": "8fd91ae",
       "message": "Add May 28 research briefing",
       "date": "2026-05-27T23:38:26Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "46f1f39",
-      "message": "Add 2026-05-27 build note",
-      "date": "2026-05-27T13:59:24Z"
     },
     {
       "repo": "ai-builder-school",
