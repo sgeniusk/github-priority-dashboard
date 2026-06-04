@@ -8,12 +8,13 @@
 | --- | --- | --- |
 | Formi (habit) | Codex | 사용자 직접 명시 (2026-05-18 Claude→Codex 이동) |
 | 뜬이유 iOS | Claude + Codex (Hybrid) | README "Claude Code + Codex CLI 하이브리드" 명시 |
-| 시즈폴 (sam-defender-logue) | Codex | 사용자 직접 명시 + README "Codex 구현 방식" 섹션 |
+| 시즈폴 (sam-defender-logue) | Claude | 사용자 직접 명시 (2026-06-04 Codex→Claude 이동) |
 | 전지적 군주 시점 (samguk-idle-prototype) | Codex | 사용자 직접 명시 |
-| 군령: 책략의 전장 (three-kingdoms-deckbuilder) | Hermes Agent | 사용자 직접 명시 |
+| 군령: 책략의 전장 / 구주쟁패 (three-kingdoms-deckbuilder) | Codex | 사용자 직접 명시 (2026-06-04 Hermes→Codex 이동) |
 | AI Builder School | Claude | 사용자 직접 명시 |
 | AI 컴퍼니 타이쿤 | Codex | 사용자 직접 명시 |
 | Story X | Claude | 사용자 직접 명시 + README "Claude Code의 프로젝트 서브에이전트" |
+| 혼불 (honbul) | Codex | 사용자 직접 명시 (2026-06-04 Hybrid→Codex 이동) |
 | BookCircle | Claude (추정) | 사용자 미명시. README의 "Next.js + Supabase" 스택은 Claude Code 호환 |
 | Nodeloom | Claude (추정) | 사용자 미명시. 리포에 CLAUDE.md 존재 + Claude 스타일 커밋 |
 | 반짝상점 | Claude (추정) | 일시중단 상태 |
@@ -48,9 +49,9 @@
 
 | 도구 | 프로젝트 수 | 평균 진척도 | 메모 |
 | --- | --- | --- | --- |
-| Claude | 4 (AI Builder School, Story X, BookCircle, Nodeloom) | 42% | Nodeloom이 끌어올림, BookCircle이 깎음 |
-| Codex | 4 (Formi, 시즈폴, 군주, AI 컴퍼니 타이쿤) | 58% | Formi 합류로 평균 상승, 게임 프로토타입 회전이 빠름 |
-| Hermes | 1 (군령: 책략의 전장) | 55% | 단일 사례라 평균 의미는 제한적 |
+| Claude | 6 (시즈폴, AI Builder School, Story X, AI 디자인 시스템 스쿨, 해치의 데일리 브리핑, 책담) | 40% | 시즈폴은 Claude 담당으로 이동, paused 프로젝트는 제외 |
+| Codex | 5 (Formi, 전지적 군주 시점, 군령: 책략의 전장, AI 컴퍼니 타이쿤, 혼불) | 49% | 게임 프로토타입과 구현 하네스 중심 |
+| Hermes | 0 | - | 현재 활성 프로젝트 대표 태그 없음 |
 | Hybrid | 1 (뜬이유 iOS) | 65% | 가장 압축적인 진척 |
 
 ## 변경 규칙
@@ -60,3 +61,4 @@
 - 변경 이력:
   - 2026-05-16: 초기 분류 (사용자 직접 입력)
   - 2026-05-18: Formi(habit) Claude→Codex 이동 (사용자 명시). Nodeloom 신규 등록 — Claude(추정). 군령: 책략의 전장 표시명 변경 (구 Mandate of Heroes).
+  - 2026-06-04: 사용자 명시로 혼불 Hybrid→Codex, 군령/구주쟁패 Hermes→Codex, 시즈폴 Codex→Claude 이동. AI 컴퍼니 타이쿤과 전지적 군주 시점은 Codex 유지.

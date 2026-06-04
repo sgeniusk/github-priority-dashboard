@@ -240,6 +240,7 @@ function extractFallback(html, constName) {
 }
 
 const reportHtml = read('report.html');
+const newsItemCount = parseJson('news.json').items.length;
 assert(reportHtml.includes('프로젝트 뉴스'), 'report.html title is the news feed');
 assert(reportHtml.includes('FALLBACK_NEWS'), 'report.html has FALLBACK_NEWS');
 assert(reportHtml.includes('./news.json'), 'report.html fetches news.json');
@@ -258,7 +259,7 @@ await smokePage(
       'report.html renders news cards from fallback',
     );
     assert(
-      document.getElementById('footerMeta').textContent.includes('뉴스 7건'),
+      document.getElementById('footerMeta').textContent.includes(`뉴스 ${newsItemCount}건`),
       'report.html renders news footer count',
     );
   },

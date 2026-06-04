@@ -712,7 +712,7 @@
     {
       "date": "2026-06-03",
       "avgProgress": 46,
-      "totalCommits": 1558,
+      "totalCommits": 1562,
       "active": 12,
       "projects": {
         "habit": {
@@ -733,7 +733,7 @@
         },
         "three-kingdoms-deckbuilder": {
           "total": 55,
-          "commits": 180
+          "commits": 181
         },
         "ai-builder-school": {
           "total": 45,
@@ -745,7 +745,7 @@
         },
         "story-x-beta": {
           "total": 45,
-          "commits": 176
+          "commits": 178
         },
         "BookCircle": {
           "total": 20,
@@ -777,7 +777,79 @@
         },
         "honbul": {
           "total": 19,
-          "commits": 81
+          "commits": 82
+        }
+      }
+    },
+    {
+      "date": "2026-06-04",
+      "avgProgress": 46,
+      "totalCommits": 1581,
+      "active": 12,
+      "projects": {
+        "habit": {
+          "total": 70,
+          "commits": 215
+        },
+        "tteuniyu-ios": {
+          "total": 65,
+          "commits": 5
+        },
+        "sam-defender-logue": {
+          "total": 60,
+          "commits": 145
+        },
+        "samguk-idle-prototype": {
+          "total": 60,
+          "commits": 170
+        },
+        "three-kingdoms-deckbuilder": {
+          "total": 55,
+          "commits": 181
+        },
+        "ai-builder-school": {
+          "total": 45,
+          "commits": 100
+        },
+        "ai-company-tycoon-boundaryless": {
+          "total": 40,
+          "commits": 357
+        },
+        "story-x-beta": {
+          "total": 45,
+          "commits": 178
+        },
+        "BookCircle": {
+          "total": 20,
+          "commits": 3
+        },
+        "jewelry-webtoon-cloud": {
+          "total": 20,
+          "commits": 18
+        },
+        "Nodeloom": {
+          "total": 56,
+          "commits": 42
+        },
+        "design-system-school": {
+          "total": 20,
+          "commits": 19
+        },
+        "cmds-daily-briefing": {
+          "total": 52,
+          "commits": 35
+        },
+        "Timeer": {
+          "total": 7,
+          "commits": 1
+        },
+        "chaekdam": {
+          "total": 19,
+          "commits": 15
+        },
+        "honbul": {
+          "total": 19,
+          "commits": 97
         }
       }
     },

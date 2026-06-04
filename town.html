@@ -149,6 +149,19 @@ const PETS = [
   { id:'happy',  name:'해삐', emoji:'🐱', delay:26, tex:null, wx:0, wy:0, dir:'down', frame:0, animT:0, bobT:0, spr:null, lbl:null }
 ];
 let OBJ_TEX = {};               // 환경 오브젝트 커스텀 텍스처 (tree/water/mush) — 있으면 사용, 없으면 Kenney 폴백
+const CUSTOM_BUILDING_SPRITES = new Set([
+  'BookCircle',
+  'Nodeloom',
+  'ai-builder-school',
+  'ai-company-tycoon-boundaryless',
+  'habit',
+  'jewelry-webtoon-cloud',
+  'sam-defender-logue',
+  'samguk-idle-prototype',
+  'story-x-beta',
+  'three-kingdoms-deckbuilder',
+  'tteuniyu-ios'
+]);
 
 /* ── 텍스처 헬퍼 ── */
 function tileTex(idx){
@@ -255,7 +268,7 @@ async function boot(){
   }
 
   // 건물 커스텀 스프라이트 — assets/town/buildings/<repo>.png 있으면 사용, 없으면 타일 조합 폴백
-  await Promise.all(projects.map(p=>
+  await Promise.all(projects.filter(p=>CUSTOM_BUILDING_SPRITES.has(p.name)).map(p=>
     PIXI.Assets.load('./assets/town/buildings/'+p.name+'.png')
       .then(t=>{ if(t&&t.width>1) BTEX[p.name]=t; }).catch(()=>{})
   ));

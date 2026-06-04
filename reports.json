@@ -1,7 +1,11 @@
 {
   "_comment": "보고서(report.html)가 읽는 분야별 줄글 데이터. 1인칭 존댓말 블로그/다이어리체. 서비스 하나당 body(내용 2~3줄)·goal(목표·방향 2줄)·progress(진척 1줄)·advice(조언 1줄). /report 커맨드로 갱신하며, report.html의 FALLBACK_REPORTS와 verbatim 동기화한다. 진척 수치·status·tool은 projects.json에서 따온다(부풀리지 않음).",
   "generatedAt": "2026-05-28",
-  "meta": { "asOf": "2026-05-28", "owner": "sgeniusk", "ownerName": "Gomgomee" },
+  "meta": {
+    "asOf": "2026-05-28",
+    "owner": "sgeniusk",
+    "ownerName": "Gomgomee"
+  },
   "intro": "제가 지금 짓고 있는 서비스들을 분야별로 묶어 한 편의 일지처럼 정리했습니다. 각 서비스마다 무엇을 만들고 있는지, 어디로 가려 하는지, 지금 어디쯤인지, 그리고 다음 한 걸음을 적어두었습니다.",
   "fields": [
     {
@@ -13,7 +17,7 @@
         {
           "repo": "sam-defender-logue",
           "name": "삼국지: 시즈폴 (Siege Fall)",
-          "tool": "codex",
+          "tool": "claude",
           "status": "active",
           "total": 60,
           "body": "삼국지를 배경으로 한 디펜스형 게임입니다. P1부터 P25까지 작업 항목을 차곡차곡 정리하며 알파 플레이어블 슬라이스까지 만들었고, 가상 플레이테스트도 두 번 돌려봤습니다. 다국어 기반과 하드 난이도 승률 게이트까지 손을 댔습니다.",
@@ -35,7 +39,7 @@
         {
           "repo": "three-kingdoms-deckbuilder",
           "name": "군령: 책략의 전장 (Warlord's Command)",
-          "tool": "hermes",
+          "tool": "codex",
           "status": "active",
           "total": 55,
           "body": "삼국지 진영을 고르는 슬레이 더 스파이어형 덱빌딩 게임입니다. 드로우·에너지·포지션·가드·사기·적 의도·진영(촉·위·오) 선택까지 코어 메커니즘이 다 돌아가서, 한 판 캠페인을 끝까지 플레이할 수 있습니다.",
@@ -57,7 +61,7 @@
         {
           "repo": "honbul",
           "name": "혼불 (Honbul)",
-          "tool": "hybrid",
+          "tool": "codex",
           "status": "active",
           "total": 19,
           "body": "한국 신화의 삼계(명부·인간계·천계)를 무대로 한 벽돌깨기 + 덱빌딩 + 로그라이크 모바일 게임입니다. 아직 프리프로덕션(Design Draft v0.2)이라 엔진·아트·테마·F2P 정책·컨트롤 같은 핵심 설계는 확정했지만 Godot 코드는 0입니다.",

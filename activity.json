@@ -3,6 +3,54 @@
   "asOf": "2026-06-04",
   "commits": [
     {
+      "repo": "honbul",
+      "sha": "8027cbf",
+      "message": "베타 플레이 경로를 한 줄 smoke로 잠근다",
+      "date": "2026-06-04T09:38:27Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "af0f390",
+      "message": "첫 5초에 그릇과 장비 선택 의도를 읽히게 한다",
+      "date": "2026-06-04T09:24:20Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "35247da",
+      "message": "결과 정산을 한국어 화면으로 닫는다",
+      "date": "2026-06-04T05:22:54Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "07c8850",
+      "message": "무협 고유기 판단을 전투 HUD에 드러낸다",
+      "date": "2026-06-04T04:21:13Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "14560bc",
+      "message": "베타 초반 블록 깨기 밀도를 진행 계약으로 고정한다",
+      "date": "2026-06-04T04:06:22Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "cc640c6",
+      "message": "무협 액션을 마나 경제로 묶어 베타 전투 판단을 만든다",
+      "date": "2026-06-04T03:47:27Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "38f1814",
+      "message": "베타 전투 피드백을 들리게 해 플레이 감각을 검증한다",
+      "date": "2026-06-04T03:26:32Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "ab44c9b",
+      "message": "전투 피드백을 먼저 보이게 해 베타 타격감을 검증한다",
+      "date": "2026-06-04T03:08:01Z"
+    },
+    {
       "repo": "ai-company-tycoon-boundaryless",
       "sha": "a2836ac",
       "message": "Plan the v1.0 redesign completion and queue the Codex blocks",
@@ -21,22 +69,10 @@
       "date": "2026-06-03T23:07:32Z"
     },
     {
-      "repo": "honbul",
-      "sha": "4755ed6",
-      "message": "장비가 런 보상 루프로 유입되게 한다",
-      "date": "2026-06-03T16:31:42Z"
-    },
-    {
       "repo": "ai-company-tycoon-boundaryless",
       "sha": "8c77563",
       "message": "Label the advance-month button on desktop",
       "date": "2026-06-03T16:25:42Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "1e9fd66",
-      "message": "docs: 세션 마무리 + Codex 앱 핸드오프 (HANDOFF.md)",
-      "date": "2026-06-03T16:08:25Z"
     },
     {
       "repo": "story-x-beta",
@@ -105,22 +141,10 @@
       "date": "2026-06-02T02:25:38Z"
     },
     {
-      "repo": "honbul",
-      "sha": "82dc46c",
-      "message": "W8-25 장착 UI + 시작 장비 지급 — 장비 시스템 완결",
-      "date": "2026-06-02T01:15:43Z"
-    },
-    {
       "repo": "three-kingdoms-deckbuilder",
       "sha": "eab0b0f",
       "message": "Add game development QA pipeline",
       "date": "2026-06-01T23:56:28Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "7ef0ac2",
-      "message": "W8-24 장비 시스템 백본 — 수치 모디파이어 수집·장착",
-      "date": "2026-06-01T23:01:59Z"
     },
     {
       "repo": "three-kingdoms-deckbuilder",
@@ -135,12 +159,6 @@
       "date": "2026-06-01T22:41:53Z"
     },
     {
-      "repo": "honbul",
-      "sha": "06f075b",
-      "message": "W8-23 장수(그릇) 특성 연결 — 그릇별 공 거동",
-      "date": "2026-06-01T22:36:07Z"
-    },
-    {
       "repo": "ai-company-tycoon-boundaryless",
       "sha": "694c44c",
       "message": "Design the office-first menu popup redesign",
@@ -151,24 +169,6 @@
       "sha": "84d0953",
       "message": "Align agent split with completion harness",
       "date": "2026-06-01T22:29:36Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "f672f63",
-      "message": "W8-22 공 거동 기술 1 — 크기·폭발 (Ball 모디파이어 기반)",
-      "date": "2026-06-01T22:22:55Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "166a010",
-      "message": "W8-21 패들 하이브리드 반사 — 부위별 각도 (아르카노이드)",
-      "date": "2026-06-01T16:11:16Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "0e14b35",
-      "message": "docs: 볼핏 벤치마크 + 장수·장비 메타 설계안",
-      "date": "2026-06-01T15:41:04Z"
     },
     {
       "repo": "samguk-idle-prototype",

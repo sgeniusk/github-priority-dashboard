@@ -2,17 +2,19 @@
 
 다음 세션이 이 한 페이지만 보고도 어디까지 했고 뭘 이어가면 되는지 알 수 있도록 유지한다. 상세 백로그는 `feature_list.json`.
 
-**Last Updated**: 2026-05-31 (v2.6 대시보드 중복 정리 — 탭 8→5)
+**Last Updated**: 2026-06-04 (데이터 refresh + 도구 배정 갱신)
 
-## Current Objective — None (v2.1·v2.2·v2.3·v2.4 완료, 커밋·푸시·배포 완료)
+## Current Objective — None (데이터 refresh + 도구 배정 갱신 완료)
 
-대시보드 가독성(v2.1)·타운 안정화(v2.2)·kami 보고서(v2.3)·일지 날짜별 아카이브(v2.4) 모두 완료·검증·배포. BookCircle·Nodeloom paused 처리. 다음 작업 대기.
+대시보드 가독성(v2.1)·타운 안정화(v2.2)·kami 보고서(v2.3)·일지 날짜별 아카이브(v2.4)·대시보드 중복 정리(v2.6) 완료·검증·배포. 2026-06-04 데이터 refresh와 사용자 지정 도구 배정 갱신까지 검증 완료. 다음 작업 대기.
 
 ## Recommended Next Step
 
 **다음 세션 시작 시 `bash init.sh` + 이 파일 확인.** 후보 — 일지가 며칠 쌓인 뒤 report.html 날짜 전환 재확인, `/report` 줄글 갱신 자동화 점검, 신규 프로젝트 등록 시 town 플롯(game6·app9·content4 슬롯) 초과 시 자동 확장 점검.
 
 ## 직전에 푼 것
+
+- **2026-06-04 데이터 refresh + 도구 배정 갱신** — GitHub 활동 refresh로 `meta.asOf` 2026-06-04, 총 커밋 1581, 뉴스 13건, history 14스냅샷 반영. KST 자정 이후에도 refresh 직후 기준일 경고가 남지 않도록 `refresh-progress.mjs` 기준일을 로컬 날짜로 정렬. 사용자 명시로 혼불·군령/구주쟁패를 Codex, 시즈폴을 Claude로 이동(AI 타이쿤·전지적 군주 시점은 Codex 유지). `check-report-pages.mjs` 뉴스 개수 검사를 데이터 기반으로 고정. town 선택 건물 스프라이트 404를 없애기 위해 존재하는 커스텀 건물만 로드. FALLBACK 8건 동기화, init·validate·check-report-pages·브라우저 콘솔 0·HTTP 에러 0 확인.
 
 - **v2.6 대시보드 중복 정리** (2026-05-31) — 뉴스 피드·프로젝트 페이지와 겹치는 탭 제거. 활동(→뉴스 surge·프로젝트 타임라인)·제안(→뉴스 stall·도움 패널)·순위(→청사진에 정렬/필터/검색 이식) 탭 삭제, 분석은 추세·스택만(도넛·산점 제거). 탭 8→5(청사진·마을·분석·스프린트·사용량). 청사진 블로커·모멘텀·SUG·HIST 보존. 콘솔 0·validate·init.sh 통과. (codex 구동이 자체검증 중 중단됐으나 구현은 온전 — Claude가 라이브 검증 완료.)
 
@@ -48,15 +50,15 @@
 
 | 항목 | 상태 | 마지막 확인 |
 | --- | --- | --- |
-| JSON 무결성 (6종 + reports.json) | 통과 | 2026-05-29 `bash init.sh` |
+| JSON 무결성 (8종 + reports.json) | 통과 | 2026-06-04 `bash init.sh` |
 | v2.1 카드 가독성 | 검증 | breakdown·모멘텀(`커밋 N일 전`)·블로커 뱃지 렌더, 라이트/다크 정상 |
 | v2.1 전 탭 콘솔 | 0 | preview에서 청사진~사용량 전환 |
 | v2.3 report.html | 검증 | 16서비스 4요소·advice 잉크블루 콜아웃·paused 표식, 콘솔 0 |
 | 대시보드 `보고서` 링크 | 정상 | `<a href=report.html>`, 청사진 탭 로직 무손상 |
 | v2.2 town 배치 | 16/16 | 데이터 조회 confirm(honbul 포함), 콘솔 `배치 실패` 0 |
 | v2.2 town 가독성 | 검증 | 잔디 위주·흙길 리본·강 제거, 이동/다리 건너기 동작 |
-| `meta.asOf` | 2026-05-28 | 헤더 배지 동적 표시 확인 (오늘 5/29 — /refresh 대기) |
-| 커밋/배포 | 미수행 | 사용자 요청 시 commit·push (현재 작업트리에만 존재) |
+| `meta.asOf` | 2026-06-04 | `bash init.sh` 오늘자 확인 |
+| 커밋/배포 | 진행 중 | 사용자 요청으로 commit·push 수행 예정 |
 
 ## Blockers (막혀 있는 항목)
 

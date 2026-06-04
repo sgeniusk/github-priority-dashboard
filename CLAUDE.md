@@ -108,12 +108,13 @@ github-priority-dashboard/
 
 - Formi (habit) → codex
 - 뜬이유 iOS → hybrid (README 명시)
-- 시즈폴 (sam-defender-logue) → codex
+- 시즈폴 (sam-defender-logue) → claude
 - 전지적 군주 시점 (samguk-idle-prototype) → codex
-- 군령: 책략의 전장 (three-kingdoms-deckbuilder) → hermes
+- 군령: 책략의 전장 / 구주쟁패 (three-kingdoms-deckbuilder) → codex
 - AI Builder School → claude
 - AI 컴퍼니 타이쿤 → codex
 - Story X → claude
+- 혼불 (honbul) → codex
 - BookCircle → claude (사용자 미지정, 기본값)
 - 반짝상점 → claude, status=paused
 

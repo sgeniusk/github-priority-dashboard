@@ -48,6 +48,12 @@ function normalizeTimestamp(iso) {
   return iso.replace(/:\d{2}(\.\d+)?Z$/, 'Z');
 }
 
+function todayKey() {
+  const now = new Date();
+  const local = new Date(now.getTime() - now.getTimezoneOffset() * 60000);
+  return local.toISOString().slice(0, 10);
+}
+
 async function fetchRepo(owner, name) {
   const res = await fetch(`${API}/repos/${owner}/${name}`, { headers: HEADERS });
   if (!res.ok) throw new Error(`repo ${name}: HTTP ${res.status}`);
@@ -124,7 +130,7 @@ function writeActivity(allCommits) {
     .slice(0, 150);
   const out = {
     _comment: '전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.',
-    asOf: new Date().toISOString().slice(0, 10),
+    asOf: todayKey(),
     commits,
   };
   writeFileSync(ACTIVITY_PATH, JSON.stringify(out, null, 2) + '\n');
@@ -134,7 +140,7 @@ function writeActivity(allCommits) {
 async function main() {
   const data = JSON.parse(readFileSync(JSON_PATH, 'utf8'));
   const owner = data.meta.owner;
-  const today = new Date().toISOString().slice(0, 10);
+  const today = todayKey();
   const changes = [];
   const allCommits = [];
 
