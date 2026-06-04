@@ -6,8 +6,8 @@
 
 - **소유자**: sgeniusk (Gomgomee)
 - **데이터 기준일**: `projects.json`의 `meta.asOf` 참고 (refresh 시 자동 갱신)
-- **활성 프로젝트**: 10개 (게임 4, 앱 5, 콘텐츠 1)
-- **일시중단**: 1개 (jewelry-webtoon-cloud — 핵심 마감 후 재개)
+- **활성 프로젝트**: 12개 (게임 5, 앱 5, 콘텐츠 2)
+- **일시중단**: 4개 (BookCircle, 반짝상점 생존기, Nodeloom, Timeer)
 - **제외**: tteuniyu 메인 monorepo (사용자 요청으로 분석에서 제외, tteuniyu-ios는 유지)
 
 ## 시작 (Startup workflow)
@@ -24,7 +24,7 @@
 이 워크스페이스의 변경은 다음을 모두 만족해야 "done"이다.
 
 - **JSON 무결성** — `projects.json`·`suggestions.json`·`usage.json`·`history.json`·`activity.json`이 모두 `JSON.parse` 통과 (`bash init.sh`로 한 번에 검증)
-- **콘솔 에러 0** — `dashboard.html`을 브라우저에서 열어 모든 탭(청사진/순위/제안/활동/분석/스프린트/사용량 및 설정) 전환 시 콘솔 에러 없음
+- **콘솔 에러 0** — `dashboard.html`을 브라우저에서 열어 모든 탭(청사진/분석/스프린트/사용량 및 설정) 전환 시 콘솔 에러 없음
 - **FALLBACK 동기화** — `projects.json`·`suggestions.json`·`usage.json`을 갱신했으면 `dashboard.html`의 `FALLBACK_*` 상수도 verbatim 동기화 (`/refresh`가 자동 처리; `FALLBACK_HISTORY`·`FALLBACK_ACTIVITY`는 동기화 대상 아님). 보고서는 v2.5에서 뉴스 피드(`report.html`←`news.json`)와 프로젝트별 누적 페이지(`project-report.html`←`project-logs.json`)로 분리됐고, 둘은 `scripts/report-gen.mjs`가 매 refresh마다 데이터 델타에서 생성한다. `news.json`·`project-logs.json`은 누적 아카이브라 해당 FALLBACK seed는 동기화 대상 아님 (`journal.json`은 폐기)
 - **배포** — `main` push 후 `.github/workflows/deploy.yml`이 success로 끝남
 - **상태 갱신** — 의미 있는 작업이라면 `progress.md`의 '현재 작업'·'다음 액션'을 갱신, 새 feature는 `feature_list.json`에 추가
@@ -40,12 +40,12 @@ github-priority-dashboard/
 ├── HANDOFF.md           # 핸드오프 절차 가이드
 ├── README.md            # 사람용 개요
 ├── index.html           # dashboard.html로 리다이렉트 (Pages 루트 URL용)
-├── dashboard.html       # 뷰 — Chart.js 기반, 낮/밤 모드, Sprint 보드, 제안·사용량 패널
+├── dashboard.html       # 뷰 — 완성도 카드, 운영 신호, SVG 차트, Sprint 보드, 사용량 패널
 ├── projects.json        # 단일 진실 소스 (Source of Truth)
 ├── projects.schema.md   # projects.json 필드 스키마 + 변경 규칙
 ├── suggestions.json     # /coach·/refresh가 생성하는 제안·코칭 데이터
 ├── usage.json           # Codex/Claude 사용량 트래커 기준값
-├── history.json         # 진척도 스냅샷 히스토리 — refresh 시 날짜별 upsert
+├── history.json         # 완성도 스냅샷 히스토리 — refresh 시 날짜별 upsert
 ├── projects/{repo}/     # 프로젝트별 표준 문서 — project.json·prd.md·roadmap.md·log.md
 ├── scripts/
 │   └── refresh-progress.mjs   # GitHub 활동 수집 스크립트 (Node 20 내장 fetch)
@@ -53,7 +53,7 @@ github-priority-dashboard/
 ├── .github/workflows/
 │   └── deploy.yml       # main push 시 GitHub Pages 배포
 └── docs/
-    ├── progress-formula.md   # 진척도 산정 공식
+    ├── progress-formula.md   # 완성도 산정 공식
     ├── tool-attribution.md   # 도구별 분류 근거
     ├── sprint-plan.md        # 4-6주 권장 스케줄
     └── agent-guide.md        # 슬래시 커맨드·루틴 사용법 (사람용)
@@ -65,7 +65,7 @@ github-priority-dashboard/
 
 | 계층 | 구성 | 역할 |
 | --- | --- | --- |
-| 뷰 | `dashboard.html` | 진척도·Sprint 보드·제안·사용량 시각화 |
+| 뷰 | `dashboard.html` | 완성도·운영 신호·Sprint 보드·사용량 시각화 |
 | 데이터 | `projects.json`·`suggestions.json`·`usage.json` | 단일 진실 소스 |
 | 에이전트 | `.claude/commands/*.md` | 슬래시 커맨드로 갱신·코칭·킥오프 |
 | 자동화 | `/schedule` 루틴 | 매일 `/refresh`를 무인 실행 |
@@ -84,7 +84,7 @@ github-priority-dashboard/
 
 ## 핵심 규약
 
-### 1. 진척도 공식
+### 1. 완성도 공식
 
 `total = docs(0-20) + skeleton(0-30) + features(0-30) + alpha(0-20)`
 
@@ -93,13 +93,13 @@ github-priority-dashboard/
 - **features**: PRD에 정의된 핵심 기능의 실제 동작 비율
 - **alpha**: 사용자 테스트, 폴리시, 알파/베타 등급 검증
 
-값은 `projects.json`의 `progress` 객체(`docs`/`skeleton`/`features`/`alpha`/`total`)에 있다. 변경 시 `total`을 4개 합으로 갱신한다.
+값은 `projects.json`의 `progress` 객체(`docs`/`skeleton`/`features`/`alpha`/`total`)에 있다. 변경 시 `total`을 4개 합으로 갱신한다. 활동량은 이 점수를 자동으로 올리지 않고, 대시보드의 모멘텀·건강·신뢰도에서 따로 표시한다.
 
 ### 2. 도구 태그
 
 | 태그 | 의미 | 색상 (UI) |
 | --- | --- | --- |
-| `claude` | Claude Code로 작성 | 오렌지 (#db6d28) |
+| `claude` | Claude Code로 작성 | 오렌지 (#ff5b22) |
 | `codex` | Codex CLI로 작성 | 초록 (#3fb950) |
 | `hermes` | Hermes Agent로 작성 | 보라 (#bc8cff) |
 | `hybrid` | Claude + Codex 하이브리드 | 시안 (#39c5cf) |
@@ -128,7 +128,7 @@ github-priority-dashboard/
 
 ## 자주 쓰는 작업
 
-- **진척도·활동 갱신** — `/refresh` (또는 `node scripts/refresh-progress.mjs`)
+- **완성도·활동 갱신** — `/refresh` (또는 `node scripts/refresh-progress.mjs`)
 - **정체 점검·코칭** — `/coach`
 - **주간 진척 요약** — `/weekly-report`
 - **새 프로젝트 시작** — `/new-project`
@@ -169,6 +169,6 @@ github-priority-dashboard/
 
 - 사용자가 명시한 도구 태그를 임의 변경
 - 일시중단(paused) 프로젝트를 active로 되돌리는 것 (사용자 명시적 지시 필요)
-- 진척도(`progress` 점수)를 임의로 부풀려 표시
+- 완성도(`progress` 점수)를 임의로 부풀려 표시
 - `dashboard.html`에서 색 토큰의 다크 base 값 변경 (브랜드 일관성 — 라이트 테마는 `:root[data-theme="light"]`로 별도 추가)
 - `refresh-progress.mjs`로 `commits`·`lastUpdate`·`meta.asOf` 외의 필드를 자동 변경

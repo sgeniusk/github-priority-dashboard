@@ -1,5 +1,5 @@
 {
-  "_comment": "진척도 스냅샷 히스토리. /refresh(refresh-progress.mjs)가 실행될 때마다 그날의 스냅샷을 upsert한다. 대시보드 추세 차트가 읽는다.",
+  "_comment": "완성도 스냅샷 히스토리. /refresh(refresh-progress.mjs)가 실행될 때마다 그날의 스냅샷을 upsert한다. 대시보드 추세 차트가 읽는다.",
   "snapshots": [
     {
       "date": "2026-05-16",
@@ -922,6 +922,78 @@
         "honbul": {
           "total": 19,
           "commits": 83
+        }
+      }
+    },
+    {
+      "date": "2026-06-05",
+      "avgProgress": 46,
+      "totalCommits": 1602,
+      "active": 12,
+      "projects": {
+        "habit": {
+          "total": 70,
+          "commits": 215
+        },
+        "tteuniyu-ios": {
+          "total": 65,
+          "commits": 5
+        },
+        "sam-defender-logue": {
+          "total": 60,
+          "commits": 145
+        },
+        "samguk-idle-prototype": {
+          "total": 60,
+          "commits": 170
+        },
+        "three-kingdoms-deckbuilder": {
+          "total": 55,
+          "commits": 183
+        },
+        "ai-builder-school": {
+          "total": 45,
+          "commits": 100
+        },
+        "ai-company-tycoon-boundaryless": {
+          "total": 40,
+          "commits": 357
+        },
+        "story-x-beta": {
+          "total": 45,
+          "commits": 178
+        },
+        "BookCircle": {
+          "total": 20,
+          "commits": 3
+        },
+        "jewelry-webtoon-cloud": {
+          "total": 20,
+          "commits": 18
+        },
+        "Nodeloom": {
+          "total": 56,
+          "commits": 42
+        },
+        "design-system-school": {
+          "total": 20,
+          "commits": 19
+        },
+        "cmds-daily-briefing": {
+          "total": 52,
+          "commits": 35
+        },
+        "Timeer": {
+          "total": 7,
+          "commits": 1
+        },
+        "chaekdam": {
+          "total": 19,
+          "commits": 15
+        },
+        "honbul": {
+          "total": 19,
+          "commits": 116
         }
       }
     }

@@ -57,7 +57,7 @@ section{margin-bottom:48px}
 .info-i:hover{background:var(--electric);color:#fff}
 
 /* ── KPI GRID ── */
-.kpi-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .kpi-card{background:var(--surface);border-radius:var(--r);border:1px solid var(--border);padding:20px 20px 18px;box-shadow:var(--shadow);position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s;cursor:default}
 .kpi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--acc,var(--electric));border-radius:16px 16px 0 0}
 .kpi-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(37,69,255,.1)}
@@ -83,11 +83,11 @@ section{margin-bottom:48px}
 .picon{flex-shrink:0;width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;font-size:15px;background:rgba(127,127,140,.13);border-radius:8px;line-height:1}
 .mb-name .picon{width:30px;height:30px;font-size:17px;border-radius:9px}
 .susp-tag{background:rgba(0,0,0,.07);color:var(--t2);border-radius:4px;padding:1px 5px;font-size:9px;font-weight:700;text-transform:uppercase;flex-shrink:0}
-.tbadge{display:inline-flex;border-radius:var(--rp);padding:3px 10px;font-size:11px;font-weight:600;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
-.t-cl{background:rgba(37,69,255,.1);color:var(--electric)}
-.t-co{background:var(--navy);color:#fff}
-.t-he{background:var(--yellow);color:var(--black)}
-.t-hy{background:var(--orange);color:#fff}
+.tbadge{display:inline-flex;border-radius:var(--rp);padding:3px 10px;font-size:11px;font-weight:600;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis;flex-shrink:0}
+.t-cl{background:rgba(255,91,34,.15);color:var(--orange)}
+.t-co{background:rgba(63,185,80,.16);color:#1f8c47}
+.t-he{background:rgba(188,140,255,.18);color:#7b4bd9}
+.t-hy{background:rgba(57,197,207,.18);color:#1f7f86}
 .stk-bar{height:17px;border-radius:var(--rp);display:flex;overflow:hidden;background:var(--border)}
 .seg{height:100%;transition:width .6s cubic-bezier(.4,0,.2,1)}
 .s1{background:var(--s1)}.s2{background:var(--s2)}.s3{background:var(--s3)}.s4{background:var(--s4)}
@@ -103,6 +103,19 @@ section{margin-bottom:48px}
 [data-theme=dark] .momentum-chip.commit-fresh{color:#58d184}
 [data-theme=dark] .momentum-chip.commit-dormant{color:#ffc13a}
 .blocker-chip{background:rgba(255,91,34,.16);color:var(--orange);max-width:160px;overflow:hidden;text-overflow:ellipsis}
+.health-chip,.confidence-chip{display:inline-flex;align-items:center;border-radius:var(--rp);padding:2px 8px;font-size:10px;font-weight:800;line-height:1.2;white-space:nowrap}
+.health-chip.ok{background:rgba(31,157,77,.13);color:#1f8c47}
+.health-chip.watch{background:rgba(255,193,58,.2);color:#7a4d00}
+.health-chip.risk{background:rgba(255,91,34,.16);color:var(--orange)}
+.health-chip.hold{background:var(--cool-gray);color:var(--t2)}
+.confidence-chip.high{background:rgba(31,157,77,.13);color:#1f8c47}
+.confidence-chip.med{background:rgba(37,69,255,.09);color:var(--electric)}
+.confidence-chip.low{background:var(--cool-gray);color:var(--t2)}
+[data-theme=dark] .t-co{color:#58d184}
+[data-theme=dark] .t-he{color:#bc8cff}
+[data-theme=dark] .t-hy{color:#39c5cf}
+[data-theme=dark] .health-chip.ok,[data-theme=dark] .confidence-chip.high{color:#58d184}
+[data-theme=dark] .health-chip.watch{color:#ffc13a}
 .legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;padding:0 2px}
 .leg-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--t2)}
 .leg-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}
@@ -199,15 +212,22 @@ footer{border-top:1px solid var(--border);padding:18px 28px;max-width:1460px;mar
 .mb-card{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:16px;transition:transform .15s,box-shadow .15s}
 .mb-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(37,69,255,.1)}
 .mb-card.susp{opacity:.6}
-.mb-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:12px}
-.mb-name{font-size:14px;font-weight:700;display:flex;align-items:center;gap:6px;min-width:0}
-.mb-pctrow{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px}
+.mb-head{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:12px}
+.mb-name{font-size:14px;font-weight:700;display:flex;align-items:center;gap:6px;min-width:0;flex:1;line-height:1.32;overflow-wrap:anywhere}
+.mb-pctrow{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:7px;gap:10px}
+.mb-pctbox{display:flex;align-items:baseline;gap:6px;min-width:0}
 .mb-pct{font-size:26px;font-weight:700;letter-spacing:-1px;line-height:1}
 .mb-pct small{font-size:13px;font-weight:600;letter-spacing:0}
+.mb-pct-caption{font-size:10px;font-weight:800;color:var(--t2);letter-spacing:.04em;text-transform:uppercase}
 .mb-sprint{font-size:11px;font-weight:700}
 .mb-chiprow{display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin-top:8px;min-height:18px}
 .mb-meta{display:flex;justify-content:space-between;font-size:11px;color:var(--t2);margin-top:9px}
-.mb-next{font-size:11px;color:var(--t2);line-height:1.5;margin-top:8px;min-height:33px}
+.mb-lens{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}
+.mb-lens-item{min-width:0}
+.mb-lens-title{font-size:9.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--t2);margin-bottom:3px}
+.mb-lens-value{font-size:11px;color:var(--text);line-height:1.45;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.mb-next{font-size:11px;color:var(--text);line-height:1.5;margin-top:9px;min-height:33px}
+.mb-next-label{display:block;font-size:9.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--t2);margin-bottom:2px}
 .mb-doc{margin-top:11px;width:100%;background:none;border:1px solid var(--border);border-radius:8px;padding:8px;font-size:11px;font-weight:600;color:var(--electric);cursor:pointer;font-family:var(--font);transition:background .15s,border-color .15s}
 .mb-doc:hover{background:rgba(37,69,255,.06);border-color:var(--electric)}
 @media (max-width:640px){ #blueprintBody{grid-template-columns:1fr} }
@@ -244,9 +264,6 @@ footer{border-top:1px solid var(--border);padding:18px 28px;max-width:1460px;mar
 /* ── TAB PANELS ── */
 section[data-tab]{display:none}
 section[data-tab].tab-on{display:block;animation:fadein .24s ease}
-.town-frame-wrap{background:#0e1430;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow)}
-.town-frame-wrap iframe{display:block;width:100%;height:calc(100vh - 170px);min-height:560px;border:0;background:#0e1430}
-.ext-link:hover{text-decoration:underline!important}
 @keyframes fadein{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
 .nav-link.on,.nav-link.on:hover{background:var(--electric);color:#fff}
 
@@ -283,7 +300,7 @@ header,.modal-box{
 /* ── RESPONSIVE ── */
 @media (max-width:960px){
   main{padding:20px 18px 48px}
-  .kpi-grid{grid-template-columns:repeat(3,1fr)}
+  .kpi-grid{grid-template-columns:repeat(2,1fr)}
   .charts-grid{grid-template-columns:1fr}
   .sprint-board{grid-template-columns:repeat(3,1fr)}
 }
@@ -315,11 +332,10 @@ header,.modal-box{
     <span class="logo-name">sgeniusk</span>
   </a>
   <span class="hbadge">프로젝트 우선순위 대시보드</span>
-  <span class="hbadge" id="dataBadge" style="background:rgba(255,193,58,.18);color:#7a4d00">v2.1 · 데이터 기준일 로드 중</span>
+  <span class="hbadge" id="dataBadge" style="background:rgba(255,193,58,.18);color:#7a4d00">v2.7 · 데이터 기준일 로드 중</span>
   <div class="spacer"></div>
   <nav class="nav-links" role="tablist" aria-label="대시보드 탭">
     <button class="nav-link" role="tab" aria-selected="false" data-tab="blueprint" onclick="showTab('blueprint')">청사진</button>
-    <button class="nav-link" role="tab" aria-selected="false" data-tab="town" onclick="showTab('town')">마을</button>
     <button class="nav-link" role="tab" aria-selected="false" data-tab="charts" onclick="showTab('charts')">분석</button>
     <button class="nav-link" role="tab" aria-selected="false" data-tab="sprint" onclick="showTab('sprint')">스프린트</button>
     <button class="nav-link" role="tab" aria-selected="false" data-tab="usage" onclick="showTab('usage')">사용량 및 설정</button>
@@ -356,24 +372,18 @@ header,.modal-box{
       </div>
     </div>
     <div class="card">
-      <p class="hint">정렬·필터·검색으로 전 프로젝트를 한눈에. 각 카드의 문서 버튼으로 PRD·로드맵·로그를 볼 수 있어.</p>
+      <p class="hint">완성도는 산출물 기준 점수, 모멘텀·건강·신뢰도는 운영 신호입니다. 각 카드의 문서 버튼으로 PRD·로드맵·로그를 볼 수 있어.</p>
       <div id="blueprintBody"></div>
     </div>
   </section>
 
-  <!-- Walkable town — town.html을 보드 안 창(iframe)으로 실행 -->
-  <section id="sec-town" data-tab="town">
-    <div class="sec-label">마을 — 걸어다니는 프로젝트 마을 <a class="ext-link" href="./town.html" target="_blank" rel="noopener" aria-label="새 창에서 마을 열기" style="font-style:normal;font-weight:600;letter-spacing:0;text-transform:none;color:var(--electric);text-decoration:none;margin-left:6px;font-size:11px">새 창 ↗</a><span></span></div>
-    <div class="town-frame-wrap"><iframe id="townFrame" title="프로젝트 마을 게임" loading="lazy" data-src="./town.html" sandbox="allow-scripts allow-same-origin"></iframe></div>
-  </section>
-
   <!-- Charts -->
   <section id="sec-charts" data-tab="charts">
-    <div class="sec-label">진척도 분석 <button class="info-i" onclick="openGlossary('진척도')" aria-label="용어 설명">i</button><span></span></div>
+    <div class="sec-label">완성도 분석 <button class="info-i" onclick="openHelp()" aria-label="완성도 측정 기준">i</button><span></span></div>
     <div class="charts-grid">
       <div class="chart-card">
-        <div class="chart-title">구성 분해 — 스택드 바</div>
-        <svg id="stackC" width="100%" height="268" role="img" aria-label="프로젝트별 진척도 구성(문서·골격·기능·알파) 스택드 바 차트"></svg>
+        <div class="chart-title">완성도 구성 — 스택드 바</div>
+        <svg id="stackC" width="100%" height="268" role="img" aria-label="프로젝트별 완성도 구성(문서·골격·기능·알파) 스택드 바 차트"></svg>
         <div class="legend" id="stackLeg"></div>
       </div>
       <div class="chart-card">
@@ -381,10 +391,10 @@ header,.modal-box{
           <span>프로젝트별 추세</span>
           <em id="trendMeta" style="font-style:normal;font-weight:500;color:var(--t2);font-size:11px"></em>
           <span style="flex:1"></span>
-          <button class="doc-subtab on" data-tm="progress" onclick="setTrendMetric('progress')">진척도</button>
+          <button class="doc-subtab on" data-tm="progress" onclick="setTrendMetric('progress')">완성도</button>
           <button class="doc-subtab" data-tm="commits" onclick="setTrendMetric('commits')">커밋수</button>
         </div>
-        <svg id="trendC" width="100%" height="240" role="img" aria-label="프로젝트별 진척도·커밋 추세 선차트"></svg>
+        <svg id="trendC" width="100%" height="240" role="img" aria-label="프로젝트별 완성도·커밋 추세 선차트"></svg>
         <div class="legend" id="trendLeg"></div>
       </div>
     </div>
@@ -412,7 +422,7 @@ header,.modal-box{
 </main>
 
 <footer>
-  <span>데이터 출처: GitHub README/PRD · Contributors Insights API · commits.atom &nbsp;·&nbsp; 진척도 = 문서(0-20) + 골격(0-30) + 기능(0-30) + 알파(0-20)</span>
+  <span>데이터 출처: GitHub README/PRD · Contributors Insights API · commits.atom &nbsp;·&nbsp; 완성도 = 문서(0-20) + 골격(0-30) + 기능(0-30) + 알파(0-20)</span>
   <button class="footer-reset" onclick="if(confirm('로컬 데이터를 초기화할까요?')){localStorage.clear();location.reload()}">데이터 초기화</button>
 </footer>
 
@@ -452,14 +462,14 @@ header,.modal-box{
   </div>
 </div>
 
-<!-- 진척도 측정 기준 도움말 모달 -->
+<!-- 완성도 측정 기준 도움말 모달 -->
 <div class="modal-overlay" id="helpModal" onclick="if(event.target===this)closeHelp()">
-  <div class="modal-box" role="dialog" aria-modal="true" aria-label="진척도 측정 기준">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-label="완성도 측정 기준">
     <div class="modal-hd">
-      <span class="modal-title">진척도 측정 기준</span>
+      <span class="modal-title">완성도 측정 기준</span>
       <button class="modal-x" onclick="closeHelp()" aria-label="닫기">✕</button>
     </div>
-    <p class="modal-intro">진척도 = 문서(0-20) + 골격(0-30) + 기능(0-30) + 알파(0-20) = 0-100. 각 단계는 검증 가능한 신호(GitHub release·TestFlight·플레이테스트 보고서 등)에 근거해 매긴다.</p>
+    <p class="modal-intro">완성도 = 문서(0-20) + 골격(0-30) + 기능(0-30) + 알파(0-20) = 0-100. 활동량은 이 점수를 자동으로 올리지 않고, 모멘텀·건강·신뢰도에서 따로 봅니다.</p>
     <div class="help-stage"><div class="help-stage-hd"><span class="leg-dot" style="background:var(--s1)"></span>문서 (0-20) — PRD·스펙·ADR 문서화</div>
       <ul><li>0-4 README 한두 줄</li><li>5-9 README에 컨셉+실행법+구조</li><li>10-15 PRD 또는 Spec 1개 + 컨셉 문서</li><li>16-20 PRD+ADR+로드맵+운영규약 등 다층 문서</li></ul></div>
     <div class="help-stage"><div class="help-stage-hd"><span class="leg-dot" style="background:var(--s2)"></span>골격 (0-30) — 하네스 엔지니어링 + 서브에이전트 구성</div>
@@ -468,6 +478,8 @@ header,.modal-box{
       <ul><li>0-5 거의 미구현, 랜딩/데모만</li><li>6-12 핵심 1-2개 mock 동작</li><li>13-19 PRD 절반 실데이터 동작</li><li>20-25 PRD 80% 동작</li><li>26-30 PRD 100% + 폴리시</li></ul></div>
     <div class="help-stage"><div class="help-stage-hd"><span class="leg-dot" style="background:var(--s4)"></span>알파 (0-20) — 검증·사용자 테스트·폴리시</div>
       <ul><li>0-2 내부 검증 미실시</li><li>3-7 합성 플레이테스트 또는 셀프 QA</li><li>8-13 알파 사용자 N=5+ 보고서</li><li>14-18 알파 N=10+ 종합 보고서</li><li>19-20 클로즈드 베타 진입 가능</li></ul></div>
+    <div class="help-stage"><div class="help-stage-hd">운영 신호 — 점수와 분리해서 보는 항목</div>
+      <ul><li>모멘텀은 최근 커밋과 7일 완성도 변화를 봅니다</li><li>건강은 정체·블로커·스프린트 위험을 봅니다</li><li>신뢰도는 문서·히스토리·다음 액션 등 증거의 밀도를 봅니다</li></ul></div>
   </div>
 </div>
 
@@ -478,7 +490,7 @@ const FALLBACK_PROJECTS = {
   "meta": {
     "owner": "sgeniusk",
     "ownerName": "Gomgomee",
-    "asOf": "2026-06-04",
+    "asOf": "2026-06-05",
     "priorityCriterion": "completionProximity",
     "progressFormula": "docs(0-20) + skeleton(0-30) + features(0-30) + alpha(0-20) = 0-100",
     "toolLegend": {
@@ -516,7 +528,7 @@ const FALLBACK_PROJECTS = {
       "commits": 215,
       "lastUpdate": "2026-05-26T14:35Z",
       "firstCommit": "2026-05-13",
-      "daysActive": 22,
+      "daysActive": 23,
       "eta": "1-2주",
       "etaClass": "near",
       "rationale": "PRD(2026-05-13) 확정, Alpha report + 10-tester evaluation 완료. 웹 프로토타입 검증 끝. mobile/(Expo) 디렉토리로 네이티브 통합 진행 중. CI 하네스(npm run ci)와 i18n까지 셋업됨.",
@@ -529,26 +541,6 @@ const FALLBACK_PROJECTS = {
         "mobile/README.md 기준 Expo 알파 빌드 산출",
         "iOS TestFlight 등록 절차",
         "캡쳐된 alpha 사용자 피드백 반영"
-      ],
-      "agents": [
-        {
-          "name": "설계",
-          "role": "PRD·아키텍처",
-          "tool": "claude",
-          "task": "mobile/README.md 기준 Expo 알파 빌드 산출"
-        },
-        {
-          "name": "구현",
-          "role": "기능·하네스",
-          "tool": "claude",
-          "task": "iOS TestFlight 등록 절차"
-        },
-        {
-          "name": "검증",
-          "role": "테스트·QA",
-          "tool": "claude",
-          "task": "캡쳐된 alpha 사용자 피드백 반영"
-        }
       ],
       "url": "https://github.com/sgeniusk/habit"
     },
@@ -579,7 +571,7 @@ const FALLBACK_PROJECTS = {
       "commits": 5,
       "lastUpdate": "2026-05-12T08:40Z",
       "firstCommit": "2026-05-11",
-      "daysActive": 24,
+      "daysActive": 25,
       "eta": "1-2주",
       "etaClass": "near",
       "rationale": "Wave 1 Foundation 완료, Wave 3 통합도 RisingIssuesView/ViewModel/XCTest까지 끝. 남은 것은 시뮬레이터 스크린샷 + RFP §11 Acceptance Criteria 25개 자가 검증.",
@@ -592,26 +584,6 @@ const FALLBACK_PROJECTS = {
         "Xcode 빌드 + 5 시뮬레이터 스크린샷 캡처",
         "harness/check.sh CI 통과 확인",
         "메인 monorepo와의 통합 시점 결정"
-      ],
-      "agents": [
-        {
-          "name": "설계",
-          "role": "PRD·아키텍처",
-          "tool": "claude",
-          "task": "Xcode 빌드 + 5 시뮬레이터 스크린샷 캡처"
-        },
-        {
-          "name": "구현",
-          "role": "기능·하네스",
-          "tool": "codex",
-          "task": "harness/check.sh CI 통과 확인"
-        },
-        {
-          "name": "검증",
-          "role": "테스트·QA",
-          "tool": "claude",
-          "task": "메인 monorepo와의 통합 시점 결정"
-        }
       ],
       "url": "https://github.com/sgeniusk/tteuniyu-ios"
     },
@@ -641,7 +613,7 @@ const FALLBACK_PROJECTS = {
       "commits": 145,
       "lastUpdate": "2026-06-01T12:53Z",
       "firstCommit": "2026-05-02",
-      "daysActive": 33,
+      "daysActive": 34,
       "eta": "2-3주",
       "etaClass": "near",
       "rationale": "P1~P25까지 작업 항목 정리. 5/14, 5/15 연속 개발 진행 업데이트. 알파 플레이어블 슬라이스 완성, 가상 플레이테스트 보고 2회. 다국어 기반(P17), Hard 승률 게이트(P18)까지 진행.",
@@ -654,26 +626,6 @@ const FALLBACK_PROJECTS = {
         "P25 루트 정찰 예측 완성",
         "알파 완료 백로그 정리",
         "에셋 수입 하네스 자동화"
-      ],
-      "agents": [
-        {
-          "name": "설계",
-          "role": "PRD·아키텍처",
-          "tool": "codex",
-          "task": "P25 루트 정찰 예측 완성"
-        },
-        {
-          "name": "구현",
-          "role": "기능·하네스",
-          "tool": "codex",
-          "task": "알파 완료 백로그 정리"
-        },
-        {
-          "name": "플레이테스트",
-          "role": "플레이테스트·밸런스",
-          "tool": "codex",
-          "task": "에셋 수입 하네스 자동화"
-        }
       ],
       "url": "https://github.com/sgeniusk/sam-defender-logue"
     },
@@ -704,7 +656,7 @@ const FALLBACK_PROJECTS = {
       "commits": 170,
       "lastUpdate": "2026-06-01T13:00Z",
       "firstCommit": "2026-05-14",
-      "daysActive": 21,
+      "daysActive": 22,
       "eta": "2-3주",
       "etaClass": "near",
       "rationale": "현재 기준선 v0.15.0-alpha. 알파 하네스 npm run harness:alpha 운영 중. Vercel 자동 배포 후보 URL까지 준비됨. CHANGELOG 체계도 정착.",
@@ -717,26 +669,6 @@ const FALLBACK_PROJECTS = {
         "v0.16-alpha 게이트 통과",
         "Vercel 정식 도메인 연결",
         "20분/24시간 세션 합성 플레이테스트"
-      ],
-      "agents": [
-        {
-          "name": "설계",
-          "role": "PRD·아키텍처",
-          "tool": "codex",
-          "task": "v0.16-alpha 게이트 통과"
-        },
-        {
-          "name": "구현",
-          "role": "기능·하네스",
-          "tool": "codex",
-          "task": "Vercel 정식 도메인 연결"
-        },
-        {
-          "name": "플레이테스트",
-          "role": "플레이테스트·밸런스",
-          "tool": "codex",
-          "task": "20분/24시간 세션 합성 플레이테스트"
-        }
       ],
       "url": "https://github.com/sgeniusk/samguk-idle-prototype"
     },
@@ -763,10 +695,10 @@ const FALLBACK_PROJECTS = {
         "alpha": 0,
         "total": 55
       },
-      "commits": 181,
-      "lastUpdate": "2026-06-03T03:49Z",
+      "commits": 183,
+      "lastUpdate": "2026-06-04T16:33Z",
       "firstCommit": "2026-05-15",
-      "daysActive": 20,
+      "daysActive": 21,
       "eta": "3-5주",
       "etaClass": "mid",
       "rationale": "코어 메커니즘 완성: deck draw/discard, energy, position, guard, morale, enemy intents, faction selection (Shu/Wei/Wu), self-guard, vulnerable, branching route, edicts. Slay-the-Spire 형 1회 캠페인 플레이 가능.",
@@ -779,26 +711,6 @@ const FALLBACK_PROJECTS = {
         "오리지널 시각 디자인 결정",
         "Steam Wishlist 페이지 준비",
         "Mac/iOS 빌드 점검"
-      ],
-      "agents": [
-        {
-          "name": "설계",
-          "role": "PRD·아키텍처",
-          "tool": "hermes",
-          "task": "오리지널 시각 디자인 결정"
-        },
-        {
-          "name": "구현",
-          "role": "기능·하네스",
-          "tool": "hermes",
-          "task": "Steam Wishlist 페이지 준비"
-        },
-        {
-          "name": "플레이테스트",
-          "role": "플레이테스트·밸런스",
-          "tool": "hermes",
-          "task": "Mac/iOS 빌드 점검"
-        }
       ],
       "url": "https://github.com/sgeniusk/three-kingdoms-deckbuilder"
     },
@@ -829,7 +741,7 @@ const FALLBACK_PROJECTS = {
       "commits": 100,
       "lastUpdate": "2026-05-28T09:14Z",
       "firstCommit": "2026-05-02",
-      "daysActive": 33,
+      "daysActive": 34,
       "eta": "3-5주",
       "etaClass": "mid",
       "rationale": "12-phase 커리큘럼 + 6 여정 + 32 lesson 골격 완성. 페이지 맵(/start, /curriculum, /lessons, /tracks, /projects, /templates) 정의됨. 콘텐츠 데이터 모델 + 무결성 검증 셋업. 콘텐츠 채움이 남은 핵심 작업.",
@@ -842,26 +754,6 @@ const FALLBACK_PROJECTS = {
         "Phase별 우선 레슨 4-5개 본문 완성",
         "캡스톤 프로젝트 예시 작성",
         "라이선스 결정"
-      ],
-      "agents": [
-        {
-          "name": "설계",
-          "role": "PRD·아키텍처",
-          "tool": "claude",
-          "task": "Phase별 우선 레슨 4-5개 본문 완성"
-        },
-        {
-          "name": "구현",
-          "role": "기능·하네스",
-          "tool": "claude",
-          "task": "캡스톤 프로젝트 예시 작성"
-        },
-        {
-          "name": "검증",
-          "role": "테스트·QA",
-          "tool": "claude",
-          "task": "라이선스 결정"
-        }
       ],
       "url": "https://github.com/sgeniusk/ai-builder-school"
     },
@@ -892,7 +784,7 @@ const FALLBACK_PROJECTS = {
       "commits": 357,
       "lastUpdate": "2026-06-03T23:47Z",
       "firstCommit": "2026-05-14",
-      "daysActive": 21,
+      "daysActive": 22,
       "eta": "4-6주",
       "etaClass": "mid",
       "rationale": "Godot에서 웹 네이티브로 재시작. PRD/벤치마크(Game Dev Story)/제작 하네스/합성 플레이테스트 12명 프로토콜 정리. MILESTONE_PLAN, AGENT_REVIEW_PROTOCOL까지 준비. 실제 게임 코드는 초기 단계.",
@@ -905,26 +797,6 @@ const FALLBACK_PROJECTS = {
         "MVP 1 마일스톤 마감",
         "합성 플레이테스트 12명 1차",
         "Vercel 미리보기 배포"
-      ],
-      "agents": [
-        {
-          "name": "설계",
-          "role": "PRD·아키텍처",
-          "tool": "codex",
-          "task": "MVP 1 마일스톤 마감"
-        },
-        {
-          "name": "구현",
-          "role": "기능·하네스",
-          "tool": "codex",
-          "task": "합성 플레이테스트 12명 1차"
-        },
-        {
-          "name": "플레이테스트",
-          "role": "플레이테스트·밸런스",
-          "tool": "codex",
-          "task": "Vercel 미리보기 배포"
-        }
       ],
       "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless"
     },
@@ -955,7 +827,7 @@ const FALLBACK_PROJECTS = {
       "commits": 178,
       "lastUpdate": "2026-06-03T13:36Z",
       "firstCommit": "2026-05-14",
-      "daysActive": 21,
+      "daysActive": 22,
       "eta": "5-7주",
       "etaClass": "far",
       "rationale": "Project blueprint, creative development engine, story engine (시리즈 바이블, 캐논 레저), App.tsx UI까지 코드 골격 진행. 다양한 매체(소설/에세이/오디오북/만화/뮤직비디오/교육영상) 지원이 목표. Claude Code 서브에이전트 운영.",
@@ -968,26 +840,6 @@ const FALLBACK_PROJECTS = {
         "1개 매체(웹툰 or 단편 만화) 깊이 우선 완성",
         "장편 연재 메모리 앵커 테스트",
         "에이전트 출력 골든 케이스 정착"
-      ],
-      "agents": [
-        {
-          "name": "설계",
-          "role": "PRD·아키텍처",
-          "tool": "claude",
-          "task": "1개 매체(웹툰 or 단편 만화) 깊이 우선 완성"
-        },
-        {
-          "name": "구현",
-          "role": "기능·하네스",
-          "tool": "claude",
-          "task": "장편 연재 메모리 앵커 테스트"
-        },
-        {
-          "name": "검증",
-          "role": "테스트·QA",
-          "tool": "claude",
-          "task": "에이전트 출력 골든 케이스 정착"
-        }
       ],
       "url": "https://github.com/sgeniusk/story-x-beta"
     },
@@ -1019,7 +871,7 @@ const FALLBACK_PROJECTS = {
       "commits": 3,
       "lastUpdate": "2026-05-13T22:21Z",
       "firstCommit": "2026-05-13",
-      "daysActive": 22,
+      "daysActive": 23,
       "eta": "8-10주 (정상 추진 시)",
       "etaClass": "long",
       "rationale": "Initial brief + design handoff + implementation spec + Next.js 스캐폴드 + landing/demo UI + Supabase 클라이언트 placeholder + 스키마 초안 완료. 의도적으로 sample data로 시작. Supabase 실 연결과 인증 흐름이 다음 마일스톤.",
@@ -1032,20 +884,6 @@ const FALLBACK_PROJECTS = {
         "로그인 방식 + 클럽 초대 모델 결정",
         "Supabase 프로젝트 연결",
         "투표/리뷰 슬라이스 1개 인증 흐름까지"
-      ],
-      "agents": [
-        {
-          "name": "설계",
-          "role": "PRD·아키텍처",
-          "tool": "claude",
-          "task": "로그인 방식 + 클럽 초대 모델 결정"
-        },
-        {
-          "name": "구현",
-          "role": "기능·하네스",
-          "tool": "claude",
-          "task": "Supabase 프로젝트 연결"
-        }
       ],
       "url": "https://github.com/sgeniusk/BookCircle"
     },
@@ -1075,7 +913,7 @@ const FALLBACK_PROJECTS = {
       "commits": 18,
       "lastUpdate": "2026-05-15T04:09Z",
       "firstCommit": "2026-05-14",
-      "daysActive": 21,
+      "daysActive": 22,
       "eta": "재개 후 8-12주",
       "etaClass": "long",
       "rationale": "Month 01 산출물(세계관/시즌/학습 지도/법규 메모/스타일 가이드/캐릭터 시트/배경팩/파일럿 3편) 완성. gh auth 토큰 만료 상태. 사용자 결정으로 일시 중단.",
@@ -1088,14 +926,6 @@ const FALLBACK_PROJECTS = {
         "PAUSE: 재개 트리거 정의 (예: 핵심 게임 2개 마감 후)",
         "gh auth 복구는 재개 시 처리",
         "현재 산출물 README에 명시"
-      ],
-      "agents": [
-        {
-          "name": "설계",
-          "role": "PRD·아키텍처",
-          "tool": "claude",
-          "task": "PAUSE: 재개 트리거 정의 (예: 핵심 게임 2개 마감 후)"
-        }
       ],
       "url": "https://github.com/sgeniusk/jewelry-webtoon-cloud"
     },
@@ -1129,7 +959,7 @@ const FALLBACK_PROJECTS = {
       "commits": 42,
       "lastUpdate": "2026-05-20T15:55Z",
       "firstCommit": "2026-05-16",
-      "daysActive": 19,
+      "daysActive": 20,
       "eta": "3-5주",
       "etaClass": "mid",
       "rationale": "마인드맵×아웃라이너 하이브리드 사고 정리 도구. 같은 트리를 두 뷰로 공유하는 오프라인 퍼스트 앱. 3일간 32커밋으로 두 뷰·스마트 붙여넣기·검색·Hoist·내보내기(MD/OPML/JSON/CSV)·CLI 파리티까지 구현. vitest 테스트 하네스와 XMind/OmniOutliner 벤치마크 문서 보유, 20인 페르소나 사용성 분석 1차 반영.",
@@ -1142,26 +972,6 @@ const FALLBACK_PROJECTS = {
         "알파 사용성 테스트 — 20인 페르소나 우선순위 B/C 반영",
         "Electron 데스크톱 앱 안정화",
         "대형 트리 렌더 성능 — React Flow 가상화"
-      ],
-      "agents": [
-        {
-          "name": "설계",
-          "role": "PRD·아키텍처",
-          "tool": "claude",
-          "task": "알파 사용성 테스트 — 20인 페르소나 우선순위 B/C 반영"
-        },
-        {
-          "name": "구현",
-          "role": "기능·하네스",
-          "tool": "claude",
-          "task": "Electron 데스크톱 앱 안정화"
-        },
-        {
-          "name": "검증",
-          "role": "테스트·QA",
-          "tool": "claude",
-          "task": "대형 트리 렌더 성능 — React Flow 가상화"
-        }
       ],
       "url": "https://github.com/sgeniusk/Nodeloom"
     },
@@ -1193,7 +1003,7 @@ const FALLBACK_PROJECTS = {
       "commits": 19,
       "lastUpdate": "2026-05-29T09:55Z",
       "firstCommit": "2026-05-18",
-      "daysActive": 17,
+      "daysActive": 18,
       "eta": "4-6주",
       "etaClass": "mid",
       "rationale": "AI 기반 디자인 시스템 구축을 배우는 교육 콘텐츠 프로젝트.",
@@ -1204,26 +1014,6 @@ const FALLBACK_PROJECTS = {
       "nextActions": [
         "PRD 작성 및 로드맵 수립",
         "Next.js 기본 스캐폴딩 설정"
-      ],
-      "agents": [
-        {
-          "name": "설계",
-          "role": "PRD·아키텍처",
-          "tool": "claude",
-          "task": "PRD 작성 및 로드맵 수립"
-        },
-        {
-          "name": "구현",
-          "role": "기능·하네스",
-          "tool": "claude",
-          "task": "Next.js 기본 스캐폴딩 설정"
-        },
-        {
-          "name": "검증",
-          "role": "테스트·QA",
-          "tool": "claude",
-          "task": "콘텐츠 유효성 확인"
-        }
       ],
       "url": "https://github.com/sgeniusk/design-system-school"
     },
@@ -1254,7 +1044,7 @@ const FALLBACK_PROJECTS = {
       "commits": 35,
       "lastUpdate": "2026-06-03T23:34Z",
       "firstCommit": "2026-05-21",
-      "daysActive": 14,
+      "daysActive": 15,
       "eta": "2-3주",
       "etaClass": "near",
       "rationale": "해치가 CMDS 1일 브리핑을 날짜별 웹 페이지로 렌더링하는 Vercel 앱. 백상현 daily page 영감의 에디토리얼 UI, /daily/YYYY-MM-DD 라우트. 카드별 검토 액션을 Hermes action queue로 넘기는 통합 진행 중. Production URL 가동.",
@@ -1267,26 +1057,6 @@ const FALLBACK_PROJECTS = {
         "V1 에디토리얼 UI 마감",
         "Hermes action queue 통합 종단 테스트",
         "최근 7일·30일 인덱스 페이지"
-      ],
-      "agents": [
-        {
-          "name": "설계",
-          "role": "PRD·아키텍처",
-          "tool": "claude",
-          "task": "V1 에디토리얼 UI 마감"
-        },
-        {
-          "name": "구현",
-          "role": "기능·하네스",
-          "tool": "claude",
-          "task": "Hermes action queue 통합 종단 테스트"
-        },
-        {
-          "name": "검증",
-          "role": "테스트·QA",
-          "tool": "claude",
-          "task": "최근 7일·30일 인덱스 페이지"
-        }
       ],
       "url": "https://github.com/sgeniusk/cmds-daily-briefing"
     },
@@ -1316,7 +1086,7 @@ const FALLBACK_PROJECTS = {
       "commits": 1,
       "lastUpdate": "2026-05-20T16:52Z",
       "firstCommit": "2026-05-20",
-      "daysActive": 15,
+      "daysActive": 16,
       "eta": "미정",
       "etaClass": "long",
       "rationale": "Vite + React 스캐폴드만 존재. README가 Vite 기본 템플릿 그대로 — PRD·컨셉 단계, 산출물 없음.",
@@ -1328,26 +1098,6 @@ const FALLBACK_PROJECTS = {
         "PRD 작성 — 어떤 타이머인지 정의",
         "MVP 기능 1개 정의",
         "스캐폴드를 실 코드로 채우기"
-      ],
-      "agents": [
-        {
-          "name": "설계",
-          "role": "PRD·아키텍처",
-          "tool": "claude",
-          "task": "PRD 작성 — 어떤 타이머인지 정의"
-        },
-        {
-          "name": "구현",
-          "role": "기능·하네스",
-          "tool": "claude",
-          "task": "MVP 기능 1개 정의"
-        },
-        {
-          "name": "검증",
-          "role": "테스트·QA",
-          "tool": "claude",
-          "task": "스캐폴드를 실 코드로 채우기"
-        }
       ],
       "url": "https://github.com/sgeniusk/Timeer"
     },
@@ -1380,7 +1130,7 @@ const FALLBACK_PROJECTS = {
       "commits": 15,
       "lastUpdate": "2026-05-30T02:30Z",
       "firstCommit": "2026-05-27",
-      "daysActive": 8,
+      "daysActive": 9,
       "eta": "5-7주",
       "etaClass": "far",
       "rationale": "Phase 0 bootstrap 완료 — Next.js + TS strict + Tailwind + shadcn/ui 구조, 테마, 초기 랜딩 페이지. Supabase 인증·Aladin 책 검색 연동 준비. BookCircle과 도메인 겹치는 독서 클럽 신규 시도(BookCircle은 sprint=defer로 정체 상태).",
@@ -1393,26 +1143,6 @@ const FALLBACK_PROJECTS = {
         "Supabase 인증 + RLS 정책 설계",
         "독서 클럽 모임 데이터 모델 1차 확정",
         "BookCircle과 관계 정리 — 통합/별개 결정"
-      ],
-      "agents": [
-        {
-          "name": "설계",
-          "role": "PRD·아키텍처",
-          "tool": "claude",
-          "task": "Supabase 인증 + RLS 정책 설계"
-        },
-        {
-          "name": "구현",
-          "role": "기능·하네스",
-          "tool": "claude",
-          "task": "독서 클럽 모임 데이터 모델 1차 확정"
-        },
-        {
-          "name": "검증",
-          "role": "테스트·QA",
-          "tool": "claude",
-          "task": "BookCircle과 관계 정리 — 통합/별개 결정"
-        }
       ],
       "url": "https://github.com/sgeniusk/chaekdam"
     },
@@ -1440,10 +1170,10 @@ const FALLBACK_PROJECTS = {
         "alpha": 0,
         "total": 19
       },
-      "commits": 97,
-      "lastUpdate": "2026-06-04T09:40Z",
+      "commits": 116,
+      "lastUpdate": "2026-06-04T22:56Z",
       "firstCommit": "2026-05-27",
-      "daysActive": 8,
+      "daysActive": 9,
       "eta": "8-12주",
       "etaClass": "long",
       "rationale": "Pre-production / Design Draft v0.2. 한국 신화 삼계(명부·인간계·천계)를 무대로 한 벽돌깨기 + 덱빌딩 + 로그라이크 모바일 게임. 핵심 설계 확정(엔진·아트·테마·F2P 정책·컨트롤). 영감: 타이탄 브레이커·Slay the Spire·Brotato·Peggle. 워크플로우: Claude 하네스 + Codex CLI 실행.",
@@ -1457,26 +1187,6 @@ const FALLBACK_PROJECTS = {
         "Godot 4.3+ 프로젝트 스캐폴드 + 벽돌깨기 코어 슬라이스",
         "부적·술법 카드 모델 1차 정의",
         "30분 런 페이싱 페이퍼 프로토타입"
-      ],
-      "agents": [
-        {
-          "name": "설계",
-          "role": "PRD·아키텍처",
-          "tool": "claude",
-          "task": "Godot 4.3+ 프로젝트 스캐폴드 + 벽돌깨기 코어 슬라이스"
-        },
-        {
-          "name": "구현",
-          "role": "기능·하네스",
-          "tool": "codex",
-          "task": "부적·술법 카드 모델 1차 정의"
-        },
-        {
-          "name": "플레이테스트",
-          "role": "플레이테스트·밸런스",
-          "tool": "codex",
-          "task": "30분 런 페이싱 페이퍼 프로토타입"
-        }
       ],
       "url": "https://github.com/sgeniusk/honbul"
     }
@@ -1662,7 +1372,7 @@ function mapProject(p) {
     eta: p.eta || '-', st: p.status === 'active' ? 'active' : 'suspended',
     next: (p.nextActions && p.nextActions[0]) || '-', repo: p.name,
     cat: p.category || 'app', paused: p.status === 'paused',
-    agents: p.agents || null, url: p.url || '', nextAll: p.nextActions || []
+    url: p.url || '', nextAll: p.nextActions || []
   };
 }
 
@@ -1676,7 +1386,7 @@ const SPRINTS = {
   'D':{lbl:'Sprint D',sub:'5-8주',c:'#ff5b22'},
   'Defer':{lbl:'Defer',sub:'보류',c:'#aaa'}
 };
-const TCOLS = {'Claude':'#2545ff','Claude+Codex':'#ff5b22','Codex':'#0c1754','Hermes Agent':'#e0a500'};
+const TCOLS = {'Claude':'#ff5b22','Claude+Codex':'#39c5cf','Codex':'#3fb950','Hermes Agent':'#bc8cff'};
 const TCLS  = {'Claude':'t-cl','Claude+Codex':'t-hy','Codex':'t-co','Hermes Agent':'t-he'};
 
 const pct = p => p.d + p.sc + p.fn + p.al;
@@ -1737,13 +1447,73 @@ function blockerHTML(p) {
   if (!hit) return '';
   return `<span class="blocker-chip" title="${esc(hit.title || '정체')}">⚠ 정체${hit.title ? ' · '+esc(hit.title) : ''}</span>`;
 }
+function highSuggestion(p) {
+  return ((SUG && SUG.items) || []).find(it=>it && it.repo===p.repo && it.severity==='high') || null;
+}
+function projectAge(p) {
+  return daysBetween(p.last, META.asOf || p.last);
+}
+function projectHealth(p) {
+  if (p.st === 'suspended') return { key:'hold', label:'보류', detail:'일시중단 상태' };
+  const age = projectAge(p);
+  const high = highSuggestion(p);
+  if (high) return { key:'risk', label:'위험', detail:high.title || '블로커 있음' };
+  if (age !== null && (age >= 14 || ((p.sprint === 'A' || p.sprint === 'B') && age >= 7))) {
+    return { key:'risk', label:'위험', detail:`활동 ${age}일 공백` };
+  }
+  if (age !== null && (age >= 5 || (pct(p) >= 60 && age >= 4))) {
+    return { key:'watch', label:'주의', detail:`활동 ${age}일 공백` };
+  }
+  return { key:'ok', label:'정상', detail:age === 0 ? '오늘 활동' : `최근 ${age == null ? '-' : age + '일'} 내 활동` };
+}
+function healthHTML(p) {
+  const h = projectHealth(p);
+  return `<span class="health-chip ${h.key}" title="${esc(h.detail)}">${h.label}</span>`;
+}
+function confidenceLevel(p) {
+  let score = 0;
+  if (p.d >= 10) score += 1;
+  if (p.sc >= 10 || p.fn > 0 || p.al > 0) score += 1;
+  if (p.commits > 0 && p.last) score += 1;
+  if (projectMomentum(p.repo)) score += 1;
+  if ((p.nextAll || []).length) score += 1;
+  if (score >= 4) return { key:'high', label:'신뢰 높음' };
+  if (score >= 2) return { key:'med', label:'신뢰 보통' };
+  return { key:'low', label:'근거 낮음' };
+}
+function confidenceHTML(p) {
+  const c = confidenceLevel(p);
+  return `<span class="confidence-chip ${c.key}" title="문서·커밋·히스토리·다음 액션 근거 밀도">${c.label}</span>`;
+}
+function stageFocus(p) {
+  const open = STAGES
+    .map(s=>({ label:s.label, value:p[s.key] || 0, max:s.max, missing:s.max - (p[s.key] || 0) }))
+    .filter(s=>s.missing > 0)
+    .sort((a,b)=>(b.missing / b.max) - (a.missing / a.max))[0];
+  return open ? `${open.label} 보강` : '출시 검증';
+}
+function milestoneText(p) {
+  return (p.next && p.next !== '-') ? p.next : stageFocus(p);
+}
+function activityCount(days) {
+  const commits = (ACT && ACT.commits) || [];
+  const asOf = META.asOf ? new Date(META.asOf + 'T23:59:59Z') : new Date();
+  const start = asOf.getTime() - days * 86400000;
+  return commits.filter(c=>{
+    const t = new Date(c.date).getTime();
+    return !Number.isNaN(t) && t >= start && t <= asOf.getTime();
+  }).length;
+}
+function healthRank(p) {
+  return { risk:0, watch:1, ok:2, hold:3 }[projectHealth(p).key] ?? 4;
+}
 function renderDataBadge() {
   const el = document.getElementById('dataBadge');
-  if (el) el.textContent = `v2.1 · 데이터 ${META.asOf || '-'} 기준`;
+  if (el) el.textContent = `v2.7 · 데이터 ${META.asOf || '-'} 기준`;
 }
 
 /* ── STATE ── */
-let ST = { cat:'전체', tool:'전체', status:'활성', sort:'진척도', search:'' };
+let ST = { cat:'전체', tool:'전체', status:'활성', sort:'완성도', search:'' };
 let spPos = {}, usage = {};
 try { spPos = JSON.parse(localStorage.getItem('sd')||'{}'); } catch(e){}
 try { usage = JSON.parse(localStorage.getItem('ud')||'{}'); } catch(e){}
@@ -1761,15 +1531,14 @@ function renderKPI() {
   const active = P.filter(p=>p.st==='active');
   const susp = P.length - active.length;
   const avg  = active.length ? Math.round(active.reduce((s,p)=>s+pct(p),0)/active.length) : 0;
-  const near = active.filter(p=>pct(p)>=60).length;
-  const claude = active.filter(p=>p.tool==='Claude');
-  const codex  = active.filter(p=>p.tool==='Codex');
+  const near = active.filter(p=>pct(p)>=60 && projectHealth(p).key!=='risk').length;
+  const risk = active.filter(p=>projectHealth(p).key==='risk').length;
+  const recent = activityCount(7);
   const kpis = [
     {lbl:'활성 프로젝트',val:String(active.length),sub:(susp?'+'+susp+' 일시중단':'전부 진행 중'),acc:'#2545ff',tag:'전체 '+P.length+'개'},
-    {lbl:'Claude 작성',val:String(claude.length),sub:claude.map(p=>p.nm).join(' · ')||'-',acc:'#2545ff',tag:'Claude'},
-    {lbl:'Codex 작성',val:String(codex.length),sub:codex.map(p=>p.nm).join(' · ')||'-',acc:'#0c1754',tag:'Codex'},
-    {lbl:'평균 진척도',val:avg+'%',sub:'활성 프로젝트 기준',acc:'#ffc13a',tag:near+'개 ≥60%'},
-    {lbl:'완성 임박',val:String(near),sub:'2-3주 내 알파 가능',acc:'#ff5b22',tag:'우선 착수'}
+    {lbl:'평균 완성도',val:avg+'%',sub:'산출물 기준 수동 점수',acc:'#ffc13a',tag:near+'개 ≥60%'},
+    {lbl:'건강 위험',val:String(risk),sub:risk ? '정체·블로커 우선 점검' : '치명 신호 없음',acc:'#ff5b22',tag:risk ? '개입 필요' : '정상'},
+    {lbl:'최근 7일 커밋',val:String(recent),sub:'활동량은 완성도와 분리',acc:'#3fb950',tag:'모멘텀'}
   ];
   document.getElementById('kpiGrid').innerHTML = kpis.map(k=>`
     <div class="kpi-card" style="--acc:${k.acc}">
@@ -1790,7 +1559,7 @@ function renderFilters() {
   mk('fCat','cat',['전체','게임','앱','콘텐츠']);
   mk('fTool','tool',['전체','Claude','Codex','Hermes Agent','Claude+Codex']);
   mk('fStatus','status',['활성','전체']);
-  mk('fSort','sort',['진척도','커밋','최근 활동']);
+  mk('fSort','sort',['완성도','건강','커밋','최근 활동']);
 }
 window.setF = (k,v)=>{ ST[k]=v; renderFilters(); renderMasterBoard(); };
 
@@ -1801,7 +1570,8 @@ function getList() {
   if (ST.cat!=='전체') ps=ps.filter(p=>p.type===ST.cat);
   if (ST.tool!=='전체') ps=ps.filter(p=>p.tool===ST.tool);
   if (ST.search) { const q=ST.search.toLowerCase(); ps=ps.filter(p=>p.nm.toLowerCase().includes(q)||p.tool.toLowerCase().includes(q)||p.type.includes(q)||(p.repo||'').toLowerCase().includes(q)); }
-  if (ST.sort==='진척도') ps.sort((a,b)=>pct(b)-pct(a));
+  if (ST.sort==='완성도') ps.sort((a,b)=>pct(b)-pct(a));
+  else if (ST.sort==='건강') ps.sort((a,b)=>healthRank(a)-healthRank(b) || pct(b)-pct(a));
   else if (ST.sort==='커밋') ps.sort((a,b)=>b.commits-a.commits);
   else ps.sort((a,b)=>(b.last||'').localeCompare(a.last||''));
   return ps;
@@ -2070,8 +1840,8 @@ function analyzeProjects(){
     if(low.r<0.4 && total<90){
       items.push({repo:p.repo,type:'coach',severity:'info',
         title:`${low.l} 단계가 병목`,
-        detail:`${low.l} 점수가 ${low.v}/${low.m} (${Math.round(low.r*100)}%)로 가장 낮습니다. 현재 진척도 ${total}%.`,
-        evidence:[`${low.l} ${low.v}/${low.m} (${Math.round(low.r*100)}%) — 분해 항목 중 최저`, `진척도 ${total}%`],
+        detail:`${low.l} 점수가 ${low.v}/${low.m} (${Math.round(low.r*100)}%)로 가장 낮습니다. 현재 완성도 ${total}%.`,
+        evidence:[`${low.l} ${low.v}/${low.m} (${Math.round(low.r*100)}%) — 분해 항목 중 최저`, `완성도 ${total}%`],
         confidence:'medium',
         recommendation:`${low.l} 단계를 다음 작업의 우선 타깃으로 삼는다.`,
         actions:act});
@@ -2080,8 +1850,8 @@ function analyzeProjects(){
     if(total>=70){
       items.push({repo:p.repo,type:'coach',severity:'info',
         title:'완성 임박',
-        detail:`진척도 ${total}%로 상위권입니다. 마무리 단계에 집중할 시점입니다.`,
-        evidence:[`진척도 ${total}% — 상위권`, `커밋 ${p.commits}`],
+        detail:`완성도 ${total}%로 상위권입니다. 마무리 단계에 집중할 시점입니다.`,
+        evidence:[`완성도 ${total}% — 상위권`, `커밋 ${p.commits}`],
         confidence:'medium',
         recommendation:'마무리·검증 단계에 집중할 시점이다.',
         actions:act});
@@ -2092,7 +1862,7 @@ function analyzeProjects(){
 }
 /* 새로고침은 매일 08:03 KST 원격 루틴이 자동 수행한다 (claude.ai/code/routines). 수동 새로고침 버튼은 제거됨 — 페이지 reload로 충분. */
 
-/* ── 진척도 측정 기준 도움말 모달 ── */
+/* ── 완성도 측정 기준 도움말 모달 ── */
 // 모달 포커스 관리 — 열 때 닫기 버튼으로 포커스 이동, 닫을 때 원위치 복원
 let _modalReturnFocus=null;
 function openModal(id){
@@ -2112,8 +1882,8 @@ document.addEventListener('keydown',e=>{ if(e.key==='Escape'){closeHelp();closeD
 /* ── 용어 설명 글로서리 ── */
 const GLOSSARY = {
   '스프린트': '<b>스프린트</b>는 docs/sprint-plan.md의 4-6주 추천 스케줄 단위입니다. Sprint A·B·C·D는 각각 1-2주·2-3주·3-5주·5-8주 구간이고, 한 구간에 프로젝트 2개씩 묶어 동반 마감합니다. Defer는 후순위(보류). 애자일의 "스프린트"(고정 작업 기간)에서 온 용어입니다.',
-  '진척도': '진척도 = 문서(0-20) + 골격(0-30) + 기능(0-30) + 알파(0-20) = 0-100점. 골격은 하네스 엔지니어링·서브에이전트 구성 완성도를 봅니다.',
-  '마스터 보드': '추적 중인 전 프로젝트를 진척도 높은 순으로 한눈에 보는 카드 그리드입니다. 각 카드의 "문서" 버튼으로 PRD·로드맵·로그를 엽니다.',
+  '완성도': '완성도 = 문서(0-20) + 골격(0-30) + 기능(0-30) + 알파(0-20) = 0-100점. 활동량은 모멘텀으로 분리해 봅니다.',
+  '마스터 보드': '추적 중인 전 프로젝트를 완성도와 운영 신호로 함께 보는 카드 그리드입니다. 각 카드의 "문서" 버튼으로 PRD·로드맵·로그를 엽니다.',
   '정체': '마지막 GitHub 활동이 4-5일 이상 없는 상태입니다. 진행 중인 프로젝트가 정체되면 일정 지연 신호이며, 같은 스프린트의 동반 프로젝트에도 영향을 줍니다.'
 };
 window.openGlossary = (term)=>{
@@ -2124,7 +1894,7 @@ window.openGlossary = (term)=>{
 window.closeGlossary = ()=>closeModal('glossaryModal');
 
 /* ── 탭 전환 (파일철 레이아웃) ── */
-const VALID_TABS = new Set(['blueprint','town','charts','sprint','usage']);
+const VALID_TABS = new Set(['blueprint','charts','sprint','usage']);
 function normalizeTab(name){ return VALID_TABS.has(name) ? name : 'blueprint'; }
 function showTab(name){
   name = normalizeTab(name);
@@ -2141,11 +1911,6 @@ function showTab(name){
   window.scrollTo(0,0);
   // 차트는 패널이 보일 때 폭이 잡히므로 분석 탭 전환 시 재렌더
   if(name==='charts'){ renderStacked(); renderTrend(); }
-  // 마을 iframe은 첫 진입 시에만 로드 (lazy)
-  if(name==='town'){
-    const fr = document.getElementById('townFrame');
-    if(fr && !fr.getAttribute('src') && fr.dataset.src){ fr.setAttribute('src', fr.dataset.src); }
-  }
 }
 window.showTab = showTab;
 // 탭 화살표 키 내비게이션 (tablist 표준)
@@ -2185,19 +1950,33 @@ function renderMasterBoard(){
   wrap.innerHTML = ps.map(p=>{
     const tot = pct(p), sp = spPos[p.id]||p.sprint;
     const spcfg = SPRINTS[sp] || SPRINTS['A'];
+    const h = projectHealth(p);
     return `<div class="mb-card${p.st==='suspended'?' susp':''}">
       <div class="mb-head">
         <span class="mb-name"><span class="picon">${p.icon||'📦'}</span>${p.nm}${p.st==='suspended'?'<span class="susp-tag">중단</span>':''}</span>
         <span class="tbadge ${TCLS[p.tool]||'t-cl'}">${p.tool}</span>
       </div>
       <div class="mb-pctrow">
-        <span class="mb-pct">${tot}<small>%</small></span>
-        <span class="mb-sprint" style="color:${spcfg.c}">${sp==='Defer'?'Defer':'Sprint '+sp}</span>
+        <span class="mb-pctbox"><span class="mb-pct">${tot}<small>%</small></span><span class="mb-pct-caption">완성도</span></span>
+        <span style="display:flex;flex-direction:column;align-items:flex-end;gap:4px">
+          ${healthHTML(p)}
+          <span class="mb-sprint" style="color:${spcfg.c}">${sp==='Defer'?'Defer':'Sprint '+sp}</span>
+        </span>
       </div>
       ${progressBar(p)}
-      <div class="mb-chiprow">${momentumHTML(p)}${blockerHTML(p)}</div>
+      <div class="mb-chiprow">${momentumHTML(p)}${confidenceHTML(p)}${blockerHTML(p)}</div>
+      <div class="mb-lens">
+        <div class="mb-lens-item">
+          <div class="mb-lens-title">건강 근거</div>
+          <div class="mb-lens-value" title="${esc(h.detail)}">${esc(h.detail)}</div>
+        </div>
+        <div class="mb-lens-item">
+          <div class="mb-lens-title">초점 단계</div>
+          <div class="mb-lens-value">${esc(stageFocus(p))}</div>
+        </div>
+      </div>
       <div class="mb-meta"><span>${p.type}</span><span>예상 ${p.eta}</span></div>
-      <div class="mb-next">▸ ${p.next}</div>
+      <div class="mb-next"><span class="mb-next-label">다음 마일스톤</span>▸ ${esc(milestoneText(p))}</div>
       <button class="mb-doc" onclick="openDocs('${p.repo}')">문서 ▸ PRD · 로드맵 · 로그</button>
     </div>`;
   }).join('');
@@ -2274,9 +2053,9 @@ window.showDocSub = async (sub)=>{
 };
 
 
-/* ── 진척도 추세 ── */
+/* ── 완성도 추세 ── */
 const FALLBACK_HISTORY = {
-  "_comment": "진척도 스냅샷 히스토리. /refresh(refresh-progress.mjs)가 실행될 때마다 그날의 스냅샷을 upsert한다. 대시보드 추세 차트가 읽는다.",
+  "_comment": "완성도 스냅샷 히스토리. /refresh(refresh-progress.mjs)가 실행될 때마다 그날의 스냅샷을 upsert한다. 대시보드 추세 차트가 읽는다.",
   "snapshots": [
     {
       "date": "2026-05-16",

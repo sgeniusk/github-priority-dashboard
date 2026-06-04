@@ -1,6 +1,6 @@
 {
-  "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·진척 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-06-04",
+  "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
+  "generatedAt": "2026-06-05",
   "logs": {
     "habit": [
       {
@@ -71,6 +71,11 @@
         "date": "2026-06-04",
         "kind": "progress",
         "text": "진척 70%"
+      },
+      {
+        "date": "2026-06-05",
+        "kind": "progress",
+        "text": "진척 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -122,6 +127,11 @@
       },
       {
         "date": "2026-06-04",
+        "kind": "progress",
+        "text": "진척 65%"
+      },
+      {
+        "date": "2026-06-05",
         "kind": "progress",
         "text": "진척 65%"
       }
@@ -243,6 +253,11 @@
         "date": "2026-06-04",
         "kind": "progress",
         "text": "진척 60%"
+      },
+      {
+        "date": "2026-06-05",
+        "kind": "progress",
+        "text": "진척 60%"
       }
     ],
     "samguk-idle-prototype": [
@@ -360,6 +375,11 @@
       },
       {
         "date": "2026-06-04",
+        "kind": "progress",
+        "text": "진척 60%"
+      },
+      {
+        "date": "2026-06-05",
         "kind": "progress",
         "text": "진척 60%"
       }
@@ -481,6 +501,23 @@
         "date": "2026-06-04",
         "kind": "progress",
         "text": "진척 55%"
+      },
+      {
+        "date": "2026-06-04T12:45:25Z",
+        "kind": "commit",
+        "text": "art: add commander portrait placeholders",
+        "sha": "f801093"
+      },
+      {
+        "date": "2026-06-04T16:33:12Z",
+        "kind": "commit",
+        "text": "chore: track commander portrait imports",
+        "sha": "6d2e33e"
+      },
+      {
+        "date": "2026-06-05",
+        "kind": "progress",
+        "text": "진척 55% · 커밋 +2"
       }
     ],
     "ai-builder-school": [
@@ -550,6 +587,11 @@
       },
       {
         "date": "2026-06-04",
+        "kind": "progress",
+        "text": "진척 45%"
+      },
+      {
+        "date": "2026-06-05",
         "kind": "progress",
         "text": "진척 45%"
       }
@@ -689,6 +731,11 @@
         "date": "2026-06-04",
         "kind": "progress",
         "text": "진척 40%"
+      },
+      {
+        "date": "2026-06-05",
+        "kind": "progress",
+        "text": "진척 40%"
       }
     ],
     "story-x-beta": [
@@ -808,6 +855,11 @@
         "date": "2026-06-04",
         "kind": "progress",
         "text": "진척 45%"
+      },
+      {
+        "date": "2026-06-05",
+        "kind": "progress",
+        "text": "진척 45%"
       }
     ],
     "BookCircle": [
@@ -847,6 +899,11 @@
       },
       {
         "date": "2026-06-04",
+        "kind": "progress",
+        "text": "진척 20%"
+      },
+      {
+        "date": "2026-06-05",
         "kind": "progress",
         "text": "진척 20%"
       }
@@ -920,6 +977,11 @@
         "date": "2026-06-04",
         "kind": "progress",
         "text": "진척 20%"
+      },
+      {
+        "date": "2026-06-05",
+        "kind": "progress",
+        "text": "진척 20%"
       }
     ],
     "Nodeloom": [
@@ -991,6 +1053,11 @@
         "date": "2026-06-04",
         "kind": "progress",
         "text": "진척 56%"
+      },
+      {
+        "date": "2026-06-05",
+        "kind": "progress",
+        "text": "진척 56%"
       }
     ],
     "design-system-school": [
@@ -1060,6 +1127,11 @@
       },
       {
         "date": "2026-06-04",
+        "kind": "progress",
+        "text": "진척 20%"
+      },
+      {
+        "date": "2026-06-05",
         "kind": "progress",
         "text": "진척 20%"
       }
@@ -1151,6 +1223,11 @@
         "date": "2026-06-04",
         "kind": "progress",
         "text": "진척 52%"
+      },
+      {
+        "date": "2026-06-05",
+        "kind": "progress",
+        "text": "진척 52%"
       }
     ],
     "Timeer": [
@@ -1178,6 +1255,11 @@
       },
       {
         "date": "2026-06-04",
+        "kind": "progress",
+        "text": "진척 7%"
+      },
+      {
+        "date": "2026-06-05",
         "kind": "progress",
         "text": "진척 7%"
       }
@@ -1249,6 +1331,11 @@
       },
       {
         "date": "2026-06-04",
+        "kind": "progress",
+        "text": "진척 19%"
+      },
+      {
+        "date": "2026-06-05",
         "kind": "progress",
         "text": "진척 19%"
       }
@@ -1418,6 +1505,59 @@
         "kind": "commit",
         "text": "베타 플레이 경로를 한 줄 smoke로 잠근다",
         "sha": "8027cbf"
+      },
+      {
+        "date": "2026-06-04T15:28:32Z",
+        "kind": "commit",
+        "text": "베타 후보 증거를 보고서에 맞춘다",
+        "sha": "717e856"
+      },
+      {
+        "date": "2026-06-04T15:42:41Z",
+        "kind": "commit",
+        "text": "외부 음원 교체 진입점을 연다",
+        "sha": "8438e67"
+      },
+      {
+        "date": "2026-06-04T16:03:52Z",
+        "kind": "commit",
+        "text": "장비 융합 결정을 확인 뒤 소비하게 한다",
+        "sha": "030229d"
+      },
+      {
+        "date": "2026-06-04T16:22:26Z",
+        "kind": "commit",
+        "text": "드래프트 융합 선택감을 조합 성장으로 끌어올린다",
+        "sha": "811132d"
+      },
+      {
+        "date": "2026-06-04T16:46:01Z",
+        "kind": "commit",
+        "text": "드래프트 융합 결과를 선택 전에 읽게 한다",
+        "sha": "34fd330"
+      },
+      {
+        "date": "2026-06-04T22:08:51Z",
+        "kind": "commit",
+        "text": "드래프트 융합 화면을 실제 프레임으로 확인한다",
+        "sha": "154aaeb"
+      },
+      {
+        "date": "2026-06-04T22:38:52Z",
+        "kind": "commit",
+        "text": "융합 성공 순간을 플레이어 화면에 남긴다",
+        "sha": "d2590cd"
+      },
+      {
+        "date": "2026-06-04T22:56:22Z",
+        "kind": "commit",
+        "text": "베타 경로를 실제 화면 증거로 잇는다",
+        "sha": "40d2aae"
+      },
+      {
+        "date": "2026-06-05",
+        "kind": "progress",
+        "text": "진척 19% · 커밋 +33"
       }
     ]
   }

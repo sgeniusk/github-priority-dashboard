@@ -44,7 +44,7 @@ codex exec --sandbox workspace-write --cd /Users/taewookkim/dev/github-priority-
 
 - 사용자 지정 **도구 태그 변경 금지** (Formi=codex, 뜬이유=hybrid 등)
 - **paused 프로젝트(반짝상점)를 active로 되돌리지 말 것**
-- 진척도 점수(`progress.*`)를 임의로 부풀리지 말 것
+- 완성도 점수(`progress.*`)를 임의로 부풀리지 말 것
 - `dashboard.html`의 **다크 base 색 토큰 변경 금지** — 라이트 테마는 `:root[data-theme="light"]`로만 추가
 - `projects.json`/`suggestions.json`/`usage.json` 갱신 시 `dashboard.html`의 `FALLBACK_*` 상수도 **verbatim 동기화** (`FALLBACK_HISTORY`·`FALLBACK_ACTIVITY`는 제외)
 - 모든 JSON은 `JSON.parse` 통과 (`bash init.sh`)
@@ -53,7 +53,7 @@ codex exec --sandbox workspace-write --cd /Users/taewookkim/dev/github-priority-
 ## 검증 게이트 (Claude가 합격 판정 전 수행)
 
 1. `bash init.sh` — JSON 무결성·파일 존재·기준일
-2. `npx serve` 또는 preview 서버로 `dashboard.html`·`town.html` 로드 → **콘솔 에러 0** (전 탭 전환)
+2. `npx serve` 또는 preview 서버로 `dashboard.html`·`report.html`·`project-report.html?repo=habit` 로드 → **콘솔 에러 0** (전 탭 전환)
 3. 변경 화면 스크린샷 1장 이상 — 의도한 시각 변화 확인
 4. `git diff --stat` — 범위 밖 파일이 바뀌지 않았는지
 5. 위 전부 통과 시에만 progress.md 검증 표에 증거 기록

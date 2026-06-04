@@ -300,7 +300,8 @@ if (projectHtml) {
       );
       assert(
         document.getElementById('timelinePanel').textContent.includes('커밋') ||
-          document.getElementById('timelinePanel').textContent.includes('진척 변동'),
+          document.getElementById('timelinePanel').textContent.includes('진척 변동') ||
+          document.getElementById('timelinePanel').textContent.includes('완성도'),
         'project-report.html renders timeline from fallback',
       );
     },

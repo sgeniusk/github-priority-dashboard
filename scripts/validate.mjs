@@ -97,18 +97,6 @@ try {
         logError(`projects.json [${label}]: invalid url "${p.url}"`);
       }
       
-      if (p.agents) {
-        if (!Array.isArray(p.agents)) logError(`projects.json [${label}]: "agents" must be an array`);
-        else {
-          p.agents.forEach((ag, aIdx) => {
-            if (!ag.name) logError(`projects.json [${label}] agent[${aIdx}]: missing "name"`);
-            if (!ag.role) logError(`projects.json [${label}] agent[${aIdx}]: missing "role"`);
-            if (!['claude', 'codex', 'hermes'].includes(ag.tool)) {
-              logError(`projects.json [${label}] agent[${aIdx}]: invalid tool "${ag.tool}"`);
-            }
-          });
-        }
-      }
     });
     
     // Check ranks are consecutive starting from 1
@@ -206,32 +194,6 @@ try {
   logSuccess(`dashboard.html parsed, verified ${count} inline script block(s) compiled successfully`);
 } catch (e) {
   logError(`Failed to read or verify dashboard.html: ${e.message}`);
-}
-
-// 5. Parse & Compile town.html inline scripts
-try {
-  const townPath = join(ROOT, 'town.html');
-  const html = readFileSync(townPath, 'utf8');
-  
-  const scriptRegex = /<script[^>]*>([\s\S]*?)<\/script>/gi;
-  let match;
-  let count = 0;
-  
-  while ((match = scriptRegex.exec(html)) !== null) {
-    const scriptContent = match[1].trim();
-    if (scriptContent) {
-      count++;
-      try {
-        new vm.Script(scriptContent, { filename: `town.html:script[${count}]` });
-      } catch (scriptErr) {
-        logError(`Syntax error in town.html inline script #${count}: ${scriptErr.message}\n` +
-          `Code snippet:\n${scriptContent.split('\n').slice(0, 10).join('\n')}\n...`);
-      }
-    }
-  }
-  logSuccess(`town.html parsed, verified ${count} inline script block(s) compiled successfully`);
-} catch (e) {
-  logError(`Failed to read or verify town.html: ${e.message}`);
 }
 
 process.exit(exitCode);

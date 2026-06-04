@@ -13,21 +13,20 @@
 ## 무엇으로 이루어져 있나 (파일 지도)
 
 뷰 (정적 HTML, fetch 우선·실패 시 내장 FALLBACK)
-- `dashboard.html` — 메인. 5탭(청사진·마을·분석·스프린트·사용량 및 설정) + `보고서` 링크. 진척 카드·차트·스프린트 보드·사용량.
+- `dashboard.html` — 메인. 4탭(청사진·분석·스프린트·사용량 및 설정) + `보고서` 링크. 완성도 카드·운영 신호·차트·스프린트 보드·사용량.
 - `report.html` — 전체 **뉴스 피드**. `news.json`을 최신순 카드로. 프로젝트명 → `project-report.html?repo=` 링크.
-- `project-report.html` — **프로젝트별 누적 보고서**. `?repo=<repo>`로 헤더(무엇을·목표·진척)+도움 패널(다음 액션·블로커·리스크·제안)+누적 타임라인(커밋 devlog·진척·큐레이션 note).
-- `town.html` — 걸어다니는 픽셀아트 마을(PixiJS). 건물=프로젝트. 재미 요소.
+- `project-report.html` — **프로젝트별 누적 보고서**. `?repo=<repo>`로 헤더(무엇을·목표·완성도)+도움 패널(다음 액션·블로커·리스크·제안)+누적 타임라인(커밋 devlog·완성도·큐레이션 note).
 - `index.html` — `dashboard.html`로 리다이렉트.
 
 데이터 (단일 진실 소스)
 - `projects.json` — 추적 프로젝트 전체. **SOT.** 필드 규칙은 `projects.schema.md`.
 - `suggestions.json` — 코칭·정체 제안. 대시보드 카드 블로커 뱃지가 읽는다.
 - `usage.json` — Codex/Claude 사용량 트래커.
-- `history.json` — 진척도 일자별 스냅샷(추세 차트). refresh가 upsert.
+- `history.json` — 완성도 일자별 스냅샷(추세 차트). refresh가 upsert.
 - `activity.json` — 통합 커밋 피드(최근 N). refresh가 갱신.
 - `reports.json` — 프로젝트별 줄글(헤더용 body/goal/advice). 1인칭 존댓말.
 - `news.json` — 뉴스 피드 아이템(자동 생성, 누적).
-- `project-logs.json` — 프로젝트별 타임라인(커밋 devlog + 진척 + 큐레이션 note, 누적).
+- `project-logs.json` — 프로젝트별 타임라인(커밋 devlog + 완성도 변동 + 큐레이션 note, 누적).
 - `feature_list.json`·`progress.md` — 이 워크스페이스 자체의 백로그·상태.
 
 스크립트
@@ -39,8 +38,11 @@
 
 ## 핵심 규약 (어기면 안 됨)
 
-### 진척도 공식
-`total = docs(0-20) + skeleton(0-30) + features(0-30) + alpha(0-20)`. 값은 `projects.json`의 `progress{docs,skeleton,features,alpha,total}`. 변경 시 `total`을 4개 합으로 맞춘다. **진척 점수를 임의로 부풀리지 말 것.**
+### 완성도 공식
+`total = docs(0-20) + skeleton(0-30) + features(0-30) + alpha(0-20)`. 값은 `projects.json`의 `progress{docs,skeleton,features,alpha,total}`. 변경 시 `total`을 4개 합으로 맞춘다. **완성도 점수를 임의로 부풀리지 말 것.**
+
+### 운영 신호
+대시보드는 `progress.total`을 완성도로 표시하고, 활동량은 모멘텀·건강·신뢰도로 분리해 파생 표시한다. refresh는 커밋·날짜·히스토리만 갱신하며 완성도 점수를 자동 변경하지 않는다.
 
 ### 도구 태그 (사용자 지정 — 확인 없이 변경 금지)
 `claude`(주황 #ff5b22) · `codex`(초록 #3fb950) · `hermes`(보라 #bc8cff) · `hybrid`(시안 #39c5cf). 고정 매핑은 `CLAUDE.md`의 '사용자 직접 제공 매핑' 참고(Formi=codex, 뜬이유=hybrid 등).
@@ -125,11 +127,11 @@ console.log("dashboard FALLBACK 동기화 완료");
 
 - 사용자 지정 도구 태그 임의 변경.
 - paused 프로젝트를 사용자 지시 없이 active로 되돌리기.
-- 진척 점수 부풀리기.
+- 완성도 점수 부풀리기.
 - `dashboard.html` 다크 base 색 토큰 변경.
 - `refresh-progress.mjs`로 `commits`·`lastUpdate`·`firstCommit`·`daysActive`·`meta.asOf` 외 필드 자동 변경.
 - JSON 갱신 후 FALLBACK 동기화 누락.
 
 ## 더 보기
 
-- `CLAUDE.md` — 동일 규약의 원본(도구 매핑·DoD 상세). `projects.schema.md` — 필드 스키마. `docs/` — 진척도 공식·도구 분류·스프린트 계획·에이전트 가이드. `.claude/commands/*.md` — 과거 슬래시 커맨드 정의(절차 참고용; Codex에선 위 '자주 하는 작업'으로 대체).
+- `CLAUDE.md` — 동일 규약의 원본(도구 매핑·DoD 상세). `projects.schema.md` — 필드 스키마. `docs/` — 완성도 공식·도구 분류·스프린트 계획·에이전트 가이드. `.claude/commands/*.md` — 과거 슬래시 커맨드 정의(절차 참고용; Codex에선 위 '자주 하는 작업'으로 대체).

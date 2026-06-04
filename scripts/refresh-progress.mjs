@@ -8,7 +8,7 @@
 // 인증 — GH_TOKEN 환경변수가 있으면 사용, 없으면 `gh auth token` 셸 호출.
 // 자동 갱신 대상: lastUpdate, commits, firstCommit, daysActive, meta.asOf.
 // tool/status/breakdown 등 다른 필드는 절대 건드리지 않는다.
-// 실행 시 history.json 진척도 스냅샷, activity.json 통합 커밋 피드, news.json 뉴스 피드, project-logs.json 누적 로그도 갱신한다 (--dry-run 시 preview).
+// 실행 시 history.json 완성도 스냅샷, activity.json 통합 커밋 피드, news.json 뉴스 피드, project-logs.json 누적 로그도 갱신한다 (--dry-run 시 preview).
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { execSync } from 'node:child_process';
@@ -88,7 +88,7 @@ async function fetchFirstCommit(owner, name, totalCommits) {
 function upsertHistory(data) {
   let hist;
   try { hist = JSON.parse(readFileSync(HISTORY_PATH, 'utf8')); }
-  catch { hist = { _comment: '진척도 스냅샷 히스토리.', snapshots: [] }; }
+  catch { hist = { _comment: '완성도 스냅샷 히스토리.', snapshots: [] }; }
   if (!Array.isArray(hist.snapshots)) hist.snapshots = [];
   const active = data.projects.filter((p) => p.status === 'active');
   const projMap = {};

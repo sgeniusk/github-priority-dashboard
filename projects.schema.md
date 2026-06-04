@@ -10,7 +10,7 @@
 | `ownerName` | string | 표시 이름 (`Gomgomee`) |
 | `asOf` | string | 데이터 기준일 `YYYY-MM-DD`. `refresh-progress.mjs`가 갱신 |
 | `priorityCriterion` | string | 우선순위 산정 기준 |
-| `progressFormula` | string | 진척도 공식 설명 |
+| `progressFormula` | string | 완성도 공식 설명 |
 | `toolLegend` | object | 도구 태그별 의미 |
 
 ## projects[]
@@ -30,7 +30,7 @@
 | `sprint` | string | `A` / `B` / `C` / `D` / `defer` — `docs/sprint-plan.md` 기준 | 수동 |
 | `sprintStatus` | string | `planned` / `inProgress` / `review` / `done` — Sprint 보드 시드값 | 수동 (보드 UI는 localStorage로 오버라이드) |
 | `stack` | string[] | 기술 스택 | 수동 |
-| `progress` | object | `docs`(0-20)·`skeleton`(0-30)·`features`(0-30)·`alpha`(0-20)·`total`(합) | ⚠️ 진척도 임의 부풀림 금지. `total`은 4개 합 |
+| `progress` | object | `docs`(0-20)·`skeleton`(0-30)·`features`(0-30)·`alpha`(0-20)·`total`(합) | ⚠️ 완성도 임의 부풀림 금지. `total`은 4개 합 |
 | `commits` | number | 총 커밋 수 | `refresh-progress.mjs`가 자동 갱신 |
 | `lastUpdate` | string | 최근 푸시 시각 `YYYY-MM-DDTHH:MMZ` | `refresh-progress.mjs`가 자동 갱신 |
 | `firstCommit` | string | 최초 커밋일 `YYYY-MM-DD` | `refresh-progress.mjs`가 자동 갱신 |
@@ -40,22 +40,18 @@
 | `rationale` | string | 현황 판단 근거 | 수동 |
 | `risks` | string[] | 리스크 목록 | 수동 |
 | `nextActions` | string[] | 다음 액션. 첫 항목은 Sprint 보드 카드의 마일스톤으로 쓰임 | 수동 |
-| `agents` | object[] | (선택) 프로젝트에서 일하는 에이전트 명단 — 마을 뷰 전용. 미정의 시 마을 뷰가 `tool`로 1명 합성 | 수동 (사용자 확인 후) |
 | `url` | string | GitHub 리포 URL | 수동 |
 | `pausedReason` | string | `status: paused`일 때만. 중단 사유 | 수동 |
 
-### agents[] — 에이전트 명단 (마을 뷰)
+## 완성도와 운영 신호
 
-각 에이전트 객체. `dashboard.html`의 마을 탭에서 건물 앞 캐릭터·상세 모달 명단으로 쓰인다. 자동 갱신 대상이 아니다.
+`progress.total`은 산출물 기준 완성도다. 커밋 수나 최근 활동이 많아도 자동으로 오르지 않는다. 대시보드는 다음 항목을 저장하지 않고 화면에서 파생한다.
 
-| 필드 | 타입 | 설명 |
-| --- | --- | --- |
-| `name` | string | 역할 기반 표시 이름 (`설계` / `구현` / `검증` / `플레이테스트` 등) |
-| `role` | string | 역할 한 줄 설명 (`PRD·아키텍처` / `기능·하네스` / `테스트·QA` 등) |
-| `tool` | string | `claude` / `codex` / `hermes` — 캐릭터 색을 결정. 프로젝트 `tool`이 `hybrid`면 에이전트별로 섞는다 |
-| `task` | string | (선택) 현재 맡은 작업 |
-
-초기 명단은 진행 단계 기반으로 시드됐다 — 모든 프로젝트에 `설계`, `progress.skeleton > 0`이면 `구현`, `features`/`alpha > 0`이면 `검증`(게임은 `플레이테스트`)을 둔다. 실제 서브에이전트 편성이 확정되면 사용자가 교체한다.
+| 신호 | 근거 |
+| --- | --- |
+| 모멘텀 | 최근 커밋일, `history.json`의 7일 완성도 변화 |
+| 건강 | high severity 제안, 정체 일수, Sprint A/B 위험 |
+| 신뢰도 | 문서 점수, 구현·검증 점수, 커밋/히스토리/다음 액션 존재 여부 |
 
 ## 변경 금지 항목 요약
 

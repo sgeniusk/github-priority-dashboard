@@ -1,54 +1,66 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-06-04",
+  "asOf": "2026-06-05",
   "commits": [
     {
       "repo": "honbul",
-      "sha": "8027cbf",
-      "message": "베타 플레이 경로를 한 줄 smoke로 잠근다",
-      "date": "2026-06-04T09:38:27Z"
+      "sha": "40d2aae",
+      "message": "베타 경로를 실제 화면 증거로 잇는다",
+      "date": "2026-06-04T22:56:22Z"
     },
     {
       "repo": "honbul",
-      "sha": "af0f390",
-      "message": "첫 5초에 그릇과 장비 선택 의도를 읽히게 한다",
-      "date": "2026-06-04T09:24:20Z"
+      "sha": "d2590cd",
+      "message": "융합 성공 순간을 플레이어 화면에 남긴다",
+      "date": "2026-06-04T22:38:52Z"
     },
     {
       "repo": "honbul",
-      "sha": "35247da",
-      "message": "결과 정산을 한국어 화면으로 닫는다",
-      "date": "2026-06-04T05:22:54Z"
+      "sha": "154aaeb",
+      "message": "드래프트 융합 화면을 실제 프레임으로 확인한다",
+      "date": "2026-06-04T22:08:51Z"
     },
     {
       "repo": "honbul",
-      "sha": "07c8850",
-      "message": "무협 고유기 판단을 전투 HUD에 드러낸다",
-      "date": "2026-06-04T04:21:13Z"
+      "sha": "34fd330",
+      "message": "드래프트 융합 결과를 선택 전에 읽게 한다",
+      "date": "2026-06-04T16:46:01Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "6d2e33e",
+      "message": "chore: track commander portrait imports",
+      "date": "2026-06-04T16:33:12Z"
     },
     {
       "repo": "honbul",
-      "sha": "14560bc",
-      "message": "베타 초반 블록 깨기 밀도를 진행 계약으로 고정한다",
-      "date": "2026-06-04T04:06:22Z"
+      "sha": "811132d",
+      "message": "드래프트 융합 선택감을 조합 성장으로 끌어올린다",
+      "date": "2026-06-04T16:22:26Z"
     },
     {
       "repo": "honbul",
-      "sha": "cc640c6",
-      "message": "무협 액션을 마나 경제로 묶어 베타 전투 판단을 만든다",
-      "date": "2026-06-04T03:47:27Z"
+      "sha": "030229d",
+      "message": "장비 융합 결정을 확인 뒤 소비하게 한다",
+      "date": "2026-06-04T16:03:52Z"
     },
     {
       "repo": "honbul",
-      "sha": "38f1814",
-      "message": "베타 전투 피드백을 들리게 해 플레이 감각을 검증한다",
-      "date": "2026-06-04T03:26:32Z"
+      "sha": "8438e67",
+      "message": "외부 음원 교체 진입점을 연다",
+      "date": "2026-06-04T15:42:41Z"
     },
     {
       "repo": "honbul",
-      "sha": "ab44c9b",
-      "message": "전투 피드백을 먼저 보이게 해 베타 타격감을 검증한다",
-      "date": "2026-06-04T03:08:01Z"
+      "sha": "717e856",
+      "message": "베타 후보 증거를 보고서에 맞춘다",
+      "date": "2026-06-04T15:28:32Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "f801093",
+      "message": "art: add commander portrait placeholders",
+      "date": "2026-06-04T12:45:25Z"
     },
     {
       "repo": "ai-company-tycoon-boundaryless",
@@ -153,22 +165,10 @@
       "date": "2026-06-01T22:47:43Z"
     },
     {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "97bdb1a",
-      "message": "chore: ignore local environment files",
-      "date": "2026-06-01T22:41:53Z"
-    },
-    {
       "repo": "ai-company-tycoon-boundaryless",
       "sha": "694c44c",
       "message": "Design the office-first menu popup redesign",
       "date": "2026-06-01T22:33:48Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "84d0953",
-      "message": "Align agent split with completion harness",
-      "date": "2026-06-01T22:29:36Z"
     },
     {
       "repo": "samguk-idle-prototype",

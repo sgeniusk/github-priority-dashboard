@@ -10,7 +10,7 @@ const NEWS_MAX = 120, LOG_MAX_PER_REPO = 80, SURGE = 15, STALL_DAYS = 7;
 
 const nameOf = (projects, repo) => { const p = projects.find(x => x.name === repo); return p ? (p.displayName || p.name) : repo; };
 
-// 뉴스 — history 델타(진척/커밋)·suggestions 정체·status 변화에서 이벤트 도출, items에 누적(date+repo+kind 중복 제거)
+// 뉴스 — history 델타(완성도/커밋)·suggestions 정체·status 변화에서 이벤트 도출, items에 누적(date+repo+kind 중복 제거)
 export function buildNews() {
   const proj = rd('projects.json', { projects: [], meta: {} });
   const hist = rd('history.json', { snapshots: [] });
@@ -22,14 +22,14 @@ export function buildNews() {
   const seen = new Set(items.map(key));
   const add = it => { if (!seen.has(key(it))) { items.push(it); seen.add(key(it)); } };
   const snaps = hist.snapshots || [];
-  // 최근 3개 전이(transition)에서 진척/커밋 이벤트
+  // 최근 3개 전이(transition)에서 완성도/커밋 이벤트
   for (let i = Math.max(1, snaps.length - 3); i < snaps.length; i++) {
     const a = snaps[i - 1], b = snaps[i];
     for (const repo of Object.keys(b.projects || {})) {
       const pa = a.projects[repo], pb = b.projects[repo]; if (!pa || !pb) continue;
       const nm = nameOf(proj.projects, repo);
       const dT = (pb.total || 0) - (pa.total || 0);
-      if (dT !== 0) add({ date: b.date, repo, kind: 'progress', headline: `${nm}, 진척 ${dT > 0 ? '+' : ''}${dT}% (${pa.total}→${pb.total})`, detail: `${a.date} 대비 진척도가 ${Math.abs(dT)}포인트 ${dT > 0 ? '올랐습니다' : '내렸습니다'}.`, metric: `${dT > 0 ? '▲' : '▼'}${Math.abs(dT)}%` });
+      if (dT !== 0) add({ date: b.date, repo, kind: 'progress', headline: `${nm}, 완성도 ${dT > 0 ? '+' : ''}${dT}% (${pa.total}→${pb.total})`, detail: `${a.date} 대비 완성도가 ${Math.abs(dT)}포인트 ${dT > 0 ? '올랐습니다' : '내렸습니다'}.`, metric: `${dT > 0 ? '▲' : '▼'}${Math.abs(dT)}%` });
       const dC = (pb.commits || 0) - (pa.commits || 0);
       if (dC >= SURGE) add({ date: b.date, repo, kind: 'surge', headline: `${nm}, 커밋 +${dC}로 가속`, detail: `${a.date} 이후 커밋이 ${dC}건 늘며 개발이 활발합니다.`, metric: `+${dC} commits` });
     }
@@ -54,7 +54,7 @@ export function buildNews() {
   return { _comment: '대시보드 전체 뉴스 피드. refresh마다 history/activity 델타·정체·status 변화에서 자동 생성(하이브리드 — 헤드라인 템플릿). report.html이 읽는다. _state는 변화 감지용.', generatedAt: asOf, _state: { status: curStatus }, items: trimmed };
 }
 
-// 프로젝트 로그 — 각 repo에 새 커밋·진척 변동을 시간순 누적(devlog). 큐레이션 노트(kind:note)는 보존.
+// 프로젝트 로그 — 각 repo에 새 커밋·완성도 변동을 시간순 누적(devlog). 큐레이션 노트(kind:note)는 보존.
 export function buildLogs() {
   const proj = rd('projects.json', { projects: [], meta: {} });
   const act = rd('activity.json', { commits: [] });
@@ -73,13 +73,13 @@ export function buildLogs() {
     for (const c of (act.commits || []).filter(c => c.repo === repo)) {
       if (!seenSha.has(c.sha)) { arr.push({ date: c.date, kind: 'commit', text: c.message, sha: c.sha }); seenSha.add(c.sha); }
     }
-    // 진척 변동 entry (오늘 스냅샷 기준, 중복 방지)
+    // 완성도 변동 entry (오늘 스냅샷 기준, 중복 방지)
     if (last && last.projects[repo]) {
       const pb = last.projects[repo], pa = prevSnap && prevSnap.projects[repo];
       const dT = pa ? (pb.total - pa.total) : 0, dC = pa ? (pb.commits - pa.commits) : 0;
       const pkey = `progress|${last.date}`;
       if (!arr.some(e => e.kind === 'progress' && e.date === last.date)) {
-        const bits = [`진척 ${pb.total}%`];
+        const bits = [`완성도 ${pb.total}%`];
         if (dT) bits.push(`(${dT > 0 ? '+' : ''}${dT}p)`);
         if (dC) bits.push(`커밋 +${dC}`);
         arr.push({ date: last.date, kind: 'progress', text: bits.join(' · ') });
@@ -88,7 +88,7 @@ export function buildLogs() {
     arr.sort((a, b) => (a.date || '').localeCompare(b.date || ''));
     logs[repo] = arr.slice(-LOG_MAX_PER_REPO);
   }
-  return { _comment: '프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·진척 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.', generatedAt: asOf, logs };
+  return { _comment: '프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.', generatedAt: asOf, logs };
 }
 
 export function writeReports({ dryRun = false } = {}) {
