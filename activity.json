@@ -3,6 +3,24 @@
   "asOf": "2026-06-05",
   "commits": [
     {
+      "repo": "cmds-daily-briefing",
+      "sha": "ddf55a5",
+      "message": "Add June 5 daily console briefing",
+      "date": "2026-06-04T23:38:27Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "161d429",
+      "message": "버셀 링크 메타를 커밋에서 제외한다",
+      "date": "2026-06-04T23:27:44Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "7071ab6",
+      "message": "전투 입력을 화면 증거로 고정한다",
+      "date": "2026-06-04T23:22:27Z"
+    },
+    {
       "repo": "honbul",
       "sha": "40d2aae",
       "message": "베타 경로를 실제 화면 증거로 잇는다",
@@ -43,18 +61,6 @@
       "sha": "030229d",
       "message": "장비 융합 결정을 확인 뒤 소비하게 한다",
       "date": "2026-06-04T16:03:52Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "8438e67",
-      "message": "외부 음원 교체 진입점을 연다",
-      "date": "2026-06-04T15:42:41Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "717e856",
-      "message": "베타 후보 증거를 보고서에 맞춘다",
-      "date": "2026-06-04T15:28:32Z"
     },
     {
       "repo": "three-kingdoms-deckbuilder",
@@ -415,12 +421,6 @@
       "sha": "51aab87",
       "message": "chore(stage-1): git/github 레슨 estimatedMinutes 현실 반영",
       "date": "2026-05-28T08:56:03Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "8fd91ae",
-      "message": "Add May 28 research briefing",
-      "date": "2026-05-27T23:38:26Z"
     },
     {
       "repo": "ai-builder-school",
