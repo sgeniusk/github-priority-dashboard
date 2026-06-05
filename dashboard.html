@@ -228,7 +228,8 @@ footer{border-top:1px solid var(--border);padding:18px 28px;max-width:1460px;mar
 .mb-lens-value{font-size:11px;color:var(--text);line-height:1.45;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
 .mb-next{font-size:11px;color:var(--text);line-height:1.5;margin-top:9px;min-height:33px}
 .mb-next-label{display:block;font-size:9.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--t2);margin-bottom:2px}
-.mb-doc{margin-top:11px;width:100%;background:none;border:1px solid var(--border);border-radius:8px;padding:8px;font-size:11px;font-weight:600;color:var(--electric);cursor:pointer;font-family:var(--font);transition:background .15s,border-color .15s}
+.mb-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:11px}
+.mb-doc{display:inline-flex;align-items:center;justify-content:center;min-height:34px;width:100%;background:none;border:1px solid var(--border);border-radius:8px;padding:8px;font-size:11px;font-weight:600;color:var(--electric);cursor:pointer;font-family:var(--font);text-decoration:none;text-align:center;transition:background .15s,border-color .15s}
 .mb-doc:hover{background:rgba(37,69,255,.06);border-color:var(--electric)}
 @media (max-width:640px){ #blueprintBody{grid-template-columns:1fr} }
 
@@ -340,6 +341,7 @@ header,.modal-box{
     <button class="nav-link" role="tab" aria-selected="false" data-tab="sprint" onclick="showTab('sprint')">스프린트</button>
     <button class="nav-link" role="tab" aria-selected="false" data-tab="usage" onclick="showTab('usage')">사용량 및 설정</button>
     <a class="nav-link" href="report.html">보고서</a>
+    <a class="nav-link" href="project-pages/index.html">프로젝트 페이지</a>
   </nav>
   <button class="icon-btn" id="themeBtn" title="테마 전환" aria-label="라이트/다크 테마 전환">🌙</button>
 </header>
@@ -1041,8 +1043,8 @@ const FALLBACK_PROJECTS = {
         "alpha": 4,
         "total": 52
       },
-      "commits": 35,
-      "lastUpdate": "2026-06-03T23:34Z",
+      "commits": 36,
+      "lastUpdate": "2026-06-04T23:38Z",
       "firstCommit": "2026-05-21",
       "daysActive": 15,
       "eta": "2-3주",
@@ -1170,8 +1172,8 @@ const FALLBACK_PROJECTS = {
         "alpha": 0,
         "total": 19
       },
-      "commits": 116,
-      "lastUpdate": "2026-06-04T22:56Z",
+      "commits": 118,
+      "lastUpdate": "2026-06-04T23:27Z",
       "firstCommit": "2026-05-27",
       "daysActive": 9,
       "eta": "8-12주",
@@ -1977,7 +1979,10 @@ function renderMasterBoard(){
       </div>
       <div class="mb-meta"><span>${p.type}</span><span>예상 ${p.eta}</span></div>
       <div class="mb-next"><span class="mb-next-label">다음 마일스톤</span>▸ ${esc(milestoneText(p))}</div>
-      <button class="mb-doc" onclick="openDocs('${p.repo}')">문서 ▸ PRD · 로드맵 · 로그</button>
+      <div class="mb-actions">
+        <a class="mb-doc" href="project-pages/${encodeURIComponent(p.repo)}.html">현황 페이지</a>
+        <button class="mb-doc" type="button" onclick="openDocs('${p.repo}')">문서 보기</button>
+      </div>
     </div>`;
   }).join('');
 }

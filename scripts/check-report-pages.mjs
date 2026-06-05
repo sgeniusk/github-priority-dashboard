@@ -244,7 +244,7 @@ const newsItemCount = parseJson('news.json').items.length;
 assert(reportHtml.includes('프로젝트 뉴스'), 'report.html title is the news feed');
 assert(reportHtml.includes('FALLBACK_NEWS'), 'report.html has FALLBACK_NEWS');
 assert(reportHtml.includes('./news.json'), 'report.html fetches news.json');
-assert(reportHtml.includes('project-report.html?repo='), 'news cards link to project reports');
+assert(reportHtml.includes('project-pages/'), 'news cards link to project pages');
 assert(!reportHtml.includes('FALLBACK_JOURNAL'), 'report.html removed FALLBACK_JOURNAL');
 assert(!reportHtml.includes('journal.json'), 'report.html no longer fetches journal.json');
 assert(!reportHtml.includes('journalDate'), 'report.html removed journal date selector');
@@ -306,6 +306,26 @@ if (projectHtml) {
       );
     },
   );
+}
+
+const projectsData = parseJson('projects.json');
+const pageIndexPath = join(ROOT, 'project-pages', 'index.html');
+assert(existsSync(pageIndexPath), 'project-pages/index.html exists');
+if (existsSync(pageIndexPath)) {
+  const indexHtml = read('project-pages/index.html');
+  assert(indexHtml.includes('프로젝트별 제작 현황'), 'project-pages index has title');
+  assert(indexHtml.includes('세션 프롬프트 문서'), 'project-pages index links session prompt guide');
+}
+for (const project of projectsData.projects || []) {
+  const rel = `project-pages/${project.name}.html`;
+  assert(existsSync(join(ROOT, rel)), `${rel} exists`);
+}
+if (existsSync(join(ROOT, 'project-pages', 'honbul.html'))) {
+  const honbulHtml = read('project-pages/honbul.html');
+  assert(honbulHtml.includes('혼불'), 'honbul project page includes title');
+  assert(honbulHtml.includes('항상 최신화할 문서'), 'honbul project page includes document checklist');
+  assert(honbulHtml.includes('세션 시작 프롬프트'), 'honbul project page includes session prompt');
+  assert(honbulHtml.includes('projects/honbul/prd.md'), 'honbul project page references PRD path');
 }
 
 process.exit(failures ? 1 : 0);

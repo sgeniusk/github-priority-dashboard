@@ -24,8 +24,8 @@
 이 워크스페이스의 변경은 다음을 모두 만족해야 "done"이다.
 
 - **JSON 무결성** — `projects.json`·`suggestions.json`·`usage.json`·`history.json`·`activity.json`이 모두 `JSON.parse` 통과 (`bash init.sh`로 한 번에 검증)
-- **콘솔 에러 0** — `dashboard.html`을 브라우저에서 열어 모든 탭(청사진/분석/스프린트/사용량 및 설정) 전환 시 콘솔 에러 없음
-- **FALLBACK 동기화** — `projects.json`·`suggestions.json`·`usage.json`을 갱신했으면 `dashboard.html`의 `FALLBACK_*` 상수도 verbatim 동기화 (`/refresh`가 자동 처리; `FALLBACK_HISTORY`·`FALLBACK_ACTIVITY`는 동기화 대상 아님). 보고서는 v2.5에서 뉴스 피드(`report.html`←`news.json`)와 프로젝트별 누적 페이지(`project-report.html`←`project-logs.json`)로 분리됐고, 둘은 `scripts/report-gen.mjs`가 매 refresh마다 데이터 델타에서 생성한다. `news.json`·`project-logs.json`은 누적 아카이브라 해당 FALLBACK seed는 동기화 대상 아님 (`journal.json`은 폐기)
+- **콘솔 에러 0** — `dashboard.html`을 브라우저에서 열어 모든 탭(청사진/분석/스프린트/사용량 및 설정) 전환 시 콘솔 에러 없음. `report.html`, `project-report.html?repo=habit`, `project-pages/honbul.html`도 함께 확인
+- **FALLBACK 동기화** — `projects.json`·`suggestions.json`·`usage.json`을 갱신했으면 `dashboard.html`의 `FALLBACK_*` 상수도 verbatim 동기화 (`/refresh`가 자동 처리; `FALLBACK_HISTORY`·`FALLBACK_ACTIVITY`는 동기화 대상 아님). 보고서는 v2.5에서 뉴스 피드(`report.html`←`news.json`)와 프로젝트별 누적 페이지(`project-report.html`←`project-logs.json`)로 분리됐고, 둘은 `scripts/report-gen.mjs`가 매 refresh마다 데이터 델타에서 생성한다. `project-pages/`는 `scripts/build-project-pages.mjs`가 생성한다. `news.json`·`project-logs.json`은 누적 아카이브라 해당 FALLBACK seed는 동기화 대상 아님 (`journal.json`은 폐기)
 - **배포** — `main` push 후 `.github/workflows/deploy.yml`이 success로 끝남
 - **상태 갱신** — 의미 있는 작업이라면 `progress.md`의 '현재 작업'·'다음 액션'을 갱신, 새 feature는 `feature_list.json`에 추가
 - **변경 금지 항목 준수** — 아래 '절대 하지 말 것' 위반 0건
@@ -41,6 +41,7 @@ github-priority-dashboard/
 ├── README.md            # 사람용 개요
 ├── index.html           # dashboard.html로 리다이렉트 (Pages 루트 URL용)
 ├── dashboard.html       # 뷰 — 완성도 카드, 운영 신호, SVG 차트, Sprint 보드, 사용량 패널
+├── project-pages/       # 프로젝트별 제작 현황·홍보용 정적 원페이지
 ├── projects.json        # 단일 진실 소스 (Source of Truth)
 ├── projects.schema.md   # projects.json 필드 스키마 + 변경 규칙
 ├── suggestions.json     # /coach·/refresh가 생성하는 제안·코칭 데이터
@@ -48,7 +49,8 @@ github-priority-dashboard/
 ├── history.json         # 완성도 스냅샷 히스토리 — refresh 시 날짜별 upsert
 ├── projects/{repo}/     # 프로젝트별 표준 문서 — project.json·prd.md·roadmap.md·log.md
 ├── scripts/
-│   └── refresh-progress.mjs   # GitHub 활동 수집 스크립트 (Node 20 내장 fetch)
+│   ├── refresh-progress.mjs   # GitHub 활동 수집 스크립트 (Node 20 내장 fetch)
+│   └── build-project-pages.mjs # 프로젝트별 원페이지 생성기
 ├── .claude/commands/    # 프로젝트 슬래시 커맨드 (refresh, coach, new-project)
 ├── .github/workflows/
 │   └── deploy.yml       # main push 시 GitHub Pages 배포
@@ -56,6 +58,7 @@ github-priority-dashboard/
     ├── progress-formula.md   # 완성도 산정 공식
     ├── tool-attribution.md   # 도구별 분류 근거
     ├── sprint-plan.md        # 4-6주 권장 스케줄
+    ├── project-session-prompts.md # 프로젝트 세션 최신화 프롬프트
     └── agent-guide.md        # 슬래시 커맨드·루틴 사용법 (사람용)
 ```
 
@@ -72,7 +75,7 @@ github-priority-dashboard/
 
 ### 슬래시 커맨드
 
-- **`/refresh`** — GitHub 활동을 가져와 `projects.json`을 갱신하고, `dashboard.html`의 FALLBACK을 동기화한 뒤 `/coach` 로직으로 `suggestions.json`을 재생성한다.
+- **`/refresh`** — GitHub 활동을 가져와 `projects.json`을 갱신하고, `dashboard.html`의 FALLBACK을 동기화한 뒤 뉴스·프로젝트 로그·project-pages를 재생성한다.
 - **`/coach`** — 각 프로젝트의 막힌 단계·속도·정체를 분석해 `suggestions.json`에 제안을 기록한다. 인자로 프로젝트 이름을 주면 해당 프로젝트만 분석.
 - **`/weekly-report`** — `projects.json`을 읽어 주간 진척 요약(하이라이트·Sprint 현황·주의 신호·다음 주 우선)을 마크다운으로 산출한다.
 - **`/new-project`** — 새 게임/앱/웹 아이디어를 대화로 구상하고, 결정되면 하네스 엔지니어링을 고려한 첫 프롬프트를 작성한다.
@@ -133,15 +136,17 @@ github-priority-dashboard/
 - **주간 진척 요약** — `/weekly-report`
 - **새 프로젝트 시작** — `/new-project`
 - **프로젝트 문서 표준화** — `/sync-project {repo}`
-- **신규 프로젝트 등록** — `projects.json`에 객체 추가 → `rank` 재정렬 → `dashboard.html`의 `FALLBACK_PROJECTS` 폴백도 동기화 (`/refresh`가 처리)
+- **신규 프로젝트 등록** — `projects.json`에 객체 추가 → `rank` 재정렬 → `dashboard.html`의 `FALLBACK_PROJECTS` 폴백 동기화 → `node scripts/build-project-pages.mjs`
 - **도구 태그 변경** — 사용자 확인 후에만, `tool-attribution.md`에 사유 기록
 
 ## Verification Commands
 
 - `bash init.sh` — JSON 무결성·핵심 파일·GitHub 토큰·`meta.asOf` 한 번에 점검 (verify 진입점)
 - `node scripts/refresh-progress.mjs --dry-run` — projects.json·history.json·activity.json 변경 미리보기, 저장 안 함
+- `node scripts/build-project-pages.mjs` — 프로젝트별 제작 현황 페이지 재생성
+- `node scripts/check-report-pages.mjs` — report/project-report/project-pages 렌더·fallback smoke
 - `node -e "JSON.parse(require('fs').readFileSync('projects.json','utf8'))"` — 단일 JSON 파일 파싱 검증 (각 JSON에 대해 반복; init.sh가 일괄 수행)
-- 브라우저 검증 — `npx serve -l 4180` 후 `http://localhost:4180/dashboard.html` 열기. 모든 탭 전환 시 콘솔 에러 0 확인
+- 브라우저 검증 — `npx serve -l 4180` 후 `http://localhost:4180/dashboard.html`, `report.html`, `project-report.html?repo=habit`, `project-pages/honbul.html` 열기. 모든 탭 전환 시 콘솔 에러 0 확인
 - 별도의 단위 test 프레임워크(vitest/jest 등)는 두지 않는다 — 정적 대시보드 + JSON이라 `init.sh`의 파싱·존재 체크가 사실상 test 역할
 
 ## 범위·세션 규칙 (Stay in scope · End of Session)

@@ -15,6 +15,7 @@ import { execSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { writeReports } from './report-gen.mjs';
+import { buildProjectPages } from './build-project-pages.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const JSON_PATH = join(ROOT, 'projects.json');
@@ -191,6 +192,7 @@ async function main() {
   }
   if (ACTIVITY_ONLY) {
     console.log(writeReports({ dryRun: DRY_RUN }));
+    console.log(buildProjectPages({ dryRun: DRY_RUN }));
     return;
   }
 
@@ -209,6 +211,7 @@ async function main() {
   if (DRY_RUN) {
     console.log('[dry-run] projects.json·history.json·news.json·project-logs.json은 저장하지 않습니다.');
     console.log(writeReports({ dryRun: DRY_RUN }));
+    console.log(buildProjectPages({ dryRun: DRY_RUN }));
     return;
   }
   if (changes.length > 0) {
@@ -217,6 +220,7 @@ async function main() {
   }
   console.log(upsertHistory(data));
   console.log(writeReports());
+  console.log(buildProjectPages());
 }
 
 main().catch((err) => {

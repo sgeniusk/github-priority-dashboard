@@ -194,6 +194,23 @@
         "init·validate·check-report-pages·브라우저 콘솔 0·Pages 배포 success"
       ],
       "openQuestions": []
+    },
+    {
+      "id": "v2.8-project-pages-and-session-prompts",
+      "name": "v2.8 프로젝트별 제작 현황 페이지와 세션 프롬프트",
+      "status": "done",
+      "description": "각 프로젝트를 하나의 홈페이지처럼 열 수 있는 kami 스타일 정적 원페이지(project-pages/)를 생성한다. 페이지는 현재 판단, 완성도, 다음 액션, 리스크, 최신 근거, 항상 최신화할 문서, 세션 시작 프롬프트를 포함한다. docs/project-session-prompts.md에는 각 프로젝트 세션에서 최신화할 문서와 공통 프롬프트를 정리한다.",
+      "dependencies": [
+        "v2.7-progress-health-lens"
+      ],
+      "doneCriteria": [
+        "scripts/build-project-pages.mjs가 projects.json·reports.json·suggestions.json·project-logs.json에서 index + 프로젝트별 HTML 생성",
+        "dashboard.html 청사진 카드와 report.html 뉴스 카드에서 project-pages/<repo>.html로 이동",
+        "refresh-progress.mjs가 refresh 후 project-pages/를 재생성",
+        "docs/project-session-prompts.md에 최신화 문서와 공통 세션 프롬프트 정리",
+        "init·validate·check-report-pages·브라우저 콘솔 0·Pages 배포 success"
+      ],
+      "openQuestions": []
     }
   ]
 }
