@@ -1,7 +1,91 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-06-05",
+  "asOf": "2026-06-06",
   "commits": [
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "c73c9ea",
+      "message": "Add June 6 light console briefing",
+      "date": "2026-06-05T23:37:23Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "d898a78",
+      "message": "chore: refresh verified deployment author",
+      "date": "2026-06-05T17:40:52Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "d9b5a1f",
+      "message": "docs: 방향 C 플로팅 에디터 시안 체크포인트 진행 상태·인계 동기화",
+      "date": "2026-06-05T15:01:02Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "49480c3",
+      "message": "feat(editor): 방향 C 플로팅 에디터 시안 이식 (?editor=floating)",
+      "date": "2026-06-05T14:57:42Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "ff6edc5",
+      "message": "Add June 5 build note",
+      "date": "2026-06-05T13:49:12Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "0ffdd3f",
+      "message": "docs: add external UI redesign prompt",
+      "date": "2026-06-05T04:45:59Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "ab00ccf",
+      "message": "Claude Design 외주 브리프를 준비한다",
+      "date": "2026-06-05T03:38:17Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "d2f5b16",
+      "message": "구슬이 아레나 벽을 넘지 않게 한다",
+      "date": "2026-06-05T03:10:23Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "7cf330f",
+      "message": "Harden OAuth redirect origin",
+      "date": "2026-06-05T03:04:21Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "dc0d2de",
+      "message": "전투장 벽이 보이게 한다",
+      "date": "2026-06-05T02:55:53Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "1dc493d",
+      "message": "전투가 흔들림 없이 읽히게 한다",
+      "date": "2026-06-05T02:38:00Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "8d90232",
+      "message": "Build reading rooms and presentation decks",
+      "date": "2026-06-05T02:30:20Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "41ff676",
+      "message": "feat: 지음(Jieum) 리브랜딩 + 누적 작업 통합",
+      "date": "2026-06-05T02:22:46Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "e743dc2",
+      "message": "웹에서 바로 플레이할 수 있게 한다",
+      "date": "2026-06-05T00:51:32Z"
+    },
     {
       "repo": "cmds-daily-briefing",
       "sha": "ddf55a5",
@@ -27,40 +111,10 @@
       "date": "2026-06-04T22:56:22Z"
     },
     {
-      "repo": "honbul",
-      "sha": "d2590cd",
-      "message": "융합 성공 순간을 플레이어 화면에 남긴다",
-      "date": "2026-06-04T22:38:52Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "154aaeb",
-      "message": "드래프트 융합 화면을 실제 프레임으로 확인한다",
-      "date": "2026-06-04T22:08:51Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "34fd330",
-      "message": "드래프트 융합 결과를 선택 전에 읽게 한다",
-      "date": "2026-06-04T16:46:01Z"
-    },
-    {
       "repo": "three-kingdoms-deckbuilder",
       "sha": "6d2e33e",
       "message": "chore: track commander portrait imports",
       "date": "2026-06-04T16:33:12Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "811132d",
-      "message": "드래프트 융합 선택감을 조합 성장으로 끌어올린다",
-      "date": "2026-06-04T16:22:26Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "030229d",
-      "message": "장비 융합 결정을 확인 뒤 소비하게 한다",
-      "date": "2026-06-04T16:03:52Z"
     },
     {
       "repo": "three-kingdoms-deckbuilder",
@@ -91,6 +145,24 @@
       "sha": "8c77563",
       "message": "Label the advance-month button on desktop",
       "date": "2026-06-03T16:25:42Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "e6ddbeb",
+      "message": "refactor(rank5): StoryXDesk Tier2 Pass D (Agent 4개) + 순환의존 제거",
+      "date": "2026-06-03T16:13:03Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "ae9cca6",
+      "message": "refactor(rank5): StoryXDesk Tier2 Pass C (Bible/Memory 5개) + 헬퍼 de-dup",
+      "date": "2026-06-03T15:55:40Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "13a0554",
+      "message": "feat(rank5): StoryXDesk 분리 Tier1 + Tier2 Pass A·B (Codex 위임 + Claude 검증)",
+      "date": "2026-06-03T15:22:21Z"
     },
     {
       "repo": "story-x-beta",
@@ -157,18 +229,6 @@
       "sha": "06415a3",
       "message": "Review the menu IA and pin the office-first popup design",
       "date": "2026-06-02T02:25:38Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "eab0b0f",
-      "message": "Add game development QA pipeline",
-      "date": "2026-06-01T23:56:28Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "097a86b",
-      "message": "fix: bundle Korean UI font for web",
-      "date": "2026-06-01T22:47:43Z"
     },
     {
       "repo": "ai-company-tycoon-boundaryless",
@@ -285,88 +345,52 @@
       "date": "2026-05-31T14:33:05Z"
     },
     {
-      "repo": "story-x-beta",
-      "sha": "513b50e",
-      "message": "feat(academic): A5 — 학술 퍼블리시 (사회과학 로드맵 완결)",
-      "date": "2026-05-31T14:33:05Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "3c8ba7a",
-      "message": "Merge: A4 반론 무결성 + 연구 윤리 게이트",
-      "date": "2026-05-31T14:19:21Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "3c8861b",
-      "message": "feat(academic): A4 — 반론 무결성 + 연구 윤리 게이트",
-      "date": "2026-05-31T14:19:21Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "d90cff2",
-      "message": "Merge: A3 인용 무결성 게이트 (환각 인용 탐지)",
-      "date": "2026-05-31T14:08:00Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "5c7b846",
-      "message": "feat(academic): A3 — 인용 무결성 게이트 + 환각 인용 탐지",
-      "date": "2026-05-31T14:08:00Z"
-    },
-    {
       "repo": "cmds-daily-briefing",
       "sha": "d7bca6b",
       "message": "Add May 31 daily console briefing",
       "date": "2026-05-30T23:34:14Z"
     },
     {
+      "repo": "chaekdam",
+      "sha": "8bbeb4a",
+      "message": "Document the personal reading MVP checkpoint",
+      "date": "2026-05-30T15:47:11Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "f2fac91",
+      "message": "Turn the dashboard into a reading home",
+      "date": "2026-05-30T15:43:49Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "eabc05f",
+      "message": "Record private notes on personal books",
+      "date": "2026-05-30T15:41:24Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "1f9ebfd",
+      "message": "Let readers build a personal library",
+      "date": "2026-05-30T15:37:48Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "3a1a467",
+      "message": "Ground personal reading as the next product loop",
+      "date": "2026-05-30T15:34:36Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "22bd27b",
+      "message": "Make home navigation useful after login",
+      "date": "2026-05-30T15:34:26Z"
+    },
+    {
       "repo": "cmds-daily-briefing",
       "sha": "c6e3d08",
       "message": "Add May 30 build note archive",
       "date": "2026-05-30T13:54:35Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "334f965",
-      "message": "Add May 30 light briefing",
-      "date": "2026-05-29T23:34:30Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "0e251aa",
-      "message": "feat: Phase 7d — 실시간 대화 (Realtime)",
-      "date": "2026-05-29T20:12:01Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "d8ccfce",
-      "message": "feat: Phase 7c — 이미지 업로드 (Supabase Storage)",
-      "date": "2026-05-29T20:04:08Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "8ff9700",
-      "message": "feat: Phase 7b — 비공개 클럽 초대",
-      "date": "2026-05-29T19:52:17Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "950cffc",
-      "message": "feat: Phase 7a — OG/SEO + 메타데이터",
-      "date": "2026-05-29T16:33:26Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "41cf1f9",
-      "message": "feat: Phase 6 — 좋은 문장 (클럽 문장 월)",
-      "date": "2026-05-29T16:15:01Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "16bff3d",
-      "message": "feat: Phase 5 — 대화 (posts + comments)",
-      "date": "2026-05-29T15:47:05Z"
     },
     {
       "repo": "design-system-school",
@@ -385,24 +409,6 @@
       "sha": "c81ab78",
       "message": "Phase 10: ontology graph edge color coding",
       "date": "2026-05-29T09:54:01Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "f1d666d",
-      "message": "feat: Phase 4 — 책 + 알라딘 (서재)",
-      "date": "2026-05-29T07:08:41Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "be9484e",
-      "message": "feat: Phase 3 — 클럽 (탐색·생성·상세·가입·설정)",
-      "date": "2026-05-29T05:55:11Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "cd78d03",
-      "message": "Add May 29 research briefing",
-      "date": "2026-05-28T23:35:53Z"
     },
     {
       "repo": "ai-builder-school",
@@ -445,12 +451,6 @@
       "sha": "6c56670",
       "message": "feat(reading-rail): 사이드바를 본문·빌드·검증·회고 4단계로 — 본문 hidden anchor 추가",
       "date": "2026-05-27T00:36:24Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "e42f4ad",
-      "message": "refactor(lesson-page): MDX 정본 + 산출물 칩 + 빌드 친절 멘트 + 회고 마무리",
-      "date": "2026-05-27T00:25:51Z"
     },
     {
       "repo": "habit",
