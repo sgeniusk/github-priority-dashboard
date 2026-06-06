@@ -10,7 +10,7 @@ err() { printf "  \033[31m✗\033[0m %s\n" "$1"; }
 
 echo "▶ JSON 무결성"
 fail=0
-for f in projects.json suggestions.json usage.json history.json activity.json reports.json news.json project-logs.json; do
+for f in projects.json suggestions.json usage.json history.json activity.json reports.json news.json project-logs.json monthly-analysis.json; do
   if [ -f "$f" ]; then
     if node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null; then
       ok "$f"
@@ -24,7 +24,7 @@ done
 [ "$fail" = "1" ] && { echo; err "JSON 파싱 실패가 있습니다 — 먼저 고치세요"; exit 1; }
 
 echo "▶ 핵심 파일 존재"
-for f in dashboard.html scripts/refresh-progress.mjs CLAUDE.md projects.schema.md feature_list.json progress.md; do
+for f in dashboard.html monthly-analysis.html scripts/refresh-progress.mjs scripts/build-monthly-analysis.mjs CLAUDE.md projects.schema.md feature_list.json progress.md; do
   [ -f "$f" ] && ok "$f" || warn "$f 없음"
 done
 

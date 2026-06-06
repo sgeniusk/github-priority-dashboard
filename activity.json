@@ -3,6 +3,126 @@
   "asOf": "2026-06-06",
   "commits": [
     {
+      "repo": "ai-builder-school",
+      "sha": "d0cf94f",
+      "message": "docs: P1 체크리스트 — P1-6~8 완료, 남김 갱신(projectStepUsage·conceptDepth·blocker 확대)",
+      "date": "2026-06-06T05:11:40Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "1883168",
+      "message": "feat(templates): usedWhen — \"이럴 때 꺼내 쓴다\" 맥락 (Template as tool)",
+      "date": "2026-06-06T05:09:59Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "527bb96",
+      "message": "chore: 죽은 구홈 CSS·컴포넌트 정리 (-334줄)",
+      "date": "2026-06-06T05:06:46Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "65b146f",
+      "message": "content(lessons): neededWhen 확대 — 모든 blocker 구제 레슨에 \"필요한 순간\" 헤더",
+      "date": "2026-06-06T05:00:54Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "cab1c7e",
+      "message": "docs: P1 체크리스트 — P1-1~5 완료 표시 (P1-5는 no-op)",
+      "date": "2026-06-06T04:51:16Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "027a9db",
+      "message": "feat(build): /build 빌드 네비게이터 — 산출물 목표 → 프로젝트",
+      "date": "2026-06-06T04:49:02Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "f50eb46",
+      "message": "feat(projects): Blocker 데이터 모델 + \"여기서 막혔나요?\" 막힘 토글",
+      "date": "2026-06-06T04:45:40Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "b693e53",
+      "message": "feat(stages): 사다리 → 역량 지도 재서술 + Stage별 \"이 역량으로 짓는 프로젝트\"",
+      "date": "2026-06-06T04:42:02Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "6c8b1e9",
+      "message": "docs: add 2026-06-06 handoff and Phase 10 backlog",
+      "date": "2026-06-06T01:35:07Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "16c68d9",
+      "message": "docs: record Phase 9 redesign + presentation pipeline decisions",
+      "date": "2026-06-06T01:30:22Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "6a51a51",
+      "message": "feat(presentation): solo prep→present flow with separated speaker notes",
+      "date": "2026-06-06T01:30:15Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "ef11869",
+      "message": "feat(design): apply Stripe-inspired design system across the app",
+      "date": "2026-06-06T01:29:59Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "10c105a",
+      "message": "docs: 플로팅 에디터 실데이터 배선 진행 상태·인계 동기화",
+      "date": "2026-06-06T00:21:38Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "f4c506c",
+      "message": "docs(editor): 플로팅 실데이터 배선 검증 캡처 + 계획 체크리스트 갱신",
+      "date": "2026-06-06T00:19:08Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "00b5404",
+      "message": "feat(editor): StoryXDesk 가 floating 프리뷰에 실 상태·검토·페르소나 props 주입",
+      "date": "2026-06-06T00:14:09Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "0abca51",
+      "message": "Apply design handoff combat layout",
+      "date": "2026-06-06T00:13:03Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "a803785",
+      "message": "feat(editor): FloatingEditor props-driven 리팩터 + App standalone 제거",
+      "date": "2026-06-06T00:11:03Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "fc7d5c4",
+      "message": "test(editor): FloatingEditor 실데이터 배선 RED — props·콜백·시안제거 단언",
+      "date": "2026-06-06T00:07:08Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "929fdf6",
+      "message": "docs(plan): 방향 C 플로팅 에디터 실데이터 배선 구현 계획",
+      "date": "2026-06-06T00:01:46Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "01e421a",
+      "message": "docs(spec): 방향 C 플로팅 에디터 실데이터 배선 설계",
+      "date": "2026-06-05T23:54:34Z"
+    },
+    {
       "repo": "cmds-daily-briefing",
       "sha": "c73c9ea",
       "message": "Add June 6 light console briefing",
@@ -21,16 +141,16 @@
       "date": "2026-06-05T15:01:02Z"
     },
     {
-      "repo": "story-x-beta",
-      "sha": "49480c3",
-      "message": "feat(editor): 방향 C 플로팅 에디터 시안 이식 (?editor=floating)",
-      "date": "2026-06-05T14:57:42Z"
-    },
-    {
       "repo": "cmds-daily-briefing",
       "sha": "ff6edc5",
       "message": "Add June 5 build note",
       "date": "2026-06-05T13:49:12Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "9d283a7",
+      "message": "Add presentation collection and slide preview flows",
+      "date": "2026-06-05T12:34:37Z"
     },
     {
       "repo": "three-kingdoms-deckbuilder",
@@ -73,12 +193,6 @@
       "sha": "8d90232",
       "message": "Build reading rooms and presentation decks",
       "date": "2026-06-05T02:30:20Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "41ff676",
-      "message": "feat: 지음(Jieum) 리브랜딩 + 누적 작업 통합",
-      "date": "2026-06-05T02:22:46Z"
     },
     {
       "repo": "honbul",
@@ -147,36 +261,6 @@
       "date": "2026-06-03T16:25:42Z"
     },
     {
-      "repo": "story-x-beta",
-      "sha": "e6ddbeb",
-      "message": "refactor(rank5): StoryXDesk Tier2 Pass D (Agent 4개) + 순환의존 제거",
-      "date": "2026-06-03T16:13:03Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "ae9cca6",
-      "message": "refactor(rank5): StoryXDesk Tier2 Pass C (Bible/Memory 5개) + 헬퍼 de-dup",
-      "date": "2026-06-03T15:55:40Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "13a0554",
-      "message": "feat(rank5): StoryXDesk 분리 Tier1 + Tier2 Pass A·B (Codex 위임 + Claude 검증)",
-      "date": "2026-06-03T15:22:21Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "054faa7",
-      "message": "docs: rank5 인계 프롬프트 + 상태 문서 갱신 (M11 세션 마무리)",
-      "date": "2026-06-03T13:36:57Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "8d3aca2",
-      "message": "feat(harness): M11 rank1~4 + M12 Codex 로컬 연결 (멀티에이전트 검토 정비)",
-      "date": "2026-06-03T13:27:33Z"
-    },
-    {
       "repo": "three-kingdoms-deckbuilder",
       "sha": "778e91b",
       "message": "chore: make Vercel secret ignore explicit",
@@ -211,12 +295,6 @@
       "sha": "64b5321",
       "message": "Give the office the whole stage",
       "date": "2026-06-02T03:06:40Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "0c7e07c",
-      "message": "chore: add asset catalog safety foundation",
-      "date": "2026-06-02T03:00:26Z"
     },
     {
       "repo": "ai-company-tycoon-boundaryless",
@@ -339,12 +417,6 @@
       "date": "2026-05-31T23:22:33Z"
     },
     {
-      "repo": "story-x-beta",
-      "sha": "1c652fa",
-      "message": "Merge: A5 학술 퍼블리시 — 사회과학 확장 A1~A5 완결",
-      "date": "2026-05-31T14:33:05Z"
-    },
-    {
       "repo": "cmds-daily-briefing",
       "sha": "d7bca6b",
       "message": "Add May 31 daily console briefing",
@@ -355,36 +427,6 @@
       "sha": "8bbeb4a",
       "message": "Document the personal reading MVP checkpoint",
       "date": "2026-05-30T15:47:11Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "f2fac91",
-      "message": "Turn the dashboard into a reading home",
-      "date": "2026-05-30T15:43:49Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "eabc05f",
-      "message": "Record private notes on personal books",
-      "date": "2026-05-30T15:41:24Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "1f9ebfd",
-      "message": "Let readers build a personal library",
-      "date": "2026-05-30T15:37:48Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "3a1a467",
-      "message": "Ground personal reading as the next product loop",
-      "date": "2026-05-30T15:34:36Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "22bd27b",
-      "message": "Make home navigation useful after login",
-      "date": "2026-05-30T15:34:26Z"
     },
     {
       "repo": "cmds-daily-briefing",
@@ -409,48 +451,6 @@
       "sha": "c81ab78",
       "message": "Phase 10: ontology graph edge color coding",
       "date": "2026-05-29T09:54:01Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "f67d6d1",
-      "message": "content(stage-1): 13 레슨에 buildIntro·reflectionOutro 강사 멘트 주입",
-      "date": "2026-05-28T09:14:26Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "8420c9e",
-      "message": "content: 옛 레슨 \\\"## 다음 레슨\\\" 일괄 제거 + terminal-first-day 압축",
-      "date": "2026-05-28T09:11:34Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "51aab87",
-      "message": "chore(stage-1): git/github 레슨 estimatedMinutes 현실 반영",
-      "date": "2026-05-28T08:56:03Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "13cea7b",
-      "message": "content(stage-1): ai-collaboration-mindset 본문 보강 — stub 37줄 → 92줄",
-      "date": "2026-05-27T07:24:27Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "e14fd37",
-      "message": "content(stage-1): ai-delegation-decision 본문 보강 — stub 36줄 → 96줄",
-      "date": "2026-05-27T05:36:04Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "deb4064",
-      "message": "content(stage-1): cost-monitoring-in-production 본문 보강 — stub 34줄 → 84줄",
-      "date": "2026-05-27T05:32:09Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "6c56670",
-      "message": "feat(reading-rail): 사이드바를 본문·빌드·검증·회고 4단계로 — 본문 hidden anchor 추가",
-      "date": "2026-05-27T00:36:24Z"
     },
     {
       "repo": "habit",

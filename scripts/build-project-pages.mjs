@@ -365,6 +365,7 @@ footer{margin-top:54px;padding-top:20px;border-top:1px solid var(--border);color
 <main class="page">
   <nav class="top-nav" aria-label="상위 이동">
     <a href="../dashboard.html">대시보드</a>
+    <a href="../monthly-analysis.html">30일 분석</a>
     <a href="../report.html">뉴스 피드</a>
     <a href="../project-report.html?repo=${encodeURIComponent(project.name)}">누적 로그</a>
     <a href="index.html">전체 프로젝트</a>
@@ -507,6 +508,7 @@ footer{margin-top:54px;padding-top:20px;border-top:1px solid var(--border);color
 <main class="page">
   <nav class="top-nav" aria-label="상위 이동">
     <a href="../dashboard.html">대시보드</a>
+    <a href="../monthly-analysis.html">30일 분석</a>
     <a href="../report.html">뉴스 피드</a>
     <a href="../docs/project-session-prompts.md">세션 프롬프트 문서</a>
   </nav>

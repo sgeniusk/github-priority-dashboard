@@ -100,6 +100,8 @@ class FakeElement {
   setAttribute(name, value) {
     this.attributes[name] = String(value);
   }
+
+  addEventListener() {}
 }
 
 function createFakeDocument(html) {
@@ -261,6 +263,32 @@ await smokePage(
     assert(
       document.getElementById('footerMeta').textContent.includes(`뉴스 ${newsItemCount}건`),
       'report.html renders news footer count',
+    );
+  },
+);
+
+const monthlyHtml = read('monthly-analysis.html');
+assert(monthlyHtml.includes('지난 30일'), 'monthly-analysis.html title is the 30-day analysis');
+assert(monthlyHtml.includes('FALLBACK_ANALYSIS'), 'monthly-analysis.html has FALLBACK_ANALYSIS');
+assert(monthlyHtml.includes('./monthly-analysis.json'), 'monthly-analysis.html fetches monthly-analysis.json');
+assert(monthlyHtml.includes('dashboard.html'), 'monthly-analysis.html links back to dashboard');
+assertFallbackMatches(monthlyHtml, 'FALLBACK_ANALYSIS', 'monthly-analysis.json');
+compileInlineScripts('monthly-analysis.html');
+await smokePage(
+  'monthly-analysis.html',
+  'file:///Users/taewookkim/dev/github-priority-dashboard/monthly-analysis.html',
+  (document) => {
+    assert(
+      document.getElementById('leadText').textContent.includes('레포'),
+      'monthly-analysis.html renders fallback lead',
+    );
+    assert(
+      document.getElementById('repoTable').innerHTML.includes('커밋'),
+      'monthly-analysis.html renders repo table from fallback',
+    );
+    assert(
+      document.getElementById('footerMeta').textContent.includes('monthly-analysis.json'),
+      'monthly-analysis.html renders footer metadata',
     );
   },
 );

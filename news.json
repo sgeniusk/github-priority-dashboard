@@ -1,6 +1,6 @@
 {
   "_comment": "대시보드 전체 뉴스 피드. refresh마다 history/activity 델타·정체·status 변화에서 자동 생성(하이브리드 — 헤드라인 템플릿). report.html이 읽는다. _state는 변화 감지용.",
-  "generatedAt": "2026-06-05",
+  "generatedAt": "2026-06-06",
   "_state": {
     "status": {
       "habit": "active",
@@ -22,6 +22,14 @@
     }
   },
   "items": [
+    {
+      "date": "2026-06-06",
+      "repo": "ai-builder-school",
+      "kind": "surge",
+      "headline": "AI Builder School, 커밋 +20로 가속",
+      "detail": "2026-06-05 이후 커밋이 20건 늘며 개발이 활발합니다.",
+      "metric": "+20 commits"
+    },
     {
       "date": "2026-06-05",
       "repo": "honbul",

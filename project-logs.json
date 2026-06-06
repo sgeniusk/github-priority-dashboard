@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-06-05",
+  "generatedAt": "2026-06-06",
   "logs": {
     "habit": [
       {
@@ -76,6 +76,11 @@
         "date": "2026-06-05",
         "kind": "progress",
         "text": "진척 70%"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -134,6 +139,11 @@
         "date": "2026-06-05",
         "kind": "progress",
         "text": "진척 65%"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 65%"
       }
     ],
     "sam-defender-logue": [
@@ -258,6 +268,11 @@
         "date": "2026-06-05",
         "kind": "progress",
         "text": "진척 60%"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "samguk-idle-prototype": [
@@ -382,6 +397,11 @@
         "date": "2026-06-05",
         "kind": "progress",
         "text": "진척 60%"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
@@ -518,6 +538,29 @@
         "date": "2026-06-05",
         "kind": "progress",
         "text": "진척 55% · 커밋 +2"
+      },
+      {
+        "date": "2026-06-05T04:45:59Z",
+        "kind": "commit",
+        "text": "docs: add external UI redesign prompt",
+        "sha": "0ffdd3f"
+      },
+      {
+        "date": "2026-06-05T17:40:52Z",
+        "kind": "commit",
+        "text": "chore: refresh verified deployment author",
+        "sha": "d898a78"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 55% · 커밋 +3"
+      },
+      {
+        "date": "2026-06-06T00:13:03Z",
+        "kind": "commit",
+        "text": "Apply design handoff combat layout",
+        "sha": "0abca51"
       }
     ],
     "ai-builder-school": [
@@ -594,6 +637,59 @@
         "date": "2026-06-05",
         "kind": "progress",
         "text": "진척 45%"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 45% · 커밋 +20"
+      },
+      {
+        "date": "2026-06-06T04:42:02Z",
+        "kind": "commit",
+        "text": "feat(stages): 사다리 → 역량 지도 재서술 + Stage별 \"이 역량으로 짓는 프로젝트\"",
+        "sha": "b693e53"
+      },
+      {
+        "date": "2026-06-06T04:45:40Z",
+        "kind": "commit",
+        "text": "feat(projects): Blocker 데이터 모델 + \"여기서 막혔나요?\" 막힘 토글",
+        "sha": "f50eb46"
+      },
+      {
+        "date": "2026-06-06T04:49:02Z",
+        "kind": "commit",
+        "text": "feat(build): /build 빌드 네비게이터 — 산출물 목표 → 프로젝트",
+        "sha": "027a9db"
+      },
+      {
+        "date": "2026-06-06T04:51:16Z",
+        "kind": "commit",
+        "text": "docs: P1 체크리스트 — P1-1~5 완료 표시 (P1-5는 no-op)",
+        "sha": "cab1c7e"
+      },
+      {
+        "date": "2026-06-06T05:00:54Z",
+        "kind": "commit",
+        "text": "content(lessons): neededWhen 확대 — 모든 blocker 구제 레슨에 \"필요한 순간\" 헤더",
+        "sha": "65b146f"
+      },
+      {
+        "date": "2026-06-06T05:06:46Z",
+        "kind": "commit",
+        "text": "chore: 죽은 구홈 CSS·컴포넌트 정리 (-334줄)",
+        "sha": "527bb96"
+      },
+      {
+        "date": "2026-06-06T05:09:59Z",
+        "kind": "commit",
+        "text": "feat(templates): usedWhen — \"이럴 때 꺼내 쓴다\" 맥락 (Template as tool)",
+        "sha": "1883168"
+      },
+      {
+        "date": "2026-06-06T05:11:40Z",
+        "kind": "commit",
+        "text": "docs: P1 체크리스트 — P1-6~8 완료, 남김 갱신(projectStepUsage·conceptDepth·blocker 확대)",
+        "sha": "d0cf94f"
       }
     ],
     "ai-company-tycoon-boundaryless": [
@@ -736,6 +832,11 @@
         "date": "2026-06-05",
         "kind": "progress",
         "text": "진척 40%"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 40%"
       }
     ],
     "story-x-beta": [
@@ -860,6 +961,59 @@
         "date": "2026-06-05",
         "kind": "progress",
         "text": "진척 45%"
+      },
+      {
+        "date": "2026-06-05T15:01:02Z",
+        "kind": "commit",
+        "text": "docs: 방향 C 플로팅 에디터 시안 체크포인트 진행 상태·인계 동기화",
+        "sha": "d9b5a1f"
+      },
+      {
+        "date": "2026-06-05T23:54:34Z",
+        "kind": "commit",
+        "text": "docs(spec): 방향 C 플로팅 에디터 실데이터 배선 설계",
+        "sha": "01e421a"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 45% · 커밋 +12"
+      },
+      {
+        "date": "2026-06-06T00:01:46Z",
+        "kind": "commit",
+        "text": "docs(plan): 방향 C 플로팅 에디터 실데이터 배선 구현 계획",
+        "sha": "929fdf6"
+      },
+      {
+        "date": "2026-06-06T00:07:08Z",
+        "kind": "commit",
+        "text": "test(editor): FloatingEditor 실데이터 배선 RED — props·콜백·시안제거 단언",
+        "sha": "fc7d5c4"
+      },
+      {
+        "date": "2026-06-06T00:11:03Z",
+        "kind": "commit",
+        "text": "feat(editor): FloatingEditor props-driven 리팩터 + App standalone 제거",
+        "sha": "a803785"
+      },
+      {
+        "date": "2026-06-06T00:14:09Z",
+        "kind": "commit",
+        "text": "feat(editor): StoryXDesk 가 floating 프리뷰에 실 상태·검토·페르소나 props 주입",
+        "sha": "00b5404"
+      },
+      {
+        "date": "2026-06-06T00:19:08Z",
+        "kind": "commit",
+        "text": "docs(editor): 플로팅 실데이터 배선 검증 캡처 + 계획 체크리스트 갱신",
+        "sha": "f4c506c"
+      },
+      {
+        "date": "2026-06-06T00:21:38Z",
+        "kind": "commit",
+        "text": "docs: 플로팅 에디터 실데이터 배선 진행 상태·인계 동기화",
+        "sha": "10c105a"
       }
     ],
     "BookCircle": [
@@ -906,6 +1060,11 @@
         "date": "2026-06-05",
         "kind": "progress",
         "text": "진척 20%"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "jewelry-webtoon-cloud": [
@@ -982,6 +1141,11 @@
         "date": "2026-06-05",
         "kind": "progress",
         "text": "진척 20%"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
@@ -1058,6 +1222,11 @@
         "date": "2026-06-05",
         "kind": "progress",
         "text": "진척 56%"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 56%"
       }
     ],
     "design-system-school": [
@@ -1134,6 +1303,11 @@
         "date": "2026-06-05",
         "kind": "progress",
         "text": "진척 20%"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "cmds-daily-briefing": [
@@ -1225,9 +1399,32 @@
         "text": "진척 52%"
       },
       {
+        "date": "2026-06-04T23:38:27Z",
+        "kind": "commit",
+        "text": "Add June 5 daily console briefing",
+        "sha": "ddf55a5"
+      },
+      {
         "date": "2026-06-05",
         "kind": "progress",
         "text": "진척 52%"
+      },
+      {
+        "date": "2026-06-05T13:49:12Z",
+        "kind": "commit",
+        "text": "Add June 5 build note",
+        "sha": "ff6edc5"
+      },
+      {
+        "date": "2026-06-05T23:37:23Z",
+        "kind": "commit",
+        "text": "Add June 6 light console briefing",
+        "sha": "c73c9ea"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 52% · 커밋 +2"
       }
     ],
     "Timeer": [
@@ -1262,6 +1459,11 @@
         "date": "2026-06-05",
         "kind": "progress",
         "text": "진척 7%"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 7%"
       }
     ],
     "chaekdam": [
@@ -1320,6 +1522,12 @@
         "sha": "0e251aa"
       },
       {
+        "date": "2026-05-30T15:47:11Z",
+        "kind": "commit",
+        "text": "Document the personal reading MVP checkpoint",
+        "sha": "8bbeb4a"
+      },
+      {
         "date": "2026-05-31",
         "kind": "progress",
         "text": "진척 19%"
@@ -1338,6 +1546,53 @@
         "date": "2026-06-05",
         "kind": "progress",
         "text": "진척 19%"
+      },
+      {
+        "date": "2026-06-05T02:30:20Z",
+        "kind": "commit",
+        "text": "Build reading rooms and presentation decks",
+        "sha": "8d90232"
+      },
+      {
+        "date": "2026-06-05T03:04:21Z",
+        "kind": "commit",
+        "text": "Harden OAuth redirect origin",
+        "sha": "7cf330f"
+      },
+      {
+        "date": "2026-06-05T12:34:37Z",
+        "kind": "commit",
+        "text": "Add presentation collection and slide preview flows",
+        "sha": "9d283a7"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 19% · 커밋 +13"
+      },
+      {
+        "date": "2026-06-06T01:29:59Z",
+        "kind": "commit",
+        "text": "feat(design): apply Stripe-inspired design system across the app",
+        "sha": "ef11869"
+      },
+      {
+        "date": "2026-06-06T01:30:15Z",
+        "kind": "commit",
+        "text": "feat(presentation): solo prep→present flow with separated speaker notes",
+        "sha": "6a51a51"
+      },
+      {
+        "date": "2026-06-06T01:30:22Z",
+        "kind": "commit",
+        "text": "docs: record Phase 9 redesign + presentation pipeline decisions",
+        "sha": "16c68d9"
+      },
+      {
+        "date": "2026-06-06T01:35:07Z",
+        "kind": "commit",
+        "text": "docs: add 2026-06-06 handoff and Phase 10 backlog",
+        "sha": "6c8b1e9"
       }
     ],
     "honbul": [
@@ -1555,9 +1810,56 @@
         "sha": "40d2aae"
       },
       {
+        "date": "2026-06-04T23:22:27Z",
+        "kind": "commit",
+        "text": "전투 입력을 화면 증거로 고정한다",
+        "sha": "7071ab6"
+      },
+      {
+        "date": "2026-06-04T23:27:44Z",
+        "kind": "commit",
+        "text": "버셀 링크 메타를 커밋에서 제외한다",
+        "sha": "161d429"
+      },
+      {
         "date": "2026-06-05",
         "kind": "progress",
         "text": "진척 19% · 커밋 +33"
+      },
+      {
+        "date": "2026-06-05T00:51:32Z",
+        "kind": "commit",
+        "text": "웹에서 바로 플레이할 수 있게 한다",
+        "sha": "e743dc2"
+      },
+      {
+        "date": "2026-06-05T02:38:00Z",
+        "kind": "commit",
+        "text": "전투가 흔들림 없이 읽히게 한다",
+        "sha": "1dc493d"
+      },
+      {
+        "date": "2026-06-05T02:55:53Z",
+        "kind": "commit",
+        "text": "전투장 벽이 보이게 한다",
+        "sha": "dc0d2de"
+      },
+      {
+        "date": "2026-06-05T03:10:23Z",
+        "kind": "commit",
+        "text": "구슬이 아레나 벽을 넘지 않게 한다",
+        "sha": "d2f5b16"
+      },
+      {
+        "date": "2026-06-05T03:38:17Z",
+        "kind": "commit",
+        "text": "Claude Design 외주 브리프를 준비한다",
+        "sha": "ab00ccf"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 19% · 커밋 +5"
       }
     ]
   }

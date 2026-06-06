@@ -170,30 +170,53 @@ try {
   logError(`Failed to parse or validate activity.json: ${e.message}`);
 }
 
-// 4. Parse & Compile dashboard.html inline scripts
+// 4. Validate monthly-analysis.json
 try {
-  const dashboardPath = join(ROOT, 'dashboard.html');
-  const html = readFileSync(dashboardPath, 'utf8');
-  
-  const scriptRegex = /<script[^>]*>([\s\S]*?)<\/script>/gi;
+  const analysisPath = join(ROOT, 'monthly-analysis.json');
+  const analysis = JSON.parse(readFileSync(analysisPath, 'utf8'));
+  if (!analysis.window || !/^\d{4}-\d{2}-\d{2}$/.test(analysis.window.start || '') || !/^\d{4}-\d{2}-\d{2}$/.test(analysis.window.end || '')) {
+    logError('monthly-analysis.json: invalid or missing window.start/window.end');
+  }
+  if (!analysis.summary || typeof analysis.summary.totalCommits !== 'number') {
+    logError('monthly-analysis.json: summary.totalCommits must be a number');
+  }
+  if (!Array.isArray(analysis.daily) || analysis.daily.length === 0) {
+    logError('monthly-analysis.json: daily must be a non-empty array');
+  }
+  if (!Array.isArray(analysis.repos) || analysis.repos.length === 0) {
+    logError('monthly-analysis.json: repos must be a non-empty array');
+  }
+  logSuccess('monthly-analysis.json validation passed');
+} catch (e) {
+  logError(`Failed to parse or validate monthly-analysis.json: ${e.message}`);
+}
+
+function compileInlineScripts(relativePath) {
+  const html = readFileSync(join(ROOT, relativePath), 'utf8');
+  const scriptRegex = /<script([^>]*)>([\s\S]*?)<\/script>/gi;
   let match;
   let count = 0;
-  
   while ((match = scriptRegex.exec(html)) !== null) {
-    const scriptContent = match[1].trim();
-    if (scriptContent) {
-      count++;
-      try {
-        new vm.Script(scriptContent, { filename: `dashboard.html:script[${count}]` });
-      } catch (scriptErr) {
-        logError(`Syntax error in dashboard.html inline script #${count}: ${scriptErr.message}\n` +
-          `Code snippet:\n${scriptContent.split('\n').slice(0, 10).join('\n')}\n...`);
-      }
+    if (/type=["']application\/json["']/i.test(match[1])) continue;
+    const scriptContent = match[2].trim();
+    if (!scriptContent) continue;
+    count++;
+    try {
+      new vm.Script(scriptContent, { filename: `${relativePath}:script[${count}]` });
+    } catch (scriptErr) {
+      logError(`Syntax error in ${relativePath} inline script #${count}: ${scriptErr.message}\n` +
+        `Code snippet:\n${scriptContent.split('\n').slice(0, 10).join('\n')}\n...`);
     }
   }
-  logSuccess(`dashboard.html parsed, verified ${count} inline script block(s) compiled successfully`);
+  logSuccess(`${relativePath} parsed, verified ${count} inline script block(s) compiled successfully`);
+}
+
+// 5. Parse & Compile inline scripts
+try {
+  compileInlineScripts('dashboard.html');
+  compileInlineScripts('monthly-analysis.html');
 } catch (e) {
-  logError(`Failed to read or verify dashboard.html: ${e.message}`);
+  logError(`Failed to read or verify inline scripts: ${e.message}`);
 }
 
 process.exit(exitCode);

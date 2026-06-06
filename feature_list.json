@@ -211,6 +211,23 @@
         "init·validate·check-report-pages·브라우저 콘솔 0·Pages 배포 success"
       ],
       "openQuestions": []
+    },
+    {
+      "id": "v2.9-monthly-github-analysis",
+      "name": "v2.9 최근 30일 GitHub 관찰 분석 사이트",
+      "status": "done",
+      "description": "추적 중인 GitHub 레포 전체를 최근 30일 창으로 다시 수집해 커밋 수, 활동일, 공백, 메시지 테마, 분야·도구별 분포를 분석하는 정적 분석 페이지 monthly-analysis.html을 추가했다. scripts/build-monthly-analysis.mjs가 monthly-analysis.json과 HTML FALLBACK을 생성하며 refresh-progress.mjs에도 연결된다.",
+      "dependencies": [
+        "v2.8-project-pages-and-session-prompts"
+      ],
+      "doneCriteria": [
+        "GitHub API에서 추적 레포별 최근 30일 커밋을 페이지네이션 수집해 monthly-analysis.json 생성",
+        "monthly-analysis.html이 상단 증거 카드, 30일 활동 차트, 운영 진단, 레포별 관찰 기록, 테마·도구 분포, 다음 30일 처방을 렌더",
+        "dashboard.html과 project-pages 생성 템플릿에서 30일 분석 페이지로 이동 가능",
+        "refresh-progress.mjs가 refresh 후 monthly-analysis.json과 FALLBACK_ANALYSIS를 재생성",
+        "init·validate·check-report-pages·브라우저 콘솔 0 통과"
+      ],
+      "openQuestions": []
     }
   ]
 }
