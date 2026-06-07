@@ -1,7 +1,145 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-06-06",
+  "asOf": "2026-06-07",
   "commits": [
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "673658d",
+      "message": "Add June 7 light console briefing",
+      "date": "2026-06-06T23:33:52Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "df5e72b",
+      "message": "docs(p2): P2 실행 완료 마킹 (Task 1~4 커밋·게이트 그린)",
+      "date": "2026-06-06T17:05:14Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "dd5a190",
+      "message": "feat(p2): conceptDepth 4단 사다리 — 아코디언 + 컴패니언 주입 + 샘플 3개",
+      "date": "2026-06-06T17:02:40Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "54ad545",
+      "message": "feat(p2): Template projectStepUsage — milestone 단계별 양식 직접 호출",
+      "date": "2026-06-06T16:57:16Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "862cb5d",
+      "message": "content(p2): blocker 전 18개 프로젝트로 확대 (4→18)",
+      "date": "2026-06-06T16:51:11Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "be03f29",
+      "message": "feat(p2): Journey fastStartProject·primaryProjects + /journeys 노출 + validate 안전망",
+      "date": "2026-06-06T16:43:58Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "f4565f9",
+      "message": "W10~W13 진행을 핸드오프·결정·체크리스트에 기록한다",
+      "date": "2026-06-06T16:14:53Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "69f9531",
+      "message": "chore: ignore renderer proof screenshots + record W1 war Pixi port handoff",
+      "date": "2026-06-06T16:05:52Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "6eee6ad",
+      "message": "docs(godot): record town(village) implementation plan for next session",
+      "date": "2026-06-06T16:04:24Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "639ed94",
+      "message": "feat(godot): add manual camera zoom and pan controls",
+      "date": "2026-06-06T15:20:43Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "854fc5e",
+      "message": "드래그로 각도를 조준해 쏘게 한다",
+      "date": "2026-06-06T15:16:28Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "280494c",
+      "message": "feat(godot): diversify enemies into infantry, cavalry, siege, boss",
+      "date": "2026-06-06T15:02:48Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "7ef67c6",
+      "message": "feat(godot): quadruple the map to radius 12 with a fixed full-map camera",
+      "date": "2026-06-06T14:47:15Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "d6152dc",
+      "message": "feat(godot): pick branch direction by key or click during play",
+      "date": "2026-06-06T13:00:06Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "6875c9e",
+      "message": "feat(godot): veil the map in fog of war that lifts as roads expand",
+      "date": "2026-06-06T12:30:38Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "cda900d",
+      "message": "Apply opening order UI polish",
+      "date": "2026-06-06T10:10:37Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "ff44dd9",
+      "message": "런처를 옮겨 구석에서도 발사하게 한다",
+      "date": "2026-06-06T09:20:14Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "a8cc17a",
+      "message": "docs(renderer): record v1.00.46 combat effects verification + register feature",
+      "date": "2026-06-06T09:15:50Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "da61890",
+      "message": "feat(godot): branch-choose flat roads on a fixed map, towers on highlands",
+      "date": "2026-06-06T08:36:27Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "20721f6",
+      "message": "feat(renderer): adventure combat effects E1-E4 on Pixi field (v1.00.46)",
+      "date": "2026-06-06T08:17:30Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "ee6852c",
+      "message": "feat(renderer): emit hit-flash/impact-strip effect descriptors from scene model (E3-E4 data)",
+      "date": "2026-06-06T07:10:17Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "1981692",
+      "message": "보스가 사라지지 않고 처치되어 승리가 뜨게 한다",
+      "date": "2026-06-06T05:52:44Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "761100c",
+      "message": "마을 허브와 보스·손맛으로 게임을 한 판답게 만든다",
+      "date": "2026-06-06T05:31:18Z"
+    },
     {
       "repo": "ai-builder-school",
       "sha": "d0cf94f",
@@ -15,40 +153,46 @@
       "date": "2026-06-06T05:09:59Z"
     },
     {
+      "repo": "sam-defender-logue",
+      "sha": "830000a",
+      "message": "feat(godot): grow the map outward on each wave clear",
+      "date": "2026-06-06T05:08:21Z"
+    },
+    {
       "repo": "ai-builder-school",
       "sha": "527bb96",
       "message": "chore: 죽은 구홈 CSS·컴포넌트 정리 (-334줄)",
       "date": "2026-06-06T05:06:46Z"
     },
     {
-      "repo": "ai-builder-school",
-      "sha": "65b146f",
-      "message": "content(lessons): neededWhen 확대 — 모든 blocker 구제 레슨에 \"필요한 순간\" 헤더",
-      "date": "2026-06-06T05:00:54Z"
+      "repo": "samguk-idle-prototype",
+      "sha": "456f6f7",
+      "message": "docs(renderer): record v1.00.45 verification + fix feature row schema",
+      "date": "2026-06-06T04:40:47Z"
     },
     {
-      "repo": "ai-builder-school",
-      "sha": "cab1c7e",
-      "message": "docs: P1 체크리스트 — P1-1~5 완료 표시 (P1-5는 no-op)",
-      "date": "2026-06-06T04:51:16Z"
+      "repo": "samguk-idle-prototype",
+      "sha": "2f356e2",
+      "message": "fix(renderer): persist Pixi adventure canvas across SPA render + frame-crop sprites",
+      "date": "2026-06-06T04:40:47Z"
     },
     {
-      "repo": "ai-builder-school",
-      "sha": "027a9db",
-      "message": "feat(build): /build 빌드 네비게이터 — 산출물 목표 → 프로젝트",
-      "date": "2026-06-06T04:49:02Z"
+      "repo": "honbul",
+      "sha": "18fe103",
+      "message": "전투 손맛을 살리고 메뉴·맵을 명부 아트로 입힌다",
+      "date": "2026-06-06T03:49:51Z"
     },
     {
-      "repo": "ai-builder-school",
-      "sha": "f50eb46",
-      "message": "feat(projects): Blocker 데이터 모델 + \"여기서 막혔나요?\" 막힘 토글",
-      "date": "2026-06-06T04:45:40Z"
+      "repo": "samguk-idle-prototype",
+      "sha": "10bee4f",
+      "message": "feat(feature-list): register v1.00.45-adventure-pixi-field entry",
+      "date": "2026-06-06T03:35:23Z"
     },
     {
-      "repo": "ai-builder-school",
-      "sha": "b693e53",
-      "message": "feat(stages): 사다리 → 역량 지도 재서술 + Stage별 \"이 역량으로 짓는 프로젝트\"",
-      "date": "2026-06-06T04:42:02Z"
+      "repo": "samguk-idle-prototype",
+      "sha": "6fcbabf",
+      "message": "chore(cache): bump version key to 1.00.45-adventure-pixi-field",
+      "date": "2026-06-06T03:34:30Z"
     },
     {
       "repo": "chaekdam",
@@ -73,6 +217,12 @@
       "sha": "ef11869",
       "message": "feat(design): apply Stripe-inspired design system across the app",
       "date": "2026-06-06T01:29:59Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "a1a6e48",
+      "message": "전투 화면에 명부 아트 패스 1차를 입힌다",
+      "date": "2026-06-06T00:46:20Z"
     },
     {
       "repo": "story-x-beta",
@@ -165,28 +315,10 @@
       "date": "2026-06-05T03:38:17Z"
     },
     {
-      "repo": "honbul",
-      "sha": "d2f5b16",
-      "message": "구슬이 아레나 벽을 넘지 않게 한다",
-      "date": "2026-06-05T03:10:23Z"
-    },
-    {
       "repo": "chaekdam",
       "sha": "7cf330f",
       "message": "Harden OAuth redirect origin",
       "date": "2026-06-05T03:04:21Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "dc0d2de",
-      "message": "전투장 벽이 보이게 한다",
-      "date": "2026-06-05T02:55:53Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "1dc493d",
-      "message": "전투가 흔들림 없이 읽히게 한다",
-      "date": "2026-06-05T02:38:00Z"
     },
     {
       "repo": "chaekdam",
@@ -195,34 +327,10 @@
       "date": "2026-06-05T02:30:20Z"
     },
     {
-      "repo": "honbul",
-      "sha": "e743dc2",
-      "message": "웹에서 바로 플레이할 수 있게 한다",
-      "date": "2026-06-05T00:51:32Z"
-    },
-    {
       "repo": "cmds-daily-briefing",
       "sha": "ddf55a5",
       "message": "Add June 5 daily console briefing",
       "date": "2026-06-04T23:38:27Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "161d429",
-      "message": "버셀 링크 메타를 커밋에서 제외한다",
-      "date": "2026-06-04T23:27:44Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "7071ab6",
-      "message": "전투 입력을 화면 증거로 고정한다",
-      "date": "2026-06-04T23:22:27Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "40d2aae",
-      "message": "베타 경로를 실제 화면 증거로 잇는다",
-      "date": "2026-06-04T22:56:22Z"
     },
     {
       "repo": "three-kingdoms-deckbuilder",
@@ -285,12 +393,6 @@
       "date": "2026-06-02T11:23:54Z"
     },
     {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "f57fddf",
-      "message": "feat: add opening order onboarding",
-      "date": "2026-06-02T11:22:56Z"
-    },
-    {
       "repo": "ai-company-tycoon-boundaryless",
       "sha": "64b5321",
       "message": "Give the office the whole stage",
@@ -315,106 +417,10 @@
       "date": "2026-06-01T22:33:48Z"
     },
     {
-      "repo": "samguk-idle-prototype",
-      "sha": "4e299fd",
-      "message": "Merge adventure command timing runtime",
-      "date": "2026-06-01T12:55:31Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "46d6590",
-      "message": "Prepare v1.00.28 handoff for merge",
-      "date": "2026-06-01T12:55:14Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "cd05cbc",
-      "message": "docs(asset-beta): prepare Claude handoff after 0.7.15",
-      "date": "2026-06-01T12:52:54Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "63f1bf8",
-      "message": "feat(asset-beta): land combat reactions on battlefield sprites",
-      "date": "2026-06-01T11:30:10Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "e071cb2",
-      "message": "feat(asset-beta): make combat actions readable on the playfield",
-      "date": "2026-06-01T09:54:32Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "68fab86",
-      "message": "Make adventure commands choose tactical timing",
-      "date": "2026-06-01T09:53:20Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "e82cb99",
-      "message": "feat(asset-beta): reduce battlefield clutter with anchored units",
-      "date": "2026-06-01T09:20:46Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "d167080",
-      "message": "Make adventure combat run through engine commands",
-      "date": "2026-06-01T08:51:43Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "fde54c7",
-      "message": "feat(asset-beta): show reward effects on the battlefield",
-      "date": "2026-06-01T08:50:04Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "13eef6c",
-      "message": "feat(asset-beta): keep reward prep inside the playable battlefield",
-      "date": "2026-06-01T08:15:04Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "792d08d",
-      "message": "Make adventure waves settle into the next fight",
-      "date": "2026-06-01T07:59:35Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "d14edaa",
-      "message": "feat(asset-beta): make the battlefield read as the real game screen",
-      "date": "2026-06-01T07:52:54Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "e73e2c5",
-      "message": "feat(asset-beta): make wave launch land in debrief",
-      "date": "2026-06-01T00:48:02Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "c16499b",
-      "message": "Make adventure combat answer enemy skills",
-      "date": "2026-06-01T00:42:47Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "fcce8c8",
-      "message": "Make adventure combat resolve kills and drops",
-      "date": "2026-06-01T00:06:29Z"
-    },
-    {
       "repo": "cmds-daily-briefing",
       "sha": "2d18558",
       "message": "Add June 1 daily console briefing",
       "date": "2026-05-31T23:35:05Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "0cea438",
-      "message": "Make adventure combat read tactical instead of decorative",
-      "date": "2026-05-31T23:22:33Z"
     },
     {
       "repo": "cmds-daily-briefing",
@@ -427,12 +433,6 @@
       "sha": "8bbeb4a",
       "message": "Document the personal reading MVP checkpoint",
       "date": "2026-05-30T15:47:11Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "c6e3d08",
-      "message": "Add May 30 build note archive",
-      "date": "2026-05-30T13:54:35Z"
     },
     {
       "repo": "design-system-school",
