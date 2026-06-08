@@ -1,7 +1,109 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-06-07",
+  "asOf": "2026-06-08",
   "commits": [
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "12369f3",
+      "message": "Add June 7 build note",
+      "date": "2026-06-07T13:48:58Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "fb326d6",
+      "message": "content(playground): playgroundPrompt 5개 확대 (1→6)",
+      "date": "2026-06-07T13:46:51Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "d3356a2",
+      "message": "docs: prepare handoff for next session (feat-004 visuals next)",
+      "date": "2026-06-07T13:46:08Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "0556eba",
+      "message": "feat(playground): 프롬프트 연습장 1차 — Gemini BYO 키 인앱 호출",
+      "date": "2026-06-07T11:36:47Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "25ce9f7",
+      "message": "docs: refresh Unity session handoff to current state",
+      "date": "2026-06-07T11:30:00Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "f133550",
+      "message": "feat(analytics): Plausible 운영자 학습 분석 (env 게이팅) + 완성 이벤트",
+      "date": "2026-06-07T11:07:45Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "8833992",
+      "message": "feat-004 (motion): resource count-up + button punch (code tweens)",
+      "date": "2026-06-07T10:47:40Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "f78fcc4",
+      "message": "feat-004 (sound): procedural SFX synth + AudioManager",
+      "date": "2026-06-07T09:48:17Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "b3e5e4e",
+      "message": "feat(me): 산출물 포트폴리오 — 프로젝트 완성 기록 + /me '내가 지은 것'",
+      "date": "2026-06-07T09:46:48Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "cd0b8c5",
+      "message": "docs: add Claude Design brief and session wrap-up (hotfixes + next steps)",
+      "date": "2026-06-07T09:23:26Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "5447116",
+      "message": "content(lessons): conceptDepth 9개 백필 (3→12) — concepts.ts 10개 개념 1:1 커버",
+      "date": "2026-06-07T09:18:12Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "01694f7",
+      "message": "feat-003 closeout: PlayMode smoke tests + state",
+      "date": "2026-06-07T08:52:52Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "e29a765",
+      "message": "feat-003: Vertical Slice mobile UI + save/load",
+      "date": "2026-06-07T08:49:35Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "a564b31",
+      "message": "content(lessons): neededWhen 21개 전수 백필 (12→33) — 막힘 착지 레슨 JIT 헤더 100%",
+      "date": "2026-06-07T07:26:41Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "e3131bc",
+      "message": "fix(reading-room): create private co-reading club without RETURNING",
+      "date": "2026-06-07T06:16:26Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "58ba96b",
+      "message": "Bootstrap Unity 6 port: project, data pipeline, core simulation",
+      "date": "2026-06-07T03:51:23Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "36c3dc1",
+      "message": "docs: roadmap을 두 줄기(top-down·v2.0)로 통합 갱신 + P0/P2 push 상태 정정",
+      "date": "2026-06-07T02:47:44Z"
+    },
     {
       "repo": "cmds-daily-briefing",
       "sha": "673658d",
@@ -13,30 +115,6 @@
       "sha": "df5e72b",
       "message": "docs(p2): P2 실행 완료 마킹 (Task 1~4 커밋·게이트 그린)",
       "date": "2026-06-06T17:05:14Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "dd5a190",
-      "message": "feat(p2): conceptDepth 4단 사다리 — 아코디언 + 컴패니언 주입 + 샘플 3개",
-      "date": "2026-06-06T17:02:40Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "54ad545",
-      "message": "feat(p2): Template projectStepUsage — milestone 단계별 양식 직접 호출",
-      "date": "2026-06-06T16:57:16Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "862cb5d",
-      "message": "content(p2): blocker 전 18개 프로젝트로 확대 (4→18)",
-      "date": "2026-06-06T16:51:11Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "be03f29",
-      "message": "feat(p2): Journey fastStartProject·primaryProjects + /journeys 노출 + validate 안전망",
-      "date": "2026-06-06T16:43:58Z"
     },
     {
       "repo": "honbul",
@@ -141,28 +219,10 @@
       "date": "2026-06-06T05:31:18Z"
     },
     {
-      "repo": "ai-builder-school",
-      "sha": "d0cf94f",
-      "message": "docs: P1 체크리스트 — P1-6~8 완료, 남김 갱신(projectStepUsage·conceptDepth·blocker 확대)",
-      "date": "2026-06-06T05:11:40Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "1883168",
-      "message": "feat(templates): usedWhen — \"이럴 때 꺼내 쓴다\" 맥락 (Template as tool)",
-      "date": "2026-06-06T05:09:59Z"
-    },
-    {
       "repo": "sam-defender-logue",
       "sha": "830000a",
       "message": "feat(godot): grow the map outward on each wave clear",
       "date": "2026-06-06T05:08:21Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "527bb96",
-      "message": "chore: 죽은 구홈 CSS·컴포넌트 정리 (-334줄)",
-      "date": "2026-06-06T05:06:46Z"
     },
     {
       "repo": "samguk-idle-prototype",
@@ -193,6 +253,12 @@
       "sha": "6fcbabf",
       "message": "chore(cache): bump version key to 1.00.45-adventure-pixi-field",
       "date": "2026-06-06T03:34:30Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "e12fb0a",
+      "message": "Add the P2 oracle backbone; point active dev to the Godot repo",
+      "date": "2026-06-06T03:11:44Z"
     },
     {
       "repo": "chaekdam",
@@ -321,12 +387,6 @@
       "date": "2026-06-05T03:04:21Z"
     },
     {
-      "repo": "chaekdam",
-      "sha": "8d90232",
-      "message": "Build reading rooms and presentation decks",
-      "date": "2026-06-05T02:30:20Z"
-    },
-    {
       "repo": "cmds-daily-briefing",
       "sha": "ddf55a5",
       "message": "Add June 5 daily console briefing",
@@ -345,28 +405,10 @@
       "date": "2026-06-04T12:45:25Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "a2836ac",
-      "message": "Plan the v1.0 redesign completion and queue the Codex blocks",
-      "date": "2026-06-03T23:47:08Z"
-    },
-    {
       "repo": "cmds-daily-briefing",
       "sha": "645e6a2",
       "message": "Add June 4 daily console briefing",
       "date": "2026-06-03T23:34:22Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "dc615eb",
-      "message": "Take the strategy hand out of the command row and label the controls",
-      "date": "2026-06-03T23:07:32Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "8c77563",
-      "message": "Label the advance-month button on desktop",
-      "date": "2026-06-03T16:25:42Z"
     },
     {
       "repo": "three-kingdoms-deckbuilder",
@@ -381,58 +423,16 @@
       "date": "2026-06-02T23:38:21Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "ecc48ed",
-      "message": "Lift the office by emptying the top bar",
-      "date": "2026-06-02T11:49:08Z"
-    },
-    {
       "repo": "three-kingdoms-deckbuilder",
       "sha": "7668b5c",
       "message": "fix: exclude local cache from web export",
       "date": "2026-06-02T11:23:54Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "64b5321",
-      "message": "Give the office the whole stage",
-      "date": "2026-06-02T03:06:40Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "deb7c9d",
-      "message": "Swap the menu column for a popup launcher",
-      "date": "2026-06-02T02:44:25Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "06415a3",
-      "message": "Review the menu IA and pin the office-first popup design",
-      "date": "2026-06-02T02:25:38Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "694c44c",
-      "message": "Design the office-first menu popup redesign",
-      "date": "2026-06-01T22:33:48Z"
-    },
-    {
       "repo": "cmds-daily-briefing",
       "sha": "2d18558",
       "message": "Add June 1 daily console briefing",
       "date": "2026-05-31T23:35:05Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "d7bca6b",
-      "message": "Add May 31 daily console briefing",
-      "date": "2026-05-30T23:34:14Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "8bbeb4a",
-      "message": "Document the personal reading MVP checkpoint",
-      "date": "2026-05-30T15:47:11Z"
     },
     {
       "repo": "design-system-school",
