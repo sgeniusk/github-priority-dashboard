@@ -1,7 +1,19 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-06-08",
+  "asOf": "2026-06-09",
   "commits": [
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "0548e5c",
+      "message": "Add June 8 build note",
+      "date": "2026-06-08T13:48:53Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "59fe37d",
+      "message": "Add June 8 research briefing",
+      "date": "2026-06-08T01:15:28Z"
+    },
     {
       "repo": "cmds-daily-briefing",
       "sha": "12369f3",
@@ -417,22 +429,10 @@
       "date": "2026-06-03T03:49:19Z"
     },
     {
-      "repo": "cmds-daily-briefing",
-      "sha": "81a2362",
-      "message": "Add June 3 daily console briefing",
-      "date": "2026-06-02T23:38:21Z"
-    },
-    {
       "repo": "three-kingdoms-deckbuilder",
       "sha": "7668b5c",
       "message": "fix: exclude local cache from web export",
       "date": "2026-06-02T11:23:54Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "2d18558",
-      "message": "Add June 1 daily console briefing",
-      "date": "2026-05-31T23:35:05Z"
     },
     {
       "repo": "design-system-school",
