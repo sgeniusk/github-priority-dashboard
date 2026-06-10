@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-06-06",
+  "generatedAt": "2026-06-10",
   "logs": {
     "habit": [
       {
@@ -81,6 +81,11 @@
         "date": "2026-06-06",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-06-10",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -142,6 +147,11 @@
       },
       {
         "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 65%"
+      },
+      {
+        "date": "2026-06-10",
         "kind": "progress",
         "text": "완성도 65%"
       }
@@ -273,6 +283,59 @@
         "date": "2026-06-06",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-06-06T05:08:21Z",
+        "kind": "commit",
+        "text": "feat(godot): grow the map outward on each wave clear",
+        "sha": "830000a"
+      },
+      {
+        "date": "2026-06-06T08:36:27Z",
+        "kind": "commit",
+        "text": "feat(godot): branch-choose flat roads on a fixed map, towers on highlands",
+        "sha": "da61890"
+      },
+      {
+        "date": "2026-06-06T12:30:38Z",
+        "kind": "commit",
+        "text": "feat(godot): veil the map in fog of war that lifts as roads expand",
+        "sha": "6875c9e"
+      },
+      {
+        "date": "2026-06-06T13:00:06Z",
+        "kind": "commit",
+        "text": "feat(godot): pick branch direction by key or click during play",
+        "sha": "d6152dc"
+      },
+      {
+        "date": "2026-06-06T14:47:15Z",
+        "kind": "commit",
+        "text": "feat(godot): quadruple the map to radius 12 with a fixed full-map camera",
+        "sha": "7ef67c6"
+      },
+      {
+        "date": "2026-06-06T15:02:48Z",
+        "kind": "commit",
+        "text": "feat(godot): diversify enemies into infantry, cavalry, siege, boss",
+        "sha": "280494c"
+      },
+      {
+        "date": "2026-06-06T15:20:43Z",
+        "kind": "commit",
+        "text": "feat(godot): add manual camera zoom and pan controls",
+        "sha": "639ed94"
+      },
+      {
+        "date": "2026-06-06T16:04:24Z",
+        "kind": "commit",
+        "text": "docs(godot): record town(village) implementation plan for next session",
+        "sha": "6eee6ad"
+      },
+      {
+        "date": "2026-06-10",
+        "kind": "progress",
+        "text": "완성도 60% · 커밋 +34"
       }
     ],
     "samguk-idle-prototype": [
@@ -402,6 +465,59 @@
         "date": "2026-06-06",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-06-06T03:34:30Z",
+        "kind": "commit",
+        "text": "chore(cache): bump version key to 1.00.45-adventure-pixi-field",
+        "sha": "6fcbabf"
+      },
+      {
+        "date": "2026-06-06T03:35:23Z",
+        "kind": "commit",
+        "text": "feat(feature-list): register v1.00.45-adventure-pixi-field entry",
+        "sha": "10bee4f"
+      },
+      {
+        "date": "2026-06-06T04:40:47Z",
+        "kind": "commit",
+        "text": "docs(renderer): record v1.00.45 verification + fix feature row schema",
+        "sha": "456f6f7"
+      },
+      {
+        "date": "2026-06-06T04:40:47Z",
+        "kind": "commit",
+        "text": "fix(renderer): persist Pixi adventure canvas across SPA render + frame-crop sprites",
+        "sha": "2f356e2"
+      },
+      {
+        "date": "2026-06-06T07:10:17Z",
+        "kind": "commit",
+        "text": "feat(renderer): emit hit-flash/impact-strip effect descriptors from scene model (E3-E4 data)",
+        "sha": "ee6852c"
+      },
+      {
+        "date": "2026-06-06T08:17:30Z",
+        "kind": "commit",
+        "text": "feat(renderer): adventure combat effects E1-E4 on Pixi field (v1.00.46)",
+        "sha": "20721f6"
+      },
+      {
+        "date": "2026-06-06T09:15:50Z",
+        "kind": "commit",
+        "text": "docs(renderer): record v1.00.46 combat effects verification + register feature",
+        "sha": "a8cc17a"
+      },
+      {
+        "date": "2026-06-06T16:05:52Z",
+        "kind": "commit",
+        "text": "chore: ignore renderer proof screenshots + record W1 war Pixi port handoff",
+        "sha": "69f9531"
+      },
+      {
+        "date": "2026-06-10",
+        "kind": "progress",
+        "text": "완성도 60% · 커밋 +35"
       }
     ],
     "three-kingdoms-deckbuilder": [
@@ -561,6 +677,17 @@
         "kind": "commit",
         "text": "Apply design handoff combat layout",
         "sha": "0abca51"
+      },
+      {
+        "date": "2026-06-06T10:10:37Z",
+        "kind": "commit",
+        "text": "Apply opening order UI polish",
+        "sha": "cda900d"
+      },
+      {
+        "date": "2026-06-10",
+        "kind": "progress",
+        "text": "완성도 55% · 커밋 +1"
       }
     ],
     "ai-builder-school": [
@@ -690,6 +817,59 @@
         "kind": "commit",
         "text": "docs: P1 체크리스트 — P1-6~8 완료, 남김 갱신(projectStepUsage·conceptDepth·blocker 확대)",
         "sha": "d0cf94f"
+      },
+      {
+        "date": "2026-06-07T02:47:44Z",
+        "kind": "commit",
+        "text": "docs: roadmap을 두 줄기(top-down·v2.0)로 통합 갱신 + P0/P2 push 상태 정정",
+        "sha": "36c3dc1"
+      },
+      {
+        "date": "2026-06-07T07:26:41Z",
+        "kind": "commit",
+        "text": "content(lessons): neededWhen 21개 전수 백필 (12→33) — 막힘 착지 레슨 JIT 헤더 100%",
+        "sha": "a564b31"
+      },
+      {
+        "date": "2026-06-07T09:18:12Z",
+        "kind": "commit",
+        "text": "content(lessons): conceptDepth 9개 백필 (3→12) — concepts.ts 10개 개념 1:1 커버",
+        "sha": "5447116"
+      },
+      {
+        "date": "2026-06-07T09:46:48Z",
+        "kind": "commit",
+        "text": "feat(me): 산출물 포트폴리오 — 프로젝트 완성 기록 + /me '내가 지은 것'",
+        "sha": "b3e5e4e"
+      },
+      {
+        "date": "2026-06-07T11:07:45Z",
+        "kind": "commit",
+        "text": "feat(analytics): Plausible 운영자 학습 분석 (env 게이팅) + 완성 이벤트",
+        "sha": "f133550"
+      },
+      {
+        "date": "2026-06-07T11:36:47Z",
+        "kind": "commit",
+        "text": "feat(playground): 프롬프트 연습장 1차 — Gemini BYO 키 인앱 호출",
+        "sha": "0556eba"
+      },
+      {
+        "date": "2026-06-07T13:46:51Z",
+        "kind": "commit",
+        "text": "content(playground): playgroundPrompt 5개 확대 (1→6)",
+        "sha": "fb326d6"
+      },
+      {
+        "date": "2026-06-07T14:48:53Z",
+        "kind": "commit",
+        "text": "feat(me): 전역 AI 키 설정 — /me에서 한 번 넣으면 모든 연습장 공유",
+        "sha": "ac9a4d1"
+      },
+      {
+        "date": "2026-06-10",
+        "kind": "progress",
+        "text": "완성도 45% · 커밋 +13"
       }
     ],
     "ai-company-tycoon-boundaryless": [
@@ -837,6 +1017,59 @@
         "date": "2026-06-06",
         "kind": "progress",
         "text": "완성도 40%"
+      },
+      {
+        "date": "2026-06-09T07:01:33Z",
+        "kind": "commit",
+        "text": "feat-006 Block A: 경쟁사·시장점유율·전국 랭킹 시스템 (헤드리스)",
+        "sha": "ecf3e44"
+      },
+      {
+        "date": "2026-06-09T07:06:19Z",
+        "kind": "commit",
+        "text": "feat-006 Block B: LED 전국 랭킹 전광판 UI (CD-1)",
+        "sha": "70eb86a"
+      },
+      {
+        "date": "2026-06-09T07:07:26Z",
+        "kind": "commit",
+        "text": "docs: feat-006 전광판 트랙(A+B) progress 갱신",
+        "sha": "7673d51"
+      },
+      {
+        "date": "2026-06-09T08:36:53Z",
+        "kind": "commit",
+        "text": "feat-006 Block C: 코어3 자원 HUD + ＋트레이 + 목표 리본 (CD-2)",
+        "sha": "93f6d4c"
+      },
+      {
+        "date": "2026-06-09T08:41:32Z",
+        "kind": "commit",
+        "text": "feat-006 Block D: 캐릭터·씬 생동감 (직원 통통 모션 + 모달 팝인)",
+        "sha": "08c13a1"
+      },
+      {
+        "date": "2026-06-09T08:42:34Z",
+        "kind": "commit",
+        "text": "docs: feat-006 A~D 완료 반영 (progress + feature_list)",
+        "sha": "15eb305"
+      },
+      {
+        "date": "2026-06-09T09:24:02Z",
+        "kind": "commit",
+        "text": "docs: feat-006 A~D 일단락, Block E 보류 (사용자 지시)",
+        "sha": "d827dc1"
+      },
+      {
+        "date": "2026-06-09T11:30:44Z",
+        "kind": "commit",
+        "text": "feat-006 Block E: 하단 도크 내비 + 다음달 FAB + 탭 팝업 (CD-3, office-first)",
+        "sha": "d3e5eb2"
+      },
+      {
+        "date": "2026-06-10",
+        "kind": "progress",
+        "text": "완성도 40% · 커밋 +33"
       }
     ],
     "story-x-beta": [
@@ -1014,6 +1247,11 @@
         "kind": "commit",
         "text": "docs: 플로팅 에디터 실데이터 배선 진행 상태·인계 동기화",
         "sha": "10c105a"
+      },
+      {
+        "date": "2026-06-10",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "BookCircle": [
@@ -1063,6 +1301,11 @@
       },
       {
         "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-06-10",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -1146,6 +1389,11 @@
         "date": "2026-06-06",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-06-10",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
@@ -1227,6 +1475,11 @@
         "date": "2026-06-06",
         "kind": "progress",
         "text": "완성도 56%"
+      },
+      {
+        "date": "2026-06-10",
+        "kind": "progress",
+        "text": "완성도 56%"
       }
     ],
     "design-system-school": [
@@ -1306,6 +1559,11 @@
       },
       {
         "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-06-10",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -1425,6 +1683,47 @@
         "date": "2026-06-06",
         "kind": "progress",
         "text": "완성도 52% · 커밋 +2"
+      },
+      {
+        "date": "2026-06-06T23:33:52Z",
+        "kind": "commit",
+        "text": "Add June 7 light console briefing",
+        "sha": "673658d"
+      },
+      {
+        "date": "2026-06-07T13:48:58Z",
+        "kind": "commit",
+        "text": "Add June 7 build note",
+        "sha": "12369f3"
+      },
+      {
+        "date": "2026-06-08T01:15:28Z",
+        "kind": "commit",
+        "text": "Add June 8 research briefing",
+        "sha": "59fe37d"
+      },
+      {
+        "date": "2026-06-08T13:48:53Z",
+        "kind": "commit",
+        "text": "Add June 8 build note",
+        "sha": "0548e5c"
+      },
+      {
+        "date": "2026-06-09T13:50:21Z",
+        "kind": "commit",
+        "text": "Add June 9 build note",
+        "sha": "aaa38a1"
+      },
+      {
+        "date": "2026-06-10",
+        "kind": "progress",
+        "text": "완성도 52% · 커밋 +6"
+      },
+      {
+        "date": "2026-06-10T02:40:01Z",
+        "kind": "commit",
+        "text": "Add June 10 Hatchi console briefing",
+        "sha": "9379336"
       }
     ],
     "Timeer": [
@@ -1462,6 +1761,11 @@
       },
       {
         "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 7%"
+      },
+      {
+        "date": "2026-06-10",
         "kind": "progress",
         "text": "완성도 7%"
       }
@@ -1593,6 +1897,23 @@
         "kind": "commit",
         "text": "docs: add 2026-06-06 handoff and Phase 10 backlog",
         "sha": "6c8b1e9"
+      },
+      {
+        "date": "2026-06-07T06:16:26Z",
+        "kind": "commit",
+        "text": "fix(reading-room): create private co-reading club without RETURNING",
+        "sha": "e3131bc"
+      },
+      {
+        "date": "2026-06-07T09:23:26Z",
+        "kind": "commit",
+        "text": "docs: add Claude Design brief and session wrap-up (hotfixes + next steps)",
+        "sha": "cd0b8c5"
+      },
+      {
+        "date": "2026-06-10",
+        "kind": "progress",
+        "text": "완성도 19% · 커밋 +2"
       }
     ],
     "honbul": [
@@ -1860,6 +2181,53 @@
         "date": "2026-06-06",
         "kind": "progress",
         "text": "완성도 19% · 커밋 +5"
+      },
+      {
+        "date": "2026-06-06T00:46:20Z",
+        "kind": "commit",
+        "text": "전투 화면에 명부 아트 패스 1차를 입힌다",
+        "sha": "a1a6e48"
+      },
+      {
+        "date": "2026-06-06T03:49:51Z",
+        "kind": "commit",
+        "text": "전투 손맛을 살리고 메뉴·맵을 명부 아트로 입힌다",
+        "sha": "18fe103"
+      },
+      {
+        "date": "2026-06-06T05:31:18Z",
+        "kind": "commit",
+        "text": "마을 허브와 보스·손맛으로 게임을 한 판답게 만든다",
+        "sha": "761100c"
+      },
+      {
+        "date": "2026-06-06T05:52:44Z",
+        "kind": "commit",
+        "text": "보스가 사라지지 않고 처치되어 승리가 뜨게 한다",
+        "sha": "1981692"
+      },
+      {
+        "date": "2026-06-06T09:20:14Z",
+        "kind": "commit",
+        "text": "런처를 옮겨 구석에서도 발사하게 한다",
+        "sha": "ff44dd9"
+      },
+      {
+        "date": "2026-06-06T15:16:28Z",
+        "kind": "commit",
+        "text": "드래그로 각도를 조준해 쏘게 한다",
+        "sha": "854fc5e"
+      },
+      {
+        "date": "2026-06-06T16:14:53Z",
+        "kind": "commit",
+        "text": "W10~W13 진행을 핸드오프·결정·체크리스트에 기록한다",
+        "sha": "f4565f9"
+      },
+      {
+        "date": "2026-06-10",
+        "kind": "progress",
+        "text": "완성도 19% · 커밋 +7"
       }
     ]
   }
