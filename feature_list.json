@@ -228,6 +228,26 @@
         "init·validate·check-report-pages·브라우저 콘솔 0 통과"
       ],
       "openQuestions": []
+    },
+    {
+      "id": "v2.10-usage-auto-collect",
+      "name": "v2.10 AI 사용량 자동 수집 (/usage-refresh)",
+      "status": "done",
+      "description": "kimbyungsu/codex-usage-monitor(MIT)의 수집 방식을 이식해 Claude(OAuth usage 엔드포인트)·Codex(codex app-server JSON-RPC)의 한도 사용률 %·리셋 시각을 scripts/refresh-usage.mjs로 자동 수집한다. usage.json에는 한도 %·리셋·플랜만 기록(토큰·비용 상세 비공개)하고 FALLBACK_USAGE를 자동 동기화한다. 대시보드 사용량 카드는 auto 데이터가 있으면 윈도우별(5시간/주간) 미니 게이지 + 수집 시각 + 신선도 경고를 렌더하고 수동 % 입력을 숨긴다. 실패 시 기존 수동 입력 폴백 유지.",
+      "dependencies": [
+        "v2.9-monthly-github-analysis"
+      ],
+      "doneCriteria": [
+        "scripts/refresh-usage.mjs가 Claude 5시간/주간(+Opus/Sonnet) 윈도우와 Codex primary/secondary 윈도우의 %·리셋을 수집해 usage.json과 FALLBACK_USAGE를 갱신",
+        "--dry-run·--mock·--claude-only·--codex-only 플래그 동작, 전부 실패 시 usage.json 미변경 + exit 1",
+        ".claude/commands/usage-refresh.md 슬래시 커맨드 신설, CLAUDE.md 반영",
+        "대시보드 사용량 카드가 auto 윈도우 게이지·수집 시각·26시간 초과 신선도 경고를 렌더, 수동 입력 폴백 유지",
+        "init.sh·JSON 파싱·mock 파이프라인·콘솔 에러 0 통과"
+      ],
+      "openQuestions": [
+        "Claude usage 엔드포인트는 비공식 — 형식 변경 시 폴백 동작 점검 필요",
+        "/schedule 루틴에 /usage-refresh를 편입할지 (현재는 수동 실행)"
+      ]
     }
   ]
 }

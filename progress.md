@@ -2,11 +2,11 @@
 
 다음 세션이 이 한 페이지만 보고도 현재 상태와 검증 증거를 이어받을 수 있도록 유지한다. 상세 백로그는 `feature_list.json`.
 
-**Last Updated**: 2026-06-06 (v2.9 최근 30일 GitHub 관찰 분석 사이트)
+**Last Updated**: 2026-06-10 (v2.10 AI 사용량 자동 수집 /usage-refresh)
 
 ## Current Objective — None
 
-오늘 작업 완료 상태다. `meta.asOf`는 2026-06-06이고, 전체 16개 프로젝트 중 활성 12개·일시중단 4개, 총 커밋 1660개, 뉴스 15건, history 15스냅샷이다. `monthly-analysis.html`은 2026-05-08부터 2026-06-06까지 최근 30일 커밋 1654건을 관찰해 레포별 활동·공백·테마를 보여준다. `project-pages/`에는 16개 프로젝트별 제작 현황 페이지와 index가 생성되어 있다.
+오늘 작업 완료 상태다. `meta.asOf`는 2026-06-10이고, 전체 16개 프로젝트 중 활성 12개·일시중단 4개, 총 커밋 1791개, 뉴스 18건, history 16스냅샷이다. `monthly-analysis.html`은 2026-05-08부터 2026-06-06까지 최근 30일 커밋 1654건을 관찰해 레포별 활동·공백·테마를 보여준다. `project-pages/`에는 16개 프로젝트별 제작 현황 페이지와 index가 생성되어 있다.
 
 ## Recommended Next Step
 
@@ -14,6 +14,7 @@
 
 ## 직전에 푼 것
 
+- **v2.10 AI 사용량 자동 수집 (/usage-refresh)** — kimbyungsu/codex-usage-monitor(MIT)의 수집 방식을 이식해 `scripts/refresh-usage.mjs`를 추가했다. Claude는 공식 `/usage`와 동일한 OAuth usage 엔드포인트(파일 자격증명 + macOS Keychain 폴백, 토큰 만료 시 자동 갱신·재저장), Codex는 로컬 `codex app-server --stdio` JSON-RPC(`account/rateLimits/read`)로 한도 사용률 %·리셋 시각을 수집한다. usage.json에는 한도 %·리셋·플랜만 기록하고 토큰·비용 상세는 수집하지 않는다(Pages 공개 저장소 정책). 대시보드 사용량 카드는 `auto` 데이터가 있으면 윈도우별(5시간/주간/모델별) 미니 게이지·수집 시각·26시간 초과 신선도 경고를 렌더하고 수동 % 입력을 숨긴다. 실측 적용 결과: Claude Max 주간 49%(5시간 19%, Sonnet 4%), Codex Pro 주간 78%(5시간 2%) — 기존 수동값 "ChatGPT Plus"가 실측 "Pro"로 교정됐다. `.claude/commands/usage-refresh.md` 커맨드와 `scripts/fixtures/usage-mock.json`(오프라인 테스트 fixture)도 추가.
 - **v2.9 최근 30일 GitHub 관찰 분석 사이트** — `scripts/build-monthly-analysis.mjs`를 추가해 추적 레포 전체의 최근 30일 커밋을 GitHub API로 수집하고 `monthly-analysis.json`과 `monthly-analysis.html`의 `FALLBACK_ANALYSIS`를 동기화했다. 페이지는 상단 증거 카드, 30일 활동 리듬 차트, 운영 진단, 레포별 관찰 기록, 테마·도구 분포, 다음 30일 처방을 보여준다. `refresh-progress.mjs`가 refresh 후 월간 분석까지 재생성하도록 연결했고, 대시보드와 프로젝트 페이지 생성 템플릿에 `30일 분석` 링크를 추가했다.
 - **2026-06-06 refresh** — GitHub 활동 refresh로 `three-kingdoms-deckbuilder` 183→186커밋, `ai-builder-school` 100→120커밋, `story-x-beta` 178→190커밋, `cmds-daily-briefing` 36→38커밋, `chaekdam` 15→28커밋, `honbul` 118→123커밋, 총 커밋 1660개, `meta.asOf` 2026-06-06, history 15스냅샷, news 15건으로 갱신했다. 완성도 점수는 자동 변경하지 않았다.
 - **v2.8 프로젝트별 제작 현황 페이지와 세션 프롬프트** — `scripts/build-project-pages.mjs`를 추가해 `projects.json`·`reports.json`·`suggestions.json`·`project-logs.json`에서 `project-pages/index.html`과 16개 프로젝트별 정적 원페이지를 생성했다. 각 페이지는 kami 스타일로 현재 판단, 완성도, 다음 액션, 리스크·코칭, 항상 최신화할 문서, 세션 시작 프롬프트, 최근 근거를 보여준다. `refresh-progress.mjs`가 refresh 후 페이지를 재생성하도록 연결했고, 대시보드 카드와 뉴스 피드의 프로젝트 링크를 새 페이지로 보냈다. `docs/project-session-prompts.md`에는 프로젝트 세션마다 갱신할 문서와 공통 프롬프트를 정리했다.
@@ -32,14 +33,17 @@
 
 | 항목 | 상태 | 마지막 확인 |
 | --- | --- | --- |
-| 시작 점검 | 통과 | 2026-06-06 `bash init.sh` |
-| 데이터 refresh | 통과 | 2026-06-06 local refresh, 총 커밋 1660·뉴스 15건 |
+| 시작 점검 | 통과 | 2026-06-10 `bash init.sh` |
+| 사용량 자동 수집 | 통과 | 2026-06-10 `node scripts/refresh-usage.mjs` 실기기 실행 — Claude(keychain 토큰 갱신 포함)·Codex 모두 수집, 전부 실패 시 usage.json 미변경+exit 1 확인 |
+| 사용량 mock 파이프라인 | 통과 | `node scripts/refresh-usage.mjs --mock scripts/fixtures/usage-mock.json --dry-run` |
+| 사용량 탭 자동 카드 | 통과 | 2026-06-10 Playwright Chromium — usageGrid에 자동 수집 카드 2개 렌더, 4탭+report+project-report+project-pages 콘솔 에러 0 |
+| 데이터 refresh | 통과 | 2026-06-10 local refresh, 총 커밋 1791·뉴스 18건·history 16스냅샷, monthly-analysis 1782커밋 재생성 |
 | 월간 분석 생성 | 통과 | `GH_TOKEN="$(gh auth token)" node scripts/build-monthly-analysis.mjs`, 2026-05-08..2026-06-06, 커밋 1654건 |
 | JSON·스크립트 검증 | 통과 | `node scripts/validate.mjs` |
 | 보고서 fallback·file smoke | 통과 | `node scripts/check-report-pages.mjs`, monthly-analysis·project-pages 존재 검증 포함 |
 | dashboard FALLBACK | 통과 | `FALLBACK_PROJECTS`·`FALLBACK_SUGGESTIONS`·`FALLBACK_USAGE` verbatim 일치 |
 | monthly-analysis FALLBACK | 통과 | `FALLBACK_ANALYSIS`와 `monthly-analysis.json` verbatim 일치 |
-| 브라우저 콘솔 | 0 | Playwright Chromium, dashboard 4탭 + monthly-analysis.html + report.html + project-report.html?repo=habit + project-pages/honbul.html |
+| 브라우저 콘솔 | 0 | 2026-06-10 Playwright Chromium, dashboard 4탭(사용량 자동 카드 2개) + report.html + project-report.html?repo=habit + project-pages/honbul.html |
 | 브라우저 HTTP 오류 | 0 | Chromium, 로컬 4xx/5xx 0 |
 | 반응형 화면 | 확인 | monthly-analysis.html 데스크톱 1440px·모바일 390px 스크린샷 확인 |
 
@@ -58,6 +62,7 @@
 - `docs/project-session-prompts.md` — 각 프로젝트 세션 최신화 프롬프트.
 - `projects.json` — 추적 프로젝트 SOT. `agents` 제거 완료.
 - `scripts/refresh-progress.mjs` — 활동 refresh. 완성도 점수 자동 변경 금지.
+- `scripts/refresh-usage.mjs` — Claude·Codex 한도 %·리셋 자동 수집 + FALLBACK_USAGE 동기화 (/usage-refresh).
 - `scripts/report-gen.mjs` — 새 이벤트는 “완성도” 표현 사용.
 - `feature_list.json`·`progress.md` — 이 워크스페이스 자체 백로그·상태.
 

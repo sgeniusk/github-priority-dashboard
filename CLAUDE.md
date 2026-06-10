@@ -50,6 +50,7 @@ github-priority-dashboard/
 ├── projects/{repo}/     # 프로젝트별 표준 문서 — project.json·prd.md·roadmap.md·log.md
 ├── scripts/
 │   ├── refresh-progress.mjs   # GitHub 활동 수집 스크립트 (Node 20 내장 fetch)
+│   ├── refresh-usage.mjs      # Claude·Codex 한도 %·리셋 자동 수집 (/usage-refresh)
 │   └── build-project-pages.mjs # 프로젝트별 원페이지 생성기
 ├── .claude/commands/    # 프로젝트 슬래시 커맨드 (refresh, coach, new-project)
 ├── .github/workflows/
@@ -76,6 +77,7 @@ github-priority-dashboard/
 ### 슬래시 커맨드
 
 - **`/refresh`** — GitHub 활동을 가져와 `projects.json`을 갱신하고, `dashboard.html`의 FALLBACK을 동기화한 뒤 뉴스·프로젝트 로그·project-pages를 재생성한다.
+- **`/usage-refresh`** — 로컬 Claude Code·Codex CLI 자격증명으로 한도 사용률 %·리셋 시각을 자동 수집해 `usage.json`과 `FALLBACK_USAGE`를 갱신한다 (`scripts/refresh-usage.mjs`). 한도 %·리셋만 커밋하고 토큰·비용 상세는 수집하지 않는다.
 - **`/coach`** — 각 프로젝트의 막힌 단계·속도·정체를 분석해 `suggestions.json`에 제안을 기록한다. 인자로 프로젝트 이름을 주면 해당 프로젝트만 분석.
 - **`/weekly-report`** — `projects.json`을 읽어 주간 진척 요약(하이라이트·Sprint 현황·주의 신호·다음 주 우선)을 마크다운으로 산출한다.
 - **`/new-project`** — 새 게임/앱/웹 아이디어를 대화로 구상하고, 결정되면 하네스 엔지니어링을 고려한 첫 프롬프트를 작성한다.
@@ -132,6 +134,7 @@ github-priority-dashboard/
 ## 자주 쓰는 작업
 
 - **완성도·활동 갱신** — `/refresh` (또는 `node scripts/refresh-progress.mjs`)
+- **AI 사용량 갱신** — `/usage-refresh` (또는 `node scripts/refresh-usage.mjs`; `--dry-run` 미리보기, `--mock <fixture>`로 오프라인 테스트)
 - **정체 점검·코칭** — `/coach`
 - **주간 진척 요약** — `/weekly-report`
 - **새 프로젝트 시작** — `/new-project`
@@ -143,6 +146,7 @@ github-priority-dashboard/
 
 - `bash init.sh` — JSON 무결성·핵심 파일·GitHub 토큰·`meta.asOf` 한 번에 점검 (verify 진입점)
 - `node scripts/refresh-progress.mjs --dry-run` — projects.json·history.json·activity.json 변경 미리보기, 저장 안 함
+- `node scripts/refresh-usage.mjs --dry-run` — Claude·Codex 사용량 수집 미리보기 (`--mock <fixture>`로 자격증명 없이 파이프라인 검증)
 - `node scripts/build-project-pages.mjs` — 프로젝트별 제작 현황 페이지 재생성
 - `node scripts/check-report-pages.mjs` — report/project-report/project-pages 렌더·fallback smoke
 - `node -e "JSON.parse(require('fs').readFileSync('projects.json','utf8'))"` — 단일 JSON 파일 파싱 검증 (각 JSON에 대해 반복; init.sh가 일괄 수행)
