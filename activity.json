@@ -1,7 +1,61 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-06-09",
+  "asOf": "2026-06-10",
   "commits": [
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "aaa38a1",
+      "message": "Add June 9 build note",
+      "date": "2026-06-09T13:50:21Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "d3e5eb2",
+      "message": "feat-006 Block E: 하단 도크 내비 + 다음달 FAB + 탭 팝업 (CD-3, office-first)",
+      "date": "2026-06-09T11:30:44Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "d827dc1",
+      "message": "docs: feat-006 A~D 일단락, Block E 보류 (사용자 지시)",
+      "date": "2026-06-09T09:24:02Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "15eb305",
+      "message": "docs: feat-006 A~D 완료 반영 (progress + feature_list)",
+      "date": "2026-06-09T08:42:34Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "08c13a1",
+      "message": "feat-006 Block D: 캐릭터·씬 생동감 (직원 통통 모션 + 모달 팝인)",
+      "date": "2026-06-09T08:41:32Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "93f6d4c",
+      "message": "feat-006 Block C: 코어3 자원 HUD + ＋트레이 + 목표 리본 (CD-2)",
+      "date": "2026-06-09T08:36:53Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "7673d51",
+      "message": "docs: feat-006 전광판 트랙(A+B) progress 갱신",
+      "date": "2026-06-09T07:07:26Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "70eb86a",
+      "message": "feat-006 Block B: LED 전국 랭킹 전광판 UI (CD-1)",
+      "date": "2026-06-09T07:06:19Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "ecf3e44",
+      "message": "feat-006 Block A: 경쟁사·시장점유율·전국 랭킹 시스템 (헤드리스)",
+      "date": "2026-06-09T07:01:33Z"
+    },
     {
       "repo": "cmds-daily-briefing",
       "sha": "0548e5c",
@@ -13,6 +67,12 @@
       "sha": "59fe37d",
       "message": "Add June 8 research briefing",
       "date": "2026-06-08T01:15:28Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "ac9a4d1",
+      "message": "feat(me): 전역 AI 키 설정 — /me에서 한 번 넣으면 모든 연습장 공유",
+      "date": "2026-06-07T14:48:53Z"
     },
     {
       "repo": "cmds-daily-briefing",
@@ -27,40 +87,16 @@
       "date": "2026-06-07T13:46:51Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "d3356a2",
-      "message": "docs: prepare handoff for next session (feat-004 visuals next)",
-      "date": "2026-06-07T13:46:08Z"
-    },
-    {
       "repo": "ai-builder-school",
       "sha": "0556eba",
       "message": "feat(playground): 프롬프트 연습장 1차 — Gemini BYO 키 인앱 호출",
       "date": "2026-06-07T11:36:47Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "25ce9f7",
-      "message": "docs: refresh Unity session handoff to current state",
-      "date": "2026-06-07T11:30:00Z"
-    },
-    {
       "repo": "ai-builder-school",
       "sha": "f133550",
       "message": "feat(analytics): Plausible 운영자 학습 분석 (env 게이팅) + 완성 이벤트",
       "date": "2026-06-07T11:07:45Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "8833992",
-      "message": "feat-004 (motion): resource count-up + button punch (code tweens)",
-      "date": "2026-06-07T10:47:40Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "f78fcc4",
-      "message": "feat-004 (sound): procedural SFX synth + AudioManager",
-      "date": "2026-06-07T09:48:17Z"
     },
     {
       "repo": "ai-builder-school",
@@ -81,18 +117,6 @@
       "date": "2026-06-07T09:18:12Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "01694f7",
-      "message": "feat-003 closeout: PlayMode smoke tests + state",
-      "date": "2026-06-07T08:52:52Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "e29a765",
-      "message": "feat-003: Vertical Slice mobile UI + save/load",
-      "date": "2026-06-07T08:49:35Z"
-    },
-    {
       "repo": "ai-builder-school",
       "sha": "a564b31",
       "message": "content(lessons): neededWhen 21개 전수 백필 (12→33) — 막힘 착지 레슨 JIT 헤더 100%",
@@ -105,12 +129,6 @@
       "date": "2026-06-07T06:16:26Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "58ba96b",
-      "message": "Bootstrap Unity 6 port: project, data pipeline, core simulation",
-      "date": "2026-06-07T03:51:23Z"
-    },
-    {
       "repo": "ai-builder-school",
       "sha": "36c3dc1",
       "message": "docs: roadmap을 두 줄기(top-down·v2.0)로 통합 갱신 + P0/P2 push 상태 정정",
@@ -121,12 +139,6 @@
       "sha": "673658d",
       "message": "Add June 7 light console briefing",
       "date": "2026-06-06T23:33:52Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "df5e72b",
-      "message": "docs(p2): P2 실행 완료 마킹 (Task 1~4 커밋·게이트 그린)",
-      "date": "2026-06-06T17:05:14Z"
     },
     {
       "repo": "honbul",
@@ -265,12 +277,6 @@
       "sha": "6fcbabf",
       "message": "chore(cache): bump version key to 1.00.45-adventure-pixi-field",
       "date": "2026-06-06T03:34:30Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "e12fb0a",
-      "message": "Add the P2 oracle backbone; point active dev to the Godot repo",
-      "date": "2026-06-06T03:11:44Z"
     },
     {
       "repo": "chaekdam",
@@ -415,12 +421,6 @@
       "sha": "f801093",
       "message": "art: add commander portrait placeholders",
       "date": "2026-06-04T12:45:25Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "645e6a2",
-      "message": "Add June 4 daily console briefing",
-      "date": "2026-06-03T23:34:22Z"
     },
     {
       "repo": "three-kingdoms-deckbuilder",
