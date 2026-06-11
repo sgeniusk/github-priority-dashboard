@@ -1,12 +1,204 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-06-10",
+  "asOf": "2026-06-11",
   "commits": [
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "e8a2682",
+      "message": "Add June 11 Hatchi console briefing",
+      "date": "2026-06-10T23:32:59Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "896e497",
+      "message": "feat(unity): tower identity — archetype kits, splash/slow/burn, distinct looks (M12.6/M12.7)",
+      "date": "2026-06-10T16:32:30Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "7aef360",
+      "message": "refactor(unity): M12.5 재생 코드 제거 + QA 후속(텍스처 해제·타깃팅 쿨다운) — 씬 재빌드",
+      "date": "2026-06-10T15:36:42Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "a482750",
+      "message": "docs(harness): 멀티 CLI 3레인(Claude/Codex/agy) 하네스 + 활성 트랙 포인터 + QA 리포트",
+      "date": "2026-06-10T15:29:03Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "b77ac3e",
+      "message": "feat(unity): defense feel — free placement, combat juice, realtime→meta reconcile (M12.3b/M12.4a/M12.4)",
+      "date": "2026-06-10T15:29:03Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "4b9975b",
+      "message": "docs: 마이그레이션 0015~0017 운영 적용·배포 완료 현행화",
+      "date": "2026-06-10T15:20:25Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "d562b6c",
+      "message": "feat(deck): 공개 청중 참여 — 익명 의견 등록(definer RPC)·발표자 승인 수신함·재발행 허용 (0017)",
+      "date": "2026-06-10T14:58:56Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "1065c9d",
+      "message": "docs: 다음 세션 할일 정리 + 이번 세션 수정파일 갱신",
+      "date": "2026-06-10T14:49:31Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "bf78a80",
+      "message": "아트: 오피스 가구 밴드 하향 — 직원과 워크스페이스로 묶기",
+      "date": "2026-06-10T14:43:07Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "e7913c3",
+      "message": "docs: progress 갱신 — 표시명 재시드 검증 완료 + v054 오피스 임포트 반영",
+      "date": "2026-06-10T14:39:52Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "77a5f10",
+      "message": "검증·정본반영: 업그레이드/자동화 표시명·설명 한글 재시드",
+      "date": "2026-06-10T14:38:15Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "610e1d2",
+      "message": "Add June 10 build note",
+      "date": "2026-06-10T13:48:36Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "5dc7e76",
+      "message": "docs: 스펙 B1에 재발행 허용 설계 변경 추가 (published immutable 트리거 제거 근거)",
+      "date": "2026-06-10T10:51:44Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "c60d445",
+      "message": "feat(deck): 카미 슬라이드 캔버스 + kind별 레이아웃 변주 + 발행 버튼 전면화",
+      "date": "2026-06-10T10:48:50Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "7b763ca",
+      "message": "docs(handoff): 회차 진도 인터뷰 아이디어 등재 — 갈림길 카드의 대화형 2단계 후보",
+      "date": "2026-06-10T10:41:26Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "35ca765",
+      "message": "docs: 발표 카미 개편 + 공개 참여 스펙",
+      "date": "2026-06-10T10:40:56Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "b78a456",
+      "message": "voice: 보이스 정의서 + diff-only 편집 룰 — AI 문체 회귀 차단 1차",
+      "date": "2026-06-10T07:11:04Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "363570c",
+      "message": "docs: 세션 핸드오프 (콘텐츠 깊이·포트폴리오·연습장 8트랙) + .playwright-mcp ignore",
+      "date": "2026-06-10T06:39:29Z"
+    },
     {
       "repo": "cmds-daily-briefing",
       "sha": "9379336",
       "message": "Add June 10 Hatchi console briefing",
       "date": "2026-06-10T02:40:01Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "a76d7a2",
+      "message": "docs(code): payoffStatus 불변식 주석 — computePayoffLedger 산출만 허용 (최종 검토 MEDIUM 반영)",
+      "date": "2026-06-10T02:26:47Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "69409d9",
+      "message": "docs: 작가 결정 갈림길 + 생성 측 회수 의무 완료 — progress·handoff·캡처",
+      "date": "2026-06-10T02:23:06Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "4d2d088",
+      "message": "feat(deck): 시대예보 덱 발표 호흡으로 재작성 + --from speakerNotes 지원",
+      "date": "2026-06-10T02:19:51Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "5e1f1e3",
+      "message": "fix(briefing): openThreads 갈림길 옵션 중복 제거 (React key 충돌 예방)",
+      "date": "2026-06-09T21:38:08Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "608db57",
+      "message": "feat(editor): 갈림길 카드 — 작가 결정이 의도 메모로 합쳐지는 fc-forks UI",
+      "date": "2026-06-09T21:28:46Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "0f243b2",
+      "message": "fix(draft): vite 브리지 --payoff-status 전달 + draftClient 테스트 fetch 스텁 복원",
+      "date": "2026-06-09T21:25:28Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "b6d9c89",
+      "message": "docs: 2026-06-10 session handoff (StoryX 전략 + discover v1)",
+      "date": "2026-06-09T21:22:57Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "7e4c461",
+      "message": "docs: discover v1 완료 반영 (0016 포함)",
+      "date": "2026-06-09T21:22:13Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "caecedf",
+      "message": "feat(draft): payoffStatus 배선 — StoryXDesk→draftClient→api/draft→프롬프트 + storyx.mjs 미러",
+      "date": "2026-06-09T21:20:03Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "dcb3632",
+      "message": "feat(draft): 정체 시 생성 프롬프트에 회수 의무 주입 (payoffStatus → buildDraftPrompt)",
+      "date": "2026-06-09T21:13:43Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "a276e93",
+      "message": "docs(unity): session handoff — real-time TD through M12.3, next-session todos",
+      "date": "2026-06-09T20:48:04Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "714d215",
+      "message": "docs: 아트 체크리스트 v054 임포트·배치 완료 반영",
+      "date": "2026-06-09T14:11:42Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "993c470",
+      "message": "아트: v054 오피스 오브젝트 Unity 임포트 + 오피스 가구 배치",
+      "date": "2026-06-09T14:09:58Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "4da7956",
+      "message": "feat(unity): real-time tower combat — range targeting, projectiles, damage (M12.3)",
+      "date": "2026-06-09T13:58:56Z"
     },
     {
       "repo": "cmds-daily-briefing",
@@ -16,51 +208,27 @@
     },
     {
       "repo": "ai-company-tycoon-boundaryless",
-      "sha": "d3e5eb2",
-      "message": "feat-006 Block E: 하단 도크 내비 + 다음달 FAB + 탭 팝업 (CD-3, office-first)",
-      "date": "2026-06-09T11:30:44Z"
+      "sha": "08a72d2",
+      "message": "아트: v091 핸드오프 v054 칸 이름 21종 확정 + 그리드 레퍼런스",
+      "date": "2026-06-09T12:37:54Z"
     },
     {
       "repo": "ai-company-tycoon-boundaryless",
-      "sha": "d827dc1",
-      "message": "docs: feat-006 A~D 일단락, Block E 보류 (사용자 지시)",
-      "date": "2026-06-09T09:24:02Z"
+      "sha": "45b5aa6",
+      "message": "검증·정본반영: 업그레이드 요구조건 한글화 (FormatThreshold)",
+      "date": "2026-06-09T12:34:57Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "15eb305",
-      "message": "docs: feat-006 A~D 완료 반영 (progress + feature_list)",
-      "date": "2026-06-09T08:42:34Z"
+      "repo": "sam-defender-logue",
+      "sha": "2cbbd6a",
+      "message": "feat(unity): real-time enemy movement on the path (M12.2)",
+      "date": "2026-06-09T12:22:12Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "08c13a1",
-      "message": "feat-006 Block D: 캐릭터·씬 생동감 (직원 통통 모션 + 모달 팝인)",
-      "date": "2026-06-09T08:41:32Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "93f6d4c",
-      "message": "feat-006 Block C: 코어3 자원 HUD + ＋트레이 + 목표 리본 (CD-2)",
-      "date": "2026-06-09T08:36:53Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "7673d51",
-      "message": "docs: feat-006 전광판 트랙(A+B) progress 갱신",
-      "date": "2026-06-09T07:07:26Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "70eb86a",
-      "message": "feat-006 Block B: LED 전국 랭킹 전광판 UI (CD-1)",
-      "date": "2026-06-09T07:06:19Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "ecf3e44",
-      "message": "feat-006 Block A: 경쟁사·시장점유율·전국 랭킹 시스템 (헤드리스)",
-      "date": "2026-06-09T07:01:33Z"
+      "repo": "sam-defender-logue",
+      "sha": "c0c1268",
+      "message": "feat(unity): pivot to real-time spatial combat — design + WavePlan (M12.1)",
+      "date": "2026-06-09T06:58:51Z"
     },
     {
       "repo": "cmds-daily-briefing",
@@ -111,34 +279,10 @@
       "date": "2026-06-07T09:46:48Z"
     },
     {
-      "repo": "chaekdam",
-      "sha": "cd0b8c5",
-      "message": "docs: add Claude Design brief and session wrap-up (hotfixes + next steps)",
-      "date": "2026-06-07T09:23:26Z"
-    },
-    {
       "repo": "ai-builder-school",
       "sha": "5447116",
       "message": "content(lessons): conceptDepth 9개 백필 (3→12) — concepts.ts 10개 개념 1:1 커버",
       "date": "2026-06-07T09:18:12Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "a564b31",
-      "message": "content(lessons): neededWhen 21개 전수 백필 (12→33) — 막힘 착지 레슨 JIT 헤더 100%",
-      "date": "2026-06-07T07:26:41Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "e3131bc",
-      "message": "fix(reading-room): create private co-reading club without RETURNING",
-      "date": "2026-06-07T06:16:26Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "36c3dc1",
-      "message": "docs: roadmap을 두 줄기(top-down·v2.0)로 통합 갱신 + P0/P2 push 상태 정정",
-      "date": "2026-06-07T02:47:44Z"
     },
     {
       "repo": "cmds-daily-briefing",
@@ -159,46 +303,10 @@
       "date": "2026-06-06T16:05:52Z"
     },
     {
-      "repo": "sam-defender-logue",
-      "sha": "6eee6ad",
-      "message": "docs(godot): record town(village) implementation plan for next session",
-      "date": "2026-06-06T16:04:24Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "639ed94",
-      "message": "feat(godot): add manual camera zoom and pan controls",
-      "date": "2026-06-06T15:20:43Z"
-    },
-    {
       "repo": "honbul",
       "sha": "854fc5e",
       "message": "드래그로 각도를 조준해 쏘게 한다",
       "date": "2026-06-06T15:16:28Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "280494c",
-      "message": "feat(godot): diversify enemies into infantry, cavalry, siege, boss",
-      "date": "2026-06-06T15:02:48Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "7ef67c6",
-      "message": "feat(godot): quadruple the map to radius 12 with a fixed full-map camera",
-      "date": "2026-06-06T14:47:15Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "d6152dc",
-      "message": "feat(godot): pick branch direction by key or click during play",
-      "date": "2026-06-06T13:00:06Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "6875c9e",
-      "message": "feat(godot): veil the map in fog of war that lifts as roads expand",
-      "date": "2026-06-06T12:30:38Z"
     },
     {
       "repo": "three-kingdoms-deckbuilder",
@@ -217,12 +325,6 @@
       "sha": "a8cc17a",
       "message": "docs(renderer): record v1.00.46 combat effects verification + register feature",
       "date": "2026-06-06T09:15:50Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "da61890",
-      "message": "feat(godot): branch-choose flat roads on a fixed map, towers on highlands",
-      "date": "2026-06-06T08:36:27Z"
     },
     {
       "repo": "samguk-idle-prototype",
@@ -247,12 +349,6 @@
       "sha": "761100c",
       "message": "마을 허브와 보스·손맛으로 게임을 한 판답게 만든다",
       "date": "2026-06-06T05:31:18Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "830000a",
-      "message": "feat(godot): grow the map outward on each wave clear",
-      "date": "2026-06-06T05:08:21Z"
     },
     {
       "repo": "samguk-idle-prototype",
@@ -285,52 +381,10 @@
       "date": "2026-06-06T03:34:30Z"
     },
     {
-      "repo": "chaekdam",
-      "sha": "6c8b1e9",
-      "message": "docs: add 2026-06-06 handoff and Phase 10 backlog",
-      "date": "2026-06-06T01:35:07Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "16c68d9",
-      "message": "docs: record Phase 9 redesign + presentation pipeline decisions",
-      "date": "2026-06-06T01:30:22Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "6a51a51",
-      "message": "feat(presentation): solo prep→present flow with separated speaker notes",
-      "date": "2026-06-06T01:30:15Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "ef11869",
-      "message": "feat(design): apply Stripe-inspired design system across the app",
-      "date": "2026-06-06T01:29:59Z"
-    },
-    {
       "repo": "honbul",
       "sha": "a1a6e48",
       "message": "전투 화면에 명부 아트 패스 1차를 입힌다",
       "date": "2026-06-06T00:46:20Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "10c105a",
-      "message": "docs: 플로팅 에디터 실데이터 배선 진행 상태·인계 동기화",
-      "date": "2026-06-06T00:21:38Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "f4c506c",
-      "message": "docs(editor): 플로팅 실데이터 배선 검증 캡처 + 계획 체크리스트 갱신",
-      "date": "2026-06-06T00:19:08Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "00b5404",
-      "message": "feat(editor): StoryXDesk 가 floating 프리뷰에 실 상태·검토·페르소나 props 주입",
-      "date": "2026-06-06T00:14:09Z"
     },
     {
       "repo": "three-kingdoms-deckbuilder",
@@ -339,58 +393,10 @@
       "date": "2026-06-06T00:13:03Z"
     },
     {
-      "repo": "story-x-beta",
-      "sha": "a803785",
-      "message": "feat(editor): FloatingEditor props-driven 리팩터 + App standalone 제거",
-      "date": "2026-06-06T00:11:03Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "fc7d5c4",
-      "message": "test(editor): FloatingEditor 실데이터 배선 RED — props·콜백·시안제거 단언",
-      "date": "2026-06-06T00:07:08Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "929fdf6",
-      "message": "docs(plan): 방향 C 플로팅 에디터 실데이터 배선 구현 계획",
-      "date": "2026-06-06T00:01:46Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "01e421a",
-      "message": "docs(spec): 방향 C 플로팅 에디터 실데이터 배선 설계",
-      "date": "2026-06-05T23:54:34Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "c73c9ea",
-      "message": "Add June 6 light console briefing",
-      "date": "2026-06-05T23:37:23Z"
-    },
-    {
       "repo": "three-kingdoms-deckbuilder",
       "sha": "d898a78",
       "message": "chore: refresh verified deployment author",
       "date": "2026-06-05T17:40:52Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "d9b5a1f",
-      "message": "docs: 방향 C 플로팅 에디터 시안 체크포인트 진행 상태·인계 동기화",
-      "date": "2026-06-05T15:01:02Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "ff6edc5",
-      "message": "Add June 5 build note",
-      "date": "2026-06-05T13:49:12Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "9d283a7",
-      "message": "Add presentation collection and slide preview flows",
-      "date": "2026-06-05T12:34:37Z"
     },
     {
       "repo": "three-kingdoms-deckbuilder",
@@ -403,12 +409,6 @@
       "sha": "ab00ccf",
       "message": "Claude Design 외주 브리프를 준비한다",
       "date": "2026-06-05T03:38:17Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "7cf330f",
-      "message": "Harden OAuth redirect origin",
-      "date": "2026-06-05T03:04:21Z"
     },
     {
       "repo": "three-kingdoms-deckbuilder",
