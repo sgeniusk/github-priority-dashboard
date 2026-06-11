@@ -248,6 +248,25 @@
         "Claude usage 엔드포인트는 비공식 — 형식 변경 시 폴백 동작 점검 필요",
         "/schedule 루틴에 /usage-refresh를 편입할지 (현재는 수동 실행)"
       ]
+    },
+    {
+      "id": "v2.11-coach-usage-aware",
+      "name": "v2.11 한도 인식 코칭 — /coach가 AI 사용량을 반영",
+      "status": "done",
+      "description": "/coach 분석에 '도구 한도(usage.json)' 항목을 추가했다. auto 윈도우의 주간 사용률이 ≥70%면 warn, ≥85%면 high(리셋 24시간 이내면 한 단계 하향)로 type:usage 제안을 생성하고, 해당 도구 최다 소비 프로젝트의 repo에 단다. 다른 프로젝트 제안의 recommendation에도 한도 상황(리셋 후 세션 배치 등)을 반영한다. 2026-06-10 데이터로 suggestions.json을 재생성해 Codex 78% 경고와 정체 2건(high)을 반영했다.",
+      "dependencies": [
+        "v2.10-usage-auto-collect"
+      ],
+      "doneCriteria": [
+        "coach.md에 도구 한도 분석 규칙(임계값·리셋 하향·repo 부착 규칙·48시간 신선도 게이트) 명시",
+        "suggestions.json 스키마 type에 usage 추가",
+        "2026-06-10 기준 suggestions.json 재생성 — usage 1건·stall high 2건 포함",
+        "dashboard FALLBACK_SUGGESTIONS·project-report fallback-suggestions verbatim 동기화, project-pages 재생성",
+        "check-report-pages·인라인 JS·콘솔 에러 0 통과"
+      ],
+      "openQuestions": [
+        "history에 사용률 추세를 쌓아 '소진 예상 시점'까지 제안에 넣을지 (Q1 연계)"
+      ]
     }
   ]
 }

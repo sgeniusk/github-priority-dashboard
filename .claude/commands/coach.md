@@ -16,6 +16,7 @@ description: 프로젝트 단계를 심층 분석하고 정체를 감지해 sugg
 4. **정체(stall)** — `lastUpdate`가 오늘 기준 4일 이상 지났으면 정체로 본다.
 5. **Sprint 적합성** — 진척도와 배정된 `sprint`가 맞는지 본다. 진척 ≥60%인데 늦은 Sprint(C/D)에 있으면 "당겨야 할 후보", 진척 낮은데 이른 Sprint(A)면 "Sprint 재배정 검토". `sprint`가 `defer`인데 활발히 커밋되면 표기 불일치로 지적한다.
 6. **우선순위 정합성** — `rank`가 높은데(상위) 진척이 정체면 우선 경고 대상이다.
+7. **도구 한도 (usage.json)** — `usage.json`의 `auto.windows`에서 도구별 주간 사용률을 읽는다. 주간 ≥70%는 `warn`, ≥85%는 `high`(단 리셋까지 24시간 이내면 한 단계 낮춤 — 곧 풀린다). 한도가 높은 도구로 개발 중인(`tool` 일치 또는 `hybrid`) active 프로젝트의 작업 배분을 제안한다: 리셋 전에는 다른 도구로 우회 가능한 작업(문서·PRD·검증 하네스)을 우선하고, 해당 도구의 코딩 세션은 리셋 후로 배치. `type:"usage"` 항목은 해당 도구 소비가 가장 큰(최다 커밋) active 프로젝트의 `repo`에 단다(렌더러가 repo 기준으로 노출하므로). 다른 프로젝트 제안의 `recommendation`에도 한도 상황을 반영한다 — 예: 정체 재개 권고에 "Codex 리셋(6/11) 후 첫 세션으로". `auto` 데이터가 없거나 `collectedAt`이 48시간 이상 지났으면 이 분석은 생략하고, 사용자에게 `/usage-refresh` 실행을 권한다.
 
 ### 리스크 에스컬레이션 규칙
 
@@ -33,7 +34,7 @@ severity는 신호가 겹칠수록 올린다.
   "items": [
     {
       "repo": "<projects.json의 name>",
-      "type": "coach | stall | idea",
+      "type": "coach | stall | idea | usage",
       "severity": "high | warn | info",
       "title": "<짧은 제목>",
       "detail": "<2-3문장 분석>",
@@ -46,7 +47,7 @@ severity는 신호가 겹칠수록 올린다.
 }
 ```
 
-- `type` — 일반 코칭은 `coach`, 정체 감지는 `stall`, 새 방향 제안은 `idea`.
+- `type` — 일반 코칭은 `coach`, 정체 감지는 `stall`, 새 방향 제안은 `idea`, 도구 한도 임박에 따른 배분 제안은 `usage`.
 - `severity` — 위 '리스크 에스컬레이션 규칙'을 따른다.
 - `evidence` — 진단이 기댄 **관찰 가능한 사실**만 짧게 나열한다(예: `마지막 푸시 2026-05-12 — 6일 경과`, `기능 5/30`, `일평균 커밋 0.5`). 해석·의견이 아니라 수치·날짜·상태값이다.
 - `confidence` — 진단의 확신도. `high`는 명확한 정체·만점 대비 격차처럼 사실로 단정 가능할 때, `medium`은 추세 해석이 섞일 때, `low`는 데이터가 부족할 때.
