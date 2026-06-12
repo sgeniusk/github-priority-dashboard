@@ -1,12 +1,150 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-06-11",
+  "asOf": "2026-06-12",
   "commits": [
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "0c5dc03",
+      "message": "Add June 12 research briefing",
+      "date": "2026-06-11T23:34:43Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "fd0a52a",
+      "message": "Add June 11 Hatchi build note",
+      "date": "2026-06-11T13:49:34Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "d881fd8",
+      "message": "fix(unity): prep 출전 버튼 잘림 — 탭 두 줄 감김 예약 높이 보정 (M15 후속)",
+      "date": "2026-06-11T10:32:46Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "6785fac",
+      "message": "feat(unity): port wrap-up — growing island, village ops, battle speed (M15)",
+      "date": "2026-06-11T10:13:03Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "6064d61",
+      "message": "feat(meetings): 다가오는 모임 실데이터 — 0019 club_meetings + 클럽 일정 폼 + 랜딩 픽셀 아바타·실표지·레일 로고 랜딩 이동",
+      "date": "2026-06-11T09:57:00Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "2dae73a",
+      "message": "docs: F2 푸시 항목 해소 확인",
+      "date": "2026-06-11T09:31:35Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "1d80e40",
+      "message": "docs: 2026-06-11 발표 수합 세션 기록 + 로드맵 D6·F6 반영",
+      "date": "2026-06-11T09:29:50Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "d4f783f",
+      "message": "feat(deck): 공개 수합 강화 — 질문에 바로 답하기 보드 + QR·안내문구 공유 + deck:generate --publish",
+      "date": "2026-06-11T09:29:50Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "e6403a7",
+      "message": "fix(dashboard): 클럽 카드 표지를 현재 읽는 책 표지로 — 클럽 상세와 기준 통일",
+      "date": "2026-06-11T09:29:50Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "b5016e2",
+      "message": "feat(deck): 시대예보 덱 재작성 — 파트+핵심 병합 23장, 질문마다 보조 프롬프트로 밀도 강화",
+      "date": "2026-06-11T09:29:50Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "c514e20",
+      "message": "feat(deck): 장 제목 고정 — partId 슬라이드는 챕터 제목 유지, 발행본에 structure 포함, 모바일 오버플로 수정",
+      "date": "2026-06-11T09:29:50Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "0ffbc08",
+      "message": "feat-012 설계 확정: AI 테크트리 — 분류·떡밥·해금 (사용자 방향, 구현은 다음 세션)",
+      "date": "2026-06-11T08:05:29Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "978ccee",
+      "message": "docs: G0+G1 완료 반영 + README 마이그레이션 표 0017·0018",
+      "date": "2026-06-11T07:57:06Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "99302fd",
+      "message": "feat(unity): retire the bot — player-driven rounds, Nordhold-style stage choices (M14)",
+      "date": "2026-06-11T07:55:39Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "70ddf3e",
+      "message": "feat-008 #2+#3 + 마감: 아키타입 파생 도감 + 멀티 엔딩 — 로그라이크 트랙 완결",
+      "date": "2026-06-11T07:44:29Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "b355368",
+      "message": "feat-008 #1: 난이도 티어 — 헤드윈드 + 선택 UI (React v0.65 이식)",
+      "date": "2026-06-11T07:22:34Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "22a9d6a",
+      "message": "feat-011: 첫 화면 구도 정렬 — 오피스 풀스크린 스테이지 (React v0.96 패리티)",
+      "date": "2026-06-11T07:17:23Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "e683e84",
+      "message": "feat(unity): general deploy UX + frontline fix (M13.1)",
+      "date": "2026-06-11T06:52:00Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "3e58925",
+      "message": "feat-010: 살아있는 오피스 + 수익 도파민 — 키우기 게임식 페이오프 (사용자 방향)",
+      "date": "2026-06-11T02:31:58Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "68e7300",
+      "message": "feat(unity): generals on the battlefield — cleave, skill banners, oath links (M13)",
+      "date": "2026-06-11T02:31:43Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "b5e1ebb",
+      "message": "fix(unity): 타워 중복 배치 방지 + agy QA 리포트 (M12.8 후속)",
+      "date": "2026-06-11T01:33:07Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "02aee93",
+      "message": "feat(unity): battle economy — kill gold + mid-wave building (M12.8) + progress archive",
+      "date": "2026-06-11T01:28:55Z"
+    },
     {
       "repo": "cmds-daily-briefing",
       "sha": "e8a2682",
       "message": "Add June 11 Hatchi console briefing",
       "date": "2026-06-10T23:32:59Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "f78f4e5",
+      "message": "feat-009: 모바일 가독성 전면 패스 + AI 비서 가이던스 FAB (사용자 피드백)",
+      "date": "2026-06-10T22:08:28Z"
     },
     {
       "repo": "sam-defender-logue",
@@ -15,58 +153,16 @@
       "date": "2026-06-10T16:32:30Z"
     },
     {
-      "repo": "sam-defender-logue",
-      "sha": "7aef360",
-      "message": "refactor(unity): M12.5 재생 코드 제거 + QA 후속(텍스처 해제·타깃팅 쿨다운) — 씬 재빌드",
-      "date": "2026-06-10T15:36:42Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "a482750",
-      "message": "docs(harness): 멀티 CLI 3레인(Claude/Codex/agy) 하네스 + 활성 트랙 포인터 + QA 리포트",
-      "date": "2026-06-10T15:29:03Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "b77ac3e",
-      "message": "feat(unity): defense feel — free placement, combat juice, realtime→meta reconcile (M12.3b/M12.4a/M12.4)",
-      "date": "2026-06-10T15:29:03Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "4b9975b",
-      "message": "docs: 마이그레이션 0015~0017 운영 적용·배포 완료 현행화",
-      "date": "2026-06-10T15:20:25Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "d562b6c",
-      "message": "feat(deck): 공개 청중 참여 — 익명 의견 등록(definer RPC)·발표자 승인 수신함·재발행 허용 (0017)",
-      "date": "2026-06-10T14:58:56Z"
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "b4ed005",
+      "message": "feat-007 블록 #4 + 마감: 세계 뽑기 리빌 UI + v091 오피스 오브젝트 고해상 교체",
+      "date": "2026-06-10T15:51:37Z"
     },
     {
       "repo": "ai-company-tycoon-boundaryless",
-      "sha": "1065c9d",
-      "message": "docs: 다음 세션 할일 정리 + 이번 세션 수정파일 갱신",
-      "date": "2026-06-10T14:49:31Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "bf78a80",
-      "message": "아트: 오피스 가구 밴드 하향 — 직원과 워크스페이스로 묶기",
-      "date": "2026-06-10T14:43:07Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "e7913c3",
-      "message": "docs: progress 갱신 — 표시명 재시드 검증 완료 + v054 오피스 임포트 반영",
-      "date": "2026-06-10T14:39:52Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "77a5f10",
-      "message": "검증·정본반영: 업그레이드/자동화 표시명·설명 한글 재시드",
-      "date": "2026-06-10T14:38:15Z"
+      "sha": "530b536",
+      "message": "아트: v090 고해상 직원 액터 Unity 임포트 — v076 드롭인 교체",
+      "date": "2026-06-10T15:44:13Z"
     },
     {
       "repo": "cmds-daily-briefing",
@@ -75,28 +171,10 @@
       "date": "2026-06-10T13:48:36Z"
     },
     {
-      "repo": "chaekdam",
-      "sha": "5dc7e76",
-      "message": "docs: 스펙 B1에 재발행 허용 설계 변경 추가 (published immutable 트리거 제거 근거)",
-      "date": "2026-06-10T10:51:44Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "c60d445",
-      "message": "feat(deck): 카미 슬라이드 캔버스 + kind별 레이아웃 변주 + 발행 버튼 전면화",
-      "date": "2026-06-10T10:48:50Z"
-    },
-    {
       "repo": "story-x-beta",
       "sha": "7b763ca",
       "message": "docs(handoff): 회차 진도 인터뷰 아이디어 등재 — 갈림길 카드의 대화형 2단계 후보",
       "date": "2026-06-10T10:41:26Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "35ca765",
-      "message": "docs: 발표 카미 개편 + 공개 참여 스펙",
-      "date": "2026-06-10T10:40:56Z"
     },
     {
       "repo": "ai-builder-school",
@@ -129,12 +207,6 @@
       "date": "2026-06-10T02:23:06Z"
     },
     {
-      "repo": "chaekdam",
-      "sha": "4d2d088",
-      "message": "feat(deck): 시대예보 덱 발표 호흡으로 재작성 + --from speakerNotes 지원",
-      "date": "2026-06-10T02:19:51Z"
-    },
-    {
       "repo": "story-x-beta",
       "sha": "5e1f1e3",
       "message": "fix(briefing): openThreads 갈림길 옵션 중복 제거 (React key 충돌 예방)",
@@ -153,18 +225,6 @@
       "date": "2026-06-09T21:25:28Z"
     },
     {
-      "repo": "chaekdam",
-      "sha": "b6d9c89",
-      "message": "docs: 2026-06-10 session handoff (StoryX 전략 + discover v1)",
-      "date": "2026-06-09T21:22:57Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "7e4c461",
-      "message": "docs: discover v1 완료 반영 (0016 포함)",
-      "date": "2026-06-09T21:22:13Z"
-    },
-    {
       "repo": "story-x-beta",
       "sha": "caecedf",
       "message": "feat(draft): payoffStatus 배선 — StoryXDesk→draftClient→api/draft→프롬프트 + storyx.mjs 미러",
@@ -177,58 +237,10 @@
       "date": "2026-06-09T21:13:43Z"
     },
     {
-      "repo": "sam-defender-logue",
-      "sha": "a276e93",
-      "message": "docs(unity): session handoff — real-time TD through M12.3, next-session todos",
-      "date": "2026-06-09T20:48:04Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "714d215",
-      "message": "docs: 아트 체크리스트 v054 임포트·배치 완료 반영",
-      "date": "2026-06-09T14:11:42Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "993c470",
-      "message": "아트: v054 오피스 오브젝트 Unity 임포트 + 오피스 가구 배치",
-      "date": "2026-06-09T14:09:58Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "4da7956",
-      "message": "feat(unity): real-time tower combat — range targeting, projectiles, damage (M12.3)",
-      "date": "2026-06-09T13:58:56Z"
-    },
-    {
       "repo": "cmds-daily-briefing",
       "sha": "aaa38a1",
       "message": "Add June 9 build note",
       "date": "2026-06-09T13:50:21Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "08a72d2",
-      "message": "아트: v091 핸드오프 v054 칸 이름 21종 확정 + 그리드 레퍼런스",
-      "date": "2026-06-09T12:37:54Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "45b5aa6",
-      "message": "검증·정본반영: 업그레이드 요구조건 한글화 (FormatThreshold)",
-      "date": "2026-06-09T12:34:57Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "2cbbd6a",
-      "message": "feat(unity): real-time enemy movement on the path (M12.2)",
-      "date": "2026-06-09T12:22:12Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "c0c1268",
-      "message": "feat(unity): pivot to real-time spatial combat — design + WavePlan (M12.1)",
-      "date": "2026-06-09T06:58:51Z"
     },
     {
       "repo": "cmds-daily-briefing",
@@ -247,12 +259,6 @@
       "sha": "ac9a4d1",
       "message": "feat(me): 전역 AI 키 설정 — /me에서 한 번 넣으면 모든 연습장 공유",
       "date": "2026-06-07T14:48:53Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "12369f3",
-      "message": "Add June 7 build note",
-      "date": "2026-06-07T13:48:58Z"
     },
     {
       "repo": "ai-builder-school",
@@ -283,12 +289,6 @@
       "sha": "5447116",
       "message": "content(lessons): conceptDepth 9개 백필 (3→12) — concepts.ts 10개 개념 1:1 커버",
       "date": "2026-06-07T09:18:12Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "673658d",
-      "message": "Add June 7 light console briefing",
-      "date": "2026-06-06T23:33:52Z"
     },
     {
       "repo": "honbul",
