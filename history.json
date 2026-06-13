@@ -1284,6 +1284,78 @@
           "commits": 130
         }
       }
+    },
+    {
+      "date": "2026-06-14",
+      "avgProgress": 46,
+      "totalCommits": 2210,
+      "active": 12,
+      "projects": {
+        "habit": {
+          "total": 70,
+          "commits": 215
+        },
+        "tteuniyu-ios": {
+          "total": 65,
+          "commits": 5
+        },
+        "sam-defender-logue": {
+          "total": 60,
+          "commits": 204
+        },
+        "samguk-idle-prototype": {
+          "total": 60,
+          "commits": 205
+        },
+        "three-kingdoms-deckbuilder": {
+          "total": 55,
+          "commits": 187
+        },
+        "ai-builder-school": {
+          "total": 45,
+          "commits": 135
+        },
+        "ai-company-tycoon-boundaryless": {
+          "total": 40,
+          "commits": 446
+        },
+        "story-x-beta": {
+          "total": 45,
+          "commits": 336
+        },
+        "BookCircle": {
+          "total": 20,
+          "commits": 3
+        },
+        "jewelry-webtoon-cloud": {
+          "total": 20,
+          "commits": 18
+        },
+        "Nodeloom": {
+          "total": 56,
+          "commits": 42
+        },
+        "design-system-school": {
+          "total": 20,
+          "commits": 19
+        },
+        "cmds-daily-briefing": {
+          "total": 52,
+          "commits": 51
+        },
+        "Timeer": {
+          "total": 7,
+          "commits": 1
+        },
+        "chaekdam": {
+          "total": 19,
+          "commits": 114
+        },
+        "honbul": {
+          "total": 19,
+          "commits": 229
+        }
+      }
     }
   ]
 }

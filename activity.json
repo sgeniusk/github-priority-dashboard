@@ -1,7 +1,205 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-06-13",
+  "asOf": "2026-06-14",
   "commits": [
+    {
+      "repo": "honbul",
+      "sha": "72f6941",
+      "message": "docs: progress 갱신 — feat-009b 실아트 배선 + 인게임 피드백 3건 수정·세밀함 진단",
+      "date": "2026-06-13T14:45:20Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "f1eb680",
+      "message": "fix-009e: HP바 보스그림 버그 수정 + 명부 배경 적용 (인게임 3차 피드백)",
+      "date": "2026-06-13T14:44:06Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "305588c",
+      "message": "docs: 후속 개발 핸드오프 정리 — 픽셀 비주얼 후속 + 도감 UI (backlog)",
+      "date": "2026-06-13T14:31:57Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "8913e38",
+      "message": "Add June 13 build note",
+      "date": "2026-06-13T13:49:32Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "80e9867",
+      "message": "feat-018 후속: 4종 룸 벽 중하단 디테일 — 20:9 휑함 해소",
+      "date": "2026-06-13T12:40:10Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "b3a4519",
+      "message": "fix-009d: 자글거림 해소 — sprite mipmap 활성화 (인게임 2차 피드백)",
+      "date": "2026-06-13T12:21:00Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "4d09d96",
+      "message": "feat-018: 픽셀 배경 폰 고품질 대응 — cover + 고해상도",
+      "date": "2026-06-13T12:07:46Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "56a6f7a",
+      "message": "fix-009c: 보스 종횡비 버그 + 가장자리 품질 (인게임 1차 피드백)",
+      "date": "2026-06-13T11:52:13Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "4247373",
+      "message": "docs: 마이그레이션 0016~0020 전부 적용 확인 — F1 해소, stale \"적용 대기\" 메모 정정",
+      "date": "2026-06-13T11:35:17Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "019d5dc",
+      "message": "feat-009b: 실아트 Unity 배선 1차 — SpriteLibrary·임포트·틴트 제거",
+      "date": "2026-06-13T11:18:44Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "140f250",
+      "message": "feat-017 #1~#3: 픽셀 컷씬 tier 확장 — 승급·상장·미니",
+      "date": "2026-06-13T11:17:44Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "916bb9d",
+      "message": "feat(presentation): 발표자 경과 타이머 — showNotes 전용 mm:ss, 클릭 리셋 (D5)",
+      "date": "2026-06-13T11:09:31Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "000437f",
+      "message": "feat(presentation): 발표 모드 전체화면 토글 + Home/End 키보드 내비 (D5 일부)",
+      "date": "2026-06-13T11:05:46Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "f1c979e",
+      "message": "docs: C2 공개 표면(랜딩·/u) 모바일+다크 라이브 검증 무결 기록",
+      "date": "2026-06-13T09:44:38Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "817a25a",
+      "message": "docs: .env.local 복구 + B4·G2·G3 라이브 검증 기록",
+      "date": "2026-06-13T09:42:25Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "4d9f1c2",
+      "message": "feat(dashboard): 회상 카드 — \"1년 전 오늘 이 문장을 남겼어요\" (G3)",
+      "date": "2026-06-13T08:58:36Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "8933b10",
+      "message": "docs: A-3 완료 반영 — 헌장 체인 live, 다음=A-2 단계 게이트",
+      "date": "2026-06-13T08:58:14Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "2e51fa2",
+      "message": "feat(phase-a): A-3 온보딩 헌장 생성 단계 — 결말 역산 + 4줄 척추 잠금",
+      "date": "2026-06-13T08:56:39Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "4a4174d",
+      "message": "feat-017: 픽셀 컷씬 시스템 골격 — 출시 발표회 + No-cameras 수정",
+      "date": "2026-06-13T08:55:20Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "87e3fe7",
+      "message": "feat(dashboard): 이어읽기 복구 큐 — 며칠째 안 펼친 진행 중인 책 다시 꺼내기 (G2)",
+      "date": "2026-06-13T08:55:04Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "4ffc4cf",
+      "message": "feat-016: 오피스 비주얼 전면 재작업 — 정면 단면 픽셀룸 4종",
+      "date": "2026-06-13T08:54:52Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "59e9d63",
+      "message": "chore(deps): avatar next/image 전환 + 미사용 radix 4종 제거 (F4·F5)",
+      "date": "2026-06-13T08:51:12Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "8ebb145",
+      "message": "docs: 아트 가이드 v4 — agy(nano banana) 생성 체제 + art-drops gitignore",
+      "date": "2026-06-13T07:45:02Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "54fa97a",
+      "message": "feat(phase-a): A-3 헌장 빌더 — deriveBeatSheet·buildStoryContractFromOnboarding",
+      "date": "2026-06-13T07:44:08Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "4c64a1d",
+      "message": "docs: A-5 완료 반영 — 헌장 체인 배선 끝, 다음=A-3 온보딩(헌장 생성)",
+      "date": "2026-06-13T07:12:21Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "d2fd3f8",
+      "message": "feat(phase-a): A-5 헌장 예산 배선(검토 경로) — reviewClient→api/review-agent·CLI",
+      "date": "2026-06-13T07:10:47Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "43c6d56",
+      "message": "feat(phase-a): A-5 헌장 예산 배선(생성 경로) — StoryXDesk→draftClient→api/draft·CLI",
+      "date": "2026-06-13T07:07:34Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "5c06717",
+      "message": "docs: MJ 가이드 v3.2 — sref를 앵커 이미지 URL로 교체 (s.mj.run/uB652QGd2HU)",
+      "date": "2026-06-13T06:27:27Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "0effe79",
+      "message": "docs: A-4 완료 반영 — 상태·핸드오프·로드맵 (다음=A-5 배선)",
+      "date": "2026-06-13T06:17:37Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "40646ea",
+      "message": "feat(phase-a): A-4 헌장 프롬프트 주입 — digest 절·예산/종반/척추 규칙·길 잃음 점검",
+      "date": "2026-06-13T06:15:45Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "d490c73",
+      "message": "docs: MJ 가이드 v3.1 — 복붙 완성형 (스타일+--sref 2786484460 각 프롬프트 내장)",
+      "date": "2026-06-13T06:14:47Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "ccf6b51",
+      "message": "docs: feat-016 등록 — 오피스 비주얼 전면 재작업 (사용자 피드백: 사무실 같지 않다 → 진짜 픽셀아트 룸)",
+      "date": "2026-06-13T05:25:20Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "00e8ae7",
+      "message": "docs: feat-014 #5 마감 — 성급 배경 반입, 경영 탭 완결 (EditMode 145/145)",
+      "date": "2026-06-13T05:03:25Z"
+    },
     {
       "repo": "cmds-daily-briefing",
       "sha": "da6774d",
@@ -13,24 +211,6 @@
       "sha": "bbd9501",
       "message": "Add June 12 build note",
       "date": "2026-06-12T13:48:50Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "e9d2ecc",
-      "message": "docs: 독서노트 토대(트랙 H0) 기록 + 0020 마이그레이션 표",
-      "date": "2026-06-12T10:59:16Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "63a25f9",
-      "message": "feat(notes): 목차별 독서노트 + 서재 분야 필터·칩 — 책 상세 NoteSection, 노트 toc_section",
-      "date": "2026-06-12T10:59:16Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "a3fc480",
-      "message": "feat(notes): 알라딘 목차 수집 + 분야 대분류 헬퍼 (0020 books.toc·reading_notes.toc_section)",
-      "date": "2026-06-12T10:59:16Z"
     },
     {
       "repo": "cmds-daily-briefing",
@@ -57,76 +237,16 @@
       "date": "2026-06-11T10:13:03Z"
     },
     {
-      "repo": "chaekdam",
-      "sha": "6064d61",
-      "message": "feat(meetings): 다가오는 모임 실데이터 — 0019 club_meetings + 클럽 일정 폼 + 랜딩 픽셀 아바타·실표지·레일 로고 랜딩 이동",
-      "date": "2026-06-11T09:57:00Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "2dae73a",
-      "message": "docs: F2 푸시 항목 해소 확인",
-      "date": "2026-06-11T09:31:35Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "1d80e40",
-      "message": "docs: 2026-06-11 발표 수합 세션 기록 + 로드맵 D6·F6 반영",
-      "date": "2026-06-11T09:29:50Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "d4f783f",
-      "message": "feat(deck): 공개 수합 강화 — 질문에 바로 답하기 보드 + QR·안내문구 공유 + deck:generate --publish",
-      "date": "2026-06-11T09:29:50Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "e6403a7",
-      "message": "fix(dashboard): 클럽 카드 표지를 현재 읽는 책 표지로 — 클럽 상세와 기준 통일",
-      "date": "2026-06-11T09:29:50Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "0ffbc08",
-      "message": "feat-012 설계 확정: AI 테크트리 — 분류·떡밥·해금 (사용자 방향, 구현은 다음 세션)",
-      "date": "2026-06-11T08:05:29Z"
-    },
-    {
       "repo": "sam-defender-logue",
       "sha": "99302fd",
       "message": "feat(unity): retire the bot — player-driven rounds, Nordhold-style stage choices (M14)",
       "date": "2026-06-11T07:55:39Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "70ddf3e",
-      "message": "feat-008 #2+#3 + 마감: 아키타입 파생 도감 + 멀티 엔딩 — 로그라이크 트랙 완결",
-      "date": "2026-06-11T07:44:29Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "b355368",
-      "message": "feat-008 #1: 난이도 티어 — 헤드윈드 + 선택 UI (React v0.65 이식)",
-      "date": "2026-06-11T07:22:34Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "22a9d6a",
-      "message": "feat-011: 첫 화면 구도 정렬 — 오피스 풀스크린 스테이지 (React v0.96 패리티)",
-      "date": "2026-06-11T07:17:23Z"
-    },
-    {
       "repo": "sam-defender-logue",
       "sha": "e683e84",
       "message": "feat(unity): general deploy UX + frontline fix (M13.1)",
       "date": "2026-06-11T06:52:00Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "3e58925",
-      "message": "feat-010: 살아있는 오피스 + 수익 도파민 — 키우기 게임식 페이오프 (사용자 방향)",
-      "date": "2026-06-11T02:31:58Z"
     },
     {
       "repo": "sam-defender-logue",
@@ -153,40 +273,16 @@
       "date": "2026-06-10T23:32:59Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "f78f4e5",
-      "message": "feat-009: 모바일 가독성 전면 패스 + AI 비서 가이던스 FAB (사용자 피드백)",
-      "date": "2026-06-10T22:08:28Z"
-    },
-    {
       "repo": "sam-defender-logue",
       "sha": "896e497",
       "message": "feat(unity): tower identity — archetype kits, splash/slow/burn, distinct looks (M12.6/M12.7)",
       "date": "2026-06-10T16:32:30Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "b4ed005",
-      "message": "feat-007 블록 #4 + 마감: 세계 뽑기 리빌 UI + v091 오피스 오브젝트 고해상 교체",
-      "date": "2026-06-10T15:51:37Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "530b536",
-      "message": "아트: v090 고해상 직원 액터 Unity 임포트 — v076 드롭인 교체",
-      "date": "2026-06-10T15:44:13Z"
-    },
-    {
       "repo": "cmds-daily-briefing",
       "sha": "610e1d2",
       "message": "Add June 10 build note",
       "date": "2026-06-10T13:48:36Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "7b763ca",
-      "message": "docs(handoff): 회차 진도 인터뷰 아이디어 등재 — 갈림길 카드의 대화형 2단계 후보",
-      "date": "2026-06-10T10:41:26Z"
     },
     {
       "repo": "ai-builder-school",
@@ -205,54 +301,6 @@
       "sha": "9379336",
       "message": "Add June 10 Hatchi console briefing",
       "date": "2026-06-10T02:40:01Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "a76d7a2",
-      "message": "docs(code): payoffStatus 불변식 주석 — computePayoffLedger 산출만 허용 (최종 검토 MEDIUM 반영)",
-      "date": "2026-06-10T02:26:47Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "69409d9",
-      "message": "docs: 작가 결정 갈림길 + 생성 측 회수 의무 완료 — progress·handoff·캡처",
-      "date": "2026-06-10T02:23:06Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "5e1f1e3",
-      "message": "fix(briefing): openThreads 갈림길 옵션 중복 제거 (React key 충돌 예방)",
-      "date": "2026-06-09T21:38:08Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "608db57",
-      "message": "feat(editor): 갈림길 카드 — 작가 결정이 의도 메모로 합쳐지는 fc-forks UI",
-      "date": "2026-06-09T21:28:46Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "0f243b2",
-      "message": "fix(draft): vite 브리지 --payoff-status 전달 + draftClient 테스트 fetch 스텁 복원",
-      "date": "2026-06-09T21:25:28Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "caecedf",
-      "message": "feat(draft): payoffStatus 배선 — StoryXDesk→draftClient→api/draft→프롬프트 + storyx.mjs 미러",
-      "date": "2026-06-09T21:20:03Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "dcb3632",
-      "message": "feat(draft): 정체 시 생성 프롬프트에 회수 의무 주입 (payoffStatus → buildDraftPrompt)",
-      "date": "2026-06-09T21:13:43Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "aaa38a1",
-      "message": "Add June 9 build note",
-      "date": "2026-06-09T13:50:21Z"
     },
     {
       "repo": "ai-builder-school",
@@ -291,34 +339,16 @@
       "date": "2026-06-07T09:18:12Z"
     },
     {
-      "repo": "honbul",
-      "sha": "f4565f9",
-      "message": "W10~W13 진행을 핸드오프·결정·체크리스트에 기록한다",
-      "date": "2026-06-06T16:14:53Z"
-    },
-    {
       "repo": "samguk-idle-prototype",
       "sha": "69f9531",
       "message": "chore: ignore renderer proof screenshots + record W1 war Pixi port handoff",
       "date": "2026-06-06T16:05:52Z"
     },
     {
-      "repo": "honbul",
-      "sha": "854fc5e",
-      "message": "드래그로 각도를 조준해 쏘게 한다",
-      "date": "2026-06-06T15:16:28Z"
-    },
-    {
       "repo": "three-kingdoms-deckbuilder",
       "sha": "cda900d",
       "message": "Apply opening order UI polish",
       "date": "2026-06-06T10:10:37Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "ff44dd9",
-      "message": "런처를 옮겨 구석에서도 발사하게 한다",
-      "date": "2026-06-06T09:20:14Z"
     },
     {
       "repo": "samguk-idle-prototype",
@@ -339,18 +369,6 @@
       "date": "2026-06-06T07:10:17Z"
     },
     {
-      "repo": "honbul",
-      "sha": "1981692",
-      "message": "보스가 사라지지 않고 처치되어 승리가 뜨게 한다",
-      "date": "2026-06-06T05:52:44Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "761100c",
-      "message": "마을 허브와 보스·손맛으로 게임을 한 판답게 만든다",
-      "date": "2026-06-06T05:31:18Z"
-    },
-    {
       "repo": "samguk-idle-prototype",
       "sha": "456f6f7",
       "message": "docs(renderer): record v1.00.45 verification + fix feature row schema",
@@ -363,12 +381,6 @@
       "date": "2026-06-06T04:40:47Z"
     },
     {
-      "repo": "honbul",
-      "sha": "18fe103",
-      "message": "전투 손맛을 살리고 메뉴·맵을 명부 아트로 입힌다",
-      "date": "2026-06-06T03:49:51Z"
-    },
-    {
       "repo": "samguk-idle-prototype",
       "sha": "10bee4f",
       "message": "feat(feature-list): register v1.00.45-adventure-pixi-field entry",
@@ -379,12 +391,6 @@
       "sha": "6fcbabf",
       "message": "chore(cache): bump version key to 1.00.45-adventure-pixi-field",
       "date": "2026-06-06T03:34:30Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "a1a6e48",
-      "message": "전투 화면에 명부 아트 패스 1차를 입힌다",
-      "date": "2026-06-06T00:46:20Z"
     },
     {
       "repo": "three-kingdoms-deckbuilder",
@@ -403,12 +409,6 @@
       "sha": "0ffdd3f",
       "message": "docs: add external UI redesign prompt",
       "date": "2026-06-05T04:45:59Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "ab00ccf",
-      "message": "Claude Design 외주 브리프를 준비한다",
-      "date": "2026-06-05T03:38:17Z"
     },
     {
       "repo": "three-kingdoms-deckbuilder",
