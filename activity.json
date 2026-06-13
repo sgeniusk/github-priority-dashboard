@@ -1,7 +1,37 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-06-12",
+  "asOf": "2026-06-13",
   "commits": [
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "da6774d",
+      "message": "Add June 13 light research briefing",
+      "date": "2026-06-12T23:33:15Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "bbd9501",
+      "message": "Add June 12 build note",
+      "date": "2026-06-12T13:48:50Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "e9d2ecc",
+      "message": "docs: 독서노트 토대(트랙 H0) 기록 + 0020 마이그레이션 표",
+      "date": "2026-06-12T10:59:16Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "63a25f9",
+      "message": "feat(notes): 목차별 독서노트 + 서재 분야 필터·칩 — 책 상세 NoteSection, 노트 toc_section",
+      "date": "2026-06-12T10:59:16Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "a3fc480",
+      "message": "feat(notes): 알라딘 목차 수집 + 분야 대분류 헬퍼 (0020 books.toc·reading_notes.toc_section)",
+      "date": "2026-06-12T10:59:16Z"
+    },
     {
       "repo": "cmds-daily-briefing",
       "sha": "0c5dc03",
@@ -57,28 +87,10 @@
       "date": "2026-06-11T09:29:50Z"
     },
     {
-      "repo": "chaekdam",
-      "sha": "b5016e2",
-      "message": "feat(deck): 시대예보 덱 재작성 — 파트+핵심 병합 23장, 질문마다 보조 프롬프트로 밀도 강화",
-      "date": "2026-06-11T09:29:50Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "c514e20",
-      "message": "feat(deck): 장 제목 고정 — partId 슬라이드는 챕터 제목 유지, 발행본에 structure 포함, 모바일 오버플로 수정",
-      "date": "2026-06-11T09:29:50Z"
-    },
-    {
       "repo": "ai-company-tycoon-boundaryless",
       "sha": "0ffbc08",
       "message": "feat-012 설계 확정: AI 테크트리 — 분류·떡밥·해금 (사용자 방향, 구현은 다음 세션)",
       "date": "2026-06-11T08:05:29Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "978ccee",
-      "message": "docs: G0+G1 완료 반영 + README 마이그레이션 표 0017·0018",
-      "date": "2026-06-11T07:57:06Z"
     },
     {
       "repo": "sam-defender-logue",
@@ -241,18 +253,6 @@
       "sha": "aaa38a1",
       "message": "Add June 9 build note",
       "date": "2026-06-09T13:50:21Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "0548e5c",
-      "message": "Add June 8 build note",
-      "date": "2026-06-08T13:48:53Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "59fe37d",
-      "message": "Add June 8 research briefing",
-      "date": "2026-06-08T01:15:28Z"
     },
     {
       "repo": "ai-builder-school",
