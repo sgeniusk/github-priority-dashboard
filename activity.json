@@ -3,6 +3,12 @@
   "asOf": "2026-06-14",
   "commits": [
     {
+      "repo": "cmds-daily-briefing",
+      "sha": "9c9d084",
+      "message": "Add June 14 light research briefing",
+      "date": "2026-06-13T23:33:04Z"
+    },
+    {
       "repo": "honbul",
       "sha": "72f6941",
       "message": "docs: progress 갱신 — feat-009b 실아트 배선 + 인게임 피드백 3건 수정·세밀함 진단",
@@ -295,12 +301,6 @@
       "sha": "363570c",
       "message": "docs: 세션 핸드오프 (콘텐츠 깊이·포트폴리오·연습장 8트랙) + .playwright-mcp ignore",
       "date": "2026-06-10T06:39:29Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "9379336",
-      "message": "Add June 10 Hatchi console briefing",
-      "date": "2026-06-10T02:40:01Z"
     },
     {
       "repo": "ai-builder-school",
