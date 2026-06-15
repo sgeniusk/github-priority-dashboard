@@ -1,12 +1,114 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-06-14",
+  "asOf": "2026-06-15",
   "commits": [
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "8c09ddf",
+      "message": "Add 2026-06-15 research briefing",
+      "date": "2026-06-14T23:37:56Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "00adfc8",
+      "message": "Add June 14 build note",
+      "date": "2026-06-14T13:49:25Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "96cb40a",
+      "message": "feat-021: 도감 열람 UI — 크로스런 수집 그리드 갤러리",
+      "date": "2026-06-14T04:00:45Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "94e4c9e",
+      "message": "feat-021 킥오프: 도감 열람 UI 설계·등록 — 크로스런 수집 그리드 갤러리",
+      "date": "2026-06-14T03:05:25Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "3900905",
+      "message": "docs: feat-020 증거 완성 — 소품·환호 포즈 포함 + Codex 스코프 교훈",
+      "date": "2026-06-14T00:04:46Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "8daff7a",
+      "message": "feat-020 #5 환호 포즈: 캐릭터 3종 환호 프레임 + ActorAnim 3-상태",
+      "date": "2026-06-13T23:49:28Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "485d574",
+      "message": "docs: feat-020 진행 기록 정정 — Unity 트랙은 unity/progress.md에 (루트 progress.md 복원)",
+      "date": "2026-06-13T23:37:25Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "3e750d7",
+      "message": "feat-020 #4 소품: AI 생성 오피스 소품 5종 (화분·정수기·자판기·소파·책장)",
+      "date": "2026-06-13T23:34:15Z"
+    },
     {
       "repo": "cmds-daily-briefing",
       "sha": "9c9d084",
       "message": "Add June 14 light research briefing",
       "date": "2026-06-13T23:33:04Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "975fb90",
+      "message": "docs: Fable 홈페이지 업그레이드 핸드오프 + 로드맵 A5 반영",
+      "date": "2026-06-13T23:16:52Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "44f8b08",
+      "message": "feat-020 #3 배경: AI 생성 룸 4종 (절차 배경 교체) — feat-020 마감",
+      "date": "2026-06-13T23:07:22Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "94cb765",
+      "message": "feat-020 #2 책상: AI 생성 책상 가구 스프라이트 (평면 C# 오클루더 교체)",
+      "date": "2026-06-13T22:46:54Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "ede59af",
+      "message": "feat(landing): 랜딩 본명조 세리프 리스킨 + 표지-우선 카드 + 신규 2섹션 배선",
+      "date": "2026-06-13T22:10:06Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "2344115",
+      "message": "feat(landing): 독서 시각화·결산 미리보기 컴포넌트 (Fable 차용 ⑤)",
+      "date": "2026-06-13T22:10:06Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "e60efa9",
+      "message": "feat(landing): 표지 발견 띠 컴포넌트 + 공개 표지 조회 (Fable 차용 ②)",
+      "date": "2026-06-13T22:10:06Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "4a6cb20",
+      "message": "feat(book): 공개 표면 표지-우선 CoverImage + resolveCover 순수함수",
+      "date": "2026-06-13T22:08:16Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "e2fb160",
+      "message": "feat(landing): 읽기-세계 토큰·본명조 폰트 배선 (이중 결 기반)",
+      "date": "2026-06-13T22:02:49Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "35b9ca9",
+      "message": "docs: 책담 Fable 업그레이드 설계 + 홈페이지 구현 계획 (이중 결·본명조·발표 쐐기 보존)",
+      "date": "2026-06-13T15:42:53Z"
     },
     {
       "repo": "honbul",
@@ -21,34 +123,16 @@
       "date": "2026-06-13T14:44:06Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "305588c",
-      "message": "docs: 후속 개발 핸드오프 정리 — 픽셀 비주얼 후속 + 도감 UI (backlog)",
-      "date": "2026-06-13T14:31:57Z"
-    },
-    {
       "repo": "cmds-daily-briefing",
       "sha": "8913e38",
       "message": "Add June 13 build note",
       "date": "2026-06-13T13:49:32Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "80e9867",
-      "message": "feat-018 후속: 4종 룸 벽 중하단 디테일 — 20:9 휑함 해소",
-      "date": "2026-06-13T12:40:10Z"
-    },
-    {
       "repo": "honbul",
       "sha": "b3a4519",
       "message": "fix-009d: 자글거림 해소 — sprite mipmap 활성화 (인게임 2차 피드백)",
       "date": "2026-06-13T12:21:00Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "4d09d96",
-      "message": "feat-018: 픽셀 배경 폰 고품질 대응 — cover + 고해상도",
-      "date": "2026-06-13T12:07:46Z"
     },
     {
       "repo": "honbul",
@@ -69,42 +153,6 @@
       "date": "2026-06-13T11:18:44Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "140f250",
-      "message": "feat-017 #1~#3: 픽셀 컷씬 tier 확장 — 승급·상장·미니",
-      "date": "2026-06-13T11:17:44Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "916bb9d",
-      "message": "feat(presentation): 발표자 경과 타이머 — showNotes 전용 mm:ss, 클릭 리셋 (D5)",
-      "date": "2026-06-13T11:09:31Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "000437f",
-      "message": "feat(presentation): 발표 모드 전체화면 토글 + Home/End 키보드 내비 (D5 일부)",
-      "date": "2026-06-13T11:05:46Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "f1c979e",
-      "message": "docs: C2 공개 표면(랜딩·/u) 모바일+다크 라이브 검증 무결 기록",
-      "date": "2026-06-13T09:44:38Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "817a25a",
-      "message": "docs: .env.local 복구 + B4·G2·G3 라이브 검증 기록",
-      "date": "2026-06-13T09:42:25Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "4d9f1c2",
-      "message": "feat(dashboard): 회상 카드 — \"1년 전 오늘 이 문장을 남겼어요\" (G3)",
-      "date": "2026-06-13T08:58:36Z"
-    },
-    {
       "repo": "story-x-beta",
       "sha": "8933b10",
       "message": "docs: A-3 완료 반영 — 헌장 체인 live, 다음=A-2 단계 게이트",
@@ -115,30 +163,6 @@
       "sha": "2e51fa2",
       "message": "feat(phase-a): A-3 온보딩 헌장 생성 단계 — 결말 역산 + 4줄 척추 잠금",
       "date": "2026-06-13T08:56:39Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "4a4174d",
-      "message": "feat-017: 픽셀 컷씬 시스템 골격 — 출시 발표회 + No-cameras 수정",
-      "date": "2026-06-13T08:55:20Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "87e3fe7",
-      "message": "feat(dashboard): 이어읽기 복구 큐 — 며칠째 안 펼친 진행 중인 책 다시 꺼내기 (G2)",
-      "date": "2026-06-13T08:55:04Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "4ffc4cf",
-      "message": "feat-016: 오피스 비주얼 전면 재작업 — 정면 단면 픽셀룸 4종",
-      "date": "2026-06-13T08:54:52Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "59e9d63",
-      "message": "chore(deps): avatar next/image 전환 + 미사용 radix 4종 제거 (F4·F5)",
-      "date": "2026-06-13T08:51:12Z"
     },
     {
       "repo": "honbul",
@@ -193,18 +217,6 @@
       "sha": "d490c73",
       "message": "docs: MJ 가이드 v3.1 — 복붙 완성형 (스타일+--sref 2786484460 각 프롬프트 내장)",
       "date": "2026-06-13T06:14:47Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "ccf6b51",
-      "message": "docs: feat-016 등록 — 오피스 비주얼 전면 재작업 (사용자 피드백: 사무실 같지 않다 → 진짜 픽셀아트 룸)",
-      "date": "2026-06-13T05:25:20Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "00e8ae7",
-      "message": "docs: feat-014 #5 마감 — 성급 배경 반입, 경영 탭 완결 (EditMode 145/145)",
-      "date": "2026-06-13T05:03:25Z"
     },
     {
       "repo": "cmds-daily-briefing",
@@ -273,22 +285,10 @@
       "date": "2026-06-11T01:28:55Z"
     },
     {
-      "repo": "cmds-daily-briefing",
-      "sha": "e8a2682",
-      "message": "Add June 11 Hatchi console briefing",
-      "date": "2026-06-10T23:32:59Z"
-    },
-    {
       "repo": "sam-defender-logue",
       "sha": "896e497",
       "message": "feat(unity): tower identity — archetype kits, splash/slow/burn, distinct looks (M12.6/M12.7)",
       "date": "2026-06-10T16:32:30Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "610e1d2",
-      "message": "Add June 10 build note",
-      "date": "2026-06-10T13:48:36Z"
     },
     {
       "repo": "ai-builder-school",
