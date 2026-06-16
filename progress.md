@@ -2,11 +2,11 @@
 
 다음 세션이 이 한 페이지만 보고도 현재 상태와 검증 증거를 이어받을 수 있도록 유지한다. 상세 백로그는 `feature_list.json`.
 
-**Last Updated**: 2026-06-16 (GitHub 활동 refresh + 월간 분석 재생성)
+**Last Updated**: 2026-06-16 (GitHub 활동 refresh + 사용량 refresh)
 
 ## Current Objective — None
 
-오늘 작업 완료 상태다. `meta.asOf`는 2026-06-16이고, 전체 16개 프로젝트 중 활성 12개·일시중단 4개, 총 커밋 2267개, 뉴스 30건, history 22스냅샷이다. `monthly-analysis.html`은 2026-05-18부터 2026-06-16까지 최근 30일 커밋 1670건을 관찰해 레포별 활동·공백·테마를 보여준다. `project-pages/`에는 16개 프로젝트별 제작 현황 페이지와 index가 생성되어 있다.
+오늘 작업 완료 상태다. `meta.asOf`는 2026-06-16이고, 전체 16개 프로젝트 중 활성 12개·일시중단 4개, 총 커밋 2267개, 뉴스 30건, history 22스냅샷이다. `usage.json`도 2026-06-16 기준으로 갱신되어 Claude 주간 40%, Codex 주간 65%를 표시한다. `monthly-analysis.html`은 2026-05-18부터 2026-06-16까지 최근 30일 커밋 1670건을 관찰해 레포별 활동·공백·테마를 보여준다. `project-pages/`에는 16개 프로젝트별 제작 현황 페이지와 index가 생성되어 있다.
 
 ## Recommended Next Step
 
@@ -14,6 +14,7 @@
 
 ## 직전에 푼 것
 
+- **2026-06-16 usage-refresh** — `.claude/commands/usage-refresh.md` 절차에 따라 `node scripts/refresh-usage.mjs --dry-run` 후 적용했다. Claude OAuth 토큰은 Keychain에서 갱신·저장됐고, Claude는 5시간 6%·주간 40%·Sonnet 주간 3%, Codex는 5시간 2%·주간 65%로 수집됐다. `usage.json`과 `dashboard.html` `FALLBACK_USAGE`를 verbatim 동기화했다.
 - **2026-06-16 refresh** — GitHub 활동 refresh로 `ai-company-tycoon-boundaryless` 446→461커밋, `story-x-beta` 336→366커밋, `cmds-daily-briefing` 51→56커밋, `chaekdam` 114→121커밋, 총 커밋 2267개, `meta.asOf` 2026-06-16, history 22스냅샷, news 30건으로 갱신했다. `project-pages/`와 `monthly-analysis`도 재생성했고, JSON 관련 FALLBACK seed를 verbatim 동기화했다. 완성도 점수는 자동 변경하지 않았다.
 - **2026-06-14 refresh** — GitHub 활동 refresh로 `sam-defender-logue` 197→204커밋, `ai-company-tycoon-boundaryless` 401→446커밋, `story-x-beta` 273→336커밋, `cmds-daily-briefing` 46→51커밋, `chaekdam` 76→114커밋, `honbul` 130→229커밋, 총 커밋 2210개, `meta.asOf` 2026-06-14, history 20스냅샷, news 28건으로 갱신했다. `project-pages/`와 `monthly-analysis`도 재생성했고, JSON 관련 FALLBACK seed를 verbatim 동기화했다. 완성도 점수는 자동 변경하지 않았다.
 - **v2.11 한도 인식 코칭** — `/coach` 분석 항목에 '도구 한도(usage.json)'를 추가했다(주간 ≥70% warn, ≥85% high, 리셋 24시간 이내 하향, `auto` 48시간 초과 시 분석 생략+`/usage-refresh` 권고). `type:"usage"` 제안은 해당 도구 최다 소비 active 프로젝트의 repo에 달고, 다른 제안의 recommendation에도 한도 상황을 반영한다. 2026-06-10 데이터로 `suggestions.json`을 재생성 — Codex 주간 78% 경고(usage·warn, tycoon에 부착), tteuniyu-ios 29일·habit 15일 정체(stall·high), design-system-school 12일(warn), honbul·ai-builder-school 기능 병목(info). FALLBACK_SUGGESTIONS·project-report fallback-suggestions 동기화, project-pages 재생성.
@@ -38,9 +39,9 @@
 | 항목 | 상태 | 마지막 확인 |
 | --- | --- | --- |
 | 시작 점검 | 통과 | 2026-06-16 `bash init.sh` |
-| 사용량 자동 수집 | 통과 | 2026-06-10 `node scripts/refresh-usage.mjs` 실기기 실행 — Claude(keychain 토큰 갱신 포함)·Codex 모두 수집, 전부 실패 시 usage.json 미변경+exit 1 확인 |
+| 사용량 자동 수집 | 통과 | 2026-06-16 `node scripts/refresh-usage.mjs` 실기기 실행 — Claude(keychain 토큰 갱신 포함)·Codex 모두 수집, Claude 주간 40%·Codex 주간 65% |
 | 사용량 mock 파이프라인 | 통과 | `node scripts/refresh-usage.mjs --mock scripts/fixtures/usage-mock.json --dry-run` |
-| 사용량 탭 자동 카드 | 통과 | 2026-06-10 Playwright Chromium — usageGrid에 자동 수집 카드 2개 렌더, 4탭+report+project-report+project-pages 콘솔 에러 0 |
+| 사용량 탭 자동 카드 | 통과 | 2026-06-16 Playwright Chromium — usageGrid에 자동 수집 카드 2개 렌더, Claude 40%·Codex 65% 표시, 콘솔 에러 0 |
 | 데이터 refresh | 통과 | 2026-06-16 `GH_TOKEN="$(gh auth token)" node scripts/refresh-progress.mjs`, 총 커밋 2267·뉴스 30건·history 22스냅샷 |
 | 월간 분석 생성 | 통과 | refresh 연동, 2026-05-18..2026-06-16, 커밋 1670건 |
 | JSON·스크립트 검증 | 통과 | 2026-06-16 `node scripts/validate.mjs` |
