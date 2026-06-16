@@ -1,7 +1,67 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-06-15",
+  "asOf": "2026-06-16",
   "commits": [
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "4e5a998",
+      "message": "Add 2026-06-16 research briefing",
+      "date": "2026-06-15T23:34:22Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "78ad32a",
+      "message": "Add June 15 build note",
+      "date": "2026-06-15T13:49:10Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "3be758f",
+      "message": "fix(quality): VS 노출 자동열림 — 회차 생성 시 state 패널 자동 표시",
+      "date": "2026-06-15T13:16:04Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "3a42620",
+      "message": "docs: VS 회차 후보(C-1) 완료 — 검증·인계 (C-1 Task10)",
+      "date": "2026-06-15T05:59:47Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "aad16c5",
+      "message": "fix(quality): VS 핸들러 finally·미회수 약속 dedup (C-1 리뷰 반영)",
+      "date": "2026-06-15T05:53:36Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "8a0955a",
+      "message": "feat(quality): StoryXDesk VS 배선 + .fc-vs CSS (C-1 Task9)",
+      "date": "2026-06-15T05:44:53Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "5a2c7b1",
+      "message": "feat(quality): FloatingEditor .fc-vs 전개 후보 블록 (C-1 Task8)",
+      "date": "2026-06-15T05:40:29Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "641668c",
+      "message": "feat(quality): vsCandidatesClient + aiStatus mode (C-1 Task7)",
+      "date": "2026-06-15T05:37:25Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "442f861",
+      "message": "feat(quality): vite /api/vs-candidates 브리지 (C-1 Task6)",
+      "date": "2026-06-15T05:34:00Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "14ac597",
+      "message": "feat(quality): api/vs-candidates prod 라우트 (C-1 Task5)",
+      "date": "2026-06-15T05:33:53Z"
+    },
     {
       "repo": "cmds-daily-briefing",
       "sha": "8c09ddf",
@@ -9,10 +69,28 @@
       "date": "2026-06-14T23:37:56Z"
     },
     {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "51fa08f",
+      "message": "balance: 봇 승리 27→51개월 — 승리 임계값 상향 + 회귀 가드",
+      "date": "2026-06-14T16:55:26Z"
+    },
+    {
       "repo": "cmds-daily-briefing",
       "sha": "00adfc8",
       "message": "Add June 14 build note",
       "date": "2026-06-14T13:49:25Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "1dc99ad",
+      "message": "feat-022: 트렌드 콘텐츠 웨이브 — 2025-26 AI 트렌드 월드 이벤트 12종 (30→42)",
+      "date": "2026-06-14T11:09:08Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "63f7452",
+      "message": "feat-022 킥오프: 트렌드 콘텐츠 웨이브 설계·등록 — 2025-26 AI 트렌드 월드 이벤트",
+      "date": "2026-06-14T10:46:15Z"
     },
     {
       "repo": "ai-company-tycoon-boundaryless",
@@ -45,12 +123,6 @@
       "date": "2026-06-13T23:37:25Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "3e750d7",
-      "message": "feat-020 #4 소품: AI 생성 오피스 소품 5종 (화분·정수기·자판기·소파·책장)",
-      "date": "2026-06-13T23:34:15Z"
-    },
-    {
       "repo": "cmds-daily-briefing",
       "sha": "9c9d084",
       "message": "Add June 14 light research briefing",
@@ -61,18 +133,6 @@
       "sha": "975fb90",
       "message": "docs: Fable 홈페이지 업그레이드 핸드오프 + 로드맵 A5 반영",
       "date": "2026-06-13T23:16:52Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "44f8b08",
-      "message": "feat-020 #3 배경: AI 생성 룸 4종 (절차 배경 교체) — feat-020 마감",
-      "date": "2026-06-13T23:07:22Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "94cb765",
-      "message": "feat-020 #2 책상: AI 생성 책상 가구 스프라이트 (평면 C# 오클루더 교체)",
-      "date": "2026-06-13T22:46:54Z"
     },
     {
       "repo": "chaekdam",
@@ -153,64 +213,16 @@
       "date": "2026-06-13T11:18:44Z"
     },
     {
-      "repo": "story-x-beta",
-      "sha": "8933b10",
-      "message": "docs: A-3 완료 반영 — 헌장 체인 live, 다음=A-2 단계 게이트",
-      "date": "2026-06-13T08:58:14Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "2e51fa2",
-      "message": "feat(phase-a): A-3 온보딩 헌장 생성 단계 — 결말 역산 + 4줄 척추 잠금",
-      "date": "2026-06-13T08:56:39Z"
-    },
-    {
       "repo": "honbul",
       "sha": "8ebb145",
       "message": "docs: 아트 가이드 v4 — agy(nano banana) 생성 체제 + art-drops gitignore",
       "date": "2026-06-13T07:45:02Z"
     },
     {
-      "repo": "story-x-beta",
-      "sha": "54fa97a",
-      "message": "feat(phase-a): A-3 헌장 빌더 — deriveBeatSheet·buildStoryContractFromOnboarding",
-      "date": "2026-06-13T07:44:08Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "4c64a1d",
-      "message": "docs: A-5 완료 반영 — 헌장 체인 배선 끝, 다음=A-3 온보딩(헌장 생성)",
-      "date": "2026-06-13T07:12:21Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "d2fd3f8",
-      "message": "feat(phase-a): A-5 헌장 예산 배선(검토 경로) — reviewClient→api/review-agent·CLI",
-      "date": "2026-06-13T07:10:47Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "43c6d56",
-      "message": "feat(phase-a): A-5 헌장 예산 배선(생성 경로) — StoryXDesk→draftClient→api/draft·CLI",
-      "date": "2026-06-13T07:07:34Z"
-    },
-    {
       "repo": "honbul",
       "sha": "5c06717",
       "message": "docs: MJ 가이드 v3.2 — sref를 앵커 이미지 URL로 교체 (s.mj.run/uB652QGd2HU)",
       "date": "2026-06-13T06:27:27Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "0effe79",
-      "message": "docs: A-4 완료 반영 — 상태·핸드오프·로드맵 (다음=A-5 배선)",
-      "date": "2026-06-13T06:17:37Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "40646ea",
-      "message": "feat(phase-a): A-4 헌장 프롬프트 주입 — digest 절·예산/종반/척추 규칙·길 잃음 점검",
-      "date": "2026-06-13T06:15:45Z"
     },
     {
       "repo": "honbul",
@@ -229,18 +241,6 @@
       "sha": "bbd9501",
       "message": "Add June 12 build note",
       "date": "2026-06-12T13:48:50Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "0c5dc03",
-      "message": "Add June 12 research briefing",
-      "date": "2026-06-11T23:34:43Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "fd0a52a",
-      "message": "Add June 11 Hatchi build note",
-      "date": "2026-06-11T13:49:34Z"
     },
     {
       "repo": "sam-defender-logue",
