@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-06-14",
+  "generatedAt": "2026-06-16",
   "logs": {
     "habit": [
       {
@@ -91,6 +91,11 @@
         "date": "2026-06-14",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -162,6 +167,11 @@
       },
       {
         "date": "2026-06-14",
+        "kind": "progress",
+        "text": "완성도 65%"
+      },
+      {
+        "date": "2026-06-16",
         "kind": "progress",
         "text": "완성도 65%"
       }
@@ -399,6 +409,11 @@
         "date": "2026-06-14",
         "kind": "progress",
         "text": "완성도 60% · 커밋 +7"
+      },
+      {
+        "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "samguk-idle-prototype": [
@@ -586,6 +601,11 @@
         "date": "2026-06-14",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
@@ -759,6 +779,11 @@
       },
       {
         "date": "2026-06-14",
+        "kind": "progress",
+        "text": "완성도 55%"
+      },
+      {
+        "date": "2026-06-16",
         "kind": "progress",
         "text": "완성도 55%"
       }
@@ -958,6 +983,11 @@
       },
       {
         "date": "2026-06-14",
+        "kind": "progress",
+        "text": "완성도 45%"
+      },
+      {
+        "date": "2026-06-16",
         "kind": "progress",
         "text": "완성도 45%"
       }
@@ -1210,9 +1240,62 @@
         "sha": "305588c"
       },
       {
+        "date": "2026-06-13T23:37:25Z",
+        "kind": "commit",
+        "text": "docs: feat-020 진행 기록 정정 — Unity 트랙은 unity/progress.md에 (루트 progress.md 복원)",
+        "sha": "485d574"
+      },
+      {
+        "date": "2026-06-13T23:49:28Z",
+        "kind": "commit",
+        "text": "feat-020 #5 환호 포즈: 캐릭터 3종 환호 프레임 + ActorAnim 3-상태",
+        "sha": "8daff7a"
+      },
+      {
         "date": "2026-06-14",
         "kind": "progress",
         "text": "완성도 40% · 커밋 +45"
+      },
+      {
+        "date": "2026-06-14T00:04:46Z",
+        "kind": "commit",
+        "text": "docs: feat-020 증거 완성 — 소품·환호 포즈 포함 + Codex 스코프 교훈",
+        "sha": "3900905"
+      },
+      {
+        "date": "2026-06-14T03:05:25Z",
+        "kind": "commit",
+        "text": "feat-021 킥오프: 도감 열람 UI 설계·등록 — 크로스런 수집 그리드 갤러리",
+        "sha": "94e4c9e"
+      },
+      {
+        "date": "2026-06-14T04:00:45Z",
+        "kind": "commit",
+        "text": "feat-021: 도감 열람 UI — 크로스런 수집 그리드 갤러리",
+        "sha": "96cb40a"
+      },
+      {
+        "date": "2026-06-14T10:46:15Z",
+        "kind": "commit",
+        "text": "feat-022 킥오프: 트렌드 콘텐츠 웨이브 설계·등록 — 2025-26 AI 트렌드 월드 이벤트",
+        "sha": "63f7452"
+      },
+      {
+        "date": "2026-06-14T11:09:08Z",
+        "kind": "commit",
+        "text": "feat-022: 트렌드 콘텐츠 웨이브 — 2025-26 AI 트렌드 월드 이벤트 12종 (30→42)",
+        "sha": "1dc99ad"
+      },
+      {
+        "date": "2026-06-14T16:55:26Z",
+        "kind": "commit",
+        "text": "balance: 봇 승리 27→51개월 — 승리 임계값 상향 + 회귀 가드",
+        "sha": "51fa08f"
+      },
+      {
+        "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 40% · 커밋 +15"
       }
     ],
     "story-x-beta": [
@@ -1448,6 +1531,59 @@
         "date": "2026-06-14",
         "kind": "progress",
         "text": "완성도 45% · 커밋 +63"
+      },
+      {
+        "date": "2026-06-15T05:33:53Z",
+        "kind": "commit",
+        "text": "feat(quality): api/vs-candidates prod 라우트 (C-1 Task5)",
+        "sha": "14ac597"
+      },
+      {
+        "date": "2026-06-15T05:34:00Z",
+        "kind": "commit",
+        "text": "feat(quality): vite /api/vs-candidates 브리지 (C-1 Task6)",
+        "sha": "442f861"
+      },
+      {
+        "date": "2026-06-15T05:37:25Z",
+        "kind": "commit",
+        "text": "feat(quality): vsCandidatesClient + aiStatus mode (C-1 Task7)",
+        "sha": "641668c"
+      },
+      {
+        "date": "2026-06-15T05:40:29Z",
+        "kind": "commit",
+        "text": "feat(quality): FloatingEditor .fc-vs 전개 후보 블록 (C-1 Task8)",
+        "sha": "5a2c7b1"
+      },
+      {
+        "date": "2026-06-15T05:44:53Z",
+        "kind": "commit",
+        "text": "feat(quality): StoryXDesk VS 배선 + .fc-vs CSS (C-1 Task9)",
+        "sha": "8a0955a"
+      },
+      {
+        "date": "2026-06-15T05:53:36Z",
+        "kind": "commit",
+        "text": "fix(quality): VS 핸들러 finally·미회수 약속 dedup (C-1 리뷰 반영)",
+        "sha": "aad16c5"
+      },
+      {
+        "date": "2026-06-15T05:59:47Z",
+        "kind": "commit",
+        "text": "docs: VS 회차 후보(C-1) 완료 — 검증·인계 (C-1 Task10)",
+        "sha": "3a42620"
+      },
+      {
+        "date": "2026-06-15T13:16:04Z",
+        "kind": "commit",
+        "text": "fix(quality): VS 노출 자동열림 — 회차 생성 시 state 패널 자동 표시",
+        "sha": "3be758f"
+      },
+      {
+        "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 45% · 커밋 +30"
       }
     ],
     "BookCircle": [
@@ -1507,6 +1643,11 @@
       },
       {
         "date": "2026-06-14",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-06-16",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -1600,6 +1741,11 @@
         "date": "2026-06-14",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
@@ -1691,6 +1837,11 @@
         "date": "2026-06-14",
         "kind": "progress",
         "text": "완성도 56%"
+      },
+      {
+        "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 56%"
       }
     ],
     "design-system-school": [
@@ -1780,6 +1931,11 @@
       },
       {
         "date": "2026-06-14",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-06-16",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -1984,7 +2140,42 @@
         "sha": "8913e38"
       },
       {
+        "date": "2026-06-13T23:33:04Z",
+        "kind": "commit",
+        "text": "Add June 14 light research briefing",
+        "sha": "9c9d084"
+      },
+      {
         "date": "2026-06-14",
+        "kind": "progress",
+        "text": "완성도 52% · 커밋 +5"
+      },
+      {
+        "date": "2026-06-14T13:49:25Z",
+        "kind": "commit",
+        "text": "Add June 14 build note",
+        "sha": "00adfc8"
+      },
+      {
+        "date": "2026-06-14T23:37:56Z",
+        "kind": "commit",
+        "text": "Add 2026-06-15 research briefing",
+        "sha": "8c09ddf"
+      },
+      {
+        "date": "2026-06-15T13:49:10Z",
+        "kind": "commit",
+        "text": "Add June 15 build note",
+        "sha": "78ad32a"
+      },
+      {
+        "date": "2026-06-15T23:34:22Z",
+        "kind": "commit",
+        "text": "Add 2026-06-16 research briefing",
+        "sha": "4e5a998"
+      },
+      {
+        "date": "2026-06-16",
         "kind": "progress",
         "text": "완성도 52% · 커밋 +5"
       }
@@ -2034,6 +2225,11 @@
       },
       {
         "date": "2026-06-14",
+        "kind": "progress",
+        "text": "완성도 7%"
+      },
+      {
+        "date": "2026-06-16",
         "kind": "progress",
         "text": "완성도 7%"
       }
@@ -2232,9 +2428,56 @@
         "sha": "4247373"
       },
       {
+        "date": "2026-06-13T15:42:53Z",
+        "kind": "commit",
+        "text": "docs: 책담 Fable 업그레이드 설계 + 홈페이지 구현 계획 (이중 결·본명조·발표 쐐기 보존)",
+        "sha": "35b9ca9"
+      },
+      {
+        "date": "2026-06-13T22:02:49Z",
+        "kind": "commit",
+        "text": "feat(landing): 읽기-세계 토큰·본명조 폰트 배선 (이중 결 기반)",
+        "sha": "e2fb160"
+      },
+      {
+        "date": "2026-06-13T22:08:16Z",
+        "kind": "commit",
+        "text": "feat(book): 공개 표면 표지-우선 CoverImage + resolveCover 순수함수",
+        "sha": "4a6cb20"
+      },
+      {
+        "date": "2026-06-13T22:10:06Z",
+        "kind": "commit",
+        "text": "feat(landing): 랜딩 본명조 세리프 리스킨 + 표지-우선 카드 + 신규 2섹션 배선",
+        "sha": "ede59af"
+      },
+      {
+        "date": "2026-06-13T22:10:06Z",
+        "kind": "commit",
+        "text": "feat(landing): 독서 시각화·결산 미리보기 컴포넌트 (Fable 차용 ⑤)",
+        "sha": "2344115"
+      },
+      {
+        "date": "2026-06-13T22:10:06Z",
+        "kind": "commit",
+        "text": "feat(landing): 표지 발견 띠 컴포넌트 + 공개 표지 조회 (Fable 차용 ②)",
+        "sha": "e60efa9"
+      },
+      {
+        "date": "2026-06-13T23:16:52Z",
+        "kind": "commit",
+        "text": "docs: Fable 홈페이지 업그레이드 핸드오프 + 로드맵 A5 반영",
+        "sha": "975fb90"
+      },
+      {
         "date": "2026-06-14",
         "kind": "progress",
         "text": "완성도 19% · 커밋 +38"
+      },
+      {
+        "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 19% · 커밋 +7"
       }
     ],
     "honbul": [
@@ -2602,6 +2845,11 @@
         "date": "2026-06-14",
         "kind": "progress",
         "text": "완성도 19% · 커밋 +99"
+      },
+      {
+        "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ]
   }

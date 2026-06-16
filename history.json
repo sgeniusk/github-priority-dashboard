@@ -1288,7 +1288,7 @@
     {
       "date": "2026-06-14",
       "avgProgress": 46,
-      "totalCommits": 2211,
+      "totalCommits": 2210,
       "active": 12,
       "projects": {
         "habit": {
@@ -1341,7 +1341,7 @@
         },
         "cmds-daily-briefing": {
           "total": 52,
-          "commits": 52
+          "commits": 51
         },
         "Timeer": {
           "total": 7,

@@ -2,18 +2,19 @@
 
 다음 세션이 이 한 페이지만 보고도 현재 상태와 검증 증거를 이어받을 수 있도록 유지한다. 상세 백로그는 `feature_list.json`.
 
-**Last Updated**: 2026-06-14 (GitHub 활동 refresh + 월간 분석 재생성)
+**Last Updated**: 2026-06-16 (GitHub 활동 refresh + 월간 분석 재생성)
 
 ## Current Objective — None
 
-오늘 작업 완료 상태다. `meta.asOf`는 2026-06-14이고, 전체 16개 프로젝트 중 활성 12개·일시중단 4개, 총 커밋 2210개, 뉴스 28건, history 20스냅샷이다. `monthly-analysis.html`은 2026-05-16부터 2026-06-14까지 최근 30일 커밋 1928건을 관찰해 레포별 활동·공백·테마를 보여준다. `project-pages/`에는 16개 프로젝트별 제작 현황 페이지와 index가 생성되어 있다.
+오늘 작업 완료 상태다. `meta.asOf`는 2026-06-16이고, 전체 16개 프로젝트 중 활성 12개·일시중단 4개, 총 커밋 2267개, 뉴스 30건, history 22스냅샷이다. `monthly-analysis.html`은 2026-05-18부터 2026-06-16까지 최근 30일 커밋 1670건을 관찰해 레포별 활동·공백·테마를 보여준다. `project-pages/`에는 16개 프로젝트별 제작 현황 페이지와 index가 생성되어 있다.
 
 ## Recommended Next Step
 
-다음 세션 시작 시 `bash init.sh`와 이 파일을 먼저 확인한다. 후보 작업은 `monthly-analysis.html`의 분석 문구를 실제 운영 판단에 맞춰 점진 개선, 자동 refresh 루틴의 원격 `GH_TOKEN` 가용성 확인, `reports.json` 줄글 최신성 점검, 신규 프로젝트 등록 시 `projects/{repo}` 문서 표준화와 project-pages 재생성 확인이다.
+다음 세션 시작 시 `bash init.sh`와 이 파일을 먼저 확인한다. 현재 `meta.asOf`는 오늘자라 추가 refresh는 필요 없다. 후보 작업은 `monthly-analysis.html`의 분석 문구를 실제 운영 판단에 맞춰 점진 개선, 자동 refresh 루틴의 원격 `GH_TOKEN` 가용성 확인, `reports.json` 줄글 최신성 점검, 신규 프로젝트 등록 시 `projects/{repo}` 문서 표준화와 project-pages 재생성 확인이다.
 
 ## 직전에 푼 것
 
+- **2026-06-16 refresh** — GitHub 활동 refresh로 `ai-company-tycoon-boundaryless` 446→461커밋, `story-x-beta` 336→366커밋, `cmds-daily-briefing` 51→56커밋, `chaekdam` 114→121커밋, 총 커밋 2267개, `meta.asOf` 2026-06-16, history 22스냅샷, news 30건으로 갱신했다. `project-pages/`와 `monthly-analysis`도 재생성했고, JSON 관련 FALLBACK seed를 verbatim 동기화했다. 완성도 점수는 자동 변경하지 않았다.
 - **2026-06-14 refresh** — GitHub 활동 refresh로 `sam-defender-logue` 197→204커밋, `ai-company-tycoon-boundaryless` 401→446커밋, `story-x-beta` 273→336커밋, `cmds-daily-briefing` 46→51커밋, `chaekdam` 76→114커밋, `honbul` 130→229커밋, 총 커밋 2210개, `meta.asOf` 2026-06-14, history 20스냅샷, news 28건으로 갱신했다. `project-pages/`와 `monthly-analysis`도 재생성했고, JSON 관련 FALLBACK seed를 verbatim 동기화했다. 완성도 점수는 자동 변경하지 않았다.
 - **v2.11 한도 인식 코칭** — `/coach` 분석 항목에 '도구 한도(usage.json)'를 추가했다(주간 ≥70% warn, ≥85% high, 리셋 24시간 이내 하향, `auto` 48시간 초과 시 분석 생략+`/usage-refresh` 권고). `type:"usage"` 제안은 해당 도구 최다 소비 active 프로젝트의 repo에 달고, 다른 제안의 recommendation에도 한도 상황을 반영한다. 2026-06-10 데이터로 `suggestions.json`을 재생성 — Codex 주간 78% 경고(usage·warn, tycoon에 부착), tteuniyu-ios 29일·habit 15일 정체(stall·high), design-system-school 12일(warn), honbul·ai-builder-school 기능 병목(info). FALLBACK_SUGGESTIONS·project-report fallback-suggestions 동기화, project-pages 재생성.
 - **2026-06-10 refresh** — 총 커밋 1660→1791, 뉴스 18건, history 16스냅샷, monthly-analysis(5/12~6/10, 1782커밋) 재생성. 원격 daily auto-refresh 4일치 위로 rebase(충돌 3건은 로컬 최신 확인 후 로컬 채택), report.html·project-report.html의 FALLBACK 시드 수동 동기화.
@@ -36,19 +37,19 @@
 
 | 항목 | 상태 | 마지막 확인 |
 | --- | --- | --- |
-| 시작 점검 | 통과 | 2026-06-14 `bash init.sh` |
+| 시작 점검 | 통과 | 2026-06-16 `bash init.sh` |
 | 사용량 자동 수집 | 통과 | 2026-06-10 `node scripts/refresh-usage.mjs` 실기기 실행 — Claude(keychain 토큰 갱신 포함)·Codex 모두 수집, 전부 실패 시 usage.json 미변경+exit 1 확인 |
 | 사용량 mock 파이프라인 | 통과 | `node scripts/refresh-usage.mjs --mock scripts/fixtures/usage-mock.json --dry-run` |
 | 사용량 탭 자동 카드 | 통과 | 2026-06-10 Playwright Chromium — usageGrid에 자동 수집 카드 2개 렌더, 4탭+report+project-report+project-pages 콘솔 에러 0 |
-| 데이터 refresh | 통과 | 2026-06-14 `GH_TOKEN="$(gh auth token)" node scripts/refresh-progress.mjs`, 총 커밋 2210·뉴스 28건·history 20스냅샷 |
-| 월간 분석 생성 | 통과 | refresh 연동, 2026-05-16..2026-06-14, 커밋 1928건 |
-| JSON·스크립트 검증 | 통과 | 2026-06-14 `node scripts/validate.mjs` |
-| 보고서 fallback·file smoke | 통과 | 2026-06-14 `node scripts/check-report-pages.mjs`, monthly-analysis·project-pages 존재 검증 포함 |
+| 데이터 refresh | 통과 | 2026-06-16 `GH_TOKEN="$(gh auth token)" node scripts/refresh-progress.mjs`, 총 커밋 2267·뉴스 30건·history 22스냅샷 |
+| 월간 분석 생성 | 통과 | refresh 연동, 2026-05-18..2026-06-16, 커밋 1670건 |
+| JSON·스크립트 검증 | 통과 | 2026-06-16 `node scripts/validate.mjs` |
+| 보고서 fallback·file smoke | 통과 | 2026-06-16 `node scripts/check-report-pages.mjs`, monthly-analysis·project-pages 존재 검증 포함 |
 | dashboard FALLBACK | 통과 | `FALLBACK_PROJECTS`·`FALLBACK_SUGGESTIONS`·`FALLBACK_USAGE` verbatim 일치 |
 | monthly-analysis FALLBACK | 통과 | `FALLBACK_ANALYSIS`와 `monthly-analysis.json` verbatim 일치 |
-| 브라우저 콘솔 | 0 | 2026-06-14 Playwright Chromium, dashboard 4탭 + report.html + monthly-analysis.html + project-report.html?repo=habit + project-pages/index.html + project-pages/honbul.html |
-| 브라우저 HTTP 오류 | 0 | 2026-06-14 Chromium, 로컬 4xx/5xx 0 |
-| 반응형 화면 | 확인 | monthly-analysis.html 데스크톱 1440px·모바일 390px 스크린샷 확인 |
+| 브라우저 콘솔 | 0 | 2026-06-16 Playwright Chromium, dashboard 4탭 + report.html + monthly-analysis.html + project-report.html?repo=habit + project-pages/index.html + project-pages/honbul.html |
+| 브라우저 HTTP 오류 | 0 | 2026-06-16 Chromium, 로컬 4xx/5xx 0 |
+| 레이아웃 overflow | 없음 | 2026-06-16 Chromium 1440px, 확인 페이지 전체 horizontal overflow 없음 |
 
 ## Blockers
 

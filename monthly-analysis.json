@@ -1,31 +1,23 @@
 {
   "_comment": "최근 30일 GitHub 커밋 관찰 분석. scripts/build-monthly-analysis.mjs가 생성하며 monthly-analysis.html의 FALLBACK_ANALYSIS와 동기화한다.",
-  "generatedAt": "2026-06-14",
+  "generatedAt": "2026-06-16",
   "owner": "sgeniusk",
   "window": {
-    "start": "2026-05-16",
-    "end": "2026-06-14",
+    "start": "2026-05-18",
+    "end": "2026-06-16",
     "days": 30
   },
   "summary": {
     "totalRepos": 16,
     "activeRepos": 13,
     "quietRepos": 3,
-    "totalCommits": 1928,
+    "totalCommits": 1670,
     "activeDays": 29,
-    "avgCommitsPerActiveRepo": 148.3,
+    "avgCommitsPerActiveRepo": 128.5,
     "leaderRepo": "ai-company-tycoon-boundaryless",
     "leaderName": "AI 컴퍼니 타이쿤"
   },
   "daily": [
-    {
-      "date": "2026-05-16",
-      "commits": 157
-    },
-    {
-      "date": "2026-05-17",
-      "commits": 158
-    },
     {
       "date": "2026-05-18",
       "commits": 81
@@ -132,10 +124,18 @@
     },
     {
       "date": "2026-06-13",
-      "commits": 57
+      "commits": 80
     },
     {
       "date": "2026-06-14",
+      "commits": 18
+    },
+    {
+      "date": "2026-06-15",
+      "commits": 16
+    },
+    {
+      "date": "2026-06-16",
       "commits": 0
     }
   ],
@@ -144,21 +144,21 @@
       {
         "id": "game",
         "label": "게임",
-        "commits": 1154,
+        "commits": 999,
         "repos": 5,
         "activeRepos": 5
       },
       {
         "id": "app",
         "label": "앱",
-        "commits": 625,
+        "commits": 565,
         "repos": 8,
         "activeRepos": 6
       },
       {
         "id": "content",
         "label": "콘텐츠",
-        "commits": 149,
+        "commits": 106,
         "repos": 3,
         "activeRepos": 2
       }
@@ -167,14 +167,14 @@
       {
         "id": "codex",
         "label": "Codex",
-        "commits": 1146,
+        "commits": 956,
         "repos": 5,
         "activeRepos": 5
       },
       {
         "id": "claude",
         "label": "Claude",
-        "commits": 782,
+        "commits": 714,
         "repos": 10,
         "activeRepos": 8
       },
@@ -190,37 +190,37 @@
       {
         "id": "feature",
         "label": "기능 구현",
-        "commits": 611
+        "commits": 519
       },
       {
         "id": "maintenance",
         "label": "정리/운영",
-        "commits": 517
+        "commits": 423
       },
       {
         "id": "experience",
         "label": "경험/화면",
-        "commits": 308
+        "commits": 272
       },
       {
         "id": "docs",
         "label": "문서화",
-        "commits": 227
+        "commits": 223
       },
       {
         "id": "verification",
         "label": "검증",
-        "commits": 149
+        "commits": 127
       },
       {
         "id": "stability",
         "label": "안정화",
-        "commits": 116
+        "commits": 106
       }
     ]
   },
   "diagnosis": [
-    "이번 30일의 중심은 AI 컴퍼니 타이쿤입니다. 413커밋과 22일의 활동일이 관찰되어, 가장 많은 실제 손길을 받았습니다.",
+    "이번 30일의 중심은 AI 컴퍼니 타이쿤입니다. 379커밋과 21일의 활동일이 관찰되어, 가장 많은 실제 손길을 받았습니다.",
     "전체 16개 중 13개 리포가 움직였습니다. 포트폴리오 전반이 완전히 멈춘 상태는 아니고, 관심이 여러 프로젝트로 분산된 상태에 가깝습니다.",
     "3개 리포는 한 달 동안 새 커밋이 없었습니다. 보류 프로젝트는 괜찮지만, 활성 프로젝트가 여기에 포함되면 다음 액션의 크기를 줄여야 합니다."
   ],
@@ -236,26 +236,24 @@
       "status": "active",
       "rank": 7,
       "progressTotal": 40,
-      "commits": 413,
-      "activeDays": 22,
-      "quietDays": 1,
+      "commits": 379,
+      "activeDays": 21,
+      "quietDays": 2,
       "maxGap": 5,
-      "firstCommit": "2026-05-16T00:25:16Z",
-      "lastCommit": "2026-06-13T14:31:57Z",
+      "firstCommit": "2026-05-18T03:44:19Z",
+      "lastCommit": "2026-06-14T16:55:26Z",
       "state": "surge",
       "topTheme": "maintenance",
       "themeLabel": "정리/운영",
       "themes": {
-        "feature": 94,
-        "docs": 37,
-        "maintenance": 199,
-        "verification": 33,
-        "experience": 47,
+        "verification": 29,
+        "experience": 42,
+        "feature": 80,
+        "maintenance": 190,
+        "docs": 35,
         "stability": 3
       },
       "byDate": {
-        "2026-05-16": 20,
-        "2026-05-17": 29,
         "2026-05-18": 13,
         "2026-05-19": 5,
         "2026-05-20": 18,
@@ -275,41 +273,42 @@
         "2026-06-09": 19,
         "2026-06-10": 11,
         "2026-06-11": 20,
-        "2026-06-13": 18
+        "2026-06-13": 27,
+        "2026-06-14": 6
       },
       "latest": [
         {
-          "sha": "305588c",
-          "message": "docs: 후속 개발 핸드오프 정리 — 픽셀 비주얼 후속 + 도감 UI (backlog)",
-          "date": "2026-06-13T14:31:57Z",
-          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/305588c2504fec5250427c19682892f24f386e18"
+          "sha": "51fa08f",
+          "message": "balance: 봇 승리 27→51개월 — 승리 임계값 상향 + 회귀 가드",
+          "date": "2026-06-14T16:55:26Z",
+          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/51fa08f0088c1900e666057d10239efb17027645"
         },
         {
-          "sha": "80e9867",
-          "message": "feat-018 후속: 4종 룸 벽 중하단 디테일 — 20:9 휑함 해소",
-          "date": "2026-06-13T12:40:10Z",
-          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/80e9867270e756563113b0801226eefb570ed63f"
+          "sha": "1dc99ad",
+          "message": "feat-022: 트렌드 콘텐츠 웨이브 — 2025-26 AI 트렌드 월드 이벤트 12종 (30→42)",
+          "date": "2026-06-14T11:09:08Z",
+          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/1dc99ad4bfc56cc382a691cdc60dad99604762cf"
         },
         {
-          "sha": "4d09d96",
-          "message": "feat-018: 픽셀 배경 폰 고품질 대응 — cover + 고해상도",
-          "date": "2026-06-13T12:07:46Z",
-          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/4d09d96ba5e10ebf2df12e32a8818c0389fa1e85"
+          "sha": "63f7452",
+          "message": "feat-022 킥오프: 트렌드 콘텐츠 웨이브 설계·등록 — 2025-26 AI 트렌드 월드 이벤트",
+          "date": "2026-06-14T10:46:15Z",
+          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/63f7452c0cc854b1e9df745baa935f8ca7faa044"
         },
         {
-          "sha": "140f250",
-          "message": "feat-017 #1~#3: 픽셀 컷씬 tier 확장 — 승급·상장·미니",
-          "date": "2026-06-13T11:17:44Z",
-          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/140f250f37191367e1c3eadf46cf2ff6868f222a"
+          "sha": "96cb40a",
+          "message": "feat-021: 도감 열람 UI — 크로스런 수집 그리드 갤러리",
+          "date": "2026-06-14T04:00:45Z",
+          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/96cb40a3564af7b8757867351d547478eebf8b64"
         },
         {
-          "sha": "4a4174d",
-          "message": "feat-017: 픽셀 컷씬 시스템 골격 — 출시 발표회 + No-cameras 수정",
-          "date": "2026-06-13T08:55:20Z",
-          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/4a4174d651b2c6fcad9b9a93528dd5d938643e06"
+          "sha": "94e4c9e",
+          "message": "feat-021 킥오프: 도감 열람 UI 설계·등록 — 크로스런 수집 그리드 갤러리",
+          "date": "2026-06-14T03:05:25Z",
+          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/94e4c9e9e2d746640c1a3dae51e182b67a0e290e"
         }
       ],
-      "insight": "AI 컴퍼니 타이쿤은 413커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "AI 컴퍼니 타이쿤은 379커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "story-x-beta",
@@ -322,26 +321,24 @@
       "status": "active",
       "rank": 8,
       "progressTotal": 45,
-      "commits": 271,
+      "commits": 268,
       "activeDays": 22,
       "quietDays": 1,
       "maxGap": 2,
-      "firstCommit": "2026-05-16T05:21:46Z",
-      "lastCommit": "2026-06-13T08:58:14Z",
+      "firstCommit": "2026-05-18T01:48:39Z",
+      "lastCommit": "2026-06-15T13:16:04Z",
       "state": "surge",
-      "topTheme": "maintenance",
-      "themeLabel": "정리/운영",
+      "topTheme": "feature",
+      "themeLabel": "기능 구현",
       "themes": {
-        "feature": 61,
-        "stability": 37,
-        "docs": 52,
-        "maintenance": 65,
-        "verification": 31,
-        "experience": 25
+        "maintenance": 54,
+        "experience": 31,
+        "feature": 58,
+        "docs": 56,
+        "stability": 38,
+        "verification": 31
       },
       "byDate": {
-        "2026-05-16": 25,
-        "2026-05-17": 8,
         "2026-05-18": 8,
         "2026-05-19": 12,
         "2026-05-20": 2,
@@ -361,41 +358,43 @@
         "2026-06-09": 32,
         "2026-06-10": 38,
         "2026-06-11": 13,
-        "2026-06-13": 15
+        "2026-06-13": 21,
+        "2026-06-14": 10,
+        "2026-06-15": 14
       },
       "latest": [
         {
-          "sha": "8933b10",
-          "message": "docs: A-3 완료 반영 — 헌장 체인 live, 다음=A-2 단계 게이트",
-          "date": "2026-06-13T08:58:14Z",
-          "url": "https://github.com/sgeniusk/story-x-beta/commit/8933b10fb91e115f32a4ed8b1dde4e78f0a787da"
+          "sha": "3be758f",
+          "message": "fix(quality): VS 노출 자동열림 — 회차 생성 시 state 패널 자동 표시",
+          "date": "2026-06-15T13:16:04Z",
+          "url": "https://github.com/sgeniusk/story-x-beta/commit/3be758f75e7b1346a6d29a0b96a2bcb81f92064f"
         },
         {
-          "sha": "2e51fa2",
-          "message": "feat(phase-a): A-3 온보딩 헌장 생성 단계 — 결말 역산 + 4줄 척추 잠금",
-          "date": "2026-06-13T08:56:39Z",
-          "url": "https://github.com/sgeniusk/story-x-beta/commit/2e51fa2ef4aa3a1bd48984149c9bc1c2ffb2b2c9"
+          "sha": "3a42620",
+          "message": "docs: VS 회차 후보(C-1) 완료 — 검증·인계 (C-1 Task10)",
+          "date": "2026-06-15T05:59:47Z",
+          "url": "https://github.com/sgeniusk/story-x-beta/commit/3a426205afe3aa5cbaccc66d536ea4055fd4d02b"
         },
         {
-          "sha": "54fa97a",
-          "message": "feat(phase-a): A-3 헌장 빌더 — deriveBeatSheet·buildStoryContractFromOnboarding",
-          "date": "2026-06-13T07:44:08Z",
-          "url": "https://github.com/sgeniusk/story-x-beta/commit/54fa97af9d3994370231446d8397c20ad51ba1d2"
+          "sha": "aad16c5",
+          "message": "fix(quality): VS 핸들러 finally·미회수 약속 dedup (C-1 리뷰 반영)",
+          "date": "2026-06-15T05:53:36Z",
+          "url": "https://github.com/sgeniusk/story-x-beta/commit/aad16c5c23fd69d2939feb499c5ccf297fc18b6c"
         },
         {
-          "sha": "4c64a1d",
-          "message": "docs: A-5 완료 반영 — 헌장 체인 배선 끝, 다음=A-3 온보딩(헌장 생성)",
-          "date": "2026-06-13T07:12:21Z",
-          "url": "https://github.com/sgeniusk/story-x-beta/commit/4c64a1d2a521e94b657c316b3f3680fedbd61138"
+          "sha": "8a0955a",
+          "message": "feat(quality): StoryXDesk VS 배선 + .fc-vs CSS (C-1 Task9)",
+          "date": "2026-06-15T05:44:53Z",
+          "url": "https://github.com/sgeniusk/story-x-beta/commit/8a0955a69047ac26fc2269f0d52e2df6c55165f4"
         },
         {
-          "sha": "d2fd3f8",
-          "message": "feat(phase-a): A-5 헌장 예산 배선(검토 경로) — reviewClient→api/review-agent·CLI",
-          "date": "2026-06-13T07:10:47Z",
-          "url": "https://github.com/sgeniusk/story-x-beta/commit/d2fd3f87271f8a841d02fa4a1ea1e14ea77ccad3"
+          "sha": "5a2c7b1",
+          "message": "feat(quality): FloatingEditor .fc-vs 전개 후보 블록 (C-1 Task8)",
+          "date": "2026-06-15T05:40:29Z",
+          "url": "https://github.com/sgeniusk/story-x-beta/commit/5a2c7b1d8024e55f6b03073541d26aa7ca4d4041"
         }
       ],
-      "insight": "Story X은 271커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "Story X은 268커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "honbul",
@@ -410,8 +409,8 @@
       "progressTotal": 19,
       "commits": 229,
       "activeDays": 17,
-      "quietDays": 1,
-      "maxGap": 11,
+      "quietDays": 3,
+      "maxGap": 9,
       "firstCommit": "2026-05-27T18:14:03Z",
       "lastCommit": "2026-06-13T14:45:20Z",
       "state": "surge",
@@ -479,165 +478,6 @@
       "insight": "혼불 (Honbul)은 229커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
-      "repo": "three-kingdoms-deckbuilder",
-      "displayName": "군령: 책략의 전장 (Warlord's Command)",
-      "icon": "🃏",
-      "category": "game",
-      "categoryLabel": "게임",
-      "tool": "codex",
-      "toolLabel": "Codex",
-      "status": "active",
-      "rank": 5,
-      "progressTotal": 55,
-      "commits": 183,
-      "activeDays": 16,
-      "quietDays": 8,
-      "maxGap": 8,
-      "firstCommit": "2026-05-16T00:02:47Z",
-      "lastCommit": "2026-06-06T10:10:37Z",
-      "state": "surge",
-      "topTheme": "experience",
-      "themeLabel": "경험/화면",
-      "themes": {
-        "maintenance": 21,
-        "feature": 17,
-        "verification": 17,
-        "stability": 12,
-        "experience": 115,
-        "docs": 1
-      },
-      "byDate": {
-        "2026-05-16": 45,
-        "2026-05-17": 17,
-        "2026-05-18": 10,
-        "2026-05-19": 10,
-        "2026-05-23": 5,
-        "2026-05-24": 31,
-        "2026-05-25": 1,
-        "2026-05-29": 34,
-        "2026-05-30": 4,
-        "2026-05-31": 7,
-        "2026-06-01": 9,
-        "2026-06-02": 3,
-        "2026-06-03": 1,
-        "2026-06-04": 2,
-        "2026-06-05": 2,
-        "2026-06-06": 2
-      },
-      "latest": [
-        {
-          "sha": "cda900d",
-          "message": "Apply opening order UI polish",
-          "date": "2026-06-06T10:10:37Z",
-          "url": "https://github.com/sgeniusk/three-kingdoms-deckbuilder/commit/cda900d06a00d89f10cab97d14c25aed53fd0c6f"
-        },
-        {
-          "sha": "0abca51",
-          "message": "Apply design handoff combat layout",
-          "date": "2026-06-06T00:13:03Z",
-          "url": "https://github.com/sgeniusk/three-kingdoms-deckbuilder/commit/0abca510557bc1c3801726f6aa19e424eb04e458"
-        },
-        {
-          "sha": "d898a78",
-          "message": "chore: refresh verified deployment author",
-          "date": "2026-06-05T17:40:52Z",
-          "url": "https://github.com/sgeniusk/three-kingdoms-deckbuilder/commit/d898a7897f1a6ca902bd7bc2d88345b8f3e662dd"
-        },
-        {
-          "sha": "0ffdd3f",
-          "message": "docs: add external UI redesign prompt",
-          "date": "2026-06-05T04:45:59Z",
-          "url": "https://github.com/sgeniusk/three-kingdoms-deckbuilder/commit/0ffdd3f720aa54a351d10f9d43ca10e8cf2f4639"
-        },
-        {
-          "sha": "6d2e33e",
-          "message": "chore: track commander portrait imports",
-          "date": "2026-06-04T16:33:12Z",
-          "url": "https://github.com/sgeniusk/three-kingdoms-deckbuilder/commit/6d2e33ec337a3fa68383c30b54ad79d116b537f3"
-        }
-      ],
-      "insight": "군령: 책략의 전장 (Warlord's Command)은 183커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "displayName": "전지적 군주 시점",
-      "icon": "👑",
-      "category": "game",
-      "categoryLabel": "게임",
-      "tool": "codex",
-      "toolLabel": "Codex",
-      "status": "active",
-      "rank": 4,
-      "progressTotal": 60,
-      "commits": 175,
-      "activeDays": 15,
-      "quietDays": 8,
-      "maxGap": 8,
-      "firstCommit": "2026-05-16T05:45:50Z",
-      "lastCommit": "2026-06-06T16:05:52Z",
-      "state": "surge",
-      "topTheme": "maintenance",
-      "themeLabel": "정리/운영",
-      "themes": {
-        "maintenance": 69,
-        "feature": 66,
-        "experience": 19,
-        "docs": 13,
-        "verification": 5,
-        "stability": 3
-      },
-      "byDate": {
-        "2026-05-16": 18,
-        "2026-05-17": 32,
-        "2026-05-18": 12,
-        "2026-05-20": 1,
-        "2026-05-26": 8,
-        "2026-05-27": 1,
-        "2026-05-29": 23,
-        "2026-05-30": 15,
-        "2026-05-31": 23,
-        "2026-06-01": 10,
-        "2026-06-02": 2,
-        "2026-06-03": 6,
-        "2026-06-04": 7,
-        "2026-06-05": 3,
-        "2026-06-06": 14
-      },
-      "latest": [
-        {
-          "sha": "69f9531",
-          "message": "chore: ignore renderer proof screenshots + record W1 war Pixi port handoff",
-          "date": "2026-06-06T16:05:52Z",
-          "url": "https://github.com/sgeniusk/samguk-idle-prototype/commit/69f9531f3cf7551f1428e2eab682211836610ca0"
-        },
-        {
-          "sha": "a8cc17a",
-          "message": "docs(renderer): record v1.00.46 combat effects verification + register feature",
-          "date": "2026-06-06T09:15:50Z",
-          "url": "https://github.com/sgeniusk/samguk-idle-prototype/commit/a8cc17afed62ec45cb0c8599bd209d6fc6825be4"
-        },
-        {
-          "sha": "20721f6",
-          "message": "feat(renderer): adventure combat effects E1-E4 on Pixi field (v1.00.46)",
-          "date": "2026-06-06T08:17:30Z",
-          "url": "https://github.com/sgeniusk/samguk-idle-prototype/commit/20721f60efb6a65e6addc577f6dbf3efc2c230b7"
-        },
-        {
-          "sha": "ee6852c",
-          "message": "feat(renderer): emit hit-flash/impact-strip effect descriptors from scene model (E3-E4 data)",
-          "date": "2026-06-06T07:10:17Z",
-          "url": "https://github.com/sgeniusk/samguk-idle-prototype/commit/ee6852cefe20d1e01bf4fe80861e02833303c8b1"
-        },
-        {
-          "sha": "2f356e2",
-          "message": "fix(renderer): persist Pixi adventure canvas across SPA render + frame-crop sprites",
-          "date": "2026-06-06T04:40:47Z",
-          "url": "https://github.com/sgeniusk/samguk-idle-prototype/commit/2f356e25b06237feb5967e276750ca3451123d73"
-        }
-      ],
-      "insight": "전지적 군주 시점은 175커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
-    },
-    {
       "repo": "sam-defender-logue",
       "displayName": "삼국지: 시즈폴 (Siege Fall)",
       "icon": "🛡️",
@@ -648,17 +488,17 @@
       "status": "active",
       "rank": 3,
       "progressTotal": 60,
-      "commits": 154,
-      "activeDays": 17,
-      "quietDays": 3,
+      "commits": 145,
+      "activeDays": 16,
+      "quietDays": 5,
       "maxGap": 5,
-      "firstCommit": "2026-05-17T01:17:43Z",
+      "firstCommit": "2026-05-20T16:44:26Z",
       "lastCommit": "2026-06-11T10:32:46Z",
       "state": "surge",
       "topTheme": "feature",
       "themeLabel": "기능 구현",
       "themes": {
-        "feature": 94,
+        "feature": 85,
         "maintenance": 1,
         "docs": 11,
         "stability": 8,
@@ -666,7 +506,6 @@
         "verification": 5
       },
       "byDate": {
-        "2026-05-17": 9,
         "2026-05-20": 1,
         "2026-05-21": 8,
         "2026-05-27": 4,
@@ -716,7 +555,239 @@
           "url": "https://github.com/sgeniusk/sam-defender-logue/commit/68e73001badd3977ff2b4f007e307f42dd14f6bf"
         }
       ],
-      "insight": "삼국지: 시즈폴 (Siege Fall)은 154커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "삼국지: 시즈폴 (Siege Fall)은 145커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "displayName": "전지적 군주 시점",
+      "icon": "👑",
+      "category": "game",
+      "categoryLabel": "게임",
+      "tool": "codex",
+      "toolLabel": "Codex",
+      "status": "active",
+      "rank": 4,
+      "progressTotal": 60,
+      "commits": 125,
+      "activeDays": 13,
+      "quietDays": 10,
+      "maxGap": 10,
+      "firstCommit": "2026-05-18T03:46:30Z",
+      "lastCommit": "2026-06-06T16:05:52Z",
+      "state": "surge",
+      "topTheme": "maintenance",
+      "themeLabel": "정리/운영",
+      "themes": {
+        "experience": 10,
+        "feature": 43,
+        "maintenance": 53,
+        "docs": 11,
+        "verification": 5,
+        "stability": 3
+      },
+      "byDate": {
+        "2026-05-18": 12,
+        "2026-05-20": 1,
+        "2026-05-26": 8,
+        "2026-05-27": 1,
+        "2026-05-29": 23,
+        "2026-05-30": 15,
+        "2026-05-31": 23,
+        "2026-06-01": 10,
+        "2026-06-02": 2,
+        "2026-06-03": 6,
+        "2026-06-04": 7,
+        "2026-06-05": 3,
+        "2026-06-06": 14
+      },
+      "latest": [
+        {
+          "sha": "69f9531",
+          "message": "chore: ignore renderer proof screenshots + record W1 war Pixi port handoff",
+          "date": "2026-06-06T16:05:52Z",
+          "url": "https://github.com/sgeniusk/samguk-idle-prototype/commit/69f9531f3cf7551f1428e2eab682211836610ca0"
+        },
+        {
+          "sha": "a8cc17a",
+          "message": "docs(renderer): record v1.00.46 combat effects verification + register feature",
+          "date": "2026-06-06T09:15:50Z",
+          "url": "https://github.com/sgeniusk/samguk-idle-prototype/commit/a8cc17afed62ec45cb0c8599bd209d6fc6825be4"
+        },
+        {
+          "sha": "20721f6",
+          "message": "feat(renderer): adventure combat effects E1-E4 on Pixi field (v1.00.46)",
+          "date": "2026-06-06T08:17:30Z",
+          "url": "https://github.com/sgeniusk/samguk-idle-prototype/commit/20721f60efb6a65e6addc577f6dbf3efc2c230b7"
+        },
+        {
+          "sha": "ee6852c",
+          "message": "feat(renderer): emit hit-flash/impact-strip effect descriptors from scene model (E3-E4 data)",
+          "date": "2026-06-06T07:10:17Z",
+          "url": "https://github.com/sgeniusk/samguk-idle-prototype/commit/ee6852cefe20d1e01bf4fe80861e02833303c8b1"
+        },
+        {
+          "sha": "2f356e2",
+          "message": "fix(renderer): persist Pixi adventure canvas across SPA render + frame-crop sprites",
+          "date": "2026-06-06T04:40:47Z",
+          "url": "https://github.com/sgeniusk/samguk-idle-prototype/commit/2f356e25b06237feb5967e276750ca3451123d73"
+        }
+      ],
+      "insight": "전지적 군주 시점은 125커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "displayName": "군령: 책략의 전장 (Warlord's Command)",
+      "icon": "🃏",
+      "category": "game",
+      "categoryLabel": "게임",
+      "tool": "codex",
+      "toolLabel": "Codex",
+      "status": "active",
+      "rank": 5,
+      "progressTotal": 55,
+      "commits": 121,
+      "activeDays": 14,
+      "quietDays": 10,
+      "maxGap": 10,
+      "firstCommit": "2026-05-18T01:20:46Z",
+      "lastCommit": "2026-06-06T10:10:37Z",
+      "state": "surge",
+      "topTheme": "experience",
+      "themeLabel": "경험/화면",
+      "themes": {
+        "verification": 9,
+        "maintenance": 6,
+        "experience": 95,
+        "stability": 5,
+        "feature": 5,
+        "docs": 1
+      },
+      "byDate": {
+        "2026-05-18": 10,
+        "2026-05-19": 10,
+        "2026-05-23": 5,
+        "2026-05-24": 31,
+        "2026-05-25": 1,
+        "2026-05-29": 34,
+        "2026-05-30": 4,
+        "2026-05-31": 7,
+        "2026-06-01": 9,
+        "2026-06-02": 3,
+        "2026-06-03": 1,
+        "2026-06-04": 2,
+        "2026-06-05": 2,
+        "2026-06-06": 2
+      },
+      "latest": [
+        {
+          "sha": "cda900d",
+          "message": "Apply opening order UI polish",
+          "date": "2026-06-06T10:10:37Z",
+          "url": "https://github.com/sgeniusk/three-kingdoms-deckbuilder/commit/cda900d06a00d89f10cab97d14c25aed53fd0c6f"
+        },
+        {
+          "sha": "0abca51",
+          "message": "Apply design handoff combat layout",
+          "date": "2026-06-06T00:13:03Z",
+          "url": "https://github.com/sgeniusk/three-kingdoms-deckbuilder/commit/0abca510557bc1c3801726f6aa19e424eb04e458"
+        },
+        {
+          "sha": "d898a78",
+          "message": "chore: refresh verified deployment author",
+          "date": "2026-06-05T17:40:52Z",
+          "url": "https://github.com/sgeniusk/three-kingdoms-deckbuilder/commit/d898a7897f1a6ca902bd7bc2d88345b8f3e662dd"
+        },
+        {
+          "sha": "0ffdd3f",
+          "message": "docs: add external UI redesign prompt",
+          "date": "2026-06-05T04:45:59Z",
+          "url": "https://github.com/sgeniusk/three-kingdoms-deckbuilder/commit/0ffdd3f720aa54a351d10f9d43ca10e8cf2f4639"
+        },
+        {
+          "sha": "6d2e33e",
+          "message": "chore: track commander portrait imports",
+          "date": "2026-06-04T16:33:12Z",
+          "url": "https://github.com/sgeniusk/three-kingdoms-deckbuilder/commit/6d2e33ec337a3fa68383c30b54ad79d116b537f3"
+        }
+      ],
+      "insight": "군령: 책략의 전장 (Warlord's Command)은 121커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+    },
+    {
+      "repo": "chaekdam",
+      "displayName": "책담 (Chaekdam)",
+      "icon": "📖",
+      "category": "app",
+      "categoryLabel": "앱",
+      "tool": "claude",
+      "toolLabel": "Claude",
+      "status": "active",
+      "rank": 15,
+      "progressTotal": 19,
+      "commits": 121,
+      "activeDays": 13,
+      "quietDays": 3,
+      "maxGap": 9,
+      "firstCommit": "2026-05-27T17:11:40Z",
+      "lastCommit": "2026-06-13T23:16:52Z",
+      "state": "surge",
+      "topTheme": "feature",
+      "themeLabel": "기능 구현",
+      "themes": {
+        "experience": 7,
+        "verification": 11,
+        "maintenance": 9,
+        "feature": 57,
+        "stability": 8,
+        "docs": 29
+      },
+      "byDate": {
+        "2026-05-27": 2,
+        "2026-05-28": 4,
+        "2026-05-29": 9,
+        "2026-05-30": 6,
+        "2026-06-05": 3,
+        "2026-06-06": 4,
+        "2026-06-07": 7,
+        "2026-06-08": 4,
+        "2026-06-09": 31,
+        "2026-06-10": 8,
+        "2026-06-11": 18,
+        "2026-06-12": 3,
+        "2026-06-13": 22
+      },
+      "latest": [
+        {
+          "sha": "975fb90",
+          "message": "docs: Fable 홈페이지 업그레이드 핸드오프 + 로드맵 A5 반영",
+          "date": "2026-06-13T23:16:52Z",
+          "url": "https://github.com/sgeniusk/chaekdam/commit/975fb90809592b4912b669eaaf2d2e1e0aa96600"
+        },
+        {
+          "sha": "e60efa9",
+          "message": "feat(landing): 표지 발견 띠 컴포넌트 + 공개 표지 조회 (Fable 차용 ②)",
+          "date": "2026-06-13T22:10:06Z",
+          "url": "https://github.com/sgeniusk/chaekdam/commit/e60efa9795bcd07e82c31f8f8ac04776a3acb2bc"
+        },
+        {
+          "sha": "2344115",
+          "message": "feat(landing): 독서 시각화·결산 미리보기 컴포넌트 (Fable 차용 ⑤)",
+          "date": "2026-06-13T22:10:06Z",
+          "url": "https://github.com/sgeniusk/chaekdam/commit/2344115ad1d15603bb680d5cc5e2e3874abf6947"
+        },
+        {
+          "sha": "ede59af",
+          "message": "feat(landing): 랜딩 본명조 세리프 리스킨 + 표지-우선 카드 + 신규 2섹션 배선",
+          "date": "2026-06-13T22:10:06Z",
+          "url": "https://github.com/sgeniusk/chaekdam/commit/ede59afefb008a0701a73615f4024703defd52e3"
+        },
+        {
+          "sha": "4a6cb20",
+          "message": "feat(book): 공개 표면 표지-우선 CoverImage + resolveCover 순수함수",
+          "date": "2026-06-13T22:08:16Z",
+          "url": "https://github.com/sgeniusk/chaekdam/commit/4a6cb20f548c22ba89318a3738ebd8dcb592684c"
+        }
+      ],
+      "insight": "책담 (Chaekdam)은 121커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "habit",
@@ -729,26 +800,24 @@
       "status": "active",
       "rank": 1,
       "progressTotal": 70,
-      "commits": 146,
-      "activeDays": 11,
-      "quietDays": 19,
-      "maxGap": 19,
-      "firstCommit": "2026-05-16T05:09:41Z",
+      "commits": 102,
+      "activeDays": 9,
+      "quietDays": 21,
+      "maxGap": 21,
+      "firstCommit": "2026-05-18T02:41:59Z",
       "lastCommit": "2026-05-26T14:33:35Z",
       "state": "surge",
       "topTheme": "feature",
       "themeLabel": "기능 구현",
       "themes": {
-        "maintenance": 31,
-        "experience": 4,
-        "docs": 14,
-        "feature": 81,
-        "stability": 4,
-        "verification": 12
+        "feature": 67,
+        "maintenance": 14,
+        "docs": 11,
+        "experience": 1,
+        "verification": 8,
+        "stability": 1
       },
       "byDate": {
-        "2026-05-16": 23,
-        "2026-05-17": 21,
         "2026-05-18": 7,
         "2026-05-19": 1,
         "2026-05-20": 11,
@@ -791,7 +860,7 @@
           "url": "https://github.com/sgeniusk/habit/commit/52638d1a348702274ab0126bab1c95b7854fa439"
         }
       ],
-      "insight": "Formi (포미)은 146커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "Formi (포미)은 102커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "ai-builder-school",
@@ -804,26 +873,24 @@
       "status": "active",
       "rank": 6,
       "progressTotal": 45,
-      "commits": 130,
-      "activeDays": 14,
-      "quietDays": 4,
+      "commits": 87,
+      "activeDays": 12,
+      "quietDays": 6,
       "maxGap": 7,
-      "firstCommit": "2026-05-16T05:34:29Z",
+      "firstCommit": "2026-05-18T01:39:07Z",
       "lastCommit": "2026-06-10T07:11:04Z",
       "state": "surge",
       "topTheme": "feature",
       "themeLabel": "기능 구현",
       "themes": {
-        "maintenance": 44,
-        "verification": 11,
-        "feature": 49,
-        "docs": 15,
-        "stability": 5,
-        "experience": 6
+        "stability": 4,
+        "maintenance": 30,
+        "docs": 10,
+        "feature": 31,
+        "verification": 8,
+        "experience": 4
       },
       "byDate": {
-        "2026-05-16": 24,
-        "2026-05-17": 19,
         "2026-05-18": 19,
         "2026-05-19": 1,
         "2026-05-21": 11,
@@ -869,84 +936,7 @@
           "url": "https://github.com/sgeniusk/ai-builder-school/commit/0556ebab8834e0c036ffb6cf21dea4408140e8a1"
         }
       ],
-      "insight": "AI Builder School은 130커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
-    },
-    {
-      "repo": "chaekdam",
-      "displayName": "책담 (Chaekdam)",
-      "icon": "📖",
-      "category": "app",
-      "categoryLabel": "앱",
-      "tool": "claude",
-      "toolLabel": "Claude",
-      "status": "active",
-      "rank": 15,
-      "progressTotal": 19,
-      "commits": 114,
-      "activeDays": 13,
-      "quietDays": 1,
-      "maxGap": 11,
-      "firstCommit": "2026-05-27T17:11:40Z",
-      "lastCommit": "2026-06-13T11:35:17Z",
-      "state": "surge",
-      "topTheme": "feature",
-      "themeLabel": "기능 구현",
-      "themes": {
-        "experience": 7,
-        "verification": 11,
-        "maintenance": 9,
-        "feature": 52,
-        "stability": 8,
-        "docs": 27
-      },
-      "byDate": {
-        "2026-05-27": 2,
-        "2026-05-28": 4,
-        "2026-05-29": 9,
-        "2026-05-30": 6,
-        "2026-06-05": 3,
-        "2026-06-06": 4,
-        "2026-06-07": 7,
-        "2026-06-08": 4,
-        "2026-06-09": 31,
-        "2026-06-10": 8,
-        "2026-06-11": 18,
-        "2026-06-12": 3,
-        "2026-06-13": 15
-      },
-      "latest": [
-        {
-          "sha": "4247373",
-          "message": "docs: 마이그레이션 0016~0020 전부 적용 확인 — F1 해소, stale \"적용 대기\" 메모 정정",
-          "date": "2026-06-13T11:35:17Z",
-          "url": "https://github.com/sgeniusk/chaekdam/commit/42473735e1dbe8460bed07bf5505ac5627728901"
-        },
-        {
-          "sha": "916bb9d",
-          "message": "feat(presentation): 발표자 경과 타이머 — showNotes 전용 mm:ss, 클릭 리셋 (D5)",
-          "date": "2026-06-13T11:09:31Z",
-          "url": "https://github.com/sgeniusk/chaekdam/commit/916bb9d5edaec0d8d99619ddcb7b2c0c4cbdd21d"
-        },
-        {
-          "sha": "000437f",
-          "message": "feat(presentation): 발표 모드 전체화면 토글 + Home/End 키보드 내비 (D5 일부)",
-          "date": "2026-06-13T11:05:46Z",
-          "url": "https://github.com/sgeniusk/chaekdam/commit/000437f989b7f41bca432da2afe3129e221f82f0"
-        },
-        {
-          "sha": "f1c979e",
-          "message": "docs: C2 공개 표면(랜딩·/u) 모바일+다크 라이브 검증 무결 기록",
-          "date": "2026-06-13T09:44:38Z",
-          "url": "https://github.com/sgeniusk/chaekdam/commit/f1c979ef46dd889ddb2b97eadbd1f64e9f1d4a39"
-        },
-        {
-          "sha": "817a25a",
-          "message": "docs: .env.local 복구 + B4·G2·G3 라이브 검증 기록",
-          "date": "2026-06-13T09:42:25Z",
-          "url": "https://github.com/sgeniusk/chaekdam/commit/817a25a4f8a70eb5464ae0c7b54acf8cf08f7ea3"
-        }
-      ],
-      "insight": "책담 (Chaekdam)은 114커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "AI Builder School은 87커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "cmds-daily-briefing",
@@ -959,18 +949,18 @@
       "status": "active",
       "rank": 13,
       "progressTotal": 52,
-      "commits": 51,
-      "activeDays": 22,
+      "commits": 56,
+      "activeDays": 24,
       "quietDays": 1,
-      "maxGap": 5,
+      "maxGap": 3,
       "firstCommit": "2026-05-21T01:48:40Z",
-      "lastCommit": "2026-06-13T13:49:32Z",
+      "lastCommit": "2026-06-15T23:34:22Z",
       "state": "surge",
       "topTheme": "docs",
       "themeLabel": "문서화",
       "themes": {
-        "docs": 26,
-        "experience": 18,
+        "docs": 29,
+        "experience": 20,
         "maintenance": 3,
         "feature": 2,
         "stability": 2
@@ -997,110 +987,43 @@
         "2026-06-10": 3,
         "2026-06-11": 2,
         "2026-06-12": 2,
-        "2026-06-13": 1
+        "2026-06-13": 2,
+        "2026-06-14": 2,
+        "2026-06-15": 2
       },
       "latest": [
         {
-          "sha": "8913e38",
-          "message": "Add June 13 build note",
-          "date": "2026-06-13T13:49:32Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/8913e38baab4792bf7003b2f532b04d19a85d0ef"
+          "sha": "4e5a998",
+          "message": "Add 2026-06-16 research briefing",
+          "date": "2026-06-15T23:34:22Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/4e5a9980d78f5a810ff9777b9bd91279fd7b59f0"
         },
         {
-          "sha": "da6774d",
-          "message": "Add June 13 light research briefing",
-          "date": "2026-06-12T23:33:15Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/da6774dee98501915e28400290accc65960b9e1e"
+          "sha": "78ad32a",
+          "message": "Add June 15 build note",
+          "date": "2026-06-15T13:49:10Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/78ad32a1e6e5e1fd8157c0f491b434c16700bb13"
         },
         {
-          "sha": "bbd9501",
-          "message": "Add June 12 build note",
-          "date": "2026-06-12T13:48:50Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/bbd9501da47fba436138d65318e0eec282c92e21"
+          "sha": "8c09ddf",
+          "message": "Add 2026-06-15 research briefing",
+          "date": "2026-06-14T23:37:56Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/8c09ddf7abe23bb85fce10b1cab556c54a48e11d"
         },
         {
-          "sha": "0c5dc03",
-          "message": "Add June 12 research briefing",
-          "date": "2026-06-11T23:34:43Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/0c5dc03e71fd62f8c6881a0d2565067d2d311e71"
+          "sha": "00adfc8",
+          "message": "Add June 14 build note",
+          "date": "2026-06-14T13:49:25Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/00adfc8c795f739bb5d5b8008425fe1b02834b94"
         },
         {
-          "sha": "fd0a52a",
-          "message": "Add June 11 Hatchi build note",
-          "date": "2026-06-11T13:49:34Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/fd0a52abe9bdb710a702ea389ebb04a815ccc7a4"
+          "sha": "9c9d084",
+          "message": "Add June 14 light research briefing",
+          "date": "2026-06-13T23:33:04Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/9c9d08407ebbcfae1430f8d44ba2f154b77454fb"
         }
       ],
-      "insight": "해치의 데일리 브리핑은 51커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
-    },
-    {
-      "repo": "Nodeloom",
-      "displayName": "Nodeloom",
-      "icon": "🪢",
-      "category": "app",
-      "categoryLabel": "앱",
-      "tool": "claude",
-      "toolLabel": "Claude",
-      "status": "paused",
-      "rank": 11,
-      "progressTotal": 56,
-      "commits": 42,
-      "activeDays": 5,
-      "quietDays": 25,
-      "maxGap": 25,
-      "firstCommit": "2026-05-16T07:48:26Z",
-      "lastCommit": "2026-05-20T15:55:06Z",
-      "state": "surge",
-      "topTheme": "maintenance",
-      "themeLabel": "정리/운영",
-      "themes": {
-        "maintenance": 21,
-        "experience": 5,
-        "feature": 6,
-        "verification": 3,
-        "docs": 3,
-        "stability": 4
-      },
-      "byDate": {
-        "2026-05-16": 2,
-        "2026-05-17": 23,
-        "2026-05-18": 10,
-        "2026-05-19": 6,
-        "2026-05-20": 1
-      },
-      "latest": [
-        {
-          "sha": "fc08b81",
-          "message": "하네스 엔지니어링 정비 — 5개 subsystem 100/100",
-          "date": "2026-05-20T15:55:06Z",
-          "url": "https://github.com/sgeniusk/Nodeloom/commit/fc08b8193958657143b122800c388ae9a28c47f7"
-        },
-        {
-          "sha": "33f7a01",
-          "message": "v1.3.4 — 노드 자식 추가 버튼 + 분기선 z-순서",
-          "date": "2026-05-19T12:08:24Z",
-          "url": "https://github.com/sgeniusk/Nodeloom/commit/33f7a01a8bd34b8805e2c58a9a56f76a025252de"
-        },
-        {
-          "sha": "3d0f2c1",
-          "message": "v1.3.3 — 밑줄형 분기선과 밑줄의 중심선 어긋남 수정",
-          "date": "2026-05-19T11:55:57Z",
-          "url": "https://github.com/sgeniusk/Nodeloom/commit/3d0f2c1b64533736194a2428779efa66ee91f6db"
-        },
-        {
-          "sha": "719f261",
-          "message": "v1.3.2 — 분기선이 노드에서 떨어져 끝나던 갭 수정",
-          "date": "2026-05-19T11:31:39Z",
-          "url": "https://github.com/sgeniusk/Nodeloom/commit/719f261d87469b1ad26f636aa31aab4619e1e77d"
-        },
-        {
-          "sha": "f664138",
-          "message": "v1.3.1 — 밑줄 분기선 분리 + 단색 모드 색 불일치 수정",
-          "date": "2026-05-19T11:18:36Z",
-          "url": "https://github.com/sgeniusk/Nodeloom/commit/f6641386766176b875f784c0d90a18ca76482840"
-        }
-      ],
-      "insight": "Nodeloom은 42커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "해치의 데일리 브리핑은 56커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "design-system-school",
@@ -1115,8 +1038,8 @@
       "progressTotal": 20,
       "commits": 19,
       "activeDays": 5,
-      "quietDays": 16,
-      "maxGap": 16,
+      "quietDays": 18,
+      "maxGap": 18,
       "firstCommit": "2026-05-18T14:45:36Z",
       "lastCommit": "2026-05-29T09:55:37Z",
       "state": "steady",
@@ -1171,6 +1094,71 @@
       "insight": "AI 디자인 시스템 스쿨은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
     },
     {
+      "repo": "Nodeloom",
+      "displayName": "Nodeloom",
+      "icon": "🪢",
+      "category": "app",
+      "categoryLabel": "앱",
+      "tool": "claude",
+      "toolLabel": "Claude",
+      "status": "paused",
+      "rank": 11,
+      "progressTotal": 56,
+      "commits": 17,
+      "activeDays": 3,
+      "quietDays": 27,
+      "maxGap": 27,
+      "firstCommit": "2026-05-18T03:32:15Z",
+      "lastCommit": "2026-05-20T15:55:06Z",
+      "state": "steady",
+      "topTheme": "maintenance",
+      "themeLabel": "정리/운영",
+      "themes": {
+        "docs": 2,
+        "maintenance": 9,
+        "feature": 2,
+        "stability": 4
+      },
+      "byDate": {
+        "2026-05-18": 10,
+        "2026-05-19": 6,
+        "2026-05-20": 1
+      },
+      "latest": [
+        {
+          "sha": "fc08b81",
+          "message": "하네스 엔지니어링 정비 — 5개 subsystem 100/100",
+          "date": "2026-05-20T15:55:06Z",
+          "url": "https://github.com/sgeniusk/Nodeloom/commit/fc08b8193958657143b122800c388ae9a28c47f7"
+        },
+        {
+          "sha": "33f7a01",
+          "message": "v1.3.4 — 노드 자식 추가 버튼 + 분기선 z-순서",
+          "date": "2026-05-19T12:08:24Z",
+          "url": "https://github.com/sgeniusk/Nodeloom/commit/33f7a01a8bd34b8805e2c58a9a56f76a025252de"
+        },
+        {
+          "sha": "3d0f2c1",
+          "message": "v1.3.3 — 밑줄형 분기선과 밑줄의 중심선 어긋남 수정",
+          "date": "2026-05-19T11:55:57Z",
+          "url": "https://github.com/sgeniusk/Nodeloom/commit/3d0f2c1b64533736194a2428779efa66ee91f6db"
+        },
+        {
+          "sha": "719f261",
+          "message": "v1.3.2 — 분기선이 노드에서 떨어져 끝나던 갭 수정",
+          "date": "2026-05-19T11:31:39Z",
+          "url": "https://github.com/sgeniusk/Nodeloom/commit/719f261d87469b1ad26f636aa31aab4619e1e77d"
+        },
+        {
+          "sha": "f664138",
+          "message": "v1.3.1 — 밑줄 분기선 분리 + 단색 모드 색 불일치 수정",
+          "date": "2026-05-19T11:18:36Z",
+          "url": "https://github.com/sgeniusk/Nodeloom/commit/f6641386766176b875f784c0d90a18ca76482840"
+        }
+      ],
+      "insight": "Nodeloom은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
+    },
+    {
       "repo": "Timeer",
       "displayName": "Timeer",
       "icon": "⏰",
@@ -1183,8 +1171,8 @@
       "progressTotal": 7,
       "commits": 1,
       "activeDays": 1,
-      "quietDays": 25,
-      "maxGap": 25,
+      "quietDays": 27,
+      "maxGap": 27,
       "firstCommit": "2026-05-20T16:51:21Z",
       "lastCommit": "2026-05-20T16:51:21Z",
       "state": "sporadic",
@@ -1294,26 +1282,24 @@
       "status": "active",
       "rank": 7,
       "progressTotal": 40,
-      "commits": 413,
-      "activeDays": 22,
-      "quietDays": 1,
+      "commits": 379,
+      "activeDays": 21,
+      "quietDays": 2,
       "maxGap": 5,
-      "firstCommit": "2026-05-16T00:25:16Z",
-      "lastCommit": "2026-06-13T14:31:57Z",
+      "firstCommit": "2026-05-18T03:44:19Z",
+      "lastCommit": "2026-06-14T16:55:26Z",
       "state": "surge",
       "topTheme": "maintenance",
       "themeLabel": "정리/운영",
       "themes": {
-        "feature": 94,
-        "docs": 37,
-        "maintenance": 199,
-        "verification": 33,
-        "experience": 47,
+        "verification": 29,
+        "experience": 42,
+        "feature": 80,
+        "maintenance": 190,
+        "docs": 35,
         "stability": 3
       },
       "byDate": {
-        "2026-05-16": 20,
-        "2026-05-17": 29,
         "2026-05-18": 13,
         "2026-05-19": 5,
         "2026-05-20": 18,
@@ -1333,41 +1319,42 @@
         "2026-06-09": 19,
         "2026-06-10": 11,
         "2026-06-11": 20,
-        "2026-06-13": 18
+        "2026-06-13": 27,
+        "2026-06-14": 6
       },
       "latest": [
         {
-          "sha": "305588c",
-          "message": "docs: 후속 개발 핸드오프 정리 — 픽셀 비주얼 후속 + 도감 UI (backlog)",
-          "date": "2026-06-13T14:31:57Z",
-          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/305588c2504fec5250427c19682892f24f386e18"
+          "sha": "51fa08f",
+          "message": "balance: 봇 승리 27→51개월 — 승리 임계값 상향 + 회귀 가드",
+          "date": "2026-06-14T16:55:26Z",
+          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/51fa08f0088c1900e666057d10239efb17027645"
         },
         {
-          "sha": "80e9867",
-          "message": "feat-018 후속: 4종 룸 벽 중하단 디테일 — 20:9 휑함 해소",
-          "date": "2026-06-13T12:40:10Z",
-          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/80e9867270e756563113b0801226eefb570ed63f"
+          "sha": "1dc99ad",
+          "message": "feat-022: 트렌드 콘텐츠 웨이브 — 2025-26 AI 트렌드 월드 이벤트 12종 (30→42)",
+          "date": "2026-06-14T11:09:08Z",
+          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/1dc99ad4bfc56cc382a691cdc60dad99604762cf"
         },
         {
-          "sha": "4d09d96",
-          "message": "feat-018: 픽셀 배경 폰 고품질 대응 — cover + 고해상도",
-          "date": "2026-06-13T12:07:46Z",
-          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/4d09d96ba5e10ebf2df12e32a8818c0389fa1e85"
+          "sha": "63f7452",
+          "message": "feat-022 킥오프: 트렌드 콘텐츠 웨이브 설계·등록 — 2025-26 AI 트렌드 월드 이벤트",
+          "date": "2026-06-14T10:46:15Z",
+          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/63f7452c0cc854b1e9df745baa935f8ca7faa044"
         },
         {
-          "sha": "140f250",
-          "message": "feat-017 #1~#3: 픽셀 컷씬 tier 확장 — 승급·상장·미니",
-          "date": "2026-06-13T11:17:44Z",
-          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/140f250f37191367e1c3eadf46cf2ff6868f222a"
+          "sha": "96cb40a",
+          "message": "feat-021: 도감 열람 UI — 크로스런 수집 그리드 갤러리",
+          "date": "2026-06-14T04:00:45Z",
+          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/96cb40a3564af7b8757867351d547478eebf8b64"
         },
         {
-          "sha": "4a4174d",
-          "message": "feat-017: 픽셀 컷씬 시스템 골격 — 출시 발표회 + No-cameras 수정",
-          "date": "2026-06-13T08:55:20Z",
-          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/4a4174d651b2c6fcad9b9a93528dd5d938643e06"
+          "sha": "94e4c9e",
+          "message": "feat-021 킥오프: 도감 열람 UI 설계·등록 — 크로스런 수집 그리드 갤러리",
+          "date": "2026-06-14T03:05:25Z",
+          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/94e4c9e9e2d746640c1a3dae51e182b67a0e290e"
         }
       ],
-      "insight": "AI 컴퍼니 타이쿤은 413커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "AI 컴퍼니 타이쿤은 379커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "story-x-beta",
@@ -1380,26 +1367,24 @@
       "status": "active",
       "rank": 8,
       "progressTotal": 45,
-      "commits": 271,
+      "commits": 268,
       "activeDays": 22,
       "quietDays": 1,
       "maxGap": 2,
-      "firstCommit": "2026-05-16T05:21:46Z",
-      "lastCommit": "2026-06-13T08:58:14Z",
+      "firstCommit": "2026-05-18T01:48:39Z",
+      "lastCommit": "2026-06-15T13:16:04Z",
       "state": "surge",
-      "topTheme": "maintenance",
-      "themeLabel": "정리/운영",
+      "topTheme": "feature",
+      "themeLabel": "기능 구현",
       "themes": {
-        "feature": 61,
-        "stability": 37,
-        "docs": 52,
-        "maintenance": 65,
-        "verification": 31,
-        "experience": 25
+        "maintenance": 54,
+        "experience": 31,
+        "feature": 58,
+        "docs": 56,
+        "stability": 38,
+        "verification": 31
       },
       "byDate": {
-        "2026-05-16": 25,
-        "2026-05-17": 8,
         "2026-05-18": 8,
         "2026-05-19": 12,
         "2026-05-20": 2,
@@ -1419,41 +1404,43 @@
         "2026-06-09": 32,
         "2026-06-10": 38,
         "2026-06-11": 13,
-        "2026-06-13": 15
+        "2026-06-13": 21,
+        "2026-06-14": 10,
+        "2026-06-15": 14
       },
       "latest": [
         {
-          "sha": "8933b10",
-          "message": "docs: A-3 완료 반영 — 헌장 체인 live, 다음=A-2 단계 게이트",
-          "date": "2026-06-13T08:58:14Z",
-          "url": "https://github.com/sgeniusk/story-x-beta/commit/8933b10fb91e115f32a4ed8b1dde4e78f0a787da"
+          "sha": "3be758f",
+          "message": "fix(quality): VS 노출 자동열림 — 회차 생성 시 state 패널 자동 표시",
+          "date": "2026-06-15T13:16:04Z",
+          "url": "https://github.com/sgeniusk/story-x-beta/commit/3be758f75e7b1346a6d29a0b96a2bcb81f92064f"
         },
         {
-          "sha": "2e51fa2",
-          "message": "feat(phase-a): A-3 온보딩 헌장 생성 단계 — 결말 역산 + 4줄 척추 잠금",
-          "date": "2026-06-13T08:56:39Z",
-          "url": "https://github.com/sgeniusk/story-x-beta/commit/2e51fa2ef4aa3a1bd48984149c9bc1c2ffb2b2c9"
+          "sha": "3a42620",
+          "message": "docs: VS 회차 후보(C-1) 완료 — 검증·인계 (C-1 Task10)",
+          "date": "2026-06-15T05:59:47Z",
+          "url": "https://github.com/sgeniusk/story-x-beta/commit/3a426205afe3aa5cbaccc66d536ea4055fd4d02b"
         },
         {
-          "sha": "54fa97a",
-          "message": "feat(phase-a): A-3 헌장 빌더 — deriveBeatSheet·buildStoryContractFromOnboarding",
-          "date": "2026-06-13T07:44:08Z",
-          "url": "https://github.com/sgeniusk/story-x-beta/commit/54fa97af9d3994370231446d8397c20ad51ba1d2"
+          "sha": "aad16c5",
+          "message": "fix(quality): VS 핸들러 finally·미회수 약속 dedup (C-1 리뷰 반영)",
+          "date": "2026-06-15T05:53:36Z",
+          "url": "https://github.com/sgeniusk/story-x-beta/commit/aad16c5c23fd69d2939feb499c5ccf297fc18b6c"
         },
         {
-          "sha": "4c64a1d",
-          "message": "docs: A-5 완료 반영 — 헌장 체인 배선 끝, 다음=A-3 온보딩(헌장 생성)",
-          "date": "2026-06-13T07:12:21Z",
-          "url": "https://github.com/sgeniusk/story-x-beta/commit/4c64a1d2a521e94b657c316b3f3680fedbd61138"
+          "sha": "8a0955a",
+          "message": "feat(quality): StoryXDesk VS 배선 + .fc-vs CSS (C-1 Task9)",
+          "date": "2026-06-15T05:44:53Z",
+          "url": "https://github.com/sgeniusk/story-x-beta/commit/8a0955a69047ac26fc2269f0d52e2df6c55165f4"
         },
         {
-          "sha": "d2fd3f8",
-          "message": "feat(phase-a): A-5 헌장 예산 배선(검토 경로) — reviewClient→api/review-agent·CLI",
-          "date": "2026-06-13T07:10:47Z",
-          "url": "https://github.com/sgeniusk/story-x-beta/commit/d2fd3f87271f8a841d02fa4a1ea1e14ea77ccad3"
+          "sha": "5a2c7b1",
+          "message": "feat(quality): FloatingEditor .fc-vs 전개 후보 블록 (C-1 Task8)",
+          "date": "2026-06-15T05:40:29Z",
+          "url": "https://github.com/sgeniusk/story-x-beta/commit/5a2c7b1d8024e55f6b03073541d26aa7ca4d4041"
         }
       ],
-      "insight": "Story X은 271커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "Story X은 268커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "honbul",
@@ -1468,8 +1455,8 @@
       "progressTotal": 19,
       "commits": 229,
       "activeDays": 17,
-      "quietDays": 1,
-      "maxGap": 11,
+      "quietDays": 3,
+      "maxGap": 9,
       "firstCommit": "2026-05-27T18:14:03Z",
       "lastCommit": "2026-06-13T14:45:20Z",
       "state": "surge",
@@ -1537,165 +1524,6 @@
       "insight": "혼불 (Honbul)은 229커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
-      "repo": "three-kingdoms-deckbuilder",
-      "displayName": "군령: 책략의 전장 (Warlord's Command)",
-      "icon": "🃏",
-      "category": "game",
-      "categoryLabel": "게임",
-      "tool": "codex",
-      "toolLabel": "Codex",
-      "status": "active",
-      "rank": 5,
-      "progressTotal": 55,
-      "commits": 183,
-      "activeDays": 16,
-      "quietDays": 8,
-      "maxGap": 8,
-      "firstCommit": "2026-05-16T00:02:47Z",
-      "lastCommit": "2026-06-06T10:10:37Z",
-      "state": "surge",
-      "topTheme": "experience",
-      "themeLabel": "경험/화면",
-      "themes": {
-        "maintenance": 21,
-        "feature": 17,
-        "verification": 17,
-        "stability": 12,
-        "experience": 115,
-        "docs": 1
-      },
-      "byDate": {
-        "2026-05-16": 45,
-        "2026-05-17": 17,
-        "2026-05-18": 10,
-        "2026-05-19": 10,
-        "2026-05-23": 5,
-        "2026-05-24": 31,
-        "2026-05-25": 1,
-        "2026-05-29": 34,
-        "2026-05-30": 4,
-        "2026-05-31": 7,
-        "2026-06-01": 9,
-        "2026-06-02": 3,
-        "2026-06-03": 1,
-        "2026-06-04": 2,
-        "2026-06-05": 2,
-        "2026-06-06": 2
-      },
-      "latest": [
-        {
-          "sha": "cda900d",
-          "message": "Apply opening order UI polish",
-          "date": "2026-06-06T10:10:37Z",
-          "url": "https://github.com/sgeniusk/three-kingdoms-deckbuilder/commit/cda900d06a00d89f10cab97d14c25aed53fd0c6f"
-        },
-        {
-          "sha": "0abca51",
-          "message": "Apply design handoff combat layout",
-          "date": "2026-06-06T00:13:03Z",
-          "url": "https://github.com/sgeniusk/three-kingdoms-deckbuilder/commit/0abca510557bc1c3801726f6aa19e424eb04e458"
-        },
-        {
-          "sha": "d898a78",
-          "message": "chore: refresh verified deployment author",
-          "date": "2026-06-05T17:40:52Z",
-          "url": "https://github.com/sgeniusk/three-kingdoms-deckbuilder/commit/d898a7897f1a6ca902bd7bc2d88345b8f3e662dd"
-        },
-        {
-          "sha": "0ffdd3f",
-          "message": "docs: add external UI redesign prompt",
-          "date": "2026-06-05T04:45:59Z",
-          "url": "https://github.com/sgeniusk/three-kingdoms-deckbuilder/commit/0ffdd3f720aa54a351d10f9d43ca10e8cf2f4639"
-        },
-        {
-          "sha": "6d2e33e",
-          "message": "chore: track commander portrait imports",
-          "date": "2026-06-04T16:33:12Z",
-          "url": "https://github.com/sgeniusk/three-kingdoms-deckbuilder/commit/6d2e33ec337a3fa68383c30b54ad79d116b537f3"
-        }
-      ],
-      "insight": "군령: 책략의 전장 (Warlord's Command)은 183커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "displayName": "전지적 군주 시점",
-      "icon": "👑",
-      "category": "game",
-      "categoryLabel": "게임",
-      "tool": "codex",
-      "toolLabel": "Codex",
-      "status": "active",
-      "rank": 4,
-      "progressTotal": 60,
-      "commits": 175,
-      "activeDays": 15,
-      "quietDays": 8,
-      "maxGap": 8,
-      "firstCommit": "2026-05-16T05:45:50Z",
-      "lastCommit": "2026-06-06T16:05:52Z",
-      "state": "surge",
-      "topTheme": "maintenance",
-      "themeLabel": "정리/운영",
-      "themes": {
-        "maintenance": 69,
-        "feature": 66,
-        "experience": 19,
-        "docs": 13,
-        "verification": 5,
-        "stability": 3
-      },
-      "byDate": {
-        "2026-05-16": 18,
-        "2026-05-17": 32,
-        "2026-05-18": 12,
-        "2026-05-20": 1,
-        "2026-05-26": 8,
-        "2026-05-27": 1,
-        "2026-05-29": 23,
-        "2026-05-30": 15,
-        "2026-05-31": 23,
-        "2026-06-01": 10,
-        "2026-06-02": 2,
-        "2026-06-03": 6,
-        "2026-06-04": 7,
-        "2026-06-05": 3,
-        "2026-06-06": 14
-      },
-      "latest": [
-        {
-          "sha": "69f9531",
-          "message": "chore: ignore renderer proof screenshots + record W1 war Pixi port handoff",
-          "date": "2026-06-06T16:05:52Z",
-          "url": "https://github.com/sgeniusk/samguk-idle-prototype/commit/69f9531f3cf7551f1428e2eab682211836610ca0"
-        },
-        {
-          "sha": "a8cc17a",
-          "message": "docs(renderer): record v1.00.46 combat effects verification + register feature",
-          "date": "2026-06-06T09:15:50Z",
-          "url": "https://github.com/sgeniusk/samguk-idle-prototype/commit/a8cc17afed62ec45cb0c8599bd209d6fc6825be4"
-        },
-        {
-          "sha": "20721f6",
-          "message": "feat(renderer): adventure combat effects E1-E4 on Pixi field (v1.00.46)",
-          "date": "2026-06-06T08:17:30Z",
-          "url": "https://github.com/sgeniusk/samguk-idle-prototype/commit/20721f60efb6a65e6addc577f6dbf3efc2c230b7"
-        },
-        {
-          "sha": "ee6852c",
-          "message": "feat(renderer): emit hit-flash/impact-strip effect descriptors from scene model (E3-E4 data)",
-          "date": "2026-06-06T07:10:17Z",
-          "url": "https://github.com/sgeniusk/samguk-idle-prototype/commit/ee6852cefe20d1e01bf4fe80861e02833303c8b1"
-        },
-        {
-          "sha": "2f356e2",
-          "message": "fix(renderer): persist Pixi adventure canvas across SPA render + frame-crop sprites",
-          "date": "2026-06-06T04:40:47Z",
-          "url": "https://github.com/sgeniusk/samguk-idle-prototype/commit/2f356e25b06237feb5967e276750ca3451123d73"
-        }
-      ],
-      "insight": "전지적 군주 시점은 175커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
-    },
-    {
       "repo": "sam-defender-logue",
       "displayName": "삼국지: 시즈폴 (Siege Fall)",
       "icon": "🛡️",
@@ -1706,17 +1534,17 @@
       "status": "active",
       "rank": 3,
       "progressTotal": 60,
-      "commits": 154,
-      "activeDays": 17,
-      "quietDays": 3,
+      "commits": 145,
+      "activeDays": 16,
+      "quietDays": 5,
       "maxGap": 5,
-      "firstCommit": "2026-05-17T01:17:43Z",
+      "firstCommit": "2026-05-20T16:44:26Z",
       "lastCommit": "2026-06-11T10:32:46Z",
       "state": "surge",
       "topTheme": "feature",
       "themeLabel": "기능 구현",
       "themes": {
-        "feature": 94,
+        "feature": 85,
         "maintenance": 1,
         "docs": 11,
         "stability": 8,
@@ -1724,7 +1552,6 @@
         "verification": 5
       },
       "byDate": {
-        "2026-05-17": 9,
         "2026-05-20": 1,
         "2026-05-21": 8,
         "2026-05-27": 4,
@@ -1774,7 +1601,162 @@
           "url": "https://github.com/sgeniusk/sam-defender-logue/commit/68e73001badd3977ff2b4f007e307f42dd14f6bf"
         }
       ],
-      "insight": "삼국지: 시즈폴 (Siege Fall)은 154커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "삼국지: 시즈폴 (Siege Fall)은 145커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "displayName": "전지적 군주 시점",
+      "icon": "👑",
+      "category": "game",
+      "categoryLabel": "게임",
+      "tool": "codex",
+      "toolLabel": "Codex",
+      "status": "active",
+      "rank": 4,
+      "progressTotal": 60,
+      "commits": 125,
+      "activeDays": 13,
+      "quietDays": 10,
+      "maxGap": 10,
+      "firstCommit": "2026-05-18T03:46:30Z",
+      "lastCommit": "2026-06-06T16:05:52Z",
+      "state": "surge",
+      "topTheme": "maintenance",
+      "themeLabel": "정리/운영",
+      "themes": {
+        "experience": 10,
+        "feature": 43,
+        "maintenance": 53,
+        "docs": 11,
+        "verification": 5,
+        "stability": 3
+      },
+      "byDate": {
+        "2026-05-18": 12,
+        "2026-05-20": 1,
+        "2026-05-26": 8,
+        "2026-05-27": 1,
+        "2026-05-29": 23,
+        "2026-05-30": 15,
+        "2026-05-31": 23,
+        "2026-06-01": 10,
+        "2026-06-02": 2,
+        "2026-06-03": 6,
+        "2026-06-04": 7,
+        "2026-06-05": 3,
+        "2026-06-06": 14
+      },
+      "latest": [
+        {
+          "sha": "69f9531",
+          "message": "chore: ignore renderer proof screenshots + record W1 war Pixi port handoff",
+          "date": "2026-06-06T16:05:52Z",
+          "url": "https://github.com/sgeniusk/samguk-idle-prototype/commit/69f9531f3cf7551f1428e2eab682211836610ca0"
+        },
+        {
+          "sha": "a8cc17a",
+          "message": "docs(renderer): record v1.00.46 combat effects verification + register feature",
+          "date": "2026-06-06T09:15:50Z",
+          "url": "https://github.com/sgeniusk/samguk-idle-prototype/commit/a8cc17afed62ec45cb0c8599bd209d6fc6825be4"
+        },
+        {
+          "sha": "20721f6",
+          "message": "feat(renderer): adventure combat effects E1-E4 on Pixi field (v1.00.46)",
+          "date": "2026-06-06T08:17:30Z",
+          "url": "https://github.com/sgeniusk/samguk-idle-prototype/commit/20721f60efb6a65e6addc577f6dbf3efc2c230b7"
+        },
+        {
+          "sha": "ee6852c",
+          "message": "feat(renderer): emit hit-flash/impact-strip effect descriptors from scene model (E3-E4 data)",
+          "date": "2026-06-06T07:10:17Z",
+          "url": "https://github.com/sgeniusk/samguk-idle-prototype/commit/ee6852cefe20d1e01bf4fe80861e02833303c8b1"
+        },
+        {
+          "sha": "2f356e2",
+          "message": "fix(renderer): persist Pixi adventure canvas across SPA render + frame-crop sprites",
+          "date": "2026-06-06T04:40:47Z",
+          "url": "https://github.com/sgeniusk/samguk-idle-prototype/commit/2f356e25b06237feb5967e276750ca3451123d73"
+        }
+      ],
+      "insight": "전지적 군주 시점은 125커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "displayName": "군령: 책략의 전장 (Warlord's Command)",
+      "icon": "🃏",
+      "category": "game",
+      "categoryLabel": "게임",
+      "tool": "codex",
+      "toolLabel": "Codex",
+      "status": "active",
+      "rank": 5,
+      "progressTotal": 55,
+      "commits": 121,
+      "activeDays": 14,
+      "quietDays": 10,
+      "maxGap": 10,
+      "firstCommit": "2026-05-18T01:20:46Z",
+      "lastCommit": "2026-06-06T10:10:37Z",
+      "state": "surge",
+      "topTheme": "experience",
+      "themeLabel": "경험/화면",
+      "themes": {
+        "verification": 9,
+        "maintenance": 6,
+        "experience": 95,
+        "stability": 5,
+        "feature": 5,
+        "docs": 1
+      },
+      "byDate": {
+        "2026-05-18": 10,
+        "2026-05-19": 10,
+        "2026-05-23": 5,
+        "2026-05-24": 31,
+        "2026-05-25": 1,
+        "2026-05-29": 34,
+        "2026-05-30": 4,
+        "2026-05-31": 7,
+        "2026-06-01": 9,
+        "2026-06-02": 3,
+        "2026-06-03": 1,
+        "2026-06-04": 2,
+        "2026-06-05": 2,
+        "2026-06-06": 2
+      },
+      "latest": [
+        {
+          "sha": "cda900d",
+          "message": "Apply opening order UI polish",
+          "date": "2026-06-06T10:10:37Z",
+          "url": "https://github.com/sgeniusk/three-kingdoms-deckbuilder/commit/cda900d06a00d89f10cab97d14c25aed53fd0c6f"
+        },
+        {
+          "sha": "0abca51",
+          "message": "Apply design handoff combat layout",
+          "date": "2026-06-06T00:13:03Z",
+          "url": "https://github.com/sgeniusk/three-kingdoms-deckbuilder/commit/0abca510557bc1c3801726f6aa19e424eb04e458"
+        },
+        {
+          "sha": "d898a78",
+          "message": "chore: refresh verified deployment author",
+          "date": "2026-06-05T17:40:52Z",
+          "url": "https://github.com/sgeniusk/three-kingdoms-deckbuilder/commit/d898a7897f1a6ca902bd7bc2d88345b8f3e662dd"
+        },
+        {
+          "sha": "0ffdd3f",
+          "message": "docs: add external UI redesign prompt",
+          "date": "2026-06-05T04:45:59Z",
+          "url": "https://github.com/sgeniusk/three-kingdoms-deckbuilder/commit/0ffdd3f720aa54a351d10f9d43ca10e8cf2f4639"
+        },
+        {
+          "sha": "6d2e33e",
+          "message": "chore: track commander portrait imports",
+          "date": "2026-06-04T16:33:12Z",
+          "url": "https://github.com/sgeniusk/three-kingdoms-deckbuilder/commit/6d2e33ec337a3fa68383c30b54ad79d116b537f3"
+        }
+      ],
+      "insight": "군령: 책략의 전장 (Warlord's Command)은 121커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     }
   ],
   "quietList": [
@@ -1864,26 +1846,22 @@
       "status": "paused",
       "rank": 11,
       "progressTotal": 56,
-      "commits": 42,
-      "activeDays": 5,
-      "quietDays": 25,
-      "maxGap": 25,
-      "firstCommit": "2026-05-16T07:48:26Z",
+      "commits": 17,
+      "activeDays": 3,
+      "quietDays": 27,
+      "maxGap": 27,
+      "firstCommit": "2026-05-18T03:32:15Z",
       "lastCommit": "2026-05-20T15:55:06Z",
-      "state": "surge",
+      "state": "steady",
       "topTheme": "maintenance",
       "themeLabel": "정리/운영",
       "themes": {
-        "maintenance": 21,
-        "experience": 5,
-        "feature": 6,
-        "verification": 3,
-        "docs": 3,
+        "docs": 2,
+        "maintenance": 9,
+        "feature": 2,
         "stability": 4
       },
       "byDate": {
-        "2026-05-16": 2,
-        "2026-05-17": 23,
         "2026-05-18": 10,
         "2026-05-19": 6,
         "2026-05-20": 1
@@ -1920,7 +1898,7 @@
           "url": "https://github.com/sgeniusk/Nodeloom/commit/f6641386766176b875f784c0d90a18ca76482840"
         }
       ],
-      "insight": "Nodeloom은 42커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "Nodeloom은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
     },
     {
       "repo": "Timeer",
@@ -1935,8 +1913,8 @@
       "progressTotal": 7,
       "commits": 1,
       "activeDays": 1,
-      "quietDays": 25,
-      "maxGap": 25,
+      "quietDays": 27,
+      "maxGap": 27,
       "firstCommit": "2026-05-20T16:51:21Z",
       "lastCommit": "2026-05-20T16:51:21Z",
       "state": "sporadic",
@@ -1969,26 +1947,24 @@
       "status": "active",
       "rank": 1,
       "progressTotal": 70,
-      "commits": 146,
-      "activeDays": 11,
-      "quietDays": 19,
-      "maxGap": 19,
-      "firstCommit": "2026-05-16T05:09:41Z",
+      "commits": 102,
+      "activeDays": 9,
+      "quietDays": 21,
+      "maxGap": 21,
+      "firstCommit": "2026-05-18T02:41:59Z",
       "lastCommit": "2026-05-26T14:33:35Z",
       "state": "surge",
       "topTheme": "feature",
       "themeLabel": "기능 구현",
       "themes": {
-        "maintenance": 31,
-        "experience": 4,
-        "docs": 14,
-        "feature": 81,
-        "stability": 4,
-        "verification": 12
+        "feature": 67,
+        "maintenance": 14,
+        "docs": 11,
+        "experience": 1,
+        "verification": 8,
+        "stability": 1
       },
       "byDate": {
-        "2026-05-16": 23,
-        "2026-05-17": 21,
         "2026-05-18": 7,
         "2026-05-19": 1,
         "2026-05-20": 11,
@@ -2031,7 +2007,7 @@
           "url": "https://github.com/sgeniusk/habit/commit/52638d1a348702274ab0126bab1c95b7854fa439"
         }
       ],
-      "insight": "Formi (포미)은 146커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "Formi (포미)은 102커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     }
   ],
   "errors": []
