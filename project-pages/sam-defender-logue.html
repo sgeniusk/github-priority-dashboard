@@ -110,7 +110,7 @@ footer{margin-top:54px;padding-top:20px;border-top:1px solid var(--border);color
     </div>
     <aside class="hero-card" aria-label="프로젝트 핵심 지표">
       <dl>
-        <div><dt>기준일</dt><dd>2026-06-16</dd></div>
+        <div><dt>기준일</dt><dd>2026-06-18</dd></div>
         <div><dt>담당</dt><dd>Claude</dd></div>
         <div><dt>상태</dt><dd>활성</dd></div>
         <div><dt>스프린트</dt><dd>Sprint B</dd></div>
@@ -126,7 +126,7 @@ footer{margin-top:54px;padding-top:20px;border-top:1px solid var(--border);color
         <p>콘텐츠 데이터와 마크다운 ID 불일치부터 잡으시길. 하네스가 어긋난 채로 항목을 늘리면 백로그만 더 무거워집니다.</p>
       </div>
       <div class="metric-grid">
-        <div class="metric"><span>건강</span><strong><span class="pill good">정상</span></strong></div>
+        <div class="metric"><span>건강</span><strong><span class="pill danger">위험</span></strong></div>
         <div class="metric"><span>초점</span><strong>알파 검증</strong></div>
         <div class="metric"><span>신뢰도</span><strong>보통 69%</strong></div>
       </div>
@@ -157,12 +157,13 @@ footer{margin-top:54px;padding-top:20px;border-top:1px solid var(--border);color
 
     <section class="section">
       <p class="section-title">리스크와 코칭</p>
-      <p class="quiet" style="margin-bottom:14px">최근 활동과 다음 액션이 이어지는 상태입니다.</p>
+      <p class="quiet" style="margin-bottom:14px">rank 3, 정체 진입 — 5일째 (주시)</p>
 
-    <article class="note">
-      <p class="note-kicker">코칭</p>
-      <h3>등록된 블로커가 없습니다</h3>
-      <p>현재는 다음 액션과 최근 로그를 기준으로 세션을 이어가면 됩니다.</p>
+    <article class="note high">
+      <p class="note-kicker">위험 신호</p>
+      <h3>rank 3, 정체 진입 — 5일째 (주시)</h3>
+      <p>rank 3이자 직전까지 활발하던(204커밋, 일평균 4.43) 시즈폴이 2026-06-11 이후 5일 공백이다. 아직 단기지만 rank 상위라 길어지면 위험이 커진다. 콘텐츠 데이터와 Markdown ID 불일치(하네스 미완)에서 비롯된 백로그 20+ 누적이 재진입 마찰로 보인다.</p>
+      <ul><li>P25 루트 정찰 예측 완성</li><li>알파 완료 백로그 20+ 항목 우선순위 정리</li><li>에셋 수입 하네스 자동화로 반복작업 제거</li></ul>
     </article>
     </section>
 
@@ -219,6 +220,22 @@ footer{margin-top:54px;padding-top:20px;border-top:1px solid var(--border);color
       <p class="section-title">최근 근거</p>
       <div class="timeline">
     <article class="timeline-item">
+      <time>2026-06-18</time>
+      <div>
+        <p class="timeline-kind">완성도</p>
+        <p>완성도 60%</p>
+
+      </div>
+    </article>
+    <article class="timeline-item">
+      <time>2026-06-17</time>
+      <div>
+        <p class="timeline-kind">완성도</p>
+        <p>완성도 60%</p>
+
+      </div>
+    </article>
+    <article class="timeline-item">
       <time>2026-06-16</time>
       <div>
         <p class="timeline-kind">완성도</p>
@@ -257,28 +274,12 @@ footer{margin-top:54px;padding-top:20px;border-top:1px solid var(--border);color
         <p>feat(unity): retire the bot — player-driven rounds, Nordhold-style stage choices (M14)</p>
         <a href="https://github.com/sgeniusk/sam-defender-logue/commit/99302fd">99302fd</a>
       </div>
-    </article>
-    <article class="timeline-item">
-      <time>2026-06-11</time>
-      <div>
-        <p class="timeline-kind">커밋</p>
-        <p>feat(unity): general deploy UX + frontline fix (M13.1)</p>
-        <a href="https://github.com/sgeniusk/sam-defender-logue/commit/e683e84">e683e84</a>
-      </div>
-    </article>
-    <article class="timeline-item">
-      <time>2026-06-11</time>
-      <div>
-        <p class="timeline-kind">커밋</p>
-        <p>feat(unity): generals on the battlefield — cleave, skill banners, oath links (M13)</p>
-        <a href="https://github.com/sgeniusk/sam-defender-logue/commit/68e7300">68e7300</a>
-      </div>
     </article></div>
     </section>
   </div>
 
   <footer>
-    삼국지: 시즈폴 (Siege Fall) · 최근 푸시 2026-06-11 · 커밋 204개 · 최신 로그 2026-06-16.
+    삼국지: 시즈폴 (Siege Fall) · 최근 푸시 2026-06-11 · 커밋 204개 · 최신 로그 2026-06-18.
   </footer>
 </main>
 </body>

@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-06-16",
+  "generatedAt": "2026-06-18",
   "logs": {
     "habit": [
       {
@@ -96,6 +96,16 @@
         "date": "2026-06-16",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 70%"
+      },
+      {
+        "date": "2026-06-18",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -172,6 +182,16 @@
       },
       {
         "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 65%"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 65%"
+      },
+      {
+        "date": "2026-06-18",
         "kind": "progress",
         "text": "완성도 65%"
       }
@@ -414,6 +434,16 @@
         "date": "2026-06-16",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 60%"
+      },
+      {
+        "date": "2026-06-18",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "samguk-idle-prototype": [
@@ -606,6 +636,16 @@
         "date": "2026-06-16",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 60%"
+      },
+      {
+        "date": "2026-06-18",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
@@ -784,6 +824,16 @@
       },
       {
         "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 55%"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 55%"
+      },
+      {
+        "date": "2026-06-18",
         "kind": "progress",
         "text": "완성도 55%"
       }
@@ -988,6 +1038,16 @@
       },
       {
         "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 45%"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 45%"
+      },
+      {
+        "date": "2026-06-18",
         "kind": "progress",
         "text": "완성도 45%"
       }
@@ -1296,6 +1356,16 @@
         "date": "2026-06-16",
         "kind": "progress",
         "text": "완성도 40% · 커밋 +15"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 40%"
+      },
+      {
+        "date": "2026-06-18",
+        "kind": "progress",
+        "text": "완성도 40%"
       }
     ],
     "story-x-beta": [
@@ -1584,6 +1654,34 @@
         "date": "2026-06-16",
         "kind": "progress",
         "text": "완성도 45% · 커밋 +30"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 45% · 커밋 +1"
+      },
+      {
+        "date": "2026-06-17T06:03:44Z",
+        "kind": "commit",
+        "text": "fix(quality): 온보딩 분량 2체계 정합 — 매체 단계 중편 제거",
+        "sha": "4ac7bb6"
+      },
+      {
+        "date": "2026-06-17T13:15:22Z",
+        "kind": "commit",
+        "text": "fix(quality): 제목 \". \" 누수 — deriveProjectTitle 회차 접두에 마침표 구분자 추가",
+        "sha": "9f017c1"
+      },
+      {
+        "date": "2026-06-17T15:06:24Z",
+        "kind": "commit",
+        "text": "feat(quality): 의도 메모 영속 — VS·fork 선택이 새로고침에도 안 날아가게 (영속 Part 1)",
+        "sha": "fa01acd"
+      },
+      {
+        "date": "2026-06-18",
+        "kind": "progress",
+        "text": "완성도 45% · 커밋 +3"
       }
     ],
     "BookCircle": [
@@ -1648,6 +1746,16 @@
       },
       {
         "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-06-18",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -1746,6 +1854,16 @@
         "date": "2026-06-16",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-06-18",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
@@ -1842,6 +1960,16 @@
         "date": "2026-06-16",
         "kind": "progress",
         "text": "완성도 56%"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-06-18",
+        "kind": "progress",
+        "text": "완성도 56%"
       }
     ],
     "design-system-school": [
@@ -1936,6 +2064,16 @@
       },
       {
         "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-06-18",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -2178,6 +2316,34 @@
         "date": "2026-06-16",
         "kind": "progress",
         "text": "완성도 52% · 커밋 +5"
+      },
+      {
+        "date": "2026-06-16T13:49:15Z",
+        "kind": "commit",
+        "text": "Add 2026-06-16 build note",
+        "sha": "fa60ae2"
+      },
+      {
+        "date": "2026-06-16T23:34:15Z",
+        "kind": "commit",
+        "text": "Add June 17 console briefing",
+        "sha": "636ba26"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 52% · 커밋 +2"
+      },
+      {
+        "date": "2026-06-17T13:49:03Z",
+        "kind": "commit",
+        "text": "Add June 17 build note",
+        "sha": "aff8cf6"
+      },
+      {
+        "date": "2026-06-18",
+        "kind": "progress",
+        "text": "완성도 52% · 커밋 +1"
       }
     ],
     "Timeer": [
@@ -2230,6 +2396,16 @@
       },
       {
         "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 7%"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 7%"
+      },
+      {
+        "date": "2026-06-18",
         "kind": "progress",
         "text": "완성도 7%"
       }
@@ -2478,6 +2654,16 @@
         "date": "2026-06-16",
         "kind": "progress",
         "text": "완성도 19% · 커밋 +7"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 19%"
+      },
+      {
+        "date": "2026-06-18",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
@@ -2848,6 +3034,16 @@
       },
       {
         "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 19%"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 19%"
+      },
+      {
+        "date": "2026-06-18",
         "kind": "progress",
         "text": "완성도 19%"
       }

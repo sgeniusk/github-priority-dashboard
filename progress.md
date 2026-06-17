@@ -2,11 +2,11 @@
 
 다음 세션이 이 한 페이지만 보고도 현재 상태와 검증 증거를 이어받을 수 있도록 유지한다. 상세 백로그는 `feature_list.json`.
 
-**Last Updated**: 2026-06-16 (GitHub 활동 refresh + 사용량 refresh)
+**Last Updated**: 2026-06-18 (GitHub 활동 refresh + 제안 재생성)
 
 ## Current Objective — None
 
-오늘 작업 완료 상태다. `meta.asOf`는 2026-06-16이고, 전체 16개 프로젝트 중 활성 12개·일시중단 4개, 총 커밋 2267개, 뉴스 30건, history 22스냅샷이다. `usage.json`도 2026-06-16 기준으로 갱신되어 Claude 주간 40%, Codex 주간 65%를 표시한다. `monthly-analysis.html`은 2026-05-18부터 2026-06-16까지 최근 30일 커밋 1670건을 관찰해 레포별 활동·공백·테마를 보여준다. `project-pages/`에는 16개 프로젝트별 제작 현황 페이지와 index가 생성되어 있다.
+오늘 작업 완료 상태다. `meta.asOf`는 2026-06-18이고, 전체 16개 프로젝트 중 활성 12개·일시중단 4개, 총 커밋 2273개, 뉴스 35건, history 24스냅샷이다. `usage.json`은 2026-06-16 기준(Claude 주간 40%·Codex 주간 65%)을 유지한다. `monthly-analysis.html`은 2026-05-20부터 2026-06-18까지 최근 30일 커밋 1556건을 관찰해 레포별 활동·공백·테마를 보여준다. `suggestions.json`은 오늘자로 재생성되어 정체 8건(high 3·warn 3·info 2)을 표시한다. `project-pages/`에는 16개 프로젝트별 제작 현황 페이지와 index가 생성되어 있다.
 
 ## Recommended Next Step
 
@@ -14,6 +14,7 @@
 
 ## 직전에 푼 것
 
+- **2026-06-18 refresh + 제안 재생성** — 작업 중 자정을 넘겨 원격 daily auto-refresh(2026-06-18, projects/activity/history만)가 먼저 push됐다. 그 위로 rebase한 뒤 6/18 기준으로 refresh를 재실행 — `story-x-beta` 369커밋, `cmds-daily-briefing` 59커밋, 총 커밋 2273개, `meta.asOf` 2026-06-18, history 24스냅샷, news 35건, monthly-analysis(2026-05-20..2026-06-18, 1556커밋)·project-pages 재생성했다. `/coach`로 `suggestions.json`을 재생성 — tteuniyu-ios 36일·habit 22일·sam-defender-logue(rank 3) 6일 정체(stall·high), three-kingdoms 11일·design-system 19일·ai-builder 기능 병목(warn), ai-company·honbul 활동-진척 불일치(info). Codex 주간 65%·Claude 40%라 한도 경고는 없었다. `dashboard.html`의 FALLBACK_PROJECTS·FALLBACK_SUGGESTIONS, `project-report.html`의 fallback-projects/suggestions/logs 시드, `report.html`의 FALLBACK_NEWS를 verbatim 동기화했다. 완성도 점수는 자동 변경하지 않았다.
 - **2026-06-16 usage-refresh** — `.claude/commands/usage-refresh.md` 절차에 따라 `node scripts/refresh-usage.mjs --dry-run` 후 적용했다. Claude OAuth 토큰은 Keychain에서 갱신·저장됐고, Claude는 5시간 6%·주간 40%·Sonnet 주간 3%, Codex는 5시간 2%·주간 65%로 수집됐다. `usage.json`과 `dashboard.html` `FALLBACK_USAGE`를 verbatim 동기화했다.
 - **2026-06-16 refresh** — GitHub 활동 refresh로 `ai-company-tycoon-boundaryless` 446→461커밋, `story-x-beta` 336→366커밋, `cmds-daily-briefing` 51→56커밋, `chaekdam` 114→121커밋, 총 커밋 2267개, `meta.asOf` 2026-06-16, history 22스냅샷, news 30건으로 갱신했다. `project-pages/`와 `monthly-analysis`도 재생성했고, JSON 관련 FALLBACK seed를 verbatim 동기화했다. 완성도 점수는 자동 변경하지 않았다.
 - **2026-06-14 refresh** — GitHub 활동 refresh로 `sam-defender-logue` 197→204커밋, `ai-company-tycoon-boundaryless` 401→446커밋, `story-x-beta` 273→336커밋, `cmds-daily-briefing` 46→51커밋, `chaekdam` 76→114커밋, `honbul` 130→229커밋, 총 커밋 2210개, `meta.asOf` 2026-06-14, history 20스냅샷, news 28건으로 갱신했다. `project-pages/`와 `monthly-analysis`도 재생성했고, JSON 관련 FALLBACK seed를 verbatim 동기화했다. 완성도 점수는 자동 변경하지 않았다.
@@ -38,23 +39,19 @@
 
 | 항목 | 상태 | 마지막 확인 |
 | --- | --- | --- |
-| 시작 점검 | 통과 | 2026-06-16 `bash init.sh` |
-| 사용량 자동 수집 | 통과 | 2026-06-16 `node scripts/refresh-usage.mjs` 실기기 실행 — Claude(keychain 토큰 갱신 포함)·Codex 모두 수집, Claude 주간 40%·Codex 주간 65% |
-| 사용량 mock 파이프라인 | 통과 | `node scripts/refresh-usage.mjs --mock scripts/fixtures/usage-mock.json --dry-run` |
-| 사용량 탭 자동 카드 | 통과 | 2026-06-16 Playwright Chromium — usageGrid에 자동 수집 카드 2개 렌더, Claude 40%·Codex 65% 표시, 콘솔 에러 0 |
-| 데이터 refresh | 통과 | 2026-06-16 `GH_TOKEN="$(gh auth token)" node scripts/refresh-progress.mjs`, 총 커밋 2267·뉴스 30건·history 22스냅샷 |
-| 월간 분석 생성 | 통과 | refresh 연동, 2026-05-18..2026-06-16, 커밋 1670건 |
-| JSON·스크립트 검증 | 통과 | 2026-06-16 `node scripts/validate.mjs` |
-| 보고서 fallback·file smoke | 통과 | 2026-06-16 `node scripts/check-report-pages.mjs`, monthly-analysis·project-pages 존재 검증 포함 |
-| dashboard FALLBACK | 통과 | `FALLBACK_PROJECTS`·`FALLBACK_SUGGESTIONS`·`FALLBACK_USAGE` verbatim 일치 |
-| monthly-analysis FALLBACK | 통과 | `FALLBACK_ANALYSIS`와 `monthly-analysis.json` verbatim 일치 |
-| 브라우저 콘솔 | 0 | 2026-06-16 Playwright Chromium, dashboard 4탭 + report.html + monthly-analysis.html + project-report.html?repo=habit + project-pages/index.html + project-pages/honbul.html |
-| 브라우저 HTTP 오류 | 0 | 2026-06-16 Chromium, 로컬 4xx/5xx 0 |
-| 레이아웃 overflow | 없음 | 2026-06-16 Chromium 1440px, 확인 페이지 전체 horizontal overflow 없음 |
+| 시작 점검 | 통과 | 2026-06-18 `bash init.sh` (meta.asOf 오늘자) |
+| 데이터 refresh | 통과 | 2026-06-18 `node scripts/refresh-progress.mjs` — 총 커밋 2273·뉴스 35건·history 24스냅샷 |
+| 제안 재생성 | 통과 | 2026-06-18 `/coach` 분석 — 정체 8건(high 3·warn 3·info 2) |
+| 월간 분석 생성 | 통과 | refresh 연동, 2026-05-20..2026-06-18, 커밋 1556건 |
+| JSON·스크립트 검증 | 통과 | 2026-06-18 `node scripts/validate.mjs` exit 0 |
+| 보고서 fallback·file smoke | 통과 | 2026-06-18 `node scripts/check-report-pages.mjs` 전체 PASS |
+| FALLBACK 동기화 | 통과 | 2026-06-18 dashboard(PROJECTS·SUGGESTIONS·USAGE)·project-report(projects·suggestions·logs)·report(NEWS)·monthly(ANALYSIS) verbatim 일치 |
+| 브라우저 콘솔 | 0 | 2026-06-18 preview — dashboard 4탭 + report.html 콘솔 에러 0, projects/suggestions/news 6/18 fetch 확인 |
+| 사용량 카드 | 통과 | 2026-06-16 기준 유지 — Claude 주간 40%·Codex 주간 65% |
 
 ## Blockers
 
-- **자동 루틴의 원격 환경 GH_TOKEN 가용성 미확인** — 첫 정기 실행 결과로만 최종 확인 가능.
+- 현재 막힌 항목 없음. 원격 daily auto-refresh가 2026-06-14~18 `main`에 매일 정상 반영됨을 확인했다(작업 중 6/18분이 push되어 그 위로 rebase). 자동 루틴은 안정적으로 작동 중이다.
 
 ## Files
 

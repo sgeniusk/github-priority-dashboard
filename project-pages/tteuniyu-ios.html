@@ -110,7 +110,7 @@ footer{margin-top:54px;padding-top:20px;border-top:1px solid var(--border);color
     </div>
     <aside class="hero-card" aria-label="프로젝트 핵심 지표">
       <dl>
-        <div><dt>기준일</dt><dd>2026-06-16</dd></div>
+        <div><dt>기준일</dt><dd>2026-06-18</dd></div>
         <div><dt>담당</dt><dd>Hybrid</dd></div>
         <div><dt>상태</dt><dd>활성</dd></div>
         <div><dt>스프린트</dt><dd>Sprint A</dd></div>
@@ -157,13 +157,13 @@ footer{margin-top:54px;padding-top:20px;border-top:1px solid var(--border);color
 
     <section class="section">
       <p class="section-title">리스크와 코칭</p>
-      <p class="quiet" style="margin-bottom:14px">Sprint A 정체 — 29일째 멈춤</p>
+      <p class="quiet" style="margin-bottom:14px">Sprint A 정체 — 35일째 멈춤 (rank 2)</p>
 
     <article class="note high">
       <p class="note-kicker">위험 신호</p>
-      <h3>Sprint A 정체 — 29일째 멈춤</h3>
-      <p>Sprint A에 배정된 채 29일째 활동이 없습니다. rank 2인데 가장 오래 멈춰 있어, Sprint A 동반 마감(Formi)과 함께 일정 전체가 밀릴 위험이 큽니다.</p>
-      <ul><li>Xcode 빌드 + 5개 시뮬레이터 스크린샷 캡처</li><li>harness/check.sh CI 통과 확인</li><li>메인 monorepo 통합 시점 결정 또는 Sprint 재배정</li></ul>
+      <h3>Sprint A 정체 — 35일째 멈춤 (rank 2)</h3>
+      <p>rank 2이자 Sprint A인데 마지막 푸시가 2026-05-12로 35일 경과했다. alpha 0/20에 일평균 커밋 0.14로 사실상 멈춰 있다. 같은 Sprint A의 Formi도 21일째 정체라 Sprint A 두 축이 동시에 식는 중이다.</p>
+      <ul><li>Xcode 빌드 + 5 시뮬레이터 스크린샷 캡처로 재시동</li><li>harness/check.sh CI 통과 확인</li><li>ADR-006 게이트(Paid Intent ≥4% AND Waitlist ≥100) 미달 시 통합 보류 명문화</li></ul>
     </article>
     </section>
 
@@ -220,6 +220,22 @@ footer{margin-top:54px;padding-top:20px;border-top:1px solid var(--border);color
       <p class="section-title">최근 근거</p>
       <div class="timeline">
     <article class="timeline-item">
+      <time>2026-06-18</time>
+      <div>
+        <p class="timeline-kind">완성도</p>
+        <p>완성도 65%</p>
+
+      </div>
+    </article>
+    <article class="timeline-item">
+      <time>2026-06-17</time>
+      <div>
+        <p class="timeline-kind">완성도</p>
+        <p>완성도 65%</p>
+
+      </div>
+    </article>
+    <article class="timeline-item">
       <time>2026-06-16</time>
       <div>
         <p class="timeline-kind">완성도</p>
@@ -258,28 +274,12 @@ footer{margin-top:54px;padding-top:20px;border-top:1px solid var(--border);color
         <p>진척 65%</p>
 
       </div>
-    </article>
-    <article class="timeline-item">
-      <time>2026-06-04</time>
-      <div>
-        <p class="timeline-kind">완성도</p>
-        <p>진척 65%</p>
-
-      </div>
-    </article>
-    <article class="timeline-item">
-      <time>2026-06-03</time>
-      <div>
-        <p class="timeline-kind">완성도</p>
-        <p>진척 65%</p>
-
-      </div>
     </article></div>
     </section>
   </div>
 
   <footer>
-    뜬이유 iOS · 최근 푸시 2026-05-12 · 커밋 5개 · 최신 로그 2026-06-16.
+    뜬이유 iOS · 최근 푸시 2026-05-12 · 커밋 5개 · 최신 로그 2026-06-18.
   </footer>
 </main>
 </body>
