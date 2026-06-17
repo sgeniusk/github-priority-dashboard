@@ -1,7 +1,19 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-06-16",
+  "asOf": "2026-06-17",
   "commits": [
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "636ba26",
+      "message": "Add June 17 console briefing",
+      "date": "2026-06-16T23:34:15Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "fa60ae2",
+      "message": "Add 2026-06-16 build note",
+      "date": "2026-06-16T13:49:15Z"
+    },
     {
       "repo": "cmds-daily-briefing",
       "sha": "4e5a998",
@@ -229,18 +241,6 @@
       "sha": "d490c73",
       "message": "docs: MJ 가이드 v3.1 — 복붙 완성형 (스타일+--sref 2786484460 각 프롬프트 내장)",
       "date": "2026-06-13T06:14:47Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "da6774d",
-      "message": "Add June 13 light research briefing",
-      "date": "2026-06-12T23:33:15Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "bbd9501",
-      "message": "Add June 12 build note",
-      "date": "2026-06-12T13:48:50Z"
     },
     {
       "repo": "sam-defender-logue",
