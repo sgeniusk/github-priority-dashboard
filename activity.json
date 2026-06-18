@@ -1,7 +1,31 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-06-17",
+  "asOf": "2026-06-18",
   "commits": [
+    {
+      "repo": "story-x-beta",
+      "sha": "fa01acd",
+      "message": "feat(quality): 의도 메모 영속 — VS·fork 선택이 새로고침에도 안 날아가게 (영속 Part 1)",
+      "date": "2026-06-17T15:06:24Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "aff8cf6",
+      "message": "Add June 17 build note",
+      "date": "2026-06-17T13:49:03Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "9f017c1",
+      "message": "fix(quality): 제목 \". \" 누수 — deriveProjectTitle 회차 접두에 마침표 구분자 추가",
+      "date": "2026-06-17T13:15:22Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "4ac7bb6",
+      "message": "fix(quality): 온보딩 분량 2체계 정합 — 매체 단계 중편 제거",
+      "date": "2026-06-17T06:03:44Z"
+    },
     {
       "repo": "cmds-daily-briefing",
       "sha": "636ba26",
@@ -55,24 +79,6 @@
       "sha": "5a2c7b1",
       "message": "feat(quality): FloatingEditor .fc-vs 전개 후보 블록 (C-1 Task8)",
       "date": "2026-06-15T05:40:29Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "641668c",
-      "message": "feat(quality): vsCandidatesClient + aiStatus mode (C-1 Task7)",
-      "date": "2026-06-15T05:37:25Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "442f861",
-      "message": "feat(quality): vite /api/vs-candidates 브리지 (C-1 Task6)",
-      "date": "2026-06-15T05:34:00Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "14ac597",
-      "message": "feat(quality): api/vs-candidates prod 라우트 (C-1 Task5)",
-      "date": "2026-06-15T05:33:53Z"
     },
     {
       "repo": "cmds-daily-briefing",
@@ -193,12 +199,6 @@
       "sha": "f1eb680",
       "message": "fix-009e: HP바 보스그림 버그 수정 + 명부 배경 적용 (인게임 3차 피드백)",
       "date": "2026-06-13T14:44:06Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "8913e38",
-      "message": "Add June 13 build note",
-      "date": "2026-06-13T13:49:32Z"
     },
     {
       "repo": "honbul",
