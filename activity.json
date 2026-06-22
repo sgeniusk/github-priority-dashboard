@@ -1,7 +1,67 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-06-21",
+  "asOf": "2026-06-22",
   "commits": [
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "e21a878",
+      "message": "feat-024 준비: 크로마키 재생성 핸드오프·표준 + 캐릭터/소품/FAB 확대",
+      "date": "2026-06-21T07:18:34Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "b0cd320",
+      "message": "feat-005: iOS BuildIOS 추가 — Xcode 프로젝트+IL2CPP+x86_64 링크 입증",
+      "date": "2026-06-20T15:10:12Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "ca23d1f",
+      "message": "feat(quality): 다음 회차 CTA 모호 수정 — 편집 모드에 회차 확정→다음 회차 동선 노출",
+      "date": "2026-06-20T14:56:29Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "3ba43da",
+      "message": "test: 에뮬레이터 실기 검증 통과 — v0.1 핵심 루프 Android 런타임 구동 입증",
+      "date": "2026-06-20T14:33:25Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "0c0e618",
+      "message": "feat-005: APK 빌드 완결 — MVP(v0.1 Vertical Slice) 달성",
+      "date": "2026-06-20T14:19:38Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "152c52b",
+      "message": "docs+chore: feat-023 정본 문서 + Tools~/feat023 gitignore",
+      "date": "2026-06-20T04:33:31Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "a0ec90e",
+      "message": "feat-005+정본: 브랜딩 cozy 졸업 + MVP 클로즈아웃",
+      "date": "2026-06-20T04:32:49Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "c92410f",
+      "message": "feat-004: 절차 BGM — BgmGen cozy 칩튠 루프",
+      "date": "2026-06-20T04:32:49Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "b7ff566",
+      "message": "feat-023: 오피스 아트 확장 완결 — 캐릭터 애니 15포즈 + 소품 6종 양산 + cozy 배경",
+      "date": "2026-06-20T04:32:48Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "8bd9856",
+      "message": "feat(quality): 온보딩 자동 복원 — 매체 선택~작품 헌장 중간 입력이 새로고침에도 안 날아가게 (영속 Part 2)",
+      "date": "2026-06-18T13:52:59Z"
+    },
     {
       "repo": "story-x-beta",
       "sha": "fa01acd",
@@ -69,76 +129,16 @@
       "date": "2026-06-15T05:53:36Z"
     },
     {
-      "repo": "story-x-beta",
-      "sha": "8a0955a",
-      "message": "feat(quality): StoryXDesk VS 배선 + .fc-vs CSS (C-1 Task9)",
-      "date": "2026-06-15T05:44:53Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "5a2c7b1",
-      "message": "feat(quality): FloatingEditor .fc-vs 전개 후보 블록 (C-1 Task8)",
-      "date": "2026-06-15T05:40:29Z"
-    },
-    {
       "repo": "cmds-daily-briefing",
       "sha": "8c09ddf",
       "message": "Add 2026-06-15 research briefing",
       "date": "2026-06-14T23:37:56Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "51fa08f",
-      "message": "balance: 봇 승리 27→51개월 — 승리 임계값 상향 + 회귀 가드",
-      "date": "2026-06-14T16:55:26Z"
-    },
-    {
       "repo": "cmds-daily-briefing",
       "sha": "00adfc8",
       "message": "Add June 14 build note",
       "date": "2026-06-14T13:49:25Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "1dc99ad",
-      "message": "feat-022: 트렌드 콘텐츠 웨이브 — 2025-26 AI 트렌드 월드 이벤트 12종 (30→42)",
-      "date": "2026-06-14T11:09:08Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "63f7452",
-      "message": "feat-022 킥오프: 트렌드 콘텐츠 웨이브 설계·등록 — 2025-26 AI 트렌드 월드 이벤트",
-      "date": "2026-06-14T10:46:15Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "96cb40a",
-      "message": "feat-021: 도감 열람 UI — 크로스런 수집 그리드 갤러리",
-      "date": "2026-06-14T04:00:45Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "94e4c9e",
-      "message": "feat-021 킥오프: 도감 열람 UI 설계·등록 — 크로스런 수집 그리드 갤러리",
-      "date": "2026-06-14T03:05:25Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "3900905",
-      "message": "docs: feat-020 증거 완성 — 소품·환호 포즈 포함 + Codex 스코프 교훈",
-      "date": "2026-06-14T00:04:46Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "8daff7a",
-      "message": "feat-020 #5 환호 포즈: 캐릭터 3종 환호 프레임 + ActorAnim 3-상태",
-      "date": "2026-06-13T23:49:28Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "485d574",
-      "message": "docs: feat-020 진행 기록 정정 — Unity 트랙은 unity/progress.md에 (루트 progress.md 복원)",
-      "date": "2026-06-13T23:37:25Z"
     },
     {
       "repo": "cmds-daily-briefing",
