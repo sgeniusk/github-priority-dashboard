@@ -1,7 +1,55 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-06-22",
+  "asOf": "2026-06-23",
   "commits": [
+    {
+      "repo": "chaekdam",
+      "sha": "c58eab5",
+      "message": "feat(plan): 발표 생성/관리 UI를 Plus 분기(미달 시 UpgradeNotice)",
+      "date": "2026-06-21T14:26:30Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "719ca6f",
+      "message": "feat(plan): /upgrade 3티어 안내 페이지",
+      "date": "2026-06-21T14:23:41Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "537da33",
+      "message": "feat(plan): UpgradeNotice 페이월 안내 컴포넌트",
+      "date": "2026-06-21T14:23:27Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "3818bbc",
+      "message": "feat(plan): 발표 라이프사이클 10개 액션에 Plus 게이트(requirePlan)",
+      "date": "2026-06-21T14:20:01Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "b7cfc69",
+      "message": "feat(plan): entitlements 모듈(hasPlan·getUserPlan·requirePlan) + 단위테스트",
+      "date": "2026-06-21T14:10:38Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "b181b8f",
+      "message": "feat(plan): Profile 타입에 plan 필드",
+      "date": "2026-06-21T14:07:58Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "1d43315",
+      "message": "feat(plan): 0021 — profiles.plan 컬럼 + 자가변경 차단 정책",
+      "date": "2026-06-21T14:07:51Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "2faf6ad",
+      "message": "docs: 구독 게이트(D3) 1차 슬라이스 구현 계획",
+      "date": "2026-06-21T14:04:34Z"
+    },
     {
       "repo": "ai-company-tycoon-boundaryless",
       "sha": "e21a878",
@@ -147,48 +195,6 @@
       "date": "2026-06-13T23:33:04Z"
     },
     {
-      "repo": "chaekdam",
-      "sha": "975fb90",
-      "message": "docs: Fable 홈페이지 업그레이드 핸드오프 + 로드맵 A5 반영",
-      "date": "2026-06-13T23:16:52Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "ede59af",
-      "message": "feat(landing): 랜딩 본명조 세리프 리스킨 + 표지-우선 카드 + 신규 2섹션 배선",
-      "date": "2026-06-13T22:10:06Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "2344115",
-      "message": "feat(landing): 독서 시각화·결산 미리보기 컴포넌트 (Fable 차용 ⑤)",
-      "date": "2026-06-13T22:10:06Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "e60efa9",
-      "message": "feat(landing): 표지 발견 띠 컴포넌트 + 공개 표지 조회 (Fable 차용 ②)",
-      "date": "2026-06-13T22:10:06Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "4a6cb20",
-      "message": "feat(book): 공개 표면 표지-우선 CoverImage + resolveCover 순수함수",
-      "date": "2026-06-13T22:08:16Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "e2fb160",
-      "message": "feat(landing): 읽기-세계 토큰·본명조 폰트 배선 (이중 결 기반)",
-      "date": "2026-06-13T22:02:49Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "35b9ca9",
-      "message": "docs: 책담 Fable 업그레이드 설계 + 홈페이지 구현 계획 (이중 결·본명조·발표 쐐기 보존)",
-      "date": "2026-06-13T15:42:53Z"
-    },
-    {
       "repo": "honbul",
       "sha": "72f6941",
       "message": "docs: progress 갱신 — feat-009b 실아트 배선 + 인게임 피드백 3건 수정·세밀함 진단",
@@ -211,12 +217,6 @@
       "sha": "56a6f7a",
       "message": "fix-009c: 보스 종횡비 버그 + 가장자리 품질 (인게임 1차 피드백)",
       "date": "2026-06-13T11:52:13Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "4247373",
-      "message": "docs: 마이그레이션 0016~0020 전부 적용 확인 — F1 해소, stale \"적용 대기\" 메모 정정",
-      "date": "2026-06-13T11:35:17Z"
     },
     {
       "repo": "honbul",
