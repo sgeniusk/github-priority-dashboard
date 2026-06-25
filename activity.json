@@ -1,7 +1,55 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-06-23",
+  "asOf": "2026-06-25",
   "commits": [
+    {
+      "repo": "story-x-beta",
+      "sha": "a6e08a5",
+      "message": "chore(quality): B 트랙 완주·main 머지 반영 — 현재 상태 동기화 (origin 미푸시)",
+      "date": "2026-06-22T15:47:54Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "0128673",
+      "message": "chore(quality): B4 done 등재 + B 트랙(B1~B4) 완주 — progress·feature_list·handoff 갱신",
+      "date": "2026-06-22T15:47:02Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "f54fd13",
+      "message": "feat(quality): ProjectHistoryDialog 복원 영향범위 + rollback confirm (B4)",
+      "date": "2026-06-22T15:44:50Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "789e927",
+      "message": "feat(quality): 회차 확정·헌장 개정 시 자동 스냅샷 (B4)",
+      "date": "2026-06-22T15:37:46Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "8a37f31",
+      "message": "feat(quality): snapshotImpact 순수 모듈 — 복원 영향범위 계산 (B4)",
+      "date": "2026-06-22T15:36:20Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "d090eda",
+      "message": "docs(quality): 자동 버전 히스토리 — B4 구현 plan (3 task)",
+      "date": "2026-06-22T15:35:23Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "0dfe2a6",
+      "message": "docs(quality): 자동 버전 히스토리 — B4 설계 spec (P3 벤치마킹)",
+      "date": "2026-06-22T15:31:47Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "07fd920",
+      "message": "chore(quality): B2·B3 main 머지 반영 — 현재 상태 동기화 (origin 미푸시·B4 신선한 세션 대기)",
+      "date": "2026-06-22T14:19:01Z"
+    },
     {
       "repo": "chaekdam",
       "sha": "c58eab5",
@@ -63,12 +111,6 @@
       "date": "2026-06-20T15:10:12Z"
     },
     {
-      "repo": "story-x-beta",
-      "sha": "ca23d1f",
-      "message": "feat(quality): 다음 회차 CTA 모호 수정 — 편집 모드에 회차 확정→다음 회차 동선 노출",
-      "date": "2026-06-20T14:56:29Z"
-    },
-    {
       "repo": "ai-company-tycoon-boundaryless",
       "sha": "3ba43da",
       "message": "test: 에뮬레이터 실기 검증 통과 — v0.1 핵심 루프 Android 런타임 구동 입증",
@@ -105,34 +147,10 @@
       "date": "2026-06-20T04:32:48Z"
     },
     {
-      "repo": "story-x-beta",
-      "sha": "8bd9856",
-      "message": "feat(quality): 온보딩 자동 복원 — 매체 선택~작품 헌장 중간 입력이 새로고침에도 안 날아가게 (영속 Part 2)",
-      "date": "2026-06-18T13:52:59Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "fa01acd",
-      "message": "feat(quality): 의도 메모 영속 — VS·fork 선택이 새로고침에도 안 날아가게 (영속 Part 1)",
-      "date": "2026-06-17T15:06:24Z"
-    },
-    {
       "repo": "cmds-daily-briefing",
       "sha": "aff8cf6",
       "message": "Add June 17 build note",
       "date": "2026-06-17T13:49:03Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "9f017c1",
-      "message": "fix(quality): 제목 \". \" 누수 — deriveProjectTitle 회차 접두에 마침표 구분자 추가",
-      "date": "2026-06-17T13:15:22Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "4ac7bb6",
-      "message": "fix(quality): 온보딩 분량 2체계 정합 — 매체 단계 중편 제거",
-      "date": "2026-06-17T06:03:44Z"
     },
     {
       "repo": "cmds-daily-briefing",
@@ -157,24 +175,6 @@
       "sha": "78ad32a",
       "message": "Add June 15 build note",
       "date": "2026-06-15T13:49:10Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "3be758f",
-      "message": "fix(quality): VS 노출 자동열림 — 회차 생성 시 state 패널 자동 표시",
-      "date": "2026-06-15T13:16:04Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "3a42620",
-      "message": "docs: VS 회차 후보(C-1) 완료 — 검증·인계 (C-1 Task10)",
-      "date": "2026-06-15T05:59:47Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "aad16c5",
-      "message": "fix(quality): VS 핸들러 finally·미회수 약속 dedup (C-1 리뷰 반영)",
-      "date": "2026-06-15T05:53:36Z"
     },
     {
       "repo": "cmds-daily-briefing",
