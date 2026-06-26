@@ -1,7 +1,73 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-06-25",
+  "asOf": "2026-06-26",
   "commits": [
+    {
+      "repo": "chaekdam",
+      "sha": "e77760d",
+      "message": "feat(deck): 발표 슬라이드 디자인 시스템 적용 + dialogue 슬라이드",
+      "date": "2026-06-25T12:22:35Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "a423110",
+      "message": "feat-025 #13: 위기 모달 클로즈아웃 — 3단계 완성, 컷씬 트랙 전체 완료",
+      "date": "2026-06-25T12:10:02Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "1516a9f",
+      "message": "docs(deck): 발표자료 가이드·디자인 시스템 + 핵개인의 시대 모범 덱",
+      "date": "2026-06-25T12:09:24Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "840eedc",
+      "message": "feat-025 #12: 위기 이벤트 모달 — IsCrisis 판정(최악 합 ≤ -2000, EditMode 150) + 붉은 경고 모달 (3단계 완성)",
+      "date": "2026-06-25T12:09:21Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "afb0532",
+      "message": "docs(quality): B2 dual-retention plan 커밋 보충 (누락분 — B3·B4 plan과 일관)",
+      "date": "2026-06-25T12:07:35Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "bd2dd21",
+      "message": "feat-025 #11: 3단계 일부 클로즈아웃 — 첫 직원·특별 인재 모달 (위기 이벤트 제외)",
+      "date": "2026-06-25T09:35:47Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "7fd5b50",
+      "message": "feat-025 #10: 3단계 첫 직원·특별 인재 전체 모달 (PlayModalCo 확장, cheer 재활용, kind 매핑, special 글로우)",
+      "date": "2026-06-25T09:34:25Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "ef221f9",
+      "message": "feat-025 #9: 2단계 클로즈아웃 — 고용 등장·이벤트 발생 당황 컷인 + 당황 기호(!) polish",
+      "date": "2026-06-25T09:14:48Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "6ec73e3",
+      "message": "feat-025 #2-1: 이벤트 발생 당황 surprise 프레임 6장 크로마키 (3캐릭터×2프레임, halo=0)",
+      "date": "2026-06-25T07:59:04Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "9e8ddfc",
+      "message": "feat-025 2단계: plan + surprise 에셋 Codex 핸드오프 문서",
+      "date": "2026-06-22T16:01:28Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "bf2f0a6",
+      "message": "feat-025 #8: 고용 성공·이벤트 발생 → 컷인 트리거 + 캡처(23/24, 프리랜서 제외·중복방지)",
+      "date": "2026-06-22T16:01:27Z"
+    },
     {
       "repo": "story-x-beta",
       "sha": "a6e08a5",
@@ -45,12 +111,6 @@
       "date": "2026-06-22T15:31:47Z"
     },
     {
-      "repo": "story-x-beta",
-      "sha": "07fd920",
-      "message": "chore(quality): B2·B3 main 머지 반영 — 현재 상태 동기화 (origin 미푸시·B4 신선한 세션 대기)",
-      "date": "2026-06-22T14:19:01Z"
-    },
-    {
       "repo": "chaekdam",
       "sha": "c58eab5",
       "message": "feat(plan): 발표 생성/관리 UI를 Plus 분기(미달 시 UpgradeNotice)",
@@ -85,66 +145,6 @@
       "sha": "b181b8f",
       "message": "feat(plan): Profile 타입에 plan 필드",
       "date": "2026-06-21T14:07:58Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "1d43315",
-      "message": "feat(plan): 0021 — profiles.plan 컬럼 + 자가변경 차단 정책",
-      "date": "2026-06-21T14:07:51Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "2faf6ad",
-      "message": "docs: 구독 게이트(D3) 1차 슬라이스 구현 계획",
-      "date": "2026-06-21T14:04:34Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "e21a878",
-      "message": "feat-024 준비: 크로마키 재생성 핸드오프·표준 + 캐릭터/소품/FAB 확대",
-      "date": "2026-06-21T07:18:34Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "b0cd320",
-      "message": "feat-005: iOS BuildIOS 추가 — Xcode 프로젝트+IL2CPP+x86_64 링크 입증",
-      "date": "2026-06-20T15:10:12Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "3ba43da",
-      "message": "test: 에뮬레이터 실기 검증 통과 — v0.1 핵심 루프 Android 런타임 구동 입증",
-      "date": "2026-06-20T14:33:25Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "0c0e618",
-      "message": "feat-005: APK 빌드 완결 — MVP(v0.1 Vertical Slice) 달성",
-      "date": "2026-06-20T14:19:38Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "152c52b",
-      "message": "docs+chore: feat-023 정본 문서 + Tools~/feat023 gitignore",
-      "date": "2026-06-20T04:33:31Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "a0ec90e",
-      "message": "feat-005+정본: 브랜딩 cozy 졸업 + MVP 클로즈아웃",
-      "date": "2026-06-20T04:32:49Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "c92410f",
-      "message": "feat-004: 절차 BGM — BgmGen cozy 칩튠 루프",
-      "date": "2026-06-20T04:32:49Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "b7ff566",
-      "message": "feat-023: 오피스 아트 확장 완결 — 캐릭터 애니 15포즈 + 소품 6종 양산 + cozy 배경",
-      "date": "2026-06-20T04:32:48Z"
     },
     {
       "repo": "cmds-daily-briefing",
