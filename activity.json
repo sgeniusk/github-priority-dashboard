@@ -3,100 +3,100 @@
   "asOf": "2026-06-27",
   "commits": [
     {
-      "repo": "chaekdam",
-      "sha": "4759613",
-      "message": "docs(deck): 발표자료 가이드·디자인 시스템을 이번 작업 패턴으로 갱신",
-      "date": "2026-06-26T23:43:11Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "f809551",
-      "message": "feat(deck): 5장·에필로그·2024→2026 성찰 추가 + 연도 현재화",
-      "date": "2026-06-26T23:36:10Z"
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "f869c8e",
+      "message": "fix(feat-027): 가구 잘림·산만 해소 — 안전 x범위[0.08,0.86]·우측 더미 분산·뒤 가구 한 줄 정렬",
+      "date": "2026-06-27T23:23:51Z"
     },
     {
       "repo": "chaekdam",
-      "sha": "a957e99",
-      "message": "feat(deck): 목차 제목 복원 + 질문 강조 + 작가의 대답 + 인터랙티브 공개 제출",
-      "date": "2026-06-26T14:12:30Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "998f872",
-      "message": "feat-027 #6 클로즈아웃 — 신규 가구 반입 완료, 빈 바닥 해소 문서 갱신",
-      "date": "2026-06-26T13:51:20Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "e7076f7",
-      "message": "feat-027 #6: 신규 가구 5종 양산·반입 + 뒤바닥 배치 — 빈 바닥 띠 채움 (Codex 크로마키 halo=0)",
-      "date": "2026-06-26T13:50:38Z"
+      "sha": "16b86eb",
+      "message": "Merge: 발표 라이브 의견 탭 (#2)",
+      "date": "2026-06-27T15:14:06Z"
     },
     {
       "repo": "chaekdam",
-      "sha": "fbd4ac5",
-      "message": "feat(deck): 발제문 기반 토론 덱 재구성 + present 모드 Lovable 통일",
-      "date": "2026-06-26T13:49:53Z"
+      "sha": "79446eb",
+      "message": "polish(present): 라이브 탭 마운트 즉시 폴링 + 시각 로컬타임 주석",
+      "date": "2026-06-27T14:59:31Z"
     },
     {
       "repo": "chaekdam",
-      "sha": "8c64fbd",
-      "message": "feat(deck): 공개 발표 페이지 Lovable 디자인 + 통합 제출 + 라이브 의견",
-      "date": "2026-06-26T11:55:30Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "13174ea",
-      "message": "feat-027 #5: 클로즈아웃 — 오피스 구성 재작업 코드 골격, EditMode 161 + 깊이 군집·중간바닥 캡처",
-      "date": "2026-06-26T11:51:16Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "f2c6fa8",
-      "message": "feat-027 #4: 신규 가구 5종 Codex 크로마키 핸드오프 문서",
-      "date": "2026-06-26T11:49:03Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "b18e769",
-      "message": "feat-027 #3: 중간 바닥 채우기 — OfficeProps 깊이 존 + 러그·신규 가구 specs (기존 소품 즉시 효과)",
-      "date": "2026-06-26T11:42:21Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "5b55f21",
-      "message": "feat-027 #2: 직원 다열 깊이 군집 — OfficeLayout 기반 RefreshOfficeScene + X jitter (일렬 탈피)",
-      "date": "2026-06-26T11:37:14Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "0d98947",
-      "message": "feat-027 #1: OfficeLayout 깊이 배치 순수 계산 — Band 원근·RowPlan 분배 (EditMode 4)",
-      "date": "2026-06-26T11:29:59Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "69d56f3",
-      "message": "feat-027 계획: 오피스 구성 재작업 5-task (OfficeLayout TDD→군집→중간바닥→가구 핸드오프→클로즈아웃)",
-      "date": "2026-06-26T11:26:15Z"
+      "sha": "1aa0804",
+      "message": "fix(present): 선택된 슬라이드 번호 버튼 글자 흰색",
+      "date": "2026-06-27T14:55:14Z"
     },
     {
       "repo": "chaekdam",
-      "sha": "239f516",
-      "message": "feat(deck): 핵개인 덱 재구성 + answer/statement 슬라이드 + 한국어 줄바꿈",
-      "date": "2026-06-26T08:05:11Z"
+      "sha": "64cab48",
+      "message": "feat(present): 라이브 탭 연결 + 발제 탭 의견 중복 제거",
+      "date": "2026-06-27T14:54:18Z"
     },
     {
       "repo": "chaekdam",
-      "sha": "e77760d",
-      "message": "feat(deck): 발표 슬라이드 디자인 시스템 적용 + dialogue 슬라이드",
-      "date": "2026-06-25T12:22:35Z"
+      "sha": "6e4e9e3",
+      "message": "feat(present): LiveOpinionsPanel — 질문별 의견 말풍선",
+      "date": "2026-06-27T14:52:40Z"
     },
     {
       "repo": "chaekdam",
-      "sha": "1516a9f",
-      "message": "docs(deck): 발표자료 가이드·디자인 시스템 + 핵개인의 시대 모범 덱",
-      "date": "2026-06-25T12:09:24Z"
+      "sha": "bfc32f4",
+      "message": "fix(present): 라이브 의견 테스트 타입 가드(noUncheckedIndexedAccess)",
+      "date": "2026-06-27T14:51:41Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "aa773a8",
+      "message": "fix(present): 라이브 의견은 승인된 공개 응답만 로드",
+      "date": "2026-06-27T14:50:02Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "30c8643",
+      "message": "feat(present): 라이브 의견 질문별 그룹핑 헬퍼 + 테스트",
+      "date": "2026-06-27T14:48:29Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "177fb6d",
+      "message": "feat-029 #4: 클로즈아웃 — 월말 브리핑 + 다박자 시퀀스, EditMode 177 + 캡처 38/39",
+      "date": "2026-06-27T11:07:05Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "f506174",
+      "message": "feat-029 #3b: 브리핑 카드 ContentSizeFitter — 내용 높이에 맞춰 빈 공간 제거(중앙 정렬)",
+      "date": "2026-06-27T11:06:01Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "835b460",
+      "message": "feat-029 #3: 다박자 시퀀스 — 타임랩스 2초 + 이벤트 중간 일시정지 + 월말 브리핑 삽입",
+      "date": "2026-06-27T10:55:58Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "58ed4c0",
+      "message": "feat-029 #2: 월말 브리핑 카드 — 손익계산서 모달(BuildBriefingModal/ShowBriefing) + 분위 배지",
+      "date": "2026-06-27T10:48:04Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "f485cbf",
+      "message": "feat-029 #1b: WarningText 단언 + 첫항목 절단 주석",
+      "date": "2026-06-27T10:38:07Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "bdca1d8",
+      "message": "feat-029 #1: MonthBriefing 표시 모델 — 순익·조건부 행·분위 (EditMode 7)",
+      "date": "2026-06-27T10:34:17Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "f07b921",
+      "message": "feat-029 계획: 월말 브리핑 4-task (MonthBriefing TDD→브리핑 모달→다박자 시퀀스→클로즈아웃)",
+      "date": "2026-06-27T10:28:37Z"
     },
     {
       "repo": "story-x-beta",

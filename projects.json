@@ -294,8 +294,8 @@
         "alpha": 0,
         "total": 40
       },
-      "commits": 508,
-      "lastUpdate": "2026-06-26T23:00Z",
+      "commits": 525,
+      "lastUpdate": "2026-06-27T23:53Z",
       "firstCommit": "2026-05-14",
       "daysActive": 44,
       "eta": "4-6주",
@@ -338,7 +338,7 @@
         "total": 45
       },
       "commits": 400,
-      "lastUpdate": "2026-06-25T12:07Z",
+      "lastUpdate": "2026-06-27T12:29Z",
       "firstCommit": "2026-05-14",
       "daysActive": 44,
       "eta": "5-7주",
@@ -640,8 +640,8 @@
         "alpha": 0,
         "total": 19
       },
-      "commits": 138,
-      "lastUpdate": "2026-06-26T23:43Z",
+      "commits": 160,
+      "lastUpdate": "2026-06-27T15:14Z",
       "firstCommit": "2026-05-27",
       "daysActive": 31,
       "eta": "5-7주",
