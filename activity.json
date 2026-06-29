@@ -1,60 +1,120 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-06-27",
+  "asOf": "2026-06-29",
   "commits": [
+    {
+      "repo": "story-x-beta",
+      "sha": "ebe4f0a",
+      "message": "Merge pull request #6 from sgeniusk/feat/dive-x-freeform-intake",
+      "date": "2026-06-28T22:34:39Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "4b07e2f",
+      "message": "docs(dive-x): 자유 서술 진입 완료 — progress·handoff 갱신",
+      "date": "2026-06-28T22:29:02Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "6a95a52",
+      "message": "feat(dive-x): 자유 서술 onStart 배선 — 공유 시드 헬퍼",
+      "date": "2026-06-28T22:24:50Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "ee30d42",
+      "message": "feat(dive-x): DiveStart 자유 서술 1차 + 제안 카드 보조 강등 (TDD)",
+      "date": "2026-06-28T22:23:48Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "c4ecb1f",
+      "message": "feat(dive-x): dive-setup 커맨드 + /api/dive-setup 브리지 라우트",
+      "date": "2026-06-28T22:22:15Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "a1b28ca",
+      "message": "feat(dive-x): requestDiveSetup 브리지 클라이언트 + null 폴백 (TDD)",
+      "date": "2026-06-28T22:14:52Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "c2a5faa",
+      "message": "feat(dive-x): DiveSetup 타입 + seedFromProposal 느슨화(scene·cast만)",
+      "date": "2026-06-28T15:57:40Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "0661cff",
+      "message": "docs(dive-x): 자유 서술 진입 구현 계획 (6 태스크 TDD)",
+      "date": "2026-06-28T15:56:00Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "209f81b",
+      "message": "Merge: 익명 발표 제출 rate limit (#6)",
+      "date": "2026-06-28T11:10:42Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "c625d61",
+      "message": "docs(roadmap): 0023 prod 적용·검증 완료 반영",
+      "date": "2026-06-28T11:03:33Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "1f6c65d",
+      "message": "feat(security): 익명 발표 제출 rate limit (DB 네이티브, 0023)",
+      "date": "2026-06-28T10:44:34Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "5ff17ee",
+      "message": "Merge: 멤버·클럽 진행률 실데이터화 (#5)",
+      "date": "2026-06-28T10:36:39Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "b2be576",
+      "message": "feat(reading): 멤버·클럽 진행률 실데이터화 (pseudoPct 제거)",
+      "date": "2026-06-28T10:32:53Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "d8991fc",
+      "message": "Merge: P1 위생 — CI + README 정리 + 죽은 내비 제거 (#4)",
+      "date": "2026-06-28T10:24:47Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "d7ce1e7",
+      "message": "chore(p1): CI 워크플로 + README 드리프트 정리 + 죽은 내비 제거",
+      "date": "2026-06-28T09:51:55Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "300b971",
+      "message": "Merge: 런칭 게이트 + Pro 게이트 + Next 보안 패치 (#3)",
+      "date": "2026-06-28T09:45:00Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "203ed19",
+      "message": "docs: 세션 핸드오프 — 클로드 디자인 시안 임포트 대기(스탠드얼론 HTML 직접 제공) + 오피스 3레이어 설계 메모",
+      "date": "2026-06-28T05:52:09Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "f06a9d4",
+      "message": "fix(feat-027): 책상이 러그 위에 앉도록 — 중앙 러그 대형화(footY 140·직원 발치)·어색한 회의테이블 제거",
+      "date": "2026-06-28T00:12:21Z"
+    },
     {
       "repo": "ai-company-tycoon-boundaryless",
       "sha": "f869c8e",
       "message": "fix(feat-027): 가구 잘림·산만 해소 — 안전 x범위[0.08,0.86]·우측 더미 분산·뒤 가구 한 줄 정렬",
       "date": "2026-06-27T23:23:51Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "16b86eb",
-      "message": "Merge: 발표 라이브 의견 탭 (#2)",
-      "date": "2026-06-27T15:14:06Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "79446eb",
-      "message": "polish(present): 라이브 탭 마운트 즉시 폴링 + 시각 로컬타임 주석",
-      "date": "2026-06-27T14:59:31Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "1aa0804",
-      "message": "fix(present): 선택된 슬라이드 번호 버튼 글자 흰색",
-      "date": "2026-06-27T14:55:14Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "64cab48",
-      "message": "feat(present): 라이브 탭 연결 + 발제 탭 의견 중복 제거",
-      "date": "2026-06-27T14:54:18Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "6e4e9e3",
-      "message": "feat(present): LiveOpinionsPanel — 질문별 의견 말풍선",
-      "date": "2026-06-27T14:52:40Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "bfc32f4",
-      "message": "fix(present): 라이브 의견 테스트 타입 가드(noUncheckedIndexedAccess)",
-      "date": "2026-06-27T14:51:41Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "aa773a8",
-      "message": "fix(present): 라이브 의견은 승인된 공개 응답만 로드",
-      "date": "2026-06-27T14:50:02Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "30c8643",
-      "message": "feat(present): 라이브 의견 질문별 그룹핑 헬퍼 + 테스트",
-      "date": "2026-06-27T14:48:29Z"
     },
     {
       "repo": "ai-company-tycoon-boundaryless",
@@ -85,66 +145,6 @@
       "sha": "f485cbf",
       "message": "feat-029 #1b: WarningText 단언 + 첫항목 절단 주석",
       "date": "2026-06-27T10:38:07Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "bdca1d8",
-      "message": "feat-029 #1: MonthBriefing 표시 모델 — 순익·조건부 행·분위 (EditMode 7)",
-      "date": "2026-06-27T10:34:17Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "f07b921",
-      "message": "feat-029 계획: 월말 브리핑 4-task (MonthBriefing TDD→브리핑 모달→다박자 시퀀스→클로즈아웃)",
-      "date": "2026-06-27T10:28:37Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "afb0532",
-      "message": "docs(quality): B2 dual-retention plan 커밋 보충 (누락분 — B3·B4 plan과 일관)",
-      "date": "2026-06-25T12:07:35Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "a6e08a5",
-      "message": "chore(quality): B 트랙 완주·main 머지 반영 — 현재 상태 동기화 (origin 미푸시)",
-      "date": "2026-06-22T15:47:54Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "0128673",
-      "message": "chore(quality): B4 done 등재 + B 트랙(B1~B4) 완주 — progress·feature_list·handoff 갱신",
-      "date": "2026-06-22T15:47:02Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "f54fd13",
-      "message": "feat(quality): ProjectHistoryDialog 복원 영향범위 + rollback confirm (B4)",
-      "date": "2026-06-22T15:44:50Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "789e927",
-      "message": "feat(quality): 회차 확정·헌장 개정 시 자동 스냅샷 (B4)",
-      "date": "2026-06-22T15:37:46Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "8a37f31",
-      "message": "feat(quality): snapshotImpact 순수 모듈 — 복원 영향범위 계산 (B4)",
-      "date": "2026-06-22T15:36:20Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "d090eda",
-      "message": "docs(quality): 자동 버전 히스토리 — B4 구현 plan (3 task)",
-      "date": "2026-06-22T15:35:23Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "0dfe2a6",
-      "message": "docs(quality): 자동 버전 히스토리 — B4 설계 spec (P3 벤치마킹)",
-      "date": "2026-06-22T15:31:47Z"
     },
     {
       "repo": "cmds-daily-briefing",
