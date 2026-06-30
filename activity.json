@@ -1,7 +1,49 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-06-29",
+  "asOf": "2026-06-30",
   "commits": [
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "944aa6c",
+      "message": "docs(feat-030): 핸드오프 — 시안 전 항목 구현 완료(13커밋 미푸시)",
+      "date": "2026-06-29T14:50:29Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "42ecea7",
+      "message": "feat-030: 온보딩 첫 60초 — AI 비서 '첫 출근' 코치마크",
+      "date": "2026-06-29T14:45:56Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "6fee5c6",
+      "message": "feat-035 영웅·장비 아트 — 그릇 초상 4종·장비 아이콘 10종",
+      "date": "2026-06-29T14:36:53Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "d7145fb",
+      "message": "feat-030: 오피스 고정 3레이어 — PropSpec.Layer(Back/Front) + 전경 소품 가림",
+      "date": "2026-06-29T00:48:29Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "6bcd3e0",
+      "message": "feat-030 ④: 이벤트 모달 옅은 스크림 통일 + progress 갱신",
+      "date": "2026-06-28T23:42:42Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "0690a02",
+      "message": "feat-030: 손익 브리핑 보텀시트+순익 틱업 · 본문/버튼 폰트 · 트렌드바 문구",
+      "date": "2026-06-28T23:38:14Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "9d05be4",
+      "message": "feat-030: 직원 얼굴 회색빛 수정 — 피부 팔레트 따뜻하게",
+      "date": "2026-06-28T22:37:54Z"
+    },
     {
       "repo": "story-x-beta",
       "sha": "ebe4f0a",
@@ -45,10 +87,22 @@
       "date": "2026-06-28T15:57:40Z"
     },
     {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "d996eed",
+      "message": "feat-030: 큰 숫자 임팩트 폰트(Black Han Sans) — 가독성 시안 매칭",
+      "date": "2026-06-28T15:56:06Z"
+    },
+    {
       "repo": "story-x-beta",
       "sha": "0661cff",
       "message": "docs(dive-x): 자유 서술 진입 구현 계획 (6 태스크 TDD)",
       "date": "2026-06-28T15:56:00Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "3409cb3",
+      "message": "feat-030: 오피스 비례 수정 — 과한 줌 완화(1.32→1.15)·벽 가구 확대",
+      "date": "2026-06-28T15:51:08Z"
     },
     {
       "repo": "chaekdam",
@@ -61,6 +115,12 @@
       "sha": "c625d61",
       "message": "docs(roadmap): 0023 prod 적용·검증 완료 반영",
       "date": "2026-06-28T11:03:33Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "d1e649a",
+      "message": "docs: 세션 핸드오프 갱신 — 게임필 QA 결산·다음 장비/캐릭터 일러스트",
+      "date": "2026-06-28T10:49:50Z"
     },
     {
       "repo": "chaekdam",
@@ -93,58 +153,46 @@
       "date": "2026-06-28T09:51:55Z"
     },
     {
+      "repo": "honbul",
+      "sha": "20cf883",
+      "message": "feat-034 패들 파워 전기 아크 — 블랑카식 응집 연출",
+      "date": "2026-06-28T09:48:14Z"
+    },
+    {
       "repo": "chaekdam",
       "sha": "300b971",
       "message": "Merge: 런칭 게이트 + Pro 게이트 + Next 보안 패치 (#3)",
       "date": "2026-06-28T09:45:00Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "203ed19",
-      "message": "docs: 세션 핸드오프 — 클로드 디자인 시안 임포트 대기(스탠드얼론 HTML 직접 제공) + 오피스 3레이어 설계 메모",
-      "date": "2026-06-28T05:52:09Z"
+      "repo": "honbul",
+      "sha": "e298398",
+      "message": "test: PaddlePowerGlow 작동 검증 PlayMode 테스트",
+      "date": "2026-06-28T00:00:48Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "f06a9d4",
-      "message": "fix(feat-027): 책상이 러그 위에 앉도록 — 중앙 러그 대형화(footY 140·직원 발치)·어색한 회의테이블 제거",
-      "date": "2026-06-28T00:12:21Z"
+      "repo": "honbul",
+      "sha": "af16095",
+      "message": "fix-033 패들 차지 발광 — 곱 틴트→금빛 가산 오버레이",
+      "date": "2026-06-27T23:21:53Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "f869c8e",
-      "message": "fix(feat-027): 가구 잘림·산만 해소 — 안전 x범위[0.08,0.86]·우측 더미 분산·뒤 가구 한 줄 정렬",
-      "date": "2026-06-27T23:23:51Z"
+      "repo": "honbul",
+      "sha": "b6bdbfe",
+      "message": "feat-033 패들 가시성·차지 발광·하강 속도(사용자 QA)",
+      "date": "2026-06-27T13:44:04Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "177fb6d",
-      "message": "feat-029 #4: 클로즈아웃 — 월말 브리핑 + 다박자 시퀀스, EditMode 177 + 캡처 38/39",
-      "date": "2026-06-27T11:07:05Z"
+      "repo": "honbul",
+      "sha": "c1daebe",
+      "message": "feat-032 발사 시 '쿵' 하강 제거 — 연속 하강만",
+      "date": "2026-06-27T12:26:45Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "f506174",
-      "message": "feat-029 #3b: 브리핑 카드 ContentSizeFitter — 내용 높이에 맞춰 빈 공간 제거(중앙 정렬)",
-      "date": "2026-06-27T11:06:01Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "835b460",
-      "message": "feat-029 #3: 다박자 시퀀스 — 타임랩스 2초 + 이벤트 중간 일시정지 + 월말 브리핑 삽입",
-      "date": "2026-06-27T10:55:58Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "58ed4c0",
-      "message": "feat-029 #2: 월말 브리핑 카드 — 손익계산서 모달(BuildBriefingModal/ShowBriefing) + 분위 배지",
-      "date": "2026-06-27T10:48:04Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "f485cbf",
-      "message": "feat-029 #1b: WarningText 단언 + 첫항목 절단 주석",
-      "date": "2026-06-27T10:38:07Z"
+      "repo": "honbul",
+      "sha": "bc0ebf3",
+      "message": "feat-031 인게임 QA fix 3종 — 줄 틈·프레임·하강 부드러움",
+      "date": "2026-06-27T12:15:39Z"
     },
     {
       "repo": "cmds-daily-briefing",
@@ -193,54 +241,6 @@
       "sha": "9c9d084",
       "message": "Add June 14 light research briefing",
       "date": "2026-06-13T23:33:04Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "72f6941",
-      "message": "docs: progress 갱신 — feat-009b 실아트 배선 + 인게임 피드백 3건 수정·세밀함 진단",
-      "date": "2026-06-13T14:45:20Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "f1eb680",
-      "message": "fix-009e: HP바 보스그림 버그 수정 + 명부 배경 적용 (인게임 3차 피드백)",
-      "date": "2026-06-13T14:44:06Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "b3a4519",
-      "message": "fix-009d: 자글거림 해소 — sprite mipmap 활성화 (인게임 2차 피드백)",
-      "date": "2026-06-13T12:21:00Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "56a6f7a",
-      "message": "fix-009c: 보스 종횡비 버그 + 가장자리 품질 (인게임 1차 피드백)",
-      "date": "2026-06-13T11:52:13Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "019d5dc",
-      "message": "feat-009b: 실아트 Unity 배선 1차 — SpriteLibrary·임포트·틴트 제거",
-      "date": "2026-06-13T11:18:44Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "8ebb145",
-      "message": "docs: 아트 가이드 v4 — agy(nano banana) 생성 체제 + art-drops gitignore",
-      "date": "2026-06-13T07:45:02Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "5c06717",
-      "message": "docs: MJ 가이드 v3.2 — sref를 앵커 이미지 URL로 교체 (s.mj.run/uB652QGd2HU)",
-      "date": "2026-06-13T06:27:27Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "d490c73",
-      "message": "docs: MJ 가이드 v3.1 — 복붙 완성형 (스타일+--sref 2786484460 각 프롬프트 내장)",
-      "date": "2026-06-13T06:14:47Z"
     },
     {
       "repo": "sam-defender-logue",
