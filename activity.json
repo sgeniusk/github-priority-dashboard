@@ -1,7 +1,61 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-06-30",
+  "asOf": "2026-07-01",
   "commits": [
+    {
+      "repo": "story-x-beta",
+      "sha": "c1d1403",
+      "message": "Merge pull request #8 from sgeniusk/docs/canon-core-merged-status",
+      "date": "2026-06-30T17:17:16Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "8750bb6",
+      "message": "docs(canon): Canon Core MVP-0 상태를 main 머지 완료로 정정(PR #7)",
+      "date": "2026-06-30T17:17:00Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "d034607",
+      "message": "Merge pull request #7 from sgeniusk/feat/canon-core-mvp0",
+      "date": "2026-06-30T17:07:25Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "4418a86",
+      "message": "docs(canon): Canon Core MVP-0 done — 정본·스펙·계획 + progress·handoff 갱신",
+      "date": "2026-06-30T16:36:53Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "26c88c4",
+      "message": "fix(canon): selectCanonForContext 가 alwaysInclude 를 앵커로 직접 인정(mid-session 핀)",
+      "date": "2026-06-30T16:35:13Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "1d7129f",
+      "message": "fix(canon): longform 회귀 테스트를 중간 앵커 생존(A-6)으로 교정 + 미사용 CONTEXT_CANON_HEAD 제거",
+      "date": "2026-06-30T16:26:47Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "208a656",
+      "message": "feat(canon): normalizeProject 가 CanonFact importance·participants·reveal·evidence 백필",
+      "date": "2026-06-30T16:22:28Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "1978586",
+      "message": "feat(canon): digest 절단을 중요도 검색+reveal 분리로 교체(A-6 직격)",
+      "date": "2026-06-30T16:19:26Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "c7fe5f0",
+      "message": "docs(feat-030): 다음 세션 조정 항목 — 1인 창고 시작·업그레이드 조건 해금·버튼 affordance",
+      "date": "2026-06-30T08:54:03Z"
+    },
     {
       "repo": "ai-company-tycoon-boundaryless",
       "sha": "944aa6c",
@@ -45,64 +99,10 @@
       "date": "2026-06-28T22:37:54Z"
     },
     {
-      "repo": "story-x-beta",
-      "sha": "ebe4f0a",
-      "message": "Merge pull request #6 from sgeniusk/feat/dive-x-freeform-intake",
-      "date": "2026-06-28T22:34:39Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "4b07e2f",
-      "message": "docs(dive-x): 자유 서술 진입 완료 — progress·handoff 갱신",
-      "date": "2026-06-28T22:29:02Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "6a95a52",
-      "message": "feat(dive-x): 자유 서술 onStart 배선 — 공유 시드 헬퍼",
-      "date": "2026-06-28T22:24:50Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "ee30d42",
-      "message": "feat(dive-x): DiveStart 자유 서술 1차 + 제안 카드 보조 강등 (TDD)",
-      "date": "2026-06-28T22:23:48Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "c4ecb1f",
-      "message": "feat(dive-x): dive-setup 커맨드 + /api/dive-setup 브리지 라우트",
-      "date": "2026-06-28T22:22:15Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "a1b28ca",
-      "message": "feat(dive-x): requestDiveSetup 브리지 클라이언트 + null 폴백 (TDD)",
-      "date": "2026-06-28T22:14:52Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "c2a5faa",
-      "message": "feat(dive-x): DiveSetup 타입 + seedFromProposal 느슨화(scene·cast만)",
-      "date": "2026-06-28T15:57:40Z"
-    },
-    {
       "repo": "ai-company-tycoon-boundaryless",
       "sha": "d996eed",
       "message": "feat-030: 큰 숫자 임팩트 폰트(Black Han Sans) — 가독성 시안 매칭",
       "date": "2026-06-28T15:56:06Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "0661cff",
-      "message": "docs(dive-x): 자유 서술 진입 구현 계획 (6 태스크 TDD)",
-      "date": "2026-06-28T15:56:00Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "3409cb3",
-      "message": "feat-030: 오피스 비례 수정 — 과한 줌 완화(1.32→1.15)·벽 가구 확대",
-      "date": "2026-06-28T15:51:08Z"
     },
     {
       "repo": "chaekdam",
