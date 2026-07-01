@@ -2,18 +2,19 @@
 
 다음 세션이 이 한 페이지만 보고도 현재 상태와 검증 증거를 이어받을 수 있도록 유지한다. 상세 백로그는 `feature_list.json`.
 
-**Last Updated**: 2026-06-18 (GitHub 활동 refresh + 제안 재생성)
+**Last Updated**: 2026-07-01 (인터뷰 기반 리프레시 + 7/01 재수집)
 
 ## Current Objective — None
 
-오늘 작업 완료 상태다. `meta.asOf`는 2026-06-18이고, 전체 16개 프로젝트 중 활성 12개·일시중단 4개, 총 커밋 2273개, 뉴스 35건, history 24스냅샷이다. `usage.json`은 2026-06-16 기준(Claude 주간 40%·Codex 주간 65%)을 유지한다. `monthly-analysis.html`은 2026-05-20부터 2026-06-18까지 최근 30일 커밋 1556건을 관찰해 레포별 활동·공백·테마를 보여준다. `suggestions.json`은 오늘자로 재생성되어 정체 8건(high 3·warn 3·info 2)을 표시한다. `project-pages/`에는 16개 프로젝트별 제작 현황 페이지와 index가 생성되어 있다.
+오늘 작업 완료 상태다. `meta.asOf`는 2026-07-01이고, 전체 16개 프로젝트 중 활성 12개·일시중단 4개, 총 커밋 2563개, 뉴스 48건, history 25스냅샷이다. 사용자 인터뷰로 4개 프로젝트를 리프레시했다 — Story X(45→50, Dive X 상향식 대화 스토리텔링), 타이쿤(40→75, Unity 방치형·성장 시각화), 혼불(19→39, Unity 벽돌깨기·연출 우선), 시즈폴(60→20, Unity 타워디펜스·과대평가 교정). 세 게임 stack을 Unity+C#로 교정했다. `usage.json`은 2026-06-16 기준(Claude 주간 40%·Codex 주간 65%)을 유지한다. `suggestions.json`은 6/18 coach 기준(정체 8건)이라 인터뷰 반영 재생성이 후속 과제다. `project-pages/`에는 16개 프로젝트별 페이지가 생성되어 있다.
 
 ## Recommended Next Step
 
-다음 세션 시작 시 `bash init.sh`와 이 파일을 먼저 확인한다. 현재 `meta.asOf`는 오늘자라 추가 refresh는 필요 없다. 후보 작업은 `monthly-analysis.html`의 분석 문구를 실제 운영 판단에 맞춰 점진 개선, 자동 refresh 루틴의 원격 `GH_TOKEN` 가용성 확인, `reports.json` 줄글 최신성 점검, 신규 프로젝트 등록 시 `projects/{repo}` 문서 표준화와 project-pages 재생성 확인이다.
+다음 세션 시작 시 `bash init.sh`와 이 파일을 먼저 확인한다. `meta.asOf`는 오늘자(7/01)다. 후속 과제는 (1) **미push 해소** — 혼불(로컬 미push 44)·시즈폴(로컬 미push+uncommitted)은 사용자가 push해야 GitHub·대시보드에 반영된다, (2) **남은 인터뷰** — 군령·전지적 군주 시점(게임, Unity 전환 가능성)·책담·AI Builder School(웹)·Formi(6/24 부활 확인)·뜬이유 iOS, (3) `suggestions.json`을 인터뷰 반영해 `/coach`로 재생성이다.
 
 ## 직전에 푼 것
 
+- **2026-07-01 인터뷰 기반 리프레시 + 7/01 재수집** — 사용자와 프로젝트별 인터뷰로 4개를 리프레시했다. Story X 45→50(6종 매체 엔진→Dive X 상향식 대화 스토리텔링·작품화), 타이쿤 40→75(웹→Unity 방치형 타이쿤·성장 시각화, **과소평가 교정**), 혼불 19→39(Pre-production→Unity 벽돌깨기·"본연의 연출" 우선, **과소평가**), 시즈폴 60→20(Unity 타워디펜스·버그·"첫 장면" 체감, **과대평가 교정**). 세 게임 stack을 Unity+C#로 교정. 인터뷰 중 **실제 날짜가 2026-07-01**임을 확인(대시보드는 6/18에 정체) — refresh를 7/01 기준으로 재실행해 커밋·날짜·asOf를 실제화(총 2273→2563커밋, story-x +105·타이쿤 +81·책담 +53·honbul +51, Formi가 6/24 부활). 인터뷰로 고친 점수·정체성·스택은 refresh가 안 건드려 보존됐다. FALLBACK(dashboard·project-report·report)·project-pages 재동기화. **핵심 교훈** — 대시보드가 GitHub 커밋만 봐서 게임의 Unity 전환·로컬 미push 작업(혼불 44·시즈폴)·완성도(과소/과대 양방향)를 못 잡았다. 인터뷰가 이를 보정.
 - **2026-06-18 refresh + 제안 재생성** — 작업 중 자정을 넘겨 원격 daily auto-refresh(2026-06-18, projects/activity/history만)가 먼저 push됐다. 그 위로 rebase한 뒤 6/18 기준으로 refresh를 재실행 — `story-x-beta` 369커밋, `cmds-daily-briefing` 59커밋, 총 커밋 2273개, `meta.asOf` 2026-06-18, history 24스냅샷, news 35건, monthly-analysis(2026-05-20..2026-06-18, 1556커밋)·project-pages 재생성했다. `/coach`로 `suggestions.json`을 재생성 — tteuniyu-ios 36일·habit 22일·sam-defender-logue(rank 3) 6일 정체(stall·high), three-kingdoms 11일·design-system 19일·ai-builder 기능 병목(warn), ai-company·honbul 활동-진척 불일치(info). Codex 주간 65%·Claude 40%라 한도 경고는 없었다. `dashboard.html`의 FALLBACK_PROJECTS·FALLBACK_SUGGESTIONS, `project-report.html`의 fallback-projects/suggestions/logs 시드, `report.html`의 FALLBACK_NEWS를 verbatim 동기화했다. 완성도 점수는 자동 변경하지 않았다.
 - **2026-06-16 usage-refresh** — `.claude/commands/usage-refresh.md` 절차에 따라 `node scripts/refresh-usage.mjs --dry-run` 후 적용했다. Claude OAuth 토큰은 Keychain에서 갱신·저장됐고, Claude는 5시간 6%·주간 40%·Sonnet 주간 3%, Codex는 5시간 2%·주간 65%로 수집됐다. `usage.json`과 `dashboard.html` `FALLBACK_USAGE`를 verbatim 동기화했다.
 - **2026-06-16 refresh** — GitHub 활동 refresh로 `ai-company-tycoon-boundaryless` 446→461커밋, `story-x-beta` 336→366커밋, `cmds-daily-briefing` 51→56커밋, `chaekdam` 114→121커밋, 총 커밋 2267개, `meta.asOf` 2026-06-16, history 22스냅샷, news 30건으로 갱신했다. `project-pages/`와 `monthly-analysis`도 재생성했고, JSON 관련 FALLBACK seed를 verbatim 동기화했다. 완성도 점수는 자동 변경하지 않았다.
@@ -39,19 +40,20 @@
 
 | 항목 | 상태 | 마지막 확인 |
 | --- | --- | --- |
-| 시작 점검 | 통과 | 2026-06-18 `bash init.sh` (meta.asOf 오늘자) |
-| 데이터 refresh | 통과 | 2026-06-18 `node scripts/refresh-progress.mjs` — 총 커밋 2273·뉴스 35건·history 24스냅샷 |
-| 제안 재생성 | 통과 | 2026-06-18 `/coach` 분석 — 정체 8건(high 3·warn 3·info 2) |
-| 월간 분석 생성 | 통과 | refresh 연동, 2026-05-20..2026-06-18, 커밋 1556건 |
-| JSON·스크립트 검증 | 통과 | 2026-06-18 `node scripts/validate.mjs` exit 0 |
-| 보고서 fallback·file smoke | 통과 | 2026-06-18 `node scripts/check-report-pages.mjs` 전체 PASS |
-| FALLBACK 동기화 | 통과 | 2026-06-18 dashboard(PROJECTS·SUGGESTIONS·USAGE)·project-report(projects·suggestions·logs)·report(NEWS)·monthly(ANALYSIS) verbatim 일치 |
-| 브라우저 콘솔 | 0 | 2026-06-18 preview — dashboard 4탭 + report.html 콘솔 에러 0, projects/suggestions/news 6/18 fetch 확인 |
+| 시작 점검 | 통과 | 2026-07-01 `bash init.sh` (asOf 오늘자) |
+| 데이터 재수집 (7/01) | 통과 | 2026-07-01 `refresh-progress.mjs` — 총 2563커밋·뉴스 48·history 25스냅샷, asOf 6/18→7/01 |
+| 인터뷰 리프레시 4개 | 통과 | Story X 50·타이쿤 75·혼불 39·시즈폴 20 — refresh가 점수·스택 보존 |
+| 월간 분석 생성 | 통과 | refresh 연동, 2026-06-02..2026-07-01, 997커밋 |
+| JSON·스크립트 검증 | 통과 | 2026-07-01 `node scripts/validate.mjs` exit 0 |
+| 보고서 fallback·file smoke | 통과 | 2026-07-01 `node scripts/check-report-pages.mjs` 전체 PASS |
+| FALLBACK 동기화 | 통과 | 2026-07-01 dashboard(PROJECTS·SUGGESTIONS·USAGE)·project-report(projects·suggestions·logs)·report(NEWS) verbatim 일치 |
+| 브라우저 콘솔 | 0 | 2026-07-01 preview — dashboard 4탭 콘솔 에러 0, 7/01 데이터 fetch |
 | 사용량 카드 | 통과 | 2026-06-16 기준 유지 — Claude 주간 40%·Codex 주간 65% |
 
 ## Blockers
 
-- 현재 막힌 항목 없음. 원격 daily auto-refresh가 2026-06-14~18 `main`에 매일 정상 반영됨을 확인했다(작업 중 6/18분이 push되어 그 위로 rebase). 자동 루틴은 안정적으로 작동 중이다.
+- **미push 누적** — 혼불(로컬 미push 44)·시즈폴(로컬 미push + uncommitted 12)이 GitHub에 없어, 재수집해도 대시보드가 못 잡는다. 사용자가 push해야 반영된다.
+- **대시보드 추적 한계(교훈)** — GitHub 커밋만 추적하면 게임의 Unity 전환·로컬 작업을 놓친다. 이번엔 인터뷰로 보정했고, 근본 개선(로컬 상태 반영 또는 push 습관)은 후속 과제다.
 
 ## Files
 

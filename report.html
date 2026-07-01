@@ -212,7 +212,7 @@ footer{
 /* fetch 실패 시 사용하는 내장 시드 */
 const FALLBACK_NEWS = {
   "_comment": "대시보드 전체 뉴스 피드. refresh마다 history/activity 델타·정체·status 변화에서 자동 생성(하이브리드 — 헤드라인 템플릿). report.html이 읽는다. _state는 변화 감지용.",
-  "generatedAt": "2026-06-18",
+  "generatedAt": "2026-07-01",
   "_state": {
     "status": {
       "habit": "active",
@@ -234,6 +234,110 @@ const FALLBACK_NEWS = {
     }
   },
   "items": [
+    {
+      "date": "2026-07-01",
+      "repo": "sam-defender-logue",
+      "kind": "progress",
+      "headline": "삼국지: 시즈폴 (Siege Fall), 완성도 -40% (60→20)",
+      "detail": "2026-06-18 대비 완성도가 40포인트 내렸습니다.",
+      "metric": "▼40%"
+    },
+    {
+      "date": "2026-07-01",
+      "repo": "ai-company-tycoon-boundaryless",
+      "kind": "progress",
+      "headline": "AI 컴퍼니 타이쿤, 완성도 +35% (40→75)",
+      "detail": "2026-06-18 대비 완성도가 35포인트 올랐습니다.",
+      "metric": "▲35%"
+    },
+    {
+      "date": "2026-07-01",
+      "repo": "ai-company-tycoon-boundaryless",
+      "kind": "surge",
+      "headline": "AI 컴퍼니 타이쿤, 커밋 +81로 가속",
+      "detail": "2026-06-18 이후 커밋이 81건 늘며 개발이 활발합니다.",
+      "metric": "+81 commits"
+    },
+    {
+      "date": "2026-07-01",
+      "repo": "story-x-beta",
+      "kind": "progress",
+      "headline": "Story X, 완성도 +5% (45→50)",
+      "detail": "2026-06-18 대비 완성도가 5포인트 올랐습니다.",
+      "metric": "▲5%"
+    },
+    {
+      "date": "2026-07-01",
+      "repo": "story-x-beta",
+      "kind": "surge",
+      "headline": "Story X, 커밋 +105로 가속",
+      "detail": "2026-06-18 이후 커밋이 105건 늘며 개발이 활발합니다.",
+      "metric": "+105 commits"
+    },
+    {
+      "date": "2026-07-01",
+      "repo": "chaekdam",
+      "kind": "surge",
+      "headline": "책담 (Chaekdam), 커밋 +53로 가속",
+      "detail": "2026-06-18 이후 커밋이 53건 늘며 개발이 활발합니다.",
+      "metric": "+53 commits"
+    },
+    {
+      "date": "2026-07-01",
+      "repo": "honbul",
+      "kind": "progress",
+      "headline": "혼불 (Honbul), 완성도 +20% (19→39)",
+      "detail": "2026-06-18 대비 완성도가 20포인트 올랐습니다.",
+      "metric": "▲20%"
+    },
+    {
+      "date": "2026-07-01",
+      "repo": "honbul",
+      "kind": "surge",
+      "headline": "혼불 (Honbul), 커밋 +51로 가속",
+      "detail": "2026-06-18 이후 커밋이 51건 늘며 개발이 활발합니다.",
+      "metric": "+51 commits"
+    },
+    {
+      "date": "2026-06-18",
+      "repo": "tteuniyu-ios",
+      "kind": "stall",
+      "headline": "뜬이유 iOS — Sprint A 정체 — 36일째 멈춤 (rank 2)",
+      "detail": "rank 2이자 Sprint A인데 마지막 푸시가 2026-05-12로 36일 경과했다. alpha 0/20에 일평균 커밋 0.13으로 사실상 멈춰 있다. 같은 Sprint A의 Formi도 22일째 정체라 Sprint A 두 축이 동시에 식는 중이다.",
+      "metric": "⚠ 위험"
+    },
+    {
+      "date": "2026-06-18",
+      "repo": "habit",
+      "kind": "stall",
+      "headline": "Formi (포미) — rank 1이 22일째 정지 — 알파 게이트만 남음",
+      "detail": "전체 진척 1위(70%)이자 rank 1인데 2026-05-26 이후 22일 정지했다. docs·skeleton은 만점권이고 남은 건 features 15/30과 alpha 10/20, 즉 Expo 알파 빌드와 TestFlight 등록이다. 완성에 가장 가까운 프로젝트의 정체라 손실이 가장 비싸다.",
+      "metric": "⚠ 위험"
+    },
+    {
+      "date": "2026-06-18",
+      "repo": "sam-defender-logue",
+      "kind": "stall",
+      "headline": "삼국지: 시즈폴 (Siege Fall) — rank 3, 정체 6일째 — 주시",
+      "detail": "rank 3이자 직전까지 활발하던(204커밋, 일평균 4.34) 시즈폴이 2026-06-11 이후 6일 공백이다. rank 상위라 길어지면 위험이 커진다. 콘텐츠 데이터와 Markdown ID 불일치(하네스 미완)에서 비롯된 백로그 20+ 누적이 재진입 마찰로 보인다.",
+      "metric": "⚠ 위험"
+    },
+    {
+      "date": "2026-06-18",
+      "repo": "three-kingdoms-deckbuilder",
+      "kind": "stall",
+      "headline": "군령: 책략의 전장 (Warlord's Command) — 11일째 멈춤 — 아트 방향 미결",
+      "detail": "2026-06-06 이후 11일 정체다. 코드 골격(skeleton 25/30)은 섰지만 alpha 0이고, risks의 '아트/UI 임시 상태(Koei 자산 회피 필수)'가 진행을 막는 의사결정 병목으로 보인다. 아트 방향은 도구 한도와 무관한 작업이라 지금 바로 풀 수 있다.",
+      "metric": "주의"
+    },
+    {
+      "date": "2026-06-18",
+      "repo": "design-system-school",
+      "kind": "stall",
+      "headline": "AI 디자인 시스템 스쿨 — 19일째 멈춤 — PRD 단계에서 정지",
+      "detail": "2026-05-29 이후 19일 정지로 가장 오래된 정체 중 하나다. docs 10·skeleton 10·features 0으로 PRD와 스캐폴딩 이전 단계에 있다. rank 12라 우선순위는 낮지만 착수만 하면 빠르게 오를 구간이다.",
+      "metric": "주의"
+    },
     {
       "date": "2026-06-17",
       "repo": "tteuniyu-ios",
