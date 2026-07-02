@@ -1,72 +1,150 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-07-01",
+  "asOf": "2026-07-02",
   "commits": [
     {
       "repo": "story-x-beta",
-      "sha": "c1d1403",
-      "message": "Merge pull request #8 from sgeniusk/docs/canon-core-merged-status",
-      "date": "2026-06-30T17:17:16Z"
+      "sha": "bf0f84e",
+      "message": "Merge pull request #13 from sgeniusk/feat/fusion-shell-mode-toggle",
+      "date": "2026-07-01T15:19:56Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "8750bb6",
-      "message": "docs(canon): Canon Core MVP-0 상태를 main 머지 완료로 정정(PR #7)",
-      "date": "2026-06-30T17:17:00Z"
+      "sha": "de9897b",
+      "message": "docs(shell): 융합 셸 슬라이스 A done — 3모드 토글·단일 project 소스",
+      "date": "2026-07-01T15:17:32Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "d034607",
-      "message": "Merge pull request #7 from sgeniusk/feat/canon-core-mvp0",
-      "date": "2026-06-30T17:07:25Z"
+      "sha": "940034f",
+      "message": "feat(shell): 융합 셸 배선 — 3모드 토글·storage 단일 소스 브리지",
+      "date": "2026-07-01T15:16:29Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "4418a86",
-      "message": "docs(canon): Canon Core MVP-0 done — 정본·스펙·계획 + progress·handoff 갱신",
-      "date": "2026-06-30T16:36:53Z"
+      "sha": "6635c51",
+      "message": "feat(shell): StoryXDesk initialStudioView 프롭 — WRITE=원고·PLAN=바이블 착지",
+      "date": "2026-07-01T15:07:26Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "26c88c4",
-      "message": "fix(canon): selectCanonForContext 가 alwaysInclude 를 앵커로 직접 인정(mid-session 핀)",
-      "date": "2026-06-30T16:35:13Z"
+      "sha": "15ad73a",
+      "message": "feat(shell): WorkspaceModeBar — PLAY/WRITE/PLAN 3모드 토글(순수)",
+      "date": "2026-07-01T15:06:27Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "1d7129f",
-      "message": "fix(canon): longform 회귀 테스트를 중간 앵커 생존(A-6)으로 교정 + 미사용 CONTEXT_CANON_HEAD 제거",
-      "date": "2026-06-30T16:26:47Z"
+      "sha": "8d5d049",
+      "message": "docs(shell): 융합 셸 슬라이스 A 설계 spec — 3모드 토글 + 단일 project 소스",
+      "date": "2026-07-01T15:05:20Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "f1db19e",
+      "message": "Merge: Topbar 다단 크럼 + 트랙 C3/C4 완료 (C4)",
+      "date": "2026-07-01T14:50:03Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "d948586",
+      "message": "feat(topbar): 덱 메인 페이지 크럼 배선 (리뷰 후속, 형제 페이지 일관성)",
+      "date": "2026-07-01T14:33:47Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "4ad9d00",
+      "message": "docs(roadmap): 트랙 C3 완료 반영 + C4 다단 크럼 완료",
+      "date": "2026-07-01T14:30:06Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "fbb1aa8",
+      "message": "feat(topbar): 다단 크럼 메커니즘 — CrumbProvider·Topbar trail 렌더·크럼 스타일",
+      "date": "2026-07-01T14:29:24Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "ee41740",
+      "message": "feat(topbar): 상세 페이지 다단 크럼 배선 (클럽·책 이름)",
+      "date": "2026-07-01T14:28:36Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "208a656",
-      "message": "feat(canon): normalizeProject 가 CanonFact importance·participants·reveal·evidence 백필",
-      "date": "2026-06-30T16:22:28Z"
+      "sha": "af310f2",
+      "message": "Merge pull request #12 from sgeniusk/feat/canon-retcon-path",
+      "date": "2026-07-01T14:24:56Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "1978586",
-      "message": "feat(canon): digest 절단을 중요도 검색+reveal 분리로 교체(A-6 직격)",
-      "date": "2026-06-30T16:19:26Z"
+      "sha": "cd4d76a",
+      "message": "docs(canon): 🔴 retcon 경로 done — 충돌을 정본 교체로 승격",
+      "date": "2026-07-01T14:24:14Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "aea15d9",
+      "message": "Merge pull request #7 from sgeniusk/feat/app-internal-consistency-repass",
+      "date": "2026-07-01T14:10:56Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "0017ed9",
+      "message": "fix(ui): PageHeader 모바일 스택 + posts 상세 헤더 통일 + deck 헤더 간격 정합 (리뷰 후속)",
+      "date": "2026-07-01T12:08:40Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "a513ab8",
+      "message": "docs(roadmap): 앱 내부 일관성 리파스 진행 반영 (트랙 C1/C2)",
+      "date": "2026-07-01T12:03:54Z"
     },
     {
       "repo": "ai-company-tycoon-boundaryless",
-      "sha": "c7fe5f0",
-      "message": "docs(feat-030): 다음 세션 조정 항목 — 1인 창고 시작·업그레이드 조건 해금·버튼 affordance",
-      "date": "2026-06-30T08:54:03Z"
+      "sha": "b00fdfc",
+      "message": "docs(feat-032): 사무실 씬 아트 리워크 done — 측면·후면·큐비클 증거",
+      "date": "2026-07-01T12:00:12Z"
     },
     {
       "repo": "ai-company-tycoon-boundaryless",
-      "sha": "944aa6c",
-      "message": "docs(feat-030): 핸드오프 — 시안 전 항목 구현 완료(13커밋 미푸시)",
-      "date": "2026-06-29T14:50:29Z"
+      "sha": "0f7163d",
+      "message": "feat-032 2차: 후면 캐릭터 3종 + 큐비클 칸막이 — 사무실 풍경 완성",
+      "date": "2026-07-01T11:59:49Z"
     },
     {
       "repo": "ai-company-tycoon-boundaryless",
-      "sha": "42ecea7",
-      "message": "feat-030: 온보딩 첫 60초 — AI 비서 '첫 출근' 코치마크",
-      "date": "2026-06-29T14:45:56Z"
+      "sha": "ce25824",
+      "message": "docs(feat-031/032): feat-031 done + feat-032 1차 증거 갱신",
+      "date": "2026-07-01T11:24:44Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "6c8663a",
+      "message": "feat-032 1차: 측면 워크스테이션 3종(human/ai/robot) + 방향 섞인 사무실 구성",
+      "date": "2026-07-01T11:24:17Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "95747ea",
+      "message": "docs(feat-031): ⑤ 설계 정정 — 격자→pod 재작업 + feat-032 아트 트랙 연결",
+      "date": "2026-07-01T09:39:25Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "c27b6b4",
+      "message": "docs(feat-032): 사무실 씬 아트 리워크 트랙 — 측면/후면 캐릭터+측면책상+큐비클 Codex 핸드오프 정본",
+      "date": "2026-07-01T09:38:50Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "25c8ad0",
+      "message": "feat-031 ⑤ 재작업: 기계적 격자→손으로 짠 pod 배치(비대칭 클러스터·통로·깊이)",
+      "date": "2026-07-01T09:35:48Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "2f7aee9",
+      "message": "feat-031 ⑤: 오피스 겹침 해소 — 원근 격자 자동 프레임 배치(직원 늘면 셀 축소, 겹침 0)",
+      "date": "2026-07-01T09:02:41Z"
     },
     {
       "repo": "honbul",
@@ -75,94 +153,16 @@
       "date": "2026-06-29T14:36:53Z"
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "d7145fb",
-      "message": "feat-030: 오피스 고정 3레이어 — PropSpec.Layer(Back/Front) + 전경 소품 가림",
-      "date": "2026-06-29T00:48:29Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "6bcd3e0",
-      "message": "feat-030 ④: 이벤트 모달 옅은 스크림 통일 + progress 갱신",
-      "date": "2026-06-28T23:42:42Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "0690a02",
-      "message": "feat-030: 손익 브리핑 보텀시트+순익 틱업 · 본문/버튼 폰트 · 트렌드바 문구",
-      "date": "2026-06-28T23:38:14Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "9d05be4",
-      "message": "feat-030: 직원 얼굴 회색빛 수정 — 피부 팔레트 따뜻하게",
-      "date": "2026-06-28T22:37:54Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "d996eed",
-      "message": "feat-030: 큰 숫자 임팩트 폰트(Black Han Sans) — 가독성 시안 매칭",
-      "date": "2026-06-28T15:56:06Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "209f81b",
-      "message": "Merge: 익명 발표 제출 rate limit (#6)",
-      "date": "2026-06-28T11:10:42Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "c625d61",
-      "message": "docs(roadmap): 0023 prod 적용·검증 완료 반영",
-      "date": "2026-06-28T11:03:33Z"
-    },
-    {
       "repo": "honbul",
       "sha": "d1e649a",
       "message": "docs: 세션 핸드오프 갱신 — 게임필 QA 결산·다음 장비/캐릭터 일러스트",
       "date": "2026-06-28T10:49:50Z"
     },
     {
-      "repo": "chaekdam",
-      "sha": "1f6c65d",
-      "message": "feat(security): 익명 발표 제출 rate limit (DB 네이티브, 0023)",
-      "date": "2026-06-28T10:44:34Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "5ff17ee",
-      "message": "Merge: 멤버·클럽 진행률 실데이터화 (#5)",
-      "date": "2026-06-28T10:36:39Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "b2be576",
-      "message": "feat(reading): 멤버·클럽 진행률 실데이터화 (pseudoPct 제거)",
-      "date": "2026-06-28T10:32:53Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "d8991fc",
-      "message": "Merge: P1 위생 — CI + README 정리 + 죽은 내비 제거 (#4)",
-      "date": "2026-06-28T10:24:47Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "d7ce1e7",
-      "message": "chore(p1): CI 워크플로 + README 드리프트 정리 + 죽은 내비 제거",
-      "date": "2026-06-28T09:51:55Z"
-    },
-    {
       "repo": "honbul",
       "sha": "20cf883",
       "message": "feat-034 패들 파워 전기 아크 — 블랑카식 응집 연출",
       "date": "2026-06-28T09:48:14Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "300b971",
-      "message": "Merge: 런칭 게이트 + Pro 게이트 + Next 보안 패치 (#3)",
-      "date": "2026-06-28T09:45:00Z"
     },
     {
       "repo": "honbul",
