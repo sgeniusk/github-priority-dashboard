@@ -1,42 +1,54 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-07-02",
+  "asOf": "2026-07-03",
   "commits": [
     {
       "repo": "story-x-beta",
-      "sha": "bf0f84e",
-      "message": "Merge pull request #13 from sgeniusk/feat/fusion-shell-mode-toggle",
-      "date": "2026-07-01T15:19:56Z"
+      "sha": "b6cc34b",
+      "message": "Merge pull request #16 from sgeniusk/feat/fusion-shell-sync-flash",
+      "date": "2026-07-02T04:56:28Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "de9897b",
-      "message": "docs(shell): 융합 셸 슬라이스 A done — 3모드 토글·단일 project 소스",
-      "date": "2026-07-01T15:17:32Z"
+      "sha": "624e09c",
+      "message": "feat(shell): 최신화 반영 피드백 토스트 — 조용한 즉시 반영에 확인",
+      "date": "2026-07-02T04:56:04Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "940034f",
-      "message": "feat(shell): 융합 셸 배선 — 3모드 토글·storage 단일 소스 브리지",
-      "date": "2026-07-01T15:16:29Z"
+      "sha": "9bfd4e2",
+      "message": "Merge pull request #15 from sgeniusk/feat/fusion-shell-reconcile-gate",
+      "date": "2026-07-02T04:16:01Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "6635c51",
-      "message": "feat(shell): StoryXDesk initialStudioView 프롭 — WRITE=원고·PLAN=바이블 착지",
-      "date": "2026-07-01T15:07:26Z"
+      "sha": "8cc8709",
+      "message": "feat(shell): reconcile 충돌 게이트 — ⟳최신화 시 본편 모순만 승인형 검토",
+      "date": "2026-07-02T04:15:32Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "15ad73a",
-      "message": "feat(shell): WorkspaceModeBar — PLAY/WRITE/PLAN 3모드 토글(순수)",
-      "date": "2026-07-01T15:06:27Z"
+      "sha": "f39d199",
+      "message": "docs(shell): 융합 셸 슬라이스 B-2 spec — reconcile 충돌 게이트",
+      "date": "2026-07-02T04:05:59Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "8d5d049",
-      "message": "docs(shell): 융합 셸 슬라이스 A 설계 spec — 3모드 토글 + 단일 project 소스",
-      "date": "2026-07-01T15:05:20Z"
+      "sha": "e6a6022",
+      "message": "Merge pull request #14 from sgeniusk/feat/fusion-shell-sync-console",
+      "date": "2026-07-02T03:47:00Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "6a7ed06",
+      "message": "docs(shell): 융합 셸 슬라이스 B done — 싱크 콘솔(staged·⟳최신화 append)",
+      "date": "2026-07-02T03:46:07Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "20cafdd",
+      "message": "feat(shell): 융합 셸 싱크 콘솔 — PLAY staged·⟳최신화 append 머지",
+      "date": "2026-07-02T03:45:58Z"
     },
     {
       "repo": "chaekdam",
@@ -67,18 +79,6 @@
       "sha": "ee41740",
       "message": "feat(topbar): 상세 페이지 다단 크럼 배선 (클럽·책 이름)",
       "date": "2026-07-01T14:28:36Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "af310f2",
-      "message": "Merge pull request #12 from sgeniusk/feat/canon-retcon-path",
-      "date": "2026-07-01T14:24:56Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "cd4d76a",
-      "message": "docs(canon): 🔴 retcon 경로 done — 충돌을 정본 교체로 승격",
-      "date": "2026-07-01T14:24:14Z"
     },
     {
       "repo": "chaekdam",
