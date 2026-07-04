@@ -1,54 +1,54 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-07-03",
+  "asOf": "2026-07-04",
   "commits": [
     {
       "repo": "story-x-beta",
-      "sha": "b6cc34b",
-      "message": "Merge pull request #16 from sgeniusk/feat/fusion-shell-sync-flash",
-      "date": "2026-07-02T04:56:28Z"
+      "sha": "ca505b9",
+      "message": "Merge pull request #19 from sgeniusk/feat/desk-orphan-css-cleanup",
+      "date": "2026-07-03T23:48:34Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "624e09c",
-      "message": "feat(shell): 최신화 반영 피드백 토스트 — 조용한 즉시 반영에 확인",
-      "date": "2026-07-02T04:56:04Z"
+      "sha": "7488cd0",
+      "message": "docs: 고아·CSS 정리 완료 기록 — progress·handoff 갱신",
+      "date": "2026-07-03T23:47:52Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "9bfd4e2",
-      "message": "Merge pull request #15 from sgeniusk/feat/fusion-shell-reconcile-gate",
-      "date": "2026-07-02T04:16:01Z"
+      "sha": "db5022a",
+      "message": "refactor(desk): 미호출 renderParagraphText·sx-diff 토큰 동반 삭제 — 적대적 검토 발견 잠재 함정 해소",
+      "date": "2026-07-03T23:47:19Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "8cc8709",
-      "message": "feat(shell): reconcile 충돌 게이트 — ⟳최신화 시 본편 모순만 승인형 검토",
-      "date": "2026-07-02T04:15:32Z"
+      "sha": "0398c93",
+      "message": "refactor(styles): 죽은 셸 CSS 2197줄 삭제 + 죽은 CSS 문자열 단언 교정",
+      "date": "2026-07-03T23:30:09Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "f39d199",
-      "message": "docs(shell): 융합 셸 슬라이스 B-2 spec — reconcile 충돌 게이트",
-      "date": "2026-07-02T04:05:59Z"
+      "sha": "5706408",
+      "message": "refactor(desk): 2·3차 고아 연쇄 삭제 — 삭제 컴포넌트만 쓰던 하위 정리",
+      "date": "2026-07-03T23:13:39Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "e6a6022",
-      "message": "Merge pull request #14 from sgeniusk/feat/fusion-shell-sync-console",
-      "date": "2026-07-02T03:47:00Z"
+      "sha": "2c82f96",
+      "message": "refactor(desk): 렌더 0 고아 컴포넌트 11개 삭제 + 죽은 정의 단언 교정",
+      "date": "2026-07-03T23:11:34Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "6a7ed06",
-      "message": "docs(shell): 융합 셸 슬라이스 B done — 싱크 콘솔(staged·⟳최신화 append)",
-      "date": "2026-07-02T03:46:07Z"
+      "sha": "ea6820c",
+      "message": "docs(desk): 고아 컴포넌트·죽은 CSS 정리 spec — PR #18 잔여 마무리",
+      "date": "2026-07-03T23:05:09Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "20cafdd",
-      "message": "feat(shell): 융합 셸 싱크 콘솔 — PLAY staged·⟳최신화 append 머지",
-      "date": "2026-07-02T03:45:58Z"
+      "sha": "9e7f978",
+      "message": "docs: PR #18 머지 반영 + 동반 유입 파일 기록",
+      "date": "2026-07-03T04:38:56Z"
     },
     {
       "repo": "chaekdam",
