@@ -1,7 +1,61 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-07-04",
+  "asOf": "2026-07-06",
   "commits": [
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "beef9f0",
+      "message": "Add 2026-07-06 daily briefing",
+      "date": "2026-07-05T23:34:27Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "7d5baa2",
+      "message": "Add July 5 build note",
+      "date": "2026-07-05T13:49:36Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "c1e4fd7",
+      "message": "docs: 랜딩 작성 여정 원페이저 PR #24 머지 기록·세션 마감",
+      "date": "2026-07-05T08:25:28Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "c18f878",
+      "message": "feat(landing): 홈 랜딩 '작성 여정' 원페이저 — 세 방식으로 하나의 캐논, 두 축 (#24)",
+      "date": "2026-07-05T08:23:17Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "328ec63",
+      "message": "docs: 서사 비전 확정 — 'AI 영혼 시스템'(선한↔흑화 성향+딜레마+발전 드리프트+조조전식 엔딩) 게임 심장 + 로드맵 트랙 G + 다음 세션 핸드오프",
+      "date": "2026-07-05T02:53:27Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "faf857f",
+      "message": "docs(feat-033): 'Era=막' 확장 로드맵 + F 토대에 EraTransition 훅 반영 — 4트랙(F토대/A연출/B경쟁자/C채용) 분해",
+      "date": "2026-07-05T02:02:26Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "107c803",
+      "message": "docs: PLAY 진입 융합 파트 2 PR #23 머지 기록·세션 마감",
+      "date": "2026-07-05T01:42:01Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "84a2d09",
+      "message": "feat(shell): PLAY 진입 융합 파트 2 — wm-bar 공통 셸(App 소유) (#23)",
+      "date": "2026-07-05T01:41:16Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "3636346",
+      "message": "docs(feat-033): 2차 설계 확정 — 전력 게이트(compute 임계 AND Era진입)·정렬 리스크(trust+WorldEvent era편향)·역량 era·4블록 분해",
+      "date": "2026-07-05T01:37:09Z"
+    },
     {
       "repo": "cmds-daily-briefing",
       "sha": "894a0f5",
@@ -51,18 +105,6 @@
       "date": "2026-07-04T11:30:19Z"
     },
     {
-      "repo": "story-x-beta",
-      "sha": "d918b86",
-      "message": "docs: 최종 검토 잔여(테스트 공백·모달 전제) 기록",
-      "date": "2026-07-04T11:23:28Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "5960f1c",
-      "message": "docs: PLAN staged 완료 기록 — progress·handoff 갱신, preview 포트 5175",
-      "date": "2026-07-04T11:21:16Z"
-    },
-    {
       "repo": "ai-company-tycoon-boundaryless",
       "sha": "dd9949c",
       "message": "docs(feat-034): 최종 리뷰 반영 — 설계서 B+C 정정 각주 5곳 + back 유예 명기 + intake 검수 테스트 권고",
@@ -73,36 +115,6 @@
       "sha": "0cc7050",
       "message": "docs(feat-034): 블록 ⑦ Codex 핸드오프 — 파츠 증산 규약 (A군 신규 형태 55장 + B군 측/후면 레이어 재생성, 색 중복 금지)",
       "date": "2026-07-04T07:32:56Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "df28dac",
-      "message": "docs(feat-034): 클로즈아웃 — 모듈러 액터 ①~⑥ 완결 증거 (EditMode 209·렌더 얼굴 밴드 0px)",
-      "date": "2026-07-04T07:30:46Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "d8748e8",
-      "message": "feat(plan-stage): App 반영/버리기/충돌 다이얼로그 배선 — syncVersion remount 불변식 유지",
-      "date": "2026-07-04T07:28:51Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "2446998",
-      "message": "feat-034 #6: 통짜 스프라이트·ActorPalette 퇴역 — 모듈러 페이퍼돌 완전 전환 (전면 33장 backup_orig 보존, 컷씬 미니 큐 토큰화)",
-      "date": "2026-07-04T07:26:57Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "3d83e82",
-      "message": "feat(plan-stage): PLAN 편집 staged 라우팅 — overlay 렌더·설계안 표시·본편 무접촉",
-      "date": "2026-07-04T07:21:56Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "2a5b6c3",
-      "message": "feat-034 #5: 컷씬 액터 모듈러 경로 전환 — ShowcaseRecipe + 플립북 포즈 토큰화",
-      "date": "2026-07-04T06:28:21Z"
     },
     {
       "repo": "chaekdam",
@@ -229,18 +241,6 @@
       "sha": "78ad32a",
       "message": "Add June 15 build note",
       "date": "2026-06-15T13:49:10Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "8c09ddf",
-      "message": "Add 2026-06-15 research briefing",
-      "date": "2026-06-14T23:37:56Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "00adfc8",
-      "message": "Add June 14 build note",
-      "date": "2026-06-14T13:49:25Z"
     },
     {
       "repo": "sam-defender-logue",
