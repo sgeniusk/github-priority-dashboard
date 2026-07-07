@@ -4,6 +4,30 @@
   "commits": [
     {
       "repo": "story-x-beta",
+      "sha": "18267e3",
+      "message": "docs: 관찰 ② 해소 — canonSuspect 미발화=진음성(커버리지 max 0.32·임계 0.65 유지), drains 16/16 미발화 구조 원인 기록",
+      "date": "2026-07-07T13:28:27Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "32a6fe8",
+      "message": "docs: VS 긴장 배지 머지 마감 — progress 헤더·인계 노트 갱신",
+      "date": "2026-07-07T12:55:24Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "6dec0fd",
+      "message": "feat(vs): VS 후보 흡인력 2축 주석 — 긴장 배지(새 긴장/회수만)+근거 툴팁 (#29)",
+      "date": "2026-07-07T12:53:24Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "3adf5df",
+      "message": "docs: 다음 세션 자립 프롬프트(흡인력 후속 3건+선택 4b) 작성·세션 마감 (Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>)",
+      "date": "2026-07-07T00:23:46Z"
+    },
+    {
+      "repo": "story-x-beta",
       "sha": "697c228",
       "message": "docs: 디자인 정비 슬라이스 4a done·아크 완결 — progress·handoff 갱신 (Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>)",
       "date": "2026-07-06T23:34:21Z"
@@ -25,30 +49,6 @@
       "sha": "cf5657f",
       "message": "feat(design): PLAN 이음새 봉합 — sx 토큰 핀 완화(--st-* 매핑)·흰 베니어 제거·⌘K 팔레트 스코프 수리·적대적 검토 11건 반영 (Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>) (#27)",
       "date": "2026-07-06T19:42:48Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "770139a",
-      "message": "docs: 디자인 정비 슬라이스 1+2 done — progress·handoff 갱신 (Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>)",
-      "date": "2026-07-06T17:27:58Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "eec9023",
-      "message": "feat(design): 스튜디오 공통 --st-* 토큰(warm oklch 승격)·모드색 셸 pill·PLAY 접속·모션 스케일 — 적대적 검토 7건 반영 (Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>) (#26)",
-      "date": "2026-07-06T17:24:11Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "bf8394c",
-      "message": "docs: 다음 세션 자립 프롬프트(후속 4건) 작성·세션 마감",
-      "date": "2026-07-06T16:43:52Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "3bcf5a1",
-      "message": "docs: scale 자동 검토 critic 합류 done — progress·handoff 갱신",
-      "date": "2026-07-06T16:39:59Z"
     },
     {
       "repo": "cmds-daily-briefing",
