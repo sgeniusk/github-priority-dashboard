@@ -1,7 +1,55 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-07-06",
+  "asOf": "2026-07-07",
   "commits": [
+    {
+      "repo": "story-x-beta",
+      "sha": "697c228",
+      "message": "docs: 디자인 정비 슬라이스 4a done·아크 완결 — progress·handoff 갱신 (Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>)",
+      "date": "2026-07-06T23:34:21Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "96cdb9b",
+      "message": "chore(design): 죽은 라이트 세대 정리 4a — 고아 4파일·spotlight/version-log/publishing CSS·--mx- 별칭 삭제(렌더 무변경, 적대적 검토 3렌즈 발견 0) (Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>) (#28)",
+      "date": "2026-07-06T23:32:49Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "d5be98e",
+      "message": "docs: 디자인 정비 슬라이스 3(핀 완화) done — progress·handoff 갱신 (Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>)",
+      "date": "2026-07-06T19:44:31Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "cf5657f",
+      "message": "feat(design): PLAN 이음새 봉합 — sx 토큰 핀 완화(--st-* 매핑)·흰 베니어 제거·⌘K 팔레트 스코프 수리·적대적 검토 11건 반영 (Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>) (#27)",
+      "date": "2026-07-06T19:42:48Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "770139a",
+      "message": "docs: 디자인 정비 슬라이스 1+2 done — progress·handoff 갱신 (Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>)",
+      "date": "2026-07-06T17:27:58Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "eec9023",
+      "message": "feat(design): 스튜디오 공통 --st-* 토큰(warm oklch 승격)·모드색 셸 pill·PLAY 접속·모션 스케일 — 적대적 검토 7건 반영 (Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>) (#26)",
+      "date": "2026-07-06T17:24:11Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "bf8394c",
+      "message": "docs: 다음 세션 자립 프롬프트(후속 4건) 작성·세션 마감",
+      "date": "2026-07-06T16:43:52Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "3bcf5a1",
+      "message": "docs: scale 자동 검토 critic 합류 done — progress·handoff 갱신",
+      "date": "2026-07-06T16:39:59Z"
+    },
     {
       "repo": "cmds-daily-briefing",
       "sha": "beef9f0",
@@ -15,106 +63,58 @@
       "date": "2026-07-05T13:49:36Z"
     },
     {
-      "repo": "story-x-beta",
-      "sha": "c1e4fd7",
-      "message": "docs: 랜딩 작성 여정 원페이저 PR #24 머지 기록·세션 마감",
-      "date": "2026-07-05T08:25:28Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "c18f878",
-      "message": "feat(landing): 홈 랜딩 '작성 여정' 원페이저 — 세 방식으로 하나의 캐논, 두 축 (#24)",
-      "date": "2026-07-05T08:23:17Z"
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "c9d8eff",
+      "message": "docs(feat-035): NEXT_SESSION을 블록 #4-1(딜레마 UI 표출) 착수 프롬프트로 갱신",
+      "date": "2026-07-05T11:56:17Z"
     },
     {
       "repo": "ai-company-tycoon-boundaryless",
-      "sha": "328ec63",
-      "message": "docs: 서사 비전 확정 — 'AI 영혼 시스템'(선한↔흑화 성향+딜레마+발전 드리프트+조조전식 엔딩) 게임 심장 + 로드맵 트랙 G + 다음 세션 핸드오프",
-      "date": "2026-07-05T02:53:27Z"
+      "sha": "dbb5647",
+      "message": "docs(feat-035): 헤드리스 3블록(성향·딜레마·엔딩) 완료 기록 + 블록 #4-1 UI 표출 잔여 명시",
+      "date": "2026-07-05T11:18:06Z"
     },
     {
       "repo": "ai-company-tycoon-boundaryless",
-      "sha": "faf857f",
-      "message": "docs(feat-033): 'Era=막' 확장 로드맵 + F 토대에 EraTransition 훅 반영 — 4트랙(F토대/A연출/B경쟁자/C채용) 분해",
-      "date": "2026-07-05T02:02:26Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "107c803",
-      "message": "docs: PLAY 진입 융합 파트 2 PR #23 머지 기록·세션 마감",
-      "date": "2026-07-05T01:42:01Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "84a2d09",
-      "message": "feat(shell): PLAY 진입 융합 파트 2 — wm-bar 공통 셸(App 소유) (#23)",
-      "date": "2026-07-05T01:41:16Z"
+      "sha": "68105a8",
+      "message": "feat(feat-035): 신규 엔딩 2종(선한/통제잃은 초지능, priority 130) + SO 재시드(24->26)",
+      "date": "2026-07-05T11:15:17Z"
     },
     {
       "repo": "ai-company-tycoon-boundaryless",
-      "sha": "3636346",
-      "message": "docs(feat-033): 2차 설계 확정 — 전력 게이트(compute 임계 AND Era진입)·정렬 리스크(trust+WorldEvent era편향)·역량 era·4블록 분해",
-      "date": "2026-07-05T01:37:09Z"
+      "sha": "6b528fa",
+      "message": "feat(feat-035): EndingDef 성향 밴드 필드 + EndingService.Matches 밴드/플래그 게이트 + 테스트 (조조전식, 기존 역호환)",
+      "date": "2026-07-05T11:15:17Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "9fcdbeb",
+      "message": "feat(feat-035): 딜레마 조립+월 진행 트리거+TriggeredDilemmas 세이브+sentinel(-1 부재) 근본수정",
+      "date": "2026-07-05T11:07:26Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "ca78f4e",
+      "message": "feat(feat-035): DilemmaService 트리거(Era 게이트·저확률·일회성)+Resolve(성향·플래그·자원) TDD",
+      "date": "2026-07-05T11:07:26Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "19c4da6",
+      "message": "feat(feat-035): DataImporter.ImportDilemmas + 카탈로그 배선 + SO 재시드(4종)",
+      "date": "2026-07-05T11:07:26Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "2e0b455",
+      "message": "feat(feat-035): 딜레마 콘텐츠 4종(dilemmas.json) + Codex 확장 핸드오프",
+      "date": "2026-07-05T11:07:26Z"
     },
     {
       "repo": "cmds-daily-briefing",
       "sha": "894a0f5",
       "message": "Add July 5 daily briefing",
       "date": "2026-07-04T23:34:33Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "1e3ccf1",
-      "message": "docs: 세션 인계 — PLAY 진입 융합 파트 1 머지, 파트 2 새 세션 인계 (#22)",
-      "date": "2026-07-04T14:15:46Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "5e9433e",
-      "message": "feat(play): PLAY 진입 융합 파트 1 — 현 작품 이어 플레이 시딩 (#21)",
-      "date": "2026-07-04T14:13:07Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "1862d0d",
-      "message": "docs(feat-034): progress ⑦ 보류 결론 반영 — 형태 확장 파일럿 후 파킹, 색 다양성이 작동 메커니즘",
-      "date": "2026-07-04T14:09:07Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "0e4bf74",
-      "message": "docs(feat-034): ⑦ 에셋 형태 확장 보류 — 파일럿 2건으로 B군 저가치·A군 정렬/품질 벽 확인, 색 다양성이 작동 메커니즘 (key_snap kind 일반화)",
-      "date": "2026-07-04T14:07:52Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "f53870c",
-      "message": "feat-034 ⑦ 파일럿: key_snap.py — imagegen 크로마키 → 정확-팔레트 96x96 파츠 (B군 파이프라인 검증: human back 11색 전량 레이어 분해)",
-      "date": "2026-07-04T12:05:33Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "5eaa6ce",
-      "message": "docs: 세션 마감 — PR #20 머지 기록, 다음 세션 1순위 PLAY 진입 융합 인계",
-      "date": "2026-07-04T11:31:42Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "0efbf5f",
-      "message": "Merge pull request #20 from sgeniusk/feat/plan-staged-patches",
-      "date": "2026-07-04T11:30:19Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "dd9949c",
-      "message": "docs(feat-034): 최종 리뷰 반영 — 설계서 B+C 정정 각주 5곳 + back 유예 명기 + intake 검수 테스트 권고",
-      "date": "2026-07-04T11:20:46Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "0cc7050",
-      "message": "docs(feat-034): 블록 ⑦ Codex 핸드오프 — 파츠 증산 규약 (A군 신규 형태 55장 + B군 측/후면 레이어 재생성, 색 중복 금지)",
-      "date": "2026-07-04T07:32:56Z"
     },
     {
       "repo": "chaekdam",
