@@ -1,7 +1,31 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-07-07",
+  "asOf": "2026-07-09",
   "commits": [
+    {
+      "repo": "story-x-beta",
+      "sha": "ed5cdf0",
+      "message": "feat(continuity): 자동 의미 게이트 한국어 recall 보강 + 6-페르소나 예비비행 (#32)",
+      "date": "2026-07-08T10:06:57Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "7938886",
+      "message": "feat(editor): 초안 생성 진행 피드백 — 경과 타이머·단계별 안심 메시지·예상시간 힌트",
+      "date": "2026-07-08T06:01:08Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "7e3d98e",
+      "message": "docs: PLAN 설계 대화 채널 머지 마감 — progress 헤더·인계 노트 갱신",
+      "date": "2026-07-08T01:35:13Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "254cb2b",
+      "message": "feat(plan-chat): PLAN 설계 대화 채널 — 설계실 2단계(승인형 패치 제안·하네스 미리보기) (#30)",
+      "date": "2026-07-08T01:33:06Z"
+    },
     {
       "repo": "story-x-beta",
       "sha": "18267e3",
@@ -25,30 +49,6 @@
       "sha": "3adf5df",
       "message": "docs: 다음 세션 자립 프롬프트(흡인력 후속 3건+선택 4b) 작성·세션 마감 (Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>)",
       "date": "2026-07-07T00:23:46Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "697c228",
-      "message": "docs: 디자인 정비 슬라이스 4a done·아크 완결 — progress·handoff 갱신 (Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>)",
-      "date": "2026-07-06T23:34:21Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "96cdb9b",
-      "message": "chore(design): 죽은 라이트 세대 정리 4a — 고아 4파일·spotlight/version-log/publishing CSS·--mx- 별칭 삭제(렌더 무변경, 적대적 검토 3렌즈 발견 0) (Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>) (#28)",
-      "date": "2026-07-06T23:32:49Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "d5be98e",
-      "message": "docs: 디자인 정비 슬라이스 3(핀 완화) done — progress·handoff 갱신 (Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>)",
-      "date": "2026-07-06T19:44:31Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "cf5657f",
-      "message": "feat(design): PLAN 이음새 봉합 — sx 토큰 핀 완화(--st-* 매핑)·흰 베니어 제거·⌘K 팔레트 스코프 수리·적대적 검토 11건 반영 (Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>) (#27)",
-      "date": "2026-07-06T19:42:48Z"
     },
     {
       "repo": "cmds-daily-briefing",
