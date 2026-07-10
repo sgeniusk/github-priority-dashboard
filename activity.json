@@ -1,54 +1,54 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-07-09",
+  "asOf": "2026-07-10",
   "commits": [
     {
       "repo": "story-x-beta",
-      "sha": "ed5cdf0",
-      "message": "feat(continuity): 자동 의미 게이트 한국어 recall 보강 + 6-페르소나 예비비행 (#32)",
-      "date": "2026-07-08T10:06:57Z"
+      "sha": "c6518c9",
+      "message": "docs(onboarding): LLM 대기 진행 피드백 done — progress·handoff 갱신",
+      "date": "2026-07-09T14:02:31Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "7938886",
-      "message": "feat(editor): 초안 생성 진행 피드백 — 경과 타이머·단계별 안심 메시지·예상시간 힌트",
-      "date": "2026-07-08T06:01:08Z"
+      "sha": "3a94165",
+      "message": "Merge: 온보딩 LLM 대기 진행 피드백 + 폴백 문구 수정",
+      "date": "2026-07-09T14:01:03Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "7e3d98e",
-      "message": "docs: PLAN 설계 대화 채널 머지 마감 — progress 헤더·인계 노트 갱신",
-      "date": "2026-07-08T01:35:13Z"
+      "sha": "8558343",
+      "message": "feat(onboarding): 첫 초안 생성 화면도 경과 타이머·새로고침 금지 안내",
+      "date": "2026-07-09T14:01:03Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "254cb2b",
-      "message": "feat(plan-chat): PLAN 설계 대화 채널 — 설계실 2단계(승인형 패치 제안·하네스 미리보기) (#30)",
-      "date": "2026-07-08T01:33:06Z"
+      "sha": "7df75b3",
+      "message": "feat(onboarding): 인터뷰 생성 진행 피드백 + 폴백 문구 codex 현실 반영",
+      "date": "2026-07-09T13:58:43Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "18267e3",
-      "message": "docs: 관찰 ② 해소 — canonSuspect 미발화=진음성(커버리지 max 0.32·임계 0.65 유지), drains 16/16 미발화 구조 원인 기록",
-      "date": "2026-07-07T13:28:27Z"
+      "sha": "1c9762e",
+      "message": "docs(handoff): 다음 세션 시작 프롬프트 갱신 — dogfooding 테스트 우선 + 코딩 백로그",
+      "date": "2026-07-09T12:36:01Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "32a6fe8",
-      "message": "docs: VS 긴장 배지 머지 마감 — progress 헤더·인계 노트 갱신",
-      "date": "2026-07-07T12:55:24Z"
+      "sha": "727402f",
+      "message": "docs(continuity): 후속 정비 3건 main 머지 반영 (4fd2978)",
+      "date": "2026-07-09T10:52:38Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "6dec0fd",
-      "message": "feat(vs): VS 후보 흡인력 2축 주석 — 긴장 배지(새 긴장/회수만)+근거 툴팁 (#29)",
-      "date": "2026-07-07T12:53:24Z"
+      "sha": "4fd2978",
+      "message": "Merge: 게이트/에디터 후속 정비 3건",
+      "date": "2026-07-09T10:50:36Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "3adf5df",
-      "message": "docs: 다음 세션 자립 프롬프트(흡인력 후속 3건+선택 4b) 작성·세션 마감 (Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>)",
-      "date": "2026-07-07T00:23:46Z"
+      "sha": "60a3944",
+      "message": "docs(continuity): 게이트/에디터 후속 정비 3건 — progress·handoff 갱신",
+      "date": "2026-07-09T10:50:36Z"
     },
     {
       "repo": "cmds-daily-briefing",
