@@ -1,94 +1,72 @@
 {
   "_comment": "/coach 및 /refresh 슬래시 커맨드가 생성하는 분석·제안 데이터. 대시보드의 '제안 / 코칭' 패널이 읽는다. 수동 편집보다 커맨드 재생성을 권장. paused 프로젝트는 정체 경고 대상에서 제외한다.",
-  "generatedAt": "2026-06-18",
+  "generatedAt": "2026-07-01",
   "items": [
     {
       "repo": "tteuniyu-ios",
       "type": "stall",
       "severity": "high",
-      "title": "Sprint A 정체 — 36일째 멈춤 (rank 2)",
-      "detail": "rank 2이자 Sprint A인데 마지막 푸시가 2026-05-12로 36일 경과했다. alpha 0/20에 일평균 커밋 0.13으로 사실상 멈춰 있다. 같은 Sprint A의 Formi도 22일째 정체라 Sprint A 두 축이 동시에 식는 중이다.",
-      "evidence": ["마지막 푸시 2026-05-12 — 36일 경과", "rank 2, sprint A/inProgress", "일평균 커밋 0.13 (5/38)", "alpha 0/20"],
+      "title": "Sprint A 49일째 정지 — 재개/보류 결정 필요 (rank 2)",
+      "detail": "rank 2이자 완성 근접(65%)인데 2026-05-12 이후 49일 정지했다. sprint A/inProgress로 표시되지만 7주째 무커밋이라 표기와 실제가 어긋난다. 로컬도 웹·harness 기반이라 미push 착시가 아닌 진짜 중단으로 보인다.",
+      "evidence": ["마지막 푸시 2026-05-12 — 49일 경과", "rank 2, sprint A/inProgress", "일평균 커밋 0.1 (5/51)", "alpha 0/20"],
       "confidence": "high",
-      "recommendation": "Sprint A 두 축(뜬이유·Formi)이 동시 정체 — 이번 주 최우선으로 뜬이유 Xcode 빌드부터 되살릴 것.",
-      "actions": ["Xcode 빌드 + 5 시뮬레이터 스크린샷 캡처로 재시동", "harness/check.sh CI 통과 확인", "ADR-006 게이트(Paid Intent ≥4% AND Waitlist ≥100) 미달 시 통합 보류 명문화"]
+      "recommendation": "7주 정지는 사실상 중단 — 재개 계획이 없다면 status를 paused로 정직하게 내릴 것.",
+      "actions": ["Xcode 빌드 재시동 또는 보류 결정", "ADR-006 게이트(Paid Intent·Waitlist) 재평가", "메인 monorepo 통합 시점 확정"]
     },
     {
       "repo": "habit",
       "type": "stall",
       "severity": "high",
-      "title": "rank 1이 22일째 정지 — 알파 게이트만 남음",
-      "detail": "전체 진척 1위(70%)이자 rank 1인데 2026-05-26 이후 22일 정지했다. docs·skeleton은 만점권이고 남은 건 features 15/30과 alpha 10/20, 즉 Expo 알파 빌드와 TestFlight 등록이다. 완성에 가장 가까운 프로젝트의 정체라 손실이 가장 비싸다.",
-      "evidence": ["마지막 푸시 2026-05-26 — 22일 경과", "rank 1, total 70%(전체 최고)", "features 15/30, alpha 10/20", "일평균 커밋 5.97 (215/36)"],
-      "confidence": "high",
-      "recommendation": "완성 임박 프로젝트의 정체가 가장 비싸다 — Expo 알파 빌드를 이번 스프린트 안에 끝낼 것.",
-      "actions": ["mobile/README.md 기준 Expo 알파 빌드 산출", "iOS TestFlight 등록 절차 착수", "캡처된 alpha 사용자 피드백 반영 루프 시작"]
+      "title": "rank 1이 부활 후 재정체 — 6일",
+      "detail": "23일 공백 뒤 2026-06-24에 다시 손댔으나 이후 6일 공백이다. 완성 1위(70%)라 남은 건 Expo 알파 빌드·TestFlight인데 추진력이 붙지 않는다. 6/24 부활 불씨가 남아 있을 때가 재개 적기다.",
+      "evidence": ["마지막 푸시 2026-06-24 (직전 23일 공백 뒤 부활)", "rank 1, total 70%(최고)", "features 15/30, alpha 10/20", "일평균 커밋 4.4"],
+      "confidence": "medium",
+      "recommendation": "부활 불씨가 있을 때 Expo 알파 빌드를 끝까지 밀 것.",
+      "actions": ["mobile/README.md 기준 Expo 알파 빌드 산출", "iOS TestFlight 등록", "6/24 부활 세션 이어가기"]
     },
     {
       "repo": "sam-defender-logue",
-      "type": "stall",
-      "severity": "high",
-      "title": "rank 3, 정체 6일째 — 주시",
-      "detail": "rank 3이자 직전까지 활발하던(204커밋, 일평균 4.34) 시즈폴이 2026-06-11 이후 6일 공백이다. rank 상위라 길어지면 위험이 커진다. 콘텐츠 데이터와 Markdown ID 불일치(하네스 미완)에서 비롯된 백로그 20+ 누적이 재진입 마찰로 보인다.",
-      "evidence": ["마지막 푸시 2026-06-11 — 6일 경과", "rank 3, sprint B", "직전 일평균 커밋 4.34 (204/47)", "백로그 20+ 누적(risks)"],
-      "confidence": "medium",
-      "recommendation": "rank 3이라 방치 금물 — 백로그 정리로 재진입 마찰을 먼저 낮출 것.",
-      "actions": ["P25 루트 정찰 예측 완성", "알파 완료 백로그 20+ 항목 우선순위 정리", "에셋 수입 하네스 자동화로 반복작업 제거"]
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "type": "stall",
-      "severity": "warn",
-      "title": "11일째 멈춤 — 아트 방향 미결",
-      "detail": "2026-06-06 이후 11일 정체다. 코드 골격(skeleton 25/30)은 섰지만 alpha 0이고, risks의 '아트/UI 임시 상태(Koei 자산 회피 필수)'가 진행을 막는 의사결정 병목으로 보인다. 아트 방향은 도구 한도와 무관한 작업이라 지금 바로 풀 수 있다.",
-      "evidence": ["마지막 푸시 2026-06-06 — 11일 경과", "rank 5, sprint C", "alpha 0/20", "오리지널 아트 미결(risks)"],
-      "confidence": "high",
-      "recommendation": "정체 원인이 코드가 아니라 아트 결정 — codex 주간 65%(6/18 리셋)와 무관하게 시각 방향부터 확정할 것.",
-      "actions": ["오리지널 시각 디자인 방향 결정", "Mac/iOS 빌드 점검으로 web export 안정화 확인", "Steam Wishlist 페이지 준비"]
-    },
-    {
-      "repo": "ai-builder-school",
       "type": "coach",
       "severity": "warn",
-      "title": "기능 병목 — 레슨 본문 5/30, 7일 정체",
-      "detail": "docs 20/20·skeleton 20/30은 섰는데 features가 5/30으로 만점 대비 최저다. 레슨 본문(콘텐츠) 작성이 병목이고 2026-06-10 이후 7일 정체 중이다. 32개 레슨 작성량 자체가 risks로 명시돼 분량이 부담이다.",
-      "evidence": ["features 5/30 (만점 대비 최저)", "마지막 푸시 2026-06-10 — 7일 경과", "32 lesson 본문 작성량(risks)"],
+      "title": "게임 미push로 대시보드 오판 — 로컬 확인·push 필요",
+      "detail": "시즈폴·전지적 군주 시점·군령이 GitHub상 19~24일 정체로 보이나, 이번 인터뷰에서 확인된 패턴(게임들이 Unity로 전환하며 로컬 커밋을 push 안 함)상 실제론 로컬에서 활발할 가능성이 크다. 시즈폴은 로컬 마지막 06-17+uncommitted 12로 확인됐고, 혼불도 로컬 미push 44 사례였다. 정체가 아니라 가시성 문제다.",
+      "evidence": ["시즈폴 GitHub 마지막 06-11 vs 로컬 06-17+uncommitted 12", "혼불 로컬 미push 44 확인 사례", "전지적(GitHub 20일)·군령(24일) — 로컬 미확인이나 Unity 전환 패턴"],
       "confidence": "high",
-      "recommendation": "전부 쓰려 말고 Phase별 4-5개 레슨만 먼저 끝내 features 점수를 끌어올릴 것.",
-      "actions": ["Phase별 우선 레슨 4-5개 본문 완성", "캡스톤 프로젝트 예시 1건 작성", "라이선스 결정"]
+      "recommendation": "세 게임을 commit & push하면 대시보드가 실제 진척을 반영한다 — 정체 경고가 아니라 push 습관 문제다.",
+      "actions": ["시즈폴 로컬 uncommitted 12 commit & push", "전지적·군령 로컬 상태 확인 후 push", "게임 작업 후 push 습관화"]
     },
     {
       "repo": "design-system-school",
       "type": "stall",
       "severity": "warn",
-      "title": "19일째 멈춤 — PRD 단계에서 정지",
-      "detail": "2026-05-29 이후 19일 정지로 가장 오래된 정체 중 하나다. docs 10·skeleton 10·features 0으로 PRD와 스캐폴딩 이전 단계에 있다. rank 12라 우선순위는 낮지만 착수만 하면 빠르게 오를 구간이다.",
-      "evidence": ["마지막 푸시 2026-05-29 — 19일 경과", "total 20%, features 0/30", "PRD 미작성"],
+      "title": "32일째 멈춤 — PRD 단계 (진짜 정체)",
+      "detail": "2026-05-29 이후 32일 정지로 가장 오래된 활성 정체다. total 20(docs 10·skeleton 10·features 0)으로 PRD·스캐폴딩 이전 단계다. 웹 프로젝트라 GitHub과 로컬이 대체로 일치하므로 미push 착시가 아닌 실제 중단이다.",
+      "evidence": ["마지막 푸시 2026-05-29 — 32일 경과", "total 20%, features 0/30", "웹(미push 착시 아님)"],
       "confidence": "high",
-      "recommendation": "착수만 하면 빠르게 오를 단계 — PRD 한 장과 Next.js 스캐폴딩으로 시동을 걸 것.",
-      "actions": ["PRD 작성 및 로드맵 수립", "Next.js 기본 스캐폴딩 설정"]
+      "recommendation": "가장 오래된 정체 — 착수하거나 paused로 내릴 것.",
+      "actions": ["PRD 작성·Next.js 스캐폴딩 착수", "또는 status paused로 하향"]
+    },
+    {
+      "repo": "ai-builder-school",
+      "type": "coach",
+      "severity": "warn",
+      "title": "기능 병목 + 20일 정체 (웹)",
+      "detail": "docs 20·skeleton 20인데 features가 5/30으로 레슨 본문 작성이 병목이고 2026-06-10 이후 20일 정지했다. 웹이라 실제 정체이며, 32개 레슨 분량 자체가 부담으로 명시돼 있다.",
+      "evidence": ["features 5/30 (만점 대비 최저)", "마지막 푸시 2026-06-10 — 20일 경과", "32 lesson 본문 작성량(risks)"],
+      "confidence": "high",
+      "recommendation": "전부 말고 Phase별 4-5개 레슨만 먼저 끝내 병목을 해소할 것.",
+      "actions": ["Phase별 우선 레슨 4-5개 본문 완성", "캡스톤 예시 1건", "라이선스 결정"]
     },
     {
       "repo": "ai-company-tycoon-boundaryless",
-      "type": "coach",
+      "type": "usage",
       "severity": "info",
-      "title": "활동 최상위인데 기능 5/30 — MVP 마일스톤 마감 필요",
-      "detail": "일평균 커밋 13.17으로 전체 1위 활동량인데 features 5/30·alpha 0에 머문다. 재시작 후 자산 재활용 단계라 커밋은 많지만 완성 기능으로 환산되지 않고 있다. MVP 1 마일스톤을 닫아 에너지를 진척으로 전환할 때다.",
-      "evidence": ["일평균 커밋 13.17 (461/35) — 전체 최다", "features 5/30, alpha 0", "재시작 후 자산 재활용 중(risks)"],
-      "confidence": "medium",
-      "recommendation": "에너지는 충분 — MVP 1 마일스톤을 닫아 features 점수로 환산할 것.",
-      "actions": ["MVP 1 마일스톤 마감", "합성 플레이테스트 12명 1차 실행", "Vercel 미리보기 배포"]
-    },
-    {
-      "repo": "honbul",
-      "type": "coach",
-      "severity": "info",
-      "title": "커밋은 폭발적인데 골격·기능이 0 — 측정 불일치 점검",
-      "detail": "일평균 커밋 10.4로 최상위권인데 progress는 skeleton 5/30·features 0/30이고 2026-06-13 이후 4일 공백에 들어섰다. risks에 'Pre-production — 실제 Godot 코드 0'이 명시돼 커밋이 기획·문서 위주일 가능성이 크다. 활동량과 완성도의 괴리가 큰 만큼 코어 슬라이스 착수로 skeleton을 실제로 올릴 시점이다.",
-      "evidence": ["일평균 커밋 10.4 (229/22)", "skeleton 5/30, features 0/30", "마지막 푸시 2026-06-13 — 4일 경과", "Pre-production·Godot 코드 0(risks)"],
-      "confidence": "medium",
-      "recommendation": "활발한 커밋을 실제 플레이 가능한 코어 슬라이스로 전환할 시점.",
-      "actions": ["Godot 4.3+ 스캐폴드 + 벽돌깨기 코어 슬라이스 구현", "부적·술법 카드 모델 1차 정의", "스코프(벽돌깨기+덱빌딩+로그라이크) 통제 기준 수립"]
+      "title": "AI 사용량 데이터 15일 낡음 — /usage-refresh 권장",
+      "detail": "usage.json의 collectedAt이 2026-06-16으로 오늘(7/01) 기준 15일 지났다. 표시 중인 Claude 40%·Codex 65%는 옛 수치라 현재 한도를 반영하지 못하고, 한도 인식 코칭도 불가하다. codex로 개발 중인 활발 프로젝트(타이쿤·혼불)의 작업 배분 판단을 위해 갱신이 필요하다.",
+      "evidence": ["usage.json collectedAt 2026-06-16 — 15일 경과", "오늘 2026-07-01", "Claude 40%·Codex 65%는 6/16 수치"],
+      "confidence": "high",
+      "recommendation": "/usage-refresh를 돌려 한도 %·리셋 시각을 최신화할 것.",
+      "actions": ["node scripts/refresh-usage.mjs 실행"]
     }
   ]
 }

@@ -323,7 +323,7 @@ if (projectHtml) {
         'project-report.html renders selected project title',
       );
       assert(
-        document.getElementById('helpPanel').textContent.includes('Godot'),
+        document.getElementById('helpPanel').textContent.includes('벽돌깨기'),
         'project-report.html renders help panel from fallback',
       );
       assert(
