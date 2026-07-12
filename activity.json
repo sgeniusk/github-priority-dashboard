@@ -1,54 +1,150 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-07-11",
+  "asOf": "2026-07-12",
   "commits": [
     {
-      "repo": "story-x-beta",
-      "sha": "c6518c9",
-      "message": "docs(onboarding): LLM 대기 진행 피드백 done — progress·handoff 갱신",
-      "date": "2026-07-09T14:02:31Z"
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "3cdcc38",
+      "message": "docs(feat-048): 소품 타일 스케일 통일 done — progress/feature_list 갱신",
+      "date": "2026-07-12T15:12:25Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "e173878",
+      "message": "feat(feat-048): 상점 소품 균일 셀 AddPropThumb(상대크기·바닥정렬)",
+      "date": "2026-07-12T15:08:12Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "48fc028",
+      "message": "test(feat-048): 씬키∪상점키 스케일 표 커버리지 fail-loud",
+      "date": "2026-07-12T15:08:12Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "daa0e0b",
+      "message": "feat(feat-048): OfficeProps PropSpec Height→Depth, PlaceProp이 OfficePropScale 소비",
+      "date": "2026-07-12T15:08:12Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "c6547fd",
+      "message": "feat(feat-048): OfficePropScale 헤드리스 타일 스케일 원천 + 테스트",
+      "date": "2026-07-12T15:05:19Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "b9cd1b1",
+      "message": "docs(feat-048): 소품 타일 스케일 통일 구현 계획",
+      "date": "2026-07-12T14:49:22Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "42f1b5e",
+      "message": "docs(feat-048): 소품 타일 스케일 통일 설계 스펙",
+      "date": "2026-07-12T14:39:42Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "437fb8a",
+      "message": "docs: 세션 종료 반영 — 자율 완성도 루프 8사이클(feat-058~064)·Codex 외주 확립",
+      "date": "2026-07-12T10:56:04Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "3a94165",
-      "message": "Merge: 온보딩 LLM 대기 진행 피드백 + 폴백 문구 수정",
-      "date": "2026-07-09T14:01:03Z"
+      "sha": "f4544cf",
+      "message": "docs(handoff): 다음 세션 시작 프롬프트 — 온보딩 재설계(소재발굴+적응형 인터뷰)",
+      "date": "2026-07-12T09:58:54Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "8558343",
-      "message": "feat(onboarding): 첫 초안 생성 화면도 경과 타이머·새로고침 금지 안내",
-      "date": "2026-07-09T14:01:03Z"
+      "sha": "c5a6dfa",
+      "message": "Merge pull request #33 from sgeniusk/feat/play-first-onboarding",
+      "date": "2026-07-12T09:57:24Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "7df75b3",
-      "message": "feat(onboarding): 인터뷰 생성 진행 피드백 + 폴백 문구 codex 현실 반영",
-      "date": "2026-07-09T13:58:43Z"
+      "sha": "f87ccad",
+      "message": "docs(handoff): 2026-07-12 2차 — CTA 파킹·소재발굴 재설계 방향 인계",
+      "date": "2026-07-12T09:55:43Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "1c9762e",
-      "message": "docs(handoff): 다음 세션 시작 프롬프트 갱신 — dogfooding 테스트 우선 + 코딩 백로그",
-      "date": "2026-07-09T12:36:01Z"
+      "sha": "9f013ac",
+      "message": "revert(play-first): 플레이 직행 CTA 파킹 — 소재발굴 재설계까지 인터뷰 단일 CTA 복귀 (사용자 dogfooding 결정)",
+      "date": "2026-07-12T09:54:42Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "4b36f0f",
+      "message": "chore(track-hygiene): feat-033/034 stale in-progress 플래그 정리",
+      "date": "2026-07-12T09:37:24Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "727402f",
-      "message": "docs(continuity): 후속 정비 3건 main 머지 반영 (4fd2978)",
-      "date": "2026-07-09T10:52:38Z"
+      "sha": "aa6076e",
+      "message": "docs(progress): PLAY-first 온보딩 슬라이스 완료 — 검증 결과·인계 노트",
+      "date": "2026-07-12T09:10:53Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "4fd2978",
-      "message": "Merge: 게이트/에디터 후속 정비 3건",
-      "date": "2026-07-09T10:50:36Z"
+      "sha": "5e90401",
+      "message": "fix(play-first): 최종 리뷰 발견 — isHomeFlowStep 관문에 playseed 추가(새로고침 롤백 수정)·loading-note 스타일 (TDD)",
+      "date": "2026-07-12T09:07:24Z"
     },
     {
       "repo": "story-x-beta",
-      "sha": "60a3944",
-      "message": "docs(continuity): 게이트/에디터 후속 정비 3건 — progress·handoff 갱신",
-      "date": "2026-07-09T10:50:36Z"
+      "sha": "829614d",
+      "message": "fix(play-first): 라이브 발견 — handleStartPlay 가 공통 셸 제목을 재동기화 (stale 「샘플 작품」 수정)",
+      "date": "2026-07-12T08:52:41Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "a66e6f2",
+      "message": "fix(play-first): 검토 반영 — 재진입/stale 가드·playSetup 영속·대기 타이머 관례 승계",
+      "date": "2026-07-12T08:35:15Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "134756d",
+      "message": "docs: feat-064 done 반영 — 카드 등급 라벨 단일원화(Codex 위임·백로그 rank 4)",
+      "date": "2026-07-12T07:12:30Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "badea23",
+      "message": "feat-064: 카드 등급 한글 라벨 단일원화 (Codex 위임)",
+      "date": "2026-07-12T07:11:24Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "d797ce1",
+      "message": "docs: feat-063 done 반영 — 생명 피해 hurt SFX(백로그 rank 3)",
+      "date": "2026-07-12T06:59:59Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "07d9b5e",
+      "message": "feat-063: 생명 피해 hurt SFX — 피격 청각 짝",
+      "date": "2026-07-12T06:59:13Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "d38351c",
+      "message": "docs: feat-062 done 반영 — 마을 도감 오버플로 수정(백로그 rank 6)",
+      "date": "2026-07-12T06:56:35Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "fd6fdea",
+      "message": "feat-062: 마을 도감 로스터 오버플로 수정 — 4행 고정 → 개수 기반",
+      "date": "2026-07-12T06:55:26Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "24def8b",
+      "message": "docs: feat-060·061 done 반영 — 완성도 공백 survey 백로그 rank 1·2",
+      "date": "2026-07-12T06:50:48Z"
     },
     {
       "repo": "cmds-daily-briefing",
@@ -61,54 +157,6 @@
       "sha": "7d5baa2",
       "message": "Add July 5 build note",
       "date": "2026-07-05T13:49:36Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "c9d8eff",
-      "message": "docs(feat-035): NEXT_SESSION을 블록 #4-1(딜레마 UI 표출) 착수 프롬프트로 갱신",
-      "date": "2026-07-05T11:56:17Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "dbb5647",
-      "message": "docs(feat-035): 헤드리스 3블록(성향·딜레마·엔딩) 완료 기록 + 블록 #4-1 UI 표출 잔여 명시",
-      "date": "2026-07-05T11:18:06Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "68105a8",
-      "message": "feat(feat-035): 신규 엔딩 2종(선한/통제잃은 초지능, priority 130) + SO 재시드(24->26)",
-      "date": "2026-07-05T11:15:17Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "6b528fa",
-      "message": "feat(feat-035): EndingDef 성향 밴드 필드 + EndingService.Matches 밴드/플래그 게이트 + 테스트 (조조전식, 기존 역호환)",
-      "date": "2026-07-05T11:15:17Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "9fcdbeb",
-      "message": "feat(feat-035): 딜레마 조립+월 진행 트리거+TriggeredDilemmas 세이브+sentinel(-1 부재) 근본수정",
-      "date": "2026-07-05T11:07:26Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "ca78f4e",
-      "message": "feat(feat-035): DilemmaService 트리거(Era 게이트·저확률·일회성)+Resolve(성향·플래그·자원) TDD",
-      "date": "2026-07-05T11:07:26Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "19c4da6",
-      "message": "feat(feat-035): DataImporter.ImportDilemmas + 카탈로그 배선 + SO 재시드(4종)",
-      "date": "2026-07-05T11:07:26Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "2e0b455",
-      "message": "feat(feat-035): 딜레마 콘텐츠 4종(dilemmas.json) + Codex 확장 핸드오프",
-      "date": "2026-07-05T11:07:26Z"
     },
     {
       "repo": "cmds-daily-briefing",
@@ -163,54 +211,6 @@
       "sha": "a513ab8",
       "message": "docs(roadmap): 앱 내부 일관성 리파스 진행 반영 (트랙 C1/C2)",
       "date": "2026-07-01T12:03:54Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "6fee5c6",
-      "message": "feat-035 영웅·장비 아트 — 그릇 초상 4종·장비 아이콘 10종",
-      "date": "2026-06-29T14:36:53Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "d1e649a",
-      "message": "docs: 세션 핸드오프 갱신 — 게임필 QA 결산·다음 장비/캐릭터 일러스트",
-      "date": "2026-06-28T10:49:50Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "20cf883",
-      "message": "feat-034 패들 파워 전기 아크 — 블랑카식 응집 연출",
-      "date": "2026-06-28T09:48:14Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "e298398",
-      "message": "test: PaddlePowerGlow 작동 검증 PlayMode 테스트",
-      "date": "2026-06-28T00:00:48Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "af16095",
-      "message": "fix-033 패들 차지 발광 — 곱 틴트→금빛 가산 오버레이",
-      "date": "2026-06-27T23:21:53Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "b6bdbfe",
-      "message": "feat-033 패들 가시성·차지 발광·하강 속도(사용자 QA)",
-      "date": "2026-06-27T13:44:04Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "c1daebe",
-      "message": "feat-032 발사 시 '쿵' 하강 제거 — 연속 하강만",
-      "date": "2026-06-27T12:26:45Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "bc0ebf3",
-      "message": "feat-031 인게임 QA fix 3종 — 줄 틈·프레임·하강 부드러움",
-      "date": "2026-06-27T12:15:39Z"
     },
     {
       "repo": "cmds-daily-briefing",
