@@ -1,7 +1,67 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-07-13",
+  "asOf": "2026-07-14",
   "commits": [
+    {
+      "repo": "chaekdam",
+      "sha": "6eb39e0",
+      "message": "Merge: Codex 이어받기 문서 (AGENTS.md + 킥오프)",
+      "date": "2026-07-14T05:53:08Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "9440619",
+      "message": "docs(handoff): Codex 웹 이어받기 — AGENTS.md 정본 + 킥오프 프롬프트",
+      "date": "2026-07-14T05:52:13Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "3428faa",
+      "message": "docs: 세션 종료 반영 — feat-070 컷인·feat-071 스테이지 생성(StS 구조) 완주",
+      "date": "2026-07-13T11:46:15Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "5ca5913",
+      "message": "feat-071③: 조우 풀 + 맵 노드 배선 + 보스 고정 진형 — 진형 인게임 가시화 (StS 구조 3/3)",
+      "date": "2026-07-13T11:44:36Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "aded150",
+      "message": "docs: feat-071 슬라이스 ② done 반영",
+      "date": "2026-07-13T11:19:46Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "e2ba900",
+      "message": "feat-071②: 진형 웨이브 시퀀스 — 스폰 행이 진형을 따른다 (StS 구조 2/3)",
+      "date": "2026-07-13T11:19:18Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "3864ee0",
+      "message": "docs: feat-071 슬라이스 ① done 반영",
+      "date": "2026-07-13T10:31:22Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "b1ae066",
+      "message": "feat-071①: 진형 라이브러리 + 초기 그리드 마스크 주입 (StS 구조 1/3)",
+      "date": "2026-07-13T10:30:49Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "330257c",
+      "message": "docs: feat-070 done 반영 — 컷인 코드+아트 완료·육안 게이트 등록",
+      "date": "2026-07-13T10:06:02Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "e6b2064",
+      "message": "feat-070B: 컷인 아트 7장 + 애니메풍 초상 4장 교체 — 투트랙 캐릭터 계층 완성",
+      "date": "2026-07-13T10:05:02Z"
+    },
     {
       "repo": "story-x-beta",
       "sha": "5c14880",
@@ -99,54 +159,6 @@
       "date": "2026-07-12T14:39:42Z"
     },
     {
-      "repo": "honbul",
-      "sha": "437fb8a",
-      "message": "docs: 세션 종료 반영 — 자율 완성도 루프 8사이클(feat-058~064)·Codex 외주 확립",
-      "date": "2026-07-12T10:56:04Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "134756d",
-      "message": "docs: feat-064 done 반영 — 카드 등급 라벨 단일원화(Codex 위임·백로그 rank 4)",
-      "date": "2026-07-12T07:12:30Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "badea23",
-      "message": "feat-064: 카드 등급 한글 라벨 단일원화 (Codex 위임)",
-      "date": "2026-07-12T07:11:24Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "d797ce1",
-      "message": "docs: feat-063 done 반영 — 생명 피해 hurt SFX(백로그 rank 3)",
-      "date": "2026-07-12T06:59:59Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "07d9b5e",
-      "message": "feat-063: 생명 피해 hurt SFX — 피격 청각 짝",
-      "date": "2026-07-12T06:59:13Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "d38351c",
-      "message": "docs: feat-062 done 반영 — 마을 도감 오버플로 수정(백로그 rank 6)",
-      "date": "2026-07-12T06:56:35Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "fd6fdea",
-      "message": "feat-062: 마을 도감 로스터 오버플로 수정 — 4행 고정 → 개수 기반",
-      "date": "2026-07-12T06:55:26Z"
-    },
-    {
-      "repo": "honbul",
-      "sha": "24def8b",
-      "message": "docs: feat-060·061 done 반영 — 완성도 공백 survey 백로그 rank 1·2",
-      "date": "2026-07-12T06:50:48Z"
-    },
-    {
       "repo": "cmds-daily-briefing",
       "sha": "beef9f0",
       "message": "Add 2026-07-06 daily briefing",
@@ -199,18 +211,6 @@
       "sha": "aea15d9",
       "message": "Merge pull request #7 from sgeniusk/feat/app-internal-consistency-repass",
       "date": "2026-07-01T14:10:56Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "0017ed9",
-      "message": "fix(ui): PageHeader 모바일 스택 + posts 상세 헤더 통일 + deck 헤더 간격 정합 (리뷰 후속)",
-      "date": "2026-07-01T12:08:40Z"
-    },
-    {
-      "repo": "chaekdam",
-      "sha": "a513ab8",
-      "message": "docs(roadmap): 앱 내부 일관성 리파스 진행 반영 (트랙 C1/C2)",
-      "date": "2026-07-01T12:03:54Z"
     },
     {
       "repo": "cmds-daily-briefing",
