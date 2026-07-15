@@ -1,7 +1,31 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-07-14",
+  "asOf": "2026-07-15",
   "commits": [
+    {
+      "repo": "story-x-beta",
+      "sha": "0df4cfa",
+      "message": "Merge pull request #38 from sgeniusk/codex/p0a-condense-job-polling",
+      "date": "2026-07-15T10:06:57Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "6ff722d",
+      "message": "P0-a: link pull request",
+      "date": "2026-07-15T08:53:43Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "363310b",
+      "message": "P0-a: record verification and handoff",
+      "date": "2026-07-15T08:53:07Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "f8bddc9",
+      "message": "P0-a: add local condense jobs and generation inbox",
+      "date": "2026-07-15T08:51:56Z"
+    },
     {
       "repo": "chaekdam",
       "sha": "6eb39e0",
@@ -91,30 +115,6 @@
       "sha": "91fe34b",
       "message": "docs(handoff): 최종 홀리스틱 리뷰 Minor 3건 기록 — 전부 비차단 후속",
       "date": "2026-07-12T16:05:40Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "ef7cec1",
-      "message": "docs(progress): 소재발굴 S2 완료 트랙 + 인계 노트 — S3 입력·머지 대기 2건 정리",
-      "date": "2026-07-12T15:58:11Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "1c6c60c",
-      "message": "style(onboarding): 죽은 hx-source-soon·source-card:disabled 규칙 제거 — 함께 구상 활성화로 참조 0 (Task 7 검토 반영)",
-      "date": "2026-07-12T15:38:54Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "34bbc0d",
-      "message": "feat(onboarding): 함께 구상 갈래 활성화 — onboard-chat 배선·하이브리드 응결·playseed 진입원 분기 (S2)",
-      "date": "2026-07-12T15:28:38Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "318862f",
-      "message": "test(onboard-chat): busy 중 응결 버튼·컴포저 disabled 단언 보강 + 주석 현행화 (Task 6 검토 반영)",
-      "date": "2026-07-12T15:23:52Z"
     },
     {
       "repo": "ai-company-tycoon-boundaryless",
