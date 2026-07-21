@@ -1,6 +1,6 @@
 {
   "_comment": "github-priority-dashboard 자체의 개발 백로그 (v1.0→v3.x). projects.json은 추적되는 프로젝트들, 이 파일은 이 워크스페이스 자체의 마일스톤이다. active가 null이면 진행 중인 단일 작업이 없다는 뜻이다. 현재 Codex가 설계·구현·검증·배포를 단독 운영한다.",
-  "active": "v3.2-focus-portfolio",
+  "active": null,
   "features": [
     {
       "id": "v1.0-baseline",
@@ -313,7 +313,7 @@
     {
       "id": "v3.2-focus-portfolio",
       "name": "v3.2 집중 프로젝트 중심 포트폴리오 재편",
-      "status": "inProgress",
+      "status": "done",
       "description": "실제 Codex 작업 공간을 기준으로 삼국지가 머지와 Loom 유튜브 운영 시스템을 새 집중 프로젝트로 등록한다. 운영실과 프로젝트 보기는 집중 항목을 기본으로 보여주고, 기존 항목은 상태를 임의 변경하지 않은 채 정리 검토 범위로 분리한다.",
       "dependencies": [
         "v3.1-sites-scheduled-refresh"
