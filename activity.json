@@ -1,6 +1,6 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-07-20",
+  "asOf": "2026-07-21",
   "commits": [
     {
       "repo": "story-x-beta",
@@ -157,6 +157,54 @@
       "sha": "42f1b5e",
       "message": "docs(feat-048): 소품 타일 스케일 통일 설계 스펙",
       "date": "2026-07-12T14:39:42Z"
+    },
+    {
+      "repo": "pliside-ops",
+      "sha": "f127edf",
+      "message": "feat(m22): youtube sync — reconcile own-channel video status into the DB",
+      "date": "2026-07-09T14:16:56Z"
+    },
+    {
+      "repo": "pliside-ops",
+      "sha": "cba157b",
+      "message": "feat(site): channel identity images + video links; hide studio nav",
+      "date": "2026-07-09T13:51:11Z"
+    },
+    {
+      "repo": "pliside-ops",
+      "sha": "1596433",
+      "message": "chore: gitignore .vercel link dirs anywhere",
+      "date": "2026-07-09T13:24:24Z"
+    },
+    {
+      "repo": "pliside-ops",
+      "sha": "42e2625",
+      "message": "Merge palm-breeze-day-03: M20 mastering, M22 YouTube API, M23 output expansion + DB unification",
+      "date": "2026-07-09T12:32:30Z"
+    },
+    {
+      "repo": "pliside-ops",
+      "sha": "6f00f3a",
+      "message": "fix(m23): surface silent skips — loop skipped tracks + per-short isolation",
+      "date": "2026-07-09T12:25:52Z"
+    },
+    {
+      "repo": "pliside-ops",
+      "sha": "aa3af30",
+      "message": "docs(m23): milestone log — output expansion (loop + Remotion shorts)",
+      "date": "2026-07-09T12:16:57Z"
+    },
+    {
+      "repo": "pliside-ops",
+      "sha": "3f387f4",
+      "message": "feat(m23b): Remotion shorts project (vertical art + animated hook)",
+      "date": "2026-07-09T12:14:53Z"
+    },
+    {
+      "repo": "pliside-ops",
+      "sha": "1fb4af3",
+      "message": "feat(m23b): shorts auto CLI — hook + art + props + render command (dry-run)",
+      "date": "2026-07-09T12:05:07Z"
     },
     {
       "repo": "cmds-daily-briefing",

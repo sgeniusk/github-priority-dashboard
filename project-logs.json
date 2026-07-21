@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-07-20",
+  "generatedAt": "2026-07-21",
   "logs": {
     "samsu": [
       {
@@ -11,6 +11,54 @@
       }
     ],
     "pliside-ops": [
+      {
+        "date": "2026-07-09T12:05:07Z",
+        "kind": "commit",
+        "text": "feat(m23b): shorts auto CLI — hook + art + props + render command (dry-run)",
+        "sha": "1fb4af3"
+      },
+      {
+        "date": "2026-07-09T12:14:53Z",
+        "kind": "commit",
+        "text": "feat(m23b): Remotion shorts project (vertical art + animated hook)",
+        "sha": "3f387f4"
+      },
+      {
+        "date": "2026-07-09T12:16:57Z",
+        "kind": "commit",
+        "text": "docs(m23): milestone log — output expansion (loop + Remotion shorts)",
+        "sha": "aa3af30"
+      },
+      {
+        "date": "2026-07-09T12:25:52Z",
+        "kind": "commit",
+        "text": "fix(m23): surface silent skips — loop skipped tracks + per-short isolation",
+        "sha": "6f00f3a"
+      },
+      {
+        "date": "2026-07-09T12:32:30Z",
+        "kind": "commit",
+        "text": "Merge palm-breeze-day-03: M20 mastering, M22 YouTube API, M23 output expansion + DB unification",
+        "sha": "42e2625"
+      },
+      {
+        "date": "2026-07-09T13:24:24Z",
+        "kind": "commit",
+        "text": "chore: gitignore .vercel link dirs anywhere",
+        "sha": "1596433"
+      },
+      {
+        "date": "2026-07-09T13:51:11Z",
+        "kind": "commit",
+        "text": "feat(site): channel identity images + video links; hide studio nav",
+        "sha": "cba157b"
+      },
+      {
+        "date": "2026-07-09T14:16:56Z",
+        "kind": "commit",
+        "text": "feat(m22): youtube sync — reconcile own-channel video status into the DB",
+        "sha": "f127edf"
+      },
       {
         "date": "2026-07-21",
         "kind": "note",
@@ -132,6 +180,11 @@
         "date": "2026-07-20",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-07-21",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -228,6 +281,11 @@
       },
       {
         "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 65%"
+      },
+      {
+        "date": "2026-07-21",
         "kind": "progress",
         "text": "완성도 65%"
       }
@@ -490,6 +548,11 @@
         "date": "2026-07-20",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-07-21",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
@@ -702,6 +765,11 @@
         "date": "2026-07-20",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-07-21",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
@@ -900,6 +968,11 @@
       },
       {
         "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 55%"
+      },
+      {
+        "date": "2026-07-21",
         "kind": "progress",
         "text": "완성도 55%"
       }
@@ -1124,6 +1197,11 @@
       },
       {
         "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 45%"
+      },
+      {
+        "date": "2026-07-21",
         "kind": "progress",
         "text": "완성도 45%"
       }
@@ -1548,6 +1626,11 @@
         "date": "2026-07-20",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-07-21",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
@@ -1970,6 +2053,11 @@
         "date": "2026-07-20",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-07-21",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
@@ -2054,6 +2142,11 @@
       },
       {
         "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-07-21",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -2172,6 +2265,11 @@
         "date": "2026-07-20",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-07-21",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
@@ -2288,6 +2386,11 @@
         "date": "2026-07-20",
         "kind": "progress",
         "text": "완성도 56%"
+      },
+      {
+        "date": "2026-07-21",
+        "kind": "progress",
+        "text": "완성도 56%"
       }
     ],
     "design-system-school": [
@@ -2402,6 +2505,11 @@
       },
       {
         "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-07-21",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -2700,6 +2808,11 @@
         "date": "2026-07-20",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-07-21",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
@@ -2772,6 +2885,11 @@
       },
       {
         "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 7%"
+      },
+      {
+        "date": "2026-07-21",
         "kind": "progress",
         "text": "완성도 7%"
       }
@@ -3136,15 +3254,14 @@
         "date": "2026-07-20",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-07-21",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-05-30T10:52:09Z",
-        "kind": "commit",
-        "text": "feat(W8-01): 턴 컨트롤러 — Ballz식 무더기 발사 + 턴 종료 (코어 루프 피벗 1단계)",
-        "sha": "75f63c3"
-      },
       {
         "date": "2026-05-30T10:53:43Z",
         "kind": "commit",
@@ -3604,6 +3721,11 @@
       },
       {
         "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-07-21",
         "kind": "progress",
         "text": "완성도 39%"
       }
