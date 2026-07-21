@@ -1,0 +1,36 @@
+{
+  "repo": "tteuniyu-ios",
+  "displayName": "뜬이유 iOS",
+  "synced": false,
+  "versions": [],
+  "roadmap": [
+    {
+      "t": "PRD·문서 정리",
+      "s": "done"
+    },
+    {
+      "t": "실행 골격·검증 하네스 구축",
+      "s": "done"
+    },
+    {
+      "t": "핵심 기능 다수 동작",
+      "s": "done"
+    },
+    {
+      "t": "기능 단계 보강 중",
+      "s": "doing"
+    },
+    {
+      "t": "Xcode 빌드 + 5 시뮬레이터 스크린샷 캡처",
+      "s": "todo"
+    },
+    {
+      "t": "harness/check.sh CI 통과 확인",
+      "s": "todo"
+    },
+    {
+      "t": "메인 monorepo와의 통합 시점 결정",
+      "s": "todo"
+    }
+  ]
+}

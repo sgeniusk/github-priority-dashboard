@@ -1,0 +1,15 @@
+{
+  "claude": {
+    "subscriptionType": "max",
+    "five_hour": { "utilization": 12.4, "resets_at": "2026-06-10T08:00:00Z" },
+    "seven_day": { "utilization": 37.2, "resets_at": "2026-06-14T15:00:00Z" },
+    "seven_day_opus": { "utilization": 5.1, "resets_at": "2026-06-14T15:00:00Z" }
+  },
+  "codex": {
+    "rateLimits": {
+      "planType": "plus",
+      "primary": { "usedPercent": 22, "resetsAt": 1781239200, "windowDurationMins": 300 },
+      "secondary": { "usedPercent": 61.5, "resetsAt": 1781575200000, "windowDurationMins": 10080 }
+    }
+  }
+}

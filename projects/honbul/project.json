@@ -1,0 +1,28 @@
+{
+  "repo": "honbul",
+  "displayName": "혼불 (Honbul)",
+  "synced": false,
+  "versions": [],
+  "roadmap": [
+    {
+      "t": "Design Draft v0.2 — 핵심 결정 확정 (엔진·아트·테마·F2P)",
+      "s": "done"
+    },
+    {
+      "t": "Godot 4.3+ 프로젝트 스캐폴드 + 벽돌깨기 코어 슬라이스",
+      "s": "doing"
+    },
+    {
+      "t": "부적·술법 카드 모델 1차 정의",
+      "s": "todo"
+    },
+    {
+      "t": "30분 런 페이싱 페이퍼 프로토타입",
+      "s": "todo"
+    },
+    {
+      "t": "한국 신화 삼계(명부·인간계·천계) 첫 결계 구현",
+      "s": "todo"
+    }
+  ]
+}

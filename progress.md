@@ -1,0 +1,86 @@
+# 진척 — github-priority-dashboard
+
+다음 세션이 이 한 페이지만 보고도 현재 상태와 검증 증거를 이어받을 수 있도록 유지한다. 상세 백로그는 `feature_list.json`.
+
+**Last Updated**: 2026-07-18 (v3.0 Codex 작업량 원장 + 운영실 재구축, 로컬 QA 완료)
+
+## Current Objective — v3.0-codex-work-ledger
+
+수동 `progress.total`을 대시보드 주 지표에서 내리고 실제 Codex 토큰 소비를 작업량 원장으로 연결하는 v3.0을 로컬 구현했다. `scripts/collect-codex-metrics.mjs`는 17GB·1857개 로그에서 root 세션의 마지막 누적 `token_count`만 읽고 중복 세션과 하위 에이전트를 제외한다. 현재 실측은 root 752세션, 추적 프로젝트 연결 497세션(66%), 분류 대기 255세션이다. 정확한 세션 ID·cwd·토큰은 `.codex-local/`에만 저장하고, `codex-summary.json`에는 10만 토큰 단위로 반올림한 프로젝트 합계만 공개한다. 대시보드는 운영실·프로젝트·Codex 작업·리소스 4개 보기로 재구축했고, 기존 수동 완성도는 프로젝트 카드의 작은 참고값으로만 남겼다.
+
+## Recommended Next Step
+
+로컬 `http://127.0.0.1:4180/dashboard.html`에서 새 운영실의 우선순위와 P50 규모 등급이 체감에 맞는지 사용자 검토를 받는다. 승인되면 GitHub 토큰을 복구해 `refresh-progress.mjs`와 `refresh-usage.mjs`를 최신화하고 main 배포·Pages·CI까지 닫는다. 별도로 `.codex-local/codex-ledger.json`의 분류 대기 cwd 상위 목록을 보며 255개 root 세션 중 대시보드에 새로 등록하거나 기존 프로젝트 별칭에 연결할 작업 공간을 정한다.
+
+## 직전에 푼 것
+
+- **2026-07-18 v3.0 Codex 작업량 원장 + 운영실 재구축** — `scripts/collect-codex-metrics.mjs`를 추가해 `~/.codex/sessions`·`archived_sessions` 17GB를 ripgrep 단일 패스로 검색하고, 세션별 마지막 누적 토큰만 사용했다. 세션 ID로 중복 제거, `parent_thread_id`·sub-agent/guardian/reviewer 계열 제외, cwd 별칭으로 16개 프로젝트에 연결했다. 공개 `codex-summary.json`은 10만 토큰 반올림·프로젝트 합계만 담고 exact 원장은 `.codex-local/`로 격리했다. 예측은 개인 평균 root 세션 토큰(현재 약 2290만) × 규모별 예상 세션 수로 P50·P80을 만들되 신뢰도 low와 해석 주의를 항상 표시한다. `dashboard.html`은 `build-dashboard.mjs` 생성 셸로 바꾸고 CSS·JS를 분리해 운영실·프로젝트·Codex 작업·리소스 4개 보기, 검색·필터·정렬·테마를 구현했다. 기존 색 토큰과 프로젝트·보고서 링크는 보존했다. 실제 인앱 브라우저에서 4개 보기·검색·라이트/다크를 확인했고 콘솔 오류 0이었다. 로컬 QA는 끝났으나 GitHub/usage 소스가 각각 7일·32일 오래됐고 아직 commit·push·Pages 배포는 하지 않았다.
+- **2026-07-01 인터뷰 기반 리프레시 + 7/01 재수집** — 사용자와 프로젝트별 인터뷰로 4개를 리프레시했다. Story X 45→50(6종 매체 엔진→Dive X 상향식 대화 스토리텔링·작품화), 타이쿤 40→75(웹→Unity 방치형 타이쿤·성장 시각화, **과소평가 교정**), 혼불 19→39(Pre-production→Unity 벽돌깨기·"본연의 연출" 우선, **과소평가**), 시즈폴 60→20(Unity 타워디펜스·버그·"첫 장면" 체감, **과대평가 교정**). 세 게임 stack을 Unity+C#로 교정. 인터뷰 중 **실제 날짜가 2026-07-01**임을 확인(대시보드는 6/18에 정체) — refresh를 7/01 기준으로 재실행해 커밋·날짜·asOf를 실제화(총 2273→2563커밋, story-x +105·타이쿤 +81·책담 +53·honbul +51, Formi가 6/24 부활). 인터뷰로 고친 점수·정체성·스택은 refresh가 안 건드려 보존됐다. FALLBACK(dashboard·project-report·report)·project-pages 재동기화. **핵심 교훈** — 대시보드가 GitHub 커밋만 봐서 게임의 Unity 전환·로컬 미push 작업(혼불 44·시즈폴)·완성도(과소/과대 양방향)를 못 잡았다. 인터뷰가 이를 보정. 이어 `suggestions.json`을 7/01 기준으로 재생성 — 정체 6건에 미push 착시(시즈폴·전지적·군령을 정체가 아니라 push 필요로 분류)·usage 15일 낡음을 반영했고, `check-report-pages`의 낡은 'Godot' 기대를 '벽돌깨기'로 갱신했다.
+- **2026-06-18 refresh + 제안 재생성** — 작업 중 자정을 넘겨 원격 daily auto-refresh(2026-06-18, projects/activity/history만)가 먼저 push됐다. 그 위로 rebase한 뒤 6/18 기준으로 refresh를 재실행 — `story-x-beta` 369커밋, `cmds-daily-briefing` 59커밋, 총 커밋 2273개, `meta.asOf` 2026-06-18, history 24스냅샷, news 35건, monthly-analysis(2026-05-20..2026-06-18, 1556커밋)·project-pages 재생성했다. `/coach`로 `suggestions.json`을 재생성 — tteuniyu-ios 36일·habit 22일·sam-defender-logue(rank 3) 6일 정체(stall·high), three-kingdoms 11일·design-system 19일·ai-builder 기능 병목(warn), ai-company·honbul 활동-진척 불일치(info). Codex 주간 65%·Claude 40%라 한도 경고는 없었다. `dashboard.html`의 FALLBACK_PROJECTS·FALLBACK_SUGGESTIONS, `project-report.html`의 fallback-projects/suggestions/logs 시드, `report.html`의 FALLBACK_NEWS를 verbatim 동기화했다. 완성도 점수는 자동 변경하지 않았다.
+- **2026-06-16 usage-refresh** — `.claude/commands/usage-refresh.md` 절차에 따라 `node scripts/refresh-usage.mjs --dry-run` 후 적용했다. Claude OAuth 토큰은 Keychain에서 갱신·저장됐고, Claude는 5시간 6%·주간 40%·Sonnet 주간 3%, Codex는 5시간 2%·주간 65%로 수집됐다. `usage.json`과 `dashboard.html` `FALLBACK_USAGE`를 verbatim 동기화했다.
+- **2026-06-16 refresh** — GitHub 활동 refresh로 `ai-company-tycoon-boundaryless` 446→461커밋, `story-x-beta` 336→366커밋, `cmds-daily-briefing` 51→56커밋, `chaekdam` 114→121커밋, 총 커밋 2267개, `meta.asOf` 2026-06-16, history 22스냅샷, news 30건으로 갱신했다. `project-pages/`와 `monthly-analysis`도 재생성했고, JSON 관련 FALLBACK seed를 verbatim 동기화했다. 완성도 점수는 자동 변경하지 않았다.
+- **2026-06-14 refresh** — GitHub 활동 refresh로 `sam-defender-logue` 197→204커밋, `ai-company-tycoon-boundaryless` 401→446커밋, `story-x-beta` 273→336커밋, `cmds-daily-briefing` 46→51커밋, `chaekdam` 76→114커밋, `honbul` 130→229커밋, 총 커밋 2210개, `meta.asOf` 2026-06-14, history 20스냅샷, news 28건으로 갱신했다. `project-pages/`와 `monthly-analysis`도 재생성했고, JSON 관련 FALLBACK seed를 verbatim 동기화했다. 완성도 점수는 자동 변경하지 않았다.
+- **v2.11 한도 인식 코칭** — `/coach` 분석 항목에 '도구 한도(usage.json)'를 추가했다(주간 ≥70% warn, ≥85% high, 리셋 24시간 이내 하향, `auto` 48시간 초과 시 분석 생략+`/usage-refresh` 권고). `type:"usage"` 제안은 해당 도구 최다 소비 active 프로젝트의 repo에 달고, 다른 제안의 recommendation에도 한도 상황을 반영한다. 2026-06-10 데이터로 `suggestions.json`을 재생성 — Codex 주간 78% 경고(usage·warn, tycoon에 부착), tteuniyu-ios 29일·habit 15일 정체(stall·high), design-system-school 12일(warn), honbul·ai-builder-school 기능 병목(info). FALLBACK_SUGGESTIONS·project-report fallback-suggestions 동기화, project-pages 재생성.
+- **2026-06-10 refresh** — 총 커밋 1660→1791, 뉴스 18건, history 16스냅샷, monthly-analysis(5/12~6/10, 1782커밋) 재생성. 원격 daily auto-refresh 4일치 위로 rebase(충돌 3건은 로컬 최신 확인 후 로컬 채택), report.html·project-report.html의 FALLBACK 시드 수동 동기화.
+- **v2.10 AI 사용량 자동 수집 (/usage-refresh)** — kimbyungsu/codex-usage-monitor(MIT)의 수집 방식을 이식해 `scripts/refresh-usage.mjs`를 추가했다. Claude는 공식 `/usage`와 동일한 OAuth usage 엔드포인트(파일 자격증명 + macOS Keychain 폴백, 토큰 만료 시 자동 갱신·재저장), Codex는 로컬 `codex app-server --stdio` JSON-RPC(`account/rateLimits/read`)로 한도 사용률 %·리셋 시각을 수집한다. usage.json에는 한도 %·리셋·플랜만 기록하고 토큰·비용 상세는 수집하지 않는다(Pages 공개 저장소 정책). 대시보드 사용량 카드는 `auto` 데이터가 있으면 윈도우별(5시간/주간/모델별) 미니 게이지·수집 시각·26시간 초과 신선도 경고를 렌더하고 수동 % 입력을 숨긴다. 실측 적용 결과: Claude Max 주간 49%(5시간 19%, Sonnet 4%), Codex Pro 주간 78%(5시간 2%) — 기존 수동값 "ChatGPT Plus"가 실측 "Pro"로 교정됐다. `.claude/commands/usage-refresh.md` 커맨드와 `scripts/fixtures/usage-mock.json`(오프라인 테스트 fixture)도 추가.
+- **v2.9 최근 30일 GitHub 관찰 분석 사이트** — `scripts/build-monthly-analysis.mjs`를 추가해 추적 레포 전체의 최근 30일 커밋을 GitHub API로 수집하고 `monthly-analysis.json`과 `monthly-analysis.html`의 `FALLBACK_ANALYSIS`를 동기화했다. 페이지는 상단 증거 카드, 30일 활동 리듬 차트, 운영 진단, 레포별 관찰 기록, 테마·도구 분포, 다음 30일 처방을 보여준다. `refresh-progress.mjs`가 refresh 후 월간 분석까지 재생성하도록 연결했고, 대시보드와 프로젝트 페이지 생성 템플릿에 `30일 분석` 링크를 추가했다.
+- **2026-06-06 refresh** — GitHub 활동 refresh로 `three-kingdoms-deckbuilder` 183→186커밋, `ai-builder-school` 100→120커밋, `story-x-beta` 178→190커밋, `cmds-daily-briefing` 36→38커밋, `chaekdam` 15→28커밋, `honbul` 118→123커밋, 총 커밋 1660개, `meta.asOf` 2026-06-06, history 15스냅샷, news 15건으로 갱신했다. 완성도 점수는 자동 변경하지 않았다.
+- **v2.8 프로젝트별 제작 현황 페이지와 세션 프롬프트** — `scripts/build-project-pages.mjs`를 추가해 `projects.json`·`reports.json`·`suggestions.json`·`project-logs.json`에서 `project-pages/index.html`과 16개 프로젝트별 정적 원페이지를 생성했다. 각 페이지는 kami 스타일로 현재 판단, 완성도, 다음 액션, 리스크·코칭, 항상 최신화할 문서, 세션 시작 프롬프트, 최근 근거를 보여준다. `refresh-progress.mjs`가 refresh 후 페이지를 재생성하도록 연결했고, 대시보드 카드와 뉴스 피드의 프로젝트 링크를 새 페이지로 보냈다. `docs/project-session-prompts.md`에는 프로젝트 세션마다 갱신할 문서와 공통 프롬프트를 정리했다.
+- **v2.7 완성도·운영 신호 분리와 town 폐기** — 기존 `progress.total`은 산출물 기준 **완성도**로 유지하고, 대시보드에는 모멘텀·건강·신뢰도·다음 마일스톤을 파생 표시했다. KPI는 도구별 개수 대신 활성 프로젝트, 평균 완성도, 건강 위험, 최근 7일 커밋으로 재구성했다. 청사진 카드는 완성도 숫자와 건강 칩, 신뢰도 칩, 건강 근거, 초점 단계, 다음 마일스톤을 한 번에 보이게 바꿨다.
+- **불필요 항목 축소** — 마을 탭, `town.html`, `assets/town`, town 전용 Codex 브리프, town-only `agents` 필드, validate의 town 파싱 게이트를 제거했다. 대시보드는 현재 청사진·분석·스프린트·사용량 4탭 + 보고서 링크 구조다.
+- **2026-06-05 refresh** — GitHub 활동 refresh와 원격 daily auto-refresh rebase로 `three-kingdoms-deckbuilder` 181→183커밋, `honbul` 97→118커밋, 총 커밋 1605개, `meta.asOf` 2026-06-05, history 15스냅샷, news 14건으로 갱신했다. 완성도 점수는 자동 변경하지 않았다.
+
+## 다음 액션
+
+1. **월간 분석 문구 개선** — `monthly-analysis.json`의 정량 결과를 바탕으로 처방 문구를 더 날카롭게 다듬는다.
+2. **자동 루틴 확인** — 원격 daily refresh가 2026-06-06 이후에도 `main`에 정상 반영되는지 확인한다.
+3. **보고서 문구 점진 개선** — 기존 `reports.json` 줄글 일부는 예전 표현과 현황을 담고 있다. 수동 줄글 갱신 때 “완성도” 표현과 실제 최신 상태를 자연스럽게 맞춘다.
+4. **신규 프로젝트 등록 절차 확인** — 신규 등록 시 `projects.json`·`reports.json`·`projects/{repo}` 문서와 FALLBACK 동기화 후 `node scripts/build-project-pages.mjs`와 `node scripts/build-monthly-analysis.mjs`를 실행한다.
+
+## 검증 — 마지막으로 확인한 증거
+
+| 항목 | 상태 | 마지막 확인 |
+| --- | --- | --- |
+| 시작 점검 | 통과·경고 2 | 2026-07-18 `bash init.sh` — JSON·핵심 파일 통과, GitHub 토큰 없음·projects asOf 7일 경과 경고 |
+| Codex 집계 | 통과 | 2026-07-18 1857파일·17GB 검색, root 752·프로젝트 연결 497·고유 하위 세션 제외 739 |
+| 공개 경계 | 통과 | exact 원장 `.codex-local/` Git 제외, 공개 `codex-summary.json`에 prompt·sessionId·cwd 없음·10만 토큰 반올림 |
+| JSON·스크립트 검증 | 통과 | 2026-07-18 `node scripts/validate.mjs` — Codex 스키마·외부 JS·4개 dashboard FALLBACK 일치 |
+| 보고서 fallback·file smoke | 통과 | 2026-07-18 `node scripts/check-report-pages.mjs` 전체 PASS |
+| 브라우저 전 보기 | 통과 | 2026-07-18 인앱 브라우저 — 운영실·프로젝트·Codex 작업·리소스, 검색, 라이트/다크 동작 |
+| 브라우저 콘솔 | 0 | 2026-07-18 전 보기 전환·검색·테마 전환 후 로그 0 |
+| Pages·CI | 미실행 | commit·push하지 않아 배포 게이트는 아직 열려 있음 |
+
+## Blockers
+
+- **GitHub·한도 소스가 오래됨** — `projects.meta.asOf`는 2026-07-11, `usage.json`은 2026-06-16이고 현재 셸에서 GitHub 토큰을 찾지 못했다. Codex 토큰 원장은 오늘자지만 커밋·한도 신호는 최신이 아니다.
+- **Codex 분류 대기 255세션** — 다른 작업 공간의 토큰도 전체 합계에는 포함되지만 현재 16개 프로젝트에는 연결되지 않았다. 공개 데이터에는 경로를 노출하지 않고 로컬 원장에서만 별칭 후보를 확인한다.
+- **예측 신뢰도 low** — P50·P80은 개인 평균 세션 토큰과 규모 등급의 초기 추정이다. 완료된 검수 단위 이력을 쌓기 전에는 완성률로 해석하지 않는다.
+- **배포 미완료** — 사용자 검토 전이라 commit·push·Pages·CI는 실행하지 않았다.
+
+## Files
+
+- `monthly-analysis.html` — 최근 30일 GitHub 관찰 분석 페이지.
+- `monthly-analysis.json` — 최근 30일 레포별 커밋·활동일·테마 분석 데이터.
+- `scripts/build-monthly-analysis.mjs` — 월간 분석 JSON과 HTML FALLBACK 생성기.
+- `dashboard.html` — 생성된 4개 보기 셸과 JSON FALLBACK.
+- `dashboard.css` — 기존 색 토큰을 보존한 운영실·프로젝트·원장·리소스 반응형 스타일.
+- `scripts/dashboard.js` — 데이터 로드, 4개 보기, 검색·필터·정렬·테마 렌더러.
+- `scripts/build-dashboard.mjs` — dashboard 셸과 projects·suggestions·usage·codex FALLBACK 생성기.
+- `scripts/collect-codex-metrics.mjs` — 로컬 Codex root 세션 토큰 집계기.
+- `codex-summary.json` — 공개 가능한 반올림 프로젝트 토큰 합계.
+- `codex-metrics.config.json` — cwd 별칭, 지속형 여부, 유한 프로젝트 규모 등급.
+- `project-pages/` — 생성된 프로젝트별 제작 현황 페이지.
+- `scripts/build-project-pages.mjs` — project-pages 생성기.
+- `docs/project-session-prompts.md` — 각 프로젝트 세션 최신화 프롬프트.
+- `projects.json` — 추적 프로젝트 SOT. `agents` 제거 완료.
+- `scripts/refresh-progress.mjs` — 활동 refresh. 완성도 점수 자동 변경 금지.
+- `scripts/refresh-usage.mjs` — Claude·Codex 한도 %·리셋 자동 수집 + dashboard 재생성.
+- `scripts/report-gen.mjs` — 새 이벤트는 “완성도” 표현 사용.
+- `feature_list.json`·`progress.md` — 이 워크스페이스 자체 백로그·상태.
+
+## Next Session
+
+1. `bash init.sh`로 무결성·기준일을 확인한다.
+2. `feature_list.json.active`의 `v3.0-codex-work-ledger`와 이 문서의 로컬 QA 증거를 읽는다.
+3. 새 운영실 사용자 검토 후 P50 규모 등급과 분류 대기 작업 공간 연결을 조정한다.
+4. GitHub 토큰이 있으면 activity·usage를 최신화하고, 승인 후 main push·Pages·CI로 완료한다.

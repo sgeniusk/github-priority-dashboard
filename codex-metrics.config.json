@@ -1,0 +1,105 @@
+{
+  "_comment": "Codex 토큰 집계의 공개 설정. exact session data는 .codex-local/에만 저장한다. forecast tier는 실제 로컬 중앙 세션 토큰에 곱해 개인 작업 방식에 맞춘다.",
+  "publicRoundingTokens": 100000,
+  "forecastTiers": {
+    "contained": {
+      "label": "한정 작업",
+      "p50Sessions": 12,
+      "p80Sessions": 20
+    },
+    "product": {
+      "label": "제품 단위",
+      "p50Sessions": 36,
+      "p80Sessions": 60
+    },
+    "large": {
+      "label": "대형 프로젝트",
+      "p50Sessions": 80,
+      "p80Sessions": 130
+    },
+    "platform": {
+      "label": "플랫폼·장기 베타",
+      "p50Sessions": 160,
+      "p80Sessions": 260
+    }
+  },
+  "projects": {
+    "habit": {
+      "aliases": ["Formi", "habit"],
+      "forecastMode": "finite",
+      "tier": "product"
+    },
+    "tteuniyu-ios": {
+      "aliases": ["tteuniyu", "tteuniyu-ios"],
+      "forecastMode": "finite",
+      "tier": "product"
+    },
+    "sam-defender-logue": {
+      "aliases": ["sam defender logue", "sam-defender-logue"],
+      "forecastMode": "finite",
+      "tier": "large"
+    },
+    "samguk-idle-prototype": {
+      "aliases": ["sam ini", "samguk-idle-prototype"],
+      "forecastMode": "finite",
+      "tier": "large"
+    },
+    "three-kingdoms-deckbuilder": {
+      "aliases": ["three-kingdoms-deckbuilder", "samgukji battlefield", "guju-jaengpae", "guju-jaengpae-unity"],
+      "forecastMode": "finite",
+      "tier": "large"
+    },
+    "ai-builder-school": {
+      "aliases": ["AI Builder School", "ai-builder-school"],
+      "forecastMode": "continuous"
+    },
+    "ai-company-tycoon-boundaryless": {
+      "aliases": ["ai-company-tycoon", "ai-company-tycoon-boundaryless"],
+      "forecastMode": "finite",
+      "tier": "large"
+    },
+    "story-x-beta": {
+      "aliases": ["story-x", "story-x-beta"],
+      "forecastMode": "finite",
+      "tier": "platform"
+    },
+    "BookCircle": {
+      "aliases": ["BookCircle", "book-circle"],
+      "forecastMode": "finite",
+      "tier": "product"
+    },
+    "jewelry-webtoon-cloud": {
+      "aliases": ["jewelry-webtoon-cloud"],
+      "forecastMode": "finite",
+      "tier": "product"
+    },
+    "Nodeloom": {
+      "aliases": ["Nodeloom", "nodeloom"],
+      "forecastMode": "finite",
+      "tier": "platform"
+    },
+    "design-system-school": {
+      "aliases": ["design-system-school"],
+      "forecastMode": "continuous"
+    },
+    "cmds-daily-briefing": {
+      "aliases": ["cmds-daily-briefing"],
+      "forecastMode": "continuous"
+    },
+    "Timeer": {
+      "aliases": ["Timeer", "timeer"],
+      "forecastMode": "finite",
+      "tier": "contained"
+    },
+    "chaekdam": {
+      "aliases": ["chaekdam"],
+      "forecastMode": "finite",
+      "tier": "product"
+    },
+    "honbul": {
+      "aliases": ["honbul"],
+      "forecastMode": "finite",
+      "tier": "large"
+    }
+  }
+}

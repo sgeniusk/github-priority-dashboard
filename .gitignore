@@ -1,0 +1,24 @@
+# macOS
+.DS_Store
+
+# oh-my-claudecode 로컬 상태
+.omc/
+
+# Claude Code 로컬 데이터 — 프로젝트 슬래시 커맨드만 추적
+.claude/*
+!.claude/commands/
+.playwright-mcp/
+.agents/
+
+# Codex run transcripts (transient)
+codex/*.log
+
+# Local Codex metrics contain exact session-level usage and never ship to Pages.
+.codex-local/
+
+# Codex Sites build outputs
+node_modules/
+.next/
+.wrangler/
+.sites-public/
+dist/

@@ -1,0 +1,294 @@
+{
+  "_comment": "github-priority-dashboard 자체의 개발 백로그 (v1.0→v2.x). projects.json은 추적되는 프로젝트들, 이 파일은 이 워크스페이스 자체의 마일스톤이다. 새 세션은 active 항목부터 보면 된다. 현재 Codex가 설계·구현·검증·배포를 단독 운영한다.",
+  "active": "v3.0-codex-work-ledger",
+  "features": [
+    {
+      "id": "v1.0-baseline",
+      "name": "v1.0 베이스라인",
+      "status": "done",
+      "description": "Officevibe 디자인 대시보드, 3-JSON 실데이터 배선, /refresh·/coach·/new-project 커맨드, GitHub Pages 공개",
+      "dependencies": []
+    },
+    {
+      "id": "v1.1-stability",
+      "name": "v1.1 안정화",
+      "status": "done",
+      "description": "반응형 미디어 쿼리, 접근성(role/aria/포커스), Sprint 보드 내보내기, /weekly-report 커맨드",
+      "dependencies": [
+        "v1.0-baseline"
+      ]
+    },
+    {
+      "id": "v1.2-project-docs",
+      "name": "v1.2 프로젝트 문서 표준",
+      "status": "done",
+      "description": "projects/{repo}/ 표준 폴더(project.json·prd·roadmap·log), /sync-project 커맨드",
+      "dependencies": [
+        "v1.1-stability"
+      ]
+    },
+    {
+      "id": "v1.3-blueprint-view",
+      "name": "v1.3 청사진 뷰",
+      "status": "done",
+      "description": "프로젝트 마스터 보드, 탭 레이아웃, 문서 모달(PRD·로드맵 보드·로그), 진척도 도움말",
+      "dependencies": [
+        "v1.2-project-docs"
+      ]
+    },
+    {
+      "id": "v1.4-auto-analysis",
+      "name": "v1.4 자동 분석 + 히스토리",
+      "status": "done",
+      "description": "history.json 스냅샷 + 추세 차트(프로젝트별 멀티라인), /coach evidence·confidence·recommendation 구조, 활동 탭(통합 커밋 피드)",
+      "dependencies": [
+        "v1.3-blueprint-view"
+      ]
+    },
+    {
+      "id": "v1.5-walkable-town",
+      "name": "v1.5 걸어다니는 마을 뷰",
+      "status": "done",
+      "description": "town.html — Kenney CC0 픽셀아트 + PixiJS로 만든 탑다운 게임. 11개 건물(=프로젝트)을 유기적 맵에 배치, 인테리어 입장 시 agents가 NPC로 등장, 게시판에서 진척도·코칭 확인. dashboard.html의 '마을' 탭은 town.html 링크로 교체",
+      "dependencies": [
+        "v1.4-auto-analysis"
+      ]
+    },
+    {
+      "id": "v1.5.1-custom-building-sprites",
+      "name": "v1.5.1 건물 커스텀 스프라이트",
+      "status": "done",
+      "description": "11개 건물을 AI 생성 픽셀아트 PNG로 교체. town.html은 assets/town/buildings/<repo>.png 자동 폴백 준비 완료. assets/town/buildings/README.md에 프롬프트·스타일 블록 정리됨. 사용자가 PNG 생성·드롭하면 끝",
+      "dependencies": [
+        "v1.5-walkable-town"
+      ],
+      "openQuestions": []
+    },
+    {
+      "id": "v2.0-blueprint-polish",
+      "name": "v2.0 완성형 청사진 에이전트",
+      "status": "done",
+      "description": "무인 자동화 + 능동 알림 + 회귀 방지 CI + 전체 폴리시",
+      "dependencies": [
+        "v1.4-auto-analysis"
+      ],
+      "doneCriteria": [
+        "매일 09:03 KST /schedule 루틴 안정 실행 — 변경/오류 시 메일 알림 도달",
+        "회귀 방지 CI — projects.json/history.json/activity.json 스키마 검증 + dashboard 파싱 체크",
+        "Nodeloom rank·sprint·progress 사용자 확정",
+        "AI 디자인 시스템 스쿨 리포 등록",
+        "최종 폴리시 — 빈 상태·로딩·에러 일관성"
+      ],
+      "openQuestions": []
+    },
+    {
+      "id": "v2.1-dashboard-readability",
+      "name": "v2.1 대시보드 진척 가독성 리디자인",
+      "status": "done",
+      "description": "카드만 보고 진척의 '구성·속도·블로커'가 한눈에 들어오게 청사진/순위 카드를 리디자인. ① 4분할 바 가독성(높이↑·라이트 색대비·breakdown 텍스트·세그먼트 툴팁) ② 모멘텀 칩(history.json diff로 주간 변화·정체 일수) ③ 블로커 신호(suggestions high severity → ⚠ 뱃지) ④ 고착된 헤더 v1.1·2026-05-16을 meta.asOf 기반 동적 표시. 구현은 Codex(codex/brief-v2.1-dashboard.md), 검증은 Claude.",
+      "dependencies": [
+        "v2.0-blueprint-polish"
+      ],
+      "doneCriteria": [
+        "청사진 카드에 breakdown 텍스트 + 굵어진 4분할 바 + 모멘텀 칩 + (해당 시) 블로커 뱃지",
+        "순위 탭 행에도 바 가독성·모멘텀 일관 적용",
+        "헤더 배지가 meta.asOf 날짜를 동적 표시(다시 고착 안 됨)",
+        "라이트·다크 모드 색·대비 정상, 콘솔 에러 0, bash init.sh 통과"
+      ],
+      "openQuestions": []
+    },
+    {
+      "id": "v2.2-town-expand",
+      "name": "v2.2 타운 확장·정보성 강화",
+      "status": "done",
+      "description": "town.html이 16+ 프로젝트에서 건물 배치 실패(honbul 등). ① 맵을 프로젝트 수에 맞춰 자동 확장(배치 실패 0) ② 건물 위 이름·진척 라벨 ③ 미니맵/범례 + 좌상단만 채워지는 빈 캔버스 문제 해결. 구현 Codex, 검증 Claude.",
+      "dependencies": [
+        "v2.1-dashboard-readability"
+      ],
+      "doneCriteria": [
+        "전 프로젝트 건물 배치 성공 — 콘솔 '배치 실패' 경고 0",
+        "건물에 프로젝트 이름·진척 식별 수단",
+        "캔버스가 뷰포트를 정상적으로 채움",
+        "콘솔 에러 0"
+      ],
+      "openQuestions": []
+    },
+    {
+      "id": "v2.3-kami-report",
+      "name": "v2.3 보고서 — kami 스타일 다이어리/블로그",
+      "status": "done",
+      "description": "분야별(게임·앱·콘텐츠)로 묶은 별도 kami 스타일 문서 페이지(report.html). 서비스 하나당 1인칭 존댓말 블로그체로 ① 내용 2~3줄 ② 최종 목표·방향성 2줄 ③ 진척 1줄 ④ 조언 1줄. 줄글(reports.json)은 Claude가 사용자 문체로 작성, report.html UI·/report 갱신 커맨드·대시보드 링크는 Codex 구현. 다이어리/블로그 느낌의 갱신 가능한 보고서.",
+      "dependencies": [
+        "v2.1-dashboard-readability"
+      ],
+      "doneCriteria": [
+        "report.html이 분야별 섹션으로 전 활성 프로젝트 줄글 표시 (1인칭 존댓말)",
+        "각 서비스에 내용 2~3줄 + 목표·방향 2줄 + 진척 1줄 + 조언 1줄",
+        "kami 스타일 아티클 레이아웃 (세리프 제목·넉넉한 여백·다이어리 느낌)",
+        "reports.json 데이터 + report.html FALLBACK 동기화, /report 갱신 경로",
+        "대시보드에서 보고서로 가는 링크, 콘솔 에러 0"
+      ],
+      "openQuestions": []
+    },
+    {
+      "id": "v2.4-journal-archive",
+      "name": "v2.4 일지 아카이브 — 날짜별 누적",
+      "status": "done",
+      "description": "일지(report)를 리프레시마다 일자별로 누적하고 report.html에서 날짜 선택으로 열람. journal.json(entries[date])을 history.json upsert 패턴으로 관리 — refresh-progress.mjs와 /report가 그날 reports.json 줄글을 upsert. report.html은 날짜 선택기로 해당 날짜 일지를 kami 레이아웃 렌더. journal 시드·구조는 Claude, UI·refresh 누적·커맨드는 Codex. FALLBACK_JOURNAL은 history처럼 seed(동기화 비대상).",
+      "dependencies": [
+        "v2.3-kami-report"
+      ],
+      "doneCriteria": [
+        "journal.json entries에 refresh마다 그날 일지 upsert(cron 포함 누적)",
+        "report.html 날짜 선택기 — 기본 최신, 선택 시 해당 날짜 일지 렌더",
+        "file:// 폴백(FALLBACK_JOURNAL)으로도 동일 렌더",
+        "/report가 journal upsert 절차 포함, 콘솔 에러 0·init.sh 통과"
+      ],
+      "openQuestions": []
+    },
+    {
+      "id": "v2.5-news-and-project-logs",
+      "name": "v2.5 뉴스 피드 + 프로젝트별 누적 보고서",
+      "status": "done",
+      "description": "기존 일지(날짜별 같은 손글 스냅샷)가 정태적·반복적이라 폐기하고 둘로 분리. ① 전체=뉴스 피드(report.html) — history/activity 델타·정체·status 변화에서 자동 이벤트 도출(하이브리드, scripts/report-gen.mjs buildNews), 매 refresh 동적 갱신. ② 개별=프로젝트별 페이지(project-report.html?repo=) — 헤더(reports body/goal)+도움 패널(advice·nextActions·블로커)+누적 타임라인(project-logs.json: 커밋 devlog + 진척 + 큐레이션 note). 데이터·생성로직·시드는 Claude(report-gen.mjs·news.json·project-logs.json), 뷰·refresh연동은 Codex. journal.json은 폐기.",
+      "dependencies": [
+        "v2.4-journal-archive"
+      ],
+      "doneCriteria": [
+        "report.html이 news.json 뉴스 카드 최신순, 프로젝트명→project-report.html?repo= 링크 (일지 날짜 선택기 제거)",
+        "project-report.html에 헤더+도움 패널+누적 타임라인(devlog+노트)",
+        "refresh마다 news.json·project-logs.json 자동 갱신(report-gen.mjs 연동), dry-run 안전",
+        "file:// 폴백 렌더, 콘솔 0, init.sh 통과"
+      ],
+      "openQuestions": []
+    },
+    {
+      "id": "v2.6-dashboard-dedupe",
+      "name": "v2.6 대시보드 중복 정리 (탭 8→5)",
+      "status": "done",
+      "description": "뉴스 피드·프로젝트 페이지(v2.5)와 겹치는 탭 정리. 활동·제안·순위 탭을 제거하고, 청사진에 정렬·필터·검색을 이식했다. v2.7에서 마을 탭까지 폐기되어 현재 4탭(청사진·분석·스프린트·사용량)으로 운영한다.",
+      "dependencies": [
+        "v2.5-news-and-project-logs"
+      ],
+      "doneCriteria": [
+        "내비 4탭, 활동·제안·순위·마을 제거",
+        "청사진에 정렬·필터·검색 동작(getList), 카드 가독성·블로커·모멘텀 유지",
+        "분석 추세·스택만, 깨짐 없음",
+        "콘솔 0·init.sh·validate 통과"
+      ],
+      "openQuestions": []
+    },
+    {
+      "id": "v2.7-progress-health-lens",
+      "name": "v2.7 완성도·운영 신호 분리와 타운 폐기",
+      "status": "done",
+      "description": "진척도라는 단일 숫자가 활동량처럼 보이는 문제를 줄이기 위해 progress.total을 완성도라고 명명하고, 모멘텀·건강·신뢰도·다음 마일스톤을 청사진 카드에 파생 표시한다. 불필요해진 town.html·assets/town·town 전용 agents 필드를 제거해 대시보드를 4탭으로 줄인다.",
+      "dependencies": [
+        "v2.6-dashboard-dedupe"
+      ],
+      "doneCriteria": [
+        "청사진 카드가 완성도·모멘텀·건강·신뢰도·다음 마일스톤을 분리 표시",
+        "KPI가 도구별 개수 대신 평균 완성도·건강 위험·최근 7일 커밋을 표시",
+        "town.html·assets/town·마을 탭·town 검증 제거",
+        "projects.json에서 town-only agents 필드 제거 후 FALLBACK 동기화",
+        "init·validate·check-report-pages·브라우저 콘솔 0·Pages 배포 success"
+      ],
+      "openQuestions": []
+    },
+    {
+      "id": "v2.8-project-pages-and-session-prompts",
+      "name": "v2.8 프로젝트별 제작 현황 페이지와 세션 프롬프트",
+      "status": "done",
+      "description": "각 프로젝트를 하나의 홈페이지처럼 열 수 있는 kami 스타일 정적 원페이지(project-pages/)를 생성한다. 페이지는 현재 판단, 완성도, 다음 액션, 리스크, 최신 근거, 항상 최신화할 문서, 세션 시작 프롬프트를 포함한다. docs/project-session-prompts.md에는 각 프로젝트 세션에서 최신화할 문서와 공통 프롬프트를 정리한다.",
+      "dependencies": [
+        "v2.7-progress-health-lens"
+      ],
+      "doneCriteria": [
+        "scripts/build-project-pages.mjs가 projects.json·reports.json·suggestions.json·project-logs.json에서 index + 프로젝트별 HTML 생성",
+        "dashboard.html 청사진 카드와 report.html 뉴스 카드에서 project-pages/<repo>.html로 이동",
+        "refresh-progress.mjs가 refresh 후 project-pages/를 재생성",
+        "docs/project-session-prompts.md에 최신화 문서와 공통 세션 프롬프트 정리",
+        "init·validate·check-report-pages·브라우저 콘솔 0·Pages 배포 success"
+      ],
+      "openQuestions": []
+    },
+    {
+      "id": "v2.9-monthly-github-analysis",
+      "name": "v2.9 최근 30일 GitHub 관찰 분석 사이트",
+      "status": "done",
+      "description": "추적 중인 GitHub 레포 전체를 최근 30일 창으로 다시 수집해 커밋 수, 활동일, 공백, 메시지 테마, 분야·도구별 분포를 분석하는 정적 분석 페이지 monthly-analysis.html을 추가했다. scripts/build-monthly-analysis.mjs가 monthly-analysis.json과 HTML FALLBACK을 생성하며 refresh-progress.mjs에도 연결된다.",
+      "dependencies": [
+        "v2.8-project-pages-and-session-prompts"
+      ],
+      "doneCriteria": [
+        "GitHub API에서 추적 레포별 최근 30일 커밋을 페이지네이션 수집해 monthly-analysis.json 생성",
+        "monthly-analysis.html이 상단 증거 카드, 30일 활동 차트, 운영 진단, 레포별 관찰 기록, 테마·도구 분포, 다음 30일 처방을 렌더",
+        "dashboard.html과 project-pages 생성 템플릿에서 30일 분석 페이지로 이동 가능",
+        "refresh-progress.mjs가 refresh 후 monthly-analysis.json과 FALLBACK_ANALYSIS를 재생성",
+        "init·validate·check-report-pages·브라우저 콘솔 0 통과"
+      ],
+      "openQuestions": []
+    },
+    {
+      "id": "v2.10-usage-auto-collect",
+      "name": "v2.10 AI 사용량 자동 수집 (/usage-refresh)",
+      "status": "done",
+      "description": "kimbyungsu/codex-usage-monitor(MIT)의 수집 방식을 이식해 Claude(OAuth usage 엔드포인트)·Codex(codex app-server JSON-RPC)의 한도 사용률 %·리셋 시각을 scripts/refresh-usage.mjs로 자동 수집한다. usage.json에는 한도 %·리셋·플랜만 기록(토큰·비용 상세 비공개)하고 FALLBACK_USAGE를 자동 동기화한다. 대시보드 사용량 카드는 auto 데이터가 있으면 윈도우별(5시간/주간) 미니 게이지 + 수집 시각 + 신선도 경고를 렌더하고 수동 % 입력을 숨긴다. 실패 시 기존 수동 입력 폴백 유지.",
+      "dependencies": [
+        "v2.9-monthly-github-analysis"
+      ],
+      "doneCriteria": [
+        "scripts/refresh-usage.mjs가 Claude 5시간/주간(+Opus/Sonnet) 윈도우와 Codex primary/secondary 윈도우의 %·리셋을 수집해 usage.json과 FALLBACK_USAGE를 갱신",
+        "--dry-run·--mock·--claude-only·--codex-only 플래그 동작, 전부 실패 시 usage.json 미변경 + exit 1",
+        ".claude/commands/usage-refresh.md 슬래시 커맨드 신설, CLAUDE.md 반영",
+        "대시보드 사용량 카드가 auto 윈도우 게이지·수집 시각·26시간 초과 신선도 경고를 렌더, 수동 입력 폴백 유지",
+        "init.sh·JSON 파싱·mock 파이프라인·콘솔 에러 0 통과"
+      ],
+      "openQuestions": [
+        "Claude usage 엔드포인트는 비공식 — 형식 변경 시 폴백 동작 점검 필요",
+        "/schedule 루틴에 /usage-refresh를 편입할지 (현재는 수동 실행)"
+      ]
+    },
+    {
+      "id": "v2.11-coach-usage-aware",
+      "name": "v2.11 한도 인식 코칭 — /coach가 AI 사용량을 반영",
+      "status": "done",
+      "description": "/coach 분석에 '도구 한도(usage.json)' 항목을 추가했다. auto 윈도우의 주간 사용률이 ≥70%면 warn, ≥85%면 high(리셋 24시간 이내면 한 단계 하향)로 type:usage 제안을 생성하고, 해당 도구 최다 소비 프로젝트의 repo에 단다. 다른 프로젝트 제안의 recommendation에도 한도 상황(리셋 후 세션 배치 등)을 반영한다. 2026-06-10 데이터로 suggestions.json을 재생성해 Codex 78% 경고와 정체 2건(high)을 반영했다.",
+      "dependencies": [
+        "v2.10-usage-auto-collect"
+      ],
+      "doneCriteria": [
+        "coach.md에 도구 한도 분석 규칙(임계값·리셋 하향·repo 부착 규칙·48시간 신선도 게이트) 명시",
+        "suggestions.json 스키마 type에 usage 추가",
+        "2026-06-10 기준 suggestions.json 재생성 — usage 1건·stall high 2건 포함",
+        "dashboard FALLBACK_SUGGESTIONS·project-report fallback-suggestions verbatim 동기화, project-pages 재생성",
+        "check-report-pages·인라인 JS·콘솔 에러 0 통과"
+      ],
+      "openQuestions": [
+        "history에 사용률 추세를 쌓아 '소진 예상 시점'까지 제안에 넣을지 (Q1 연계)"
+      ]
+    },
+    {
+      "id": "v3.0-codex-work-ledger",
+      "name": "v3.0 Codex 작업량 원장과 운영실 재구축",
+      "status": "inProgress",
+      "description": "수동 완성도 숫자를 주 지표에서 내리고 실제 Codex root 세션의 마지막 누적 token_count를 프로젝트별로 집계한다. 대시보드는 운영실·프로젝트·Codex 작업·리소스 4개 보기로 재구축하며, 토큰은 작업량으로만 해석하고 유한 프로젝트의 초기 P50·P80 예측은 개인 평균 세션 토큰과 규모 등급으로 계산한다. 정확한 세션 원장은 Git 제외 로컬 파일에만 저장하고 공개 JSON은 반올림 집계만 보관한다.",
+      "dependencies": [
+        "v2.11-coach-usage-aware"
+      ],
+      "doneCriteria": [
+        "scripts/collect-codex-metrics.mjs가 17GB 로컬 로그를 rg 기반으로 읽어 root 세션 마지막 누적 토큰만 집계하고 하위 에이전트·중복 세션을 제외",
+        "codex-summary.json에 프로젝트별 누적·30일 토큰·세션·최근 활동·저신뢰 초기 예측을 공개 가능한 형태로 저장",
+        "dashboard.html이 운영실·프로젝트·Codex 작업·리소스 4개 보기와 검색·필터·테마를 제공하고 수동 완성도는 참고값으로만 표시",
+        "build-dashboard.mjs가 projects·suggestions·usage·codex-summary FALLBACK을 생성하고 refresh-progress·refresh-usage·collect-codex-metrics에서 자동 호출",
+        "init·validate·check-report-pages·브라우저 전 보기 콘솔 0 통과",
+        "main 배포 후 GitHub Pages와 Regression Prevention CI success"
+      ],
+      "openQuestions": [
+        "현재 연결률 66%인 다른 Codex 작업 공간을 어떤 프로젝트로 추가 연결할지",
+        "P50·P80 예측을 완료된 검수 단위 이력으로 언제 재보정할지",
+        "GitHub·계정 한도 데이터를 최신 수집한 뒤 main 배포할지"
+      ]
+    }
+  ]
+}

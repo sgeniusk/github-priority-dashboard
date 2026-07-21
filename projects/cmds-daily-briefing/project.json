@@ -1,0 +1,28 @@
+{
+  "repo": "cmds-daily-briefing",
+  "displayName": "해치의 데일리 브리핑",
+  "synced": false,
+  "versions": [],
+  "roadmap": [
+    {
+      "t": "Vercel 앱 골격 + /daily/[date] 라우트",
+      "s": "done"
+    },
+    {
+      "t": "에디토리얼형 브리핑 UI (백상현 daily page 영감)",
+      "s": "doing"
+    },
+    {
+      "t": "Hermes action queue 통합 — 카드별 검토 액션",
+      "s": "doing"
+    },
+    {
+      "t": "최근 7일·30일 인덱스 페이지",
+      "s": "todo"
+    },
+    {
+      "t": "V1 종단 테스트 + 안정화",
+      "s": "todo"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "repo": "jewelry-webtoon-cloud",
+  "displayName": "반짝상점 생존기",
+  "synced": false,
+  "versions": [],
+  "roadmap": [
+    {
+      "t": "PRD·문서 정리",
+      "s": "done"
+    },
+    {
+      "t": "골격 단계 보강 중",
+      "s": "doing"
+    },
+    {
+      "t": "PAUSE: 재개 트리거 정의 (예: 핵심 게임 2개 마감 후)",
+      "s": "todo"
+    },
+    {
+      "t": "gh auth 복구는 재개 시 처리",
+      "s": "todo"
+    },
+    {
+      "t": "현재 산출물 README에 명시",
+      "s": "todo"
+    }
+  ]
+}

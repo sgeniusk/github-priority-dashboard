@@ -1,0 +1,684 @@
+{
+  "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
+  "asOf": "2026-07-20",
+  "commits": [
+    {
+      "repo": "story-x-beta",
+      "sha": "0df4cfa",
+      "message": "Merge pull request #38 from sgeniusk/codex/p0a-condense-job-polling",
+      "date": "2026-07-15T10:06:57Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "6ff722d",
+      "message": "P0-a: link pull request",
+      "date": "2026-07-15T08:53:43Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "363310b",
+      "message": "P0-a: record verification and handoff",
+      "date": "2026-07-15T08:53:07Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "f8bddc9",
+      "message": "P0-a: add local condense jobs and generation inbox",
+      "date": "2026-07-15T08:51:56Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "6eb39e0",
+      "message": "Merge: Codex 이어받기 문서 (AGENTS.md + 킥오프)",
+      "date": "2026-07-14T05:53:08Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "9440619",
+      "message": "docs(handoff): Codex 웹 이어받기 — AGENTS.md 정본 + 킥오프 프롬프트",
+      "date": "2026-07-14T05:52:13Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "3428faa",
+      "message": "docs: 세션 종료 반영 — feat-070 컷인·feat-071 스테이지 생성(StS 구조) 완주",
+      "date": "2026-07-13T11:46:15Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "5ca5913",
+      "message": "feat-071③: 조우 풀 + 맵 노드 배선 + 보스 고정 진형 — 진형 인게임 가시화 (StS 구조 3/3)",
+      "date": "2026-07-13T11:44:36Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "aded150",
+      "message": "docs: feat-071 슬라이스 ② done 반영",
+      "date": "2026-07-13T11:19:46Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "e2ba900",
+      "message": "feat-071②: 진형 웨이브 시퀀스 — 스폰 행이 진형을 따른다 (StS 구조 2/3)",
+      "date": "2026-07-13T11:19:18Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "3864ee0",
+      "message": "docs: feat-071 슬라이스 ① done 반영",
+      "date": "2026-07-13T10:31:22Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "b1ae066",
+      "message": "feat-071①: 진형 라이브러리 + 초기 그리드 마스크 주입 (StS 구조 1/3)",
+      "date": "2026-07-13T10:30:49Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "330257c",
+      "message": "docs: feat-070 done 반영 — 컷인 코드+아트 완료·육안 게이트 등록",
+      "date": "2026-07-13T10:06:02Z"
+    },
+    {
+      "repo": "honbul",
+      "sha": "e6b2064",
+      "message": "feat-070B: 컷인 아트 7장 + 애니메풍 초상 4장 교체 — 투트랙 캐릭터 계층 완성",
+      "date": "2026-07-13T10:05:02Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "5c14880",
+      "message": "docs(harness): S1·S2 main 머지 반영 — 스택 PR close 교훈·다음 세션 사용자 테스트 시작점 기록",
+      "date": "2026-07-13T00:30:09Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "c52da8a",
+      "message": "docs(feat-048): 다음 세션 핸드오프 갱신 — feat-047·048 done, 후보 정리",
+      "date": "2026-07-13T00:29:02Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "978d8af",
+      "message": "Merge pull request #36 from sgeniusk/feat/onboard-chat-ideate",
+      "date": "2026-07-13T00:28:08Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "e1e1cf0",
+      "message": "Merge pull request #34 from sgeniusk/feat/source-discovery-preset",
+      "date": "2026-07-13T00:26:57Z"
+    },
+    {
+      "repo": "story-x-beta",
+      "sha": "91fe34b",
+      "message": "docs(handoff): 최종 홀리스틱 리뷰 Minor 3건 기록 — 전부 비차단 후속",
+      "date": "2026-07-12T16:05:40Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "3cdcc38",
+      "message": "docs(feat-048): 소품 타일 스케일 통일 done — progress/feature_list 갱신",
+      "date": "2026-07-12T15:12:25Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "e173878",
+      "message": "feat(feat-048): 상점 소품 균일 셀 AddPropThumb(상대크기·바닥정렬)",
+      "date": "2026-07-12T15:08:12Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "48fc028",
+      "message": "test(feat-048): 씬키∪상점키 스케일 표 커버리지 fail-loud",
+      "date": "2026-07-12T15:08:12Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "daa0e0b",
+      "message": "feat(feat-048): OfficeProps PropSpec Height→Depth, PlaceProp이 OfficePropScale 소비",
+      "date": "2026-07-12T15:08:12Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "c6547fd",
+      "message": "feat(feat-048): OfficePropScale 헤드리스 타일 스케일 원천 + 테스트",
+      "date": "2026-07-12T15:05:19Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "b9cd1b1",
+      "message": "docs(feat-048): 소품 타일 스케일 통일 구현 계획",
+      "date": "2026-07-12T14:49:22Z"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "sha": "42f1b5e",
+      "message": "docs(feat-048): 소품 타일 스케일 통일 설계 스펙",
+      "date": "2026-07-12T14:39:42Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "beef9f0",
+      "message": "Add 2026-07-06 daily briefing",
+      "date": "2026-07-05T23:34:27Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "7d5baa2",
+      "message": "Add July 5 build note",
+      "date": "2026-07-05T13:49:36Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "894a0f5",
+      "message": "Add July 5 daily briefing",
+      "date": "2026-07-04T23:34:33Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "f1db19e",
+      "message": "Merge: Topbar 다단 크럼 + 트랙 C3/C4 완료 (C4)",
+      "date": "2026-07-01T14:50:03Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "d948586",
+      "message": "feat(topbar): 덱 메인 페이지 크럼 배선 (리뷰 후속, 형제 페이지 일관성)",
+      "date": "2026-07-01T14:33:47Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "4ad9d00",
+      "message": "docs(roadmap): 트랙 C3 완료 반영 + C4 다단 크럼 완료",
+      "date": "2026-07-01T14:30:06Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "fbb1aa8",
+      "message": "feat(topbar): 다단 크럼 메커니즘 — CrumbProvider·Topbar trail 렌더·크럼 스타일",
+      "date": "2026-07-01T14:29:24Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "ee41740",
+      "message": "feat(topbar): 상세 페이지 다단 크럼 배선 (클럽·책 이름)",
+      "date": "2026-07-01T14:28:36Z"
+    },
+    {
+      "repo": "chaekdam",
+      "sha": "aea15d9",
+      "message": "Merge pull request #7 from sgeniusk/feat/app-internal-consistency-repass",
+      "date": "2026-07-01T14:10:56Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "aff8cf6",
+      "message": "Add June 17 build note",
+      "date": "2026-06-17T13:49:03Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "636ba26",
+      "message": "Add June 17 console briefing",
+      "date": "2026-06-16T23:34:15Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "fa60ae2",
+      "message": "Add 2026-06-16 build note",
+      "date": "2026-06-16T13:49:15Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "4e5a998",
+      "message": "Add 2026-06-16 research briefing",
+      "date": "2026-06-15T23:34:22Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "78ad32a",
+      "message": "Add June 15 build note",
+      "date": "2026-06-15T13:49:10Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "d881fd8",
+      "message": "fix(unity): prep 출전 버튼 잘림 — 탭 두 줄 감김 예약 높이 보정 (M15 후속)",
+      "date": "2026-06-11T10:32:46Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "6785fac",
+      "message": "feat(unity): port wrap-up — growing island, village ops, battle speed (M15)",
+      "date": "2026-06-11T10:13:03Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "99302fd",
+      "message": "feat(unity): retire the bot — player-driven rounds, Nordhold-style stage choices (M14)",
+      "date": "2026-06-11T07:55:39Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "e683e84",
+      "message": "feat(unity): general deploy UX + frontline fix (M13.1)",
+      "date": "2026-06-11T06:52:00Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "68e7300",
+      "message": "feat(unity): generals on the battlefield — cleave, skill banners, oath links (M13)",
+      "date": "2026-06-11T02:31:43Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "b5e1ebb",
+      "message": "fix(unity): 타워 중복 배치 방지 + agy QA 리포트 (M12.8 후속)",
+      "date": "2026-06-11T01:33:07Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "02aee93",
+      "message": "feat(unity): battle economy — kill gold + mid-wave building (M12.8) + progress archive",
+      "date": "2026-06-11T01:28:55Z"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "sha": "896e497",
+      "message": "feat(unity): tower identity — archetype kits, splash/slow/burn, distinct looks (M12.6/M12.7)",
+      "date": "2026-06-10T16:32:30Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "b78a456",
+      "message": "voice: 보이스 정의서 + diff-only 편집 룰 — AI 문체 회귀 차단 1차",
+      "date": "2026-06-10T07:11:04Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "363570c",
+      "message": "docs: 세션 핸드오프 (콘텐츠 깊이·포트폴리오·연습장 8트랙) + .playwright-mcp ignore",
+      "date": "2026-06-10T06:39:29Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "ac9a4d1",
+      "message": "feat(me): 전역 AI 키 설정 — /me에서 한 번 넣으면 모든 연습장 공유",
+      "date": "2026-06-07T14:48:53Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "fb326d6",
+      "message": "content(playground): playgroundPrompt 5개 확대 (1→6)",
+      "date": "2026-06-07T13:46:51Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "0556eba",
+      "message": "feat(playground): 프롬프트 연습장 1차 — Gemini BYO 키 인앱 호출",
+      "date": "2026-06-07T11:36:47Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "f133550",
+      "message": "feat(analytics): Plausible 운영자 학습 분석 (env 게이팅) + 완성 이벤트",
+      "date": "2026-06-07T11:07:45Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "b3e5e4e",
+      "message": "feat(me): 산출물 포트폴리오 — 프로젝트 완성 기록 + /me '내가 지은 것'",
+      "date": "2026-06-07T09:46:48Z"
+    },
+    {
+      "repo": "ai-builder-school",
+      "sha": "5447116",
+      "message": "content(lessons): conceptDepth 9개 백필 (3→12) — concepts.ts 10개 개념 1:1 커버",
+      "date": "2026-06-07T09:18:12Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "69f9531",
+      "message": "chore: ignore renderer proof screenshots + record W1 war Pixi port handoff",
+      "date": "2026-06-06T16:05:52Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "cda900d",
+      "message": "Apply opening order UI polish",
+      "date": "2026-06-06T10:10:37Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "a8cc17a",
+      "message": "docs(renderer): record v1.00.46 combat effects verification + register feature",
+      "date": "2026-06-06T09:15:50Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "20721f6",
+      "message": "feat(renderer): adventure combat effects E1-E4 on Pixi field (v1.00.46)",
+      "date": "2026-06-06T08:17:30Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "ee6852c",
+      "message": "feat(renderer): emit hit-flash/impact-strip effect descriptors from scene model (E3-E4 data)",
+      "date": "2026-06-06T07:10:17Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "456f6f7",
+      "message": "docs(renderer): record v1.00.45 verification + fix feature row schema",
+      "date": "2026-06-06T04:40:47Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "2f356e2",
+      "message": "fix(renderer): persist Pixi adventure canvas across SPA render + frame-crop sprites",
+      "date": "2026-06-06T04:40:47Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "10bee4f",
+      "message": "feat(feature-list): register v1.00.45-adventure-pixi-field entry",
+      "date": "2026-06-06T03:35:23Z"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "sha": "6fcbabf",
+      "message": "chore(cache): bump version key to 1.00.45-adventure-pixi-field",
+      "date": "2026-06-06T03:34:30Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "0abca51",
+      "message": "Apply design handoff combat layout",
+      "date": "2026-06-06T00:13:03Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "d898a78",
+      "message": "chore: refresh verified deployment author",
+      "date": "2026-06-05T17:40:52Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "0ffdd3f",
+      "message": "docs: add external UI redesign prompt",
+      "date": "2026-06-05T04:45:59Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "6d2e33e",
+      "message": "chore: track commander portrait imports",
+      "date": "2026-06-04T16:33:12Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "f801093",
+      "message": "art: add commander portrait placeholders",
+      "date": "2026-06-04T12:45:25Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "778e91b",
+      "message": "chore: make Vercel secret ignore explicit",
+      "date": "2026-06-03T03:49:19Z"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "sha": "7668b5c",
+      "message": "fix: exclude local cache from web export",
+      "date": "2026-06-02T11:23:54Z"
+    },
+    {
+      "repo": "design-system-school",
+      "sha": "070520e",
+      "message": "docs: backfill Phase 9 hash and add Phase 10 row to progress.md",
+      "date": "2026-05-29T09:55:37Z"
+    },
+    {
+      "repo": "design-system-school",
+      "sha": "62078e0",
+      "message": "docs: backfill Phase 9·10 commit hashes in progress.md",
+      "date": "2026-05-29T09:54:37Z"
+    },
+    {
+      "repo": "design-system-school",
+      "sha": "c81ab78",
+      "message": "Phase 10: ontology graph edge color coding",
+      "date": "2026-05-29T09:54:01Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "6b769c7",
+      "message": "Trim duplicated run section cards from proof mode",
+      "date": "2026-05-26T14:33:35Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "1ef1ccf",
+      "message": "Redirect proof scorecard next action to FOCUSED VIEW",
+      "date": "2026-05-26T14:25:14Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "3a293b8",
+      "message": "Add dismissible PROOF OF ONE intro card",
+      "date": "2026-05-26T14:18:46Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "6f97c10",
+      "message": "Add extended action strip set to AGY packet",
+      "date": "2026-05-26T14:09:07Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "52638d1",
+      "message": "Collapse phone proof live session when idle",
+      "date": "2026-05-26T13:03:41Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "7fadccd",
+      "message": "Add Codex delegation packet for report proof friction",
+      "date": "2026-05-26T06:47:17Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "a407144",
+      "message": "Refresh Claude Code handoff",
+      "date": "2026-05-26T01:33:21Z"
+    },
+    {
+      "repo": "habit",
+      "sha": "6b74580",
+      "message": "Connect Home to the Today loop action model",
+      "date": "2026-05-25T23:58:00Z"
+    },
+    {
+      "repo": "design-system-school",
+      "sha": "5926c25",
+      "message": "Phase 9: design-spec extraction tool",
+      "date": "2026-05-21T11:17:42Z"
+    },
+    {
+      "repo": "design-system-school",
+      "sha": "6346f4a",
+      "message": "Phase 8: ontology graph mobile polish",
+      "date": "2026-05-21T11:04:33Z"
+    },
+    {
+      "repo": "design-system-school",
+      "sha": "ccddc1d",
+      "message": "Phase 7: AI Builder School cross-link",
+      "date": "2026-05-21T11:02:47Z"
+    },
+    {
+      "repo": "design-system-school",
+      "sha": "d178bda",
+      "message": "Phase 6: theme-aware TokenDemo",
+      "date": "2026-05-21T10:59:34Z"
+    },
+    {
+      "repo": "design-system-school",
+      "sha": "28ffe8a",
+      "message": "Phase 5: learn paths include patterns",
+      "date": "2026-05-21T10:37:50Z"
+    },
+    {
+      "repo": "Timeer",
+      "sha": "a785d46",
+      "message": "feat: init Vite React project with TDS theme and 2D canvas orb timer",
+      "date": "2026-05-20T16:51:21Z"
+    },
+    {
+      "repo": "Nodeloom",
+      "sha": "fc08b81",
+      "message": "하네스 엔지니어링 정비 — 5개 subsystem 100/100",
+      "date": "2026-05-20T15:55:06Z"
+    },
+    {
+      "repo": "Nodeloom",
+      "sha": "33f7a01",
+      "message": "v1.3.4 — 노드 자식 추가 버튼 + 분기선 z-순서",
+      "date": "2026-05-19T12:08:24Z"
+    },
+    {
+      "repo": "Nodeloom",
+      "sha": "3d0f2c1",
+      "message": "v1.3.3 — 밑줄형 분기선과 밑줄의 중심선 어긋남 수정",
+      "date": "2026-05-19T11:55:57Z"
+    },
+    {
+      "repo": "Nodeloom",
+      "sha": "719f261",
+      "message": "v1.3.2 — 분기선이 노드에서 떨어져 끝나던 갭 수정",
+      "date": "2026-05-19T11:31:39Z"
+    },
+    {
+      "repo": "Nodeloom",
+      "sha": "f664138",
+      "message": "v1.3.1 — 밑줄 분기선 분리 + 단색 모드 색 불일치 수정",
+      "date": "2026-05-19T11:18:36Z"
+    },
+    {
+      "repo": "Nodeloom",
+      "sha": "65198ac",
+      "message": "v1.3.0 — XMind 벤치마크: 템플릿·노드 모양 확장",
+      "date": "2026-05-19T04:23:59Z"
+    },
+    {
+      "repo": "Nodeloom",
+      "sha": "92a807b",
+      "message": "v1.2.0 — 마인드맵 이미지 내보내기 (PNG·SVG·PDF)",
+      "date": "2026-05-19T03:06:33Z"
+    },
+    {
+      "repo": "Nodeloom",
+      "sha": "08c9eac",
+      "message": "v1.1.1 — 마인드맵 분기선이 세로로 뭉치던 버그 수정",
+      "date": "2026-05-18T15:43:56Z"
+    },
+    {
+      "repo": "jewelry-webtoon-cloud",
+      "sha": "5a0c61b",
+      "message": "fix: scale episode navigation content",
+      "date": "2026-05-15T04:03:52Z"
+    },
+    {
+      "repo": "jewelry-webtoon-cloud",
+      "sha": "3f09d0e",
+      "message": "fix: tighten reader navigation",
+      "date": "2026-05-15T04:00:14Z"
+    },
+    {
+      "repo": "jewelry-webtoon-cloud",
+      "sha": "4ced752",
+      "message": "fix: compact episode reader",
+      "date": "2026-05-15T03:55:15Z"
+    },
+    {
+      "repo": "jewelry-webtoon-cloud",
+      "sha": "022f325",
+      "message": "fix: stabilize cover and reader layout",
+      "date": "2026-05-15T03:44:52Z"
+    },
+    {
+      "repo": "jewelry-webtoon-cloud",
+      "sha": "af611ee",
+      "message": "fix: support direct file preview",
+      "date": "2026-05-15T03:40:14Z"
+    },
+    {
+      "repo": "jewelry-webtoon-cloud",
+      "sha": "de45c29",
+      "message": "fix: gate reader behind cover actions",
+      "date": "2026-05-15T03:32:31Z"
+    },
+    {
+      "repo": "jewelry-webtoon-cloud",
+      "sha": "dafe921",
+      "message": "feat: complete ep001 png art pass",
+      "date": "2026-05-15T03:00:07Z"
+    },
+    {
+      "repo": "jewelry-webtoon-cloud",
+      "sha": "bcaa2f3",
+      "message": "feat: replace ep001 evening panels with png art",
+      "date": "2026-05-15T02:38:05Z"
+    },
+    {
+      "repo": "BookCircle",
+      "sha": "5eb5c37",
+      "message": "Trigger Vercel deployment with verified author",
+      "date": "2026-05-13T22:21:57Z"
+    },
+    {
+      "repo": "BookCircle",
+      "sha": "cd3b768",
+      "message": "Add health endpoint for deployment",
+      "date": "2026-05-13T14:32:12Z"
+    },
+    {
+      "repo": "BookCircle",
+      "sha": "58bb89b",
+      "message": "Initial BookCircle scaffold",
+      "date": "2026-05-13T14:27:24Z"
+    },
+    {
+      "repo": "tteuniyu-ios",
+      "sha": "4541274",
+      "message": "Wave 5 — Mock data fallback + 브랜드 \"뜬 이유\" + UX 개선 (#4)",
+      "date": "2026-05-12T08:40:24Z"
+    },
+    {
+      "repo": "tteuniyu-ios",
+      "sha": "1a44683",
+      "message": "Wave 4 — Xcode 빌드 수정 4건 (Info.plist + Category 명시 + INFOPLIST_FILE) (#3)",
+      "date": "2026-05-12T06:54:01Z"
+    },
+    {
+      "repo": "tteuniyu-ios",
+      "sha": "f075158",
+      "message": "Wave 3 Integration — RisingIssuesView + ViewModel + XCTest 30+ (#2)",
+      "date": "2026-05-11T23:27:08Z"
+    },
+    {
+      "repo": "tteuniyu-ios",
+      "sha": "6b249f6",
+      "message": "Wave 2 Bulk impl — Codex 4 agent 병렬 결과 (1,379 LOC Swift) (#1)",
+      "date": "2026-05-11T15:28:24Z"
+    },
+    {
+      "repo": "tteuniyu-ios",
+      "sha": "3c326be",
+      "message": "Initial commit",
+      "date": "2026-05-11T11:46:53Z"
+    }
+  ]
+}

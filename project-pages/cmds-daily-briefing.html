@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>해치의 데일리 브리핑 제작 현황</title>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Noto+Serif+KR:wght@400;500&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --parchment:#f5f4ed;
+  --ivory:#faf9f5;
+  --ink:#1B365D;
+  --text:#141413;
+  --secondary:#3d3d3a;
+  --sub:#504e49;
+  --meta:#6b6a64;
+  --border:#e8e6dc;
+  --border-soft:#e5e3d8;
+  --good:#266344;
+  --warn:#836016;
+  --danger:#8f2f2f;
+  --serif:"Nanum Myeongjo","Noto Serif KR","Apple SD Gothic Neo",Georgia,serif;
+  --sans:"Noto Sans KR","Apple SD Gothic Neo",system-ui,sans-serif;
+  --shadow:0 18px 44px rgba(64,58,40,.055),0 1px 0 rgba(64,58,40,.035);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:var(--parchment);color:var(--text);font-family:var(--serif);font-size:17px;line-height:1.58;letter-spacing:0}
+a{color:inherit}
+.page{width:min(100%,1120px);margin:0 auto;padding:28px 24px 84px}
+.top-nav{display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:48px}
+.top-nav a{display:inline-flex;align-items:center;min-height:34px;color:var(--ink);font-family:var(--sans);font-size:13px;font-weight:600;text-decoration:none}
+.top-nav a:hover{text-decoration:underline;text-underline-offset:4px}
+h1,h2,h3,p{margin:0}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:42px;align-items:end;margin-bottom:42px}
+.eyebrow{margin-bottom:14px;color:var(--ink);font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.12em}
+h1{max-width:760px;font-size:clamp(40px,6vw,72px);font-weight:500;line-height:1.14;word-break:keep-all;overflow-wrap:break-word}
+.lede{max-width:740px;margin-top:22px;color:var(--secondary);font-size:18px;line-height:1.65}
+.hero-card{padding:22px 24px;background:var(--ivory);border:1px solid var(--border);border-radius:8px;box-shadow:var(--shadow)}
+.hero-card dl{display:grid;gap:13px;margin:0}
+.hero-card div{display:flex;justify-content:space-between;gap:16px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.hero-card div:last-child{padding-bottom:0;border-bottom:0}
+dt{color:var(--meta);font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.05em}
+dd{margin:0;color:var(--ink);font-family:var(--sans);font-size:13px;font-weight:700;text-align:right}
+.grid{display:grid;grid-template-columns:1.12fr .88fr;gap:24px;align-items:start}
+.section{margin-bottom:24px;padding:28px 30px;background:var(--ivory);border:1px solid var(--border);border-radius:8px;box-shadow:var(--shadow)}
+.section.full{grid-column:1 / -1}
+.section-title{margin-bottom:18px;color:var(--ink);font-family:var(--sans);font-size:13px;font-weight:800;letter-spacing:.08em}
+.summary{display:grid;gap:14px;color:var(--secondary);font-size:16.5px}
+.metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px}
+.metric{padding:13px 14px;background:var(--parchment);border:1px solid var(--border-soft);border-radius:8px}
+.metric span{display:block;color:var(--meta);font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:.05em}
+.metric strong{display:block;margin-top:4px;color:var(--ink);font-family:var(--sans);font-size:18px}
+.pill{display:inline-flex;align-items:center;min-height:24px;padding:3px 9px;border-radius:999px;color:#fff;background:var(--ink);font-family:var(--sans);font-size:11px;font-weight:800}
+.pill.good{background:var(--good)}.pill.warn{background:var(--warn)}.pill.danger{background:var(--danger)}.pill.neutral{color:var(--meta);background:transparent;border:1px dashed var(--meta)}
+.metric .pill{display:inline-flex;color:#fff}.metric .pill.neutral{color:var(--meta)}
+.progress-total{display:flex;align-items:baseline;gap:8px;color:var(--ink);font-family:var(--sans)}
+.progress-total strong{font-size:52px;line-height:1}
+.progress-total span{font-size:13px;font-weight:800;color:var(--meta)}
+.progress-row{margin-top:14px}
+.progress-head{display:flex;justify-content:space-between;margin-bottom:6px;color:var(--meta);font-family:var(--sans);font-size:12px;font-weight:700}
+.meter{height:7px;overflow:hidden;background:var(--border-soft);border-radius:999px}
+.meter span{display:block;height:100%;background:var(--ink);border-radius:999px}
+.note{padding:17px 18px;background:var(--parchment);border-left:3px solid var(--ink);border-radius:0 6px 6px 0}
+.note.high{border-left-color:var(--danger)}.note.warn{border-left-color:var(--warn)}
+.note-kicker{margin-bottom:6px;color:var(--ink);font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:.08em}
+.note h3{margin-bottom:8px;font-family:var(--sans);font-size:16px}
+.note p,.note li{color:var(--secondary);font-size:15px;line-height:1.55}
+ul{margin:10px 0 0;padding-left:20px;color:var(--secondary)}
+li{margin:5px 0}
+.doc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.doc-row{display:grid;gap:9px;padding:16px 17px;background:var(--parchment);border:1px solid var(--border-soft);border-radius:8px}
+.doc-label{color:var(--ink);font-family:var(--sans);font-size:13px;font-weight:800}
+.doc-path{margin-top:2px;color:var(--meta);font-family:var(--sans);font-size:12px;word-break:break-all}
+.doc-row p:last-child{color:var(--secondary);font-size:14.5px;line-height:1.55}
+.prompt{white-space:pre-wrap;margin:0;padding:20px 22px;overflow:auto;color:var(--secondary);background:var(--parchment);border:1px solid var(--border-soft);border-radius:8px;font-family:var(--sans);font-size:13px;line-height:1.7}
+.timeline{display:grid;gap:15px}
+.timeline-item{display:grid;grid-template-columns:112px minmax(0,1fr);gap:18px;padding-bottom:15px;border-bottom:1px solid var(--border)}
+.timeline-item:last-child{padding-bottom:0;border-bottom:0}
+.timeline time{color:var(--meta);font-family:var(--sans);font-size:12px;font-weight:700}
+.timeline-kind{margin-bottom:5px;color:var(--ink);font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:.08em}
+.timeline p:last-of-type{color:var(--secondary);font-size:15px}
+.timeline a{display:inline-flex;margin-top:6px;color:var(--meta);font-family:var(--sans);font-size:12px;text-decoration:none}
+.timeline a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+.quiet{color:var(--meta);font-family:var(--sans);font-size:14px}
+footer{margin-top:54px;padding-top:20px;border-top:1px solid var(--border);color:var(--meta);font-family:var(--sans);font-size:12px;line-height:1.5}
+@media (max-width:900px){.hero,.grid{grid-template-columns:1fr}.hero-card{max-width:none}.metric-grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:640px){.page{padding:22px 18px 62px}.top-nav{margin-bottom:36px}.section{padding:24px 20px}.metric-grid,.doc-grid{grid-template-columns:1fr}.timeline-item{grid-template-columns:1fr;gap:5px}}
+@media print{.top-nav{display:none}.page{width:auto;padding:0}.section,.hero-card{box-shadow:none}}
+</style>
+</head>
+<body>
+<main class="page">
+  <nav class="top-nav" aria-label="상위 이동">
+    <a href="../dashboard.html">대시보드</a>
+    <a href="../monthly-analysis.html">30일 분석</a>
+    <a href="../report.html">뉴스 피드</a>
+    <a href="../project-report.html?repo=cmds-daily-briefing">누적 로그</a>
+    <a href="index.html">전체 프로젝트</a>
+    <a href="https://github.com/sgeniusk/cmds-daily-briefing">GitHub</a>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <p class="eyebrow">PROJECT STATUS</p>
+      <h1>해치의 데일리 브리핑 제작 현황</h1>
+      <p class="lede">해치가 CMDS 하루 브리핑을 날짜별 웹 페이지로 렌더링하는 Vercel 앱입니다. 백상현 데일리 페이지에서 영감받은 에디토리얼 UI에 /daily/YYYY-MM-DD 라우트를 두었고, 카드별 검토 액션을 Hermes action queue로 넘기는 통합이 진행 중입니다. 프로덕션 URL도 떠 있습니다.</p>
+    </div>
+    <aside class="hero-card" aria-label="프로젝트 핵심 지표">
+      <dl>
+        <div><dt>기준일</dt><dd>2026-07-20</dd></div>
+        <div><dt>담당</dt><dd>Claude</dd></div>
+        <div><dt>상태</dt><dd>활성</dd></div>
+        <div><dt>스프린트</dt><dd>Sprint B</dd></div>
+      </dl>
+    </aside>
+  </header>
+
+  <div class="grid">
+    <section class="section">
+      <p class="section-title">오늘의 판단</p>
+      <div class="summary">
+        <p>매일의 브리핑이 읽는 맛 있는 에디토리얼로 쌓이고, 거기서 바로 액션이 흘러가는 흐름을 목표로 합니다. Hermes 큐와의 연결을 다듬는 방향입니다.</p>
+        <p>Hermes action queue 통합의 종단 테스트를 먼저 닫으시길. 데이터 소스 일관성이 흔들리면 매일 쌓이는 페이지가 어긋납니다.</p>
+      </div>
+      <div class="metric-grid">
+        <div class="metric"><span>건강</span><strong><span class="pill danger">위험</span></strong></div>
+        <div class="metric"><span>초점</span><strong>알파 검증</strong></div>
+        <div class="metric"><span>신뢰도</span><strong>보통 60%</strong></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="section-title">완성도</p>
+      <div class="progress-total"><strong>52</strong><span>%</span></div>
+      <div class="progress-row">
+      <div class="progress-head"><span>문서</span><span>12/20</span></div>
+      <div class="meter"><span style="width:60%"></span></div>
+    </div><div class="progress-row">
+      <div class="progress-head"><span>골격</span><span>22/30</span></div>
+      <div class="meter"><span style="width:73%"></span></div>
+    </div><div class="progress-row">
+      <div class="progress-head"><span>기능</span><span>14/30</span></div>
+      <div class="meter"><span style="width:47%"></span></div>
+    </div><div class="progress-row">
+      <div class="progress-head"><span>알파</span><span>4/20</span></div>
+      <div class="meter"><span style="width:20%"></span></div>
+    </div>
+    </section>
+
+    <section class="section">
+      <p class="section-title">다음 액션</p>
+      <ul><li>V1 에디토리얼 UI 마감</li><li>Hermes action queue 통합 종단 테스트</li><li>최근 7일·30일 인덱스 페이지</li></ul>
+    </section>
+
+    <section class="section">
+      <p class="section-title">리스크와 코칭</p>
+      <p class="quiet" style="margin-bottom:14px">최근 푸시가 14일 전입니다.</p>
+
+    <article class="note">
+      <p class="note-kicker">코칭</p>
+      <h3>등록된 블로커가 없습니다</h3>
+      <p>현재는 다음 액션과 최근 로그를 기준으로 세션을 이어가면 됩니다.</p>
+    </article>
+    </section>
+
+    <section class="section full">
+      <p class="section-title">항상 최신화할 문서</p>
+      <div class="doc-grid"><article class="doc-row">
+      <div>
+        <p class="doc-label">PRD</p>
+        <p class="doc-path">projects/cmds-daily-briefing/prd.md</p>
+      </div>
+      <p>무엇을 만들고 왜 만드는지, 핵심 기능과 리스크를 최신 결정 기준으로 정리합니다.</p>
+    </article><article class="doc-row">
+      <div>
+        <p class="doc-label">로드맵</p>
+        <p class="doc-path">projects/cmds-daily-briefing/roadmap.md</p>
+      </div>
+      <p>버전별 완료·진행·예정 상태와 다음 마일스톤을 실제 작업 증거에 맞춥니다.</p>
+    </article><article class="doc-row">
+      <div>
+        <p class="doc-label">작업 로그</p>
+        <p class="doc-path">projects/cmds-daily-briefing/log.md</p>
+      </div>
+      <p>이번 세션의 변경, 검증 결과, 남은 의사결정을 최신 항목으로 맨 위에 남깁니다.</p>
+    </article><article class="doc-row">
+      <div>
+        <p class="doc-label">문서 인덱스</p>
+        <p class="doc-path">projects/cmds-daily-briefing/project.json</p>
+      </div>
+      <p>versions, currentVersion, synced 값을 로드맵과 같은 상태로 유지합니다.</p>
+    </article></div>
+    </section>
+
+    <section class="section full">
+      <p class="section-title">세션 시작 프롬프트</p>
+      <pre class="prompt">이 세션은 &quot;해치의 데일리 브리핑&quot; (cmds-daily-briefing) 최신화 세션입니다.
+담당 도구는 Claude이고, 현재 대시보드 완성도는 52%입니다.
+
+먼저 프로젝트 저장소의 README, PRD, ROADMAP, CHANGELOG, TESTING 문서를 확인하고, 이 대시보드의 mirror 문서인 projects/cmds-daily-briefing/prd.md, roadmap.md, log.md, project.json과 어긋나는 내용을 기록해 주세요.
+
+이번 세션에서 할 일입니다.
+1. 실제 작업 증거를 먼저 확인합니다. 커밋, 실행 화면, 테스트, 배포 URL, 실패 로그 중 하나 이상을 근거로 삼습니다.
+2. PRD에는 새로 확정된 목표, 핵심 기능, 기술 스택, 리스크만 반영합니다.
+3. roadmap.md에는 완료, 진행 중, 예정 상태를 실제 산출물 기준으로 조정합니다.
+4. log.md에는 오늘의 변경과 검증 결과를 최신 항목으로 맨 위에 추가합니다.
+5. project.json에는 currentVersion, versions, synced 값을 roadmap.md와 같은 상태로 맞춥니다.
+6. 완성도 점수는 부풀리지 않습니다. docs, skeleton, features, alpha 점수 변경은 산출물 증거가 있을 때만 제안합니다.
+7. 대시보드 반영안으로 projects.json의 rationale, risks, nextActions, eta 변경안과 reports.json의 body, goal, progress, advice 갱신안을 마지막에 따로 적습니다.
+
+현재 목표 요약입니다.
+매일의 브리핑이 읽는 맛 있는 에디토리얼로 쌓이고, 거기서 바로 액션이 흘러가는 흐름을 목표로 합니다. Hermes 큐와의 연결을 다듬는 방향입니다.</pre>
+    </section>
+
+    <section class="section full">
+      <p class="section-title">최근 근거</p>
+      <div class="timeline">
+    <article class="timeline-item">
+      <time>2026-07-20</time>
+      <div>
+        <p class="timeline-kind">완성도</p>
+        <p>완성도 52%</p>
+
+      </div>
+    </article>
+    <article class="timeline-item">
+      <time>2026-07-05</time>
+      <div>
+        <p class="timeline-kind">커밋</p>
+        <p>Add 2026-07-06 daily briefing</p>
+        <a href="https://github.com/sgeniusk/cmds-daily-briefing/commit/beef9f0">beef9f0</a>
+      </div>
+    </article>
+    <article class="timeline-item">
+      <time>2026-07-05</time>
+      <div>
+        <p class="timeline-kind">커밋</p>
+        <p>Add July 5 build note</p>
+        <a href="https://github.com/sgeniusk/cmds-daily-briefing/commit/7d5baa2">7d5baa2</a>
+      </div>
+    </article>
+    <article class="timeline-item">
+      <time>2026-07-04</time>
+      <div>
+        <p class="timeline-kind">커밋</p>
+        <p>Add July 5 daily briefing</p>
+        <a href="https://github.com/sgeniusk/cmds-daily-briefing/commit/894a0f5">894a0f5</a>
+      </div>
+    </article>
+    <article class="timeline-item">
+      <time>2026-07-01</time>
+      <div>
+        <p class="timeline-kind">완성도</p>
+        <p>완성도 52%</p>
+
+      </div>
+    </article>
+    <article class="timeline-item">
+      <time>2026-06-18</time>
+      <div>
+        <p class="timeline-kind">완성도</p>
+        <p>완성도 52% · 커밋 +1</p>
+
+      </div>
+    </article>
+    <article class="timeline-item">
+      <time>2026-06-17</time>
+      <div>
+        <p class="timeline-kind">커밋</p>
+        <p>Add June 17 build note</p>
+        <a href="https://github.com/sgeniusk/cmds-daily-briefing/commit/aff8cf6">aff8cf6</a>
+      </div>
+    </article></div>
+    </section>
+  </div>
+
+  <footer>
+    해치의 데일리 브리핑 · 최근 푸시 2026-07-05 · 커밋 62개 · 최신 로그 2026-07-20.
+  </footer>
+</main>
+</body>
+</html>

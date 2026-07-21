@@ -1,0 +1,3596 @@
+{
+  "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
+  "generatedAt": "2026-07-20",
+  "logs": {
+    "habit": [
+      {
+        "date": "2026-05-25T23:58:00Z",
+        "kind": "commit",
+        "text": "Connect Home to the Today loop action model",
+        "sha": "6b74580"
+      },
+      {
+        "date": "2026-05-26T01:33:21Z",
+        "kind": "commit",
+        "text": "Refresh Claude Code handoff",
+        "sha": "a407144"
+      },
+      {
+        "date": "2026-05-26T06:47:17Z",
+        "kind": "commit",
+        "text": "Add Codex delegation packet for report proof friction",
+        "sha": "7fadccd"
+      },
+      {
+        "date": "2026-05-26T13:03:41Z",
+        "kind": "commit",
+        "text": "Collapse phone proof live session when idle",
+        "sha": "52638d1"
+      },
+      {
+        "date": "2026-05-26T14:09:07Z",
+        "kind": "commit",
+        "text": "Add extended action strip set to AGY packet",
+        "sha": "6f97c10"
+      },
+      {
+        "date": "2026-05-26T14:18:46Z",
+        "kind": "commit",
+        "text": "Add dismissible PROOF OF ONE intro card",
+        "sha": "3a293b8"
+      },
+      {
+        "date": "2026-05-26T14:25:14Z",
+        "kind": "commit",
+        "text": "Redirect proof scorecard next action to FOCUSED VIEW",
+        "sha": "1ef1ccf"
+      },
+      {
+        "date": "2026-05-26T14:33:35Z",
+        "kind": "commit",
+        "text": "Trim duplicated run section cards from proof mode",
+        "sha": "6b769c7"
+      },
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "Expo iOS 알파 빌드 한 번이 완성 단계 진입의 열쇠입니다. 그 전에 알파 피드백에서 AI 분석 정확도에 대한 신뢰부터 확인하시길."
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 70%"
+      },
+      {
+        "date": "2026-06-03",
+        "kind": "progress",
+        "text": "진척 70%"
+      },
+      {
+        "date": "2026-06-04",
+        "kind": "progress",
+        "text": "진척 70%"
+      },
+      {
+        "date": "2026-06-05",
+        "kind": "progress",
+        "text": "진척 70%"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 70%"
+      },
+      {
+        "date": "2026-06-10",
+        "kind": "progress",
+        "text": "완성도 70%"
+      },
+      {
+        "date": "2026-06-14",
+        "kind": "progress",
+        "text": "완성도 70%"
+      },
+      {
+        "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 70%"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 70%"
+      },
+      {
+        "date": "2026-06-18",
+        "kind": "progress",
+        "text": "완성도 70%"
+      },
+      {
+        "date": "2026-07-01",
+        "kind": "progress",
+        "text": "완성도 70%"
+      },
+      {
+        "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 70%"
+      }
+    ],
+    "tteuniyu-ios": [
+      {
+        "date": "2026-05-11T11:46:53Z",
+        "kind": "commit",
+        "text": "Initial commit",
+        "sha": "3c326be"
+      },
+      {
+        "date": "2026-05-11T15:28:24Z",
+        "kind": "commit",
+        "text": "Wave 2 Bulk impl — Codex 4 agent 병렬 결과 (1,379 LOC Swift) (#1)",
+        "sha": "6b249f6"
+      },
+      {
+        "date": "2026-05-11T23:27:08Z",
+        "kind": "commit",
+        "text": "Wave 3 Integration — RisingIssuesView + ViewModel + XCTest 30+ (#2)",
+        "sha": "f075158"
+      },
+      {
+        "date": "2026-05-12T06:54:01Z",
+        "kind": "commit",
+        "text": "Wave 4 — Xcode 빌드 수정 4건 (Info.plist + Category 명시 + INFOPLIST_FILE) (#3)",
+        "sha": "1a44683"
+      },
+      {
+        "date": "2026-05-12T08:40:24Z",
+        "kind": "commit",
+        "text": "Wave 5 — Mock data fallback + 브랜드 \"뜬 이유\" + UX 개선 (#4)",
+        "sha": "4541274"
+      },
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "이번 주에 Xcode 빌드와 시뮬레이터 스크린샷을 끝내거나, 어렵다면 Sprint A 일정을 솔직하게 재조정하시길. 멈춤을 방치하는 게 가장 비쌉니다."
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 65%"
+      },
+      {
+        "date": "2026-06-03",
+        "kind": "progress",
+        "text": "진척 65%"
+      },
+      {
+        "date": "2026-06-04",
+        "kind": "progress",
+        "text": "진척 65%"
+      },
+      {
+        "date": "2026-06-05",
+        "kind": "progress",
+        "text": "진척 65%"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 65%"
+      },
+      {
+        "date": "2026-06-10",
+        "kind": "progress",
+        "text": "완성도 65%"
+      },
+      {
+        "date": "2026-06-14",
+        "kind": "progress",
+        "text": "완성도 65%"
+      },
+      {
+        "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 65%"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 65%"
+      },
+      {
+        "date": "2026-06-18",
+        "kind": "progress",
+        "text": "완성도 65%"
+      },
+      {
+        "date": "2026-07-01",
+        "kind": "progress",
+        "text": "완성도 65%"
+      },
+      {
+        "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 65%"
+      }
+    ],
+    "sam-defender-logue": [
+      {
+        "date": "2026-05-21T05:10:03Z",
+        "kind": "commit",
+        "text": "Add battlefield core combat proof gate",
+        "sha": "ded91e5"
+      },
+      {
+        "date": "2026-05-21T05:24:53Z",
+        "kind": "commit",
+        "text": "Add battlefield sortie direct focus",
+        "sha": "91bd817"
+      },
+      {
+        "date": "2026-05-21T05:45:29Z",
+        "kind": "commit",
+        "text": "Add battlefield terrain asset adapter",
+        "sha": "f53a0e4"
+      },
+      {
+        "date": "2026-05-21T06:00:57Z",
+        "kind": "commit",
+        "text": "Add battlefield manual fun gate",
+        "sha": "fafdf95"
+      },
+      {
+        "date": "2026-05-21T06:21:18Z",
+        "kind": "commit",
+        "text": "Add battlefield graphics tone plan",
+        "sha": "0c7ef35"
+      },
+      {
+        "date": "2026-05-21T07:51:43Z",
+        "kind": "commit",
+        "text": "Import first battlefield terrain sign asset",
+        "sha": "084617c"
+      },
+      {
+        "date": "2026-05-21T08:22:59Z",
+        "kind": "commit",
+        "text": "Add battlefield combat tempo readiness",
+        "sha": "2d95477"
+      },
+      {
+        "date": "2026-05-21T11:13:14Z",
+        "kind": "commit",
+        "text": "Add battlefield combat feedback sample slots",
+        "sha": "c499287"
+      },
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "콘텐츠 데이터와 마크다운 ID 불일치부터 잡으시길. 하네스가 어긋난 채로 항목을 늘리면 백로그만 더 무거워집니다."
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 60%"
+      },
+      {
+        "date": "2026-06-01T00:48:02Z",
+        "kind": "commit",
+        "text": "feat(asset-beta): make wave launch land in debrief",
+        "sha": "e73e2c5"
+      },
+      {
+        "date": "2026-06-01T07:52:54Z",
+        "kind": "commit",
+        "text": "feat(asset-beta): make the battlefield read as the real game screen",
+        "sha": "d14edaa"
+      },
+      {
+        "date": "2026-06-01T08:15:04Z",
+        "kind": "commit",
+        "text": "feat(asset-beta): keep reward prep inside the playable battlefield",
+        "sha": "13eef6c"
+      },
+      {
+        "date": "2026-06-01T08:50:04Z",
+        "kind": "commit",
+        "text": "feat(asset-beta): show reward effects on the battlefield",
+        "sha": "fde54c7"
+      },
+      {
+        "date": "2026-06-01T09:20:46Z",
+        "kind": "commit",
+        "text": "feat(asset-beta): reduce battlefield clutter with anchored units",
+        "sha": "e82cb99"
+      },
+      {
+        "date": "2026-06-01T09:54:32Z",
+        "kind": "commit",
+        "text": "feat(asset-beta): make combat actions readable on the playfield",
+        "sha": "e071cb2"
+      },
+      {
+        "date": "2026-06-01T11:30:10Z",
+        "kind": "commit",
+        "text": "feat(asset-beta): land combat reactions on battlefield sprites",
+        "sha": "63f1bf8"
+      },
+      {
+        "date": "2026-06-01T12:52:54Z",
+        "kind": "commit",
+        "text": "docs(asset-beta): prepare Claude handoff after 0.7.15",
+        "sha": "cd05cbc"
+      },
+      {
+        "date": "2026-06-03",
+        "kind": "progress",
+        "text": "진척 60%"
+      },
+      {
+        "date": "2026-06-04",
+        "kind": "progress",
+        "text": "진척 60%"
+      },
+      {
+        "date": "2026-06-05",
+        "kind": "progress",
+        "text": "진척 60%"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 60%"
+      },
+      {
+        "date": "2026-06-06T05:08:21Z",
+        "kind": "commit",
+        "text": "feat(godot): grow the map outward on each wave clear",
+        "sha": "830000a"
+      },
+      {
+        "date": "2026-06-06T08:36:27Z",
+        "kind": "commit",
+        "text": "feat(godot): branch-choose flat roads on a fixed map, towers on highlands",
+        "sha": "da61890"
+      },
+      {
+        "date": "2026-06-06T12:30:38Z",
+        "kind": "commit",
+        "text": "feat(godot): veil the map in fog of war that lifts as roads expand",
+        "sha": "6875c9e"
+      },
+      {
+        "date": "2026-06-06T13:00:06Z",
+        "kind": "commit",
+        "text": "feat(godot): pick branch direction by key or click during play",
+        "sha": "d6152dc"
+      },
+      {
+        "date": "2026-06-06T14:47:15Z",
+        "kind": "commit",
+        "text": "feat(godot): quadruple the map to radius 12 with a fixed full-map camera",
+        "sha": "7ef67c6"
+      },
+      {
+        "date": "2026-06-06T15:02:48Z",
+        "kind": "commit",
+        "text": "feat(godot): diversify enemies into infantry, cavalry, siege, boss",
+        "sha": "280494c"
+      },
+      {
+        "date": "2026-06-06T15:20:43Z",
+        "kind": "commit",
+        "text": "feat(godot): add manual camera zoom and pan controls",
+        "sha": "639ed94"
+      },
+      {
+        "date": "2026-06-06T16:04:24Z",
+        "kind": "commit",
+        "text": "docs(godot): record town(village) implementation plan for next session",
+        "sha": "6eee6ad"
+      },
+      {
+        "date": "2026-06-10",
+        "kind": "progress",
+        "text": "완성도 60% · 커밋 +34"
+      },
+      {
+        "date": "2026-06-10T16:32:30Z",
+        "kind": "commit",
+        "text": "feat(unity): tower identity — archetype kits, splash/slow/burn, distinct looks (M12.6/M12.7)",
+        "sha": "896e497"
+      },
+      {
+        "date": "2026-06-11T01:28:55Z",
+        "kind": "commit",
+        "text": "feat(unity): battle economy — kill gold + mid-wave building (M12.8) + progress archive",
+        "sha": "02aee93"
+      },
+      {
+        "date": "2026-06-11T01:33:07Z",
+        "kind": "commit",
+        "text": "fix(unity): 타워 중복 배치 방지 + agy QA 리포트 (M12.8 후속)",
+        "sha": "b5e1ebb"
+      },
+      {
+        "date": "2026-06-11T02:31:43Z",
+        "kind": "commit",
+        "text": "feat(unity): generals on the battlefield — cleave, skill banners, oath links (M13)",
+        "sha": "68e7300"
+      },
+      {
+        "date": "2026-06-11T06:52:00Z",
+        "kind": "commit",
+        "text": "feat(unity): general deploy UX + frontline fix (M13.1)",
+        "sha": "e683e84"
+      },
+      {
+        "date": "2026-06-11T07:55:39Z",
+        "kind": "commit",
+        "text": "feat(unity): retire the bot — player-driven rounds, Nordhold-style stage choices (M14)",
+        "sha": "99302fd"
+      },
+      {
+        "date": "2026-06-11T10:13:03Z",
+        "kind": "commit",
+        "text": "feat(unity): port wrap-up — growing island, village ops, battle speed (M15)",
+        "sha": "6785fac"
+      },
+      {
+        "date": "2026-06-11T10:32:46Z",
+        "kind": "commit",
+        "text": "fix(unity): prep 출전 버튼 잘림 — 탭 두 줄 감김 예약 높이 보정 (M15 후속)",
+        "sha": "d881fd8"
+      },
+      {
+        "date": "2026-06-14",
+        "kind": "progress",
+        "text": "완성도 60% · 커밋 +7"
+      },
+      {
+        "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 60%"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 60%"
+      },
+      {
+        "date": "2026-06-18",
+        "kind": "progress",
+        "text": "완성도 60%"
+      },
+      {
+        "date": "2026-07-01",
+        "kind": "progress",
+        "text": "완성도 20% · (-40p)"
+      },
+      {
+        "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 20%"
+      }
+    ],
+    "samguk-idle-prototype": [
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "20분과 24시간 세션을 합성 플레이테스트로 함께 돌려보시길. 방치형은 결국 시간 곡선이 재미를 결정합니다."
+      },
+      {
+        "date": "2026-05-30T17:36:23Z",
+        "kind": "commit",
+        "text": "Keep adventure auto-hunt inside the store frame",
+        "sha": "8c229a4"
+      },
+      {
+        "date": "2026-05-30T17:57:44Z",
+        "kind": "commit",
+        "text": "Keep final screenshot proof explicit",
+        "sha": "f6f3a34"
+      },
+      {
+        "date": "2026-05-30T18:19:43Z",
+        "kind": "commit",
+        "text": "Keep soft-launch blockers explicit",
+        "sha": "3d24f10"
+      },
+      {
+        "date": "2026-05-30T23:42:26Z",
+        "kind": "commit",
+        "text": "Preserve local proof flow before final external receipts",
+        "sha": "cc82318"
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 60% · 커밋 +4"
+      },
+      {
+        "date": "2026-05-31T01:52:27Z",
+        "kind": "commit",
+        "text": "Keep local launch rehearsal visible before final proof",
+        "sha": "df1fe8c"
+      },
+      {
+        "date": "2026-05-31T02:43:05Z",
+        "kind": "commit",
+        "text": "Prove daily retention can restart locally before final proof",
+        "sha": "a523fda"
+      },
+      {
+        "date": "2026-05-31T03:21:04Z",
+        "kind": "commit",
+        "text": "Expose the daily return loop as an actionable route",
+        "sha": "c673c97"
+      },
+      {
+        "date": "2026-05-31T04:04:19Z",
+        "kind": "commit",
+        "text": "Centralize readiness metadata to remove report drift",
+        "sha": "4786aa1"
+      },
+      {
+        "date": "2026-05-31T23:22:33Z",
+        "kind": "commit",
+        "text": "Make adventure combat read tactical instead of decorative",
+        "sha": "0cea438"
+      },
+      {
+        "date": "2026-06-01T00:06:29Z",
+        "kind": "commit",
+        "text": "Make adventure combat resolve kills and drops",
+        "sha": "fcce8c8"
+      },
+      {
+        "date": "2026-06-01T00:42:47Z",
+        "kind": "commit",
+        "text": "Make adventure combat answer enemy skills",
+        "sha": "c16499b"
+      },
+      {
+        "date": "2026-06-01T07:59:35Z",
+        "kind": "commit",
+        "text": "Make adventure waves settle into the next fight",
+        "sha": "792d08d"
+      },
+      {
+        "date": "2026-06-01T08:51:43Z",
+        "kind": "commit",
+        "text": "Make adventure combat run through engine commands",
+        "sha": "d167080"
+      },
+      {
+        "date": "2026-06-01T09:53:20Z",
+        "kind": "commit",
+        "text": "Make adventure commands choose tactical timing",
+        "sha": "68fab86"
+      },
+      {
+        "date": "2026-06-01T12:55:14Z",
+        "kind": "commit",
+        "text": "Prepare v1.00.28 handoff for merge",
+        "sha": "46d6590"
+      },
+      {
+        "date": "2026-06-01T12:55:31Z",
+        "kind": "commit",
+        "text": "Merge adventure command timing runtime",
+        "sha": "4e299fd"
+      },
+      {
+        "date": "2026-06-03",
+        "kind": "progress",
+        "text": "진척 60%"
+      },
+      {
+        "date": "2026-06-04",
+        "kind": "progress",
+        "text": "진척 60%"
+      },
+      {
+        "date": "2026-06-05",
+        "kind": "progress",
+        "text": "진척 60%"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 60%"
+      },
+      {
+        "date": "2026-06-06T03:34:30Z",
+        "kind": "commit",
+        "text": "chore(cache): bump version key to 1.00.45-adventure-pixi-field",
+        "sha": "6fcbabf"
+      },
+      {
+        "date": "2026-06-06T03:35:23Z",
+        "kind": "commit",
+        "text": "feat(feature-list): register v1.00.45-adventure-pixi-field entry",
+        "sha": "10bee4f"
+      },
+      {
+        "date": "2026-06-06T04:40:47Z",
+        "kind": "commit",
+        "text": "docs(renderer): record v1.00.45 verification + fix feature row schema",
+        "sha": "456f6f7"
+      },
+      {
+        "date": "2026-06-06T04:40:47Z",
+        "kind": "commit",
+        "text": "fix(renderer): persist Pixi adventure canvas across SPA render + frame-crop sprites",
+        "sha": "2f356e2"
+      },
+      {
+        "date": "2026-06-06T07:10:17Z",
+        "kind": "commit",
+        "text": "feat(renderer): emit hit-flash/impact-strip effect descriptors from scene model (E3-E4 data)",
+        "sha": "ee6852c"
+      },
+      {
+        "date": "2026-06-06T08:17:30Z",
+        "kind": "commit",
+        "text": "feat(renderer): adventure combat effects E1-E4 on Pixi field (v1.00.46)",
+        "sha": "20721f6"
+      },
+      {
+        "date": "2026-06-06T09:15:50Z",
+        "kind": "commit",
+        "text": "docs(renderer): record v1.00.46 combat effects verification + register feature",
+        "sha": "a8cc17a"
+      },
+      {
+        "date": "2026-06-06T16:05:52Z",
+        "kind": "commit",
+        "text": "chore: ignore renderer proof screenshots + record W1 war Pixi port handoff",
+        "sha": "69f9531"
+      },
+      {
+        "date": "2026-06-10",
+        "kind": "progress",
+        "text": "완성도 60% · 커밋 +35"
+      },
+      {
+        "date": "2026-06-14",
+        "kind": "progress",
+        "text": "완성도 60%"
+      },
+      {
+        "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 60%"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 60%"
+      },
+      {
+        "date": "2026-06-18",
+        "kind": "progress",
+        "text": "완성도 60%"
+      },
+      {
+        "date": "2026-07-01",
+        "kind": "progress",
+        "text": "완성도 60%"
+      },
+      {
+        "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 60%"
+      }
+    ],
+    "three-kingdoms-deckbuilder": [
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "오리지널 시각 디자인 결정을 미루지 마시길. 라이선스 리스크를 빨리 걷어내야 스팀 위시리스트까지 안전하게 갑니다."
+      },
+      {
+        "date": "2026-05-29T15:18:42Z",
+        "kind": "commit",
+        "text": "feat: build 149 payoff-pressure",
+        "sha": "cee09e5"
+      },
+      {
+        "date": "2026-05-29T15:28:21Z",
+        "kind": "commit",
+        "text": "feat: build 150 banner-orders",
+        "sha": "a2fb4af"
+      },
+      {
+        "date": "2026-05-29T15:37:40Z",
+        "kind": "commit",
+        "text": "feat: build 151 ridge-ambush",
+        "sha": "8f888e6"
+      },
+      {
+        "date": "2026-05-29T15:46:06Z",
+        "kind": "commit",
+        "text": "feat: build 152 clear-war-table",
+        "sha": "68039aa"
+      },
+      {
+        "date": "2026-05-29T15:53:27Z",
+        "kind": "commit",
+        "text": "feat: build 153 aftercare-agency",
+        "sha": "d5583f9"
+      },
+      {
+        "date": "2026-05-29T16:02:26Z",
+        "kind": "commit",
+        "text": "feat: build 154 staged-command",
+        "sha": "791d14d"
+      },
+      {
+        "date": "2026-05-29T16:07:38Z",
+        "kind": "commit",
+        "text": "feat: build 155 release-proof-seal",
+        "sha": "fda5a5a"
+      },
+      {
+        "date": "2026-05-29T22:09:30Z",
+        "kind": "commit",
+        "text": "feat: build 165 playtest alpha seal",
+        "sha": "191d7bc"
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 55%"
+      },
+      {
+        "date": "2026-06-01T22:29:36Z",
+        "kind": "commit",
+        "text": "Align agent split with completion harness",
+        "sha": "84d0953"
+      },
+      {
+        "date": "2026-06-01T22:41:53Z",
+        "kind": "commit",
+        "text": "chore: ignore local environment files",
+        "sha": "97bdb1a"
+      },
+      {
+        "date": "2026-06-01T22:47:43Z",
+        "kind": "commit",
+        "text": "fix: bundle Korean UI font for web",
+        "sha": "097a86b"
+      },
+      {
+        "date": "2026-06-01T23:56:28Z",
+        "kind": "commit",
+        "text": "Add game development QA pipeline",
+        "sha": "eab0b0f"
+      },
+      {
+        "date": "2026-06-02T03:00:26Z",
+        "kind": "commit",
+        "text": "chore: add asset catalog safety foundation",
+        "sha": "0c7e07c"
+      },
+      {
+        "date": "2026-06-02T11:22:56Z",
+        "kind": "commit",
+        "text": "feat: add opening order onboarding",
+        "sha": "f57fddf"
+      },
+      {
+        "date": "2026-06-02T11:23:54Z",
+        "kind": "commit",
+        "text": "fix: exclude local cache from web export",
+        "sha": "7668b5c"
+      },
+      {
+        "date": "2026-06-03",
+        "kind": "progress",
+        "text": "진척 55% · 커밋 +4"
+      },
+      {
+        "date": "2026-06-03T03:49:19Z",
+        "kind": "commit",
+        "text": "chore: make Vercel secret ignore explicit",
+        "sha": "778e91b"
+      },
+      {
+        "date": "2026-06-04",
+        "kind": "progress",
+        "text": "진척 55%"
+      },
+      {
+        "date": "2026-06-04T12:45:25Z",
+        "kind": "commit",
+        "text": "art: add commander portrait placeholders",
+        "sha": "f801093"
+      },
+      {
+        "date": "2026-06-04T16:33:12Z",
+        "kind": "commit",
+        "text": "chore: track commander portrait imports",
+        "sha": "6d2e33e"
+      },
+      {
+        "date": "2026-06-05",
+        "kind": "progress",
+        "text": "진척 55% · 커밋 +2"
+      },
+      {
+        "date": "2026-06-05T04:45:59Z",
+        "kind": "commit",
+        "text": "docs: add external UI redesign prompt",
+        "sha": "0ffdd3f"
+      },
+      {
+        "date": "2026-06-05T17:40:52Z",
+        "kind": "commit",
+        "text": "chore: refresh verified deployment author",
+        "sha": "d898a78"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 55% · 커밋 +3"
+      },
+      {
+        "date": "2026-06-06T00:13:03Z",
+        "kind": "commit",
+        "text": "Apply design handoff combat layout",
+        "sha": "0abca51"
+      },
+      {
+        "date": "2026-06-06T10:10:37Z",
+        "kind": "commit",
+        "text": "Apply opening order UI polish",
+        "sha": "cda900d"
+      },
+      {
+        "date": "2026-06-10",
+        "kind": "progress",
+        "text": "완성도 55% · 커밋 +1"
+      },
+      {
+        "date": "2026-06-14",
+        "kind": "progress",
+        "text": "완성도 55%"
+      },
+      {
+        "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 55%"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 55%"
+      },
+      {
+        "date": "2026-06-18",
+        "kind": "progress",
+        "text": "완성도 55%"
+      },
+      {
+        "date": "2026-07-01",
+        "kind": "progress",
+        "text": "완성도 55%"
+      },
+      {
+        "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 55%"
+      }
+    ],
+    "ai-builder-school": [
+      {
+        "date": "2026-05-27T00:25:51Z",
+        "kind": "commit",
+        "text": "refactor(lesson-page): MDX 정본 + 산출물 칩 + 빌드 친절 멘트 + 회고 마무리",
+        "sha": "e42f4ad"
+      },
+      {
+        "date": "2026-05-27T00:36:24Z",
+        "kind": "commit",
+        "text": "feat(reading-rail): 사이드바를 본문·빌드·검증·회고 4단계로 — 본문 hidden anchor 추가",
+        "sha": "6c56670"
+      },
+      {
+        "date": "2026-05-27T05:32:09Z",
+        "kind": "commit",
+        "text": "content(stage-1): cost-monitoring-in-production 본문 보강 — stub 34줄 → 84줄",
+        "sha": "deb4064"
+      },
+      {
+        "date": "2026-05-27T05:36:04Z",
+        "kind": "commit",
+        "text": "content(stage-1): ai-delegation-decision 본문 보강 — stub 36줄 → 96줄",
+        "sha": "e14fd37"
+      },
+      {
+        "date": "2026-05-27T07:24:27Z",
+        "kind": "commit",
+        "text": "content(stage-1): ai-collaboration-mindset 본문 보강 — stub 37줄 → 92줄",
+        "sha": "13cea7b"
+      },
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "Phase별 우선 레슨 4~5개부터 깊이 완성하시길. 본문이 채워질수록 기능 점수가 직접 올라갑니다."
+      },
+      {
+        "date": "2026-05-28T08:56:03Z",
+        "kind": "commit",
+        "text": "chore(stage-1): git/github 레슨 estimatedMinutes 현실 반영",
+        "sha": "51aab87"
+      },
+      {
+        "date": "2026-05-28T09:11:34Z",
+        "kind": "commit",
+        "text": "content: 옛 레슨 \\\"## 다음 레슨\\\" 일괄 제거 + terminal-first-day 압축",
+        "sha": "8420c9e"
+      },
+      {
+        "date": "2026-05-28T09:14:26Z",
+        "kind": "commit",
+        "text": "content(stage-1): 13 레슨에 buildIntro·reflectionOutro 강사 멘트 주입",
+        "sha": "f67d6d1"
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 45%"
+      },
+      {
+        "date": "2026-06-03",
+        "kind": "progress",
+        "text": "진척 45%"
+      },
+      {
+        "date": "2026-06-04",
+        "kind": "progress",
+        "text": "진척 45%"
+      },
+      {
+        "date": "2026-06-05",
+        "kind": "progress",
+        "text": "진척 45%"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 45% · 커밋 +20"
+      },
+      {
+        "date": "2026-06-06T04:42:02Z",
+        "kind": "commit",
+        "text": "feat(stages): 사다리 → 역량 지도 재서술 + Stage별 \"이 역량으로 짓는 프로젝트\"",
+        "sha": "b693e53"
+      },
+      {
+        "date": "2026-06-06T04:45:40Z",
+        "kind": "commit",
+        "text": "feat(projects): Blocker 데이터 모델 + \"여기서 막혔나요?\" 막힘 토글",
+        "sha": "f50eb46"
+      },
+      {
+        "date": "2026-06-06T04:49:02Z",
+        "kind": "commit",
+        "text": "feat(build): /build 빌드 네비게이터 — 산출물 목표 → 프로젝트",
+        "sha": "027a9db"
+      },
+      {
+        "date": "2026-06-06T04:51:16Z",
+        "kind": "commit",
+        "text": "docs: P1 체크리스트 — P1-1~5 완료 표시 (P1-5는 no-op)",
+        "sha": "cab1c7e"
+      },
+      {
+        "date": "2026-06-06T05:00:54Z",
+        "kind": "commit",
+        "text": "content(lessons): neededWhen 확대 — 모든 blocker 구제 레슨에 \"필요한 순간\" 헤더",
+        "sha": "65b146f"
+      },
+      {
+        "date": "2026-06-06T05:06:46Z",
+        "kind": "commit",
+        "text": "chore: 죽은 구홈 CSS·컴포넌트 정리 (-334줄)",
+        "sha": "527bb96"
+      },
+      {
+        "date": "2026-06-06T05:09:59Z",
+        "kind": "commit",
+        "text": "feat(templates): usedWhen — \"이럴 때 꺼내 쓴다\" 맥락 (Template as tool)",
+        "sha": "1883168"
+      },
+      {
+        "date": "2026-06-06T05:11:40Z",
+        "kind": "commit",
+        "text": "docs: P1 체크리스트 — P1-6~8 완료, 남김 갱신(projectStepUsage·conceptDepth·blocker 확대)",
+        "sha": "d0cf94f"
+      },
+      {
+        "date": "2026-06-07T02:47:44Z",
+        "kind": "commit",
+        "text": "docs: roadmap을 두 줄기(top-down·v2.0)로 통합 갱신 + P0/P2 push 상태 정정",
+        "sha": "36c3dc1"
+      },
+      {
+        "date": "2026-06-07T07:26:41Z",
+        "kind": "commit",
+        "text": "content(lessons): neededWhen 21개 전수 백필 (12→33) — 막힘 착지 레슨 JIT 헤더 100%",
+        "sha": "a564b31"
+      },
+      {
+        "date": "2026-06-07T09:18:12Z",
+        "kind": "commit",
+        "text": "content(lessons): conceptDepth 9개 백필 (3→12) — concepts.ts 10개 개념 1:1 커버",
+        "sha": "5447116"
+      },
+      {
+        "date": "2026-06-07T09:46:48Z",
+        "kind": "commit",
+        "text": "feat(me): 산출물 포트폴리오 — 프로젝트 완성 기록 + /me '내가 지은 것'",
+        "sha": "b3e5e4e"
+      },
+      {
+        "date": "2026-06-07T11:07:45Z",
+        "kind": "commit",
+        "text": "feat(analytics): Plausible 운영자 학습 분석 (env 게이팅) + 완성 이벤트",
+        "sha": "f133550"
+      },
+      {
+        "date": "2026-06-07T11:36:47Z",
+        "kind": "commit",
+        "text": "feat(playground): 프롬프트 연습장 1차 — Gemini BYO 키 인앱 호출",
+        "sha": "0556eba"
+      },
+      {
+        "date": "2026-06-07T13:46:51Z",
+        "kind": "commit",
+        "text": "content(playground): playgroundPrompt 5개 확대 (1→6)",
+        "sha": "fb326d6"
+      },
+      {
+        "date": "2026-06-07T14:48:53Z",
+        "kind": "commit",
+        "text": "feat(me): 전역 AI 키 설정 — /me에서 한 번 넣으면 모든 연습장 공유",
+        "sha": "ac9a4d1"
+      },
+      {
+        "date": "2026-06-10",
+        "kind": "progress",
+        "text": "완성도 45% · 커밋 +13"
+      },
+      {
+        "date": "2026-06-10T06:39:29Z",
+        "kind": "commit",
+        "text": "docs: 세션 핸드오프 (콘텐츠 깊이·포트폴리오·연습장 8트랙) + .playwright-mcp ignore",
+        "sha": "363570c"
+      },
+      {
+        "date": "2026-06-10T07:11:04Z",
+        "kind": "commit",
+        "text": "voice: 보이스 정의서 + diff-only 편집 룰 — AI 문체 회귀 차단 1차",
+        "sha": "b78a456"
+      },
+      {
+        "date": "2026-06-14",
+        "kind": "progress",
+        "text": "완성도 45%"
+      },
+      {
+        "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 45%"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 45%"
+      },
+      {
+        "date": "2026-06-18",
+        "kind": "progress",
+        "text": "완성도 45%"
+      },
+      {
+        "date": "2026-07-01",
+        "kind": "progress",
+        "text": "완성도 45%"
+      },
+      {
+        "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 45%"
+      }
+    ],
+    "ai-company-tycoon-boundaryless": [
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "MVP 1 마일스톤에 커밋을 몰아주시길. 정비 작업보다 한 판이라도 돌아가는 코드가 지금 가장 급합니다."
+      },
+      {
+        "date": "2026-05-30T22:28:51Z",
+        "kind": "commit",
+        "text": "Focus ending retries on the next run",
+        "sha": "82b048f"
+      },
+      {
+        "date": "2026-05-30T22:33:07Z",
+        "kind": "commit",
+        "text": "Add near-miss retry QA entry",
+        "sha": "194468d"
+      },
+      {
+        "date": "2026-05-30T22:55:59Z",
+        "kind": "commit",
+        "text": "Gate near-miss retry QA for beta",
+        "sha": "38ba3d3"
+      },
+      {
+        "date": "2026-05-30T23:04:13Z",
+        "kind": "commit",
+        "text": "Add local browser flow smoke gate",
+        "sha": "2488107"
+      },
+      {
+        "date": "2026-05-30T23:07:05Z",
+        "kind": "commit",
+        "text": "Add flow smoke freshness check",
+        "sha": "0353d24"
+      },
+      {
+        "date": "2026-05-30T23:09:46Z",
+        "kind": "commit",
+        "text": "Cover final result routes in flow smoke",
+        "sha": "4b0b4a0"
+      },
+      {
+        "date": "2026-05-30T23:14:05Z",
+        "kind": "commit",
+        "text": "Expand flow smoke to completion routes",
+        "sha": "244f3e9"
+      },
+      {
+        "date": "2026-05-30T23:19:22Z",
+        "kind": "commit",
+        "text": "Add beta candidate local gate",
+        "sha": "2e324b6"
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 40%"
+      },
+      {
+        "date": "2026-06-01T17:17:00Z",
+        "kind": "commit",
+        "text": "Trim the entry bundle under the chunk warning",
+        "sha": "ab4e8cc"
+      },
+      {
+        "date": "2026-06-01T17:19:42Z",
+        "kind": "commit",
+        "text": "Mark the polish track shipped and hold at the RC gate",
+        "sha": "39b0056"
+      },
+      {
+        "date": "2026-06-01T22:21:01Z",
+        "kind": "commit",
+        "text": "Ship the v1.0-beta preview and write the release report",
+        "sha": "397ba67"
+      },
+      {
+        "date": "2026-06-01T22:33:48Z",
+        "kind": "commit",
+        "text": "Design the office-first menu popup redesign",
+        "sha": "694c44c"
+      },
+      {
+        "date": "2026-06-02T02:25:38Z",
+        "kind": "commit",
+        "text": "Review the menu IA and pin the office-first popup design",
+        "sha": "06415a3"
+      },
+      {
+        "date": "2026-06-02T02:44:25Z",
+        "kind": "commit",
+        "text": "Swap the menu column for a popup launcher",
+        "sha": "deb7c9d"
+      },
+      {
+        "date": "2026-06-02T03:06:40Z",
+        "kind": "commit",
+        "text": "Give the office the whole stage",
+        "sha": "64b5321"
+      },
+      {
+        "date": "2026-06-02T11:49:08Z",
+        "kind": "commit",
+        "text": "Lift the office by emptying the top bar",
+        "sha": "ecc48ed"
+      },
+      {
+        "date": "2026-06-03",
+        "kind": "progress",
+        "text": "진척 40% · 커밋 +4"
+      },
+      {
+        "date": "2026-06-03T16:25:42Z",
+        "kind": "commit",
+        "text": "Label the advance-month button on desktop",
+        "sha": "8c77563"
+      },
+      {
+        "date": "2026-06-03T23:07:32Z",
+        "kind": "commit",
+        "text": "Take the strategy hand out of the command row and label the controls",
+        "sha": "dc615eb"
+      },
+      {
+        "date": "2026-06-03T23:47:08Z",
+        "kind": "commit",
+        "text": "Plan the v1.0 redesign completion and queue the Codex blocks",
+        "sha": "a2836ac"
+      },
+      {
+        "date": "2026-06-04",
+        "kind": "progress",
+        "text": "진척 40%"
+      },
+      {
+        "date": "2026-06-05",
+        "kind": "progress",
+        "text": "진척 40%"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 40%"
+      },
+      {
+        "date": "2026-06-09T07:01:33Z",
+        "kind": "commit",
+        "text": "feat-006 Block A: 경쟁사·시장점유율·전국 랭킹 시스템 (헤드리스)",
+        "sha": "ecf3e44"
+      },
+      {
+        "date": "2026-06-09T07:06:19Z",
+        "kind": "commit",
+        "text": "feat-006 Block B: LED 전국 랭킹 전광판 UI (CD-1)",
+        "sha": "70eb86a"
+      },
+      {
+        "date": "2026-06-09T07:07:26Z",
+        "kind": "commit",
+        "text": "docs: feat-006 전광판 트랙(A+B) progress 갱신",
+        "sha": "7673d51"
+      },
+      {
+        "date": "2026-06-09T08:36:53Z",
+        "kind": "commit",
+        "text": "feat-006 Block C: 코어3 자원 HUD + ＋트레이 + 목표 리본 (CD-2)",
+        "sha": "93f6d4c"
+      },
+      {
+        "date": "2026-06-09T08:41:32Z",
+        "kind": "commit",
+        "text": "feat-006 Block D: 캐릭터·씬 생동감 (직원 통통 모션 + 모달 팝인)",
+        "sha": "08c13a1"
+      },
+      {
+        "date": "2026-06-09T08:42:34Z",
+        "kind": "commit",
+        "text": "docs: feat-006 A~D 완료 반영 (progress + feature_list)",
+        "sha": "15eb305"
+      },
+      {
+        "date": "2026-06-09T09:24:02Z",
+        "kind": "commit",
+        "text": "docs: feat-006 A~D 일단락, Block E 보류 (사용자 지시)",
+        "sha": "d827dc1"
+      },
+      {
+        "date": "2026-06-09T11:30:44Z",
+        "kind": "commit",
+        "text": "feat-006 Block E: 하단 도크 내비 + 다음달 FAB + 탭 팝업 (CD-3, office-first)",
+        "sha": "d3e5eb2"
+      },
+      {
+        "date": "2026-06-10",
+        "kind": "progress",
+        "text": "완성도 40% · 커밋 +33"
+      },
+      {
+        "date": "2026-06-13T05:03:25Z",
+        "kind": "commit",
+        "text": "docs: feat-014 #5 마감 — 성급 배경 반입, 경영 탭 완결 (EditMode 145/145)",
+        "sha": "00e8ae7"
+      },
+      {
+        "date": "2026-06-13T05:25:20Z",
+        "kind": "commit",
+        "text": "docs: feat-016 등록 — 오피스 비주얼 전면 재작업 (사용자 피드백: 사무실 같지 않다 → 진짜 픽셀아트 룸)",
+        "sha": "ccf6b51"
+      },
+      {
+        "date": "2026-06-13T08:54:52Z",
+        "kind": "commit",
+        "text": "feat-016: 오피스 비주얼 전면 재작업 — 정면 단면 픽셀룸 4종",
+        "sha": "4ffc4cf"
+      },
+      {
+        "date": "2026-06-13T08:55:20Z",
+        "kind": "commit",
+        "text": "feat-017: 픽셀 컷씬 시스템 골격 — 출시 발표회 + No-cameras 수정",
+        "sha": "4a4174d"
+      },
+      {
+        "date": "2026-06-13T11:17:44Z",
+        "kind": "commit",
+        "text": "feat-017 #1~#3: 픽셀 컷씬 tier 확장 — 승급·상장·미니",
+        "sha": "140f250"
+      },
+      {
+        "date": "2026-06-13T12:07:46Z",
+        "kind": "commit",
+        "text": "feat-018: 픽셀 배경 폰 고품질 대응 — cover + 고해상도",
+        "sha": "4d09d96"
+      },
+      {
+        "date": "2026-06-13T12:40:10Z",
+        "kind": "commit",
+        "text": "feat-018 후속: 4종 룸 벽 중하단 디테일 — 20:9 휑함 해소",
+        "sha": "80e9867"
+      },
+      {
+        "date": "2026-06-13T14:31:57Z",
+        "kind": "commit",
+        "text": "docs: 후속 개발 핸드오프 정리 — 픽셀 비주얼 후속 + 도감 UI (backlog)",
+        "sha": "305588c"
+      },
+      {
+        "date": "2026-06-13T23:37:25Z",
+        "kind": "commit",
+        "text": "docs: feat-020 진행 기록 정정 — Unity 트랙은 unity/progress.md에 (루트 progress.md 복원)",
+        "sha": "485d574"
+      },
+      {
+        "date": "2026-06-13T23:49:28Z",
+        "kind": "commit",
+        "text": "feat-020 #5 환호 포즈: 캐릭터 3종 환호 프레임 + ActorAnim 3-상태",
+        "sha": "8daff7a"
+      },
+      {
+        "date": "2026-06-14",
+        "kind": "progress",
+        "text": "완성도 40% · 커밋 +45"
+      },
+      {
+        "date": "2026-06-14T00:04:46Z",
+        "kind": "commit",
+        "text": "docs: feat-020 증거 완성 — 소품·환호 포즈 포함 + Codex 스코프 교훈",
+        "sha": "3900905"
+      },
+      {
+        "date": "2026-06-14T03:05:25Z",
+        "kind": "commit",
+        "text": "feat-021 킥오프: 도감 열람 UI 설계·등록 — 크로스런 수집 그리드 갤러리",
+        "sha": "94e4c9e"
+      },
+      {
+        "date": "2026-06-14T04:00:45Z",
+        "kind": "commit",
+        "text": "feat-021: 도감 열람 UI — 크로스런 수집 그리드 갤러리",
+        "sha": "96cb40a"
+      },
+      {
+        "date": "2026-06-14T10:46:15Z",
+        "kind": "commit",
+        "text": "feat-022 킥오프: 트렌드 콘텐츠 웨이브 설계·등록 — 2025-26 AI 트렌드 월드 이벤트",
+        "sha": "63f7452"
+      },
+      {
+        "date": "2026-06-14T11:09:08Z",
+        "kind": "commit",
+        "text": "feat-022: 트렌드 콘텐츠 웨이브 — 2025-26 AI 트렌드 월드 이벤트 12종 (30→42)",
+        "sha": "1dc99ad"
+      },
+      {
+        "date": "2026-06-14T16:55:26Z",
+        "kind": "commit",
+        "text": "balance: 봇 승리 27→51개월 — 승리 임계값 상향 + 회귀 가드",
+        "sha": "51fa08f"
+      },
+      {
+        "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 40% · 커밋 +15"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 40%"
+      },
+      {
+        "date": "2026-06-18",
+        "kind": "progress",
+        "text": "완성도 40%"
+      },
+      {
+        "date": "2026-06-28T15:56:06Z",
+        "kind": "commit",
+        "text": "feat-030: 큰 숫자 임팩트 폰트(Black Han Sans) — 가독성 시안 매칭",
+        "sha": "d996eed"
+      },
+      {
+        "date": "2026-06-28T22:37:54Z",
+        "kind": "commit",
+        "text": "feat-030: 직원 얼굴 회색빛 수정 — 피부 팔레트 따뜻하게",
+        "sha": "9d05be4"
+      },
+      {
+        "date": "2026-06-28T23:38:14Z",
+        "kind": "commit",
+        "text": "feat-030: 손익 브리핑 보텀시트+순익 틱업 · 본문/버튼 폰트 · 트렌드바 문구",
+        "sha": "0690a02"
+      },
+      {
+        "date": "2026-06-28T23:42:42Z",
+        "kind": "commit",
+        "text": "feat-030 ④: 이벤트 모달 옅은 스크림 통일 + progress 갱신",
+        "sha": "6bcd3e0"
+      },
+      {
+        "date": "2026-06-29T00:48:29Z",
+        "kind": "commit",
+        "text": "feat-030: 오피스 고정 3레이어 — PropSpec.Layer(Back/Front) + 전경 소품 가림",
+        "sha": "d7145fb"
+      },
+      {
+        "date": "2026-06-29T14:45:56Z",
+        "kind": "commit",
+        "text": "feat-030: 온보딩 첫 60초 — AI 비서 '첫 출근' 코치마크",
+        "sha": "42ecea7"
+      },
+      {
+        "date": "2026-06-29T14:50:29Z",
+        "kind": "commit",
+        "text": "docs(feat-030): 핸드오프 — 시안 전 항목 구현 완료(13커밋 미푸시)",
+        "sha": "944aa6c"
+      },
+      {
+        "date": "2026-06-30T08:54:03Z",
+        "kind": "commit",
+        "text": "docs(feat-030): 다음 세션 조정 항목 — 1인 창고 시작·업그레이드 조건 해금·버튼 affordance",
+        "sha": "c7fe5f0"
+      },
+      {
+        "date": "2026-07-01",
+        "kind": "progress",
+        "text": "완성도 75% · (+35p) · 커밋 +81"
+      },
+      {
+        "date": "2026-07-12T14:39:42Z",
+        "kind": "commit",
+        "text": "docs(feat-048): 소품 타일 스케일 통일 설계 스펙",
+        "sha": "42f1b5e"
+      },
+      {
+        "date": "2026-07-12T14:49:22Z",
+        "kind": "commit",
+        "text": "docs(feat-048): 소품 타일 스케일 통일 구현 계획",
+        "sha": "b9cd1b1"
+      },
+      {
+        "date": "2026-07-12T15:05:19Z",
+        "kind": "commit",
+        "text": "feat(feat-048): OfficePropScale 헤드리스 타일 스케일 원천 + 테스트",
+        "sha": "c6547fd"
+      },
+      {
+        "date": "2026-07-12T15:08:12Z",
+        "kind": "commit",
+        "text": "feat(feat-048): 상점 소품 균일 셀 AddPropThumb(상대크기·바닥정렬)",
+        "sha": "e173878"
+      },
+      {
+        "date": "2026-07-12T15:08:12Z",
+        "kind": "commit",
+        "text": "test(feat-048): 씬키∪상점키 스케일 표 커버리지 fail-loud",
+        "sha": "48fc028"
+      },
+      {
+        "date": "2026-07-12T15:08:12Z",
+        "kind": "commit",
+        "text": "feat(feat-048): OfficeProps PropSpec Height→Depth, PlaceProp이 OfficePropScale 소비",
+        "sha": "daa0e0b"
+      },
+      {
+        "date": "2026-07-12T15:12:25Z",
+        "kind": "commit",
+        "text": "docs(feat-048): 소품 타일 스케일 통일 done — progress/feature_list 갱신",
+        "sha": "3cdcc38"
+      },
+      {
+        "date": "2026-07-13T00:29:02Z",
+        "kind": "commit",
+        "text": "docs(feat-048): 다음 세션 핸드오프 갱신 — feat-047·048 done, 후보 정리",
+        "sha": "c52da8a"
+      },
+      {
+        "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 75%"
+      }
+    ],
+    "story-x-beta": [
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "매체 하나(웹툰이나 단편 만화)를 깊이 끝까지 완성해보시길. 골든 케이스 하나가 나머지 매체의 품질 기준이 됩니다."
+      },
+      {
+        "date": "2026-05-29T12:10:54Z",
+        "kind": "commit",
+        "text": "Merge: 지표 카드 폭 초과 수정 + 마진 검토 병렬화",
+        "sha": "02680dc"
+      },
+      {
+        "date": "2026-05-29T14:52:35Z",
+        "kind": "commit",
+        "text": "docs: 사회과학 글쓰기 확장 로드맵 (검토용)",
+        "sha": "d380f68"
+      },
+      {
+        "date": "2026-05-29T14:57:22Z",
+        "kind": "commit",
+        "text": "docs: 사회과학 로드맵 확정 결정 반영 (로컬 휴리스틱·영어 APA·academic 매체)",
+        "sha": "e172350"
+      },
+      {
+        "date": "2026-05-30T02:30:37Z",
+        "kind": "commit",
+        "text": "feat(academic): A1 — 사회과학/학술 매체 골격 추가",
+        "sha": "98d6221"
+      },
+      {
+        "date": "2026-05-30T02:31:05Z",
+        "kind": "commit",
+        "text": "Merge: A1 사회과학/학술 매체 골격 (academic 5번째 매체)",
+        "sha": "a89e34c"
+      },
+      {
+        "date": "2026-05-30T08:52:17Z",
+        "kind": "commit",
+        "text": "feat(academic): A2 — 주장 레저 + 주장-근거 하네스",
+        "sha": "31b114b"
+      },
+      {
+        "date": "2026-05-30T08:53:13Z",
+        "kind": "commit",
+        "text": "Merge: A2 주장 레저 + 주장-근거 하네스",
+        "sha": "47b15f9"
+      },
+      {
+        "date": "2026-05-30T08:53:49Z",
+        "kind": "commit",
+        "text": "docs: A2 완료 인계 노트 갱신",
+        "sha": "020dddc"
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 45%"
+      },
+      {
+        "date": "2026-05-31T14:08:00Z",
+        "kind": "commit",
+        "text": "Merge: A3 인용 무결성 게이트 (환각 인용 탐지)",
+        "sha": "d90cff2"
+      },
+      {
+        "date": "2026-05-31T14:08:00Z",
+        "kind": "commit",
+        "text": "feat(academic): A3 — 인용 무결성 게이트 + 환각 인용 탐지",
+        "sha": "5c7b846"
+      },
+      {
+        "date": "2026-05-31T14:19:21Z",
+        "kind": "commit",
+        "text": "Merge: A4 반론 무결성 + 연구 윤리 게이트",
+        "sha": "3c8ba7a"
+      },
+      {
+        "date": "2026-05-31T14:19:21Z",
+        "kind": "commit",
+        "text": "feat(academic): A4 — 반론 무결성 + 연구 윤리 게이트",
+        "sha": "3c8861b"
+      },
+      {
+        "date": "2026-05-31T14:33:05Z",
+        "kind": "commit",
+        "text": "Merge: A5 학술 퍼블리시 — 사회과학 확장 A1~A5 완결",
+        "sha": "1c652fa"
+      },
+      {
+        "date": "2026-05-31T14:33:05Z",
+        "kind": "commit",
+        "text": "feat(academic): A5 — 학술 퍼블리시 (사회과학 로드맵 완결)",
+        "sha": "513b50e"
+      },
+      {
+        "date": "2026-06-03",
+        "kind": "progress",
+        "text": "진척 45% · 커밋 +2"
+      },
+      {
+        "date": "2026-06-03T13:27:33Z",
+        "kind": "commit",
+        "text": "feat(harness): M11 rank1~4 + M12 Codex 로컬 연결 (멀티에이전트 검토 정비)",
+        "sha": "8d3aca2"
+      },
+      {
+        "date": "2026-06-03T13:36:57Z",
+        "kind": "commit",
+        "text": "docs: rank5 인계 프롬프트 + 상태 문서 갱신 (M11 세션 마무리)",
+        "sha": "054faa7"
+      },
+      {
+        "date": "2026-06-04",
+        "kind": "progress",
+        "text": "진척 45%"
+      },
+      {
+        "date": "2026-06-05",
+        "kind": "progress",
+        "text": "진척 45%"
+      },
+      {
+        "date": "2026-06-05T15:01:02Z",
+        "kind": "commit",
+        "text": "docs: 방향 C 플로팅 에디터 시안 체크포인트 진행 상태·인계 동기화",
+        "sha": "d9b5a1f"
+      },
+      {
+        "date": "2026-06-05T23:54:34Z",
+        "kind": "commit",
+        "text": "docs(spec): 방향 C 플로팅 에디터 실데이터 배선 설계",
+        "sha": "01e421a"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 45% · 커밋 +12"
+      },
+      {
+        "date": "2026-06-06T00:01:46Z",
+        "kind": "commit",
+        "text": "docs(plan): 방향 C 플로팅 에디터 실데이터 배선 구현 계획",
+        "sha": "929fdf6"
+      },
+      {
+        "date": "2026-06-06T00:07:08Z",
+        "kind": "commit",
+        "text": "test(editor): FloatingEditor 실데이터 배선 RED — props·콜백·시안제거 단언",
+        "sha": "fc7d5c4"
+      },
+      {
+        "date": "2026-06-06T00:11:03Z",
+        "kind": "commit",
+        "text": "feat(editor): FloatingEditor props-driven 리팩터 + App standalone 제거",
+        "sha": "a803785"
+      },
+      {
+        "date": "2026-06-06T00:14:09Z",
+        "kind": "commit",
+        "text": "feat(editor): StoryXDesk 가 floating 프리뷰에 실 상태·검토·페르소나 props 주입",
+        "sha": "00b5404"
+      },
+      {
+        "date": "2026-06-06T00:19:08Z",
+        "kind": "commit",
+        "text": "docs(editor): 플로팅 실데이터 배선 검증 캡처 + 계획 체크리스트 갱신",
+        "sha": "f4c506c"
+      },
+      {
+        "date": "2026-06-06T00:21:38Z",
+        "kind": "commit",
+        "text": "docs: 플로팅 에디터 실데이터 배선 진행 상태·인계 동기화",
+        "sha": "10c105a"
+      },
+      {
+        "date": "2026-06-10",
+        "kind": "progress",
+        "text": "완성도 45%"
+      },
+      {
+        "date": "2026-06-13T06:15:45Z",
+        "kind": "commit",
+        "text": "feat(phase-a): A-4 헌장 프롬프트 주입 — digest 절·예산/종반/척추 규칙·길 잃음 점검",
+        "sha": "40646ea"
+      },
+      {
+        "date": "2026-06-13T06:17:37Z",
+        "kind": "commit",
+        "text": "docs: A-4 완료 반영 — 상태·핸드오프·로드맵 (다음=A-5 배선)",
+        "sha": "0effe79"
+      },
+      {
+        "date": "2026-06-13T07:07:34Z",
+        "kind": "commit",
+        "text": "feat(phase-a): A-5 헌장 예산 배선(생성 경로) — StoryXDesk→draftClient→api/draft·CLI",
+        "sha": "43c6d56"
+      },
+      {
+        "date": "2026-06-13T07:10:47Z",
+        "kind": "commit",
+        "text": "feat(phase-a): A-5 헌장 예산 배선(검토 경로) — reviewClient→api/review-agent·CLI",
+        "sha": "d2fd3f8"
+      },
+      {
+        "date": "2026-06-13T07:12:21Z",
+        "kind": "commit",
+        "text": "docs: A-5 완료 반영 — 헌장 체인 배선 끝, 다음=A-3 온보딩(헌장 생성)",
+        "sha": "4c64a1d"
+      },
+      {
+        "date": "2026-06-13T07:44:08Z",
+        "kind": "commit",
+        "text": "feat(phase-a): A-3 헌장 빌더 — deriveBeatSheet·buildStoryContractFromOnboarding",
+        "sha": "54fa97a"
+      },
+      {
+        "date": "2026-06-13T08:56:39Z",
+        "kind": "commit",
+        "text": "feat(phase-a): A-3 온보딩 헌장 생성 단계 — 결말 역산 + 4줄 척추 잠금",
+        "sha": "2e51fa2"
+      },
+      {
+        "date": "2026-06-13T08:58:14Z",
+        "kind": "commit",
+        "text": "docs: A-3 완료 반영 — 헌장 체인 live, 다음=A-2 단계 게이트",
+        "sha": "8933b10"
+      },
+      {
+        "date": "2026-06-14",
+        "kind": "progress",
+        "text": "완성도 45% · 커밋 +63"
+      },
+      {
+        "date": "2026-06-15T05:33:53Z",
+        "kind": "commit",
+        "text": "feat(quality): api/vs-candidates prod 라우트 (C-1 Task5)",
+        "sha": "14ac597"
+      },
+      {
+        "date": "2026-06-15T05:34:00Z",
+        "kind": "commit",
+        "text": "feat(quality): vite /api/vs-candidates 브리지 (C-1 Task6)",
+        "sha": "442f861"
+      },
+      {
+        "date": "2026-06-15T05:37:25Z",
+        "kind": "commit",
+        "text": "feat(quality): vsCandidatesClient + aiStatus mode (C-1 Task7)",
+        "sha": "641668c"
+      },
+      {
+        "date": "2026-06-15T05:40:29Z",
+        "kind": "commit",
+        "text": "feat(quality): FloatingEditor .fc-vs 전개 후보 블록 (C-1 Task8)",
+        "sha": "5a2c7b1"
+      },
+      {
+        "date": "2026-06-15T05:44:53Z",
+        "kind": "commit",
+        "text": "feat(quality): StoryXDesk VS 배선 + .fc-vs CSS (C-1 Task9)",
+        "sha": "8a0955a"
+      },
+      {
+        "date": "2026-06-15T05:53:36Z",
+        "kind": "commit",
+        "text": "fix(quality): VS 핸들러 finally·미회수 약속 dedup (C-1 리뷰 반영)",
+        "sha": "aad16c5"
+      },
+      {
+        "date": "2026-06-15T05:59:47Z",
+        "kind": "commit",
+        "text": "docs: VS 회차 후보(C-1) 완료 — 검증·인계 (C-1 Task10)",
+        "sha": "3a42620"
+      },
+      {
+        "date": "2026-06-15T13:16:04Z",
+        "kind": "commit",
+        "text": "fix(quality): VS 노출 자동열림 — 회차 생성 시 state 패널 자동 표시",
+        "sha": "3be758f"
+      },
+      {
+        "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 45% · 커밋 +30"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 45% · 커밋 +1"
+      },
+      {
+        "date": "2026-06-17T06:03:44Z",
+        "kind": "commit",
+        "text": "fix(quality): 온보딩 분량 2체계 정합 — 매체 단계 중편 제거",
+        "sha": "4ac7bb6"
+      },
+      {
+        "date": "2026-06-17T13:15:22Z",
+        "kind": "commit",
+        "text": "fix(quality): 제목 \". \" 누수 — deriveProjectTitle 회차 접두에 마침표 구분자 추가",
+        "sha": "9f017c1"
+      },
+      {
+        "date": "2026-06-17T15:06:24Z",
+        "kind": "commit",
+        "text": "feat(quality): 의도 메모 영속 — VS·fork 선택이 새로고침에도 안 날아가게 (영속 Part 1)",
+        "sha": "fa01acd"
+      },
+      {
+        "date": "2026-06-18",
+        "kind": "progress",
+        "text": "완성도 45% · 커밋 +3"
+      },
+      {
+        "date": "2026-06-30T16:19:26Z",
+        "kind": "commit",
+        "text": "feat(canon): digest 절단을 중요도 검색+reveal 분리로 교체(A-6 직격)",
+        "sha": "1978586"
+      },
+      {
+        "date": "2026-06-30T16:22:28Z",
+        "kind": "commit",
+        "text": "feat(canon): normalizeProject 가 CanonFact importance·participants·reveal·evidence 백필",
+        "sha": "208a656"
+      },
+      {
+        "date": "2026-06-30T16:26:47Z",
+        "kind": "commit",
+        "text": "fix(canon): longform 회귀 테스트를 중간 앵커 생존(A-6)으로 교정 + 미사용 CONTEXT_CANON_HEAD 제거",
+        "sha": "1d7129f"
+      },
+      {
+        "date": "2026-06-30T16:35:13Z",
+        "kind": "commit",
+        "text": "fix(canon): selectCanonForContext 가 alwaysInclude 를 앵커로 직접 인정(mid-session 핀)",
+        "sha": "26c88c4"
+      },
+      {
+        "date": "2026-06-30T16:36:53Z",
+        "kind": "commit",
+        "text": "docs(canon): Canon Core MVP-0 done — 정본·스펙·계획 + progress·handoff 갱신",
+        "sha": "4418a86"
+      },
+      {
+        "date": "2026-06-30T17:07:25Z",
+        "kind": "commit",
+        "text": "Merge pull request #7 from sgeniusk/feat/canon-core-mvp0",
+        "sha": "d034607"
+      },
+      {
+        "date": "2026-06-30T17:17:00Z",
+        "kind": "commit",
+        "text": "docs(canon): Canon Core MVP-0 상태를 main 머지 완료로 정정(PR #7)",
+        "sha": "8750bb6"
+      },
+      {
+        "date": "2026-06-30T17:17:16Z",
+        "kind": "commit",
+        "text": "Merge pull request #8 from sgeniusk/docs/canon-core-merged-status",
+        "sha": "c1d1403"
+      },
+      {
+        "date": "2026-07-01",
+        "kind": "progress",
+        "text": "완성도 50% · (+5p) · 커밋 +105"
+      },
+      {
+        "date": "2026-07-12T16:05:40Z",
+        "kind": "commit",
+        "text": "docs(handoff): 최종 홀리스틱 리뷰 Minor 3건 기록 — 전부 비차단 후속",
+        "sha": "91fe34b"
+      },
+      {
+        "date": "2026-07-13T00:26:57Z",
+        "kind": "commit",
+        "text": "Merge pull request #34 from sgeniusk/feat/source-discovery-preset",
+        "sha": "e1e1cf0"
+      },
+      {
+        "date": "2026-07-13T00:28:08Z",
+        "kind": "commit",
+        "text": "Merge pull request #36 from sgeniusk/feat/onboard-chat-ideate",
+        "sha": "978d8af"
+      },
+      {
+        "date": "2026-07-13T00:30:09Z",
+        "kind": "commit",
+        "text": "docs(harness): S1·S2 main 머지 반영 — 스택 PR close 교훈·다음 세션 사용자 테스트 시작점 기록",
+        "sha": "5c14880"
+      },
+      {
+        "date": "2026-07-15T08:51:56Z",
+        "kind": "commit",
+        "text": "P0-a: add local condense jobs and generation inbox",
+        "sha": "f8bddc9"
+      },
+      {
+        "date": "2026-07-15T08:53:07Z",
+        "kind": "commit",
+        "text": "P0-a: record verification and handoff",
+        "sha": "363310b"
+      },
+      {
+        "date": "2026-07-15T08:53:43Z",
+        "kind": "commit",
+        "text": "P0-a: link pull request",
+        "sha": "6ff722d"
+      },
+      {
+        "date": "2026-07-15T10:06:57Z",
+        "kind": "commit",
+        "text": "Merge pull request #38 from sgeniusk/codex/p0a-condense-job-polling",
+        "sha": "0df4cfa"
+      },
+      {
+        "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 50%"
+      }
+    ],
+    "BookCircle": [
+      {
+        "date": "2026-05-13T14:27:24Z",
+        "kind": "commit",
+        "text": "Initial BookCircle scaffold",
+        "sha": "58bb89b"
+      },
+      {
+        "date": "2026-05-13T14:32:12Z",
+        "kind": "commit",
+        "text": "Add health endpoint for deployment",
+        "sha": "cd3b768"
+      },
+      {
+        "date": "2026-05-13T22:21:57Z",
+        "kind": "commit",
+        "text": "Trigger Vercel deployment with verified author",
+        "sha": "5eb5c37"
+      },
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "책담과 도메인이 겹치니 둘의 관계부터 정리하시길. 지금 끌어올리기보다 재개 트리거만 적어두면 충분합니다."
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 20%"
+      },
+      {
+        "date": "2026-06-03",
+        "kind": "progress",
+        "text": "진척 20%"
+      },
+      {
+        "date": "2026-06-04",
+        "kind": "progress",
+        "text": "진척 20%"
+      },
+      {
+        "date": "2026-06-05",
+        "kind": "progress",
+        "text": "진척 20%"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-06-10",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-06-14",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-06-18",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-07-01",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 20%"
+      }
+    ],
+    "jewelry-webtoon-cloud": [
+      {
+        "date": "2026-05-15T02:38:05Z",
+        "kind": "commit",
+        "text": "feat: replace ep001 evening panels with png art",
+        "sha": "bcaa2f3"
+      },
+      {
+        "date": "2026-05-15T03:00:07Z",
+        "kind": "commit",
+        "text": "feat: complete ep001 png art pass",
+        "sha": "dafe921"
+      },
+      {
+        "date": "2026-05-15T03:32:31Z",
+        "kind": "commit",
+        "text": "fix: gate reader behind cover actions",
+        "sha": "de45c29"
+      },
+      {
+        "date": "2026-05-15T03:40:14Z",
+        "kind": "commit",
+        "text": "fix: support direct file preview",
+        "sha": "af611ee"
+      },
+      {
+        "date": "2026-05-15T03:44:52Z",
+        "kind": "commit",
+        "text": "fix: stabilize cover and reader layout",
+        "sha": "022f325"
+      },
+      {
+        "date": "2026-05-15T03:55:15Z",
+        "kind": "commit",
+        "text": "fix: compact episode reader",
+        "sha": "4ced752"
+      },
+      {
+        "date": "2026-05-15T04:00:14Z",
+        "kind": "commit",
+        "text": "fix: tighten reader navigation",
+        "sha": "3f09d0e"
+      },
+      {
+        "date": "2026-05-15T04:03:52Z",
+        "kind": "commit",
+        "text": "fix: scale episode navigation content",
+        "sha": "5a0c61b"
+      },
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "재개 트리거를 명시해두시길('핵심 게임 2개 마감 후'처럼). 지금은 현재 산출물을 README에 잘 박아두는 것으로 충분합니다."
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 20%"
+      },
+      {
+        "date": "2026-06-03",
+        "kind": "progress",
+        "text": "진척 20%"
+      },
+      {
+        "date": "2026-06-04",
+        "kind": "progress",
+        "text": "진척 20%"
+      },
+      {
+        "date": "2026-06-05",
+        "kind": "progress",
+        "text": "진척 20%"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-06-10",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-06-14",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-06-18",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-07-01",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 20%"
+      }
+    ],
+    "Nodeloom": [
+      {
+        "date": "2026-05-18T15:43:56Z",
+        "kind": "commit",
+        "text": "v1.1.1 — 마인드맵 분기선이 세로로 뭉치던 버그 수정",
+        "sha": "08c9eac"
+      },
+      {
+        "date": "2026-05-19T03:06:33Z",
+        "kind": "commit",
+        "text": "v1.2.0 — 마인드맵 이미지 내보내기 (PNG·SVG·PDF)",
+        "sha": "92a807b"
+      },
+      {
+        "date": "2026-05-19T04:23:59Z",
+        "kind": "commit",
+        "text": "v1.3.0 — XMind 벤치마크: 템플릿·노드 모양 확장",
+        "sha": "65198ac"
+      },
+      {
+        "date": "2026-05-19T11:18:36Z",
+        "kind": "commit",
+        "text": "v1.3.1 — 밑줄 분기선 분리 + 단색 모드 색 불일치 수정",
+        "sha": "f664138"
+      },
+      {
+        "date": "2026-05-19T11:31:39Z",
+        "kind": "commit",
+        "text": "v1.3.2 — 분기선이 노드에서 떨어져 끝나던 갭 수정",
+        "sha": "719f261"
+      },
+      {
+        "date": "2026-05-19T11:55:57Z",
+        "kind": "commit",
+        "text": "v1.3.3 — 밑줄형 분기선과 밑줄의 중심선 어긋남 수정",
+        "sha": "3d0f2c1"
+      },
+      {
+        "date": "2026-05-19T12:08:24Z",
+        "kind": "commit",
+        "text": "v1.3.4 — 노드 자식 추가 버튼 + 분기선 z-순서",
+        "sha": "33f7a01"
+      },
+      {
+        "date": "2026-05-20T15:55:06Z",
+        "kind": "commit",
+        "text": "하네스 엔지니어링 정비 — 5개 subsystem 100/100",
+        "sha": "fc08b81"
+      },
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "20인 페르소나 알파 피드백의 B/C 우선순위부터 정리하시길. 대형 트리 렌더 성능(React Flow 가상화)도 사용성 체감을 크게 좌우합니다."
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 56%"
+      },
+      {
+        "date": "2026-06-03",
+        "kind": "progress",
+        "text": "진척 56%"
+      },
+      {
+        "date": "2026-06-04",
+        "kind": "progress",
+        "text": "진척 56%"
+      },
+      {
+        "date": "2026-06-05",
+        "kind": "progress",
+        "text": "진척 56%"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-06-10",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-06-14",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-06-18",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-07-01",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 56%"
+      }
+    ],
+    "design-system-school": [
+      {
+        "date": "2026-05-21T10:37:50Z",
+        "kind": "commit",
+        "text": "Phase 5: learn paths include patterns",
+        "sha": "28ffe8a"
+      },
+      {
+        "date": "2026-05-21T10:59:34Z",
+        "kind": "commit",
+        "text": "Phase 6: theme-aware TokenDemo",
+        "sha": "d178bda"
+      },
+      {
+        "date": "2026-05-21T11:02:47Z",
+        "kind": "commit",
+        "text": "Phase 7: AI Builder School cross-link",
+        "sha": "ccddc1d"
+      },
+      {
+        "date": "2026-05-21T11:04:33Z",
+        "kind": "commit",
+        "text": "Phase 8: ontology graph mobile polish",
+        "sha": "6346f4a"
+      },
+      {
+        "date": "2026-05-21T11:17:42Z",
+        "kind": "commit",
+        "text": "Phase 9: design-spec extraction tool",
+        "sha": "5926c25"
+      },
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "PRD부터 또렷이 적으시길. AI Builder School과 커리큘럼 구조를 공유하면 콘텐츠 제작 비용을 크게 아낄 수 있습니다."
+      },
+      {
+        "date": "2026-05-29T09:54:01Z",
+        "kind": "commit",
+        "text": "Phase 10: ontology graph edge color coding",
+        "sha": "c81ab78"
+      },
+      {
+        "date": "2026-05-29T09:54:37Z",
+        "kind": "commit",
+        "text": "docs: backfill Phase 9·10 commit hashes in progress.md",
+        "sha": "62078e0"
+      },
+      {
+        "date": "2026-05-29T09:55:37Z",
+        "kind": "commit",
+        "text": "docs: backfill Phase 9 hash and add Phase 10 row to progress.md",
+        "sha": "070520e"
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 20%"
+      },
+      {
+        "date": "2026-06-03",
+        "kind": "progress",
+        "text": "진척 20%"
+      },
+      {
+        "date": "2026-06-04",
+        "kind": "progress",
+        "text": "진척 20%"
+      },
+      {
+        "date": "2026-06-05",
+        "kind": "progress",
+        "text": "진척 20%"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-06-10",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-06-14",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-06-18",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-07-01",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 20%"
+      }
+    ],
+    "cmds-daily-briefing": [
+      {
+        "date": "2026-05-25T23:34:57Z",
+        "kind": "commit",
+        "text": "Add May 26 CMDS research briefing",
+        "sha": "90e2f5c"
+      },
+      {
+        "date": "2026-05-27T11:43:44Z",
+        "kind": "commit",
+        "text": "Add May 27 CMDS research briefing",
+        "sha": "a4be878"
+      },
+      {
+        "date": "2026-05-27T13:59:24Z",
+        "kind": "commit",
+        "text": "Add 2026-05-27 build note",
+        "sha": "46f1f39"
+      },
+      {
+        "date": "2026-05-27T23:38:26Z",
+        "kind": "commit",
+        "text": "Add May 28 research briefing",
+        "sha": "8fd91ae"
+      },
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "Hermes action queue 통합의 종단 테스트를 먼저 닫으시길. 데이터 소스 일관성이 흔들리면 매일 쌓이는 페이지가 어긋납니다."
+      },
+      {
+        "date": "2026-05-28T23:35:53Z",
+        "kind": "commit",
+        "text": "Add May 29 research briefing",
+        "sha": "cd78d03"
+      },
+      {
+        "date": "2026-05-29T23:34:30Z",
+        "kind": "commit",
+        "text": "Add May 30 light briefing",
+        "sha": "334f965"
+      },
+      {
+        "date": "2026-05-30T13:54:35Z",
+        "kind": "commit",
+        "text": "Add May 30 build note archive",
+        "sha": "c6e3d08"
+      },
+      {
+        "date": "2026-05-30T23:34:14Z",
+        "kind": "commit",
+        "text": "Add May 31 daily console briefing",
+        "sha": "d7bca6b"
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 52%"
+      },
+      {
+        "date": "2026-05-31T23:35:05Z",
+        "kind": "commit",
+        "text": "Add June 1 daily console briefing",
+        "sha": "2d18558"
+      },
+      {
+        "date": "2026-06-02T23:38:21Z",
+        "kind": "commit",
+        "text": "Add June 3 daily console briefing",
+        "sha": "81a2362"
+      },
+      {
+        "date": "2026-06-03",
+        "kind": "progress",
+        "text": "진척 52% · 커밋 +1"
+      },
+      {
+        "date": "2026-06-03T23:34:22Z",
+        "kind": "commit",
+        "text": "Add June 4 daily console briefing",
+        "sha": "645e6a2"
+      },
+      {
+        "date": "2026-06-04",
+        "kind": "progress",
+        "text": "진척 52%"
+      },
+      {
+        "date": "2026-06-04T23:38:27Z",
+        "kind": "commit",
+        "text": "Add June 5 daily console briefing",
+        "sha": "ddf55a5"
+      },
+      {
+        "date": "2026-06-05",
+        "kind": "progress",
+        "text": "진척 52%"
+      },
+      {
+        "date": "2026-06-05T13:49:12Z",
+        "kind": "commit",
+        "text": "Add June 5 build note",
+        "sha": "ff6edc5"
+      },
+      {
+        "date": "2026-06-05T23:37:23Z",
+        "kind": "commit",
+        "text": "Add June 6 light console briefing",
+        "sha": "c73c9ea"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 52% · 커밋 +2"
+      },
+      {
+        "date": "2026-06-06T23:33:52Z",
+        "kind": "commit",
+        "text": "Add June 7 light console briefing",
+        "sha": "673658d"
+      },
+      {
+        "date": "2026-06-07T13:48:58Z",
+        "kind": "commit",
+        "text": "Add June 7 build note",
+        "sha": "12369f3"
+      },
+      {
+        "date": "2026-06-08T01:15:28Z",
+        "kind": "commit",
+        "text": "Add June 8 research briefing",
+        "sha": "59fe37d"
+      },
+      {
+        "date": "2026-06-08T13:48:53Z",
+        "kind": "commit",
+        "text": "Add June 8 build note",
+        "sha": "0548e5c"
+      },
+      {
+        "date": "2026-06-09T13:50:21Z",
+        "kind": "commit",
+        "text": "Add June 9 build note",
+        "sha": "aaa38a1"
+      },
+      {
+        "date": "2026-06-10",
+        "kind": "progress",
+        "text": "완성도 52% · 커밋 +6"
+      },
+      {
+        "date": "2026-06-10T02:40:01Z",
+        "kind": "commit",
+        "text": "Add June 10 Hatchi console briefing",
+        "sha": "9379336"
+      },
+      {
+        "date": "2026-06-10T13:48:36Z",
+        "kind": "commit",
+        "text": "Add June 10 build note",
+        "sha": "610e1d2"
+      },
+      {
+        "date": "2026-06-10T23:32:59Z",
+        "kind": "commit",
+        "text": "Add June 11 Hatchi console briefing",
+        "sha": "e8a2682"
+      },
+      {
+        "date": "2026-06-11T13:49:34Z",
+        "kind": "commit",
+        "text": "Add June 11 Hatchi build note",
+        "sha": "fd0a52a"
+      },
+      {
+        "date": "2026-06-11T23:34:43Z",
+        "kind": "commit",
+        "text": "Add June 12 research briefing",
+        "sha": "0c5dc03"
+      },
+      {
+        "date": "2026-06-12T13:48:50Z",
+        "kind": "commit",
+        "text": "Add June 12 build note",
+        "sha": "bbd9501"
+      },
+      {
+        "date": "2026-06-12T23:33:15Z",
+        "kind": "commit",
+        "text": "Add June 13 light research briefing",
+        "sha": "da6774d"
+      },
+      {
+        "date": "2026-06-13T13:49:32Z",
+        "kind": "commit",
+        "text": "Add June 13 build note",
+        "sha": "8913e38"
+      },
+      {
+        "date": "2026-06-13T23:33:04Z",
+        "kind": "commit",
+        "text": "Add June 14 light research briefing",
+        "sha": "9c9d084"
+      },
+      {
+        "date": "2026-06-14",
+        "kind": "progress",
+        "text": "완성도 52% · 커밋 +5"
+      },
+      {
+        "date": "2026-06-14T13:49:25Z",
+        "kind": "commit",
+        "text": "Add June 14 build note",
+        "sha": "00adfc8"
+      },
+      {
+        "date": "2026-06-14T23:37:56Z",
+        "kind": "commit",
+        "text": "Add 2026-06-15 research briefing",
+        "sha": "8c09ddf"
+      },
+      {
+        "date": "2026-06-15T13:49:10Z",
+        "kind": "commit",
+        "text": "Add June 15 build note",
+        "sha": "78ad32a"
+      },
+      {
+        "date": "2026-06-15T23:34:22Z",
+        "kind": "commit",
+        "text": "Add 2026-06-16 research briefing",
+        "sha": "4e5a998"
+      },
+      {
+        "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 52% · 커밋 +5"
+      },
+      {
+        "date": "2026-06-16T13:49:15Z",
+        "kind": "commit",
+        "text": "Add 2026-06-16 build note",
+        "sha": "fa60ae2"
+      },
+      {
+        "date": "2026-06-16T23:34:15Z",
+        "kind": "commit",
+        "text": "Add June 17 console briefing",
+        "sha": "636ba26"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 52% · 커밋 +2"
+      },
+      {
+        "date": "2026-06-17T13:49:03Z",
+        "kind": "commit",
+        "text": "Add June 17 build note",
+        "sha": "aff8cf6"
+      },
+      {
+        "date": "2026-06-18",
+        "kind": "progress",
+        "text": "완성도 52% · 커밋 +1"
+      },
+      {
+        "date": "2026-07-01",
+        "kind": "progress",
+        "text": "완성도 52%"
+      },
+      {
+        "date": "2026-07-04T23:34:33Z",
+        "kind": "commit",
+        "text": "Add July 5 daily briefing",
+        "sha": "894a0f5"
+      },
+      {
+        "date": "2026-07-05T13:49:36Z",
+        "kind": "commit",
+        "text": "Add July 5 build note",
+        "sha": "7d5baa2"
+      },
+      {
+        "date": "2026-07-05T23:34:27Z",
+        "kind": "commit",
+        "text": "Add 2026-07-06 daily briefing",
+        "sha": "beef9f0"
+      },
+      {
+        "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 52%"
+      }
+    ],
+    "Timeer": [
+      {
+        "date": "2026-05-20T16:51:21Z",
+        "kind": "commit",
+        "text": "feat: init Vite React project with TDS theme and 2D canvas orb timer",
+        "sha": "a785d46"
+      },
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "'집중 타이머인지, 습관 타이머인지'처럼 한 줄 정체성부터 적어보시길. MVP 기능 하나만 정하면 스캐폴드가 살아납니다."
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 7%"
+      },
+      {
+        "date": "2026-06-03",
+        "kind": "progress",
+        "text": "진척 7%"
+      },
+      {
+        "date": "2026-06-04",
+        "kind": "progress",
+        "text": "진척 7%"
+      },
+      {
+        "date": "2026-06-05",
+        "kind": "progress",
+        "text": "진척 7%"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 7%"
+      },
+      {
+        "date": "2026-06-10",
+        "kind": "progress",
+        "text": "완성도 7%"
+      },
+      {
+        "date": "2026-06-14",
+        "kind": "progress",
+        "text": "완성도 7%"
+      },
+      {
+        "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 7%"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 7%"
+      },
+      {
+        "date": "2026-06-18",
+        "kind": "progress",
+        "text": "완성도 7%"
+      },
+      {
+        "date": "2026-07-01",
+        "kind": "progress",
+        "text": "완성도 7%"
+      },
+      {
+        "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 7%"
+      }
+    ],
+    "chaekdam": [
+      {
+        "date": "2026-05-28",
+        "kind": "note",
+        "label": "조언",
+        "text": "BookCircle과 도메인이 겹칩니다. 통합할지 별개로 갈지부터 정해야 두 프로젝트의 힘이 분산되지 않습니다."
+      },
+      {
+        "date": "2026-05-29T05:55:11Z",
+        "kind": "commit",
+        "text": "feat: Phase 3 — 클럽 (탐색·생성·상세·가입·설정)",
+        "sha": "be9484e"
+      },
+      {
+        "date": "2026-05-29T07:08:41Z",
+        "kind": "commit",
+        "text": "feat: Phase 4 — 책 + 알라딘 (서재)",
+        "sha": "f1d666d"
+      },
+      {
+        "date": "2026-05-29T15:47:05Z",
+        "kind": "commit",
+        "text": "feat: Phase 5 — 대화 (posts + comments)",
+        "sha": "16bff3d"
+      },
+      {
+        "date": "2026-05-29T16:15:01Z",
+        "kind": "commit",
+        "text": "feat: Phase 6 — 좋은 문장 (클럽 문장 월)",
+        "sha": "41cf1f9"
+      },
+      {
+        "date": "2026-05-29T16:33:26Z",
+        "kind": "commit",
+        "text": "feat: Phase 7a — OG/SEO + 메타데이터",
+        "sha": "950cffc"
+      },
+      {
+        "date": "2026-05-29T19:52:17Z",
+        "kind": "commit",
+        "text": "feat: Phase 7b — 비공개 클럽 초대",
+        "sha": "8ff9700"
+      },
+      {
+        "date": "2026-05-29T20:04:08Z",
+        "kind": "commit",
+        "text": "feat: Phase 7c — 이미지 업로드 (Supabase Storage)",
+        "sha": "d8ccfce"
+      },
+      {
+        "date": "2026-05-29T20:12:01Z",
+        "kind": "commit",
+        "text": "feat: Phase 7d — 실시간 대화 (Realtime)",
+        "sha": "0e251aa"
+      },
+      {
+        "date": "2026-05-30T15:47:11Z",
+        "kind": "commit",
+        "text": "Document the personal reading MVP checkpoint",
+        "sha": "8bbeb4a"
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 19%"
+      },
+      {
+        "date": "2026-06-03",
+        "kind": "progress",
+        "text": "진척 19%"
+      },
+      {
+        "date": "2026-06-04",
+        "kind": "progress",
+        "text": "진척 19%"
+      },
+      {
+        "date": "2026-06-05",
+        "kind": "progress",
+        "text": "진척 19%"
+      },
+      {
+        "date": "2026-06-05T02:30:20Z",
+        "kind": "commit",
+        "text": "Build reading rooms and presentation decks",
+        "sha": "8d90232"
+      },
+      {
+        "date": "2026-06-05T03:04:21Z",
+        "kind": "commit",
+        "text": "Harden OAuth redirect origin",
+        "sha": "7cf330f"
+      },
+      {
+        "date": "2026-06-05T12:34:37Z",
+        "kind": "commit",
+        "text": "Add presentation collection and slide preview flows",
+        "sha": "9d283a7"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 19% · 커밋 +13"
+      },
+      {
+        "date": "2026-06-06T01:29:59Z",
+        "kind": "commit",
+        "text": "feat(design): apply Stripe-inspired design system across the app",
+        "sha": "ef11869"
+      },
+      {
+        "date": "2026-06-06T01:30:15Z",
+        "kind": "commit",
+        "text": "feat(presentation): solo prep→present flow with separated speaker notes",
+        "sha": "6a51a51"
+      },
+      {
+        "date": "2026-06-06T01:30:22Z",
+        "kind": "commit",
+        "text": "docs: record Phase 9 redesign + presentation pipeline decisions",
+        "sha": "16c68d9"
+      },
+      {
+        "date": "2026-06-06T01:35:07Z",
+        "kind": "commit",
+        "text": "docs: add 2026-06-06 handoff and Phase 10 backlog",
+        "sha": "6c8b1e9"
+      },
+      {
+        "date": "2026-06-07T06:16:26Z",
+        "kind": "commit",
+        "text": "fix(reading-room): create private co-reading club without RETURNING",
+        "sha": "e3131bc"
+      },
+      {
+        "date": "2026-06-07T09:23:26Z",
+        "kind": "commit",
+        "text": "docs: add Claude Design brief and session wrap-up (hotfixes + next steps)",
+        "sha": "cd0b8c5"
+      },
+      {
+        "date": "2026-06-10",
+        "kind": "progress",
+        "text": "완성도 19% · 커밋 +2"
+      },
+      {
+        "date": "2026-06-13T08:51:12Z",
+        "kind": "commit",
+        "text": "chore(deps): avatar next/image 전환 + 미사용 radix 4종 제거 (F4·F5)",
+        "sha": "59e9d63"
+      },
+      {
+        "date": "2026-06-13T08:55:04Z",
+        "kind": "commit",
+        "text": "feat(dashboard): 이어읽기 복구 큐 — 며칠째 안 펼친 진행 중인 책 다시 꺼내기 (G2)",
+        "sha": "87e3fe7"
+      },
+      {
+        "date": "2026-06-13T08:58:36Z",
+        "kind": "commit",
+        "text": "feat(dashboard): 회상 카드 — \"1년 전 오늘 이 문장을 남겼어요\" (G3)",
+        "sha": "4d9f1c2"
+      },
+      {
+        "date": "2026-06-13T09:42:25Z",
+        "kind": "commit",
+        "text": "docs: .env.local 복구 + B4·G2·G3 라이브 검증 기록",
+        "sha": "817a25a"
+      },
+      {
+        "date": "2026-06-13T09:44:38Z",
+        "kind": "commit",
+        "text": "docs: C2 공개 표면(랜딩·/u) 모바일+다크 라이브 검증 무결 기록",
+        "sha": "f1c979e"
+      },
+      {
+        "date": "2026-06-13T11:05:46Z",
+        "kind": "commit",
+        "text": "feat(presentation): 발표 모드 전체화면 토글 + Home/End 키보드 내비 (D5 일부)",
+        "sha": "000437f"
+      },
+      {
+        "date": "2026-06-13T11:09:31Z",
+        "kind": "commit",
+        "text": "feat(presentation): 발표자 경과 타이머 — showNotes 전용 mm:ss, 클릭 리셋 (D5)",
+        "sha": "916bb9d"
+      },
+      {
+        "date": "2026-06-13T11:35:17Z",
+        "kind": "commit",
+        "text": "docs: 마이그레이션 0016~0020 전부 적용 확인 — F1 해소, stale \"적용 대기\" 메모 정정",
+        "sha": "4247373"
+      },
+      {
+        "date": "2026-06-13T15:42:53Z",
+        "kind": "commit",
+        "text": "docs: 책담 Fable 업그레이드 설계 + 홈페이지 구현 계획 (이중 결·본명조·발표 쐐기 보존)",
+        "sha": "35b9ca9"
+      },
+      {
+        "date": "2026-06-13T22:02:49Z",
+        "kind": "commit",
+        "text": "feat(landing): 읽기-세계 토큰·본명조 폰트 배선 (이중 결 기반)",
+        "sha": "e2fb160"
+      },
+      {
+        "date": "2026-06-13T22:08:16Z",
+        "kind": "commit",
+        "text": "feat(book): 공개 표면 표지-우선 CoverImage + resolveCover 순수함수",
+        "sha": "4a6cb20"
+      },
+      {
+        "date": "2026-06-13T22:10:06Z",
+        "kind": "commit",
+        "text": "feat(landing): 랜딩 본명조 세리프 리스킨 + 표지-우선 카드 + 신규 2섹션 배선",
+        "sha": "ede59af"
+      },
+      {
+        "date": "2026-06-13T22:10:06Z",
+        "kind": "commit",
+        "text": "feat(landing): 독서 시각화·결산 미리보기 컴포넌트 (Fable 차용 ⑤)",
+        "sha": "2344115"
+      },
+      {
+        "date": "2026-06-13T22:10:06Z",
+        "kind": "commit",
+        "text": "feat(landing): 표지 발견 띠 컴포넌트 + 공개 표지 조회 (Fable 차용 ②)",
+        "sha": "e60efa9"
+      },
+      {
+        "date": "2026-06-13T23:16:52Z",
+        "kind": "commit",
+        "text": "docs: Fable 홈페이지 업그레이드 핸드오프 + 로드맵 A5 반영",
+        "sha": "975fb90"
+      },
+      {
+        "date": "2026-06-14",
+        "kind": "progress",
+        "text": "완성도 19% · 커밋 +38"
+      },
+      {
+        "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 19% · 커밋 +7"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 19%"
+      },
+      {
+        "date": "2026-06-18",
+        "kind": "progress",
+        "text": "완성도 19%"
+      },
+      {
+        "date": "2026-06-28T09:45:00Z",
+        "kind": "commit",
+        "text": "Merge: 런칭 게이트 + Pro 게이트 + Next 보안 패치 (#3)",
+        "sha": "300b971"
+      },
+      {
+        "date": "2026-06-28T09:51:55Z",
+        "kind": "commit",
+        "text": "chore(p1): CI 워크플로 + README 드리프트 정리 + 죽은 내비 제거",
+        "sha": "d7ce1e7"
+      },
+      {
+        "date": "2026-06-28T10:24:47Z",
+        "kind": "commit",
+        "text": "Merge: P1 위생 — CI + README 정리 + 죽은 내비 제거 (#4)",
+        "sha": "d8991fc"
+      },
+      {
+        "date": "2026-06-28T10:32:53Z",
+        "kind": "commit",
+        "text": "feat(reading): 멤버·클럽 진행률 실데이터화 (pseudoPct 제거)",
+        "sha": "b2be576"
+      },
+      {
+        "date": "2026-06-28T10:36:39Z",
+        "kind": "commit",
+        "text": "Merge: 멤버·클럽 진행률 실데이터화 (#5)",
+        "sha": "5ff17ee"
+      },
+      {
+        "date": "2026-06-28T10:44:34Z",
+        "kind": "commit",
+        "text": "feat(security): 익명 발표 제출 rate limit (DB 네이티브, 0023)",
+        "sha": "1f6c65d"
+      },
+      {
+        "date": "2026-06-28T11:03:33Z",
+        "kind": "commit",
+        "text": "docs(roadmap): 0023 prod 적용·검증 완료 반영",
+        "sha": "c625d61"
+      },
+      {
+        "date": "2026-06-28T11:10:42Z",
+        "kind": "commit",
+        "text": "Merge: 익명 발표 제출 rate limit (#6)",
+        "sha": "209f81b"
+      },
+      {
+        "date": "2026-07-01",
+        "kind": "progress",
+        "text": "완성도 19% · 커밋 +53"
+      },
+      {
+        "date": "2026-07-01T14:10:56Z",
+        "kind": "commit",
+        "text": "Merge pull request #7 from sgeniusk/feat/app-internal-consistency-repass",
+        "sha": "aea15d9"
+      },
+      {
+        "date": "2026-07-01T14:28:36Z",
+        "kind": "commit",
+        "text": "feat(topbar): 상세 페이지 다단 크럼 배선 (클럽·책 이름)",
+        "sha": "ee41740"
+      },
+      {
+        "date": "2026-07-01T14:29:24Z",
+        "kind": "commit",
+        "text": "feat(topbar): 다단 크럼 메커니즘 — CrumbProvider·Topbar trail 렌더·크럼 스타일",
+        "sha": "fbb1aa8"
+      },
+      {
+        "date": "2026-07-01T14:30:06Z",
+        "kind": "commit",
+        "text": "docs(roadmap): 트랙 C3 완료 반영 + C4 다단 크럼 완료",
+        "sha": "4ad9d00"
+      },
+      {
+        "date": "2026-07-01T14:33:47Z",
+        "kind": "commit",
+        "text": "feat(topbar): 덱 메인 페이지 크럼 배선 (리뷰 후속, 형제 페이지 일관성)",
+        "sha": "d948586"
+      },
+      {
+        "date": "2026-07-01T14:50:03Z",
+        "kind": "commit",
+        "text": "Merge: Topbar 다단 크럼 + 트랙 C3/C4 완료 (C4)",
+        "sha": "f1db19e"
+      },
+      {
+        "date": "2026-07-14T05:52:13Z",
+        "kind": "commit",
+        "text": "docs(handoff): Codex 웹 이어받기 — AGENTS.md 정본 + 킥오프 프롬프트",
+        "sha": "9440619"
+      },
+      {
+        "date": "2026-07-14T05:53:08Z",
+        "kind": "commit",
+        "text": "Merge: Codex 이어받기 문서 (AGENTS.md + 킥오프)",
+        "sha": "6eb39e0"
+      },
+      {
+        "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 19%"
+      }
+    ],
+    "honbul": [
+      {
+        "date": "2026-05-30T10:52:09Z",
+        "kind": "commit",
+        "text": "feat(W8-01): 턴 컨트롤러 — Ballz식 무더기 발사 + 턴 종료 (코어 루프 피벗 1단계)",
+        "sha": "75f63c3"
+      },
+      {
+        "date": "2026-05-30T10:53:43Z",
+        "kind": "commit",
+        "text": "docs(W8-01): 보고서 한국어 검증본으로 통합",
+        "sha": "124613c"
+      },
+      {
+        "date": "2026-05-30T13:41:46Z",
+        "kind": "commit",
+        "text": "feat(W8-02): 적령 연속 하강 — 시간 기반 + 바닥 도달 라이프 소모 (피벗 2단계)",
+        "sha": "9e373df"
+      },
+      {
+        "date": "2026-05-30T13:42:39Z",
+        "kind": "commit",
+        "text": "docs(W8-02): 보고서 한국어 검증본으로 통합",
+        "sha": "c0b3bf7"
+      },
+      {
+        "date": "2026-05-30T14:14:29Z",
+        "kind": "commit",
+        "text": "feat(W8-03): Ball 스폰 배선 — 단일 발사 + VolleyLauncher (피벗 3단계)",
+        "sha": "3c98d58"
+      },
+      {
+        "date": "2026-05-30T14:15:10Z",
+        "kind": "commit",
+        "text": "docs(W8-03): 보고서 한국어 검증본으로 통합",
+        "sha": "325cdf1"
+      },
+      {
+        "date": "2026-05-31",
+        "kind": "progress",
+        "text": "진척 19%"
+      },
+      {
+        "date": "2026-06-01T15:28:12Z",
+        "kind": "commit",
+        "text": "W8-20 발사 펄스 타이밍 — 회수 시점으로 이동",
+        "sha": "f022470"
+      },
+      {
+        "date": "2026-06-01T15:41:04Z",
+        "kind": "commit",
+        "text": "docs: 볼핏 벤치마크 + 장수·장비 메타 설계안",
+        "sha": "0e14b35"
+      },
+      {
+        "date": "2026-06-01T16:11:16Z",
+        "kind": "commit",
+        "text": "W8-21 패들 하이브리드 반사 — 부위별 각도 (아르카노이드)",
+        "sha": "166a010"
+      },
+      {
+        "date": "2026-06-01T22:22:55Z",
+        "kind": "commit",
+        "text": "W8-22 공 거동 기술 1 — 크기·폭발 (Ball 모디파이어 기반)",
+        "sha": "f672f63"
+      },
+      {
+        "date": "2026-06-01T22:36:07Z",
+        "kind": "commit",
+        "text": "W8-23 장수(그릇) 특성 연결 — 그릇별 공 거동",
+        "sha": "06f075b"
+      },
+      {
+        "date": "2026-06-01T23:01:59Z",
+        "kind": "commit",
+        "text": "W8-24 장비 시스템 백본 — 수치 모디파이어 수집·장착",
+        "sha": "7ef0ac2"
+      },
+      {
+        "date": "2026-06-02T01:15:43Z",
+        "kind": "commit",
+        "text": "W8-25 장착 UI + 시작 장비 지급 — 장비 시스템 완결",
+        "sha": "82dc46c"
+      },
+      {
+        "date": "2026-06-03",
+        "kind": "progress",
+        "text": "진척 19% · 커밋 +2"
+      },
+      {
+        "date": "2026-06-03T16:08:25Z",
+        "kind": "commit",
+        "text": "docs: 세션 마무리 + Codex 앱 핸드오프 (HANDOFF.md)",
+        "sha": "1e9fd66"
+      },
+      {
+        "date": "2026-06-04",
+        "kind": "progress",
+        "text": "진척 19%"
+      },
+      {
+        "date": "2026-06-04T03:08:01Z",
+        "kind": "commit",
+        "text": "전투 피드백을 먼저 보이게 해 베타 타격감을 검증한다",
+        "sha": "ab44c9b"
+      },
+      {
+        "date": "2026-06-04T03:26:32Z",
+        "kind": "commit",
+        "text": "베타 전투 피드백을 들리게 해 플레이 감각을 검증한다",
+        "sha": "38f1814"
+      },
+      {
+        "date": "2026-06-04T03:47:27Z",
+        "kind": "commit",
+        "text": "무협 액션을 마나 경제로 묶어 베타 전투 판단을 만든다",
+        "sha": "cc640c6"
+      },
+      {
+        "date": "2026-06-04T04:06:22Z",
+        "kind": "commit",
+        "text": "베타 초반 블록 깨기 밀도를 진행 계약으로 고정한다",
+        "sha": "14560bc"
+      },
+      {
+        "date": "2026-06-04T04:21:13Z",
+        "kind": "commit",
+        "text": "무협 고유기 판단을 전투 HUD에 드러낸다",
+        "sha": "07c8850"
+      },
+      {
+        "date": "2026-06-04T05:22:54Z",
+        "kind": "commit",
+        "text": "결과 정산을 한국어 화면으로 닫는다",
+        "sha": "35247da"
+      },
+      {
+        "date": "2026-06-04T09:24:20Z",
+        "kind": "commit",
+        "text": "첫 5초에 그릇과 장비 선택 의도를 읽히게 한다",
+        "sha": "af0f390"
+      },
+      {
+        "date": "2026-06-04T09:38:27Z",
+        "kind": "commit",
+        "text": "베타 플레이 경로를 한 줄 smoke로 잠근다",
+        "sha": "8027cbf"
+      },
+      {
+        "date": "2026-06-04T15:28:32Z",
+        "kind": "commit",
+        "text": "베타 후보 증거를 보고서에 맞춘다",
+        "sha": "717e856"
+      },
+      {
+        "date": "2026-06-04T15:42:41Z",
+        "kind": "commit",
+        "text": "외부 음원 교체 진입점을 연다",
+        "sha": "8438e67"
+      },
+      {
+        "date": "2026-06-04T16:03:52Z",
+        "kind": "commit",
+        "text": "장비 융합 결정을 확인 뒤 소비하게 한다",
+        "sha": "030229d"
+      },
+      {
+        "date": "2026-06-04T16:22:26Z",
+        "kind": "commit",
+        "text": "드래프트 융합 선택감을 조합 성장으로 끌어올린다",
+        "sha": "811132d"
+      },
+      {
+        "date": "2026-06-04T16:46:01Z",
+        "kind": "commit",
+        "text": "드래프트 융합 결과를 선택 전에 읽게 한다",
+        "sha": "34fd330"
+      },
+      {
+        "date": "2026-06-04T22:08:51Z",
+        "kind": "commit",
+        "text": "드래프트 융합 화면을 실제 프레임으로 확인한다",
+        "sha": "154aaeb"
+      },
+      {
+        "date": "2026-06-04T22:38:52Z",
+        "kind": "commit",
+        "text": "융합 성공 순간을 플레이어 화면에 남긴다",
+        "sha": "d2590cd"
+      },
+      {
+        "date": "2026-06-04T22:56:22Z",
+        "kind": "commit",
+        "text": "베타 경로를 실제 화면 증거로 잇는다",
+        "sha": "40d2aae"
+      },
+      {
+        "date": "2026-06-04T23:22:27Z",
+        "kind": "commit",
+        "text": "전투 입력을 화면 증거로 고정한다",
+        "sha": "7071ab6"
+      },
+      {
+        "date": "2026-06-04T23:27:44Z",
+        "kind": "commit",
+        "text": "버셀 링크 메타를 커밋에서 제외한다",
+        "sha": "161d429"
+      },
+      {
+        "date": "2026-06-05",
+        "kind": "progress",
+        "text": "진척 19% · 커밋 +33"
+      },
+      {
+        "date": "2026-06-05T00:51:32Z",
+        "kind": "commit",
+        "text": "웹에서 바로 플레이할 수 있게 한다",
+        "sha": "e743dc2"
+      },
+      {
+        "date": "2026-06-05T02:38:00Z",
+        "kind": "commit",
+        "text": "전투가 흔들림 없이 읽히게 한다",
+        "sha": "1dc493d"
+      },
+      {
+        "date": "2026-06-05T02:55:53Z",
+        "kind": "commit",
+        "text": "전투장 벽이 보이게 한다",
+        "sha": "dc0d2de"
+      },
+      {
+        "date": "2026-06-05T03:10:23Z",
+        "kind": "commit",
+        "text": "구슬이 아레나 벽을 넘지 않게 한다",
+        "sha": "d2f5b16"
+      },
+      {
+        "date": "2026-06-05T03:38:17Z",
+        "kind": "commit",
+        "text": "Claude Design 외주 브리프를 준비한다",
+        "sha": "ab00ccf"
+      },
+      {
+        "date": "2026-06-06",
+        "kind": "progress",
+        "text": "완성도 19% · 커밋 +5"
+      },
+      {
+        "date": "2026-06-06T00:46:20Z",
+        "kind": "commit",
+        "text": "전투 화면에 명부 아트 패스 1차를 입힌다",
+        "sha": "a1a6e48"
+      },
+      {
+        "date": "2026-06-06T03:49:51Z",
+        "kind": "commit",
+        "text": "전투 손맛을 살리고 메뉴·맵을 명부 아트로 입힌다",
+        "sha": "18fe103"
+      },
+      {
+        "date": "2026-06-06T05:31:18Z",
+        "kind": "commit",
+        "text": "마을 허브와 보스·손맛으로 게임을 한 판답게 만든다",
+        "sha": "761100c"
+      },
+      {
+        "date": "2026-06-06T05:52:44Z",
+        "kind": "commit",
+        "text": "보스가 사라지지 않고 처치되어 승리가 뜨게 한다",
+        "sha": "1981692"
+      },
+      {
+        "date": "2026-06-06T09:20:14Z",
+        "kind": "commit",
+        "text": "런처를 옮겨 구석에서도 발사하게 한다",
+        "sha": "ff44dd9"
+      },
+      {
+        "date": "2026-06-06T15:16:28Z",
+        "kind": "commit",
+        "text": "드래그로 각도를 조준해 쏘게 한다",
+        "sha": "854fc5e"
+      },
+      {
+        "date": "2026-06-06T16:14:53Z",
+        "kind": "commit",
+        "text": "W10~W13 진행을 핸드오프·결정·체크리스트에 기록한다",
+        "sha": "f4565f9"
+      },
+      {
+        "date": "2026-06-10",
+        "kind": "progress",
+        "text": "완성도 19% · 커밋 +7"
+      },
+      {
+        "date": "2026-06-13T06:14:47Z",
+        "kind": "commit",
+        "text": "docs: MJ 가이드 v3.1 — 복붙 완성형 (스타일+--sref 2786484460 각 프롬프트 내장)",
+        "sha": "d490c73"
+      },
+      {
+        "date": "2026-06-13T06:27:27Z",
+        "kind": "commit",
+        "text": "docs: MJ 가이드 v3.2 — sref를 앵커 이미지 URL로 교체 (s.mj.run/uB652QGd2HU)",
+        "sha": "5c06717"
+      },
+      {
+        "date": "2026-06-13T07:45:02Z",
+        "kind": "commit",
+        "text": "docs: 아트 가이드 v4 — agy(nano banana) 생성 체제 + art-drops gitignore",
+        "sha": "8ebb145"
+      },
+      {
+        "date": "2026-06-13T11:18:44Z",
+        "kind": "commit",
+        "text": "feat-009b: 실아트 Unity 배선 1차 — SpriteLibrary·임포트·틴트 제거",
+        "sha": "019d5dc"
+      },
+      {
+        "date": "2026-06-13T11:52:13Z",
+        "kind": "commit",
+        "text": "fix-009c: 보스 종횡비 버그 + 가장자리 품질 (인게임 1차 피드백)",
+        "sha": "56a6f7a"
+      },
+      {
+        "date": "2026-06-13T12:21:00Z",
+        "kind": "commit",
+        "text": "fix-009d: 자글거림 해소 — sprite mipmap 활성화 (인게임 2차 피드백)",
+        "sha": "b3a4519"
+      },
+      {
+        "date": "2026-06-13T14:44:06Z",
+        "kind": "commit",
+        "text": "fix-009e: HP바 보스그림 버그 수정 + 명부 배경 적용 (인게임 3차 피드백)",
+        "sha": "f1eb680"
+      },
+      {
+        "date": "2026-06-13T14:45:20Z",
+        "kind": "commit",
+        "text": "docs: progress 갱신 — feat-009b 실아트 배선 + 인게임 피드백 3건 수정·세밀함 진단",
+        "sha": "72f6941"
+      },
+      {
+        "date": "2026-06-14",
+        "kind": "progress",
+        "text": "완성도 19% · 커밋 +99"
+      },
+      {
+        "date": "2026-06-16",
+        "kind": "progress",
+        "text": "완성도 19%"
+      },
+      {
+        "date": "2026-06-17",
+        "kind": "progress",
+        "text": "완성도 19%"
+      },
+      {
+        "date": "2026-06-18",
+        "kind": "progress",
+        "text": "완성도 19%"
+      },
+      {
+        "date": "2026-06-27T12:15:39Z",
+        "kind": "commit",
+        "text": "feat-031 인게임 QA fix 3종 — 줄 틈·프레임·하강 부드러움",
+        "sha": "bc0ebf3"
+      },
+      {
+        "date": "2026-06-27T12:26:45Z",
+        "kind": "commit",
+        "text": "feat-032 발사 시 '쿵' 하강 제거 — 연속 하강만",
+        "sha": "c1daebe"
+      },
+      {
+        "date": "2026-06-27T13:44:04Z",
+        "kind": "commit",
+        "text": "feat-033 패들 가시성·차지 발광·하강 속도(사용자 QA)",
+        "sha": "b6bdbfe"
+      },
+      {
+        "date": "2026-06-27T23:21:53Z",
+        "kind": "commit",
+        "text": "fix-033 패들 차지 발광 — 곱 틴트→금빛 가산 오버레이",
+        "sha": "af16095"
+      },
+      {
+        "date": "2026-06-28T00:00:48Z",
+        "kind": "commit",
+        "text": "test: PaddlePowerGlow 작동 검증 PlayMode 테스트",
+        "sha": "e298398"
+      },
+      {
+        "date": "2026-06-28T09:48:14Z",
+        "kind": "commit",
+        "text": "feat-034 패들 파워 전기 아크 — 블랑카식 응집 연출",
+        "sha": "20cf883"
+      },
+      {
+        "date": "2026-06-28T10:49:50Z",
+        "kind": "commit",
+        "text": "docs: 세션 핸드오프 갱신 — 게임필 QA 결산·다음 장비/캐릭터 일러스트",
+        "sha": "d1e649a"
+      },
+      {
+        "date": "2026-06-29T14:36:53Z",
+        "kind": "commit",
+        "text": "feat-035 영웅·장비 아트 — 그릇 초상 4종·장비 아이콘 10종",
+        "sha": "6fee5c6"
+      },
+      {
+        "date": "2026-07-01",
+        "kind": "progress",
+        "text": "완성도 39% · (+20p) · 커밋 +51"
+      },
+      {
+        "date": "2026-07-13T10:05:02Z",
+        "kind": "commit",
+        "text": "feat-070B: 컷인 아트 7장 + 애니메풍 초상 4장 교체 — 투트랙 캐릭터 계층 완성",
+        "sha": "e6b2064"
+      },
+      {
+        "date": "2026-07-13T10:06:02Z",
+        "kind": "commit",
+        "text": "docs: feat-070 done 반영 — 컷인 코드+아트 완료·육안 게이트 등록",
+        "sha": "330257c"
+      },
+      {
+        "date": "2026-07-13T10:30:49Z",
+        "kind": "commit",
+        "text": "feat-071①: 진형 라이브러리 + 초기 그리드 마스크 주입 (StS 구조 1/3)",
+        "sha": "b1ae066"
+      },
+      {
+        "date": "2026-07-13T10:31:22Z",
+        "kind": "commit",
+        "text": "docs: feat-071 슬라이스 ① done 반영",
+        "sha": "3864ee0"
+      },
+      {
+        "date": "2026-07-13T11:19:18Z",
+        "kind": "commit",
+        "text": "feat-071②: 진형 웨이브 시퀀스 — 스폰 행이 진형을 따른다 (StS 구조 2/3)",
+        "sha": "e2ba900"
+      },
+      {
+        "date": "2026-07-13T11:19:46Z",
+        "kind": "commit",
+        "text": "docs: feat-071 슬라이스 ② done 반영",
+        "sha": "aded150"
+      },
+      {
+        "date": "2026-07-13T11:44:36Z",
+        "kind": "commit",
+        "text": "feat-071③: 조우 풀 + 맵 노드 배선 + 보스 고정 진형 — 진형 인게임 가시화 (StS 구조 3/3)",
+        "sha": "5ca5913"
+      },
+      {
+        "date": "2026-07-13T11:46:15Z",
+        "kind": "commit",
+        "text": "docs: 세션 종료 반영 — feat-070 컷인·feat-071 스테이지 생성(StS 구조) 완주",
+        "sha": "3428faa"
+      },
+      {
+        "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 39%"
+      }
+    ]
+  }
+}

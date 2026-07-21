@@ -1,0 +1,32 @@
+{
+  "repo": "samguk-idle-prototype",
+  "displayName": "전지적 군주 시점",
+  "synced": false,
+  "versions": [],
+  "roadmap": [
+    {
+      "t": "PRD·문서 정리",
+      "s": "done"
+    },
+    {
+      "t": "실행 골격·검증 하네스 구축",
+      "s": "done"
+    },
+    {
+      "t": "기능 단계 보강 중",
+      "s": "doing"
+    },
+    {
+      "t": "v0.16-alpha 게이트 통과",
+      "s": "todo"
+    },
+    {
+      "t": "Vercel 정식 도메인 연결",
+      "s": "todo"
+    },
+    {
+      "t": "20분/24시간 세션 합성 플레이테스트",
+      "s": "todo"
+    }
+  ]
+}
