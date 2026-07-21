@@ -1,11 +1,11 @@
 {
   "_comment": "github-priority-dashboard 자체의 개발 백로그 (v1.0→v3.x). projects.json은 추적되는 프로젝트들, 이 파일은 이 워크스페이스 자체의 마일스톤이다. active가 null이면 진행 중인 단일 작업이 없다는 뜻이다. 현재 Codex가 설계·구현·검증·배포를 단독 운영한다.",
-  "active": null,
+  "active": "v3.2-focus-portfolio",
   "features": [
     {
       "id": "v1.0-baseline",
       "name": "v1.0 베이스라인",
-      "status": "done",
+      "status": "inProgress",
       "description": "Officevibe 디자인 대시보드, 3-JSON 실데이터 배선, /refresh·/coach·/new-project 커맨드, GitHub Pages 공개",
       "dependencies": []
     },
