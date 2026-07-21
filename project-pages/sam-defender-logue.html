@@ -110,7 +110,7 @@ footer{margin-top:54px;padding-top:20px;border-top:1px solid var(--border);color
     </div>
     <aside class="hero-card" aria-label="프로젝트 핵심 지표">
       <dl>
-        <div><dt>기준일</dt><dd>2026-07-01</dd></div>
+        <div><dt>기준일</dt><dd>2026-07-20</dd></div>
         <div><dt>담당</dt><dd>Claude</dd></div>
         <div><dt>상태</dt><dd>활성</dd></div>
         <div><dt>스프린트</dt><dd>Sprint B</dd></div>
@@ -157,13 +157,13 @@ footer{margin-top:54px;padding-top:20px;border-top:1px solid var(--border);color
 
     <section class="section">
       <p class="section-title">리스크와 코칭</p>
-      <p class="quiet" style="margin-bottom:14px">rank 3, 정체 6일째 — 주시</p>
+      <p class="quiet" style="margin-bottom:14px">최근 푸시가 38일 전입니다.</p>
 
-    <article class="note high">
-      <p class="note-kicker">위험 신호</p>
-      <h3>rank 3, 정체 6일째 — 주시</h3>
-      <p>rank 3이자 직전까지 활발하던(204커밋, 일평균 4.34) 시즈폴이 2026-06-11 이후 6일 공백이다. rank 상위라 길어지면 위험이 커진다. 콘텐츠 데이터와 Markdown ID 불일치(하네스 미완)에서 비롯된 백로그 20+ 누적이 재진입 마찰로 보인다.</p>
-      <ul><li>P25 루트 정찰 예측 완성</li><li>알파 완료 백로그 20+ 항목 우선순위 정리</li><li>에셋 수입 하네스 자동화로 반복작업 제거</li></ul>
+    <article class="note warn">
+      <p class="note-kicker">주의 신호</p>
+      <h3>게임 미push로 대시보드 오판 — 로컬 확인·push 필요</h3>
+      <p>시즈폴·전지적 군주 시점·군령이 GitHub상 19~24일 정체로 보이나, 이번 인터뷰에서 확인된 패턴(게임들이 Unity로 전환하며 로컬 커밋을 push 안 함)상 실제론 로컬에서 활발할 가능성이 크다. 시즈폴은 로컬 마지막 06-17+uncommitted 12로 확인됐고, 혼불도 로컬 미push 44 사례였다. 정체가 아니라 가시성 문제다.</p>
+      <ul><li>시즈폴 로컬 uncommitted 12 commit &amp; push</li><li>전지적·군령 로컬 상태 확인 후 push</li><li>게임 작업 후 push 습관화</li></ul>
     </article>
     </section>
 
@@ -220,6 +220,14 @@ footer{margin-top:54px;padding-top:20px;border-top:1px solid var(--border);color
       <p class="section-title">최근 근거</p>
       <div class="timeline">
     <article class="timeline-item">
+      <time>2026-07-20</time>
+      <div>
+        <p class="timeline-kind">완성도</p>
+        <p>완성도 20%</p>
+
+      </div>
+    </article>
+    <article class="timeline-item">
       <time>2026-07-01</time>
       <div>
         <p class="timeline-kind">완성도</p>
@@ -266,20 +274,12 @@ footer{margin-top:54px;padding-top:20px;border-top:1px solid var(--border);color
         <p>fix(unity): prep 출전 버튼 잘림 — 탭 두 줄 감김 예약 높이 보정 (M15 후속)</p>
         <a href="https://github.com/sgeniusk/sam-defender-logue/commit/d881fd8">d881fd8</a>
       </div>
-    </article>
-    <article class="timeline-item">
-      <time>2026-06-11</time>
-      <div>
-        <p class="timeline-kind">커밋</p>
-        <p>feat(unity): port wrap-up — growing island, village ops, battle speed (M15)</p>
-        <a href="https://github.com/sgeniusk/sam-defender-logue/commit/6785fac">6785fac</a>
-      </div>
     </article></div>
     </section>
   </div>
 
   <footer>
-    삼국지: 시즈폴 (Siege Fall) · 최근 푸시 2026-06-11 · 커밋 204개 · 최신 로그 2026-07-01.
+    삼국지: 시즈폴 (Siege Fall) · 최근 푸시 2026-06-11 · 커밋 204개 · 최신 로그 2026-07-20.
   </footer>
 </main>
 </body>

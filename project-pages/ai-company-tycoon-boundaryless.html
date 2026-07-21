@@ -110,7 +110,7 @@ footer{margin-top:54px;padding-top:20px;border-top:1px solid var(--border);color
     </div>
     <aside class="hero-card" aria-label="프로젝트 핵심 지표">
       <dl>
-        <div><dt>기준일</dt><dd>2026-07-01</dd></div>
+        <div><dt>기준일</dt><dd>2026-07-20</dd></div>
         <div><dt>담당</dt><dd>Codex</dd></div>
         <div><dt>상태</dt><dd>활성</dd></div>
         <div><dt>스프린트</dt><dd>Sprint D</dd></div>
@@ -126,7 +126,7 @@ footer{margin-top:54px;padding-top:20px;border-top:1px solid var(--border);color
         <p>MVP 1 마일스톤에 커밋을 몰아주시길. 정비 작업보다 한 판이라도 돌아가는 코드가 지금 가장 급합니다.</p>
       </div>
       <div class="metric-grid">
-        <div class="metric"><span>건강</span><strong><span class="pill good">정상</span></strong></div>
+        <div class="metric"><span>건강</span><strong><span class="pill warn">주의</span></strong></div>
         <div class="metric"><span>초점</span><strong>알파 검증</strong></div>
         <div class="metric"><span>신뢰도</span><strong>높음 81%</strong></div>
       </div>
@@ -157,13 +157,13 @@ footer{margin-top:54px;padding-top:20px;border-top:1px solid var(--border);color
 
     <section class="section">
       <p class="section-title">리스크와 코칭</p>
-      <p class="quiet" style="margin-bottom:14px">최근 활동과 다음 액션이 이어지는 상태입니다.</p>
+      <p class="quiet" style="margin-bottom:14px">최근 푸시가 6일 전입니다.</p>
 
     <article class="note info">
       <p class="note-kicker">코칭</p>
-      <h3>활동 최상위인데 기능 5/30 — MVP 마일스톤 마감 필요</h3>
-      <p>일평균 커밋 13.17으로 전체 1위 활동량인데 features 5/30·alpha 0에 머문다. 재시작 후 자산 재활용 단계라 커밋은 많지만 완성 기능으로 환산되지 않고 있다. MVP 1 마일스톤을 닫아 에너지를 진척으로 전환할 때다.</p>
-      <ul><li>MVP 1 마일스톤 마감</li><li>합성 플레이테스트 12명 1차 실행</li><li>Vercel 미리보기 배포</li></ul>
+      <h3>AI 사용량 데이터 15일 낡음 — /usage-refresh 권장</h3>
+      <p>usage.json의 collectedAt이 2026-06-16으로 오늘(7/01) 기준 15일 지났다. 표시 중인 Claude 40%·Codex 65%는 옛 수치라 현재 한도를 반영하지 못하고, 한도 인식 코칭도 불가하다. codex로 개발 중인 활발 프로젝트(타이쿤·혼불)의 작업 배분 판단을 위해 갱신이 필요하다.</p>
+      <ul><li>node scripts/refresh-usage.mjs 실행</li></ul>
     </article>
     </section>
 
@@ -220,66 +220,66 @@ footer{margin-top:54px;padding-top:20px;border-top:1px solid var(--border);color
       <p class="section-title">최근 근거</p>
       <div class="timeline">
     <article class="timeline-item">
-      <time>2026-07-01</time>
+      <time>2026-07-20</time>
       <div>
         <p class="timeline-kind">완성도</p>
-        <p>완성도 75% · (+35p) · 커밋 +81</p>
+        <p>완성도 75%</p>
 
       </div>
     </article>
     <article class="timeline-item">
-      <time>2026-06-30</time>
+      <time>2026-07-13</time>
       <div>
         <p class="timeline-kind">커밋</p>
-        <p>docs(feat-030): 다음 세션 조정 항목 — 1인 창고 시작·업그레이드 조건 해금·버튼 affordance</p>
-        <a href="https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/c7fe5f0">c7fe5f0</a>
+        <p>docs(feat-048): 다음 세션 핸드오프 갱신 — feat-047·048 done, 후보 정리</p>
+        <a href="https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/c52da8a">c52da8a</a>
       </div>
     </article>
     <article class="timeline-item">
-      <time>2026-06-29</time>
+      <time>2026-07-12</time>
       <div>
         <p class="timeline-kind">커밋</p>
-        <p>docs(feat-030): 핸드오프 — 시안 전 항목 구현 완료(13커밋 미푸시)</p>
-        <a href="https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/944aa6c">944aa6c</a>
+        <p>docs(feat-048): 소품 타일 스케일 통일 done — progress/feature_list 갱신</p>
+        <a href="https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/3cdcc38">3cdcc38</a>
       </div>
     </article>
     <article class="timeline-item">
-      <time>2026-06-29</time>
+      <time>2026-07-12</time>
       <div>
         <p class="timeline-kind">커밋</p>
-        <p>feat-030: 온보딩 첫 60초 — AI 비서 '첫 출근' 코치마크</p>
-        <a href="https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/42ecea7">42ecea7</a>
+        <p>feat(feat-048): 상점 소품 균일 셀 AddPropThumb(상대크기·바닥정렬)</p>
+        <a href="https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/e173878">e173878</a>
       </div>
     </article>
     <article class="timeline-item">
-      <time>2026-06-29</time>
+      <time>2026-07-12</time>
       <div>
         <p class="timeline-kind">커밋</p>
-        <p>feat-030: 오피스 고정 3레이어 — PropSpec.Layer(Back/Front) + 전경 소품 가림</p>
-        <a href="https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/d7145fb">d7145fb</a>
+        <p>test(feat-048): 씬키∪상점키 스케일 표 커버리지 fail-loud</p>
+        <a href="https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/48fc028">48fc028</a>
       </div>
     </article>
     <article class="timeline-item">
-      <time>2026-06-28</time>
+      <time>2026-07-12</time>
       <div>
         <p class="timeline-kind">커밋</p>
-        <p>feat-030 ④: 이벤트 모달 옅은 스크림 통일 + progress 갱신</p>
-        <a href="https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/6bcd3e0">6bcd3e0</a>
+        <p>feat(feat-048): OfficeProps PropSpec Height→Depth, PlaceProp이 OfficePropScale 소비</p>
+        <a href="https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/daa0e0b">daa0e0b</a>
       </div>
     </article>
     <article class="timeline-item">
-      <time>2026-06-28</time>
+      <time>2026-07-12</time>
       <div>
         <p class="timeline-kind">커밋</p>
-        <p>feat-030: 손익 브리핑 보텀시트+순익 틱업 · 본문/버튼 폰트 · 트렌드바 문구</p>
-        <a href="https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/0690a02">0690a02</a>
+        <p>feat(feat-048): OfficePropScale 헤드리스 타일 스케일 원천 + 테스트</p>
+        <a href="https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/c6547fd">c6547fd</a>
       </div>
     </article></div>
     </section>
   </div>
 
   <footer>
-    AI 컴퍼니 타이쿤 · 최근 푸시 2026-06-30 · 커밋 542개 · 최신 로그 2026-07-01.
+    AI 컴퍼니 타이쿤 · 최근 푸시 2026-07-13 · 커밋 692개 · 최신 로그 2026-07-20.
   </footer>
 </main>
 </body>

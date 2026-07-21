@@ -212,7 +212,7 @@ footer{
 /* fetch 실패 시 사용하는 내장 시드 */
 const FALLBACK_NEWS = {
   "_comment": "대시보드 전체 뉴스 피드. refresh마다 history/activity 델타·정체·status 변화에서 자동 생성(하이브리드 — 헤드라인 템플릿). report.html이 읽는다. _state는 변화 감지용.",
-  "generatedAt": "2026-07-01",
+  "generatedAt": "2026-07-20",
   "_state": {
     "status": {
       "habit": "active",
@@ -297,6 +297,30 @@ const FALLBACK_NEWS = {
       "headline": "혼불 (Honbul), 커밋 +51로 가속",
       "detail": "2026-06-18 이후 커밋이 51건 늘며 개발이 활발합니다.",
       "metric": "+51 commits"
+    },
+    {
+      "date": "2026-07-01",
+      "repo": "tteuniyu-ios",
+      "kind": "stall",
+      "headline": "뜬이유 iOS — Sprint A 49일째 정지 — 재개/보류 결정 필요 (rank 2)",
+      "detail": "rank 2이자 완성 근접(65%)인데 2026-05-12 이후 49일 정지했다. sprint A/inProgress로 표시되지만 7주째 무커밋이라 표기와 실제가 어긋난다. 로컬도 웹·harness 기반이라 미push 착시가 아닌 진짜 중단으로 보인다.",
+      "metric": "⚠ 위험"
+    },
+    {
+      "date": "2026-07-01",
+      "repo": "habit",
+      "kind": "stall",
+      "headline": "Formi (포미) — rank 1이 부활 후 재정체 — 6일",
+      "detail": "23일 공백 뒤 2026-06-24에 다시 손댔으나 이후 6일 공백이다. 완성 1위(70%)라 남은 건 Expo 알파 빌드·TestFlight인데 추진력이 붙지 않는다. 6/24 부활 불씨가 남아 있을 때가 재개 적기다.",
+      "metric": "⚠ 위험"
+    },
+    {
+      "date": "2026-07-01",
+      "repo": "design-system-school",
+      "kind": "stall",
+      "headline": "AI 디자인 시스템 스쿨 — 32일째 멈춤 — PRD 단계 (진짜 정체)",
+      "detail": "2026-05-29 이후 32일 정지로 가장 오래된 활성 정체다. total 20(docs 10·skeleton 10·features 0)으로 PRD·스캐폴딩 이전 단계다. 웹 프로젝트라 GitHub과 로컬이 대체로 일치하므로 미push 착시가 아닌 실제 중단이다.",
+      "metric": "주의"
     },
     {
       "date": "2026-06-18",

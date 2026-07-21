@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-07-01",
+  "generatedAt": "2026-07-20",
   "logs": {
     "habit": [
       {
@@ -111,6 +111,11 @@
         "date": "2026-07-01",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -202,6 +207,11 @@
       },
       {
         "date": "2026-07-01",
+        "kind": "progress",
+        "text": "완성도 65%"
+      },
+      {
+        "date": "2026-07-20",
         "kind": "progress",
         "text": "완성도 65%"
       }
@@ -459,6 +469,11 @@
         "date": "2026-07-01",
         "kind": "progress",
         "text": "완성도 20% · (-40p)"
+      },
+      {
+        "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
@@ -666,6 +681,11 @@
         "date": "2026-07-01",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
@@ -859,6 +879,11 @@
       },
       {
         "date": "2026-07-01",
+        "kind": "progress",
+        "text": "완성도 55%"
+      },
+      {
+        "date": "2026-07-20",
         "kind": "progress",
         "text": "완성도 55%"
       }
@@ -1078,6 +1103,11 @@
       },
       {
         "date": "2026-07-01",
+        "kind": "progress",
+        "text": "완성도 45%"
+      },
+      {
+        "date": "2026-07-20",
         "kind": "progress",
         "text": "완성도 45%"
       }
@@ -1449,6 +1479,59 @@
         "date": "2026-07-01",
         "kind": "progress",
         "text": "완성도 75% · (+35p) · 커밋 +81"
+      },
+      {
+        "date": "2026-07-12T14:39:42Z",
+        "kind": "commit",
+        "text": "docs(feat-048): 소품 타일 스케일 통일 설계 스펙",
+        "sha": "42f1b5e"
+      },
+      {
+        "date": "2026-07-12T14:49:22Z",
+        "kind": "commit",
+        "text": "docs(feat-048): 소품 타일 스케일 통일 구현 계획",
+        "sha": "b9cd1b1"
+      },
+      {
+        "date": "2026-07-12T15:05:19Z",
+        "kind": "commit",
+        "text": "feat(feat-048): OfficePropScale 헤드리스 타일 스케일 원천 + 테스트",
+        "sha": "c6547fd"
+      },
+      {
+        "date": "2026-07-12T15:08:12Z",
+        "kind": "commit",
+        "text": "feat(feat-048): 상점 소품 균일 셀 AddPropThumb(상대크기·바닥정렬)",
+        "sha": "e173878"
+      },
+      {
+        "date": "2026-07-12T15:08:12Z",
+        "kind": "commit",
+        "text": "test(feat-048): 씬키∪상점키 스케일 표 커버리지 fail-loud",
+        "sha": "48fc028"
+      },
+      {
+        "date": "2026-07-12T15:08:12Z",
+        "kind": "commit",
+        "text": "feat(feat-048): OfficeProps PropSpec Height→Depth, PlaceProp이 OfficePropScale 소비",
+        "sha": "daa0e0b"
+      },
+      {
+        "date": "2026-07-12T15:12:25Z",
+        "kind": "commit",
+        "text": "docs(feat-048): 소품 타일 스케일 통일 done — progress/feature_list 갱신",
+        "sha": "3cdcc38"
+      },
+      {
+        "date": "2026-07-13T00:29:02Z",
+        "kind": "commit",
+        "text": "docs(feat-048): 다음 세션 핸드오프 갱신 — feat-047·048 done, 후보 정리",
+        "sha": "c52da8a"
+      },
+      {
+        "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
@@ -1818,6 +1901,59 @@
         "date": "2026-07-01",
         "kind": "progress",
         "text": "완성도 50% · (+5p) · 커밋 +105"
+      },
+      {
+        "date": "2026-07-12T16:05:40Z",
+        "kind": "commit",
+        "text": "docs(handoff): 최종 홀리스틱 리뷰 Minor 3건 기록 — 전부 비차단 후속",
+        "sha": "91fe34b"
+      },
+      {
+        "date": "2026-07-13T00:26:57Z",
+        "kind": "commit",
+        "text": "Merge pull request #34 from sgeniusk/feat/source-discovery-preset",
+        "sha": "e1e1cf0"
+      },
+      {
+        "date": "2026-07-13T00:28:08Z",
+        "kind": "commit",
+        "text": "Merge pull request #36 from sgeniusk/feat/onboard-chat-ideate",
+        "sha": "978d8af"
+      },
+      {
+        "date": "2026-07-13T00:30:09Z",
+        "kind": "commit",
+        "text": "docs(harness): S1·S2 main 머지 반영 — 스택 PR close 교훈·다음 세션 사용자 테스트 시작점 기록",
+        "sha": "5c14880"
+      },
+      {
+        "date": "2026-07-15T08:51:56Z",
+        "kind": "commit",
+        "text": "P0-a: add local condense jobs and generation inbox",
+        "sha": "f8bddc9"
+      },
+      {
+        "date": "2026-07-15T08:53:07Z",
+        "kind": "commit",
+        "text": "P0-a: record verification and handoff",
+        "sha": "363310b"
+      },
+      {
+        "date": "2026-07-15T08:53:43Z",
+        "kind": "commit",
+        "text": "P0-a: link pull request",
+        "sha": "6ff722d"
+      },
+      {
+        "date": "2026-07-15T10:06:57Z",
+        "kind": "commit",
+        "text": "Merge pull request #38 from sgeniusk/codex/p0a-condense-job-polling",
+        "sha": "0df4cfa"
+      },
+      {
+        "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
@@ -1897,6 +2033,11 @@
       },
       {
         "date": "2026-07-01",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-07-20",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -2010,6 +2151,11 @@
         "date": "2026-07-01",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
@@ -2121,6 +2267,11 @@
         "date": "2026-07-01",
         "kind": "progress",
         "text": "완성도 56%"
+      },
+      {
+        "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 56%"
       }
     ],
     "design-system-school": [
@@ -2230,6 +2381,11 @@
       },
       {
         "date": "2026-07-01",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-07-20",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -2505,6 +2661,29 @@
         "date": "2026-07-01",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-07-04T23:34:33Z",
+        "kind": "commit",
+        "text": "Add July 5 daily briefing",
+        "sha": "894a0f5"
+      },
+      {
+        "date": "2026-07-05T13:49:36Z",
+        "kind": "commit",
+        "text": "Add July 5 build note",
+        "sha": "7d5baa2"
+      },
+      {
+        "date": "2026-07-05T23:34:27Z",
+        "kind": "commit",
+        "text": "Add 2026-07-06 daily briefing",
+        "sha": "beef9f0"
+      },
+      {
+        "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
@@ -2572,6 +2751,11 @@
       },
       {
         "date": "2026-07-01",
+        "kind": "progress",
+        "text": "완성도 7%"
+      },
+      {
+        "date": "2026-07-20",
         "kind": "progress",
         "text": "완성도 7%"
       }
@@ -2883,27 +3067,62 @@
         "date": "2026-07-01",
         "kind": "progress",
         "text": "완성도 19% · 커밋 +53"
+      },
+      {
+        "date": "2026-07-01T14:10:56Z",
+        "kind": "commit",
+        "text": "Merge pull request #7 from sgeniusk/feat/app-internal-consistency-repass",
+        "sha": "aea15d9"
+      },
+      {
+        "date": "2026-07-01T14:28:36Z",
+        "kind": "commit",
+        "text": "feat(topbar): 상세 페이지 다단 크럼 배선 (클럽·책 이름)",
+        "sha": "ee41740"
+      },
+      {
+        "date": "2026-07-01T14:29:24Z",
+        "kind": "commit",
+        "text": "feat(topbar): 다단 크럼 메커니즘 — CrumbProvider·Topbar trail 렌더·크럼 스타일",
+        "sha": "fbb1aa8"
+      },
+      {
+        "date": "2026-07-01T14:30:06Z",
+        "kind": "commit",
+        "text": "docs(roadmap): 트랙 C3 완료 반영 + C4 다단 크럼 완료",
+        "sha": "4ad9d00"
+      },
+      {
+        "date": "2026-07-01T14:33:47Z",
+        "kind": "commit",
+        "text": "feat(topbar): 덱 메인 페이지 크럼 배선 (리뷰 후속, 형제 페이지 일관성)",
+        "sha": "d948586"
+      },
+      {
+        "date": "2026-07-01T14:50:03Z",
+        "kind": "commit",
+        "text": "Merge: Topbar 다단 크럼 + 트랙 C3/C4 완료 (C4)",
+        "sha": "f1db19e"
+      },
+      {
+        "date": "2026-07-14T05:52:13Z",
+        "kind": "commit",
+        "text": "docs(handoff): Codex 웹 이어받기 — AGENTS.md 정본 + 킥오프 프롬프트",
+        "sha": "9440619"
+      },
+      {
+        "date": "2026-07-14T05:53:08Z",
+        "kind": "commit",
+        "text": "Merge: Codex 이어받기 문서 (AGENTS.md + 킥오프)",
+        "sha": "6eb39e0"
+      },
+      {
+        "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-05-28",
-        "kind": "note",
-        "label": "조언",
-        "text": "세 장르를 한꺼번에 붙이기 전에 벽돌깨기 코어 슬라이스부터 손에 쥐어보시길. 스코프가 넓은 만큼 페이퍼 프로토타입으로 30분 런 페이싱을 먼저 확인하면 좋겠습니다."
-      },
-      {
-        "date": "2026-05-30T09:46:04Z",
-        "kind": "commit",
-        "text": "feat(W7-12): 그릇 해제 (영혼 소비) — 무인/자객/무당 영혼 잠금 해제",
-        "sha": "b25f657"
-      },
-      {
-        "date": "2026-05-30T09:46:05Z",
-        "kind": "commit",
-        "text": "feat(W7-13): 전투 HUD 마나 표시 — 라이프·동전·마나 3종 (레퍼런스 전투화면)",
-        "sha": "dcf2b95"
-      },
       {
         "date": "2026-05-30T10:52:09Z",
         "kind": "commit",
@@ -3318,6 +3537,59 @@
         "date": "2026-07-01",
         "kind": "progress",
         "text": "완성도 39% · (+20p) · 커밋 +51"
+      },
+      {
+        "date": "2026-07-13T10:05:02Z",
+        "kind": "commit",
+        "text": "feat-070B: 컷인 아트 7장 + 애니메풍 초상 4장 교체 — 투트랙 캐릭터 계층 완성",
+        "sha": "e6b2064"
+      },
+      {
+        "date": "2026-07-13T10:06:02Z",
+        "kind": "commit",
+        "text": "docs: feat-070 done 반영 — 컷인 코드+아트 완료·육안 게이트 등록",
+        "sha": "330257c"
+      },
+      {
+        "date": "2026-07-13T10:30:49Z",
+        "kind": "commit",
+        "text": "feat-071①: 진형 라이브러리 + 초기 그리드 마스크 주입 (StS 구조 1/3)",
+        "sha": "b1ae066"
+      },
+      {
+        "date": "2026-07-13T10:31:22Z",
+        "kind": "commit",
+        "text": "docs: feat-071 슬라이스 ① done 반영",
+        "sha": "3864ee0"
+      },
+      {
+        "date": "2026-07-13T11:19:18Z",
+        "kind": "commit",
+        "text": "feat-071②: 진형 웨이브 시퀀스 — 스폰 행이 진형을 따른다 (StS 구조 2/3)",
+        "sha": "e2ba900"
+      },
+      {
+        "date": "2026-07-13T11:19:46Z",
+        "kind": "commit",
+        "text": "docs: feat-071 슬라이스 ② done 반영",
+        "sha": "aded150"
+      },
+      {
+        "date": "2026-07-13T11:44:36Z",
+        "kind": "commit",
+        "text": "feat-071③: 조우 풀 + 맵 노드 배선 + 보스 고정 진형 — 진형 인게임 가시화 (StS 구조 3/3)",
+        "sha": "5ca5913"
+      },
+      {
+        "date": "2026-07-13T11:46:15Z",
+        "kind": "commit",
+        "text": "docs: 세션 종료 반영 — feat-070 컷인·feat-071 스테이지 생성(StS 구조) 완주",
+        "sha": "3428faa"
+      },
+      {
+        "date": "2026-07-20",
+        "kind": "progress",
+        "text": "완성도 39%"
       }
     ]
   }

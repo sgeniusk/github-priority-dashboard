@@ -8,6 +8,64 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const rd = (f, d) => { try { return JSON.parse(readFileSync(join(ROOT, f), 'utf8')); } catch { return d; } };
 const NEWS_MAX = 120, LOG_MAX_PER_REPO = 80, SURGE = 15, STALL_DAYS = 7;
 
+function safeJson(value) {
+  return JSON.stringify(value, null, 2).replace(/</g, '\\u003c');
+}
+
+function replaceJsonConstant(source, name, value) {
+  const marker = `const ${name} = `;
+  const markerIndex = source.indexOf(marker);
+  if (markerIndex < 0) throw new Error(`report.html에서 ${name}을 찾지 못했습니다.`);
+  const start = markerIndex + marker.length;
+  const opening = source[start];
+  if (opening !== '{' && opening !== '[') throw new Error(`${name} JSON 시작 문자가 올바르지 않습니다.`);
+
+  let depth = 0;
+  let quoted = false;
+  let escaped = false;
+  for (let index = start; index < source.length; index += 1) {
+    const char = source[index];
+    if (quoted) {
+      if (escaped) escaped = false;
+      else if (char === '\\') escaped = true;
+      else if (char === '"') quoted = false;
+      continue;
+    }
+    if (char === '"') quoted = true;
+    else if (char === '{' || char === '[') depth += 1;
+    else if (char === '}' || char === ']') {
+      depth -= 1;
+      if (depth === 0) {
+        return `${source.slice(0, start)}${safeJson(value)}${source.slice(index + 1)}`;
+      }
+    }
+  }
+  throw new Error(`${name} JSON 끝을 찾지 못했습니다.`);
+}
+
+function replaceJsonSeed(source, id, value) {
+  const pattern = new RegExp(`(<script[^>]*id=["']${id}["'][^>]*>)[\\s\\S]*?(<\\/script>)`, 'i');
+  if (!pattern.test(source)) throw new Error(`project-report.html에서 #${id}를 찾지 못했습니다.`);
+  return source.replace(pattern, `$1${safeJson(value)}$2`);
+}
+
+function syncReportFallbacks(news, logs) {
+  const reportPath = join(ROOT, 'report.html');
+  const projectReportPath = join(ROOT, 'project-report.html');
+  const reportHtml = replaceJsonConstant(readFileSync(reportPath, 'utf8'), 'FALLBACK_NEWS', news);
+  writeFileSync(reportPath, reportHtml);
+
+  const seeds = [
+    ['fallback-projects', rd('projects.json', { projects: [], meta: {} })],
+    ['fallback-reports', rd('reports.json', {})],
+    ['fallback-suggestions', rd('suggestions.json', { items: [] })],
+    ['fallback-logs', logs],
+  ];
+  let projectReportHtml = readFileSync(projectReportPath, 'utf8');
+  for (const [id, value] of seeds) projectReportHtml = replaceJsonSeed(projectReportHtml, id, value);
+  writeFileSync(projectReportPath, projectReportHtml);
+}
+
 const nameOf = (projects, repo) => { const p = projects.find(x => x.name === repo); return p ? (p.displayName || p.name) : repo; };
 
 // 뉴스 — history 델타(완성도/커밋)·suggestions 정체·status 변화에서 이벤트 도출, items에 누적(date+repo+kind 중복 제거)
@@ -96,6 +154,7 @@ export function writeReports({ dryRun = false } = {}) {
   if (!dryRun) {
     writeFileSync(join(ROOT, 'news.json'), JSON.stringify(news, null, 2) + '\n');
     writeFileSync(join(ROOT, 'project-logs.json'), JSON.stringify(logs, null, 2) + '\n');
+    syncReportFallbacks(news, logs);
   }
   const noteCount = Object.values(logs.logs).reduce((s, a) => s + a.filter(e => e.kind === 'note').length, 0);
   return `${dryRun ? '[dry-run] ' : ''}news.json ${news.items.length}건 · project-logs.json ${Object.keys(logs.logs).length}개 repo(노트 ${noteCount}건).`;
