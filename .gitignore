@@ -8,6 +8,17 @@
 .claude/*
 !.claude/commands/
 .playwright-mcp/
+.agents/
 
 # Codex run transcripts (transient)
 codex/*.log
+
+# Local Codex metrics contain exact session-level usage and never ship to Pages.
+.codex-local/
+
+# Codex Sites build outputs
+node_modules/
+.next/
+.wrangler/
+.sites-public/
+dist/

@@ -1,494 +1,125 @@
-<!DOCTYPE html>
-<html lang="ko" data-theme="light"><head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>sgeniusk 프로젝트 우선순위 대시보드</title>
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-/* ── Officevibe Design Tokens ── */
-:root {
-  --navy:#0c1754; --electric:#2545ff; --lilac:#d9d4ff; --yellow:#ffc13a;
-  --off-white:#f9f8f6; --white:#ffffff; --black:#171417; --gray:#222222;
-  --cool-gray:#eaebf8; --border-gray:#cccccc; --orange:#ff5b22;
-
-  --bg:var(--off-white); --surface:var(--white); --text:var(--black);
-  --t2:#5a5a72; --border:#e6e6f0; --shadow:0 1px 4px rgba(12,23,84,.07);
-
-  /* Stage colors */
-  --s1:#b7c1ff; --s2:#8f79ff; --s3:#ffc13a; --s4:#2545ff;
-
-  --font:'Inter',system-ui,sans-serif;
-  --r:16px; --rp:100px;
-}
-[data-theme=dark] {
-  --bg:#080c1f; --surface:#101828; --text:#ece8ff; --t2:#8890b8;
-  --border:#1c2550; --shadow:0 2px 8px rgba(0,0,0,.35);
-  --s1:#1d2445; --s2:#2b2265; --s3:#4a3600; --s4:#1133ee;
-  --cool-gray:#1c2550; --navy:#a0b0ff;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:78px}
-body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14px;line-height:1.5;transition:background .25s,color .25s;min-height:100vh}
-
-/* ── HEADER ── */
-header{position:sticky;top:0;z-index:200;background:var(--surface);border-bottom:1px solid var(--border);height:58px;display:flex;align-items:center;padding:0 28px;gap:10px;box-shadow:var(--shadow);transition:background .25s}
-.logo{display:flex;align-items:center;gap:9px;text-decoration:none}
-.logo-icon{width:30px;height:30px;background:var(--electric);border-radius:9px;display:grid;place-items:center;flex-shrink:0}
-.logo-icon svg{width:15px;height:15px}
-.logo-name{font-size:15px;font-weight:700;color:var(--electric);letter-spacing:-.3px}
-.hbadge{background:var(--cool-gray);color:var(--navy);border-radius:var(--rp);padding:3px 11px;font-size:11px;font-weight:600;flex-shrink:0}
-.spacer{flex:1}
-.nav-links{display:flex;gap:2px}
-.nav-link{padding:5px 12px;border-radius:var(--rp);font-size:12px;font-weight:500;color:var(--t2);text-decoration:none;transition:all .15s;border:none;background:none;cursor:pointer;font-family:var(--font)}
-.nav-link:hover{background:rgba(37,69,255,.08);color:var(--electric)}
-.icon-btn{width:36px;height:36px;border:1px solid var(--border);border-radius:9px;background:none;cursor:pointer;display:grid;place-items:center;color:var(--t2);font-size:15px;transition:all .15s;font-family:var(--font);flex-shrink:0}
-.icon-btn:hover{border-color:var(--electric);color:var(--electric);background:rgba(37,69,255,.05)}
-
-/* ── MAIN ── */
-main{max-width:1460px;margin:0 auto;padding:28px 28px 64px}
-section{margin-bottom:48px}
-.sec-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--t2);margin-bottom:14px;display:flex;align-items:center;gap:12px}
-.sec-label span{flex:1;height:1px;background:var(--border)}
-.info-i{background:var(--cool-gray);color:var(--navy);border:none;border-radius:50%;width:16px;height:16px;font-size:10px;font-weight:700;cursor:pointer;font-family:var(--font);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;padding:0;line-height:1;text-transform:none;letter-spacing:0}
-.info-i:hover{background:var(--electric);color:#fff}
-
-/* ── KPI GRID ── */
-.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.kpi-card{background:var(--surface);border-radius:var(--r);border:1px solid var(--border);padding:20px 20px 18px;box-shadow:var(--shadow);position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s;cursor:default}
-.kpi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--acc,var(--electric));border-radius:16px 16px 0 0}
-.kpi-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(37,69,255,.1)}
-.kpi-lbl{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--t2);margin-bottom:10px}
-.kpi-num{font-size:38px;font-weight:700;line-height:1;letter-spacing:-1.5px;color:var(--text)}
-.kpi-sub{font-size:11px;color:var(--t2);margin-top:6px;line-height:1.4}
-.kpi-tag{display:inline-flex;align-items:center;margin-top:10px;background:var(--cool-gray);color:var(--navy);border-radius:var(--rp);padding:2px 10px;font-size:10px;font-weight:600}
-
-/* ── FILTER BAR ── */
-.filter-bar{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:12px 16px;margin-bottom:14px;display:flex;flex-wrap:nowrap;gap:8px;align-items:center;box-shadow:var(--shadow);overflow-x:auto}
-.f-lbl{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--t2);flex-shrink:0}
-.f-group{display:flex;gap:4px;flex-wrap:nowrap;align-items:center}
-.f-div{width:1px;height:20px;background:var(--border);flex-shrink:0}
-.chip{padding:5px 13px;border-radius:var(--rp);border:1px solid var(--border);background:none;font-size:12px;font-weight:500;color:var(--t2);cursor:pointer;transition:all .15s;font-family:var(--font);white-space:nowrap;flex-shrink:0}
-.chip:hover{border-color:var(--electric);color:var(--electric);background:rgba(37,69,255,.04)}
-.chip.on{background:var(--electric);color:#fff;border-color:var(--electric)}
-.search-wrap{margin-left:auto;position:relative;flex-shrink:0}
-.search-input{padding:7px 14px 7px 34px;border:1px solid var(--border);border-radius:var(--rp);background:var(--bg);color:var(--text);font-size:13px;font-family:var(--font);width:210px;transition:border-color .2s,width .3s;outline:none}
-.search-input:focus{border-color:var(--electric);width:270px}
-.search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--t2);pointer-events:none;font-size:13px}
-
-/* ── PROJECT BADGES ── */
-.picon{flex-shrink:0;width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;font-size:15px;background:rgba(127,127,140,.13);border-radius:8px;line-height:1}
-.mb-name .picon{width:30px;height:30px;font-size:17px;border-radius:9px}
-.susp-tag{background:rgba(0,0,0,.07);color:var(--t2);border-radius:4px;padding:1px 5px;font-size:9px;font-weight:700;text-transform:uppercase;flex-shrink:0}
-.tbadge{display:inline-flex;border-radius:var(--rp);padding:3px 10px;font-size:11px;font-weight:600;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis;flex-shrink:0}
-.t-cl{background:rgba(255,91,34,.15);color:var(--orange)}
-.t-co{background:rgba(63,185,80,.16);color:#1f8c47}
-.t-he{background:rgba(188,140,255,.18);color:#7b4bd9}
-.t-hy{background:rgba(57,197,207,.18);color:#1f7f86}
-.stk-bar{height:17px;border-radius:var(--rp);display:flex;overflow:hidden;background:var(--border)}
-.seg{height:100%;transition:width .6s cubic-bezier(.4,0,.2,1)}
-.s1{background:var(--s1)}.s2{background:var(--s2)}.s3{background:var(--s3)}.s4{background:var(--s4)}
-.prog-breakdown{font-size:10.5px;color:var(--t2);line-height:1.35;white-space:normal}
-.momentum-chip,.blocker-chip{display:inline-flex;align-items:center;border-radius:var(--rp);padding:2px 7px;font-size:10px;font-weight:700;line-height:1.2;white-space:nowrap}
-.momentum-chip.up{background:rgba(31,157,77,.13);color:#1f8c47}
-.momentum-chip.down{background:rgba(255,91,34,.14);color:var(--orange)}
-.momentum-chip.flat{background:var(--cool-gray);color:var(--t2)}
-.momentum-chip.commit-fresh{background:rgba(31,157,77,.13);color:#1f8c47}
-.momentum-chip.commit-idle{background:var(--cool-gray);color:var(--t2)}
-.momentum-chip.commit-dormant{background:rgba(255,193,58,.18);color:#7a4d00}
-[data-theme=dark] .momentum-chip.up{color:#58d184}
-[data-theme=dark] .momentum-chip.commit-fresh{color:#58d184}
-[data-theme=dark] .momentum-chip.commit-dormant{color:#ffc13a}
-.blocker-chip{background:rgba(255,91,34,.16);color:var(--orange);max-width:160px;overflow:hidden;text-overflow:ellipsis}
-.health-chip,.confidence-chip{display:inline-flex;align-items:center;border-radius:var(--rp);padding:2px 8px;font-size:10px;font-weight:800;line-height:1.2;white-space:nowrap}
-.health-chip.ok{background:rgba(31,157,77,.13);color:#1f8c47}
-.health-chip.watch{background:rgba(255,193,58,.2);color:#7a4d00}
-.health-chip.risk{background:rgba(255,91,34,.16);color:var(--orange)}
-.health-chip.hold{background:var(--cool-gray);color:var(--t2)}
-.confidence-chip.high{background:rgba(31,157,77,.13);color:#1f8c47}
-.confidence-chip.med{background:rgba(37,69,255,.09);color:var(--electric)}
-.confidence-chip.low{background:var(--cool-gray);color:var(--t2)}
-[data-theme=dark] .t-co{color:#58d184}
-[data-theme=dark] .t-he{color:#bc8cff}
-[data-theme=dark] .t-hy{color:#39c5cf}
-[data-theme=dark] .health-chip.ok,[data-theme=dark] .confidence-chip.high{color:#58d184}
-[data-theme=dark] .health-chip.watch{color:#ffc13a}
-.legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;padding:0 2px}
-.leg-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--t2)}
-.leg-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}
-
-/* ── CHARTS ── */
-.charts-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
-.chart-card{background:var(--surface);border-radius:var(--r);border:1px solid var(--border);padding:22px 22px 18px;box-shadow:var(--shadow)}
-.chart-title{font-size:13px;font-weight:700;margin-bottom:16px;color:var(--text)}
-
-/* ── SPRINT BOARD ── */
-.sprint-board{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-.spcol{background:var(--surface);border-radius:var(--r);border:1px solid var(--border);padding:14px 12px;min-height:200px;transition:border-color .2s,background .2s}
-.spcol.dov{background:rgba(37,69,255,.05);border-color:var(--electric)}
-.sph{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
-.spcnt{background:var(--cool-gray);color:var(--navy);border-radius:var(--rp);padding:1px 8px;font-size:10px;font-weight:600}
-.spcard{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:10px 11px;margin-bottom:8px;cursor:grab;transition:transform .15s,box-shadow .15s,opacity .15s;user-select:none;-webkit-user-select:none}
-.spcard:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,.1)}
-.spcard.dragging{opacity:.35;transform:rotate(2deg) scale(.97)}
-.spcard-nm{font-size:13px;font-weight:600;margin-bottom:5px;line-height:1.3}
-.spcard-meta{display:flex;align-items:center;gap:6px}
-.spcard-pct{font-size:10px;color:var(--t2);margin-left:auto;font-weight:600}
-
-/* ── USAGE ── */
-.usage-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.usage-card{background:var(--surface);border-radius:var(--r);border:1px solid var(--border);padding:24px;box-shadow:var(--shadow)}
-.usage-del{background:none;border:none;color:var(--t2);cursor:pointer;font-size:11px;margin-left:7px;font-family:var(--font);padding:0}
-.usage-del:hover{color:var(--orange)}
-.usage-add{background:none;border:1.5px dashed var(--border-gray);border-radius:var(--r);color:var(--t2);cursor:pointer;font-size:13px;font-weight:600;font-family:var(--font);min-height:130px;transition:border-color .15s,color .15s}
-.usage-add:hover{border-color:var(--electric);color:var(--electric)}
-.usage-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
-.usage-nm{font-size:16px;font-weight:700;display:flex;align-items:center;min-width:0}
-.usage-logo{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:7px;color:#fff;font-size:11px;font-weight:800;margin-right:8px;flex-shrink:0;letter-spacing:-.4px}
-.dday{background:var(--cool-gray);color:var(--navy);border-radius:var(--rp);padding:4px 14px;font-size:12px;font-weight:700}
-.dday.warn{background:rgba(255,193,58,.2);color:#7a4d00}
-.dday.danger{background:rgba(255,91,34,.15);color:var(--orange)}
-.usage-big{font-size:36px;font-weight:700;letter-spacing:-1px}
-.usage-status{font-size:12px;color:var(--t2);margin:4px 0 14px}
-.meter{height:10px;background:var(--border);border-radius:var(--rp);overflow:hidden}
-.meter-fill{height:100%;border-radius:var(--rp);transition:width .6s cubic-bezier(.4,0,.2,1)}
-.inp-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
-.inp-grp{display:flex;flex-direction:column;gap:5px}
-.inp-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--t2)}
-.inp{padding:9px 12px;border:1px solid var(--border-gray);border-radius:0;background:var(--bg);color:var(--text);font-size:14px;font-family:var(--font);outline:none;transition:border-color .2s;width:100%}
-.inp:focus{border-color:var(--electric)}
-.btn-ghost{margin-top:14px;padding:7px 16px;background:none;border:1px solid var(--border);border-radius:var(--rp);font-size:12px;font-weight:600;color:var(--t2);cursor:pointer;font-family:var(--font);transition:all .15s}
-.btn-ghost:hover{border-color:var(--electric);color:var(--electric)}
-
-/* ── TOOLTIP ── */
-#tip{position:fixed;z-index:9999;pointer-events:none;background:var(--navy);color:#fff;border-radius:9px;padding:7px 12px;font-size:12px;white-space:nowrap;opacity:0;transition:opacity .12s;font-family:var(--font);box-shadow:0 4px 16px rgba(12,23,84,.2)}
-#tip.on{opacity:1}
-
-/* ── FOOTER ── */
-footer{border-top:1px solid var(--border);padding:18px 28px;max-width:1460px;margin:0 auto;font-size:11px;color:var(--t2);display:flex;justify-content:space-between;align-items:center}
-.footer-reset{background:none;border:none;color:var(--t2);font-size:11px;cursor:pointer;font-family:var(--font);transition:color .15s;padding:0}
-.footer-reset:hover{color:var(--electric)}
-
-/* ── SCROLLBAR ── */
-::-webkit-scrollbar{width:5px;height:5px}
-::-webkit-scrollbar-track{background:transparent}
-::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
-::-webkit-scrollbar-thumb:hover{background:var(--t2)}
-
-/* ── ANIMATIONS ── */
-.kpi-card{opacity:1}
-
-/* ── EMPTY STATE ── */
-.empty{padding:48px;text-align:center;color:var(--t2);font-size:14px}
-/* Remove opacity animation from non-KPI sections */
-.filter-bar,.chart-card,.spcol,.usage-card{opacity:1!important;transform:none!important;animation:none!important}
-.panel-empty{padding:32px;text-align:center;color:var(--t2);font-size:13px}
-
-/* ── A11Y ── */
-:focus-visible{outline:2px solid var(--electric);outline-offset:2px;border-radius:4px}
-@keyframes spin{to{transform:rotate(360deg)}}
-.icon-btn.spin{animation:spin .6s linear infinite;pointer-events:none}
-
-/* ── HELP MODAL ── */
-.help-link{background:none;border:none;color:var(--electric);font-size:11px;font-weight:600;cursor:pointer;font-family:var(--font);padding:2px 4px;text-decoration:underline;text-underline-offset:2px}
-.modal-overlay{position:fixed;inset:0;background:rgba(12,23,84,.5);display:none;align-items:center;justify-content:center;z-index:9999;padding:24px}
-.modal-overlay.on{display:flex}
-.modal-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);max-width:560px;width:100%;max-height:84vh;overflow-y:auto;padding:24px}
-.modal-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-.modal-title{font-size:17px;font-weight:700}
-.modal-x{background:none;border:none;font-size:16px;cursor:pointer;color:var(--t2);font-family:var(--font);padding:4px;line-height:1}
-.modal-x:hover{color:var(--text)}
-.modal-intro{font-size:12px;color:var(--t2);line-height:1.6;margin-bottom:16px}
-.help-stage{margin-bottom:14px}
-.help-stage-hd{font-size:13px;font-weight:700;display:flex;align-items:center;gap:7px;margin-bottom:6px}
-.help-stage ul{list-style:none;display:flex;flex-direction:column;gap:3px;padding-left:17px}
-.help-stage li{font-size:12px;color:var(--t2);line-height:1.45}
-
-/* ── MASTER BOARD ── */
-#blueprintBody{display:grid;grid-template-columns:repeat(auto-fill,minmax(264px,1fr));gap:14px}
-.mb-card{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:16px;transition:transform .15s,box-shadow .15s}
-.mb-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(37,69,255,.1)}
-.mb-card.susp{opacity:.6}
-.mb-head{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:12px}
-.mb-name{font-size:14px;font-weight:700;display:flex;align-items:center;gap:6px;min-width:0;flex:1;line-height:1.32;overflow-wrap:anywhere}
-.mb-pctrow{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:7px;gap:10px}
-.mb-pctbox{display:flex;align-items:baseline;gap:6px;min-width:0}
-.mb-pct{font-size:26px;font-weight:700;letter-spacing:-1px;line-height:1}
-.mb-pct small{font-size:13px;font-weight:600;letter-spacing:0}
-.mb-pct-caption{font-size:10px;font-weight:800;color:var(--t2);letter-spacing:.04em;text-transform:uppercase}
-.mb-sprint{font-size:11px;font-weight:700}
-.mb-chiprow{display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin-top:8px;min-height:18px}
-.mb-meta{display:flex;justify-content:space-between;font-size:11px;color:var(--t2);margin-top:9px}
-.mb-lens{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}
-.mb-lens-item{min-width:0}
-.mb-lens-title{font-size:9.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--t2);margin-bottom:3px}
-.mb-lens-value{font-size:11px;color:var(--text);line-height:1.45;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-.mb-next{font-size:11px;color:var(--text);line-height:1.5;margin-top:9px;min-height:33px}
-.mb-next-label{display:block;font-size:9.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--t2);margin-bottom:2px}
-.mb-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:11px}
-.mb-doc{display:inline-flex;align-items:center;justify-content:center;min-height:34px;width:100%;background:none;border:1px solid var(--border);border-radius:8px;padding:8px;font-size:11px;font-weight:600;color:var(--electric);cursor:pointer;font-family:var(--font);text-decoration:none;text-align:center;transition:background .15s,border-color .15s}
-.mb-doc:hover{background:rgba(37,69,255,.06);border-color:var(--electric)}
-@media (max-width:640px){ #blueprintBody{grid-template-columns:1fr} }
-
-/* ── DOC VIEWER (2분할 고정 크기) ── */
-.doc-box{width:min(1040px,94vw);max-width:none;height:82vh;padding:20px;overflow:hidden;display:flex;flex-direction:column}
-.doc-panes{display:grid;grid-template-columns:1fr 1fr;gap:14px;flex:1;min-height:0;margin-top:10px}
-.doc-pane{display:flex;flex-direction:column;min-height:0;border:1px solid var(--border);border-radius:12px;overflow:hidden}
-.doc-pane-hd{padding:9px 14px;background:var(--bg);border-bottom:1px solid var(--border);font-size:13px;font-weight:700;display:flex;gap:4px;align-items:center;flex-shrink:0}
-.doc-pane-body{flex:1;overflow-y:auto;padding:14px 16px}
-.doc-subtab{background:none;border:none;border-radius:6px;padding:4px 11px;font-size:12px;font-weight:600;color:var(--t2);cursor:pointer;font-family:var(--font)}
-.doc-subtab.on{background:var(--electric);color:#fff}
-.rm-group{margin-bottom:15px}
-.rm-group-hd{font-size:12px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:6px}
-.rm-done .rm-group-hd{color:#1f9d4d}
-.rm-doing .rm-group-hd{color:var(--electric)}
-.rm-todo .rm-group-hd{color:var(--t2)}
-.rm-count{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:0 7px;font-size:10px;color:var(--t2);font-weight:600}
-.rm-item{font-size:12px;padding:9px 11px;margin-bottom:6px;background:var(--bg);border:1px solid var(--border);border-radius:8px;line-height:1.5}
-.rm-done .rm-item{border-left:3px solid #1f9d4d}
-.rm-doing .rm-item{border-left:3px solid var(--electric)}
-.rm-todo .rm-item{border-left:3px solid var(--border-gray)}
-@media (max-width:760px){.doc-panes{grid-template-columns:1fr}.doc-box{height:88vh}}
-.doc-body{font-size:13px;line-height:1.6}
-.doc-body h2{font-size:16px;font-weight:700;margin:14px 0 8px}
-.doc-body h3{font-size:14px;font-weight:700;margin:13px 0 6px}
-.doc-body h4{font-size:13px;font-weight:700;margin:10px 0 5px}
-.doc-body p{margin:6px 0;color:var(--t2)}
-.doc-body ul{padding-left:18px;margin:6px 0;list-style:disc}
-.doc-body li{margin:3px 0;color:var(--t2)}
-.doc-body blockquote{border-left:3px solid var(--electric);padding:6px 12px;color:var(--t2);background:var(--bg);border-radius:0 6px 6px 0;margin:8px 0;font-size:12px}
-.doc-body code{background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:1px 5px;font-size:12px}
-
-/* ── TAB PANELS ── */
-section[data-tab]{display:none}
-section[data-tab].tab-on{display:block;animation:fadein .24s ease}
-@keyframes fadein{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
-.nav-link.on,.nav-link.on:hover{background:var(--electric);color:#fff}
-
-/* ── LIQUID GLASS (부분 적용) ── */
-:root{--glass:rgba(20,28,48,.66)}
-:root[data-theme="light"]{--glass:rgba(255,255,255,.72)}
-body{
-  background:
-    radial-gradient(640px circle at 10% -2%, rgba(37,69,255,.08), transparent 58%),
-    radial-gradient(560px circle at 94% 6%, rgba(217,212,255,.55), transparent 56%),
-    radial-gradient(720px circle at 82% 102%, rgba(255,193,58,.07), transparent 60%),
-    var(--bg);
-}
-[data-theme="dark"] body{
-  background:
-    radial-gradient(640px circle at 10% -2%, rgba(37,69,255,.22), transparent 56%),
-    radial-gradient(560px circle at 94% 6%, rgba(120,90,255,.16), transparent 56%),
-    radial-gradient(720px circle at 82% 102%, rgba(255,193,58,.07), transparent 60%),
-    var(--bg);
-}
-/* 블러는 헤더·모달에만 (성능) — 카드는 반투명 배경만으로 리퀴드 느낌 */
-header,.modal-box{
-  background:var(--glass);
-  -webkit-backdrop-filter:blur(18px) saturate(1.6);
-  backdrop-filter:blur(18px) saturate(1.6);
-}
-.card,.kpi-card,.chart-card,.usage-card{background:var(--glass)}
-.kpi-card,.card,.chart-card,.usage-card{box-shadow:inset 0 1px 0 rgba(255,255,255,.4), var(--shadow)}
-.modal-overlay{-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
-}
-
-/* ── RESPONSIVE ── */
-@media (max-width:960px){
-  main{padding:20px 18px 48px}
-  .kpi-grid{grid-template-columns:repeat(2,1fr)}
-  .charts-grid{grid-template-columns:1fr}
-  .sprint-board{grid-template-columns:repeat(3,1fr)}
-}
-@media (max-width:640px){
-  body{font-size:13px}
-  main{padding:16px 14px 40px}
-  section{margin-bottom:36px}
-  header{padding:0 12px;gap:6px}
-  .logo-name{display:none}
-  .hbadge{display:none}
-  .nav-links{display:flex;flex:1;overflow-x:auto;gap:2px;min-width:0;-webkit-overflow-scrolling:touch}
-  .nav-links::-webkit-scrollbar{height:0}
-  .nav-link{padding:5px 9px;font-size:11px;flex-shrink:0}
-  .kpi-grid{grid-template-columns:repeat(2,1fr)}
-  .kpi-num{font-size:32px}
-  .usage-grid,.inp-row{grid-template-columns:1fr}
-  .sprint-board{grid-template-columns:1fr}
-}
-</style>
-<script type="application/javascript">document.documentElement.setAttribute("data-theme",localStorage.getItem("theme")||"light");</script>
+<!doctype html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="GitHub 프로젝트와 Codex 작업량을 함께 보는 개인 운영 대시보드">
+  <title>Project Control Room</title>
+  <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-
-<header>
-  <a class="logo" href="#">
-    <div class="logo-icon">
-      <svg viewBox="0 0 15 15" fill="none"><rect x="1" y="1" width="5.5" height="5.5" rx="1.5" fill="white" opacity=".95"></rect><rect x="8.5" y="1" width="5.5" height="5.5" rx="1.5" fill="white" opacity=".6"></rect><rect x="1" y="8.5" width="5.5" height="5.5" rx="1.5" fill="white" opacity=".6"></rect><rect x="8.5" y="8.5" width="5.5" height="5.5" rx="1.5" fill="white" opacity=".3"></rect></svg>
+  <a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
+  <header class="topbar">
+    <a class="brand" href="dashboard.html" aria-label="Project Control Room 홈">
+      <span class="brand-mark" aria-hidden="true">GP</span>
+      <span><strong>Project Control Room</strong><small>Codex-first operating system</small></span>
+    </a>
+    <nav class="primary-nav" aria-label="대시보드 보기">
+      <button class="nav-tab is-active" type="button" data-view="ops" aria-selected="true">운영실</button>
+      <button class="nav-tab" type="button" data-view="projects" aria-selected="false">프로젝트</button>
+      <button class="nav-tab" type="button" data-view="codex" aria-selected="false">Codex 작업</button>
+      <button class="nav-tab" type="button" data-view="resources" aria-selected="false">리소스</button>
+    </nav>
+    <div class="top-actions">
+      <a href="report.html">보고서</a>
+      <a href="monthly-analysis.html">30일 분석</a>
+      <button class="theme-toggle" type="button" id="theme-toggle" aria-label="색상 테마 전환">라이트</button>
     </div>
-    <span class="logo-name">sgeniusk</span>
-  </a>
-  <span class="hbadge">프로젝트 우선순위 대시보드</span>
-  <span class="hbadge" id="dataBadge" style="background:rgba(255,193,58,.18);color:#7a4d00">v2.7 · 데이터 기준일 로드 중</span>
-  <div class="spacer"></div>
-  <nav class="nav-links" role="tablist" aria-label="대시보드 탭">
-    <button class="nav-link" role="tab" aria-selected="false" data-tab="blueprint" onclick="showTab('blueprint')">청사진</button>
-    <button class="nav-link" role="tab" aria-selected="false" data-tab="charts" onclick="showTab('charts')">분석</button>
-    <button class="nav-link" role="tab" aria-selected="false" data-tab="sprint" onclick="showTab('sprint')">스프린트</button>
-    <button class="nav-link" role="tab" aria-selected="false" data-tab="usage" onclick="showTab('usage')">사용량 및 설정</button>
-    <a class="nav-link" href="monthly-analysis.html">30일 분석</a>
-    <a class="nav-link" href="report.html">보고서</a>
-    <a class="nav-link" href="project-pages/index.html">프로젝트 페이지</a>
-  </nav>
-  <button class="icon-btn" id="themeBtn" title="테마 전환" aria-label="라이트/다크 테마 전환">🌙</button>
-</header>
+  </header>
 
-<main>
+  <main id="main-content" class="app-shell">
+    <div id="freshness-strip" class="freshness-strip" role="status"></div>
 
-  <!-- KPI -->
-  <section data-tab="blueprint">
-    <div class="kpi-grid" id="kpiGrid"></div>
-  </section>
-
-  <!-- Blueprint -->
-  <section id="sec-blueprint" data-tab="blueprint">
-    <div class="sec-label">청사진 — 프로젝트 마스터 보드 <button class="info-i" onclick="openGlossary('마스터 보드')" aria-label="용어 설명">i</button><em id="bpMeta" style="font-style:normal;font-weight:600;letter-spacing:0;text-transform:none"></em><span></span></div>
-    <div class="filter-bar">
-      <span class="f-lbl">카테고리</span>
-      <div class="f-group" id="fCat"></div>
-      <div class="f-div"></div>
-      <span class="f-lbl">도구</span>
-      <div class="f-group" id="fTool"></div>
-      <div class="f-div"></div>
-      <span class="f-lbl">상태</span>
-      <div class="f-group" id="fStatus"></div>
-      <div class="f-div"></div>
-      <span class="f-lbl">정렬</span>
-      <div class="f-group" id="fSort"></div>
-      <div class="search-wrap">
-        <span class="search-icon">⌕</span>
-        <input class="search-input" id="sInput" placeholder="프로젝트 검색..." type="search" autocomplete="off">
+    <section class="view is-active" data-view-panel="ops" aria-labelledby="ops-title">
+      <div class="hero-grid">
+        <article class="hero-copy">
+          <p class="eyebrow">운영 판단을 위한 첫 화면</p>
+          <h1 id="ops-title">완성률 대신,<br>실제 작업을 봅니다.</h1>
+          <p class="hero-lead">토큰 소모량은 작업량을, 검수 단위는 완성을 설명합니다. 지금은 Codex 소비와 프로젝트 신호를 먼저 정확히 연결하고 있습니다.</p>
+          <div class="hero-meta" id="hero-meta"></div>
+        </article>
+        <article class="hero-focus" id="hero-focus" aria-label="오늘의 최우선 프로젝트"></article>
       </div>
-    </div>
-    <div class="card">
-      <p class="hint">완성도는 산출물 기준 점수, 모멘텀·건강·신뢰도는 운영 신호입니다. 각 카드의 문서 버튼으로 PRD·로드맵·로그를 볼 수 있어.</p>
-      <div id="blueprintBody"></div>
-    </div>
-  </section>
 
-  <!-- Charts -->
-  <section id="sec-charts" data-tab="charts">
-    <div class="sec-label">완성도 분석 <button class="info-i" onclick="openHelp()" aria-label="완성도 측정 기준">i</button><span></span></div>
-    <div class="charts-grid">
-      <div class="chart-card">
-        <div class="chart-title">완성도 구성 — 스택드 바</div>
-        <svg id="stackC" width="100%" height="268" role="img" aria-label="프로젝트별 완성도 구성(문서·골격·기능·알파) 스택드 바 차트"></svg>
-        <div class="legend" id="stackLeg"></div>
+      <div class="kpi-grid" id="ops-kpis"></div>
+
+      <div class="ops-grid">
+        <section class="panel decision-panel" aria-labelledby="decision-title">
+          <div class="panel-head">
+            <div><p class="kicker">Decision queue</p><h2 id="decision-title">지금 결정할 일</h2></div>
+            <button class="text-button" type="button" data-jump="projects">전체 프로젝트</button>
+          </div>
+          <div id="decision-list" class="decision-list"></div>
+        </section>
+
+        <section class="panel signal-panel" aria-labelledby="signal-title">
+          <div class="panel-head"><div><p class="kicker">Signals</p><h2 id="signal-title">운영 신호</h2></div></div>
+          <div id="signal-list" class="signal-list"></div>
+        </section>
       </div>
-      <div class="chart-card">
-        <div class="chart-title" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-          <span>프로젝트별 추세</span>
-          <em id="trendMeta" style="font-style:normal;font-weight:500;color:var(--t2);font-size:11px"></em>
-          <span style="flex:1"></span>
-          <button class="doc-subtab on" data-tm="progress" onclick="setTrendMetric('progress')">완성도</button>
-          <button class="doc-subtab" data-tm="commits" onclick="setTrendMetric('commits')">커밋수</button>
+
+      <section class="panel token-map-panel" aria-labelledby="token-map-title">
+        <div class="panel-head">
+          <div><p class="kicker">Actual work</p><h2 id="token-map-title">Codex 토큰 소진 지도</h2></div>
+          <button class="text-button" type="button" data-jump="codex">집계 방식 보기</button>
         </div>
-        <svg id="trendC" width="100%" height="240" role="img" aria-label="프로젝트별 완성도·커밋 추세 선차트"></svg>
-        <div class="legend" id="trendLeg"></div>
+        <p class="panel-copy">막대는 최근 30일 작업량입니다. 예측선은 완성률이 아니라 초기 P50 토큰 예산과 비교한 소진 위치입니다.</p>
+        <div id="token-map" class="token-map"></div>
+      </section>
+    </section>
+
+    <section class="view" data-view-panel="projects" aria-labelledby="projects-title" hidden>
+      <div class="section-intro">
+        <div><p class="eyebrow">Portfolio</p><h1 id="projects-title">프로젝트 포트폴리오</h1><p>상태, 최근 활동, 실제 Codex 작업량을 한 장에서 비교합니다.</p></div>
+        <div class="section-stat" id="project-section-stat"></div>
       </div>
-    </div>
-  </section>
-
-  <!-- Sprint Board -->
-  <section id="sec-sprint" data-tab="sprint">
-    <div class="sec-label" style="justify-content:space-between;align-items:center;display:flex;margin-bottom:14px">
-      <span style="display:flex;align-items:center;gap:8px">스프린트 보드 <button class="info-i" onclick="openGlossary('스프린트')" aria-label="용어 설명">i</button><span style="flex:1;width:60px;height:1px;background:var(--border);display:inline-block"></span></span>
-      <span style="display:flex;align-items:center;gap:8px">
-        <em id="spDrift" style="font-style:normal;font-weight:600;color:var(--orange);font-size:11px"></em>
-        <button class="btn-ghost" style="margin:0;padding:5px 14px;font-size:11px" onclick="exportSprint()">Sprint 변경 내보내기</button>
-        <button class="btn-ghost" style="margin:0;padding:5px 14px;font-size:11px" onclick="resetSprint()">보드 초기화</button>
-      </span>
-    </div>
-    <div class="sprint-board" id="sprintBoard"></div>
-  </section>
-
-  <!-- Usage -->
-  <section id="sec-usage" data-tab="usage">
-    <div class="sec-label">사용량 및 설정 <span></span><button class="btn-ghost" style="margin:0;padding:5px 14px;font-size:11px" onclick="exportUsageAll()">usage.json 내보내기</button></div>
-    <div class="usage-grid" id="usageGrid"></div>
-  </section>
-
-</main>
-
-<footer>
-  <span>데이터 출처: GitHub README/PRD · Contributors Insights API · commits.atom &nbsp;·&nbsp; 완성도 = 문서(0-20) + 골격(0-30) + 기능(0-30) + 알파(0-20)</span>
-  <button class="footer-reset" onclick="if(confirm('로컬 데이터를 초기화할까요?')){localStorage.clear();location.reload()}">데이터 초기화</button>
-</footer>
-
-<div id="tip"></div>
-
-<!-- 용어 설명 글로서리 모달 -->
-<div class="modal-overlay" id="glossaryModal" onclick="if(event.target===this)closeGlossary()">
-  <div class="modal-box" role="dialog" aria-modal="true" aria-label="용어 설명" style="max-width:440px">
-    <div class="modal-hd">
-      <span class="modal-title" id="glossaryTitle">용어</span>
-      <button class="modal-x" onclick="closeGlossary()" aria-label="닫기">✕</button>
-    </div>
-    <div id="glossaryBody" style="font-size:13px;line-height:1.65;color:var(--text)"></div>
-  </div>
-</div>
-
-<!-- 프로젝트 문서 열람 모달 -->
-<div class="modal-overlay" id="docModal" onclick="if(event.target===this)closeDocs()">
-  <div class="modal-box doc-box" role="dialog" aria-modal="true" aria-label="프로젝트 문서">
-    <div class="modal-hd">
-      <span class="modal-title" id="docTitle">프로젝트 문서</span>
-      <button class="modal-x" onclick="closeDocs()" aria-label="닫기">✕</button>
-    </div>
-    <div class="doc-panes">
-      <div class="doc-pane">
-        <div class="doc-pane-hd">PRD</div>
-        <div class="doc-pane-body doc-body" id="docPRD"></div>
+      <div class="filter-bar" aria-label="프로젝트 필터">
+        <label class="search-field"><span>검색</span><input id="project-search" type="search" placeholder="프로젝트 이름 또는 다음 액션"></label>
+        <label><span>상태</span><select id="status-filter"><option value="all">전체</option><option value="active">활성</option><option value="paused">일시중단</option><option value="archived">보관</option></select></label>
+        <label><span>도구</span><select id="tool-filter"><option value="all">전체</option><option value="codex">Codex</option><option value="hybrid">Hybrid</option><option value="claude">Claude</option><option value="hermes">Hermes</option></select></label>
+        <label><span>정렬</span><select id="project-sort"><option value="rank">우선순위</option><option value="tokens">30일 토큰</option><option value="recent">최근 Codex 활동</option><option value="risk">예측 초과 위험</option></select></label>
       </div>
-      <div class="doc-pane">
-        <div class="doc-pane-hd">
-          <button class="doc-subtab on" data-sub="roadmap" onclick="showDocSub('roadmap')">로드맵</button>
-          <button class="doc-subtab" data-sub="log" onclick="showDocSub('log')">로그</button>
+      <div id="project-grid" class="project-grid"></div>
+      <div id="project-empty" class="empty-state" hidden>조건에 맞는 프로젝트가 없습니다.</div>
+    </section>
+
+    <section class="view" data-view-panel="codex" aria-labelledby="codex-title" hidden>
+      <div class="section-intro">
+        <div><p class="eyebrow">Codex ledger</p><h1 id="codex-title">실제 작업량과 예측</h1><p>세션의 마지막 누적 token_count만 사용해 중복을 막고, 하위 에이전트는 합계에서 제외합니다.</p></div>
+        <div class="section-stat" id="codex-section-stat"></div>
+      </div>
+      <div class="method-grid" id="method-grid"></div>
+      <section class="panel chart-panel" aria-labelledby="daily-title">
+        <div class="panel-head"><div><p class="kicker">30 days</p><h2 id="daily-title">프로젝트 연결 토큰 리듬</h2></div><span class="subtle" id="daily-total"></span></div>
+        <div id="daily-chart" class="daily-chart" aria-label="최근 30일 토큰 막대 차트"></div>
+      </section>
+      <section class="panel table-panel" aria-labelledby="ledger-title">
+        <div class="panel-head"><div><p class="kicker">Project ledger</p><h2 id="ledger-title">프로젝트별 Codex 원장</h2></div></div>
+        <div class="table-wrap"><table><thead><tr><th>프로젝트</th><th>30일</th><th>누적</th><th>세션</th><th>예측</th><th>최근 활동</th></tr></thead><tbody id="ledger-body"></tbody></table></div>
+      </section>
+      <aside class="caveat" id="codex-caveat"></aside>
+    </section>
+
+    <section class="view" data-view-panel="resources" aria-labelledby="resources-title" hidden>
+      <div class="section-intro">
+        <div><p class="eyebrow">Capacity</p><h1 id="resources-title">리소스와 수집 상태</h1><p>계정 한도와 데이터 신선도를 작업량 원장과 분리해서 봅니다.</p></div>
+        <div class="section-stat" id="resource-section-stat"></div>
+      </div>
+      <div id="usage-grid" class="usage-grid"></div>
+      <section class="panel collection-panel" aria-labelledby="collection-title">
+        <div class="panel-head"><div><p class="kicker">Collection</p><h2 id="collection-title">갱신 명령</h2></div></div>
+        <div class="command-grid">
+          <article><strong>Codex 작업량</strong><code>node scripts/collect-codex-metrics.mjs</code><p>로컬 세션을 다시 집계하고 공개 요약을 갱신합니다.</p></article>
+          <article><strong>계정 한도</strong><code>node scripts/refresh-usage.mjs</code><p>Codex·Claude 한도 사용률과 리셋 시각을 갱신합니다.</p></article>
+          <article><strong>GitHub 활동</strong><code>GH_TOKEN=... node scripts/refresh-progress.mjs</code><p>커밋, 마지막 업데이트, 보고서 데이터를 갱신합니다.</p></article>
         </div>
-        <div class="doc-pane-body doc-body" id="docRight"></div>
-      </div>
-    </div>
-  </div>
-</div>
+      </section>
+    </section>
+  </main>
 
-<!-- 완성도 측정 기준 도움말 모달 -->
-<div class="modal-overlay" id="helpModal" onclick="if(event.target===this)closeHelp()">
-  <div class="modal-box" role="dialog" aria-modal="true" aria-label="완성도 측정 기준">
-    <div class="modal-hd">
-      <span class="modal-title">완성도 측정 기준</span>
-      <button class="modal-x" onclick="closeHelp()" aria-label="닫기">✕</button>
-    </div>
-    <p class="modal-intro">완성도 = 문서(0-20) + 골격(0-30) + 기능(0-30) + 알파(0-20) = 0-100. 활동량은 이 점수를 자동으로 올리지 않고, 모멘텀·건강·신뢰도에서 따로 봅니다.</p>
-    <div class="help-stage"><div class="help-stage-hd"><span class="leg-dot" style="background:var(--s1)"></span>문서 (0-20) — PRD·스펙·ADR 문서화</div>
-      <ul><li>0-4 README 한두 줄</li><li>5-9 README에 컨셉+실행법+구조</li><li>10-15 PRD 또는 Spec 1개 + 컨셉 문서</li><li>16-20 PRD+ADR+로드맵+운영규약 등 다층 문서</li></ul></div>
-    <div class="help-stage"><div class="help-stage-hd"><span class="leg-dot" style="background:var(--s2)"></span>골격 (0-30) — 하네스 엔지니어링 + 서브에이전트 구성</div>
-      <ul><li>0-6 실행 골격만, 하네스·에이전트 구성 없음</li><li>7-14 빌드 골격+디렉토리 구조, 하네스 초기</li><li>15-22 검증 하네스(check.sh/CI) 동작 + 서브에이전트 역할 분담</li><li>23-30 하네스+서브에이전트+자동 리뷰/플레이테스트 프로토콜 정착</li></ul></div>
-    <div class="help-stage"><div class="help-stage-hd"><span class="leg-dot" style="background:var(--s3)"></span>기능 (0-30) — PRD 핵심 기능 동작 비율</div>
-      <ul><li>0-5 거의 미구현, 랜딩/데모만</li><li>6-12 핵심 1-2개 mock 동작</li><li>13-19 PRD 절반 실데이터 동작</li><li>20-25 PRD 80% 동작</li><li>26-30 PRD 100% + 폴리시</li></ul></div>
-    <div class="help-stage"><div class="help-stage-hd"><span class="leg-dot" style="background:var(--s4)"></span>알파 (0-20) — 검증·사용자 테스트·폴리시</div>
-      <ul><li>0-2 내부 검증 미실시</li><li>3-7 합성 플레이테스트 또는 셀프 QA</li><li>8-13 알파 사용자 N=5+ 보고서</li><li>14-18 알파 N=10+ 종합 보고서</li><li>19-20 클로즈드 베타 진입 가능</li></ul></div>
-    <div class="help-stage"><div class="help-stage-hd">운영 신호 — 점수와 분리해서 보는 항목</div>
-      <ul><li>모멘텀은 최근 커밋과 7일 완성도 변화를 봅니다</li><li>건강은 정체·블로커·스프린트 위험을 봅니다</li><li>신뢰도는 문서·히스토리·다음 액션 등 증거의 밀도를 봅니다</li></ul></div>
-  </div>
-</div>
+  <footer class="footer"><span>Project Control Room</span><span id="footer-source"></span></footer>
 
-<script>
-/* ── FALLBACK 데이터 (fetch 실패 시 — file:// 등에서 사용) ── */
-const FALLBACK_PROJECTS = {
+  <script type="application/json" id="fallback-projects">{
   "$schema": "./projects.schema.md",
   "meta": {
     "owner": "sgeniusk",
@@ -1191,8 +822,8 @@ const FALLBACK_PROJECTS = {
       "url": "https://github.com/sgeniusk/honbul"
     }
   ]
-};
-const FALLBACK_SUGGESTIONS = {
+}</script>
+  <script type="application/json" id="fallback-suggestions">{
   "_comment": "/coach 및 /refresh 슬래시 커맨드가 생성하는 분석·제안 데이터. 대시보드의 '제안 / 코칭' 패널이 읽는다. 수동 편집보다 커맨드 재생성을 권장. paused 프로젝트는 정체 경고 대상에서 제외한다.",
   "generatedAt": "2026-07-01",
   "items": [
@@ -1202,10 +833,19 @@ const FALLBACK_SUGGESTIONS = {
       "severity": "high",
       "title": "Sprint A 49일째 정지 — 재개/보류 결정 필요 (rank 2)",
       "detail": "rank 2이자 완성 근접(65%)인데 2026-05-12 이후 49일 정지했다. sprint A/inProgress로 표시되지만 7주째 무커밋이라 표기와 실제가 어긋난다. 로컬도 웹·harness 기반이라 미push 착시가 아닌 진짜 중단으로 보인다.",
-      "evidence": ["마지막 푸시 2026-05-12 — 49일 경과", "rank 2, sprint A/inProgress", "일평균 커밋 0.1 (5/51)", "alpha 0/20"],
+      "evidence": [
+        "마지막 푸시 2026-05-12 — 49일 경과",
+        "rank 2, sprint A/inProgress",
+        "일평균 커밋 0.1 (5/51)",
+        "alpha 0/20"
+      ],
       "confidence": "high",
       "recommendation": "7주 정지는 사실상 중단 — 재개 계획이 없다면 status를 paused로 정직하게 내릴 것.",
-      "actions": ["Xcode 빌드 재시동 또는 보류 결정", "ADR-006 게이트(Paid Intent·Waitlist) 재평가", "메인 monorepo 통합 시점 확정"]
+      "actions": [
+        "Xcode 빌드 재시동 또는 보류 결정",
+        "ADR-006 게이트(Paid Intent·Waitlist) 재평가",
+        "메인 monorepo 통합 시점 확정"
+      ]
     },
     {
       "repo": "habit",
@@ -1213,10 +853,19 @@ const FALLBACK_SUGGESTIONS = {
       "severity": "high",
       "title": "rank 1이 부활 후 재정체 — 6일",
       "detail": "23일 공백 뒤 2026-06-24에 다시 손댔으나 이후 6일 공백이다. 완성 1위(70%)라 남은 건 Expo 알파 빌드·TestFlight인데 추진력이 붙지 않는다. 6/24 부활 불씨가 남아 있을 때가 재개 적기다.",
-      "evidence": ["마지막 푸시 2026-06-24 (직전 23일 공백 뒤 부활)", "rank 1, total 70%(최고)", "features 15/30, alpha 10/20", "일평균 커밋 4.4"],
+      "evidence": [
+        "마지막 푸시 2026-06-24 (직전 23일 공백 뒤 부활)",
+        "rank 1, total 70%(최고)",
+        "features 15/30, alpha 10/20",
+        "일평균 커밋 4.4"
+      ],
       "confidence": "medium",
       "recommendation": "부활 불씨가 있을 때 Expo 알파 빌드를 끝까지 밀 것.",
-      "actions": ["mobile/README.md 기준 Expo 알파 빌드 산출", "iOS TestFlight 등록", "6/24 부활 세션 이어가기"]
+      "actions": [
+        "mobile/README.md 기준 Expo 알파 빌드 산출",
+        "iOS TestFlight 등록",
+        "6/24 부활 세션 이어가기"
+      ]
     },
     {
       "repo": "sam-defender-logue",
@@ -1224,10 +873,18 @@ const FALLBACK_SUGGESTIONS = {
       "severity": "warn",
       "title": "게임 미push로 대시보드 오판 — 로컬 확인·push 필요",
       "detail": "시즈폴·전지적 군주 시점·군령이 GitHub상 19~24일 정체로 보이나, 이번 인터뷰에서 확인된 패턴(게임들이 Unity로 전환하며 로컬 커밋을 push 안 함)상 실제론 로컬에서 활발할 가능성이 크다. 시즈폴은 로컬 마지막 06-17+uncommitted 12로 확인됐고, 혼불도 로컬 미push 44 사례였다. 정체가 아니라 가시성 문제다.",
-      "evidence": ["시즈폴 GitHub 마지막 06-11 vs 로컬 06-17+uncommitted 12", "혼불 로컬 미push 44 확인 사례", "전지적(GitHub 20일)·군령(24일) — 로컬 미확인이나 Unity 전환 패턴"],
+      "evidence": [
+        "시즈폴 GitHub 마지막 06-11 vs 로컬 06-17+uncommitted 12",
+        "혼불 로컬 미push 44 확인 사례",
+        "전지적(GitHub 20일)·군령(24일) — 로컬 미확인이나 Unity 전환 패턴"
+      ],
       "confidence": "high",
       "recommendation": "세 게임을 commit & push하면 대시보드가 실제 진척을 반영한다 — 정체 경고가 아니라 push 습관 문제다.",
-      "actions": ["시즈폴 로컬 uncommitted 12 commit & push", "전지적·군령 로컬 상태 확인 후 push", "게임 작업 후 push 습관화"]
+      "actions": [
+        "시즈폴 로컬 uncommitted 12 commit & push",
+        "전지적·군령 로컬 상태 확인 후 push",
+        "게임 작업 후 push 습관화"
+      ]
     },
     {
       "repo": "design-system-school",
@@ -1235,10 +892,17 @@ const FALLBACK_SUGGESTIONS = {
       "severity": "warn",
       "title": "32일째 멈춤 — PRD 단계 (진짜 정체)",
       "detail": "2026-05-29 이후 32일 정지로 가장 오래된 활성 정체다. total 20(docs 10·skeleton 10·features 0)으로 PRD·스캐폴딩 이전 단계다. 웹 프로젝트라 GitHub과 로컬이 대체로 일치하므로 미push 착시가 아닌 실제 중단이다.",
-      "evidence": ["마지막 푸시 2026-05-29 — 32일 경과", "total 20%, features 0/30", "웹(미push 착시 아님)"],
+      "evidence": [
+        "마지막 푸시 2026-05-29 — 32일 경과",
+        "total 20%, features 0/30",
+        "웹(미push 착시 아님)"
+      ],
       "confidence": "high",
       "recommendation": "가장 오래된 정체 — 착수하거나 paused로 내릴 것.",
-      "actions": ["PRD 작성·Next.js 스캐폴딩 착수", "또는 status paused로 하향"]
+      "actions": [
+        "PRD 작성·Next.js 스캐폴딩 착수",
+        "또는 status paused로 하향"
+      ]
     },
     {
       "repo": "ai-builder-school",
@@ -1246,10 +910,18 @@ const FALLBACK_SUGGESTIONS = {
       "severity": "warn",
       "title": "기능 병목 + 20일 정체 (웹)",
       "detail": "docs 20·skeleton 20인데 features가 5/30으로 레슨 본문 작성이 병목이고 2026-06-10 이후 20일 정지했다. 웹이라 실제 정체이며, 32개 레슨 분량 자체가 부담으로 명시돼 있다.",
-      "evidence": ["features 5/30 (만점 대비 최저)", "마지막 푸시 2026-06-10 — 20일 경과", "32 lesson 본문 작성량(risks)"],
+      "evidence": [
+        "features 5/30 (만점 대비 최저)",
+        "마지막 푸시 2026-06-10 — 20일 경과",
+        "32 lesson 본문 작성량(risks)"
+      ],
       "confidence": "high",
       "recommendation": "전부 말고 Phase별 4-5개 레슨만 먼저 끝내 병목을 해소할 것.",
-      "actions": ["Phase별 우선 레슨 4-5개 본문 완성", "캡스톤 예시 1건", "라이선스 결정"]
+      "actions": [
+        "Phase별 우선 레슨 4-5개 본문 완성",
+        "캡스톤 예시 1건",
+        "라이선스 결정"
+      ]
     },
     {
       "repo": "ai-company-tycoon-boundaryless",
@@ -1257,14 +929,20 @@ const FALLBACK_SUGGESTIONS = {
       "severity": "info",
       "title": "AI 사용량 데이터 15일 낡음 — /usage-refresh 권장",
       "detail": "usage.json의 collectedAt이 2026-06-16으로 오늘(7/01) 기준 15일 지났다. 표시 중인 Claude 40%·Codex 65%는 옛 수치라 현재 한도를 반영하지 못하고, 한도 인식 코칭도 불가하다. codex로 개발 중인 활발 프로젝트(타이쿤·혼불)의 작업 배분 판단을 위해 갱신이 필요하다.",
-      "evidence": ["usage.json collectedAt 2026-06-16 — 15일 경과", "오늘 2026-07-01", "Claude 40%·Codex 65%는 6/16 수치"],
+      "evidence": [
+        "usage.json collectedAt 2026-06-16 — 15일 경과",
+        "오늘 2026-07-01",
+        "Claude 40%·Codex 65%는 6/16 수치"
+      ],
       "confidence": "high",
       "recommendation": "/usage-refresh를 돌려 한도 %·리셋 시각을 최신화할 것.",
-      "actions": ["node scripts/refresh-usage.mjs 실행"]
+      "actions": [
+        "node scripts/refresh-usage.mjs 실행"
+      ]
     }
   ]
-};
-const FALLBACK_USAGE = {
+}</script>
+  <script type="application/json" id="fallback-usage">{
   "_comment": "도구별 사용량 트래커. scripts/refresh-usage.mjs(/usage-refresh)가 로컬 CLI 자격증명으로 한도 %·리셋만 자동 수집한다(토큰·비용 상세는 비공개 유지). 자동 수집 실패 시 대시보드 사용량 패널에서 수동 입력(localStorage) 폴백.",
   "asOf": "2026-06-16",
   "tools": [
@@ -1336,1540 +1014,632 @@ const FALLBACK_USAGE = {
       }
     }
   ]
-};
-
-/* ── projects.json 구조 → 대시보드 데이터 매핑 ── */
-const TOOL_LABEL = { claude:'Claude', codex:'Codex', hermes:'Hermes Agent', hybrid:'Claude+Codex' };
-const TYPE_LABEL = { game:'게임', app:'앱', content:'콘텐츠' };
-function mapProject(p) {
-  const pr = p.progress || {};
-  return {
-    id: p.rank, nm: p.displayName || p.name, icon: p.icon || '📦', tool: TOOL_LABEL[p.tool] || p.tool || 'Claude',
-    type: TYPE_LABEL[p.category] || p.category || '앱', commits: p.commits || 0,
-    last: (p.lastUpdate || '').slice(0, 10),
-    sprint: p.sprint === 'defer' ? 'Defer' : (p.sprint || 'A'),
-    d: pr.docs || 0, sc: pr.skeleton || 0, fn: pr.features || 0, al: pr.alpha || 0,
-    eta: p.eta || '-', st: p.status === 'active' ? 'active' : 'suspended',
-    next: (p.nextActions && p.nextActions[0]) || '-', repo: p.name,
-    cat: p.category || 'app', paused: p.status === 'paused',
-    url: p.url || '', nextAll: p.nextActions || []
-  };
-}
-
-/* ── 데이터 (init에서 fetch 후 채움) ── */
-let P = [], SUG = { items: [] }, META = {}, usageData = { tools: [] };
-
-const SPRINTS = {
-  'A':{lbl:'Sprint A',sub:'1-2주',c:'#6c5ce7'},
-  'B':{lbl:'Sprint B',sub:'2-3주',c:'#2545ff'},
-  'C':{lbl:'Sprint C',sub:'3-5주',c:'#ffc13a'},
-  'D':{lbl:'Sprint D',sub:'5-8주',c:'#ff5b22'},
-  'Defer':{lbl:'Defer',sub:'보류',c:'#aaa'}
-};
-const TCOLS = {'Claude':'#ff5b22','Claude+Codex':'#39c5cf','Codex':'#3fb950','Hermes Agent':'#bc8cff'};
-const TCLS  = {'Claude':'t-cl','Claude+Codex':'t-hy','Codex':'t-co','Hermes Agent':'t-he'};
-
-const pct = p => p.d + p.sc + p.fn + p.al;
-const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
-const esc = s => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-const STAGES = [
-  { key:'d', label:'문서', detail:'PRD·Spec', max:20, cls:'s1' },
-  { key:'sc', label:'골격', detail:'하네스·서브에이전트', max:30, cls:'s2' },
-  { key:'fn', label:'기능', detail:'핵심 기능', max:30, cls:'s3' },
-  { key:'al', label:'알파', detail:'검증·폴리시', max:20, cls:'s4' }
-];
-function progressBreakdown(p) {
-  return STAGES.map(s=>`${s.label} ${p[s.key] || 0}`).join(' · ');
-}
-function progressBar(p) {
-  return `<div class="stk-bar" aria-label="${esc(progressBreakdown(p))}">${STAGES.map(s=>{
-    const v = p[s.key] || 0;
-    return `<div class="seg ${s.cls}" style="width:${v}%" title="${esc(`${s.label} ${s.detail} ${v}/${s.max}`)}"></div>`;
-  }).join('')}</div><div class="prog-breakdown">${progressBreakdown(p)}</div>`;
-}
-function daysBetween(a,b) {
-  const da = new Date(a + 'T00:00:00Z'), db = new Date(b + 'T00:00:00Z');
-  if (Number.isNaN(da.getTime()) || Number.isNaN(db.getTime())) return null;
-  return Math.max(0, Math.round((db - da) / 86400000));
-}
-function projectMomentum(repo) {
-  const snaps = ((HIST && HIST.snapshots) || []).filter(sn=>sn && sn.date && sn.projects && sn.projects[repo]);
-  if (snaps.length < 2) return null;
-  const latest = snaps[snaps.length - 1], current = Number(latest.projects[repo].total || 0);
-  const latestDate = new Date(latest.date + 'T00:00:00Z');
-  const targetTime = latestDate.getTime() - 7 * 86400000;
-  let base = snaps[0], baseDist = Infinity;
-  snaps.slice(0, -1).forEach(sn=>{
-    const dist = Math.abs(new Date(sn.date + 'T00:00:00Z').getTime() - targetTime);
-    if (dist < baseDist) { base = sn; baseDist = dist; }
-  });
-  const weekly = current - Number(base.projects[repo].total || 0);
-  return { weekly, baseDate:base.date, latestDate:latest.date };
-}
-function commitRecencyHTML(p) {
-  const d = daysBetween(p.last, META.asOf || p.last);
-  if (d === null) return '<span class="momentum-chip commit-idle" title="마지막 커밋 날짜 없음">커밋일 없음</span>';
-  const cls = d <= 3 ? 'commit-fresh' : (d >= 14 ? 'commit-dormant' : 'commit-idle');
-  const text = d === 0 ? '오늘 커밋' : (d === 1 ? '어제 커밋' : `커밋 ${d}일 전`);
-  return `<span class="momentum-chip ${cls}" title="${esc(`마지막 커밋 ${p.last} · 데이터 기준 ${META.asOf || '-'}`)}">${text}</span>`;
-}
-function momentumHTML(p) {
-  const m = projectMomentum(p.repo);
-  const score = m ? (() => {
-    const wCls = m.weekly > 0 ? 'up' : (m.weekly < 0 ? 'down' : 'flat');
-    const wText = m.weekly > 0 ? `▲ +${m.weekly}` : (m.weekly < 0 ? `▼ ${m.weekly}` : '보합');
-    return `<span class="momentum-chip ${wCls}" title="${esc(`${m.baseDate} 대비 ${m.latestDate} 점수 변화`)}">${wText}</span>`;
-  })() : '';
-  return score + commitRecencyHTML(p);
-}
-function blockerHTML(p) {
-  const hit = ((SUG && SUG.items) || []).find(it=>it && it.repo===p.repo && it.severity==='high');
-  if (!hit) return '';
-  return `<span class="blocker-chip" title="${esc(hit.title || '정체')}">⚠ 정체${hit.title ? ' · '+esc(hit.title) : ''}</span>`;
-}
-function highSuggestion(p) {
-  return ((SUG && SUG.items) || []).find(it=>it && it.repo===p.repo && it.severity==='high') || null;
-}
-function projectAge(p) {
-  return daysBetween(p.last, META.asOf || p.last);
-}
-function projectHealth(p) {
-  if (p.st === 'suspended') return { key:'hold', label:'보류', detail:'일시중단 상태' };
-  const age = projectAge(p);
-  const high = highSuggestion(p);
-  if (high) return { key:'risk', label:'위험', detail:high.title || '블로커 있음' };
-  if (age !== null && (age >= 14 || ((p.sprint === 'A' || p.sprint === 'B') && age >= 7))) {
-    return { key:'risk', label:'위험', detail:`활동 ${age}일 공백` };
-  }
-  if (age !== null && (age >= 5 || (pct(p) >= 60 && age >= 4))) {
-    return { key:'watch', label:'주의', detail:`활동 ${age}일 공백` };
-  }
-  return { key:'ok', label:'정상', detail:age === 0 ? '오늘 활동' : `최근 ${age == null ? '-' : age + '일'} 내 활동` };
-}
-function healthHTML(p) {
-  const h = projectHealth(p);
-  return `<span class="health-chip ${h.key}" title="${esc(h.detail)}">${h.label}</span>`;
-}
-function confidenceLevel(p) {
-  let score = 0;
-  if (p.d >= 10) score += 1;
-  if (p.sc >= 10 || p.fn > 0 || p.al > 0) score += 1;
-  if (p.commits > 0 && p.last) score += 1;
-  if (projectMomentum(p.repo)) score += 1;
-  if ((p.nextAll || []).length) score += 1;
-  if (score >= 4) return { key:'high', label:'신뢰 높음' };
-  if (score >= 2) return { key:'med', label:'신뢰 보통' };
-  return { key:'low', label:'근거 낮음' };
-}
-function confidenceHTML(p) {
-  const c = confidenceLevel(p);
-  return `<span class="confidence-chip ${c.key}" title="문서·커밋·히스토리·다음 액션 근거 밀도">${c.label}</span>`;
-}
-function stageFocus(p) {
-  const open = STAGES
-    .map(s=>({ label:s.label, value:p[s.key] || 0, max:s.max, missing:s.max - (p[s.key] || 0) }))
-    .filter(s=>s.missing > 0)
-    .sort((a,b)=>(b.missing / b.max) - (a.missing / a.max))[0];
-  return open ? `${open.label} 보강` : '출시 검증';
-}
-function milestoneText(p) {
-  return (p.next && p.next !== '-') ? p.next : stageFocus(p);
-}
-function activityCount(days) {
-  const commits = (ACT && ACT.commits) || [];
-  const asOf = META.asOf ? new Date(META.asOf + 'T23:59:59Z') : new Date();
-  const start = asOf.getTime() - days * 86400000;
-  return commits.filter(c=>{
-    const t = new Date(c.date).getTime();
-    return !Number.isNaN(t) && t >= start && t <= asOf.getTime();
-  }).length;
-}
-function healthRank(p) {
-  return { risk:0, watch:1, ok:2, hold:3 }[projectHealth(p).key] ?? 4;
-}
-function renderDataBadge() {
-  const el = document.getElementById('dataBadge');
-  if (el) el.textContent = `v2.7 · 데이터 ${META.asOf || '-'} 기준`;
-}
-
-/* ── STATE ── */
-let ST = { cat:'전체', tool:'전체', status:'활성', sort:'완성도', search:'' };
-let spPos = {}, usage = {};
-try { spPos = JSON.parse(localStorage.getItem('sd')||'{}'); } catch(e){}
-try { usage = JSON.parse(localStorage.getItem('ud')||'{}'); } catch(e){}
-
-/* ── TOOLTIP ── */
-const tipEl = document.getElementById('tip');
-let tipOn = false;
-const showTip = (e,t) => { tipEl.textContent=t; tipEl.classList.add('on'); tipOn=true; mvTip(e); };
-const hideTip = () => { tipEl.classList.remove('on'); tipOn=false; };
-const mvTip   = e => { tipEl.style.left=(e.clientX+14)+'px'; tipEl.style.top=(e.clientY-40)+'px'; };
-document.addEventListener('mousemove', e => tipOn && mvTip(e));
-
-/* ── KPI (실데이터에서 계산) ── */
-function renderKPI() {
-  const active = P.filter(p=>p.st==='active');
-  const susp = P.length - active.length;
-  const avg  = active.length ? Math.round(active.reduce((s,p)=>s+pct(p),0)/active.length) : 0;
-  const near = active.filter(p=>pct(p)>=60 && projectHealth(p).key!=='risk').length;
-  const risk = active.filter(p=>projectHealth(p).key==='risk').length;
-  const recent = activityCount(7);
-  const kpis = [
-    {lbl:'활성 프로젝트',val:String(active.length),sub:(susp?'+'+susp+' 일시중단':'전부 진행 중'),acc:'#2545ff',tag:'전체 '+P.length+'개'},
-    {lbl:'평균 완성도',val:avg+'%',sub:'산출물 기준 수동 점수',acc:'#ffc13a',tag:near+'개 ≥60%'},
-    {lbl:'건강 위험',val:String(risk),sub:risk ? '정체·블로커 우선 점검' : '치명 신호 없음',acc:'#ff5b22',tag:risk ? '개입 필요' : '정상'},
-    {lbl:'최근 7일 커밋',val:String(recent),sub:'활동량은 완성도와 분리',acc:'#3fb950',tag:'모멘텀'}
-  ];
-  document.getElementById('kpiGrid').innerHTML = kpis.map(k=>`
-    <div class="kpi-card" style="--acc:${k.acc}">
-      <div class="kpi-lbl">${k.lbl}</div>
-      <div class="kpi-num">${k.val}</div>
-      <div class="kpi-sub">${k.sub}</div>
-      <div class="kpi-tag">${k.tag}</div>
-    </div>`).join('');
-}
-
-/* ── FILTERS ── */
-function renderFilters() {
-  const mk = (id,key,items) => {
-    document.getElementById(id).innerHTML = items.map(v=>
-      `<button class="chip${ST[key]===v?' on':''}" onclick="setF('${key}','${v.replace(/'/g,"\\'")}')">${v}</button>`
-    ).join('');
-  };
-  mk('fCat','cat',['전체','게임','앱','콘텐츠']);
-  mk('fTool','tool',['전체','Claude','Codex','Hermes Agent','Claude+Codex']);
-  mk('fStatus','status',['활성','전체']);
-  mk('fSort','sort',['완성도','건강','커밋','최근 활동']);
-}
-window.setF = (k,v)=>{ ST[k]=v; renderFilters(); renderMasterBoard(); };
-
-/* ── FILTERED LIST ── */
-function getList() {
-  let ps = [...P];
-  if (ST.status==='활성') ps=ps.filter(p=>p.st==='active');
-  if (ST.cat!=='전체') ps=ps.filter(p=>p.type===ST.cat);
-  if (ST.tool!=='전체') ps=ps.filter(p=>p.tool===ST.tool);
-  if (ST.search) { const q=ST.search.toLowerCase(); ps=ps.filter(p=>p.nm.toLowerCase().includes(q)||p.tool.toLowerCase().includes(q)||p.type.includes(q)||(p.repo||'').toLowerCase().includes(q)); }
-  if (ST.sort==='완성도') ps.sort((a,b)=>pct(b)-pct(a));
-  else if (ST.sort==='건강') ps.sort((a,b)=>healthRank(a)-healthRank(b) || pct(b)-pct(a));
-  else if (ST.sort==='커밋') ps.sort((a,b)=>b.commits-a.commits);
-  else ps.sort((a,b)=>(b.last||'').localeCompare(a.last||''));
-  return ps;
-}
-
-/* ── STACKED BAR CHART ── */
-function renderStacked() {
-  const el = document.getElementById('stackC');
-  const W = Math.max(el.parentElement.clientWidth - 44, 300);
-  const H = 268, pL=120, pR=26, pT=6, pB=28, cW=W-pL-pR, cH=H-pT-pB;
-  const ps = P.filter(p=>p.st==='active').sort((a,b)=>pct(b)-pct(a));
-  if (!ps.length) { el.innerHTML=''; return; }
-  const bH = Math.max(Math.floor(cH/ps.length*0.62), 8);
-  const gap = (cH - bH*ps.length)/Math.max(ps.length-1,1);
-  const COLS = ['#eaebf8','#d9d4ff','#ffc13a','#2545ff'];
-  const isDark = document.documentElement.getAttribute('data-theme')==='dark';
-  const COLS_D = ['#1d2445','#2b2265','#6a4e00','#1133ee'];
-  const cols = isDark ? COLS_D : COLS;
-  const textFill = isDark ? '#ece8ff' : '#171417';
-  const t2Fill   = isDark ? '#8890b8' : '#5a5a72';
-  const borderCl = isDark ? '#1c2550' : '#e6e6f0';
-
-  let s = '';
-  [0,25,50,75,100].forEach(v=>{
-    const x = pL+v/100*cW;
-    s += `<line x1="${x}" y1="${pT}" x2="${x}" y2="${pT+cH}" stroke="${borderCl}" stroke-width="1"/>`;
-    s += `<text x="${x}" y="${H-6}" text-anchor="middle" font-size="9" fill="${t2Fill}" font-family="Inter,sans-serif">${v}%</text>`;
-  });
-  const x60 = pL+0.6*cW;
-  s += `<line x1="${x60}" y1="${pT}" x2="${x60}" y2="${pT+cH}" stroke="#ff5b22" stroke-width="1.5" stroke-dasharray="4,3" opacity=".6"/>`;
-  s += `<text x="${x60+3}" y="${pT+10}" font-size="9" fill="#ff5b22" font-family="Inter,sans-serif" opacity=".8">60%</text>`;
-
-  ps.forEach((p,i)=>{
-    const y = pT+i*(bH+gap), tot=pct(p);
-    s += `<text x="${pL-8}" y="${y+bH/2+4}" text-anchor="end" font-size="11" font-weight="500" fill="${textFill}" font-family="Inter,sans-serif">${p.nm}</text>`;
-    let x=pL;
-    [p.d,p.sc,p.fn,p.al].forEach((v,j)=>{
-      const w=v/100*cW;
-      if(w>0) s += `<rect x="${x}" y="${y}" width="${w}" height="${bH}" fill="${cols[j]}" rx="2" style="cursor:pointer" onmouseenter="showTip(event,'${p.nm} ${['문서','골격','기능','알파'][j]}: ${v}점')" onmouseleave="hideTip()"/>`;
-      x+=w;
-    });
-    s += `<text x="${pL+tot/100*cW+5}" y="${y+bH/2+4}" font-size="10" fill="${t2Fill}" font-family="Inter,sans-serif">${tot}%</text>`;
-  });
-
-  el.setAttribute('viewBox',`0 0 ${W} ${H}`);
-  el.innerHTML = s;
-  document.getElementById('stackLeg').innerHTML = ['문서','골격','기능','알파'].map((l,i)=>`<div class="leg-item"><div class="leg-dot" style="background:${COLS[i]}"></div>${l}</div>`).join('');
-}
-
-/* ── SPRINT BOARD ── */
-function renderSprint() {
-  document.getElementById('sprintBoard').innerHTML = Object.entries(SPRINTS).map(([key,cfg])=>{
-    const cards=P.filter(p=>(spPos[p.id]||p.sprint)===key);
-    return `<div class="spcol" id="col-${key}" ondragover="dragO(event,'${key}')" ondrop="dropC(event,'${key}')" ondragleave="dragL(event)">
-      <div class="sph" style="color:${cfg.c}">${cfg.lbl}<span class="spcnt">${cfg.sub}</span></div>
-      ${cards.map(p=>`
-      <div class="spcard" draggable="true" id="sc-${p.id}" ondragstart="dStart(event,${p.id})" ondragend="dEnd(event)">
-        <div class="spcard-nm">${p.nm}</div>
-        <div class="spcard-meta">
-          <span class="tbadge ${TCLS[p.tool]||'t-cl'}" style="font-size:9px;padding:2px 7px">${p.tool}</span>
-          <span class="spcard-pct">${pct(p)}%</span>
-        </div>
-      </div>`).join('')}
-    </div>`;
-  }).join('');
-  updateSprintDrift();
-}
-
-// 보드(localStorage)와 projects.json sprint 필드의 차이를 {repo:sprint}로 반환
-function sprintDrift() {
-  const out = {};
-  P.forEach(p => { const cur = spPos[p.id] || p.sprint; if (cur !== p.sprint) out[p.repo] = cur; });
-  return out;
-}
-function updateSprintDrift() {
-  const el = document.getElementById('spDrift');
-  if (!el) return;
-  const n = Object.keys(sprintDrift()).length;
-  el.textContent = n ? `미반영 ${n}건` : '';
-}
-window.exportSprint = () => {
-  const d = sprintDrift(), n = Object.keys(d).length;
-  if (!n) { alert('보드가 projects.json과 일치합니다 — 내보낼 변경이 없습니다.'); return; }
-  const text = JSON.stringify(d, null, 2);
-  const msg = `Sprint 변경 ${n}건을 클립보드에 복사했습니다.\nprojects.json의 해당 프로젝트 sprint 필드에 반영하거나 Claude에 전달하세요.`;
-  if (navigator.clipboard && navigator.clipboard.writeText)
-    navigator.clipboard.writeText(text).then(()=>alert(msg),()=>window.prompt('Sprint 변경:',text));
-  else window.prompt('Sprint 변경:',text);
-};
-
-let dragId=null;
-window.dStart=(e,id)=>{ dragId=id; setTimeout(()=>document.getElementById('sc-'+id)?.classList.add('dragging'),0); e.dataTransfer.effectAllowed='move'; };
-window.dEnd=e=>{ document.querySelectorAll('.spcard').forEach(c=>c.classList.remove('dragging')); document.querySelectorAll('.spcol').forEach(c=>c.classList.remove('dov')); };
-window.dragO=(e,k)=>{ e.preventDefault(); e.currentTarget.classList.add('dov'); };
-window.dragL=e=>e.currentTarget.classList.remove('dov');
-window.dropC=(e,k)=>{ e.preventDefault(); if(dragId!==null){ spPos[dragId]=k; localStorage.setItem('sd',JSON.stringify(spPos)); renderSprint(); renderMasterBoard(); } dragId=null; };
-window.resetSprint=()=>{ P.forEach(p=>spPos[p.id]=p.sprint); localStorage.setItem('sd',JSON.stringify(spPos)); renderSprint(); renderMasterBoard(); };
-
-/* ── USAGE TRACKER ── */
-// AI 서비스 브랜드 — 이름 매칭으로 로고 색·약자 자동 지정
-const USAGE_BRANDS=[
-  {m:['claude','anthropic'],   clr:'#d97757', mono:'C'},
-  {m:['codex','openai','chatgpt','gpt'], clr:'#10a37f', mono:'O'},
-  {m:['gemini','google','bard'], clr:'#4285f4', mono:'G'},
-  {m:['perplexity'],           clr:'#20808d', mono:'P'},
-  {m:['cursor'],               clr:'#6c5ce7', mono:'Cu'},
-  {m:['copilot','github'],     clr:'#6e40c9', mono:'Co'},
-  {m:['grok','xai'],           clr:'#1d1d1f', mono:'X'},
-  {m:['mistral'],              clr:'#fa520f', mono:'M'},
-  {m:['deepseek'],             clr:'#4d6bfe', mono:'D'},
-  {m:['llama','meta'],         clr:'#0866ff', mono:'L'},
-  {m:['v0','vercel'],          clr:'#1d1d1f', mono:'V'}
-];
-function brandOf(name){
-  const n=(name||'').toLowerCase();
-  const hit=USAGE_BRANDS.find(b=>b.m.some(k=>n.includes(k)));
-  return hit || {clr:'#6a6a72', mono:((name||'?').trim().charAt(0)||'?').toUpperCase()};
-}
-// 내장(Claude·Codex) + 사용자 추가 서비스 목록
-function usageServices(){
-  const builtin=[
-    {key:'claude',nm:'Claude',clr:'#2545ff',mono:'C',builtin:true},
-    {key:'codex', nm:'Codex', clr:'#0c1754',mono:'Cx',builtin:true}
-  ];
-  let custom=[]; try{ custom=JSON.parse(localStorage.getItem('usageCustom')||'[]'); }catch(e){}
-  return builtin.concat(custom.map(c=>{
-    const b=brandOf(c.label);
-    return {key:c.key,nm:c.label,clr:c.clr||b.clr,mono:c.mono||b.mono,builtin:false};
-  }));
-}
-function todayStr(){ const d=new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
-// ISO 시각 → '3시간 후' / '2일 후' / '12분 전' 상대 표기
-function relTime(iso){
-  if(!iso) return '';
-  const ms=new Date(iso)-Date.now();
-  const abs=Math.abs(ms), suf=ms>=0?'후':'전';
-  if(abs<3600000) return `${Math.max(1,Math.round(abs/60000))}분 ${suf}`;
-  if(abs<86400000) return `${Math.round(abs/3600000)}시간 ${suf}`;
-  return `${Math.round(abs/86400000)}일 ${suf}`;
-}
-function usageCard(t){
-  const u=usage[t.key]||{};
-  const logo=`<span class="usage-logo" style="background:${t.clr}">${t.mono||'?'}</span>`;
-  let subInfo='';
-  if(u.subscribed){
-    const n=new Date(), nd=new Date(n.getFullYear(),n.getMonth(),n.getDate());
-    const days=Math.round((nd-new Date(u.subscribed+'T00:00:00'))/86400000);
-    if(days>=0) subInfo=`구독 ${days}일째`;
-  }
-  // 내장 외 서비스 — 토큰 한도 개념이 없으므로 구독 정보만
-  if(!t.builtin){
-    return `<div class="usage-card">
-      <div class="usage-hd">
-        <span class="usage-nm">${logo}${t.nm}</span>
-        <button class="usage-del" onclick="delUsageService('${t.key}')" aria-label="삭제">✕</button>
-      </div>
-      <div class="usage-status" style="margin:6px 0 14px">${subInfo||'구독 시작일을 입력하면 사용 기간이 표시됩니다'}</div>
-      <div class="inp-grp"><label class="inp-lbl">구독 시작일</label><input type="date" class="inp" value="${u.subscribed||''}" oninput="updUsage('${t.key}','subscribed',this.value)"></div>
-    </div>`;
-  }
-  // 내장(Claude·Codex) — 토큰 한도 게이지
-  const base=(usageData.tools||[]).find(b=>b.tool===t.key)||{};
-  const auto=base.auto&&Array.isArray(base.auto.windows)&&base.auto.windows.length?base.auto:null;
-  const up=+(u.pct||0);
-  const fillClr=up>=90?'#ff5b22':up>=70?'#ffc13a':t.clr;
-  let dday='리셋일 미입력', ddayCls='';
-  if(u.reset){
-    const n=new Date(), nd=new Date(n.getFullYear(),n.getMonth(),n.getDate());
-    const d=Math.round((new Date(u.reset+'T00:00:00')-nd)/86400000);
-    dday=d>0?`D-${d}`:d===0?'오늘 리셋':`D+${Math.abs(d)} 초과`;
-    ddayCls=d===0?'':d<0?'danger':d<=3?'danger':d<=7?'warn':'';
-  }
-  // 자동 수집 모드 — 윈도우별 미니 게이지 + 수집 시각, 수동 % 입력 숨김
-  if(auto){
-    const ageMs=Date.now()-new Date(auto.collectedAt);
-    const stale=ageMs>26*3600000; // 26시간 이상이면 신선도 경고
-    const winRows=auto.windows.map(w=>{
-      const wp=+(w.usedPercent||0);
-      const wc=wp>=90?'#ff5b22':wp>=70?'#ffc13a':t.clr;
-      const rst=w.resetsAt?`${relTime(w.resetsAt)} 리셋`:'';
-      return `<div style="margin:8px 0">
-        <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:3px">
-          <span style="color:var(--t2)">${w.label}</span><span><b>${wp}%</b> <span style="color:var(--t2)">${rst}</span></span>
-        </div>
-        <div class="meter" style="height:6px"><div class="meter-fill" style="width:${wp}%;background:${wc}"></div></div>
-      </div>`;
-    }).join('');
-    return `<div class="usage-card">
-      <div class="usage-hd">
-        <span class="usage-nm">${logo}${t.nm}</span>
-        <span class="dday ${ddayCls}">${dday}</span>
-      </div>
-      <div class="usage-big">${up}%</div>
-      <div class="usage-status">${subInfo?subInfo+' · ':''}${up>=90?'⚠️ 한도 임박 — 사용 자제':up>=70?'⚡ 주의 필요 — 속도 조절 권장':'✓ 정상 범위'}</div>
-      <div class="meter"><div class="meter-fill" style="width:${up}%;background:${fillClr}"></div></div>
-      ${winRows}
-      <div style="font-size:11px;color:${stale?'#ffc13a':'var(--t2)'};margin-top:10px">${stale?'⚠️ ':''}자동 수집 · ${relTime(auto.collectedAt)}${stale?' — /usage-refresh 실행 권장':''}</div>
-      <div class="inp-grp" style="margin-top:10px"><label class="inp-lbl">구독 시작일</label><input type="date" class="inp" value="${u.subscribed||''}" oninput="updUsage('${t.key}','subscribed',this.value)"></div>
-    </div>`;
-  }
-  return `<div class="usage-card">
-    <div class="usage-hd">
-      <span class="usage-nm">${logo}${t.nm}</span>
-      <span class="dday ${ddayCls}">${dday}</span>
-    </div>
-    <div class="usage-big">${up}%</div>
-    <div class="usage-status">${subInfo||(up>=90?'⚠️ 한도 임박 — 사용 자제':up>=70?'⚡ 주의 필요 — 속도 조절 권장':'✓ 정상 범위')}</div>
-    <div class="meter"><div class="meter-fill" style="width:${up}%;background:${fillClr}"></div></div>
-    <div class="inp-row">
-      <div class="inp-grp"><label class="inp-lbl">사용률 (%)</label><input type="number" class="inp" min="0" max="100" value="${up}" oninput="updUsage('${t.key}','pct',+this.value)"></div>
-      <div class="inp-grp"><label class="inp-lbl">리셋일</label><input type="date" class="inp" value="${u.reset||''}" oninput="updUsage('${t.key}','reset',this.value)"></div>
-    </div>
-    <div class="inp-grp" style="margin-top:10px"><label class="inp-lbl">구독 시작일</label><input type="date" class="inp" value="${u.subscribed||''}" oninput="updUsage('${t.key}','subscribed',this.value)"></div>
-    <button class="btn-ghost" onclick="resetToday('${t.key}')">오늘 리셋</button>
-  </div>`;
-}
-function renderUsage(){
-  document.getElementById('usageGrid').innerHTML =
-    usageServices().map(usageCard).join('') +
-    `<button class="usage-add" onclick="addUsageService()">+ AI 서비스 추가</button>`;
-}
-window.updUsage=(tk,f,v)=>{ if(!usage[tk])usage[tk]={}; usage[tk][f]=v; localStorage.setItem('ud',JSON.stringify(usage)); renderUsage(); };
-// '오늘 리셋' — 리셋 기준일을 오늘로, 사용률 0%로 (구독 시작일은 보존)
-window.resetToday=tk=>{
-  usage[tk]=Object.assign({}, usage[tk], {pct:0, reset:todayStr()});
-  localStorage.setItem('ud',JSON.stringify(usage));
-  renderUsage();
-};
-window.addUsageService=()=>{
-  const name=(window.prompt('추가할 AI 서비스 이름 (예: Gemini, Perplexity, Cursor)')||'').trim();
-  if(!name) return;
-  let custom=[]; try{ custom=JSON.parse(localStorage.getItem('usageCustom')||'[]'); }catch(e){}
-  const b=brandOf(name);
-  custom.push({ key:'svc-'+Date.now().toString(36), label:name, clr:b.clr, mono:b.mono });
-  localStorage.setItem('usageCustom', JSON.stringify(custom));
-  renderUsage();
-};
-window.delUsageService=(key)=>{
-  if(!window.confirm('이 서비스 카드를 삭제할까요?')) return;
-  let custom=[]; try{ custom=JSON.parse(localStorage.getItem('usageCustom')||'[]'); }catch(e){}
-  localStorage.setItem('usageCustom', JSON.stringify(custom.filter(c=>c.key!==key)));
-  delete usage[key]; localStorage.setItem('ud',JSON.stringify(usage));
-  renderUsage();
-};
-// usage.json 전체를 — 기준값(usageData)에 사용자 입력(usage)을 머지해 — 클립보드로 내보낸다
-window.exportUsageAll = () => {
-  const baseMap = {}; (usageData.tools || []).forEach(t => { baseMap[t.tool] = t; });
-  const tools = usageServices().map(s => {
-    const b = baseMap[s.key] || {}, ov = usage[s.key] || {};
-    const out = {
-      tool: s.key, label: b.label || s.nm, plan: b.plan || '', limitLabel: b.limitLabel || '',
-      cycleLengthDays: b.cycleLengthDays != null ? b.cycleLengthDays : null,
-      cycleResetDate: (ov.reset != null && ov.reset !== '') ? ov.reset : (b.cycleResetDate || ''),
-      usedPercent: ov.pct != null ? Number(ov.pct) : (b.usedPercent || 0),
-      subscribedAt: ov.subscribed || b.subscribedAt || '',
-      note: b.note || ''
-    };
-    if (b.auto) out.auto = b.auto; // 자동 수집 데이터 보존
-    return out;
-  });
-  const out = { _comment: usageData._comment || '도구별 사용량 수동 트래커.', asOf: todayStr(), tools };
-  const text = JSON.stringify(out, null, 2);
-  const msg = 'usage.json 전체 내용을 클립보드에 복사했습니다.\nusage.json 파일에 붙여넣으세요.';
-  if (navigator.clipboard && navigator.clipboard.writeText)
-    navigator.clipboard.writeText(text).then(()=>alert(msg),()=>window.prompt('usage.json:',text));
-  else window.prompt('usage.json:',text);
-};
-
-/* ── THEME (localStorage 영속) ── */
-document.getElementById('themeBtn').addEventListener('click',()=>{
-  const d=document.documentElement, dark=d.getAttribute('data-theme')==='dark';
-  const next=dark?'light':'dark';
-  d.setAttribute('data-theme',next);
-  localStorage.setItem('theme',next);
-  document.getElementById('themeBtn').textContent=dark?'🌙':'☀️';
-  setTimeout(()=>{ renderStacked(); renderTrend(); },80);
-});
-
-/* ── SEARCH ── */
-document.getElementById('sInput').addEventListener('input',e=>{ ST.search=e.target.value; renderMasterBoard(); });
-
-/* ── 새로고침 + 클라이언트 분석 ── */
-function daysSince(dateStr){
-  if(!dateStr) return 999;
-  return Math.floor((new Date() - new Date(dateStr+'T00:00:00'))/86400000);
-}
-// projects.json 데이터로 휴리스틱 분석을 돌려 suggestions 형식으로 반환한다 (LLM /coach의 경량 브라우저판).
-function analyzeProjects(){
-  const items=[], order={high:0,warn:1,info:2};
-  P.filter(p=>p.st==='active').forEach(p=>{
-    const total=pct(p), age=daysSince(p.last);
-    const act = (p.next && p.next!=='-') ? [p.next] : [];
-    if(age>=5){
-      const hi=(p.sprint==='A'||p.sprint==='B');
-      items.push({repo:p.repo,type:'stall',severity:hi?'high':'warn',
-        title:`${age}일째 활동 없음`,
-        detail:`마지막 활동이 ${p.last} (${age}일 전)입니다.${hi?` Sprint ${p.sprint} 진행 중이라 동반 일정에 영향이 있습니다.`:''}`,
-        evidence:[`마지막 활동 ${p.last} — ${age}일 경과`, `Sprint ${p.sprint} · 커밋 ${p.commits}`],
-        confidence:'high',
-        recommendation:hi?`Sprint ${p.sprint} 동반 일정에 영향 — 이번 주 재개하거나 일정을 재조정한다.`:`우선순위는 낮으나 ${age}일째 정지 — 재개 시점을 명시해둔다.`,
-        actions:act});
-      return;
+}</script>
+  <script type="application/json" id="fallback-codex">{
+  "_comment": "공개 가능한 Codex 집계. 원문·제목·session id·cwd는 포함하지 않고 토큰은 반올림한다.",
+  "meta": {
+    "asOf": "2026-07-21T05:45:34.299Z",
+    "source": "local Codex rollout token_count",
+    "sourceMode": "last cumulative event per root session",
+    "windowDays": 30,
+    "publicRoundingTokens": 100000
+  },
+  "methodology": {
+    "workMetric": "token consumption",
+    "limitation": "토큰은 작업량의 근사치이며 산출물 품질이나 검수 완료를 뜻하지 않는다.",
+    "forecast": "개인 평균 세션 토큰 x 프로젝트 규모별 예상 세션 수. 초기 신뢰도는 낮다.",
+    "privacy": "root session aggregate only; prompts, titles, ids, paths excluded"
+  },
+  "coverage": {
+    "filesScanned": 2618,
+    "rootSessionsWithUsage": 791,
+    "mappedSessions": 500,
+    "unmappedSessions": 291,
+    "excludedSubagents": 1023,
+    "filesMissingMeta": 0,
+    "sessionsMissingUsage": 33,
+    "trackedProjects": 16,
+    "projectsWithUsage": 9
+  },
+  "calibration": {
+    "medianSessionTokens": 1400000,
+    "meanSessionTokens": 24600000,
+    "p80SessionTokens": 5800000,
+    "sampleSessions": 791
+  },
+  "totals": {
+    "allTime": {
+      "totalTokens": 19492200000,
+      "sessions": 791,
+      "inputTokens": 19421000000,
+      "cachedInputTokens": 18537700000,
+      "outputTokens": 70900000,
+      "reasoningTokens": 19500000
+    },
+    "last30Days": {
+      "totalTokens": 8202700000,
+      "sessions": 162,
+      "inputTokens": 8170900000,
+      "cachedInputTokens": 7751300000,
+      "outputTokens": 31800000,
+      "reasoningTokens": 8800000
+    },
+    "unmappedAllTime": {
+      "totalTokens": 4744800000,
+      "sessions": 291,
+      "inputTokens": 4726200000,
+      "cachedInputTokens": 4497000000,
+      "outputTokens": 18600000,
+      "reasoningTokens": 6400000
+    },
+    "unmappedLast30Days": {
+      "totalTokens": 3069400000,
+      "sessions": 108,
+      "inputTokens": 3058600000,
+      "cachedInputTokens": 2925600000,
+      "outputTokens": 10700000,
+      "reasoningTokens": 3900000
     }
-    // 병목은 문서·골격·기능 중에서만 본다 — 알파는 본디 마지막 단계라 낮은 게 정상
-    const low=[['문서',p.d,20],['골격',p.sc,30],['기능',p.fn,30]]
-      .map(([l,v,m])=>({l,v,m,r:v/m})).sort((a,b)=>a.r-b.r)[0];
-    if(low.r<0.4 && total<90){
-      items.push({repo:p.repo,type:'coach',severity:'info',
-        title:`${low.l} 단계가 병목`,
-        detail:`${low.l} 점수가 ${low.v}/${low.m} (${Math.round(low.r*100)}%)로 가장 낮습니다. 현재 완성도 ${total}%.`,
-        evidence:[`${low.l} ${low.v}/${low.m} (${Math.round(low.r*100)}%) — 분해 항목 중 최저`, `완성도 ${total}%`],
-        confidence:'medium',
-        recommendation:`${low.l} 단계를 다음 작업의 우선 타깃으로 삼는다.`,
-        actions:act});
-      return;
-    }
-    if(total>=70){
-      items.push({repo:p.repo,type:'coach',severity:'info',
-        title:'완성 임박',
-        detail:`완성도 ${total}%로 상위권입니다. 마무리 단계에 집중할 시점입니다.`,
-        evidence:[`완성도 ${total}% — 상위권`, `커밋 ${p.commits}`],
-        confidence:'medium',
-        recommendation:'마무리·검증 단계에 집중할 시점이다.',
-        actions:act});
-    }
-  });
-  items.sort((a,b)=>order[a.severity]-order[b.severity]);
-  return { generatedAt:new Date().toISOString().slice(0,16).replace('T',' '), source:'browser', items };
-}
-/* 새로고침은 매일 08:03 KST 원격 루틴이 자동 수행한다 (claude.ai/code/routines). 수동 새로고침 버튼은 제거됨 — 페이지 reload로 충분. */
-
-/* ── 완성도 측정 기준 도움말 모달 ── */
-// 모달 포커스 관리 — 열 때 닫기 버튼으로 포커스 이동, 닫을 때 원위치 복원
-let _modalReturnFocus=null;
-function openModal(id){
-  _modalReturnFocus=document.activeElement;
-  const m=document.getElementById(id);
-  m.classList.add('on');
-  const x=m.querySelector('.modal-x'); if(x) x.focus();
-}
-function closeModal(id){
-  document.getElementById(id).classList.remove('on');
-  if(_modalReturnFocus&&_modalReturnFocus.focus){ try{_modalReturnFocus.focus();}catch(e){} _modalReturnFocus=null; }
-}
-window.openHelp=()=>openModal('helpModal');
-window.closeHelp=()=>closeModal('helpModal');
-document.addEventListener('keydown',e=>{ if(e.key==='Escape'){closeHelp();closeDocs();closeGlossary();} });
-
-/* ── 용어 설명 글로서리 ── */
-const GLOSSARY = {
-  '스프린트': '<b>스프린트</b>는 docs/sprint-plan.md의 4-6주 추천 스케줄 단위입니다. Sprint A·B·C·D는 각각 1-2주·2-3주·3-5주·5-8주 구간이고, 한 구간에 프로젝트 2개씩 묶어 동반 마감합니다. Defer는 후순위(보류). 애자일의 "스프린트"(고정 작업 기간)에서 온 용어입니다.',
-  '완성도': '완성도 = 문서(0-20) + 골격(0-30) + 기능(0-30) + 알파(0-20) = 0-100점. 활동량은 모멘텀으로 분리해 봅니다.',
-  '마스터 보드': '추적 중인 전 프로젝트를 완성도와 운영 신호로 함께 보는 카드 그리드입니다. 각 카드의 "문서" 버튼으로 PRD·로드맵·로그를 엽니다.',
-  '정체': '마지막 GitHub 활동이 4-5일 이상 없는 상태입니다. 진행 중인 프로젝트가 정체되면 일정 지연 신호이며, 같은 스프린트의 동반 프로젝트에도 영향을 줍니다.'
-};
-window.openGlossary = (term)=>{
-  document.getElementById('glossaryTitle').textContent = term;
-  document.getElementById('glossaryBody').innerHTML = GLOSSARY[term] || '설명이 아직 없습니다.';
-  openModal('glossaryModal');
-};
-window.closeGlossary = ()=>closeModal('glossaryModal');
-
-/* ── 탭 전환 (파일철 레이아웃) ── */
-const VALID_TABS = new Set(['blueprint','charts','sprint','usage']);
-function normalizeTab(name){ return VALID_TABS.has(name) ? name : 'blueprint'; }
-function showTab(name){
-  name = normalizeTab(name);
-  document.querySelectorAll('section[data-tab]').forEach(s=>{
-    s.classList.toggle('tab-on', s.dataset.tab===name);
-  });
-  document.querySelectorAll('.nav-link[data-tab]').forEach(b=>{
-    const on = b.dataset.tab===name;
-    b.classList.toggle('on', on);
-    b.setAttribute('aria-selected', on ? 'true' : 'false');
-    b.tabIndex = on ? 0 : -1;
-  });
-  try { localStorage.setItem('tab', name); } catch(e){}
-  window.scrollTo(0,0);
-  // 차트는 패널이 보일 때 폭이 잡히므로 분석 탭 전환 시 재렌더
-  if(name==='charts'){ renderStacked(); renderTrend(); }
-}
-window.showTab = showTab;
-// 탭 화살표 키 내비게이션 (tablist 표준)
-document.querySelector('.nav-links').addEventListener('keydown', e=>{
-  if(e.key!=='ArrowLeft' && e.key!=='ArrowRight') return;
-  const tabs=[...document.querySelectorAll('.nav-link[data-tab]')];
-  const i=tabs.indexOf(document.activeElement);
-  if(i<0) return;
-  e.preventDefault();
-  const next=tabs[(i + (e.key==='ArrowRight'?1:-1) + tabs.length) % tabs.length];
-  showTab(next.dataset.tab);
-  next.focus();
-});
-
-/* ── nav 앵커 점프 — sticky 헤더 높이만큼 오프셋해서 섹션 제목이 가려지지 않게 ── */
-document.querySelectorAll('header .nav-link[href^="#"]').forEach(a=>{
-  a.addEventListener('click', e=>{
-    const el = document.getElementById(a.getAttribute('href').slice(1));
-    if(!el) return;
-    e.preventDefault();
-    const headerH = (document.querySelector('header')||{}).offsetHeight || 58;
-    const y = el.getBoundingClientRect().top + window.scrollY - headerH - 12;
-    window.scrollTo({ top: Math.max(0, y), behavior:'smooth' });
-    history.replaceState(null, '', a.getAttribute('href'));
-  });
-});
-
-
-/* ── 청사진 — 프로젝트 마스터 보드 ── */
-function renderMasterBoard(){
-  const wrap = document.getElementById('blueprintBody');
-  if(!wrap) return;
-  const ps = getList();
-  const meta = document.getElementById('bpMeta');
-  if(meta) meta.textContent = P.length ? ` · 표시 ${ps.length} / 전체 ${P.length}` : '';
-  if(!ps.length){ wrap.innerHTML = '<div class="empty">검색 결과가 없습니다</div>'; return; }
-  wrap.innerHTML = ps.map(p=>{
-    const tot = pct(p), sp = spPos[p.id]||p.sprint;
-    const spcfg = SPRINTS[sp] || SPRINTS['A'];
-    const h = projectHealth(p);
-    return `<div class="mb-card${p.st==='suspended'?' susp':''}">
-      <div class="mb-head">
-        <span class="mb-name"><span class="picon">${p.icon||'📦'}</span>${p.nm}${p.st==='suspended'?'<span class="susp-tag">중단</span>':''}</span>
-        <span class="tbadge ${TCLS[p.tool]||'t-cl'}">${p.tool}</span>
-      </div>
-      <div class="mb-pctrow">
-        <span class="mb-pctbox"><span class="mb-pct">${tot}<small>%</small></span><span class="mb-pct-caption">완성도</span></span>
-        <span style="display:flex;flex-direction:column;align-items:flex-end;gap:4px">
-          ${healthHTML(p)}
-          <span class="mb-sprint" style="color:${spcfg.c}">${sp==='Defer'?'Defer':'Sprint '+sp}</span>
-        </span>
-      </div>
-      ${progressBar(p)}
-      <div class="mb-chiprow">${momentumHTML(p)}${confidenceHTML(p)}${blockerHTML(p)}</div>
-      <div class="mb-lens">
-        <div class="mb-lens-item">
-          <div class="mb-lens-title">건강 근거</div>
-          <div class="mb-lens-value" title="${esc(h.detail)}">${esc(h.detail)}</div>
-        </div>
-        <div class="mb-lens-item">
-          <div class="mb-lens-title">초점 단계</div>
-          <div class="mb-lens-value">${esc(stageFocus(p))}</div>
-        </div>
-      </div>
-      <div class="mb-meta"><span>${p.type}</span><span>예상 ${p.eta}</span></div>
-      <div class="mb-next"><span class="mb-next-label">다음 마일스톤</span>▸ ${esc(milestoneText(p))}</div>
-      <div class="mb-actions">
-        <a class="mb-doc" href="project-pages/${encodeURIComponent(p.repo)}.html">현황 페이지</a>
-        <button class="mb-doc" type="button" onclick="openDocs('${p.repo}')">문서 보기</button>
-      </div>
-    </div>`;
-  }).join('');
-}
-window.renderMasterBoard = renderMasterBoard;
-
-/* ── 문서 열람 — 간이 마크다운 렌더 ── */
-function mdToHtml(md){
-  const inline = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;')
-    .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
-    .replace(/`(.+?)`/g,'<code>$1</code>');
-  let html='', inList=false;
-  for(const raw of String(md).split('\n')){
-    const l = raw.replace(/\s+$/,'');
-    if(inList && !/^[-*] /.test(l)){ html+='</ul>'; inList=false; }
-    if(/^#### /.test(l)) html+='<h4>'+inline(l.slice(5))+'</h4>';
-    else if(/^### /.test(l)) html+='<h4>'+inline(l.slice(4))+'</h4>';
-    else if(/^## /.test(l)) html+='<h3>'+inline(l.slice(3))+'</h3>';
-    else if(/^# /.test(l)) html+='<h2>'+inline(l.slice(2))+'</h2>';
-    else if(/^[-*] /.test(l)){ if(!inList){html+='<ul>';inList=true;} html+='<li>'+inline(l.slice(2))+'</li>'; }
-    else if(/^> /.test(l)) html+='<blockquote>'+inline(l.slice(2))+'</blockquote>';
-    else if(l.trim()!=='') html+='<p>'+inline(l)+'</p>';
-  }
-  if(inList) html+='</ul>';
-  return html;
-}
-let docRepo=null, docSub='roadmap';
-window.openDocs = (repo)=>{
-  docRepo = repo;
-  const pj = P.find(p=>p.repo===repo);
-  document.getElementById('docTitle').textContent = (pj?pj.nm:repo)+' — 문서';
-  openModal('docModal');
-  loadDocInto('docPRD','prd.md');
-  showDocSub('roadmap');
-};
-window.closeDocs = ()=>closeModal('docModal');
-async function loadDocInto(elId, file){
-  const el = document.getElementById(elId);
-  el.innerHTML = '<div class="panel-empty">불러오는 중…</div>';
-  try{
-    const r = await fetch(`projects/${docRepo}/${file}`,{cache:'no-store'});
-    if(!r.ok) throw new Error('HTTP '+r.status);
-    el.innerHTML = mdToHtml(await r.text());
-  }catch(e){
-    el.innerHTML = '<div class="panel-empty">문서를 불러올 수 없습니다. file:// 에서는 npx serve 또는 배포 URL로 열어주세요.</div>';
-  }
-}
-function renderRoadmapBoard(items){
-  const groups=[['done','완료','✓'],['doing','진행 중','●'],['todo','예정','○']];
-  const html = groups.map(([s,label,icon])=>{
-    const its=(items||[]).filter(i=>i.s===s);
-    if(!its.length) return '';
-    return `<div class="rm-group rm-${s}">
-      <div class="rm-group-hd">${icon} ${label} <span class="rm-count">${its.length}</span></div>
-      ${its.map(i=>`<div class="rm-item">${i.t}</div>`).join('')}
-    </div>`;
-  }).join('');
-  return html || '<div class="panel-empty">로드맵 항목이 없습니다. /sync-project로 실제 로드맵을 채우세요.</div>';
-}
-window.showDocSub = async (sub)=>{
-  docSub = sub;
-  document.querySelectorAll('.doc-subtab').forEach(t=>t.classList.toggle('on', t.dataset.sub===sub));
-  const el = document.getElementById('docRight');
-  if(sub==='log'){ loadDocInto('docRight','log.md'); return; }
-  el.innerHTML = '<div class="panel-empty">불러오는 중…</div>';
-  try{
-    const r = await fetch(`projects/${docRepo}/project.json`,{cache:'no-store'});
-    if(!r.ok) throw new Error('HTTP '+r.status);
-    const pj = await r.json();
-    el.innerHTML = renderRoadmapBoard(pj.roadmap);
-  }catch(e){
-    el.innerHTML = '<div class="panel-empty">로드맵을 불러올 수 없습니다. npx serve 또는 배포 URL로 열어주세요.</div>';
-  }
-};
-
-
-/* ── 완성도 추세 ── */
-const FALLBACK_HISTORY = {
-  "_comment": "완성도 스냅샷 히스토리. /refresh(refresh-progress.mjs)가 실행될 때마다 그날의 스냅샷을 upsert한다. 대시보드 추세 차트가 읽는다.",
-  "snapshots": [
+  },
+  "daily30": [
     {
-      "date": "2026-05-16",
-      "avgProgress": 51,
-      "totalCommits": 376,
-      "active": 9,
-      "projects": {
-        "habit": {
-          "total": 70,
-          "commits": 81
-        },
-        "tteuniyu-ios": {
-          "total": 65,
-          "commits": 5
-        },
-        "sam-defender-logue": {
-          "total": 60,
-          "commits": 50
-        },
-        "samguk-idle-prototype": {
-          "total": 60,
-          "commits": 46
-        },
-        "three-kingdoms-deckbuilder": {
-          "total": 55,
-          "commits": 43
-        },
-        "ai-builder-school": {
-          "total": 45,
-          "commits": 21
-        },
-        "ai-company-tycoon-boundaryless": {
-          "total": 40,
-          "commits": 51
-        },
-        "story-x-beta": {
-          "total": 45,
-          "commits": 58
-        },
-        "BookCircle": {
-          "total": 20,
-          "commits": 3
-        },
-        "jewelry-webtoon-cloud": {
-          "total": 20,
-          "commits": 18
-        }
+      "date": "2026-06-21",
+      "tokens": 1400000
+    },
+    {
+      "date": "2026-06-22",
+      "tokens": 3200000
+    },
+    {
+      "date": "2026-06-25",
+      "tokens": 13000000
+    },
+    {
+      "date": "2026-06-26",
+      "tokens": 600000
+    },
+    {
+      "date": "2026-07-01",
+      "tokens": 8300000
+    },
+    {
+      "date": "2026-07-02",
+      "tokens": 3300000
+    },
+    {
+      "date": "2026-07-04",
+      "tokens": 2500000
+    },
+    {
+      "date": "2026-07-06",
+      "tokens": 1137500000
+    },
+    {
+      "date": "2026-07-08",
+      "tokens": 2843200000
+    },
+    {
+      "date": "2026-07-10",
+      "tokens": 4400000
+    },
+    {
+      "date": "2026-07-11",
+      "tokens": 9400000
+    },
+    {
+      "date": "2026-07-12",
+      "tokens": 1000000
+    },
+    {
+      "date": "2026-07-13",
+      "tokens": 3600000
+    },
+    {
+      "date": "2026-07-15",
+      "tokens": 500000
+    },
+    {
+      "date": "2026-07-16",
+      "tokens": 43700000
+    },
+    {
+      "date": "2026-07-18",
+      "tokens": 163900000
+    },
+    {
+      "date": "2026-07-19",
+      "tokens": 500000
+    },
+    {
+      "date": "2026-07-20",
+      "tokens": 125400000
+    },
+    {
+      "date": "2026-07-21",
+      "tokens": 767900000
+    }
+  ],
+  "projects": [
+    {
+      "repo": "habit",
+      "allTime": {
+        "totalTokens": 789800000,
+        "sessions": 4,
+        "inputTokens": 787900000,
+        "cachedInputTokens": 759100000,
+        "outputTokens": 2000000,
+        "reasoningTokens": 500000
+      },
+      "last30Days": {
+        "totalTokens": 0,
+        "sessions": 0,
+        "inputTokens": 0,
+        "cachedInputTokens": 0,
+        "outputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "lastActivity": "2026-05-26T01:33:33.538Z",
+      "forecast": {
+        "mode": "finite",
+        "tier": "product",
+        "tierLabel": "제품 단위",
+        "p50Tokens": 887100000,
+        "p80Tokens": 1478500000,
+        "burnP50Pct": 89,
+        "burnP80Pct": 53,
+        "confidence": "low",
+        "reason": "실제 개인 평균 세션 토큰과 프로젝트 규모 등급을 곱한 초기 추정치입니다. 검수 완료 이력이 쌓이면 보정해야 합니다."
       }
     },
     {
-      "date": "2026-05-20",
-      "avgProgress": 52,
-      "totalCommits": 647,
-      "active": 10,
-      "projects": {
-        "habit": {
-          "total": 70,
-          "commits": 121
-        },
-        "tteuniyu-ios": {
-          "total": 65,
-          "commits": 5
-        },
-        "sam-defender-logue": {
-          "total": 60,
-          "commits": 55
-        },
-        "samguk-idle-prototype": {
-          "total": 60,
-          "commits": 92
-        },
-        "three-kingdoms-deckbuilder": {
-          "total": 55,
-          "commits": 86
-        },
-        "ai-builder-school": {
-          "total": 45,
-          "commits": 68
-        },
-        "ai-company-tycoon-boundaryless": {
-          "total": 40,
-          "commits": 100
-        },
-        "story-x-beta": {
-          "total": 45,
-          "commits": 58
-        },
-        "BookCircle": {
-          "total": 20,
-          "commits": 3
-        },
-        "jewelry-webtoon-cloud": {
-          "total": 20,
-          "commits": 18
-        },
-        "Nodeloom": {
-          "total": 56,
-          "commits": 41
-        }
+      "repo": "tteuniyu-ios",
+      "allTime": {
+        "totalTokens": 3500000,
+        "sessions": 4,
+        "inputTokens": 3400000,
+        "cachedInputTokens": 3000000,
+        "outputTokens": 100000,
+        "reasoningTokens": 0
+      },
+      "last30Days": {
+        "totalTokens": 0,
+        "sessions": 0,
+        "inputTokens": 0,
+        "cachedInputTokens": 0,
+        "outputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "lastActivity": "2026-05-11T14:45:16.460Z",
+      "forecast": {
+        "mode": "finite",
+        "tier": "product",
+        "tierLabel": "제품 단위",
+        "p50Tokens": 887100000,
+        "p80Tokens": 1478500000,
+        "burnP50Pct": 0,
+        "burnP80Pct": 0,
+        "confidence": "low",
+        "reason": "실제 개인 평균 세션 토큰과 프로젝트 규모 등급을 곱한 초기 추정치입니다. 검수 완료 이력이 쌓이면 보정해야 합니다."
       }
     },
     {
-      "date": "2026-05-21",
-      "avgProgress": 49,
-      "totalCommits": 712,
-      "active": 11,
-      "projects": {
-        "habit": {
-          "total": 70,
-          "commits": 133
-        },
-        "tteuniyu-ios": {
-          "total": 65,
-          "commits": 5
-        },
-        "sam-defender-logue": {
-          "total": 60,
-          "commits": 68
-        },
-        "samguk-idle-prototype": {
-          "total": 60,
-          "commits": 93
-        },
-        "three-kingdoms-deckbuilder": {
-          "total": 55,
-          "commits": 86
-        },
-        "ai-builder-school": {
-          "total": 45,
-          "commits": 72
-        },
-        "ai-company-tycoon-boundaryless": {
-          "total": 40,
-          "commits": 118
-        },
-        "story-x-beta": {
-          "total": 45,
-          "commits": 58
-        },
-        "BookCircle": {
-          "total": 20,
-          "commits": 3
-        },
-        "jewelry-webtoon-cloud": {
-          "total": 20,
-          "commits": 18
-        },
-        "Nodeloom": {
-          "total": 56,
-          "commits": 42
-        },
-        "design-system-school": {
-          "total": 20,
-          "commits": 16
-        }
+      "repo": "sam-defender-logue",
+      "allTime": {
+        "totalTokens": 3703100000,
+        "sessions": 197,
+        "inputTokens": 3689800000,
+        "cachedInputTokens": 3523300000,
+        "outputTokens": 13000000,
+        "reasoningTokens": 2900000
+      },
+      "last30Days": {
+        "totalTokens": 1759000000,
+        "sessions": 2,
+        "inputTokens": 1752500000,
+        "cachedInputTokens": 1663100000,
+        "outputTokens": 6500000,
+        "reasoningTokens": 1200000
+      },
+      "lastActivity": "2026-07-21T04:28:44.457Z",
+      "forecast": {
+        "mode": "finite",
+        "tier": "large",
+        "tierLabel": "대형 프로젝트",
+        "p50Tokens": 1971400000,
+        "p80Tokens": 3203500000,
+        "burnP50Pct": 188,
+        "burnP80Pct": 116,
+        "confidence": "low",
+        "reason": "실제 개인 평균 세션 토큰과 프로젝트 규모 등급을 곱한 초기 추정치입니다. 검수 완료 이력이 쌓이면 보정해야 합니다."
+      }
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "allTime": {
+        "totalTokens": 3986700000,
+        "sessions": 45,
+        "inputTokens": 3973300000,
+        "cachedInputTokens": 3796200000,
+        "outputTokens": 13300000,
+        "reasoningTokens": 3200000
+      },
+      "last30Days": {
+        "totalTokens": 1358100000,
+        "sessions": 3,
+        "inputTokens": 1352000000,
+        "cachedInputTokens": 1267200000,
+        "outputTokens": 6100000,
+        "reasoningTokens": 1400000
+      },
+      "lastActivity": "2026-07-20T15:22:37.852Z",
+      "forecast": {
+        "mode": "finite",
+        "tier": "large",
+        "tierLabel": "대형 프로젝트",
+        "p50Tokens": 1971400000,
+        "p80Tokens": 3203500000,
+        "burnP50Pct": 202,
+        "burnP80Pct": 124,
+        "confidence": "low",
+        "reason": "실제 개인 평균 세션 토큰과 프로젝트 규모 등급을 곱한 초기 추정치입니다. 검수 완료 이력이 쌓이면 보정해야 합니다."
+      }
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "allTime": {
+        "totalTokens": 2464700000,
+        "sessions": 41,
+        "inputTokens": 2452800000,
+        "cachedInputTokens": 2313100000,
+        "outputTokens": 11900000,
+        "reasoningTokens": 2800000
+      },
+      "last30Days": {
+        "totalTokens": 1146400000,
+        "sessions": 4,
+        "inputTokens": 1141000000,
+        "cachedInputTokens": 1062800000,
+        "outputTokens": 5400000,
+        "reasoningTokens": 1200000
+      },
+      "lastActivity": "2026-07-06T15:31:36.481Z",
+      "forecast": {
+        "mode": "finite",
+        "tier": "large",
+        "tierLabel": "대형 프로젝트",
+        "p50Tokens": 1971400000,
+        "p80Tokens": 3203500000,
+        "burnP50Pct": 125,
+        "burnP80Pct": 77,
+        "confidence": "low",
+        "reason": "실제 개인 평균 세션 토큰과 프로젝트 규모 등급을 곱한 초기 추정치입니다. 검수 완료 이력이 쌓이면 보정해야 합니다."
+      }
+    },
+    {
+      "repo": "ai-builder-school",
+      "allTime": {
+        "totalTokens": 223400000,
+        "sessions": 31,
+        "inputTokens": 222200000,
+        "cachedInputTokens": 209500000,
+        "outputTokens": 1200000,
+        "reasoningTokens": 400000
+      },
+      "last30Days": {
+        "totalTokens": 99500000,
+        "sessions": 1,
+        "inputTokens": 99100000,
+        "cachedInputTokens": 94000000,
+        "outputTokens": 400000,
+        "reasoningTokens": 100000
+      },
+      "lastActivity": "2026-07-21T02:22:22.272Z",
+      "forecast": {
+        "mode": "continuous",
+        "confidence": "none",
+        "reason": "종료점이 고정되지 않은 지속형 프로젝트라 완성 백분율을 계산하지 않습니다."
+      }
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "allTime": {
+        "totalTokens": 2906200000,
+        "sessions": 122,
+        "inputTokens": 2897800000,
+        "cachedInputTokens": 2794000000,
+        "outputTokens": 8400000,
+        "reasoningTokens": 2400000
+      },
+      "last30Days": {
+        "totalTokens": 375100000,
+        "sessions": 42,
+        "inputTokens": 373700000,
+        "cachedInputTokens": 356500000,
+        "outputTokens": 1400000,
+        "reasoningTokens": 600000
+      },
+      "lastActivity": "2026-07-21T03:13:35.541Z",
+      "forecast": {
+        "mode": "finite",
+        "tier": "large",
+        "tierLabel": "대형 프로젝트",
+        "p50Tokens": 1971400000,
+        "p80Tokens": 3203500000,
+        "burnP50Pct": 147,
+        "burnP80Pct": 91,
+        "confidence": "low",
+        "reason": "실제 개인 평균 세션 토큰과 프로젝트 규모 등급을 곱한 초기 추정치입니다. 검수 완료 이력이 쌓이면 보정해야 합니다."
+      }
+    },
+    {
+      "repo": "story-x-beta",
+      "allTime": {
+        "totalTokens": 526200000,
+        "sessions": 26,
+        "inputTokens": 524500000,
+        "cachedInputTokens": 507600000,
+        "outputTokens": 1700000,
+        "reasoningTokens": 600000
+      },
+      "last30Days": {
+        "totalTokens": 394800000,
+        "sessions": 1,
+        "inputTokens": 393600000,
+        "cachedInputTokens": 381600000,
+        "outputTokens": 1200000,
+        "reasoningTokens": 400000
+      },
+      "lastActivity": "2026-07-21T04:17:15.273Z",
+      "forecast": {
+        "mode": "finite",
+        "tier": "platform",
+        "tierLabel": "플랫폼·장기 베타",
+        "p50Tokens": 3942800000,
+        "p80Tokens": 6407000000,
+        "burnP50Pct": 13,
+        "burnP80Pct": 8,
+        "confidence": "low",
+        "reason": "실제 개인 평균 세션 토큰과 프로젝트 규모 등급을 곱한 초기 추정치입니다. 검수 완료 이력이 쌓이면 보정해야 합니다."
+      }
+    },
+    {
+      "repo": "BookCircle",
+      "allTime": {
+        "totalTokens": 0,
+        "sessions": 0,
+        "inputTokens": 0,
+        "cachedInputTokens": 0,
+        "outputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "last30Days": {
+        "totalTokens": 0,
+        "sessions": 0,
+        "inputTokens": 0,
+        "cachedInputTokens": 0,
+        "outputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "lastActivity": null,
+      "forecast": {
+        "mode": "finite",
+        "tier": "product",
+        "tierLabel": "제품 단위",
+        "p50Tokens": 887100000,
+        "p80Tokens": 1478500000,
+        "burnP50Pct": 0,
+        "burnP80Pct": 0,
+        "confidence": "low",
+        "reason": "실제 개인 평균 세션 토큰과 프로젝트 규모 등급을 곱한 초기 추정치입니다. 검수 완료 이력이 쌓이면 보정해야 합니다."
+      }
+    },
+    {
+      "repo": "jewelry-webtoon-cloud",
+      "allTime": {
+        "totalTokens": 0,
+        "sessions": 0,
+        "inputTokens": 0,
+        "cachedInputTokens": 0,
+        "outputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "last30Days": {
+        "totalTokens": 0,
+        "sessions": 0,
+        "inputTokens": 0,
+        "cachedInputTokens": 0,
+        "outputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "lastActivity": null,
+      "forecast": {
+        "mode": "finite",
+        "tier": "product",
+        "tierLabel": "제품 단위",
+        "p50Tokens": 887100000,
+        "p80Tokens": 1478500000,
+        "burnP50Pct": 0,
+        "burnP80Pct": 0,
+        "confidence": "low",
+        "reason": "실제 개인 평균 세션 토큰과 프로젝트 규모 등급을 곱한 초기 추정치입니다. 검수 완료 이력이 쌓이면 보정해야 합니다."
+      }
+    },
+    {
+      "repo": "Nodeloom",
+      "allTime": {
+        "totalTokens": 0,
+        "sessions": 0,
+        "inputTokens": 0,
+        "cachedInputTokens": 0,
+        "outputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "last30Days": {
+        "totalTokens": 0,
+        "sessions": 0,
+        "inputTokens": 0,
+        "cachedInputTokens": 0,
+        "outputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "lastActivity": null,
+      "forecast": {
+        "mode": "finite",
+        "tier": "platform",
+        "tierLabel": "플랫폼·장기 베타",
+        "p50Tokens": 3942800000,
+        "p80Tokens": 6407000000,
+        "burnP50Pct": 0,
+        "burnP80Pct": 0,
+        "confidence": "low",
+        "reason": "실제 개인 평균 세션 토큰과 프로젝트 규모 등급을 곱한 초기 추정치입니다. 검수 완료 이력이 쌓이면 보정해야 합니다."
+      }
+    },
+    {
+      "repo": "design-system-school",
+      "allTime": {
+        "totalTokens": 0,
+        "sessions": 0,
+        "inputTokens": 0,
+        "cachedInputTokens": 0,
+        "outputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "last30Days": {
+        "totalTokens": 0,
+        "sessions": 0,
+        "inputTokens": 0,
+        "cachedInputTokens": 0,
+        "outputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "lastActivity": null,
+      "forecast": {
+        "mode": "continuous",
+        "confidence": "none",
+        "reason": "종료점이 고정되지 않은 지속형 프로젝트라 완성 백분율을 계산하지 않습니다."
+      }
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "allTime": {
+        "totalTokens": 0,
+        "sessions": 0,
+        "inputTokens": 0,
+        "cachedInputTokens": 0,
+        "outputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "last30Days": {
+        "totalTokens": 0,
+        "sessions": 0,
+        "inputTokens": 0,
+        "cachedInputTokens": 0,
+        "outputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "lastActivity": null,
+      "forecast": {
+        "mode": "continuous",
+        "confidence": "none",
+        "reason": "종료점이 고정되지 않은 지속형 프로젝트라 완성 백분율을 계산하지 않습니다."
+      }
+    },
+    {
+      "repo": "Timeer",
+      "allTime": {
+        "totalTokens": 0,
+        "sessions": 0,
+        "inputTokens": 0,
+        "cachedInputTokens": 0,
+        "outputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "last30Days": {
+        "totalTokens": 0,
+        "sessions": 0,
+        "inputTokens": 0,
+        "cachedInputTokens": 0,
+        "outputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "lastActivity": null,
+      "forecast": {
+        "mode": "finite",
+        "tier": "contained",
+        "tierLabel": "한정 작업",
+        "p50Tokens": 295700000,
+        "p80Tokens": 492800000,
+        "burnP50Pct": 0,
+        "burnP80Pct": 0,
+        "confidence": "low",
+        "reason": "실제 개인 평균 세션 토큰과 프로젝트 규모 등급을 곱한 초기 추정치입니다. 검수 완료 이력이 쌓이면 보정해야 합니다."
+      }
+    },
+    {
+      "repo": "chaekdam",
+      "allTime": {
+        "totalTokens": 143900000,
+        "sessions": 30,
+        "inputTokens": 143100000,
+        "cachedInputTokens": 134800000,
+        "outputTokens": 800000,
+        "reasoningTokens": 300000
+      },
+      "last30Days": {
+        "totalTokens": 500000,
+        "sessions": 1,
+        "inputTokens": 500000,
+        "cachedInputTokens": 400000,
+        "outputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "lastActivity": "2026-07-15T01:22:02.183Z",
+      "forecast": {
+        "mode": "finite",
+        "tier": "product",
+        "tierLabel": "제품 단위",
+        "p50Tokens": 887100000,
+        "p80Tokens": 1478500000,
+        "burnP50Pct": 16,
+        "burnP80Pct": 10,
+        "confidence": "low",
+        "reason": "실제 개인 평균 세션 토큰과 프로젝트 규모 등급을 곱한 초기 추정치입니다. 검수 완료 이력이 쌓이면 보정해야 합니다."
+      }
+    },
+    {
+      "repo": "honbul",
+      "allTime": {
+        "totalTokens": 0,
+        "sessions": 0,
+        "inputTokens": 0,
+        "cachedInputTokens": 0,
+        "outputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "last30Days": {
+        "totalTokens": 0,
+        "sessions": 0,
+        "inputTokens": 0,
+        "cachedInputTokens": 0,
+        "outputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "lastActivity": null,
+      "forecast": {
+        "mode": "finite",
+        "tier": "large",
+        "tierLabel": "대형 프로젝트",
+        "p50Tokens": 1971400000,
+        "p80Tokens": 3203500000,
+        "burnP50Pct": 0,
+        "burnP80Pct": 0,
+        "confidence": "low",
+        "reason": "실제 개인 평균 세션 토큰과 프로젝트 규모 등급을 곱한 초기 추정치입니다. 검수 완료 이력이 쌓이면 보정해야 합니다."
       }
     }
   ]
-};
-let HIST = FALLBACK_HISTORY;
-
-/* ── ACTIVITY — 통합 커밋 피드 ── */
-const FALLBACK_ACTIVITY = {
-  "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다.",
-  "asOf": "2026-05-21",
-  "commits": [
-    {
-      "repo": "ai-builder-school",
-      "sha": "e06fe65",
-      "message": "fix(special): 모든 슬라이드가 stage 안에 들어가게 4:3 + 콘텐츠 정리",
-      "date": "2026-05-21T12:08:16Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "71e85c1",
-      "message": "docs(spec): v2.0 레슨 통합·심화 스펙 2 초안 + list-lessons 유틸",
-      "date": "2026-05-21T11:25:29Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "8339a23",
-      "message": "chore(policy): switch to main-direct branch policy",
-      "date": "2026-05-21T11:25:27Z"
-    },
-    {
-      "repo": "design-system-school",
-      "sha": "5926c25",
-      "message": "Phase 9: design-spec extraction tool",
-      "date": "2026-05-21T11:17:42Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "9a4532b",
-      "message": "feat(special): v2.0 특강 체계 + 첫 특강 \"프런티어 AI 지형 2026\" (스펙 3) (#68)",
-      "date": "2026-05-21T11:14:32Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "c499287",
-      "message": "Add battlefield combat feedback sample slots",
-      "date": "2026-05-21T11:13:14Z"
-    },
-    {
-      "repo": "design-system-school",
-      "sha": "6346f4a",
-      "message": "Phase 8: ontology graph mobile polish",
-      "date": "2026-05-21T11:04:33Z"
-    },
-    {
-      "repo": "design-system-school",
-      "sha": "ccddc1d",
-      "message": "Phase 7: AI Builder School cross-link",
-      "date": "2026-05-21T11:02:47Z"
-    },
-    {
-      "repo": "design-system-school",
-      "sha": "d178bda",
-      "message": "Phase 6: theme-aware TokenDemo",
-      "date": "2026-05-21T10:59:34Z"
-    },
-    {
-      "repo": "design-system-school",
-      "sha": "28ffe8a",
-      "message": "Phase 5: learn paths include patterns",
-      "date": "2026-05-21T10:37:50Z"
-    },
-    {
-      "repo": "design-system-school",
-      "sha": "7b526d9",
-      "message": "Phase 4: analysis→pattern edges",
-      "date": "2026-05-21T10:25:02Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "2d95477",
-      "message": "Add battlefield combat tempo readiness",
-      "date": "2026-05-21T08:22:59Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "084617c",
-      "message": "Import first battlefield terrain sign asset",
-      "date": "2026-05-21T07:51:43Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "0c7ef35",
-      "message": "Add battlefield graphics tone plan",
-      "date": "2026-05-21T06:21:18Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "fafdf95",
-      "message": "Add battlefield manual fun gate",
-      "date": "2026-05-21T06:00:57Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "f53a0e4",
-      "message": "Add battlefield terrain asset adapter",
-      "date": "2026-05-21T05:45:29Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "91bd817",
-      "message": "Add battlefield sortie direct focus",
-      "date": "2026-05-21T05:24:53Z"
-    },
-    {
-      "repo": "sam-defender-logue",
-      "sha": "ded91e5",
-      "message": "Add battlefield core combat proof gate",
-      "date": "2026-05-21T05:10:03Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "e07a5d8",
-      "message": "Reflect roadmap review feedback",
-      "date": "2026-05-21T04:53:30Z"
-    },
-    {
-      "repo": "design-system-school",
-      "sha": "e00a097",
-      "message": "Add project harness — feature_list, progress, handoff, init.sh",
-      "date": "2026-05-20T23:15:30Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "538c174",
-      "message": "Refocus roadmap on playtest slice",
-      "date": "2026-05-20T22:56:04Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "5c821e1",
-      "message": "Ship v0.83 screen mode split",
-      "date": "2026-05-20T16:43:56Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "8af5c65",
-      "message": "Update roadmap and handoff for session closeout",
-      "date": "2026-05-20T16:33:09Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "ac142b3",
-      "message": "Update end of day v0.55 plan",
-      "date": "2026-05-20T16:13:11Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "669e6a0",
-      "message": "Update v0.55 mobile handoff",
-      "date": "2026-05-20T16:09:12Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "df57811",
-      "message": "Polish v0.55 mobile command hand QA",
-      "date": "2026-05-20T16:08:19Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "c8d2545",
-      "message": "Add Formi image2 prompt batch",
-      "date": "2026-05-20T16:06:52Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "2c9fbbd",
-      "message": "Add room prop atlas slicer",
-      "date": "2026-05-20T16:02:04Z"
-    },
-    {
-      "repo": "Nodeloom",
-      "sha": "fc08b81",
-      "message": "하네스 엔지니어링 정비 — 5개 subsystem 100/100",
-      "date": "2026-05-20T15:55:06Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "814f1c0",
-      "message": "Add Formi evolution asset pipeline",
-      "date": "2026-05-20T15:50:31Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "41348e0",
-      "message": "Update v0.55 session handoff",
-      "date": "2026-05-20T15:44:22Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "fb0a6fc",
-      "message": "Add v0.55 office visuals screenshot QA",
-      "date": "2026-05-20T15:40:46Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "37a9069",
-      "message": "Add contextual snap reactions",
-      "date": "2026-05-20T15:34:40Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "bf04303",
-      "message": "Update v0.54 session handoff",
-      "date": "2026-05-20T15:23:50Z"
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "sha": "eca92b8",
-      "message": "Add v0.54 office art import pipeline",
-      "date": "2026-05-20T15:20:53Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "e835c85",
-      "message": "Add room prop asset request queue",
-      "date": "2026-05-20T15:13:30Z"
-    },
-    {
-      "repo": "habit",
-      "sha": "b9f8310",
-      "message": "Add room memory story badges",
-      "date": "2026-05-20T14:47:58Z"
-    },
-    {
-      "repo": "design-system-school",
-      "sha": "c57d16f",
-      "message": "Phase 3b: dark mode via theming tokens",
-      "date": "2026-05-20T01:20:00Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "342ccef",
-      "message": "feat: prepare art candidate prompts (build 50 Art Candidate Prompts)",
-      "date": "2026-05-19T13:03:43Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "03fb08f",
-      "message": "feat: clarify first faction pick (build 49 First Pick Clarity)",
-      "date": "2026-05-19T12:55:33Z"
-    },
-    {
-      "repo": "Nodeloom",
-      "sha": "33f7a01",
-      "message": "v1.3.4 — 노드 자식 추가 버튼 + 분기선 z-순서",
-      "date": "2026-05-19T12:08:24Z"
-    },
-    {
-      "repo": "Nodeloom",
-      "sha": "3d0f2c1",
-      "message": "v1.3.3 — 밑줄형 분기선과 밑줄의 중심선 어긋남 수정",
-      "date": "2026-05-19T11:55:57Z"
-    },
-    {
-      "repo": "Nodeloom",
-      "sha": "719f261",
-      "message": "v1.3.2 — 분기선이 노드에서 떨어져 끝나던 갭 수정",
-      "date": "2026-05-19T11:31:39Z"
-    },
-    {
-      "repo": "Nodeloom",
-      "sha": "f664138",
-      "message": "v1.3.1 — 밑줄 분기선 분리 + 단색 모드 색 불일치 수정",
-      "date": "2026-05-19T11:18:36Z"
-    },
-    {
-      "repo": "Nodeloom",
-      "sha": "65198ac",
-      "message": "v1.3.0 — XMind 벤치마크: 템플릿·노드 모양 확장",
-      "date": "2026-05-19T04:23:59Z"
-    },
-    {
-      "repo": "Nodeloom",
-      "sha": "92a807b",
-      "message": "v1.2.0 — 마인드맵 이미지 내보내기 (PNG·SVG·PDF)",
-      "date": "2026-05-19T03:06:33Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "ae485a5",
-      "message": "feat: build 48 Art Pipeline Hooks",
-      "date": "2026-05-19T02:52:36Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "c845e11",
-      "message": "feat: build 47 Act I Pressure",
-      "date": "2026-05-19T02:44:37Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "c3f6705",
-      "message": "feat: build 46 Reward Loop Clarity",
-      "date": "2026-05-19T02:37:16Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "dc13d1a",
-      "message": "feat: build 45 Run Momentum Push",
-      "date": "2026-05-19T02:31:25Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "8617789",
-      "message": "feat: build 44 Living Backdrop Slice",
-      "date": "2026-05-19T02:05:39Z"
-    },
-    {
-      "repo": "three-kingdoms-deckbuilder",
-      "sha": "194bab2",
-      "message": "feat: build 43 Road Replay Push",
-      "date": "2026-05-19T02:00:50Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "34ff544",
-      "message": "chore: gitignore .claude/launch.json (#67)",
-      "date": "2026-05-19T01:11:51Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "856e7c8",
-      "message": "Document v0.71 handoff state",
-      "date": "2026-05-18T23:07:55Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "4f12a1d",
-      "message": "Expand alpha 0.71 battlefield view",
-      "date": "2026-05-18T22:46:45Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "a037b99",
-      "message": "chore: bump version to 1.0.1 (#66)",
-      "date": "2026-05-18T18:04:39Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "d8d36d5",
-      "message": "feat: add per-journey pixel-art landmarks to journey hero (#65)",
-      "date": "2026-05-18T17:16:09Z"
-    },
-    {
-      "repo": "ai-builder-school",
-      "sha": "efef37d",
-      "message": "v1.0 리뷰 폴리시 — 탐험가 카드·히어로 버튼·여정 풍경 (#64)",
-      "date": "2026-05-18T16:55:56Z"
-    },
-    {
-      "repo": "Nodeloom",
-      "sha": "08c9eac",
-      "message": "v1.1.1 — 마인드맵 분기선이 세로로 뭉치던 버그 수정",
-      "date": "2026-05-18T15:43:56Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "bb2dbb9",
-      "message": "Add alpha 0.70 command digest",
-      "date": "2026-05-18T15:15:40Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "f443517",
-      "message": "Add adventure return loop and tactical hints",
-      "date": "2026-05-18T12:32:07Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "5865b06",
-      "message": "Prioritize adventure reward growth followup",
-      "date": "2026-05-18T10:17:06Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "08c9921",
-      "message": "Add one-tap adventure idle claim",
-      "date": "2026-05-18T10:07:55Z"
-    },
-    {
-      "repo": "samguk-idle-prototype",
-      "sha": "5442b61",
-      "message": "Add adventure failure recovery actions",
-      "date": "2026-05-18T05:31:07Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "7f4685e",
-      "message": "Merge pull request #1 from sgeniusk/claude/frosty-vaughan-e476f9",
-      "date": "2026-05-15T16:27:16Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "3bdb05f",
-      "message": "Phase 3-(A) start + agent org chart: drop redundant command-strip, archive org",
-      "date": "2026-05-15T16:23:33Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "ab0bd0f",
-      "message": "Phase 3-(바): add a medium-specific champion to the writer-team sidebar",
-      "date": "2026-05-15T15:36:05Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "70b2663",
-      "message": "Phase 3-(사)+(나2): open-ended interview note + audiobook narration timer",
-      "date": "2026-05-15T15:32:34Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "b66336e",
-      "message": "Phase 3-(마)+(다): writer-team revise/block label + essay fact-protection note",
-      "date": "2026-05-15T15:30:17Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "6b9a02d",
-      "message": "style: switch storyx-page canvas to warm paper for framer-calm unity",
-      "date": "2026-05-15T15:10:48Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "d854882",
-      "message": "Phase 3-quick + Cowork test log: adapt action copy per medium, archive 5-persona feedback",
-      "date": "2026-05-15T15:09:06Z"
-    },
-    {
-      "repo": "story-x-beta",
-      "sha": "106efca",
-      "message": "style: snap gap and single-value padding to 8-step sx-space scale",
-      "date": "2026-05-15T15:08:55Z"
-    },
-    {
-      "repo": "jewelry-webtoon-cloud",
-      "sha": "5a0c61b",
-      "message": "fix: scale episode navigation content",
-      "date": "2026-05-15T04:03:52Z"
-    },
-    {
-      "repo": "jewelry-webtoon-cloud",
-      "sha": "3f09d0e",
-      "message": "fix: tighten reader navigation",
-      "date": "2026-05-15T04:00:14Z"
-    },
-    {
-      "repo": "jewelry-webtoon-cloud",
-      "sha": "4ced752",
-      "message": "fix: compact episode reader",
-      "date": "2026-05-15T03:55:15Z"
-    },
-    {
-      "repo": "jewelry-webtoon-cloud",
-      "sha": "022f325",
-      "message": "fix: stabilize cover and reader layout",
-      "date": "2026-05-15T03:44:52Z"
-    },
-    {
-      "repo": "jewelry-webtoon-cloud",
-      "sha": "af611ee",
-      "message": "fix: support direct file preview",
-      "date": "2026-05-15T03:40:14Z"
-    },
-    {
-      "repo": "jewelry-webtoon-cloud",
-      "sha": "de45c29",
-      "message": "fix: gate reader behind cover actions",
-      "date": "2026-05-15T03:32:31Z"
-    },
-    {
-      "repo": "jewelry-webtoon-cloud",
-      "sha": "dafe921",
-      "message": "feat: complete ep001 png art pass",
-      "date": "2026-05-15T03:00:07Z"
-    },
-    {
-      "repo": "jewelry-webtoon-cloud",
-      "sha": "bcaa2f3",
-      "message": "feat: replace ep001 evening panels with png art",
-      "date": "2026-05-15T02:38:05Z"
-    },
-    {
-      "repo": "BookCircle",
-      "sha": "5eb5c37",
-      "message": "Trigger Vercel deployment with verified author",
-      "date": "2026-05-13T22:21:57Z"
-    },
-    {
-      "repo": "BookCircle",
-      "sha": "cd3b768",
-      "message": "Add health endpoint for deployment",
-      "date": "2026-05-13T14:32:12Z"
-    },
-    {
-      "repo": "BookCircle",
-      "sha": "58bb89b",
-      "message": "Initial BookCircle scaffold",
-      "date": "2026-05-13T14:27:24Z"
-    },
-    {
-      "repo": "tteuniyu-ios",
-      "sha": "4541274",
-      "message": "Wave 5 — Mock data fallback + 브랜드 \"뜬 이유\" + UX 개선 (#4)",
-      "date": "2026-05-12T08:40:24Z"
-    },
-    {
-      "repo": "tteuniyu-ios",
-      "sha": "1a44683",
-      "message": "Wave 4 — Xcode 빌드 수정 4건 (Info.plist + Category 명시 + INFOPLIST_FILE) (#3)",
-      "date": "2026-05-12T06:54:01Z"
-    },
-    {
-      "repo": "tteuniyu-ios",
-      "sha": "f075158",
-      "message": "Wave 3 Integration — RisingIssuesView + ViewModel + XCTest 30+ (#2)",
-      "date": "2026-05-11T23:27:08Z"
-    },
-    {
-      "repo": "tteuniyu-ios",
-      "sha": "6b249f6",
-      "message": "Wave 2 Bulk impl — Codex 4 agent 병렬 결과 (1,379 LOC Swift) (#1)",
-      "date": "2026-05-11T15:28:24Z"
-    },
-    {
-      "repo": "tteuniyu-ios",
-      "sha": "3c326be",
-      "message": "Initial commit",
-      "date": "2026-05-11T11:46:53Z"
-    }
-  ]
-};
-let ACT = FALLBACK_ACTIVITY;
-
-let trendMetric = 'progress';
-const TREND_COLORS = ['#2545ff','#ff5b22','#0c1754','#e0a500','#1f9d4d','#9b51e0','#e0457b','#00a3a3','#5b6b8c','#c13515'];
-window.setTrendMetric = (m)=>{
-  trendMetric = m;
-  document.querySelectorAll('[data-tm]').forEach(b=>b.classList.toggle('on', b.dataset.tm===m));
-  renderTrend();
-};
-function renderTrend(){
-  const el = document.getElementById('trendC');
-  if(!el) return;
-  const snaps = (HIST && HIST.snapshots) || [];
-  const meta = document.getElementById('trendMeta'), leg = document.getElementById('trendLeg');
-  if(meta) meta.textContent = snaps.length ? `· 스냅샷 ${snaps.length}개` : '';
-  const W = Math.max(el.parentElement.clientWidth - 44, 300), H = 240, pL=42, pR=16, pT=16, pB=30;
-  const isDark = document.documentElement.getAttribute('data-theme')==='dark';
-  const t2 = isDark?'#8890b8':'#5a5a72', border = isDark?'#1c2550':'#e6e6f0';
-  el.setAttribute('viewBox',`0 0 ${W} ${H}`);
-  if(!snaps.length){
-    el.innerHTML = `<text x="${W/2}" y="${H/2}" text-anchor="middle" font-size="12" fill="${t2}" font-family="Inter,sans-serif">히스토리 데이터 없음</text>`;
-    if(leg) leg.innerHTML=''; return;
-  }
-  const isPct = trendMetric==='progress';
-  const valOf = (sn,repo)=>{ const x=sn.projects&&sn.projects[repo]; return x ? (isPct?x.total:x.commits) : null; };
-  const list = P.filter(p=> snaps.some(sn=>valOf(sn,p.repo)!=null));
-  let maxV = isPct ? 100 : Math.max(10, ...snaps.flatMap(sn=>list.map(p=>valOf(sn,p.repo)||0)));
-  const cW = W-pL-pR, cH = H-pT-pB, n = snaps.length;
-  const xOf = i => n===1 ? pL+cW/2 : pL+(i/(n-1))*cW;
-  const yOf = v => pT+cH-(Math.max(0,Math.min(maxV,v))/maxV*cH);
-  let s = '';
-  const ticks = isPct ? [0,50,100] : [0,Math.round(maxV/2),maxV];
-  ticks.forEach(v=>{
-    const y = yOf(v);
-    s += `<line x1="${pL}" y1="${y}" x2="${W-pR}" y2="${y}" stroke="${border}" stroke-width="1"/>`;
-    s += `<text x="${pL-6}" y="${y+3}" text-anchor="end" font-size="9" fill="${t2}" font-family="Inter,sans-serif">${v}</text>`;
-  });
-  snaps.forEach((sn,i)=>{ s += `<text x="${xOf(i)}" y="${H-9}" text-anchor="middle" font-size="8" fill="${t2}" font-family="Inter,sans-serif">${sn.date.slice(5)}</text>`; });
-  list.forEach((p,idx)=>{
-    const clr = TREND_COLORS[idx%TREND_COLORS.length];
-    const pts = snaps.map((sn,i)=>{ const v=valOf(sn,p.repo); return v==null?null:{x:xOf(i),y:yOf(v),v,sn}; }).filter(Boolean);
-    if(pts.length>1) s += `<polyline points="${pts.map(q=>q.x.toFixed(1)+','+q.y.toFixed(1)).join(' ')}" fill="none" stroke="${clr}" stroke-width="2" opacity=".9"/>`;
-    pts.forEach(q=>{
-      s += `<circle cx="${q.x}" cy="${q.y}" r="3.6" fill="${clr}" style="cursor:pointer" onmouseenter="showTip(event,'${p.nm} · ${q.sn.date} · ${isPct?q.v+'%':q.v+' 커밋'}')" onmouseleave="hideTip()"/>`;
-    });
-  });
-  if(n===1) s += `<text x="${W/2}" y="${pT+11}" text-anchor="middle" font-size="10" fill="${t2}" font-family="Inter,sans-serif">스냅샷 1개 — /refresh가 누적될수록 프로젝트별 변동 추세가 그려집니다</text>`;
-  el.innerHTML = s;
-  if(leg) leg.innerHTML = list.map((p,idx)=>`<div class="leg-item"><div class="leg-dot" style="background:${TREND_COLORS[idx%TREND_COLORS.length]}"></div>${p.nm}</div>`).join('');
-}
-
-/* ── 데이터 로드 + INIT ── */
-async function loadJSON(path,fb){
-  try{ const r=await fetch(path,{cache:'no-store'}); if(!r.ok) throw new Error('HTTP '+r.status); return await r.json(); }
-  catch(e){ console.warn('['+path+'] fetch 실패 — 내장 폴백 사용:',e.message); return fb; }
-}
-async function init() {
-  document.getElementById('themeBtn').textContent =
-    document.documentElement.getAttribute('data-theme')==='dark' ? '☀️' : '🌙';
-
-  const [pj,sj,uj,hist,act] = await Promise.all([
-    loadJSON('./projects.json',FALLBACK_PROJECTS),
-    loadJSON('./suggestions.json',FALLBACK_SUGGESTIONS),
-    loadJSON('./usage.json',FALLBACK_USAGE),
-    loadJSON('./history.json',FALLBACK_HISTORY),
-    loadJSON('./activity.json',FALLBACK_ACTIVITY)
-  ]);
-  META = (pj && pj.meta) || {};
-  P = (pj.projects||[]).map(mapProject);
-  SUG = sj || { items:[] };
-  usageData = uj || { tools:[] };
-  HIST = hist || { snapshots:[] };
-  ACT = act || { commits:[] };
-  renderDataBadge();
-
-  // 스프린트 보드 카드 위치 시드 (localStorage가 비어 있을 때만)
-  if (!Object.keys(spPos).length) P.forEach(p=>spPos[p.id]=p.sprint);
-  // 사용량 기준값 시드 — auto(자동 수집)가 있으면 항상 최신값으로 덮어쓰고(구독일은 보존),
-  // 없으면 사용자 입력이 없을 때만 시드
-  (usageData.tools||[]).forEach(t=>{
-    if(t.auto){ usage[t.tool]=Object.assign({}, usage[t.tool], {pct:t.usedPercent||0, reset:t.cycleResetDate||''}); }
-    else if(!usage[t.tool]) usage[t.tool]={pct:t.usedPercent||0,reset:t.cycleResetDate||''};
-  });
-  try{ localStorage.setItem('ud',JSON.stringify(usage)); }catch(e){}
-
-  renderMasterBoard(); renderKPI(); renderFilters(); renderSprint(); renderUsage();
-  showTab(localStorage.getItem('tab') || 'blueprint');
-  setTimeout(()=>{ renderStacked(); renderTrend(); }, 200);
-  let rt; window.addEventListener('resize',()=>{ clearTimeout(rt); rt=setTimeout(()=>{ renderStacked(); renderTrend(); },200); });
-}
-
-if (document.readyState==='complete' || document.readyState==='interactive') { init(); }
-else { window.addEventListener('DOMContentLoaded', init); }
-</script>
-
-
-</body></html>
+}</script>
+  <script defer src="scripts/dashboard.js"></script>
+</body>
+</html>

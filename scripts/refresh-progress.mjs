@@ -17,6 +17,7 @@ import { dirname, join } from 'node:path';
 import { writeReports } from './report-gen.mjs';
 import { buildProjectPages } from './build-project-pages.mjs';
 import { buildMonthlyAnalysis } from './build-monthly-analysis.mjs';
+import { buildDashboard } from './build-dashboard.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const JSON_PATH = join(ROOT, 'projects.json');
@@ -195,6 +196,7 @@ async function main() {
     console.log(writeReports({ dryRun: DRY_RUN }));
     console.log(buildProjectPages({ dryRun: DRY_RUN }));
     console.log(await buildMonthlyAnalysis({ dryRun: DRY_RUN }));
+    console.log(buildDashboard({ dryRun: DRY_RUN }));
     return;
   }
 
@@ -215,6 +217,7 @@ async function main() {
     console.log(writeReports({ dryRun: DRY_RUN }));
     console.log(buildProjectPages({ dryRun: DRY_RUN }));
     console.log(await buildMonthlyAnalysis({ dryRun: DRY_RUN }));
+    console.log(buildDashboard({ dryRun: DRY_RUN }));
     return;
   }
   if (changes.length > 0) {
@@ -225,6 +228,7 @@ async function main() {
   console.log(writeReports());
   console.log(buildProjectPages());
   console.log(await buildMonthlyAnalysis());
+  console.log(buildDashboard());
 }
 
 main().catch((err) => {

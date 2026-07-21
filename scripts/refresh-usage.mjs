@@ -2,7 +2,7 @@
 // refresh-usage.mjs — Claude·Codex 사용량(한도 %·리셋) 자동 수집
 //
 // 출처: kimbyungsu/codex-usage-monitor (MIT)의 수집 방식을 이 워크스페이스의
-// 정적 대시보드 구조(usage.json + FALLBACK_USAGE)에 맞게 이식.
+// 정적 대시보드 구조(usage.json + build-dashboard.mjs)에 맞게 이식.
 //   - Claude: 공식 CLI의 /usage가 쓰는 OAuth usage 엔드포인트를
 //     ~/.claude/.credentials.json 토큰으로 호출 (만료 시 자동 갱신).
 //     ⚠ 비공식 엔드포인트 — 향후 변경 시 수동 입력 폴백으로 동작.
@@ -13,7 +13,7 @@
 // 토큰 수·비용 추정 등 상세 사용 패턴은 수집하지 않는다 (Pages 공개 저장소).
 //
 // 사용법:
-//   node scripts/refresh-usage.mjs              # 수집 → usage.json + FALLBACK_USAGE 갱신
+//   node scripts/refresh-usage.mjs              # 수집 → usage.json + dashboard FALLBACK 갱신
 //   node scripts/refresh-usage.mjs --dry-run    # 결과 미리보기, 저장 안 함
 //   node scripts/refresh-usage.mjs --claude-only | --codex-only
 //   node scripts/refresh-usage.mjs --mock fixtures.json   # 네트워크 없이 파이프라인 테스트
@@ -26,10 +26,10 @@ import path from "node:path";
 import https from "node:https";
 import { spawn, execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { buildDashboard } from "./build-dashboard.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const USAGE_JSON = path.join(ROOT, "usage.json");
-const DASHBOARD_HTML = path.join(ROOT, "dashboard.html");
 
 // Claude Code OAuth 공개 클라이언트 ID / 엔드포인트 (번들 CLI에서 확인된 상수)
 const CLAUDE_CLIENT_ID = "9d1c250a-e61b-44d9-88ed-5944d1962f5e";
@@ -375,14 +375,6 @@ function mergeTool(existing, result, source, collectedAt) {
   return t;
 }
 
-function syncFallbackUsage(usageObj) {
-  const html = fs.readFileSync(DASHBOARD_HTML, "utf8");
-  const re = /const FALLBACK_USAGE = \{[\s\S]*?\n\};/;
-  if (!re.test(html)) throw new Error("dashboard.html에서 FALLBACK_USAGE 블록을 찾지 못함");
-  const replaced = html.replace(re, `const FALLBACK_USAGE = ${JSON.stringify(usageObj, null, 2)};`);
-  fs.writeFileSync(DASHBOARD_HTML, replaced, "utf8");
-}
-
 /* ────────────────────────── main ────────────────────────── */
 
 async function main() {
@@ -442,8 +434,8 @@ async function main() {
     return;
   }
   fs.writeFileSync(USAGE_JSON, out, "utf8");
-  syncFallbackUsage(usageObj);
-  log(`usage.json + dashboard.html FALLBACK_USAGE 갱신 완료 (asOf ${usageObj.asOf})`);
+  buildDashboard();
+  log(`usage.json + dashboard.html FALLBACK 갱신 완료 (asOf ${usageObj.asOf})`);
 }
 
 main().catch((e) => { console.error(`[usage-refresh] 치명적 오류: ${e.message}`); process.exit(1); });

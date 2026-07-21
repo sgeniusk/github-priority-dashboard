@@ -211,12 +211,81 @@ function compileInlineScripts(relativePath) {
   logSuccess(`${relativePath} parsed, verified ${count} inline script block(s) compiled successfully`);
 }
 
-// 5. Parse & Compile inline scripts
+function extractJsonSeed(html, id) {
+  const pattern = new RegExp(`<script[^>]*id=["']${id}["'][^>]*>([\\s\\S]*?)<\\/script>`, 'i');
+  const match = html.match(pattern);
+  if (!match) throw new Error(`dashboard.html: missing JSON seed #${id}`);
+  return JSON.parse(match[1]);
+}
+
+// 5. Validate Codex public aggregate and private-data boundary
+try {
+  const summary = JSON.parse(readFileSync(join(ROOT, 'codex-summary.json'), 'utf8'));
+  const config = JSON.parse(readFileSync(join(ROOT, 'codex-metrics.config.json'), 'utf8'));
+  const projects = JSON.parse(readFileSync(join(ROOT, 'projects.json'), 'utf8'));
+  if (!summary.meta?.asOf || Number.isNaN(Date.parse(summary.meta.asOf))) {
+    logError('codex-summary.json: meta.asOf must be a valid timestamp');
+  }
+  if (!Array.isArray(summary.projects)) {
+    logError('codex-summary.json: projects must be an array');
+  } else {
+    const tracked = new Set(projects.projects.map((project) => project.name));
+    const seen = new Set();
+    for (const item of summary.projects) {
+      if (!tracked.has(item.repo)) logError(`codex-summary.json: unknown repo "${item.repo}"`);
+      if (seen.has(item.repo)) logError(`codex-summary.json: duplicate repo "${item.repo}"`);
+      seen.add(item.repo);
+      for (const window of ['allTime', 'last30Days']) {
+        if (!Number.isFinite(item[window]?.totalTokens) || item[window].totalTokens < 0) {
+          logError(`codex-summary.json [${item.repo}]: ${window}.totalTokens must be non-negative`);
+        }
+        if (!Number.isInteger(item[window]?.sessions) || item[window].sessions < 0) {
+          logError(`codex-summary.json [${item.repo}]: ${window}.sessions must be a non-negative integer`);
+        }
+      }
+      if (!['finite', 'continuous', 'unconfigured'].includes(item.forecast?.mode)) {
+        logError(`codex-summary.json [${item.repo}]: invalid forecast mode "${item.forecast?.mode}"`);
+      }
+    }
+    if (seen.size !== tracked.size) logError('codex-summary.json: every tracked project must have one aggregate row');
+  }
+  for (const key of ['rootSessionsWithUsage', 'mappedSessions', 'unmappedSessions', 'excludedSubagents']) {
+    if (!Number.isInteger(summary.coverage?.[key]) || summary.coverage[key] < 0) {
+      logError(`codex-summary.json: coverage.${key} must be a non-negative integer`);
+    }
+  }
+  const publicText = JSON.stringify(summary);
+  for (const forbidden of ['"sessionId"', '"cwd"', '"prompt"', '"sourceRoots"']) {
+    if (publicText.includes(forbidden)) logError(`codex-summary.json: private key ${forbidden} must not be public`);
+  }
+  if (!config.forecastTiers || !config.projects) logError('codex-metrics.config.json: forecastTiers and projects are required');
+  logSuccess('codex-summary.json public aggregate validation passed');
+} catch (e) {
+  logError(`Failed to parse or validate Codex metrics: ${e.message}`);
+}
+
+// 6. Parse & compile dashboard scripts and verify generated FALLBACKs
 try {
   compileInlineScripts('dashboard.html');
   compileInlineScripts('monthly-analysis.html');
+  new vm.Script(readFileSync(join(ROOT, 'scripts/dashboard.js'), 'utf8'), { filename: 'scripts/dashboard.js' });
+  logSuccess('scripts/dashboard.js compiled successfully');
+
+  const html = readFileSync(join(ROOT, 'dashboard.html'), 'utf8');
+  const seeds = [
+    ['fallback-projects', 'projects.json'],
+    ['fallback-suggestions', 'suggestions.json'],
+    ['fallback-usage', 'usage.json'],
+    ['fallback-codex', 'codex-summary.json'],
+  ];
+  for (const [id, file] of seeds) {
+    const seed = extractJsonSeed(html, id);
+    const source = JSON.parse(readFileSync(join(ROOT, file), 'utf8'));
+    if (JSON.stringify(seed) !== JSON.stringify(source)) logError(`dashboard.html #${id} does not match ${file}`);
+  }
+  logSuccess('dashboard.html JSON FALLBACKs match source files');
 } catch (e) {
-  logError(`Failed to read or verify inline scripts: ${e.message}`);
+  logError(`Failed to read or verify dashboard scripts: ${e.message}`);
 }
 
 process.exit(exitCode);

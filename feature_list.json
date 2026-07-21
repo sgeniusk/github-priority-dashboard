@@ -1,6 +1,6 @@
 {
   "_comment": "github-priority-dashboard 자체의 개발 백로그 (v1.0→v2.x). projects.json은 추적되는 프로젝트들, 이 파일은 이 워크스페이스 자체의 마일스톤이다. 새 세션은 active 항목부터 보면 된다. 현재 Codex가 설계·구현·검증·배포를 단독 운영한다.",
-  "active": "",
+  "active": "v3.0-codex-work-ledger",
   "features": [
     {
       "id": "v1.0-baseline",
@@ -266,6 +266,28 @@
       ],
       "openQuestions": [
         "history에 사용률 추세를 쌓아 '소진 예상 시점'까지 제안에 넣을지 (Q1 연계)"
+      ]
+    },
+    {
+      "id": "v3.0-codex-work-ledger",
+      "name": "v3.0 Codex 작업량 원장과 운영실 재구축",
+      "status": "inProgress",
+      "description": "수동 완성도 숫자를 주 지표에서 내리고 실제 Codex root 세션의 마지막 누적 token_count를 프로젝트별로 집계한다. 대시보드는 운영실·프로젝트·Codex 작업·리소스 4개 보기로 재구축하며, 토큰은 작업량으로만 해석하고 유한 프로젝트의 초기 P50·P80 예측은 개인 평균 세션 토큰과 규모 등급으로 계산한다. 정확한 세션 원장은 Git 제외 로컬 파일에만 저장하고 공개 JSON은 반올림 집계만 보관한다.",
+      "dependencies": [
+        "v2.11-coach-usage-aware"
+      ],
+      "doneCriteria": [
+        "scripts/collect-codex-metrics.mjs가 17GB 로컬 로그를 rg 기반으로 읽어 root 세션 마지막 누적 토큰만 집계하고 하위 에이전트·중복 세션을 제외",
+        "codex-summary.json에 프로젝트별 누적·30일 토큰·세션·최근 활동·저신뢰 초기 예측을 공개 가능한 형태로 저장",
+        "dashboard.html이 운영실·프로젝트·Codex 작업·리소스 4개 보기와 검색·필터·테마를 제공하고 수동 완성도는 참고값으로만 표시",
+        "build-dashboard.mjs가 projects·suggestions·usage·codex-summary FALLBACK을 생성하고 refresh-progress·refresh-usage·collect-codex-metrics에서 자동 호출",
+        "init·validate·check-report-pages·브라우저 전 보기 콘솔 0 통과",
+        "main 배포 후 GitHub Pages와 Regression Prevention CI success"
+      ],
+      "openQuestions": [
+        "현재 연결률 66%인 다른 Codex 작업 공간을 어떤 프로젝트로 추가 연결할지",
+        "P50·P80 예측을 완료된 검수 단위 이력으로 언제 재보정할지",
+        "GitHub·계정 한도 데이터를 최신 수집한 뒤 main 배포할지"
       ]
     }
   ]

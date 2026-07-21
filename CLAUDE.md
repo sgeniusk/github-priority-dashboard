@@ -24,8 +24,8 @@
 이 워크스페이스의 변경은 다음을 모두 만족해야 "done"이다.
 
 - **JSON 무결성** — `projects.json`·`suggestions.json`·`usage.json`·`history.json`·`activity.json`이 모두 `JSON.parse` 통과 (`bash init.sh`로 한 번에 검증)
-- **콘솔 에러 0** — `dashboard.html`을 브라우저에서 열어 모든 탭(청사진/분석/스프린트/사용량 및 설정) 전환 시 콘솔 에러 없음. `report.html`, `project-report.html?repo=habit`, `project-pages/honbul.html`도 함께 확인
-- **FALLBACK 동기화** — `projects.json`·`suggestions.json`·`usage.json`을 갱신했으면 `dashboard.html`의 `FALLBACK_*` 상수도 verbatim 동기화 (`/refresh`가 자동 처리; `FALLBACK_HISTORY`·`FALLBACK_ACTIVITY`는 동기화 대상 아님). 보고서는 v2.5에서 뉴스 피드(`report.html`←`news.json`)와 프로젝트별 누적 페이지(`project-report.html`←`project-logs.json`)로 분리됐고, 둘은 `scripts/report-gen.mjs`가 매 refresh마다 데이터 델타에서 생성한다. `project-pages/`는 `scripts/build-project-pages.mjs`가 생성한다. `news.json`·`project-logs.json`은 누적 아카이브라 해당 FALLBACK seed는 동기화 대상 아님 (`journal.json`은 폐기)
+- **콘솔 에러 0** — `dashboard.html`을 브라우저에서 열어 모든 보기(운영실/프로젝트/Codex 작업/리소스) 전환 시 콘솔 에러 없음. `report.html`, `project-report.html?repo=habit`, `project-pages/honbul.html`도 함께 확인
+- **FALLBACK 동기화** — `projects.json`·`suggestions.json`·`usage.json`·`codex-summary.json`을 갱신했으면 `node scripts/build-dashboard.mjs`로 dashboard의 JSON seed 4종을 verbatim 동기화한다. 보고서는 v2.5에서 뉴스 피드(`report.html`←`news.json`)와 프로젝트별 누적 페이지(`project-report.html`←`project-logs.json`)로 분리됐고, 둘은 `scripts/report-gen.mjs`가 매 refresh마다 데이터 델타에서 생성한다. `project-pages/`는 `scripts/build-project-pages.mjs`가 생성한다. `news.json`·`project-logs.json`은 누적 아카이브라 해당 FALLBACK seed는 동기화 대상 아님 (`journal.json`은 폐기)
 - **배포** — `main` push 후 `.github/workflows/deploy.yml`이 success로 끝남
 - **상태 갱신** — 의미 있는 작업이라면 `progress.md`의 '현재 작업'·'다음 액션'을 갱신, 새 feature는 `feature_list.json`에 추가
 - **변경 금지 항목 준수** — 아래 '절대 하지 말 것' 위반 0건
@@ -40,7 +40,10 @@ github-priority-dashboard/
 ├── HANDOFF.md           # 핸드오프 절차 가이드
 ├── README.md            # 사람용 개요
 ├── index.html           # dashboard.html로 리다이렉트 (Pages 루트 URL용)
-├── dashboard.html       # 뷰 — 완성도 카드, 운영 신호, SVG 차트, Sprint 보드, 사용량 패널
+├── dashboard.html       # 생성 뷰 — 운영실, 프로젝트, Codex 작업량 원장, 리소스
+├── dashboard.css        # 대시보드 반응형 스타일과 기존 색 토큰
+├── codex-summary.json   # 공개 가능한 Codex 프로젝트 집계
+├── codex-metrics.config.json # cwd 별칭·지속형 여부·규모 등급
 ├── project-pages/       # 프로젝트별 제작 현황·홍보용 정적 원페이지
 ├── projects.json        # 단일 진실 소스 (Source of Truth)
 ├── projects.schema.md   # projects.json 필드 스키마 + 변경 규칙
@@ -50,7 +53,11 @@ github-priority-dashboard/
 ├── projects/{repo}/     # 프로젝트별 표준 문서 — project.json·prd.md·roadmap.md·log.md
 ├── scripts/
 │   ├── refresh-progress.mjs   # GitHub 활동 수집 스크립트 (Node 20 내장 fetch)
+│   ├── collect-codex-metrics.mjs # 로컬 Codex root 세션 집계
+│   ├── build-dashboard.mjs # dashboard 셸·FALLBACK 생성
+│   ├── dashboard.js       # 대시보드 렌더·필터·테마 동작
 │   ├── refresh-usage.mjs      # Claude·Codex 한도 %·리셋 자동 수집 (/usage-refresh)
+│   ├── prepare-sites-public.mjs # 정적 대시보드를 Sites 빌드 입력으로 복제
 │   └── build-project-pages.mjs # 프로젝트별 원페이지 생성기
 ├── .claude/commands/    # 프로젝트 슬래시 커맨드 (refresh, coach, new-project)
 ├── .github/workflows/
@@ -69,15 +76,16 @@ github-priority-dashboard/
 
 | 계층 | 구성 | 역할 |
 | --- | --- | --- |
-| 뷰 | `dashboard.html` | 완성도·운영 신호·Sprint 보드·사용량 시각화 |
+| 뷰 | `dashboard.html` | Codex 실제 작업량·프로젝트 의사결정·리소스 시각화 |
 | 데이터 | `projects.json`·`suggestions.json`·`usage.json` | 단일 진실 소스 |
 | 에이전트 | `.claude/commands/*.md` | 슬래시 커맨드로 갱신·코칭·킥오프 |
-| 자동화 | `/schedule` 루틴 | 매일 `/refresh`를 무인 실행 |
+| 자동화 | GitHub Actions + Codex 예약 작업 | 08:45·20:45 원격 활동, 09:00·21:00 로컬 토큰·Sites 배포 |
 
 ### 슬래시 커맨드
 
-- **`/refresh`** — GitHub 활동을 가져와 `projects.json`을 갱신하고, `dashboard.html`의 FALLBACK을 동기화한 뒤 뉴스·프로젝트 로그·project-pages를 재생성한다.
-- **`/usage-refresh`** — 로컬 Claude Code·Codex CLI 자격증명으로 한도 사용률 %·리셋 시각을 자동 수집해 `usage.json`과 `FALLBACK_USAGE`를 갱신한다 (`scripts/refresh-usage.mjs`). 한도 %·리셋만 커밋하고 토큰·비용 상세는 수집하지 않는다.
+- **`/refresh`** — GitHub 활동을 가져와 `projects.json`을 갱신하고, 뉴스·프로젝트 로그·project-pages·dashboard FALLBACK을 재생성한다.
+- **`/usage-refresh`** — 로컬 Claude Code·Codex CLI 자격증명으로 한도 사용률 %·리셋 시각을 자동 수집해 `usage.json`과 dashboard FALLBACK을 갱신한다 (`scripts/refresh-usage.mjs`). 한도 %·리셋만 커밋한다.
+- **Codex 작업량** — `node scripts/collect-codex-metrics.mjs`가 root 세션 마지막 누적 토큰을 집계하고 `codex-summary.json`과 dashboard FALLBACK을 갱신한다. exact 세션 원장은 `.codex-local/`에만 저장한다.
 - **`/coach`** — 각 프로젝트의 막힌 단계·속도·정체를 분석해 `suggestions.json`에 제안을 기록한다. 인자로 프로젝트 이름을 주면 해당 프로젝트만 분석.
 - **`/weekly-report`** — `projects.json`을 읽어 주간 진척 요약(하이라이트·Sprint 현황·주의 신호·다음 주 우선)을 마크다운으로 산출한다.
 - **`/new-project`** — 새 게임/앱/웹 아이디어를 대화로 구상하고, 결정되면 하네스 엔지니어링을 고려한 첫 프롬프트를 작성한다.
@@ -85,7 +93,7 @@ github-priority-dashboard/
 
 ### 데이터 흐름
 
-`dashboard.html`은 `fetch`로 `projects.json`·`suggestions.json`·`usage.json`을 로드하고, 실패하면(예: `file://`) 각 파일의 내장 `FALLBACK_PROJECTS`/`FALLBACK_SUGGESTIONS`/`FALLBACK_USAGE` 사본을 쓴다. 세 폴백 상수는 각 JSON 파일의 verbatim 복사본이므로, **JSON을 갱신하면 `dashboard.html`의 해당 폴백 상수도 같이 동기화**해야 한다 (`/refresh`가 자동 처리). `mapProject()`가 `projects.json` 구조를 뷰가 기대하는 형태로 변환한다.
+`dashboard.html`은 `fetch`로 `projects.json`·`suggestions.json`·`usage.json`·`codex-summary.json`을 로드하고, 실패하면(예: `file://`) 내장 application/json seed를 쓴다. `node scripts/build-dashboard.mjs`가 네 seed를 각 JSON의 verbatim 사본으로 생성한다. JSON을 갱신하면 이 생성기를 실행하며 `/refresh`·`/usage-refresh`·Codex 집계기는 저장 후 자동 호출한다.
 
 ## 핵심 규약
 
@@ -135,11 +143,12 @@ github-priority-dashboard/
 
 - **완성도·활동 갱신** — `/refresh` (또는 `node scripts/refresh-progress.mjs`)
 - **AI 사용량 갱신** — `/usage-refresh` (또는 `node scripts/refresh-usage.mjs`; `--dry-run` 미리보기, `--mock <fixture>`로 오프라인 테스트)
+- **Codex 작업량 갱신** — `node scripts/collect-codex-metrics.mjs` (`--dry-run` 미리보기)
 - **정체 점검·코칭** — `/coach`
 - **주간 진척 요약** — `/weekly-report`
 - **새 프로젝트 시작** — `/new-project`
 - **프로젝트 문서 표준화** — `/sync-project {repo}`
-- **신규 프로젝트 등록** — `projects.json`에 객체 추가 → `rank` 재정렬 → `dashboard.html`의 `FALLBACK_PROJECTS` 폴백 동기화 → `node scripts/build-project-pages.mjs`
+- **신규 프로젝트 등록** — `projects.json`에 객체 추가 → `rank` 재정렬 → `codex-metrics.config.json` 별칭·예측 모드 추가 → `node scripts/build-dashboard.mjs` → `node scripts/build-project-pages.mjs`
 - **도구 태그 변경** — 사용자 확인 후에만, `tool-attribution.md`에 사유 기록
 
 ## Verification Commands
