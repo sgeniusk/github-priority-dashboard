@@ -2,6 +2,22 @@
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
   "generatedAt": "2026-07-20",
   "logs": {
+    "samsu": [
+      {
+        "date": "2026-07-21",
+        "kind": "note",
+        "label": "집중 등록",
+        "text": "실제 Codex 전투·메타·콘텐츠 작업선과 로컬 저장소를 확인해 집중 프로젝트로 등록했습니다. 수동 완성도는 검수 증거가 쌓일 때까지 미산출로 둡니다."
+      }
+    ],
+    "pliside-ops": [
+      {
+        "date": "2026-07-21",
+        "kind": "note",
+        "label": "집중 등록",
+        "text": "Loom 운영 핸드오프와 현재 도돌이·팜브리즈 채널 상태를 확인해 지속 운영형 집중 프로젝트로 등록했습니다. 완성 백분율은 계산하지 않습니다."
+      }
+    ],
     "habit": [
       {
         "date": "2026-05-25T23:58:00Z",

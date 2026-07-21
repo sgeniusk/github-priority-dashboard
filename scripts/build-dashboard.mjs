@@ -104,11 +104,12 @@ export function buildDashboard({ dryRun = false } = {}) {
 
     <section class="view" data-view-panel="projects" aria-labelledby="projects-title" hidden>
       <div class="section-intro">
-        <div><p class="eyebrow">Portfolio</p><h1 id="projects-title">프로젝트 포트폴리오</h1><p>상태, 최근 활동, 실제 Codex 작업량을 한 장에서 비교합니다.</p></div>
+        <div><p class="eyebrow">Portfolio</p><h1 id="projects-title">집중 프로젝트</h1><p>지금 실제로 이어가는 작업을 먼저 보고, 나머지는 정리 검토 범위에서 따로 확인합니다.</p></div>
         <div class="section-stat" id="project-section-stat"></div>
       </div>
       <div class="filter-bar" aria-label="프로젝트 필터">
         <label class="search-field"><span>검색</span><input id="project-search" type="search" placeholder="프로젝트 이름 또는 다음 액션"></label>
+        <label><span>범위</span><select id="portfolio-filter"><option value="focus">집중</option><option value="active">활성 전체</option><option value="review">정리 검토</option><option value="all">전체</option></select></label>
         <label><span>상태</span><select id="status-filter"><option value="all">전체</option><option value="active">활성</option><option value="paused">일시중단</option><option value="archived">보관</option></select></label>
         <label><span>도구</span><select id="tool-filter"><option value="all">전체</option><option value="codex">Codex</option><option value="hybrid">Hybrid</option><option value="claude">Claude</option><option value="hermes">Hermes</option></select></label>
         <label><span>정렬</span><select id="project-sort"><option value="rank">우선순위</option><option value="tokens">30일 토큰</option><option value="recent">최근 Codex 활동</option><option value="risk">예측 초과 위험</option></select></label>

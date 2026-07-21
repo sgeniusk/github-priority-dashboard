@@ -85,9 +85,10 @@ export function buildNews() {
     const a = snaps[i - 1], b = snaps[i];
     for (const repo of Object.keys(b.projects || {})) {
       const pa = a.projects[repo], pb = b.projects[repo]; if (!pa || !pb) continue;
-      const nm = nameOf(proj.projects, repo);
+      const project = proj.projects.find((item) => item.name === repo);
+      const nm = project ? (project.displayName || project.name) : repo;
       const dT = (pb.total || 0) - (pa.total || 0);
-      if (dT !== 0) add({ date: b.date, repo, kind: 'progress', headline: `${nm}, 완성도 ${dT > 0 ? '+' : ''}${dT}% (${pa.total}→${pb.total})`, detail: `${a.date} 대비 완성도가 ${Math.abs(dT)}포인트 ${dT > 0 ? '올랐습니다' : '내렸습니다'}.`, metric: `${dT > 0 ? '▲' : '▼'}${Math.abs(dT)}%` });
+      if (project?.progressAssessed !== false && dT !== 0) add({ date: b.date, repo, kind: 'progress', headline: `${nm}, 완성도 ${dT > 0 ? '+' : ''}${dT}% (${pa.total}→${pb.total})`, detail: `${a.date} 대비 완성도가 ${Math.abs(dT)}포인트 ${dT > 0 ? '올랐습니다' : '내렸습니다'}.`, metric: `${dT > 0 ? '▲' : '▼'}${Math.abs(dT)}%` });
       const dC = (pb.commits || 0) - (pa.commits || 0);
       if (dC >= SURGE) add({ date: b.date, repo, kind: 'surge', headline: `${nm}, 커밋 +${dC}로 가속`, detail: `${a.date} 이후 커밋이 ${dC}건 늘며 개발이 활발합니다.`, metric: `+${dC} commits` });
     }
@@ -132,7 +133,7 @@ export function buildLogs() {
       if (!seenSha.has(c.sha)) { arr.push({ date: c.date, kind: 'commit', text: c.message, sha: c.sha }); seenSha.add(c.sha); }
     }
     // 완성도 변동 entry (오늘 스냅샷 기준, 중복 방지)
-    if (last && last.projects[repo]) {
+    if (p.progressAssessed !== false && last && last.projects[repo]) {
       const pb = last.projects[repo], pa = prevSnap && prevSnap.projects[repo];
       const dT = pa ? (pb.total - pa.total) : 0, dC = pa ? (pb.commits - pa.commits) : 0;
       const pkey = `progress|${last.date}`;

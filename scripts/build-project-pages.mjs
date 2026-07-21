@@ -147,6 +147,7 @@ function projectHealth(project, suggestionItems, asOf) {
 }
 
 function stageFocus(project) {
+  if (project.progressAssessed === false) return '검수 기준 정립';
   const p = project.progress || {};
   const gaps = [
     { label: '문서 보강', gap: 20 - (p.docs || 0), max: 20 },
@@ -160,6 +161,7 @@ function stageFocus(project) {
 }
 
 function confidence(project, logs) {
+  if (project.progressAssessed === false) return { score: null, label: '검수 전' };
   const p = project.progress || {};
   let score = 0;
   score += Math.min(20, Math.round(((p.docs || 0) / 20) * 20));
@@ -203,8 +205,11 @@ function progressRows(progress) {
 
 function promptFor(project, service) {
   const tool = TOOL_LABELS[project.tool] || project.tool;
+  const completion = project.progressAssessed === false
+    ? '수동 완성도는 아직 산출하지 않았습니다.'
+    : `현재 대시보드 완성도는 ${project.progress.total}%입니다.`;
   return `이 세션은 "${project.displayName}" (${project.name}) 최신화 세션입니다.
-담당 도구는 ${tool}이고, 현재 대시보드 완성도는 ${project.progress.total}%입니다.
+담당 도구는 ${tool}이고, ${completion}
 
 먼저 프로젝트 저장소의 README, PRD, ROADMAP, CHANGELOG, TESTING 문서를 확인하고, 이 대시보드의 mirror 문서인 projects/${project.name}/prd.md, roadmap.md, log.md, project.json과 어긋나는 내용을 기록해 주세요.
 
@@ -222,6 +227,7 @@ ${plain(service?.goal || project.rationale, '목표 요약이 아직 충분하�
 }
 
 function renderProjectPage({ project, service, suggestions, logs, meta }) {
+  const isAssessed = project.progressAssessed !== false;
   const health = projectHealth(project, suggestions, meta.asOf);
   const conf = confidence(project, logs);
   const top = topSuggestion(suggestions);
@@ -239,13 +245,13 @@ function renderProjectPage({ project, service, suggestions, logs, meta }) {
       <p>${escapeHtml(doc.purpose)}</p>
     </article>`;
   }).join('');
-  const progressBreakdown = progressRows(p).map(([label, value, max]) => {
+  const progressBreakdown = isAssessed ? progressRows(p).map(([label, value, max]) => {
     const pct = max ? Math.round((value / max) * 100) : 0;
     return `<div class="progress-row">
       <div class="progress-head"><span>${escapeHtml(label)}</span><span>${value}/${max}</span></div>
       <div class="meter"><span style="width:${pct}%"></span></div>
     </div>`;
-  }).join('');
+  }).join('') : '<p class="quiet">산출물 기준 검수를 마친 뒤에만 docs·skeleton·features·alpha 점수를 기록합니다.</p>';
   const suggestionBlock = top ? `
     <article class="note ${escapeHtml(top.severity)}">
       <p class="note-kicker">${escapeHtml(top.severity === 'high' ? '위험 신호' : top.severity === 'warn' ? '주의 신호' : '코칭')}</p>
@@ -398,13 +404,13 @@ footer{margin-top:54px;padding-top:20px;border-top:1px solid var(--border);color
       <div class="metric-grid">
         <div class="metric"><span>건강</span><strong><span class="pill ${escapeHtml(health.tone)}">${escapeHtml(health.label)}</span></strong></div>
         <div class="metric"><span>초점</span><strong>${escapeHtml(stageFocus(project))}</strong></div>
-        <div class="metric"><span>신뢰도</span><strong>${escapeHtml(conf.label)} ${conf.score}%</strong></div>
+        <div class="metric"><span>신뢰도</span><strong>${escapeHtml(conf.label)}${conf.score == null ? '' : ` ${conf.score}%`}</strong></div>
       </div>
     </section>
 
     <section class="section">
-      <p class="section-title">완성도</p>
-      <div class="progress-total"><strong>${Number(project.progress.total) || 0}</strong><span>%</span></div>
+      <p class="section-title">수동 완성도</p>
+      <div class="progress-total"><strong>${isAssessed ? Number(project.progress.total) || 0 : '미산출'}</strong>${isAssessed ? '<span>%</span>' : ''}</div>
       ${progressBreakdown}
     </section>
 
@@ -454,7 +460,7 @@ function renderIndex({ projects, services, suggestions, logData, meta }) {
       <h2><a href="${encodeURIComponent(project.name)}.html">${escapeHtml(project.displayName)}</a></h2>
       <p>${escapeHtml(completionCopy(service?.progress || project.rationale, '현황 설명이 아직 없습니다.'))}</p>
       <div class="meta">
-        <span>${Number(project.progress.total) || 0}%</span>
+        <span>${project.progressAssessed === false ? '완성도 미산출' : `${Number(project.progress.total) || 0}%`}</span>
         <span>${escapeHtml(TOOL_LABELS[project.tool] || project.tool)}</span>
         <span>${escapeHtml(health.label)}</span>
         <span>로그 ${logs.length}건</span>

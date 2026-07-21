@@ -165,12 +165,14 @@
 
   function renderHero(projects) {
     const active = projects.filter((project) => project.status === 'active');
-    const focus = [...active].sort((a, b) => decisionScore(b) - decisionScore(a))[0];
+    const focused = active.filter((project) => project.focus === true);
+    const decisionPool = focused.length ? focused : active;
+    const focus = [...decisionPool].sort((a, b) => decisionScore(b) - decisionScore(a))[0];
     const coverage = state.codexData.coverage || {};
     byId('hero-meta').innerHTML = `
-      <span>활성 ${active.length}개</span>
+      <span>집중 ${focused.length}개</span>
+      <span>활성 전체 ${active.length}개</span>
       <span>Codex 연결 ${coverage.projectsWithUsage || 0}개</span>
-      <span>root 세션 ${coverage.rootSessionsWithUsage || 0}개</span>
     `;
     if (!focus) {
       byId('hero-focus').innerHTML = '<p class="focus-label">오늘의 초점</p><h2 class="focus-name">활성 프로젝트 없음</h2><p class="focus-purpose">프로젝트 상태를 먼저 확인하세요.</p>';
@@ -192,6 +194,7 @@
     const totals = state.codexData.totals || {};
     const coverage = state.codexData.coverage || {};
     const active = projects.filter((project) => project.status === 'active').length;
+    const focused = projects.filter((project) => project.status === 'active' && project.focus === true).length;
     const mappedRatio = coverage.rootSessionsWithUsage
       ? Math.round((coverage.mappedSessions / coverage.rootSessionsWithUsage) * 100)
       : 0;
@@ -199,7 +202,7 @@
     const cards = [
       ['최근 30일 Codex 소비', `${formatTokens(totals.last30Days?.totalTokens)} 토큰`, `${totals.last30Days?.sessions || 0}개 root 세션`, ''],
       ['프로젝트 연결률', `${mappedRatio}%`, `${coverage.unmappedSessions || 0}개 세션은 아직 분류 대기`, mappedRatio < 70 ? 'is-alert' : ''],
-      ['활성 프로젝트', `${active}개`, `전체 ${projects.length}개 중 현재 운영`, ''],
+      ['집중 프로젝트', `${focused}개`, `활성 전체 ${active}개 · 정리 전 전체 ${projects.length}개`, ''],
       ['P50 초기 예측 초과', `${overBudget}개`, '완성 실패가 아니라 예산 재산정 신호', overBudget ? 'is-alert' : ''],
     ];
     byId('ops-kpis').innerHTML = cards.map(([label, value, note, klass]) => `
@@ -208,8 +211,9 @@
   }
 
   function renderDecisions(projects) {
-    const queue = [...projects]
-      .filter((project) => project.status === 'active')
+    const active = projects.filter((project) => project.status === 'active');
+    const focused = active.filter((project) => project.focus === true);
+    const queue = [...(focused.length ? focused : active)]
       .sort((a, b) => decisionScore(b) - decisionScore(a))
       .slice(0, 5);
     byId('decision-list').innerHTML = queue.map((project, index) => {
@@ -298,12 +302,18 @@
 
   function renderProjectCards() {
     const query = byId('project-search').value.trim().toLowerCase();
+    const portfolio = byId('portfolio-filter').value;
     const status = byId('status-filter').value;
     const tool = byId('tool-filter').value;
     const sort = byId('project-sort').value;
     let projects = projectViewModels().filter((project) => {
       const haystack = [project.displayName, project.name, project.rationale, ...(project.nextActions || [])].join(' ').toLowerCase();
+      const portfolioMatch = portfolio === 'all'
+        || (portfolio === 'focus' && project.focus === true)
+        || (portfolio === 'active' && project.status === 'active')
+        || (portfolio === 'review' && project.focus !== true);
       return (!query || haystack.includes(query))
+        && portfolioMatch
         && (status === 'all' || project.status === status)
         && (tool === 'all' || project.tool === tool);
     });
@@ -318,9 +328,13 @@
     byId('project-grid').innerHTML = projects.map((project) => {
       const forecast = project.codex.forecast || {};
       const forecastOver = forecast.burnP50Pct > 100;
+      const portfolioLabel = project.focus === true ? '집중' : '정리 검토';
+      const manualProgress = project.progressAssessed === false
+        ? '수동 완성도 미산출'
+        : `수동 완성도 참고 ${project.progress?.total ?? 0}%`;
       return `
-        <article class="project-card">
-          <div class="project-top"><div class="chip-row"><span class="chip">${escapeHtml(STATUS_LABELS[project.status] || project.status)}</span><span class="chip tool-${escapeHtml(project.tool)}">${escapeHtml(TOOL_LABELS[project.tool] || project.tool)}</span><span class="chip">${escapeHtml(CATEGORY_LABELS[project.category] || project.category)}</span></div><span class="project-rank">P${project.rank}</span></div>
+        <article class="project-card ${project.focus === true ? 'is-focus' : ''}">
+          <div class="project-top"><div class="chip-row"><span class="chip ${project.focus === true ? 'portfolio-focus' : 'portfolio-review'}">${escapeHtml(portfolioLabel)}</span><span class="chip">${escapeHtml(STATUS_LABELS[project.status] || project.status)}</span><span class="chip tool-${escapeHtml(project.tool)}">${escapeHtml(TOOL_LABELS[project.tool] || project.tool)}</span><span class="chip">${escapeHtml(CATEGORY_LABELS[project.category] || project.category)}</span></div><span class="project-rank">P${project.rank}</span></div>
           <h2>${escapeHtml(project.displayName)}</h2>
           <p class="project-purpose">${escapeHtml(project.rationale || project.stack?.join(' · ') || '프로젝트 설명이 없습니다.')}</p>
           <div class="project-action"><span>다음 검수 단위</span><strong>${escapeHtml(nextAction(project))}</strong></div>
@@ -330,7 +344,7 @@
             <div><span>마지막 활동</span><strong>${relativeDate(project.codex.lastActivity || project.lastUpdate)}</strong></div>
           </div>
           <p class="forecast-note ${forecastOver ? 'is-over' : ''}">${escapeHtml(forecastLabel(forecast, false))}</p>
-          <div class="project-footer"><a href="project-pages/${encodeURIComponent(project.name)}.html">현황 페이지</a><a href="project-report.html?repo=${encodeURIComponent(project.name)}">누적 기록</a><small>수동 완성도 참고 ${project.progress?.total ?? 0}%</small></div>
+          <div class="project-footer"><a href="project-pages/${encodeURIComponent(project.name)}.html">현황 페이지</a><a href="project-report.html?repo=${encodeURIComponent(project.name)}">누적 기록</a><small>${escapeHtml(manualProgress)}</small></div>
         </article>
       `;
     }).join('');
@@ -452,7 +466,7 @@
     document.querySelectorAll('[data-jump]').forEach((button) => {
       button.addEventListener('click', () => setView(button.dataset.jump, true));
     });
-    ['project-search', 'status-filter', 'tool-filter', 'project-sort'].forEach((id) => {
+    ['project-search', 'portfolio-filter', 'status-filter', 'tool-filter', 'project-sort'].forEach((id) => {
       byId(id).addEventListener(id === 'project-search' ? 'input' : 'change', renderProjectCards);
     });
     byId('theme-toggle').addEventListener('click', () => {

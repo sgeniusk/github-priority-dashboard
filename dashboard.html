@@ -70,11 +70,12 @@
 
     <section class="view" data-view-panel="projects" aria-labelledby="projects-title" hidden>
       <div class="section-intro">
-        <div><p class="eyebrow">Portfolio</p><h1 id="projects-title">프로젝트 포트폴리오</h1><p>상태, 최근 활동, 실제 Codex 작업량을 한 장에서 비교합니다.</p></div>
+        <div><p class="eyebrow">Portfolio</p><h1 id="projects-title">집중 프로젝트</h1><p>지금 실제로 이어가는 작업을 먼저 보고, 나머지는 정리 검토 범위에서 따로 확인합니다.</p></div>
         <div class="section-stat" id="project-section-stat"></div>
       </div>
       <div class="filter-bar" aria-label="프로젝트 필터">
         <label class="search-field"><span>검색</span><input id="project-search" type="search" placeholder="프로젝트 이름 또는 다음 액션"></label>
+        <label><span>범위</span><select id="portfolio-filter"><option value="focus">집중</option><option value="active">활성 전체</option><option value="review">정리 검토</option><option value="all">전체</option></select></label>
         <label><span>상태</span><select id="status-filter"><option value="all">전체</option><option value="active">활성</option><option value="paused">일시중단</option><option value="archived">보관</option></select></label>
         <label><span>도구</span><select id="tool-filter"><option value="all">전체</option><option value="codex">Codex</option><option value="hybrid">Hybrid</option><option value="claude">Claude</option><option value="hermes">Hermes</option></select></label>
         <label><span>정렬</span><select id="project-sort"><option value="rank">우선순위</option><option value="tokens">30일 토큰</option><option value="recent">최근 Codex 활동</option><option value="risk">예측 초과 위험</option></select></label>
@@ -137,6 +138,97 @@
   "projects": [
     {
       "rank": 1,
+      "name": "samsu",
+      "displayName": "삼국지가 머지",
+      "icon": "🏯",
+      "category": "game",
+      "visibility": "private",
+      "tool": "codex",
+      "status": "active",
+      "focus": true,
+      "activitySource": "local",
+      "sprint": "A",
+      "sprintStatus": "inProgress",
+      "stack": [
+        "TypeScript",
+        "Vite",
+        "Vitest",
+        "Codex worktrees"
+      ],
+      "progressAssessed": false,
+      "progress": {
+        "docs": 0,
+        "skeleton": 0,
+        "features": 0,
+        "alpha": 0,
+        "total": 0
+      },
+      "commits": 31,
+      "lastUpdate": "2026-07-21T11:12Z",
+      "firstCommit": "2026-07-21",
+      "daysActive": 0,
+      "eta": "미산출",
+      "etaClass": "long",
+      "rationale": "삼국지 시대의 작은 성을 지키는 세로형 머지 디펜스 게임. 현재 다섯 전장, 건물 합성, 전투, 캠페인 지도, 군령·장수·장비·보급 메타 성장까지 연결된 플레이 프로토타입을 Codex의 전투·메타·콘텐츠 작업선으로 확장 중이다.",
+      "risks": [
+        "1부 4~6장 전장과 이후 콘텐츠 볼륨 미구현",
+        "모바일 실기기 플레이·시각·성능 검증 필요",
+        "로컬 전용 저장소라 원격 백업과 배포 근거가 없음"
+      ],
+      "nextActions": [
+        "전투·메타 성장·캠페인 콘텐츠 세 작업선 통합 검증",
+        "1부 4~6장 전장과 남은 보스 행동 구현",
+        "모바일 플레이·시각·접근성 QA 증거 확보"
+      ]
+    },
+    {
+      "rank": 2,
+      "name": "pliside-ops",
+      "displayName": "Loom · 유튜브 운영 시스템",
+      "icon": "📺",
+      "category": "content",
+      "visibility": "private",
+      "tool": "codex",
+      "status": "active",
+      "focus": true,
+      "activitySource": "github",
+      "sprint": "A",
+      "sprintStatus": "inProgress",
+      "stack": [
+        "Python 3.12",
+        "Typer + Pydantic",
+        "SQLite",
+        "Next.js + Remotion"
+      ],
+      "progressAssessed": false,
+      "progress": {
+        "docs": 0,
+        "skeleton": 0,
+        "features": 0,
+        "alpha": 0,
+        "total": 0
+      },
+      "commits": 203,
+      "lastUpdate": "2026-07-13T09:24Z",
+      "firstCommit": "2026-05-30",
+      "daysActive": 51,
+      "eta": "지속 운영",
+      "etaClass": "long",
+      "rationale": "도돌이·팜브리즈·마루 음악 채널을 한 엔진으로 관리하는 로컬 운영 OS. SQLite를 단일 진실원으로 곡·영상·쇼츠·메타데이터·예약·분석·공개 패키지를 관리하며, 생성과 업로드의 사람 승인 경계를 유지한다.",
+      "risks": [
+        "Suno·이미지·YouTube 업로드는 운영자 승인과 수동 작업에 의존",
+        "여러 채널의 예약·DB·공개 상태가 어긋날 수 있음",
+        "대용량 음원·영상 자산과 렌더 저장공간 관리 필요"
+      ],
+      "nextActions": [
+        "예약된 도돌이·팜브리즈 콘텐츠의 공개 상태와 연결 관계 점검",
+        "사람 승인 완료 후 팜브리즈 Playlist 세 편을 순서대로 공개 준비",
+        "연아 후보곡 선택 뒤 음원 인입·분석·마스터링 진행"
+      ],
+      "url": "https://github.com/sgeniusk/pliside-ops"
+    },
+    {
+      "rank": 3,
       "name": "habit",
       "displayName": "Formi (포미)",
       "icon": "🎯",
@@ -179,7 +271,7 @@
       "url": "https://github.com/sgeniusk/habit"
     },
     {
-      "rank": 2,
+      "rank": 4,
       "name": "tteuniyu-ios",
       "displayName": "뜬이유 iOS",
       "icon": "📈",
@@ -222,7 +314,7 @@
       "url": "https://github.com/sgeniusk/tteuniyu-ios"
     },
     {
-      "rank": 3,
+      "rank": 5,
       "name": "sam-defender-logue",
       "displayName": "삼국지: 시즈폴 (Siege Fall)",
       "icon": "🛡️",
@@ -264,7 +356,7 @@
       "url": "https://github.com/sgeniusk/sam-defender-logue"
     },
     {
-      "rank": 4,
+      "rank": 6,
       "name": "samguk-idle-prototype",
       "displayName": "전지적 군주 시점",
       "icon": "👑",
@@ -307,7 +399,7 @@
       "url": "https://github.com/sgeniusk/samguk-idle-prototype"
     },
     {
-      "rank": 5,
+      "rank": 7,
       "name": "three-kingdoms-deckbuilder",
       "displayName": "군령: 책략의 전장 (Warlord's Command)",
       "icon": "🃏",
@@ -349,7 +441,7 @@
       "url": "https://github.com/sgeniusk/three-kingdoms-deckbuilder"
     },
     {
-      "rank": 6,
+      "rank": 8,
       "name": "ai-builder-school",
       "displayName": "AI Builder School",
       "icon": "🏫",
@@ -392,7 +484,7 @@
       "url": "https://github.com/sgeniusk/ai-builder-school"
     },
     {
-      "rank": 7,
+      "rank": 9,
       "name": "ai-company-tycoon-boundaryless",
       "displayName": "AI 컴퍼니 타이쿤",
       "icon": "🏢",
@@ -433,7 +525,7 @@
       "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless"
     },
     {
-      "rank": 8,
+      "rank": 10,
       "name": "story-x-beta",
       "displayName": "Story X",
       "icon": "📖",
@@ -477,7 +569,7 @@
       "url": "https://github.com/sgeniusk/story-x-beta"
     },
     {
-      "rank": 9,
+      "rank": 11,
       "name": "BookCircle",
       "displayName": "BookCircle",
       "icon": "📚",
@@ -521,7 +613,7 @@
       "url": "https://github.com/sgeniusk/BookCircle"
     },
     {
-      "rank": 10,
+      "rank": 12,
       "name": "jewelry-webtoon-cloud",
       "displayName": "반짝상점 생존기",
       "icon": "💎",
@@ -563,7 +655,7 @@
       "url": "https://github.com/sgeniusk/jewelry-webtoon-cloud"
     },
     {
-      "rank": 11,
+      "rank": 13,
       "name": "Nodeloom",
       "displayName": "Nodeloom",
       "icon": "🪢",
@@ -609,7 +701,7 @@
       "url": "https://github.com/sgeniusk/Nodeloom"
     },
     {
-      "rank": 12,
+      "rank": 14,
       "name": "design-system-school",
       "displayName": "AI 디자인 시스템 스쿨",
       "icon": "🎨",
@@ -651,7 +743,7 @@
       "url": "https://github.com/sgeniusk/design-system-school"
     },
     {
-      "rank": 13,
+      "rank": 15,
       "name": "cmds-daily-briefing",
       "displayName": "해치의 데일리 브리핑",
       "icon": "📰",
@@ -694,7 +786,7 @@
       "url": "https://github.com/sgeniusk/cmds-daily-briefing"
     },
     {
-      "rank": 14,
+      "rank": 16,
       "name": "Timeer",
       "displayName": "Timeer",
       "icon": "⏰",
@@ -735,7 +827,7 @@
       "url": "https://github.com/sgeniusk/Timeer"
     },
     {
-      "rank": 15,
+      "rank": 17,
       "name": "chaekdam",
       "displayName": "책담 (Chaekdam)",
       "icon": "📖",
@@ -780,7 +872,7 @@
       "url": "https://github.com/sgeniusk/chaekdam"
     },
     {
-      "rank": 16,
+      "rank": 18,
       "name": "honbul",
       "displayName": "혼불 (Honbul)",
       "icon": "🔥",
@@ -1018,7 +1110,7 @@
   <script type="application/json" id="fallback-codex">{
   "_comment": "공개 가능한 Codex 집계. 원문·제목·session id·cwd는 포함하지 않고 토큰은 반올림한다.",
   "meta": {
-    "asOf": "2026-07-21T05:45:34.299Z",
+    "asOf": "2026-07-21T11:41:41.713Z",
     "source": "local Codex rollout token_count",
     "sourceMode": "last cumulative event per root session",
     "windowDays": 30,
@@ -1031,54 +1123,54 @@
     "privacy": "root session aggregate only; prompts, titles, ids, paths excluded"
   },
   "coverage": {
-    "filesScanned": 2618,
-    "rootSessionsWithUsage": 791,
-    "mappedSessions": 500,
-    "unmappedSessions": 291,
-    "excludedSubagents": 1023,
+    "filesScanned": 2692,
+    "rootSessionsWithUsage": 792,
+    "mappedSessions": 517,
+    "unmappedSessions": 275,
+    "excludedSubagents": 1052,
     "filesMissingMeta": 0,
     "sessionsMissingUsage": 33,
-    "trackedProjects": 16,
-    "projectsWithUsage": 9
+    "trackedProjects": 18,
+    "projectsWithUsage": 11
   },
   "calibration": {
     "medianSessionTokens": 1400000,
-    "meanSessionTokens": 24600000,
+    "meanSessionTokens": 24900000,
     "p80SessionTokens": 5800000,
-    "sampleSessions": 791
+    "sampleSessions": 792
   },
   "totals": {
     "allTime": {
-      "totalTokens": 19492200000,
-      "sessions": 791,
-      "inputTokens": 19421000000,
-      "cachedInputTokens": 18537700000,
-      "outputTokens": 70900000,
-      "reasoningTokens": 19500000
+      "totalTokens": 19724600000,
+      "sessions": 792,
+      "inputTokens": 19652800000,
+      "cachedInputTokens": 18761800000,
+      "outputTokens": 71600000,
+      "reasoningTokens": 19700000
     },
     "last30Days": {
-      "totalTokens": 8202700000,
-      "sessions": 162,
-      "inputTokens": 8170900000,
-      "cachedInputTokens": 7751300000,
-      "outputTokens": 31800000,
-      "reasoningTokens": 8800000
+      "totalTokens": 8386500000,
+      "sessions": 160,
+      "inputTokens": 8354300000,
+      "cachedInputTokens": 7930500000,
+      "outputTokens": 32200000,
+      "reasoningTokens": 9000000
     },
     "unmappedAllTime": {
-      "totalTokens": 4744800000,
-      "sessions": 291,
-      "inputTokens": 4726200000,
-      "cachedInputTokens": 4497000000,
-      "outputTokens": 18600000,
-      "reasoningTokens": 6400000
+      "totalTokens": 3174000000,
+      "sessions": 275,
+      "inputTokens": 3160300000,
+      "cachedInputTokens": 3002800000,
+      "outputTokens": 13700000,
+      "reasoningTokens": 4700000
     },
     "unmappedLast30Days": {
-      "totalTokens": 3069400000,
-      "sessions": 108,
-      "inputTokens": 3058600000,
-      "cachedInputTokens": 2925600000,
-      "outputTokens": 10700000,
-      "reasoningTokens": 3900000
+      "totalTokens": 1532600000,
+      "sessions": 96,
+      "inputTokens": 1526600000,
+      "cachedInputTokens": 1465900000,
+      "outputTokens": 5900000,
+      "reasoningTokens": 2200000
     }
   },
   "daily30": [
@@ -1120,7 +1212,7 @@
     },
     {
       "date": "2026-07-10",
-      "tokens": 4400000
+      "tokens": 14500000
     },
     {
       "date": "2026-07-11",
@@ -1136,7 +1228,7 @@
     },
     {
       "date": "2026-07-15",
-      "tokens": 500000
+      "tokens": 30500000
     },
     {
       "date": "2026-07-16",
@@ -1156,10 +1248,66 @@
     },
     {
       "date": "2026-07-21",
-      "tokens": 767900000
+      "tokens": 2448500000
     }
   ],
   "projects": [
+    {
+      "repo": "samsu",
+      "allTime": {
+        "totalTokens": 725000000,
+        "sessions": 3,
+        "inputTokens": 722900000,
+        "cachedInputTokens": 690600000,
+        "outputTokens": 2200000,
+        "reasoningTokens": 700000
+      },
+      "last30Days": {
+        "totalTokens": 725000000,
+        "sessions": 3,
+        "inputTokens": 722900000,
+        "cachedInputTokens": 690600000,
+        "outputTokens": 2200000,
+        "reasoningTokens": 700000
+      },
+      "lastActivity": "2026-07-21T11:42:14.856Z",
+      "forecast": {
+        "mode": "finite",
+        "tier": "large",
+        "tierLabel": "대형 프로젝트",
+        "p50Tokens": 1992400000,
+        "p80Tokens": 3237600000,
+        "burnP50Pct": 36,
+        "burnP80Pct": 22,
+        "confidence": "low",
+        "reason": "실제 개인 평균 세션 토큰과 프로젝트 규모 등급을 곱한 초기 추정치입니다. 검수 완료 이력이 쌓이면 보정해야 합니다."
+      }
+    },
+    {
+      "repo": "pliside-ops",
+      "allTime": {
+        "totalTokens": 1078200000,
+        "sessions": 14,
+        "inputTokens": 1074800000,
+        "cachedInputTokens": 1027700000,
+        "outputTokens": 3400000,
+        "reasoningTokens": 1200000
+      },
+      "last30Days": {
+        "totalTokens": 995500000,
+        "sessions": 7,
+        "inputTokens": 992500000,
+        "cachedInputTokens": 948400000,
+        "outputTokens": 3000000,
+        "reasoningTokens": 1100000
+      },
+      "lastActivity": "2026-07-21T11:42:17.622Z",
+      "forecast": {
+        "mode": "continuous",
+        "confidence": "none",
+        "reason": "종료점이 고정되지 않은 지속형 프로젝트라 완성 백분율을 계산하지 않습니다."
+      }
+    },
     {
       "repo": "habit",
       "allTime": {
@@ -1183,9 +1331,9 @@
         "mode": "finite",
         "tier": "product",
         "tierLabel": "제품 단위",
-        "p50Tokens": 887100000,
-        "p80Tokens": 1478500000,
-        "burnP50Pct": 89,
+        "p50Tokens": 896600000,
+        "p80Tokens": 1494300000,
+        "burnP50Pct": 88,
         "burnP80Pct": 53,
         "confidence": "low",
         "reason": "실제 개인 평균 세션 토큰과 프로젝트 규모 등급을 곱한 초기 추정치입니다. 검수 완료 이력이 쌓이면 보정해야 합니다."
@@ -1214,8 +1362,8 @@
         "mode": "finite",
         "tier": "product",
         "tierLabel": "제품 단위",
-        "p50Tokens": 887100000,
-        "p80Tokens": 1478500000,
+        "p50Tokens": 896600000,
+        "p80Tokens": 1494300000,
         "burnP50Pct": 0,
         "burnP80Pct": 0,
         "confidence": "low",
@@ -1245,10 +1393,10 @@
         "mode": "finite",
         "tier": "large",
         "tierLabel": "대형 프로젝트",
-        "p50Tokens": 1971400000,
-        "p80Tokens": 3203500000,
-        "burnP50Pct": 188,
-        "burnP80Pct": 116,
+        "p50Tokens": 1992400000,
+        "p80Tokens": 3237600000,
+        "burnP50Pct": 186,
+        "burnP80Pct": 114,
         "confidence": "low",
         "reason": "실제 개인 평균 세션 토큰과 프로젝트 규모 등급을 곱한 초기 추정치입니다. 검수 완료 이력이 쌓이면 보정해야 합니다."
       }
@@ -1276,10 +1424,10 @@
         "mode": "finite",
         "tier": "large",
         "tierLabel": "대형 프로젝트",
-        "p50Tokens": 1971400000,
-        "p80Tokens": 3203500000,
-        "burnP50Pct": 202,
-        "burnP80Pct": 124,
+        "p50Tokens": 1992400000,
+        "p80Tokens": 3237600000,
+        "burnP50Pct": 200,
+        "burnP80Pct": 123,
         "confidence": "low",
         "reason": "실제 개인 평균 세션 토큰과 프로젝트 규모 등급을 곱한 초기 추정치입니다. 검수 완료 이력이 쌓이면 보정해야 합니다."
       }
@@ -1307,10 +1455,10 @@
         "mode": "finite",
         "tier": "large",
         "tierLabel": "대형 프로젝트",
-        "p50Tokens": 1971400000,
-        "p80Tokens": 3203500000,
-        "burnP50Pct": 125,
-        "burnP80Pct": 77,
+        "p50Tokens": 1992400000,
+        "p80Tokens": 3237600000,
+        "burnP50Pct": 124,
+        "burnP80Pct": 76,
         "confidence": "low",
         "reason": "실제 개인 평균 세션 토큰과 프로젝트 규모 등급을 곱한 초기 추정치입니다. 검수 완료 이력이 쌓이면 보정해야 합니다."
       }
@@ -1363,10 +1511,10 @@
         "mode": "finite",
         "tier": "large",
         "tierLabel": "대형 프로젝트",
-        "p50Tokens": 1971400000,
-        "p80Tokens": 3203500000,
-        "burnP50Pct": 147,
-        "burnP80Pct": 91,
+        "p50Tokens": 1992400000,
+        "p80Tokens": 3237600000,
+        "burnP50Pct": 146,
+        "burnP80Pct": 90,
         "confidence": "low",
         "reason": "실제 개인 평균 세션 토큰과 프로젝트 규모 등급을 곱한 초기 추정치입니다. 검수 완료 이력이 쌓이면 보정해야 합니다."
       }
@@ -1394,8 +1542,8 @@
         "mode": "finite",
         "tier": "platform",
         "tierLabel": "플랫폼·장기 베타",
-        "p50Tokens": 3942800000,
-        "p80Tokens": 6407000000,
+        "p50Tokens": 3984800000,
+        "p80Tokens": 6475300000,
         "burnP50Pct": 13,
         "burnP80Pct": 8,
         "confidence": "low",
@@ -1425,8 +1573,8 @@
         "mode": "finite",
         "tier": "product",
         "tierLabel": "제품 단위",
-        "p50Tokens": 887100000,
-        "p80Tokens": 1478500000,
+        "p50Tokens": 896600000,
+        "p80Tokens": 1494300000,
         "burnP50Pct": 0,
         "burnP80Pct": 0,
         "confidence": "low",
@@ -1456,8 +1604,8 @@
         "mode": "finite",
         "tier": "product",
         "tierLabel": "제품 단위",
-        "p50Tokens": 887100000,
-        "p80Tokens": 1478500000,
+        "p50Tokens": 896600000,
+        "p80Tokens": 1494300000,
         "burnP50Pct": 0,
         "burnP80Pct": 0,
         "confidence": "low",
@@ -1487,8 +1635,8 @@
         "mode": "finite",
         "tier": "platform",
         "tierLabel": "플랫폼·장기 베타",
-        "p50Tokens": 3942800000,
-        "p80Tokens": 6407000000,
+        "p50Tokens": 3984800000,
+        "p80Tokens": 6475300000,
         "burnP50Pct": 0,
         "burnP80Pct": 0,
         "confidence": "low",
@@ -1568,8 +1716,8 @@
         "mode": "finite",
         "tier": "contained",
         "tierLabel": "한정 작업",
-        "p50Tokens": 295700000,
-        "p80Tokens": 492800000,
+        "p50Tokens": 298900000,
+        "p80Tokens": 498100000,
         "burnP50Pct": 0,
         "burnP80Pct": 0,
         "confidence": "low",
@@ -1599,8 +1747,8 @@
         "mode": "finite",
         "tier": "product",
         "tierLabel": "제품 단위",
-        "p50Tokens": 887100000,
-        "p80Tokens": 1478500000,
+        "p50Tokens": 896600000,
+        "p80Tokens": 1494300000,
         "burnP50Pct": 16,
         "burnP80Pct": 10,
         "confidence": "low",
@@ -1630,8 +1778,8 @@
         "mode": "finite",
         "tier": "large",
         "tierLabel": "대형 프로젝트",
-        "p50Tokens": 1971400000,
-        "p80Tokens": 3203500000,
+        "p50Tokens": 1992400000,
+        "p80Tokens": 3237600000,
         "burnP50Pct": 0,
         "burnP80Pct": 0,
         "confidence": "low",

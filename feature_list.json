@@ -1,6 +1,6 @@
 {
   "_comment": "github-priority-dashboard 자체의 개발 백로그 (v1.0→v3.x). projects.json은 추적되는 프로젝트들, 이 파일은 이 워크스페이스 자체의 마일스톤이다. active가 null이면 진행 중인 단일 작업이 없다는 뜻이다. 현재 Codex가 설계·구현·검증·배포를 단독 운영한다.",
-  "active": null,
+  "active": "v3.2-focus-portfolio",
   "features": [
     {
       "id": "v1.0-baseline",
@@ -308,6 +308,27 @@
       "openQuestions": [
         "usage.json 자동 수집 자격증명을 언제 복구할지",
         "291개 미분류 root 세션의 cwd 별칭을 어떤 프로젝트에 연결할지"
+      ]
+    },
+    {
+      "id": "v3.2-focus-portfolio",
+      "name": "v3.2 집중 프로젝트 중심 포트폴리오 재편",
+      "status": "inProgress",
+      "description": "실제 Codex 작업 공간을 기준으로 삼국지가 머지와 Loom 유튜브 운영 시스템을 새 집중 프로젝트로 등록한다. 운영실과 프로젝트 보기는 집중 항목을 기본으로 보여주고, 기존 항목은 상태를 임의 변경하지 않은 채 정리 검토 범위로 분리한다.",
+      "dependencies": [
+        "v3.1-sites-scheduled-refresh"
+      ],
+      "doneCriteria": [
+        "projects.json에 삼국지가 머지와 Loom을 실제 저장소 근거로 등록하고 최상위 집중 순위로 배치",
+        "프로젝트 보기 기본 범위를 집중으로 전환하고 활성 전체·정리 검토·전체 필터 제공",
+        "두 프로젝트 Codex cwd 별칭 연결과 유한·지속형 예측 모드 반영",
+        "수동 완성도 미평가 프로젝트를 0%가 아닌 미산출로 표시",
+        "로컬 전용 프로젝트는 GitHub refresh·30일 GitHub 분석에서 실패나 정체로 오인하지 않음",
+        "init·validate·check-report-pages·브라우저 콘솔 0·Sites build 통과",
+        "main·GitHub Pages·Codex Sites 배포 완료"
+      ],
+      "openQuestions": [
+        "기존 프로젝트 중 실제 종료한 항목을 어떤 목록으로 archived 처리할지"
       ]
     }
   ]

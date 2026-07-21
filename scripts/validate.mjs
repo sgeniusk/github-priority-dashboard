@@ -66,6 +66,15 @@ try {
       if (p.status === 'paused' && !p.pausedReason) {
         logError(`projects.json [${label}]: status is "paused" but "pausedReason" is missing`);
       }
+
+      if (p.focus != null && typeof p.focus !== 'boolean') {
+        logError(`projects.json [${label}]: focus must be a boolean when provided`);
+      }
+
+      const validActivitySources = ['github', 'local'];
+      if (p.activitySource != null && !validActivitySources.includes(p.activitySource)) {
+        logError(`projects.json [${label}]: invalid activitySource "${p.activitySource}"`);
+      }
       
       const validSprints = ['A', 'B', 'C', 'D', 'defer'];
       if (!validSprints.includes(p.sprint)) {
@@ -87,6 +96,10 @@ try {
         if (total !== docs + skeleton + features + alpha) {
           logError(`projects.json [${label}]: progress.total (${total}) does not match sum of components (${docs + skeleton + features + alpha})`);
         }
+      }
+
+      if (p.progressAssessed != null && typeof p.progressAssessed !== 'boolean') {
+        logError(`projects.json [${label}]: progressAssessed must be a boolean when provided`);
       }
       
       if (typeof p.commits !== 'number' || p.commits < 0) {

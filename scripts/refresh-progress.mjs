@@ -94,11 +94,20 @@ function upsertHistory(data) {
   catch { hist = { _comment: '완성도 스냅샷 히스토리.', snapshots: [] }; }
   if (!Array.isArray(hist.snapshots)) hist.snapshots = [];
   const active = data.projects.filter((p) => p.status === 'active');
+  const assessedActive = active.filter((p) => p.progressAssessed !== false);
   const projMap = {};
-  data.projects.forEach((p) => { projMap[p.name] = { total: p.progress.total, commits: p.commits || 0 }; });
+  data.projects.forEach((p) => {
+    projMap[p.name] = {
+      total: p.progress.total,
+      commits: p.commits || 0,
+      ...(p.progressAssessed === false ? { assessed: false } : {}),
+    };
+  });
   const snap = {
     date: data.meta.asOf,
-    avgProgress: active.length ? Math.round(active.reduce((s, p) => s + p.progress.total, 0) / active.length) : 0,
+    avgProgress: assessedActive.length
+      ? Math.round(assessedActive.reduce((s, p) => s + p.progress.total, 0) / assessedActive.length)
+      : 0,
     totalCommits: data.projects.reduce((s, p) => s + (p.commits || 0), 0),
     active: active.length,
     projects: projMap,
@@ -148,6 +157,10 @@ async function main() {
   const allCommits = [];
 
   for (const p of data.projects) {
+    if (p.activitySource === 'local') {
+      console.log(`↷ ${p.name} — 로컬 활동 소스라 GitHub 수집에서 제외합니다.`);
+      continue;
+    }
     try {
       // 통합 활동 피드용 — 최근 커밋 수집
       try {

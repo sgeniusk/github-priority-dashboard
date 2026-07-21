@@ -255,13 +255,14 @@ button { color:inherit; }
 .section-stat strong, .section-stat span { display:block; }
 .section-stat strong { font-family:Georgia,'Times New Roman',serif; font-size:24px; font-weight:500; }
 .section-stat span { color:var(--t2); font-size:11px; }
-.filter-bar { display:grid; grid-template-columns:minmax(250px,1.4fr) repeat(3,minmax(150px,.5fr)); gap:10px; margin-bottom:18px; padding:14px; border:1px solid var(--border); border-radius:12px; background:var(--surface); }
+.filter-bar { display:grid; grid-template-columns:minmax(230px,1.35fr) repeat(4,minmax(126px,.5fr)); gap:10px; margin-bottom:18px; padding:14px; border:1px solid var(--border); border-radius:12px; background:var(--surface); }
 .filter-bar label { display:flex; flex-direction:column; gap:5px; }
 .filter-bar label > span { color:var(--t2); font-size:10px; font-weight:800; }
 .filter-bar input, .filter-bar select { width:100%; min-height:40px; border:1px solid var(--border); border-radius:8px; outline:none; background:var(--bg); color:var(--text); padding:8px 10px; }
 .filter-bar input:focus, .filter-bar select:focus { border-color:var(--electric); box-shadow:0 0 0 3px color-mix(in srgb,var(--electric) 15%,transparent); }
 .project-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
 .project-card { display:flex; min-height:340px; flex-direction:column; padding:20px; border:1px solid var(--border); border-radius:14px; background:var(--surface); box-shadow:var(--shadow); }
+.project-card.is-focus { border-color:color-mix(in srgb,var(--electric) 48%,var(--border)); box-shadow:inset 0 3px 0 var(--electric),var(--shadow); }
 .project-card:hover { border-color:color-mix(in srgb,var(--electric) 45%,var(--border)); transform:translateY(-1px); transition:.15s ease; }
 .project-top { display:flex; align-items:center; justify-content:space-between; gap:10px; }
 .chip-row { display:flex; flex-wrap:wrap; gap:6px; }
@@ -270,6 +271,8 @@ button { color:inherit; }
 .chip.tool-claude { border-color:color-mix(in srgb,#ff5b22 55%,var(--border)); color:#ff5b22; }
 .chip.tool-hermes { border-color:color-mix(in srgb,#bc8cff 55%,var(--border)); color:#bc8cff; }
 .chip.tool-hybrid { border-color:color-mix(in srgb,#39c5cf 55%,var(--border)); color:#39c5cf; }
+.chip.portfolio-focus { border-color:color-mix(in srgb,var(--electric) 70%,var(--border)); background:color-mix(in srgb,var(--electric) 12%,var(--surface)); color:var(--electric); }
+.chip.portfolio-review { border-style:dashed; }
 .project-rank { color:var(--t2); font-size:10px; }
 .project-card h2 { margin:24px 0 6px; font-family:Georgia,'Times New Roman',serif; font-size:26px; font-weight:500; letter-spacing:-.035em; line-height:1.08; }
 .project-purpose { min-height:44px; margin:0; color:var(--t2); font-size:12px; }

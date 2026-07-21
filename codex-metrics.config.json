@@ -24,6 +24,20 @@
     }
   },
   "projects": {
+    "samsu": {
+      "aliases": [
+        "samsu"
+      ],
+      "forecastMode": "finite",
+      "tier": "large"
+    },
+    "pliside-ops": {
+      "aliases": [
+        "bard",
+        "pliside-ops"
+      ],
+      "forecastMode": "continuous"
+    },
     "habit": {
       "aliases": ["Formi", "habit"],
       "forecastMode": "finite",

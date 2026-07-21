@@ -27,10 +27,13 @@
 | `visibility` | string | `public` / `private` | 수동 |
 | `tool` | string | `claude` / `codex` / `hermes` / `hybrid` | ⚠️ 사용자 확인 없이 변경 금지 |
 | `status` | string | `active` / `paused` / `archived` | ⚠️ 사용자 명시 지시로만 변경 |
+| `focus` | boolean | 현재 집중 포트폴리오 여부. `true`만 기본 프로젝트 보기와 운영실 의사결정 큐에 노출 | 수동 |
+| `activitySource` | string | `github` / `local`. 생략하면 `github`; `local`은 GitHub 활동 수집·30일 분석에서 제외 | 수동 |
 | `sprint` | string | `A` / `B` / `C` / `D` / `defer` — `docs/sprint-plan.md` 기준 | 수동 |
 | `sprintStatus` | string | `planned` / `inProgress` / `review` / `done` — Sprint 보드 시드값 | 수동 (보드 UI는 localStorage로 오버라이드) |
 | `stack` | string[] | 기술 스택 | 수동 |
 | `progress` | object | `docs`(0-20)·`skeleton`(0-30)·`features`(0-30)·`alpha`(0-20)·`total`(합) | ⚠️ 완성도 임의 부풀림 금지. `total`은 4개 합 |
+| `progressAssessed` | boolean | 수동 완성도 평가 실시 여부. `false`면 값은 0으로 보존하되 화면에는 `미산출`로 표시 | 수동 |
 | `commits` | number | 총 커밋 수 | `refresh-progress.mjs`가 자동 갱신 |
 | `lastUpdate` | string | 최근 푸시 시각 `YYYY-MM-DDTHH:MMZ` | `refresh-progress.mjs`가 자동 갱신 |
 | `firstCommit` | string | 최초 커밋일 `YYYY-MM-DD` | `refresh-progress.mjs`가 자동 갱신 |

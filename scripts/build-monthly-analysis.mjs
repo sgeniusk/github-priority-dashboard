@@ -246,7 +246,8 @@ export async function buildMonthlyAnalysis({ dryRun = false } = {}) {
 
   const analyses = [];
   const errors = [];
-  for (const project of projectsData.projects) {
+  const githubProjects = projectsData.projects.filter((project) => project.activitySource !== 'local');
+  for (const project of githubProjects) {
     try {
       const commits = await fetchCommits({ owner, repo: project.name, sinceIso, untilIso, headers });
       analyses.push(buildRepoAnalysis(project, commits, startKey, endKey));
