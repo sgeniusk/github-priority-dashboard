@@ -8,32 +8,25 @@
       "plan": "Max",
       "limitLabel": "주간 한도",
       "cycleLengthDays": 7,
-      "cycleResetDate": "2026-06-21",
-      "usedPercent": 40,
+      "cycleResetDate": "2026-07-26",
+      "usedPercent": 0,
       "note": "자동 수집: /usage-refresh — 공식 /usage와 동일한 OAuth usage 엔드포인트(비공식, 변경 시 깨질 수 있음). 실패 시 수동 입력 폴백.",
       "auto": {
         "source": "oauth-usage",
-        "collectedAt": "2026-06-16T09:34:53.753Z",
+        "collectedAt": "2026-07-22T12:03:00.619Z",
         "windows": [
           {
             "id": "fiveHour",
             "label": "5시간",
-            "usedPercent": 6,
-            "resetsAt": "2026-06-16T13:50:00.313Z",
+            "usedPercent": 0,
+            "resetsAt": null,
             "windowMinutes": 300
           },
           {
             "id": "sevenDay",
             "label": "주간",
-            "usedPercent": 40,
-            "resetsAt": "2026-06-21T11:00:00.313Z",
-            "windowMinutes": 10080
-          },
-          {
-            "id": "sevenDaySonnet",
-            "label": "주간(Sonnet)",
-            "usedPercent": 3,
-            "resetsAt": "2026-06-21T11:00:00.313Z",
+            "usedPercent": 0,
+            "resetsAt": "2026-07-26T10:59:59.864Z",
             "windowMinutes": 10080
           }
         ]
@@ -46,16 +39,16 @@
       "limitLabel": "주간 한도",
       "cycleLengthDays": 7,
       "cycleResetDate": "2026-07-29",
-      "usedPercent": 8,
+      "usedPercent": 25,
       "note": "자동 수집: /usage-refresh — 로컬 codex app-server JSON-RPC. 실패 시 수동 입력 폴백.",
       "auto": {
         "source": "codex-app-server",
-        "collectedAt": "2026-07-22T00:11:22.989Z",
+        "collectedAt": "2026-07-22T12:03:00.619Z",
         "windows": [
           {
             "id": "primary",
             "label": "주간",
-            "usedPercent": 8,
+            "usedPercent": 25,
             "resetsAt": "2026-07-28T17:10:16.000Z",
             "windowMinutes": 10080
           }
