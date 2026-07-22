@@ -1,7 +1,7 @@
 {
   "_comment": "공개 가능한 Codex 집계. 원문·제목·session id·cwd는 포함하지 않고 토큰은 반올림한다.",
   "meta": {
-    "asOf": "2026-07-21T12:01:18.743Z",
+    "asOf": "2026-07-22T00:10:56.979Z",
     "source": "local Codex rollout token_count",
     "sourceMode": "last cumulative event per root session",
     "windowDays": 30,
@@ -14,11 +14,11 @@
     "privacy": "root session aggregate only; prompts, titles, ids, paths excluded"
   },
   "coverage": {
-    "filesScanned": 2698,
-    "rootSessionsWithUsage": 793,
+    "filesScanned": 2797,
+    "rootSessionsWithUsage": 794,
     "mappedSessions": 517,
-    "unmappedSessions": 276,
-    "excludedSubagents": 1054,
+    "unmappedSessions": 277,
+    "excludedSubagents": 1096,
     "filesMissingMeta": 0,
     "sessionsMissingUsage": 33,
     "trackedProjects": 18,
@@ -26,49 +26,45 @@
   },
   "calibration": {
     "medianSessionTokens": 1400000,
-    "meanSessionTokens": 24900000,
+    "meanSessionTokens": 25300000,
     "p80SessionTokens": 5800000,
-    "sampleSessions": 793
+    "sampleSessions": 794
   },
   "totals": {
     "allTime": {
-      "totalTokens": 19756600000,
-      "sessions": 793,
-      "inputTokens": 19684700000,
-      "cachedInputTokens": 18793200000,
-      "outputTokens": 71600000,
-      "reasoningTokens": 19700000
+      "totalTokens": 20105800000,
+      "sessions": 794,
+      "inputTokens": 20033100000,
+      "cachedInputTokens": 19131900000,
+      "outputTokens": 72500000,
+      "reasoningTokens": 20000000
     },
     "last30Days": {
-      "totalTokens": 8418400000,
-      "sessions": 161,
-      "inputTokens": 8386200000,
-      "cachedInputTokens": 7962000000,
-      "outputTokens": 32200000,
-      "reasoningTokens": 9000000
+      "totalTokens": 8766300000,
+      "sessions": 160,
+      "inputTokens": 8733200000,
+      "cachedInputTokens": 8299400000,
+      "outputTokens": 33100000,
+      "reasoningTokens": 9200000
     },
     "unmappedAllTime": {
-      "totalTokens": 3182900000,
-      "sessions": 276,
-      "inputTokens": 3169100000,
-      "cachedInputTokens": 3011500000,
-      "outputTokens": 13700000,
+      "totalTokens": 3198300000,
+      "sessions": 277,
+      "inputTokens": 3184500000,
+      "cachedInputTokens": 3026000000,
+      "outputTokens": 13800000,
       "reasoningTokens": 4700000
     },
     "unmappedLast30Days": {
-      "totalTokens": 1541400000,
-      "sessions": 97,
-      "inputTokens": 1535500000,
-      "cachedInputTokens": 1474500000,
+      "totalTokens": 1556800000,
+      "sessions": 98,
+      "inputTokens": 1550800000,
+      "cachedInputTokens": 1489000000,
       "outputTokens": 6000000,
       "reasoningTokens": 2200000
     }
   },
   "daily30": [
-    {
-      "date": "2026-06-21",
-      "tokens": 1400000
-    },
     {
       "date": "2026-06-22",
       "tokens": 3200000
@@ -139,37 +135,41 @@
     },
     {
       "date": "2026-07-21",
-      "tokens": 2471600000
+      "tokens": 2448500000
+    },
+    {
+      "date": "2026-07-22",
+      "tokens": 356900000
     }
   ],
   "projects": [
     {
       "repo": "samsu",
       "allTime": {
-        "totalTokens": 745700000,
+        "totalTokens": 958100000,
         "sessions": 3,
-        "inputTokens": 743500000,
-        "cachedInputTokens": 711000000,
-        "outputTokens": 2200000,
-        "reasoningTokens": 700000
+        "inputTokens": 955500000,
+        "cachedInputTokens": 918300000,
+        "outputTokens": 2600000,
+        "reasoningTokens": 900000
       },
       "last30Days": {
-        "totalTokens": 745700000,
+        "totalTokens": 958100000,
         "sessions": 3,
-        "inputTokens": 743500000,
-        "cachedInputTokens": 711000000,
-        "outputTokens": 2200000,
-        "reasoningTokens": 700000
+        "inputTokens": 955500000,
+        "cachedInputTokens": 918300000,
+        "outputTokens": 2600000,
+        "reasoningTokens": 900000
       },
-      "lastActivity": "2026-07-21T12:01:37.961Z",
+      "lastActivity": "2026-07-22T00:11:01.918Z",
       "forecast": {
         "mode": "finite",
         "tier": "large",
         "tierLabel": "대형 프로젝트",
-        "p50Tokens": 1993100000,
-        "p80Tokens": 3238800000,
-        "burnP50Pct": 37,
-        "burnP80Pct": 23,
+        "p50Tokens": 2025800000,
+        "p80Tokens": 3291900000,
+        "burnP50Pct": 47,
+        "burnP80Pct": 29,
         "confidence": "low",
         "reason": "실제 개인 평균 세션 토큰과 프로젝트 규모 등급을 곱한 초기 추정치입니다. 검수 완료 이력이 쌓이면 보정해야 합니다."
       }
@@ -177,22 +177,22 @@
     {
       "repo": "pliside-ops",
       "allTime": {
-        "totalTokens": 1080600000,
+        "totalTokens": 1166000000,
         "sessions": 14,
-        "inputTokens": 1077200000,
-        "cachedInputTokens": 1030100000,
-        "outputTokens": 3400000,
-        "reasoningTokens": 1200000
+        "inputTokens": 1162400000,
+        "cachedInputTokens": 1112300000,
+        "outputTokens": 3600000,
+        "reasoningTokens": 1300000
       },
       "last30Days": {
-        "totalTokens": 998000000,
+        "totalTokens": 1083400000,
         "sessions": 7,
-        "inputTokens": 994900000,
-        "cachedInputTokens": 950700000,
-        "outputTokens": 3000000,
+        "inputTokens": 1080100000,
+        "cachedInputTokens": 1032900000,
+        "outputTokens": 3200000,
         "reasoningTokens": 1100000
       },
-      "lastActivity": "2026-07-21T12:01:24.793Z",
+      "lastActivity": "2026-07-21T17:10:43.422Z",
       "forecast": {
         "mode": "continuous",
         "confidence": "none",
@@ -222,10 +222,10 @@
         "mode": "finite",
         "tier": "product",
         "tierLabel": "제품 단위",
-        "p50Tokens": 896900000,
-        "p80Tokens": 1494800000,
-        "burnP50Pct": 88,
-        "burnP80Pct": 53,
+        "p50Tokens": 911600000,
+        "p80Tokens": 1519300000,
+        "burnP50Pct": 87,
+        "burnP80Pct": 52,
         "confidence": "low",
         "reason": "실제 개인 평균 세션 토큰과 프로젝트 규모 등급을 곱한 초기 추정치입니다. 검수 완료 이력이 쌓이면 보정해야 합니다."
       }
@@ -253,8 +253,8 @@
         "mode": "finite",
         "tier": "product",
         "tierLabel": "제품 단위",
-        "p50Tokens": 896900000,
-        "p80Tokens": 1494800000,
+        "p50Tokens": 911600000,
+        "p80Tokens": 1519300000,
         "burnP50Pct": 0,
         "burnP80Pct": 0,
         "confidence": "low",
@@ -284,10 +284,10 @@
         "mode": "finite",
         "tier": "large",
         "tierLabel": "대형 프로젝트",
-        "p50Tokens": 1993100000,
-        "p80Tokens": 3238800000,
-        "burnP50Pct": 186,
-        "burnP80Pct": 114,
+        "p50Tokens": 2025800000,
+        "p80Tokens": 3291900000,
+        "burnP50Pct": 183,
+        "burnP80Pct": 112,
         "confidence": "low",
         "reason": "실제 개인 평균 세션 토큰과 프로젝트 규모 등급을 곱한 초기 추정치입니다. 검수 완료 이력이 쌓이면 보정해야 합니다."
       }
@@ -315,10 +315,10 @@
         "mode": "finite",
         "tier": "large",
         "tierLabel": "대형 프로젝트",
-        "p50Tokens": 1993100000,
-        "p80Tokens": 3238800000,
-        "burnP50Pct": 200,
-        "burnP80Pct": 123,
+        "p50Tokens": 2025800000,
+        "p80Tokens": 3291900000,
+        "burnP50Pct": 197,
+        "burnP80Pct": 121,
         "confidence": "low",
         "reason": "실제 개인 평균 세션 토큰과 프로젝트 규모 등급을 곱한 초기 추정치입니다. 검수 완료 이력이 쌓이면 보정해야 합니다."
       }
@@ -346,10 +346,10 @@
         "mode": "finite",
         "tier": "large",
         "tierLabel": "대형 프로젝트",
-        "p50Tokens": 1993100000,
-        "p80Tokens": 3238800000,
-        "burnP50Pct": 124,
-        "burnP80Pct": 76,
+        "p50Tokens": 2025800000,
+        "p80Tokens": 3291900000,
+        "burnP50Pct": 122,
+        "burnP80Pct": 75,
         "confidence": "low",
         "reason": "실제 개인 평균 세션 토큰과 프로젝트 규모 등급을 곱한 초기 추정치입니다. 검수 완료 이력이 쌓이면 보정해야 합니다."
       }
@@ -382,30 +382,30 @@
     {
       "repo": "ai-company-tycoon-boundaryless",
       "allTime": {
-        "totalTokens": 2906200000,
+        "totalTokens": 2931200000,
         "sessions": 122,
-        "inputTokens": 2897800000,
-        "cachedInputTokens": 2794000000,
-        "outputTokens": 8400000,
-        "reasoningTokens": 2400000
+        "inputTokens": 2922700000,
+        "cachedInputTokens": 2818000000,
+        "outputTokens": 8500000,
+        "reasoningTokens": 2500000
       },
       "last30Days": {
-        "totalTokens": 375100000,
-        "sessions": 42,
-        "inputTokens": 373700000,
-        "cachedInputTokens": 356500000,
-        "outputTokens": 1400000,
+        "totalTokens": 398700000,
+        "sessions": 40,
+        "inputTokens": 397200000,
+        "cachedInputTokens": 379300000,
+        "outputTokens": 1500000,
         "reasoningTokens": 600000
       },
-      "lastActivity": "2026-07-21T03:13:35.541Z",
+      "lastActivity": "2026-07-21T15:07:29.797Z",
       "forecast": {
         "mode": "finite",
         "tier": "large",
         "tierLabel": "대형 프로젝트",
-        "p50Tokens": 1993100000,
-        "p80Tokens": 3238800000,
-        "burnP50Pct": 146,
-        "burnP80Pct": 90,
+        "p50Tokens": 2025800000,
+        "p80Tokens": 3291900000,
+        "burnP50Pct": 145,
+        "burnP80Pct": 89,
         "confidence": "low",
         "reason": "실제 개인 평균 세션 토큰과 프로젝트 규모 등급을 곱한 초기 추정치입니다. 검수 완료 이력이 쌓이면 보정해야 합니다."
       }
@@ -413,28 +413,28 @@
     {
       "repo": "story-x-beta",
       "allTime": {
-        "totalTokens": 526200000,
+        "totalTokens": 537200000,
         "sessions": 26,
-        "inputTokens": 524500000,
-        "cachedInputTokens": 507600000,
+        "inputTokens": 535500000,
+        "cachedInputTokens": 518300000,
         "outputTokens": 1700000,
         "reasoningTokens": 600000
       },
       "last30Days": {
-        "totalTokens": 394800000,
+        "totalTokens": 405800000,
         "sessions": 1,
-        "inputTokens": 393600000,
-        "cachedInputTokens": 381600000,
+        "inputTokens": 404600000,
+        "cachedInputTokens": 392300000,
         "outputTokens": 1200000,
         "reasoningTokens": 400000
       },
-      "lastActivity": "2026-07-21T04:17:15.273Z",
+      "lastActivity": "2026-07-21T15:37:07.439Z",
       "forecast": {
         "mode": "finite",
         "tier": "platform",
         "tierLabel": "플랫폼·장기 베타",
-        "p50Tokens": 3986200000,
-        "p80Tokens": 6477600000,
+        "p50Tokens": 4051600000,
+        "p80Tokens": 6583800000,
         "burnP50Pct": 13,
         "burnP80Pct": 8,
         "confidence": "low",
@@ -464,8 +464,8 @@
         "mode": "finite",
         "tier": "product",
         "tierLabel": "제품 단위",
-        "p50Tokens": 896900000,
-        "p80Tokens": 1494800000,
+        "p50Tokens": 911600000,
+        "p80Tokens": 1519300000,
         "burnP50Pct": 0,
         "burnP80Pct": 0,
         "confidence": "low",
@@ -495,8 +495,8 @@
         "mode": "finite",
         "tier": "product",
         "tierLabel": "제품 단위",
-        "p50Tokens": 896900000,
-        "p80Tokens": 1494800000,
+        "p50Tokens": 911600000,
+        "p80Tokens": 1519300000,
         "burnP50Pct": 0,
         "burnP80Pct": 0,
         "confidence": "low",
@@ -526,8 +526,8 @@
         "mode": "finite",
         "tier": "platform",
         "tierLabel": "플랫폼·장기 베타",
-        "p50Tokens": 3986200000,
-        "p80Tokens": 6477600000,
+        "p50Tokens": 4051600000,
+        "p80Tokens": 6583800000,
         "burnP50Pct": 0,
         "burnP80Pct": 0,
         "confidence": "low",
@@ -607,8 +607,8 @@
         "mode": "finite",
         "tier": "contained",
         "tierLabel": "한정 작업",
-        "p50Tokens": 299000000,
-        "p80Tokens": 498300000,
+        "p50Tokens": 303900000,
+        "p80Tokens": 506400000,
         "burnP50Pct": 0,
         "burnP80Pct": 0,
         "confidence": "low",
@@ -638,10 +638,10 @@
         "mode": "finite",
         "tier": "product",
         "tierLabel": "제품 단위",
-        "p50Tokens": 896900000,
-        "p80Tokens": 1494800000,
+        "p50Tokens": 911600000,
+        "p80Tokens": 1519300000,
         "burnP50Pct": 16,
-        "burnP80Pct": 10,
+        "burnP80Pct": 9,
         "confidence": "low",
         "reason": "실제 개인 평균 세션 토큰과 프로젝트 규모 등급을 곱한 초기 추정치입니다. 검수 완료 이력이 쌓이면 보정해야 합니다."
       }
@@ -669,8 +669,8 @@
         "mode": "finite",
         "tier": "large",
         "tierLabel": "대형 프로젝트",
-        "p50Tokens": 1993100000,
-        "p80Tokens": 3238800000,
+        "p50Tokens": 2025800000,
+        "p80Tokens": 3291900000,
         "burnP50Pct": 0,
         "burnP80Pct": 0,
         "confidence": "low",
