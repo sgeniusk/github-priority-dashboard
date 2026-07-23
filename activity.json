@@ -1,6 +1,6 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-07-22",
+  "asOf": "2026-07-23",
   "commits": [
     {
       "repo": "story-x-beta",
