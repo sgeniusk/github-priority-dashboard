@@ -2,11 +2,11 @@
 
 다음 세션이 이 한 페이지만 보고도 현재 상태와 검증 증거를 이어받을 수 있도록 유지한다. 상세 백로그는 feature_list.json.
 
-**Last Updated**: 2026-07-22 (저녁 자동 리프레시·검증 완료·Sites 재배포 진행)
+**Last Updated**: 2026-07-23 (아침 Codex 집계·생성 검증 완료, 원격 활동·usage 수집은 미확인)
 
 ## Current Objective — 집중 프로젝트 포트폴리오 Sites 동기화 대기
 
-`삼국지가 머지`와 `Loom · 유튜브 운영 시스템`을 현재 집중 프로젝트로 등록하고 프로젝트 보기와 운영실 의사결정 큐를 두 항목 중심으로 재편했다. 기존 16개 프로젝트의 status는 사용자 확인 없이 바꾸지 않고 정리 검토 범위로 분리했다. 2026-07-22 저녁 자동 수집 실측은 root 795세션, 추적 프로젝트 연결 517세션, 분류 대기 278세션이다. GitHub 토큰은 없어 원격 활동을 이번 실행에서 직접 수집하지 않았지만, rebase로 프로젝트 활동 기준일은 2026-07-22 상태를 반영했다. Claude와 Codex 사용량은 자동 수집을 성공했고 각각 주간 0%와 25%다.
+`삼국지가 머지`와 `Loom · 유튜브 운영 시스템`을 현재 집중 프로젝트로 등록하고 프로젝트 보기와 운영실 의사결정 큐를 두 항목 중심으로 재편했다. 기존 16개 프로젝트의 status는 사용자 확인 없이 바꾸지 않고 정리 검토 범위로 분리했다. 2026-07-23 아침 자동 수집 실측은 root 796세션, 추적 프로젝트 연결 517세션, 분류 대기 279세션이다. GitHub 원격 fetch와 토큰 확인은 네트워크 승인 검토 시간 초과로 실행하지 못해 프로젝트 활동 기준일은 2026-07-22로 남았다. Claude와 Codex usage 수집은 각각 자격증명 부재와 app-server 종료로 실패해 기존 usage.json을 보존했다.
 
 ## Recommended Next Step
 
@@ -43,14 +43,14 @@ GitHub 토큰을 준비해 다음 자동화에서 원격 프로젝트 활동도 
 
 | 항목 | 상태 | 마지막 확인 |
 | --- | --- | --- |
-| 시작 점검 | 통과·경고 2 | 2026-07-22 JSON·핵심 파일 통과, GitHub 토큰 없음·projects asOf 2026-07-20 경고 |
-| Codex 집계 | 통과 | 2026-07-22 root 794·프로젝트 연결 517·분류 대기 277 |
+| 시작 점검 | 통과·경고 2 | 2026-07-23 JSON·핵심 파일 통과, GitHub 토큰 없음·projects asOf 2026-07-22 경고 |
+| Codex 집계 | 통과 | 2026-07-23 root 796·프로젝트 연결 517·분류 대기 279 |
 | 공개 경계 | 통과 | exact 원장 `.codex-local/` Git 제외, 공개 `codex-summary.json`에 prompt·sessionId·cwd 없음·10만 토큰 반올림 |
-| JSON·스크립트 검증 | 통과 | 2026-07-22 Codex 스키마·외부 JS·dashboard FALLBACK 일치 |
-| 보고서 fallback·file smoke | 통과 | 2026-07-22 전체 PASS |
+| JSON·스크립트 검증 | 통과 | 2026-07-23 Codex 스키마·외부 JS·dashboard FALLBACK 일치 |
+| 보고서 fallback·file smoke | 통과 | 2026-07-23 전체 PASS |
 | 브라우저 전 보기 | 통과 | 2026-07-21 인앱 브라우저 — 운영실·프로젝트·Codex 작업·리소스, 집중·활성 전체·정리 검토 필터, 새 상세·누적 페이지 |
 | 브라우저 콘솔 | 0 | 2026-07-21 전 보기·필터·새 상세·보고서 순회 후 error 로그 0 |
-| Sites build | 통과 | 2026-07-22 vinext production build 완료 |
+| Sites build | 통과 | 2026-07-23 vinext production build 완료 |
 | Pages·CI | 통과 | 2026-07-21 main Pages·Regression CI success |
 | Codex Sites | 대기 | production build·패키지 통과, 별도 소스 저장소 네트워크 권한 승인 필요 |
 
