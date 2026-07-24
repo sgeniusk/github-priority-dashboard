@@ -1,6 +1,6 @@
 {
   "_comment": "도구별 사용량 트래커. scripts/refresh-usage.mjs(/usage-refresh)가 로컬 CLI 자격증명으로 한도 %·리셋만 자동 수집한다(토큰·비용 상세는 비공개 유지). 자동 수집 실패 시 대시보드 사용량 패널에서 수동 입력(localStorage) 폴백.",
-  "asOf": "2026-07-22",
+  "asOf": "2026-07-24",
   "tools": [
     {
       "tool": "claude",
@@ -9,11 +9,11 @@
       "limitLabel": "주간 한도",
       "cycleLengthDays": 7,
       "cycleResetDate": "2026-07-26",
-      "usedPercent": 0,
+      "usedPercent": 6,
       "note": "자동 수집: /usage-refresh — 공식 /usage와 동일한 OAuth usage 엔드포인트(비공식, 변경 시 깨질 수 있음). 실패 시 수동 입력 폴백.",
       "auto": {
         "source": "oauth-usage",
-        "collectedAt": "2026-07-22T12:03:00.619Z",
+        "collectedAt": "2026-07-24T12:01:26.299Z",
         "windows": [
           {
             "id": "fiveHour",
@@ -25,8 +25,8 @@
           {
             "id": "sevenDay",
             "label": "주간",
-            "usedPercent": 0,
-            "resetsAt": "2026-07-26T10:59:59.864Z",
+            "usedPercent": 6,
+            "resetsAt": "2026-07-26T11:00:00.384Z",
             "windowMinutes": 10080
           }
         ]
@@ -39,16 +39,16 @@
       "limitLabel": "주간 한도",
       "cycleLengthDays": 7,
       "cycleResetDate": "2026-07-29",
-      "usedPercent": 25,
+      "usedPercent": 49,
       "note": "자동 수집: /usage-refresh — 로컬 codex app-server JSON-RPC. 실패 시 수동 입력 폴백.",
       "auto": {
         "source": "codex-app-server",
-        "collectedAt": "2026-07-22T12:03:00.619Z",
+        "collectedAt": "2026-07-24T12:01:26.299Z",
         "windows": [
           {
             "id": "primary",
             "label": "주간",
-            "usedPercent": 25,
+            "usedPercent": 49,
             "resetsAt": "2026-07-28T17:10:16.000Z",
             "windowMinutes": 10080
           }
