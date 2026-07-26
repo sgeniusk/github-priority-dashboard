@@ -1,27 +1,23 @@
 {
   "_comment": "최근 30일 GitHub 커밋 관찰 분석. scripts/build-monthly-analysis.mjs가 생성하며 monthly-analysis.html의 FALLBACK_ANALYSIS와 동기화한다.",
-  "generatedAt": "2026-07-25",
+  "generatedAt": "2026-07-26",
   "owner": "sgeniusk",
   "window": {
-    "start": "2026-06-26",
-    "end": "2026-07-25",
+    "start": "2026-06-27",
+    "end": "2026-07-26",
     "days": 30
   },
   "summary": {
     "totalRepos": 17,
     "activeRepos": 6,
     "quietRepos": 11,
-    "totalCommits": 769,
-    "activeDays": 20,
-    "avgCommitsPerActiveRepo": 128.2,
+    "totalCommits": 741,
+    "activeDays": 19,
+    "avgCommitsPerActiveRepo": 123.5,
     "leaderRepo": "story-x-beta",
     "leaderName": "Story X"
   },
   "daily": [
-    {
-      "date": "2026-06-26",
-      "commits": 28
-    },
     {
       "date": "2026-06-27",
       "commits": 78
@@ -137,6 +133,10 @@
     {
       "date": "2026-07-25",
       "commits": 0
+    },
+    {
+      "date": "2026-07-26",
+      "commits": 0
     }
   ],
   "breakdowns": {
@@ -144,14 +144,14 @@
       {
         "id": "app",
         "label": "앱",
-        "commits": 335,
+        "commits": 329,
         "repos": 8,
         "activeRepos": 3
       },
       {
         "id": "game",
         "label": "게임",
-        "commits": 302,
+        "commits": 280,
         "repos": 5,
         "activeRepos": 2
       },
@@ -167,14 +167,14 @@
       {
         "id": "codex",
         "label": "Codex",
-        "commits": 434,
+        "commits": 412,
         "repos": 6,
         "activeRepos": 3
       },
       {
         "id": "claude",
         "label": "Claude",
-        "commits": 335,
+        "commits": 329,
         "repos": 10,
         "activeRepos": 3
       },
@@ -190,32 +190,32 @@
       {
         "id": "feature",
         "label": "기능 구현",
-        "commits": 324
+        "commits": 308
       },
       {
         "id": "docs",
         "label": "문서화",
-        "commits": 184
+        "commits": 181
       },
       {
         "id": "verification",
         "label": "검증",
-        "commits": 87
+        "commits": 84
       },
       {
         "id": "stability",
         "label": "안정화",
-        "commits": 71
+        "commits": 70
       },
       {
         "id": "maintenance",
         "label": "정리/운영",
-        "commits": 57
+        "commits": 56
       },
       {
         "id": "experience",
         "label": "경험/화면",
-        "commits": 46
+        "commits": 42
       }
     ]
   },
@@ -238,8 +238,8 @@
       "progressTotal": 50,
       "commits": 271,
       "activeDays": 15,
-      "quietDays": 10,
-      "maxGap": 10,
+      "quietDays": 11,
+      "maxGap": 11,
       "firstCommit": "2026-06-27T02:57:35Z",
       "lastCommit": "2026-07-15T10:06:57Z",
       "state": "surge",
@@ -315,24 +315,23 @@
       "status": "active",
       "rank": 9,
       "progressTotal": 75,
-      "commits": 200,
-      "activeDays": 17,
-      "quietDays": 12,
-      "maxGap": 12,
-      "firstCommit": "2026-06-26T03:50:54Z",
+      "commits": 182,
+      "activeDays": 16,
+      "quietDays": 13,
+      "maxGap": 13,
+      "firstCommit": "2026-06-27T00:35:25Z",
       "lastCommit": "2026-07-13T00:29:02Z",
       "state": "surge",
       "topTheme": "feature",
       "themeLabel": "기능 구현",
       "themes": {
-        "feature": 108,
-        "experience": 6,
-        "verification": 16,
-        "docs": 58,
-        "stability": 12
+        "feature": 96,
+        "verification": 15,
+        "docs": 56,
+        "stability": 12,
+        "experience": 3
       },
       "byDate": {
-        "2026-06-26": 18,
         "2026-06-27": 15,
         "2026-06-28": 13,
         "2026-06-29": 3,
@@ -382,7 +381,7 @@
           "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/e173878c961fa560e056e4d24f4c502e8e0324fc"
         }
       ],
-      "insight": "AI 컴퍼니 타이쿤은 200커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "AI 컴퍼니 타이쿤은 182커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "pliside-ops",
@@ -397,8 +396,8 @@
       "progressTotal": 0,
       "commits": 132,
       "activeDays": 12,
-      "quietDays": 16,
-      "maxGap": 16,
+      "quietDays": 17,
+      "maxGap": 17,
       "firstCommit": "2026-06-27T13:33:01Z",
       "lastCommit": "2026-07-09T14:16:56Z",
       "state": "surge",
@@ -471,25 +470,24 @@
       "status": "active",
       "rank": 18,
       "progressTotal": 39,
-      "commits": 102,
-      "activeDays": 14,
-      "quietDays": 12,
-      "maxGap": 12,
-      "firstCommit": "2026-06-26T08:09:55Z",
+      "commits": 98,
+      "activeDays": 13,
+      "quietDays": 13,
+      "maxGap": 13,
+      "firstCommit": "2026-06-27T00:57:35Z",
       "lastCommit": "2026-07-13T11:46:15Z",
       "state": "surge",
       "topTheme": "feature",
       "themeLabel": "기능 구현",
       "themes": {
-        "verification": 10,
-        "stability": 11,
-        "maintenance": 14,
         "feature": 38,
+        "stability": 10,
+        "verification": 8,
         "docs": 27,
-        "experience": 2
+        "experience": 2,
+        "maintenance": 13
       },
       "byDate": {
-        "2026-06-26": 4,
         "2026-06-27": 5,
         "2026-06-28": 3,
         "2026-06-29": 1,
@@ -536,7 +534,7 @@
           "url": "https://github.com/sgeniusk/honbul/commit/3864ee0d17fe94ee53489cea94c36cca12fd04d0"
         }
       ],
-      "insight": "혼불 (Honbul)은 102커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "혼불 (Honbul)은 98커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "chaekdam",
@@ -549,25 +547,24 @@
       "status": "active",
       "rank": 17,
       "progressTotal": 19,
-      "commits": 61,
-      "activeDays": 5,
-      "quietDays": 11,
+      "commits": 55,
+      "activeDays": 4,
+      "quietDays": 12,
       "maxGap": 12,
-      "firstCommit": "2026-06-26T08:05:11Z",
+      "firstCommit": "2026-06-27T09:41:13Z",
       "lastCommit": "2026-07-14T05:53:08Z",
       "state": "surge",
       "topTheme": "feature",
       "themeLabel": "기능 구현",
       "themes": {
-        "feature": 15,
-        "experience": 9,
-        "docs": 11,
         "verification": 6,
+        "docs": 10,
+        "experience": 8,
         "stability": 10,
-        "maintenance": 10
+        "maintenance": 10,
+        "feature": 11
       },
       "byDate": {
-        "2026-06-26": 6,
         "2026-06-27": 22,
         "2026-06-28": 14,
         "2026-07-01": 17,
@@ -605,7 +602,7 @@
           "url": "https://github.com/sgeniusk/chaekdam/commit/4ad9d00ca1afa961e3c732d04768db1b8f8787ba"
         }
       ],
-      "insight": "책담 (Chaekdam)은 61커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "책담 (Chaekdam)은 55커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "cmds-daily-briefing",
@@ -620,8 +617,8 @@
       "progressTotal": 52,
       "commits": 3,
       "activeDays": 2,
-      "quietDays": 20,
-      "maxGap": 20,
+      "quietDays": 21,
+      "maxGap": 21,
       "firstCommit": "2026-07-04T23:34:33Z",
       "lastCommit": "2026-07-05T23:34:27Z",
       "state": "sporadic",
@@ -947,8 +944,8 @@
       "progressTotal": 50,
       "commits": 271,
       "activeDays": 15,
-      "quietDays": 10,
-      "maxGap": 10,
+      "quietDays": 11,
+      "maxGap": 11,
       "firstCommit": "2026-06-27T02:57:35Z",
       "lastCommit": "2026-07-15T10:06:57Z",
       "state": "surge",
@@ -1024,24 +1021,23 @@
       "status": "active",
       "rank": 9,
       "progressTotal": 75,
-      "commits": 200,
-      "activeDays": 17,
-      "quietDays": 12,
-      "maxGap": 12,
-      "firstCommit": "2026-06-26T03:50:54Z",
+      "commits": 182,
+      "activeDays": 16,
+      "quietDays": 13,
+      "maxGap": 13,
+      "firstCommit": "2026-06-27T00:35:25Z",
       "lastCommit": "2026-07-13T00:29:02Z",
       "state": "surge",
       "topTheme": "feature",
       "themeLabel": "기능 구현",
       "themes": {
-        "feature": 108,
-        "experience": 6,
-        "verification": 16,
-        "docs": 58,
-        "stability": 12
+        "feature": 96,
+        "verification": 15,
+        "docs": 56,
+        "stability": 12,
+        "experience": 3
       },
       "byDate": {
-        "2026-06-26": 18,
         "2026-06-27": 15,
         "2026-06-28": 13,
         "2026-06-29": 3,
@@ -1091,7 +1087,7 @@
           "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/e173878c961fa560e056e4d24f4c502e8e0324fc"
         }
       ],
-      "insight": "AI 컴퍼니 타이쿤은 200커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "AI 컴퍼니 타이쿤은 182커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "pliside-ops",
@@ -1106,8 +1102,8 @@
       "progressTotal": 0,
       "commits": 132,
       "activeDays": 12,
-      "quietDays": 16,
-      "maxGap": 16,
+      "quietDays": 17,
+      "maxGap": 17,
       "firstCommit": "2026-06-27T13:33:01Z",
       "lastCommit": "2026-07-09T14:16:56Z",
       "state": "surge",
@@ -1180,25 +1176,24 @@
       "status": "active",
       "rank": 18,
       "progressTotal": 39,
-      "commits": 102,
-      "activeDays": 14,
-      "quietDays": 12,
-      "maxGap": 12,
-      "firstCommit": "2026-06-26T08:09:55Z",
+      "commits": 98,
+      "activeDays": 13,
+      "quietDays": 13,
+      "maxGap": 13,
+      "firstCommit": "2026-06-27T00:57:35Z",
       "lastCommit": "2026-07-13T11:46:15Z",
       "state": "surge",
       "topTheme": "feature",
       "themeLabel": "기능 구현",
       "themes": {
-        "verification": 10,
-        "stability": 11,
-        "maintenance": 14,
         "feature": 38,
+        "stability": 10,
+        "verification": 8,
         "docs": 27,
-        "experience": 2
+        "experience": 2,
+        "maintenance": 13
       },
       "byDate": {
-        "2026-06-26": 4,
         "2026-06-27": 5,
         "2026-06-28": 3,
         "2026-06-29": 1,
@@ -1245,7 +1240,7 @@
           "url": "https://github.com/sgeniusk/honbul/commit/3864ee0d17fe94ee53489cea94c36cca12fd04d0"
         }
       ],
-      "insight": "혼불 (Honbul)은 102커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "혼불 (Honbul)은 98커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "chaekdam",
@@ -1258,25 +1253,24 @@
       "status": "active",
       "rank": 17,
       "progressTotal": 19,
-      "commits": 61,
-      "activeDays": 5,
-      "quietDays": 11,
+      "commits": 55,
+      "activeDays": 4,
+      "quietDays": 12,
       "maxGap": 12,
-      "firstCommit": "2026-06-26T08:05:11Z",
+      "firstCommit": "2026-06-27T09:41:13Z",
       "lastCommit": "2026-07-14T05:53:08Z",
       "state": "surge",
       "topTheme": "feature",
       "themeLabel": "기능 구현",
       "themes": {
-        "feature": 15,
-        "experience": 9,
-        "docs": 11,
         "verification": 6,
+        "docs": 10,
+        "experience": 8,
         "stability": 10,
-        "maintenance": 10
+        "maintenance": 10,
+        "feature": 11
       },
       "byDate": {
-        "2026-06-26": 6,
         "2026-06-27": 22,
         "2026-06-28": 14,
         "2026-07-01": 17,
@@ -1314,7 +1308,7 @@
           "url": "https://github.com/sgeniusk/chaekdam/commit/4ad9d00ca1afa961e3c732d04768db1b8f8787ba"
         }
       ],
-      "insight": "책담 (Chaekdam)은 61커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "책담 (Chaekdam)은 55커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "cmds-daily-briefing",
@@ -1329,8 +1323,8 @@
       "progressTotal": 52,
       "commits": 3,
       "activeDays": 2,
-      "quietDays": 20,
-      "maxGap": 20,
+      "quietDays": 21,
+      "maxGap": 21,
       "firstCommit": "2026-07-04T23:34:33Z",
       "lastCommit": "2026-07-05T23:34:27Z",
       "state": "sporadic",
