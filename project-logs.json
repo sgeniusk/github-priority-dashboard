@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-07-28",
+  "generatedAt": "2026-07-29",
   "logs": {
     "samsu": [
       {
@@ -220,6 +220,11 @@
         "date": "2026-07-28",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-07-29",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -356,6 +361,11 @@
       },
       {
         "date": "2026-07-28",
+        "kind": "progress",
+        "text": "완성도 65%"
+      },
+      {
+        "date": "2026-07-29",
         "kind": "progress",
         "text": "완성도 65%"
       }
@@ -658,6 +668,11 @@
         "date": "2026-07-28",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-07-29",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
@@ -910,6 +925,11 @@
         "date": "2026-07-28",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-07-29",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
@@ -1148,6 +1168,11 @@
       },
       {
         "date": "2026-07-28",
+        "kind": "progress",
+        "text": "완성도 55%"
+      },
+      {
+        "date": "2026-07-29",
         "kind": "progress",
         "text": "완성도 55%"
       }
@@ -1414,15 +1439,14 @@
         "date": "2026-07-28",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-07-29",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-05-28",
-        "kind": "note",
-        "label": "조언",
-        "text": "MVP 1 마일스톤에 커밋을 몰아주시길. 정비 작업보다 한 판이라도 돌아가는 코드가 지금 가장 급합니다."
-      },
       {
         "date": "2026-05-30T22:28:51Z",
         "kind": "commit",
@@ -1876,15 +1900,14 @@
         "date": "2026-07-28",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-07-29",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-05-28",
-        "kind": "note",
-        "label": "조언",
-        "text": "매체 하나(웹툰이나 단편 만화)를 깊이 끝까지 완성해보시길. 골든 케이스 하나가 나머지 매체의 품질 기준이 됩니다."
-      },
       {
         "date": "2026-05-29T12:10:54Z",
         "kind": "commit",
@@ -2338,6 +2361,11 @@
         "date": "2026-07-28",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-07-29",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
@@ -2462,6 +2490,11 @@
       },
       {
         "date": "2026-07-28",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-07-29",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -2620,6 +2653,11 @@
         "date": "2026-07-28",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-07-29",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
@@ -2776,6 +2814,11 @@
         "date": "2026-07-28",
         "kind": "progress",
         "text": "완성도 56%"
+      },
+      {
+        "date": "2026-07-29",
+        "kind": "progress",
+        "text": "완성도 56%"
       }
     ],
     "design-system-school": [
@@ -2930,6 +2973,11 @@
       },
       {
         "date": "2026-07-28",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-07-29",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -3268,6 +3316,11 @@
         "date": "2026-07-28",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-07-29",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
@@ -3380,6 +3433,11 @@
       },
       {
         "date": "2026-07-28",
+        "kind": "progress",
+        "text": "완성도 7%"
+      },
+      {
+        "date": "2026-07-29",
         "kind": "progress",
         "text": "완성도 7%"
       }
@@ -3784,15 +3842,14 @@
         "date": "2026-07-28",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-07-29",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-01T15:41:04Z",
-        "kind": "commit",
-        "text": "docs: 볼핏 벤치마크 + 장수·장비 메타 설계안",
-        "sha": "0e14b35"
-      },
       {
         "date": "2026-06-01T16:11:16Z",
         "kind": "commit",
@@ -4245,6 +4302,11 @@
       },
       {
         "date": "2026-07-28",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-07-29",
         "kind": "progress",
         "text": "완성도 39%"
       }
