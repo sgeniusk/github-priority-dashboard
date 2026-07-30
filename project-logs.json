@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-07-29",
+  "generatedAt": "2026-07-30",
   "logs": {
     "samsu": [
       {
@@ -225,6 +225,11 @@
         "date": "2026-07-29",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-07-30",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -366,6 +371,11 @@
       },
       {
         "date": "2026-07-29",
+        "kind": "progress",
+        "text": "완성도 65%"
+      },
+      {
+        "date": "2026-07-30",
         "kind": "progress",
         "text": "완성도 65%"
       }
@@ -673,6 +683,11 @@
         "date": "2026-07-29",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-07-30",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
@@ -930,6 +945,11 @@
         "date": "2026-07-29",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-07-30",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
@@ -1173,6 +1193,11 @@
       },
       {
         "date": "2026-07-29",
+        "kind": "progress",
+        "text": "완성도 55%"
+      },
+      {
+        "date": "2026-07-30",
         "kind": "progress",
         "text": "완성도 55%"
       }
@@ -1444,15 +1469,14 @@
         "date": "2026-07-29",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-07-30",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-05-30T22:28:51Z",
-        "kind": "commit",
-        "text": "Focus ending retries on the next run",
-        "sha": "82b048f"
-      },
       {
         "date": "2026-05-30T22:33:07Z",
         "kind": "commit",
@@ -1905,15 +1929,14 @@
         "date": "2026-07-29",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-07-30",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-05-29T12:10:54Z",
-        "kind": "commit",
-        "text": "Merge: 지표 카드 폭 초과 수정 + 마진 검토 병렬화",
-        "sha": "02680dc"
-      },
       {
         "date": "2026-05-29T14:52:35Z",
         "kind": "commit",
@@ -2366,6 +2389,11 @@
         "date": "2026-07-29",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-07-30",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
@@ -2495,6 +2523,11 @@
       },
       {
         "date": "2026-07-29",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-07-30",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -2658,6 +2691,11 @@
         "date": "2026-07-29",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-07-30",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
@@ -2819,6 +2857,11 @@
         "date": "2026-07-29",
         "kind": "progress",
         "text": "완성도 56%"
+      },
+      {
+        "date": "2026-07-30",
+        "kind": "progress",
+        "text": "완성도 56%"
       }
     ],
     "design-system-school": [
@@ -2978,6 +3021,11 @@
       },
       {
         "date": "2026-07-29",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-07-30",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -3321,6 +3369,11 @@
         "date": "2026-07-29",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-07-30",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
@@ -3438,6 +3491,11 @@
       },
       {
         "date": "2026-07-29",
+        "kind": "progress",
+        "text": "완성도 7%"
+      },
+      {
+        "date": "2026-07-30",
         "kind": "progress",
         "text": "완성도 7%"
       }
@@ -3847,15 +3905,14 @@
         "date": "2026-07-29",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-07-30",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-01T16:11:16Z",
-        "kind": "commit",
-        "text": "W8-21 패들 하이브리드 반사 — 부위별 각도 (아르카노이드)",
-        "sha": "166a010"
-      },
       {
         "date": "2026-06-01T22:22:55Z",
         "kind": "commit",
@@ -4307,6 +4364,11 @@
       },
       {
         "date": "2026-07-29",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-07-30",
         "kind": "progress",
         "text": "완성도 39%"
       }
