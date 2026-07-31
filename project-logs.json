@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-07-30",
+  "generatedAt": "2026-07-31",
   "logs": {
     "samsu": [
       {
@@ -230,6 +230,11 @@
         "date": "2026-07-30",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-07-31",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -376,6 +381,11 @@
       },
       {
         "date": "2026-07-30",
+        "kind": "progress",
+        "text": "완성도 65%"
+      },
+      {
+        "date": "2026-07-31",
         "kind": "progress",
         "text": "완성도 65%"
       }
@@ -688,6 +698,11 @@
         "date": "2026-07-30",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-07-31",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
@@ -950,6 +965,11 @@
         "date": "2026-07-30",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-07-31",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
@@ -1198,6 +1218,11 @@
       },
       {
         "date": "2026-07-30",
+        "kind": "progress",
+        "text": "완성도 55%"
+      },
+      {
+        "date": "2026-07-31",
         "kind": "progress",
         "text": "완성도 55%"
       }
@@ -1474,15 +1499,14 @@
         "date": "2026-07-30",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-07-31",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-05-30T22:33:07Z",
-        "kind": "commit",
-        "text": "Add near-miss retry QA entry",
-        "sha": "194468d"
-      },
       {
         "date": "2026-05-30T22:55:59Z",
         "kind": "commit",
@@ -1934,15 +1958,14 @@
         "date": "2026-07-30",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-07-31",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-05-29T14:52:35Z",
-        "kind": "commit",
-        "text": "docs: 사회과학 글쓰기 확장 로드맵 (검토용)",
-        "sha": "d380f68"
-      },
       {
         "date": "2026-05-29T14:57:22Z",
         "kind": "commit",
@@ -2394,6 +2417,11 @@
         "date": "2026-07-30",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-07-31",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
@@ -2528,6 +2556,11 @@
       },
       {
         "date": "2026-07-30",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-07-31",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -2696,6 +2729,11 @@
         "date": "2026-07-30",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-07-31",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
@@ -2862,6 +2900,11 @@
         "date": "2026-07-30",
         "kind": "progress",
         "text": "완성도 56%"
+      },
+      {
+        "date": "2026-07-31",
+        "kind": "progress",
+        "text": "완성도 56%"
       }
     ],
     "design-system-school": [
@@ -3026,6 +3069,11 @@
       },
       {
         "date": "2026-07-30",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-07-31",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -3374,6 +3422,11 @@
         "date": "2026-07-30",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-07-31",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
@@ -3496,6 +3549,11 @@
       },
       {
         "date": "2026-07-30",
+        "kind": "progress",
+        "text": "완성도 7%"
+      },
+      {
+        "date": "2026-07-31",
         "kind": "progress",
         "text": "완성도 7%"
       }
@@ -3910,15 +3968,14 @@
         "date": "2026-07-30",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-07-31",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-01T22:22:55Z",
-        "kind": "commit",
-        "text": "W8-22 공 거동 기술 1 — 크기·폭발 (Ball 모디파이어 기반)",
-        "sha": "f672f63"
-      },
       {
         "date": "2026-06-01T22:36:07Z",
         "kind": "commit",
@@ -4369,6 +4426,11 @@
       },
       {
         "date": "2026-07-30",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-07-31",
         "kind": "progress",
         "text": "완성도 39%"
       }

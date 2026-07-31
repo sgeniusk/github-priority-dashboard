@@ -1,27 +1,23 @@
 {
   "_comment": "최근 30일 GitHub 커밋 관찰 분석. scripts/build-monthly-analysis.mjs가 생성하며 monthly-analysis.html의 FALLBACK_ANALYSIS와 동기화한다.",
-  "generatedAt": "2026-07-30",
+  "generatedAt": "2026-07-31",
   "owner": "sgeniusk",
   "window": {
-    "start": "2026-07-01",
-    "end": "2026-07-30",
+    "start": "2026-07-02",
+    "end": "2026-07-31",
     "days": 30
   },
   "summary": {
     "totalRepos": 17,
     "activeRepos": 6,
     "quietRepos": 11,
-    "totalCommits": 558,
-    "activeDays": 15,
-    "avgCommitsPerActiveRepo": 93,
+    "totalCommits": 472,
+    "activeDays": 14,
+    "avgCommitsPerActiveRepo": 78.7,
     "leaderRepo": "story-x-beta",
     "leaderName": "Story X"
   },
   "daily": [
-    {
-      "date": "2026-07-01",
-      "commits": 86
-    },
     {
       "date": "2026-07-02",
       "commits": 9
@@ -137,6 +133,10 @@
     {
       "date": "2026-07-30",
       "commits": 0
+    },
+    {
+      "date": "2026-07-31",
+      "commits": 0
     }
   ],
   "breakdowns": {
@@ -144,21 +144,21 @@
       {
         "id": "game",
         "label": "게임",
-        "commits": 237,
+        "commits": 213,
         "repos": 5,
         "activeRepos": 2
       },
       {
         "id": "app",
         "label": "앱",
-        "commits": 219,
+        "commits": 161,
         "repos": 8,
         "activeRepos": 3
       },
       {
         "id": "content",
         "label": "콘텐츠",
-        "commits": 102,
+        "commits": 98,
         "repos": 4,
         "activeRepos": 1
       }
@@ -167,14 +167,14 @@
       {
         "id": "codex",
         "label": "Codex",
-        "commits": 339,
+        "commits": 311,
         "repos": 6,
         "activeRepos": 3
       },
       {
         "id": "claude",
         "label": "Claude",
-        "commits": 219,
+        "commits": 161,
         "repos": 10,
         "activeRepos": 3
       },
@@ -190,37 +190,37 @@
       {
         "id": "feature",
         "label": "기능 구현",
-        "commits": 235
+        "commits": 193
       },
       {
         "id": "docs",
         "label": "문서화",
-        "commits": 143
+        "commits": 128
       },
       {
         "id": "verification",
         "label": "검증",
-        "commits": 67
+        "commits": 51
       },
       {
         "id": "stability",
         "label": "안정화",
-        "commits": 46
+        "commits": 42
       },
       {
         "id": "maintenance",
         "label": "정리/운영",
-        "commits": 37
+        "commits": 33
       },
       {
         "id": "experience",
         "label": "경험/화면",
-        "commits": 30
+        "commits": 25
       }
     ]
   },
   "diagnosis": [
-    "이번 30일의 중심은 Story X입니다. 197커밋과 12일의 활동일이 관찰되어, 가장 많은 실제 손길을 받았습니다.",
+    "이번 30일의 중심은 Story X입니다. 156커밋과 11일의 활동일이 관찰되어, 가장 많은 실제 손길을 받았습니다.",
     "전체 17개 중 6개 리포만 움직였습니다. 지금은 확장보다 재개 조건을 좁히는 운영 판단이 더 중요합니다.",
     "11개 리포는 한 달 동안 새 커밋이 없었습니다. 보류 프로젝트는 괜찮지만, 활성 프로젝트가 여기에 포함되면 다음 액션의 크기를 줄여야 합니다."
   ],
@@ -236,25 +236,24 @@
       "status": "active",
       "rank": 10,
       "progressTotal": 50,
-      "commits": 197,
-      "activeDays": 12,
-      "quietDays": 15,
-      "maxGap": 15,
-      "firstCommit": "2026-07-01T08:58:32Z",
+      "commits": 156,
+      "activeDays": 11,
+      "quietDays": 16,
+      "maxGap": 16,
+      "firstCommit": "2026-07-02T03:45:58Z",
       "lastCommit": "2026-07-15T10:06:57Z",
       "state": "surge",
       "topTheme": "feature",
       "themeLabel": "기능 구현",
       "themes": {
-        "verification": 36,
-        "docs": 44,
-        "feature": 71,
-        "experience": 14,
+        "feature": 52,
+        "docs": 39,
+        "verification": 22,
         "stability": 19,
+        "experience": 11,
         "maintenance": 13
       },
       "byDate": {
-        "2026-07-01": 41,
         "2026-07-02": 8,
         "2026-07-03": 28,
         "2026-07-04": 17,
@@ -299,7 +298,7 @@
           "url": "https://github.com/sgeniusk/story-x-beta/commit/5c148801b26c2b9ee458be63655498b261531679"
         }
       ],
-      "insight": "Story X은 197커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "Story X은 156커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "ai-company-tycoon-boundaryless",
@@ -312,24 +311,23 @@
       "status": "active",
       "rank": 9,
       "progressTotal": 75,
-      "commits": 148,
-      "activeDays": 12,
-      "quietDays": 17,
-      "maxGap": 17,
-      "firstCommit": "2026-07-01T01:05:36Z",
+      "commits": 135,
+      "activeDays": 11,
+      "quietDays": 18,
+      "maxGap": 18,
+      "firstCommit": "2026-07-03T02:56:36Z",
       "lastCommit": "2026-07-13T00:29:02Z",
       "state": "surge",
       "topTheme": "feature",
       "themeLabel": "기능 구현",
       "themes": {
-        "feature": 79,
-        "docs": 47,
+        "feature": 70,
+        "docs": 43,
         "verification": 13,
         "stability": 7,
         "experience": 2
       },
       "byDate": {
-        "2026-07-01": 13,
         "2026-07-03": 2,
         "2026-07-04": 21,
         "2026-07-05": 20,
@@ -374,7 +372,7 @@
           "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/e173878c961fa560e056e4d24f4c502e8e0324fc"
         }
       ],
-      "insight": "AI 컴퍼니 타이쿤은 148커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "AI 컴퍼니 타이쿤은 135커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "pliside-ops",
@@ -387,25 +385,24 @@
       "status": "active",
       "rank": 2,
       "progressTotal": 0,
-      "commits": 102,
-      "activeDays": 9,
-      "quietDays": 21,
-      "maxGap": 21,
-      "firstCommit": "2026-07-01T04:38:15Z",
+      "commits": 98,
+      "activeDays": 8,
+      "quietDays": 22,
+      "maxGap": 22,
+      "firstCommit": "2026-07-02T12:40:27Z",
       "lastCommit": "2026-07-09T14:16:56Z",
       "state": "surge",
       "topTheme": "feature",
       "themeLabel": "기능 구현",
       "themes": {
-        "feature": 46,
-        "maintenance": 8,
-        "verification": 13,
-        "docs": 17,
+        "verification": 12,
+        "feature": 45,
         "stability": 9,
-        "experience": 9
+        "experience": 9,
+        "docs": 16,
+        "maintenance": 7
       },
       "byDate": {
-        "2026-07-01": 4,
         "2026-07-02": 1,
         "2026-07-03": 13,
         "2026-07-04": 14,
@@ -447,7 +444,7 @@
           "url": "https://github.com/sgeniusk/pliside-ops/commit/6f00f3a25c1d2249d59df8638609a8c625d5dc19"
         }
       ],
-      "insight": "Loom · 유튜브 운영 시스템은 102커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "Loom · 유튜브 운영 시스템은 98커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "honbul",
@@ -460,25 +457,24 @@
       "status": "active",
       "rank": 18,
       "progressTotal": 39,
-      "commits": 89,
-      "activeDays": 10,
-      "quietDays": 17,
-      "maxGap": 17,
-      "firstCommit": "2026-07-01T09:35:37Z",
+      "commits": 78,
+      "activeDays": 9,
+      "quietDays": 18,
+      "maxGap": 18,
+      "firstCommit": "2026-07-03T02:38:49Z",
       "lastCommit": "2026-07-13T11:46:15Z",
       "state": "surge",
-      "topTheme": "feature",
-      "themeLabel": "기능 구현",
+      "topTheme": "docs",
+      "themeLabel": "문서화",
       "themes": {
-        "feature": 34,
-        "verification": 5,
-        "stability": 8,
-        "docs": 27,
+        "docs": 26,
+        "stability": 7,
+        "feature": 26,
         "experience": 2,
-        "maintenance": 13
+        "maintenance": 13,
+        "verification": 4
       },
       "byDate": {
-        "2026-07-01": 11,
         "2026-07-03": 2,
         "2026-07-04": 17,
         "2026-07-05": 3,
@@ -521,72 +517,7 @@
           "url": "https://github.com/sgeniusk/honbul/commit/3864ee0d17fe94ee53489cea94c36cca12fd04d0"
         }
       ],
-      "insight": "혼불 (Honbul)은 89커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
-    },
-    {
-      "repo": "chaekdam",
-      "displayName": "책담 (Chaekdam)",
-      "icon": "📖",
-      "category": "app",
-      "categoryLabel": "앱",
-      "tool": "claude",
-      "toolLabel": "Claude",
-      "status": "active",
-      "rank": 17,
-      "progressTotal": 19,
-      "commits": 19,
-      "activeDays": 2,
-      "quietDays": 16,
-      "maxGap": 16,
-      "firstCommit": "2026-07-01T11:35:25Z",
-      "lastCommit": "2026-07-14T05:53:08Z",
-      "state": "steady",
-      "topTheme": "docs",
-      "themeLabel": "문서화",
-      "themes": {
-        "docs": 6,
-        "experience": 2,
-        "maintenance": 3,
-        "feature": 5,
-        "stability": 3
-      },
-      "byDate": {
-        "2026-07-01": 17,
-        "2026-07-14": 2
-      },
-      "latest": [
-        {
-          "sha": "6eb39e0",
-          "message": "Merge: Codex 이어받기 문서 (AGENTS.md + 킥오프)",
-          "date": "2026-07-14T05:53:08Z",
-          "url": "https://github.com/sgeniusk/chaekdam/commit/6eb39e04a57c76f17bf20eaedd034c1d4489aaae"
-        },
-        {
-          "sha": "9440619",
-          "message": "docs(handoff): Codex 웹 이어받기 — AGENTS.md 정본 + 킥오프 프롬프트",
-          "date": "2026-07-14T05:52:13Z",
-          "url": "https://github.com/sgeniusk/chaekdam/commit/9440619c257e8a75990df6a1bd312fec34e7f825"
-        },
-        {
-          "sha": "f1db19e",
-          "message": "Merge: Topbar 다단 크럼 + 트랙 C3/C4 완료 (C4)",
-          "date": "2026-07-01T14:50:03Z",
-          "url": "https://github.com/sgeniusk/chaekdam/commit/f1db19ed2deb149651c1f35089aca9dac5ca1a0b"
-        },
-        {
-          "sha": "d948586",
-          "message": "feat(topbar): 덱 메인 페이지 크럼 배선 (리뷰 후속, 형제 페이지 일관성)",
-          "date": "2026-07-01T14:33:47Z",
-          "url": "https://github.com/sgeniusk/chaekdam/commit/d94858610ad6d0305cb086562089619006651650"
-        },
-        {
-          "sha": "4ad9d00",
-          "message": "docs(roadmap): 트랙 C3 완료 반영 + C4 다단 크럼 완료",
-          "date": "2026-07-01T14:30:06Z",
-          "url": "https://github.com/sgeniusk/chaekdam/commit/4ad9d00ca1afa961e3c732d04768db1b8f8787ba"
-        }
-      ],
-      "insight": "책담 (Chaekdam)은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
+      "insight": "혼불 (Honbul)은 78커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "cmds-daily-briefing",
@@ -601,8 +532,8 @@
       "progressTotal": 52,
       "commits": 3,
       "activeDays": 2,
-      "quietDays": 25,
-      "maxGap": 25,
+      "quietDays": 26,
+      "maxGap": 26,
       "firstCommit": "2026-07-04T23:34:33Z",
       "lastCommit": "2026-07-05T23:34:27Z",
       "state": "sporadic",
@@ -637,6 +568,48 @@
         }
       ],
       "insight": "해치의 데일리 브리핑은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
+    },
+    {
+      "repo": "chaekdam",
+      "displayName": "책담 (Chaekdam)",
+      "icon": "📖",
+      "category": "app",
+      "categoryLabel": "앱",
+      "tool": "claude",
+      "toolLabel": "Claude",
+      "status": "active",
+      "rank": 17,
+      "progressTotal": 19,
+      "commits": 2,
+      "activeDays": 1,
+      "quietDays": 17,
+      "maxGap": 17,
+      "firstCommit": "2026-07-14T05:52:13Z",
+      "lastCommit": "2026-07-14T05:53:08Z",
+      "state": "sporadic",
+      "topTheme": "docs",
+      "themeLabel": "문서화",
+      "themes": {
+        "docs": 2
+      },
+      "byDate": {
+        "2026-07-14": 2
+      },
+      "latest": [
+        {
+          "sha": "6eb39e0",
+          "message": "Merge: Codex 이어받기 문서 (AGENTS.md + 킥오프)",
+          "date": "2026-07-14T05:53:08Z",
+          "url": "https://github.com/sgeniusk/chaekdam/commit/6eb39e04a57c76f17bf20eaedd034c1d4489aaae"
+        },
+        {
+          "sha": "9440619",
+          "message": "docs(handoff): Codex 웹 이어받기 — AGENTS.md 정본 + 킥오프 프롬프트",
+          "date": "2026-07-14T05:52:13Z",
+          "url": "https://github.com/sgeniusk/chaekdam/commit/9440619c257e8a75990df6a1bd312fec34e7f825"
+        }
+      ],
+      "insight": "책담 (Chaekdam)은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
     },
     {
       "repo": "habit",
@@ -926,25 +899,24 @@
       "status": "active",
       "rank": 10,
       "progressTotal": 50,
-      "commits": 197,
-      "activeDays": 12,
-      "quietDays": 15,
-      "maxGap": 15,
-      "firstCommit": "2026-07-01T08:58:32Z",
+      "commits": 156,
+      "activeDays": 11,
+      "quietDays": 16,
+      "maxGap": 16,
+      "firstCommit": "2026-07-02T03:45:58Z",
       "lastCommit": "2026-07-15T10:06:57Z",
       "state": "surge",
       "topTheme": "feature",
       "themeLabel": "기능 구현",
       "themes": {
-        "verification": 36,
-        "docs": 44,
-        "feature": 71,
-        "experience": 14,
+        "feature": 52,
+        "docs": 39,
+        "verification": 22,
         "stability": 19,
+        "experience": 11,
         "maintenance": 13
       },
       "byDate": {
-        "2026-07-01": 41,
         "2026-07-02": 8,
         "2026-07-03": 28,
         "2026-07-04": 17,
@@ -989,7 +961,7 @@
           "url": "https://github.com/sgeniusk/story-x-beta/commit/5c148801b26c2b9ee458be63655498b261531679"
         }
       ],
-      "insight": "Story X은 197커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "Story X은 156커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "ai-company-tycoon-boundaryless",
@@ -1002,24 +974,23 @@
       "status": "active",
       "rank": 9,
       "progressTotal": 75,
-      "commits": 148,
-      "activeDays": 12,
-      "quietDays": 17,
-      "maxGap": 17,
-      "firstCommit": "2026-07-01T01:05:36Z",
+      "commits": 135,
+      "activeDays": 11,
+      "quietDays": 18,
+      "maxGap": 18,
+      "firstCommit": "2026-07-03T02:56:36Z",
       "lastCommit": "2026-07-13T00:29:02Z",
       "state": "surge",
       "topTheme": "feature",
       "themeLabel": "기능 구현",
       "themes": {
-        "feature": 79,
-        "docs": 47,
+        "feature": 70,
+        "docs": 43,
         "verification": 13,
         "stability": 7,
         "experience": 2
       },
       "byDate": {
-        "2026-07-01": 13,
         "2026-07-03": 2,
         "2026-07-04": 21,
         "2026-07-05": 20,
@@ -1064,7 +1035,7 @@
           "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/e173878c961fa560e056e4d24f4c502e8e0324fc"
         }
       ],
-      "insight": "AI 컴퍼니 타이쿤은 148커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "AI 컴퍼니 타이쿤은 135커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "pliside-ops",
@@ -1077,25 +1048,24 @@
       "status": "active",
       "rank": 2,
       "progressTotal": 0,
-      "commits": 102,
-      "activeDays": 9,
-      "quietDays": 21,
-      "maxGap": 21,
-      "firstCommit": "2026-07-01T04:38:15Z",
+      "commits": 98,
+      "activeDays": 8,
+      "quietDays": 22,
+      "maxGap": 22,
+      "firstCommit": "2026-07-02T12:40:27Z",
       "lastCommit": "2026-07-09T14:16:56Z",
       "state": "surge",
       "topTheme": "feature",
       "themeLabel": "기능 구현",
       "themes": {
-        "feature": 46,
-        "maintenance": 8,
-        "verification": 13,
-        "docs": 17,
+        "verification": 12,
+        "feature": 45,
         "stability": 9,
-        "experience": 9
+        "experience": 9,
+        "docs": 16,
+        "maintenance": 7
       },
       "byDate": {
-        "2026-07-01": 4,
         "2026-07-02": 1,
         "2026-07-03": 13,
         "2026-07-04": 14,
@@ -1137,7 +1107,7 @@
           "url": "https://github.com/sgeniusk/pliside-ops/commit/6f00f3a25c1d2249d59df8638609a8c625d5dc19"
         }
       ],
-      "insight": "Loom · 유튜브 운영 시스템은 102커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "Loom · 유튜브 운영 시스템은 98커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "honbul",
@@ -1150,25 +1120,24 @@
       "status": "active",
       "rank": 18,
       "progressTotal": 39,
-      "commits": 89,
-      "activeDays": 10,
-      "quietDays": 17,
-      "maxGap": 17,
-      "firstCommit": "2026-07-01T09:35:37Z",
+      "commits": 78,
+      "activeDays": 9,
+      "quietDays": 18,
+      "maxGap": 18,
+      "firstCommit": "2026-07-03T02:38:49Z",
       "lastCommit": "2026-07-13T11:46:15Z",
       "state": "surge",
-      "topTheme": "feature",
-      "themeLabel": "기능 구현",
+      "topTheme": "docs",
+      "themeLabel": "문서화",
       "themes": {
-        "feature": 34,
-        "verification": 5,
-        "stability": 8,
-        "docs": 27,
+        "docs": 26,
+        "stability": 7,
+        "feature": 26,
         "experience": 2,
-        "maintenance": 13
+        "maintenance": 13,
+        "verification": 4
       },
       "byDate": {
-        "2026-07-01": 11,
         "2026-07-03": 2,
         "2026-07-04": 17,
         "2026-07-05": 3,
@@ -1211,72 +1180,7 @@
           "url": "https://github.com/sgeniusk/honbul/commit/3864ee0d17fe94ee53489cea94c36cca12fd04d0"
         }
       ],
-      "insight": "혼불 (Honbul)은 89커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
-    },
-    {
-      "repo": "chaekdam",
-      "displayName": "책담 (Chaekdam)",
-      "icon": "📖",
-      "category": "app",
-      "categoryLabel": "앱",
-      "tool": "claude",
-      "toolLabel": "Claude",
-      "status": "active",
-      "rank": 17,
-      "progressTotal": 19,
-      "commits": 19,
-      "activeDays": 2,
-      "quietDays": 16,
-      "maxGap": 16,
-      "firstCommit": "2026-07-01T11:35:25Z",
-      "lastCommit": "2026-07-14T05:53:08Z",
-      "state": "steady",
-      "topTheme": "docs",
-      "themeLabel": "문서화",
-      "themes": {
-        "docs": 6,
-        "experience": 2,
-        "maintenance": 3,
-        "feature": 5,
-        "stability": 3
-      },
-      "byDate": {
-        "2026-07-01": 17,
-        "2026-07-14": 2
-      },
-      "latest": [
-        {
-          "sha": "6eb39e0",
-          "message": "Merge: Codex 이어받기 문서 (AGENTS.md + 킥오프)",
-          "date": "2026-07-14T05:53:08Z",
-          "url": "https://github.com/sgeniusk/chaekdam/commit/6eb39e04a57c76f17bf20eaedd034c1d4489aaae"
-        },
-        {
-          "sha": "9440619",
-          "message": "docs(handoff): Codex 웹 이어받기 — AGENTS.md 정본 + 킥오프 프롬프트",
-          "date": "2026-07-14T05:52:13Z",
-          "url": "https://github.com/sgeniusk/chaekdam/commit/9440619c257e8a75990df6a1bd312fec34e7f825"
-        },
-        {
-          "sha": "f1db19e",
-          "message": "Merge: Topbar 다단 크럼 + 트랙 C3/C4 완료 (C4)",
-          "date": "2026-07-01T14:50:03Z",
-          "url": "https://github.com/sgeniusk/chaekdam/commit/f1db19ed2deb149651c1f35089aca9dac5ca1a0b"
-        },
-        {
-          "sha": "d948586",
-          "message": "feat(topbar): 덱 메인 페이지 크럼 배선 (리뷰 후속, 형제 페이지 일관성)",
-          "date": "2026-07-01T14:33:47Z",
-          "url": "https://github.com/sgeniusk/chaekdam/commit/d94858610ad6d0305cb086562089619006651650"
-        },
-        {
-          "sha": "4ad9d00",
-          "message": "docs(roadmap): 트랙 C3 완료 반영 + C4 다단 크럼 완료",
-          "date": "2026-07-01T14:30:06Z",
-          "url": "https://github.com/sgeniusk/chaekdam/commit/4ad9d00ca1afa961e3c732d04768db1b8f8787ba"
-        }
-      ],
-      "insight": "책담 (Chaekdam)은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
+      "insight": "혼불 (Honbul)은 78커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "cmds-daily-briefing",
@@ -1291,8 +1195,8 @@
       "progressTotal": 52,
       "commits": 3,
       "activeDays": 2,
-      "quietDays": 25,
-      "maxGap": 25,
+      "quietDays": 26,
+      "maxGap": 26,
       "firstCommit": "2026-07-04T23:34:33Z",
       "lastCommit": "2026-07-05T23:34:27Z",
       "state": "sporadic",
@@ -1327,6 +1231,48 @@
         }
       ],
       "insight": "해치의 데일리 브리핑은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
+    },
+    {
+      "repo": "chaekdam",
+      "displayName": "책담 (Chaekdam)",
+      "icon": "📖",
+      "category": "app",
+      "categoryLabel": "앱",
+      "tool": "claude",
+      "toolLabel": "Claude",
+      "status": "active",
+      "rank": 17,
+      "progressTotal": 19,
+      "commits": 2,
+      "activeDays": 1,
+      "quietDays": 17,
+      "maxGap": 17,
+      "firstCommit": "2026-07-14T05:52:13Z",
+      "lastCommit": "2026-07-14T05:53:08Z",
+      "state": "sporadic",
+      "topTheme": "docs",
+      "themeLabel": "문서화",
+      "themes": {
+        "docs": 2
+      },
+      "byDate": {
+        "2026-07-14": 2
+      },
+      "latest": [
+        {
+          "sha": "6eb39e0",
+          "message": "Merge: Codex 이어받기 문서 (AGENTS.md + 킥오프)",
+          "date": "2026-07-14T05:53:08Z",
+          "url": "https://github.com/sgeniusk/chaekdam/commit/6eb39e04a57c76f17bf20eaedd034c1d4489aaae"
+        },
+        {
+          "sha": "9440619",
+          "message": "docs(handoff): Codex 웹 이어받기 — AGENTS.md 정본 + 킥오프 프롬프트",
+          "date": "2026-07-14T05:52:13Z",
+          "url": "https://github.com/sgeniusk/chaekdam/commit/9440619c257e8a75990df6a1bd312fec34e7f825"
+        }
+      ],
+      "insight": "책담 (Chaekdam)은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
     }
   ],
   "quietList": [
