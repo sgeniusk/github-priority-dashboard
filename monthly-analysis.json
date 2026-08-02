@@ -1,27 +1,23 @@
 {
   "_comment": "최근 30일 GitHub 커밋 관찰 분석. scripts/build-monthly-analysis.mjs가 생성하며 monthly-analysis.html의 FALLBACK_ANALYSIS와 동기화한다.",
-  "generatedAt": "2026-08-01",
+  "generatedAt": "2026-08-02",
   "owner": "sgeniusk",
   "window": {
-    "start": "2026-07-03",
-    "end": "2026-08-01",
+    "start": "2026-07-04",
+    "end": "2026-08-02",
     "days": 30
   },
   "summary": {
     "totalRepos": 17,
     "activeRepos": 6,
     "quietRepos": 11,
-    "totalCommits": 463,
-    "activeDays": 13,
-    "avgCommitsPerActiveRepo": 77.2,
-    "leaderRepo": "story-x-beta",
-    "leaderName": "Story X"
+    "totalCommits": 418,
+    "activeDays": 12,
+    "avgCommitsPerActiveRepo": 69.7,
+    "leaderRepo": "ai-company-tycoon-boundaryless",
+    "leaderName": "AI 컴퍼니 타이쿤"
   },
   "daily": [
-    {
-      "date": "2026-07-03",
-      "commits": 45
-    },
     {
       "date": "2026-07-04",
       "commits": 70
@@ -137,6 +133,10 @@
     {
       "date": "2026-08-01",
       "commits": 0
+    },
+    {
+      "date": "2026-08-02",
+      "commits": 0
     }
   ],
   "breakdowns": {
@@ -144,21 +144,21 @@
       {
         "id": "game",
         "label": "게임",
-        "commits": 213,
+        "commits": 209,
         "repos": 5,
         "activeRepos": 2
       },
       {
         "id": "app",
         "label": "앱",
-        "commits": 153,
+        "commits": 125,
         "repos": 8,
         "activeRepos": 3
       },
       {
         "id": "content",
         "label": "콘텐츠",
-        "commits": 97,
+        "commits": 84,
         "repos": 4,
         "activeRepos": 1
       }
@@ -167,14 +167,14 @@
       {
         "id": "codex",
         "label": "Codex",
-        "commits": 310,
+        "commits": 293,
         "repos": 6,
         "activeRepos": 3
       },
       {
         "id": "claude",
         "label": "Claude",
-        "commits": 153,
+        "commits": 125,
         "repos": 10,
         "activeRepos": 3
       },
@@ -190,115 +190,41 @@
       {
         "id": "feature",
         "label": "기능 구현",
-        "commits": 187
+        "commits": 171
       },
       {
         "id": "docs",
         "label": "문서화",
-        "commits": 127
+        "commits": 119
       },
       {
         "id": "verification",
         "label": "검증",
-        "commits": 49
+        "commits": 43
       },
       {
         "id": "stability",
         "label": "안정화",
-        "commits": 42
+        "commits": 39
       },
       {
         "id": "maintenance",
         "label": "정리/운영",
-        "commits": 33
+        "commits": 27
       },
       {
         "id": "experience",
         "label": "경험/화면",
-        "commits": 25
+        "commits": 19
       }
     ]
   },
   "diagnosis": [
-    "이번 30일의 중심은 Story X입니다. 148커밋과 10일의 활동일이 관찰되어, 가장 많은 실제 손길을 받았습니다.",
+    "이번 30일의 중심은 AI 컴퍼니 타이쿤입니다. 133커밋과 10일의 활동일이 관찰되어, 가장 많은 실제 손길을 받았습니다.",
     "전체 17개 중 6개 리포만 움직였습니다. 지금은 확장보다 재개 조건을 좁히는 운영 판단이 더 중요합니다.",
     "11개 리포는 한 달 동안 새 커밋이 없었습니다. 보류 프로젝트는 괜찮지만, 활성 프로젝트가 여기에 포함되면 다음 액션의 크기를 줄여야 합니다."
   ],
   "repos": [
-    {
-      "repo": "story-x-beta",
-      "displayName": "Story X",
-      "icon": "📖",
-      "category": "app",
-      "categoryLabel": "앱",
-      "tool": "claude",
-      "toolLabel": "Claude",
-      "status": "active",
-      "rank": 10,
-      "progressTotal": 50,
-      "commits": 148,
-      "activeDays": 10,
-      "quietDays": 17,
-      "maxGap": 17,
-      "firstCommit": "2026-07-03T02:35:20Z",
-      "lastCommit": "2026-07-15T10:06:57Z",
-      "state": "surge",
-      "topTheme": "feature",
-      "themeLabel": "기능 구현",
-      "themes": {
-        "verification": 21,
-        "docs": 38,
-        "feature": 46,
-        "stability": 19,
-        "experience": 11,
-        "maintenance": 13
-      },
-      "byDate": {
-        "2026-07-03": 28,
-        "2026-07-04": 17,
-        "2026-07-05": 4,
-        "2026-07-06": 23,
-        "2026-07-07": 4,
-        "2026-07-08": 4,
-        "2026-07-09": 21,
-        "2026-07-12": 40,
-        "2026-07-13": 3,
-        "2026-07-15": 4
-      },
-      "latest": [
-        {
-          "sha": "0df4cfa",
-          "message": "Merge pull request #38 from sgeniusk/codex/p0a-condense-job-polling",
-          "date": "2026-07-15T10:06:57Z",
-          "url": "https://github.com/sgeniusk/story-x-beta/commit/0df4cfa84a198628d8aa415f5efa1fea580b51d4"
-        },
-        {
-          "sha": "6ff722d",
-          "message": "P0-a: link pull request",
-          "date": "2026-07-15T08:53:43Z",
-          "url": "https://github.com/sgeniusk/story-x-beta/commit/6ff722d455f8458114afedacde516435d922c4db"
-        },
-        {
-          "sha": "363310b",
-          "message": "P0-a: record verification and handoff",
-          "date": "2026-07-15T08:53:07Z",
-          "url": "https://github.com/sgeniusk/story-x-beta/commit/363310b0138b0ee78e5616fa85206a1d04b9c491"
-        },
-        {
-          "sha": "f8bddc9",
-          "message": "P0-a: add local condense jobs and generation inbox",
-          "date": "2026-07-15T08:51:56Z",
-          "url": "https://github.com/sgeniusk/story-x-beta/commit/f8bddc911de36794c9590fe779c50f7ea32af108"
-        },
-        {
-          "sha": "5c14880",
-          "message": "docs(harness): S1·S2 main 머지 반영 — 스택 PR close 교훈·다음 세션 사용자 테스트 시작점 기록",
-          "date": "2026-07-13T00:30:09Z",
-          "url": "https://github.com/sgeniusk/story-x-beta/commit/5c148801b26c2b9ee458be63655498b261531679"
-        }
-      ],
-      "insight": "Story X은 148커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
-    },
     {
       "repo": "ai-company-tycoon-boundaryless",
       "displayName": "AI 컴퍼니 타이쿤",
@@ -310,24 +236,23 @@
       "status": "active",
       "rank": 9,
       "progressTotal": 75,
-      "commits": 135,
-      "activeDays": 11,
-      "quietDays": 19,
-      "maxGap": 19,
-      "firstCommit": "2026-07-03T02:56:36Z",
+      "commits": 133,
+      "activeDays": 10,
+      "quietDays": 20,
+      "maxGap": 20,
+      "firstCommit": "2026-07-04T01:42:46Z",
       "lastCommit": "2026-07-13T00:29:02Z",
       "state": "surge",
       "topTheme": "feature",
       "themeLabel": "기능 구현",
       "themes": {
-        "feature": 70,
-        "docs": 43,
+        "docs": 42,
+        "feature": 69,
         "verification": 13,
         "stability": 7,
         "experience": 2
       },
       "byDate": {
-        "2026-07-03": 2,
         "2026-07-04": 21,
         "2026-07-05": 20,
         "2026-07-06": 30,
@@ -371,7 +296,80 @@
           "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/e173878c961fa560e056e4d24f4c502e8e0324fc"
         }
       ],
-      "insight": "AI 컴퍼니 타이쿤은 135커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "AI 컴퍼니 타이쿤은 133커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+    },
+    {
+      "repo": "story-x-beta",
+      "displayName": "Story X",
+      "icon": "📖",
+      "category": "app",
+      "categoryLabel": "앱",
+      "tool": "claude",
+      "toolLabel": "Claude",
+      "status": "active",
+      "rank": 10,
+      "progressTotal": 50,
+      "commits": 120,
+      "activeDays": 9,
+      "quietDays": 18,
+      "maxGap": 18,
+      "firstCommit": "2026-07-04T06:43:04Z",
+      "lastCommit": "2026-07-15T10:06:57Z",
+      "state": "surge",
+      "topTheme": "feature",
+      "themeLabel": "기능 구현",
+      "themes": {
+        "verification": 17,
+        "docs": 33,
+        "feature": 37,
+        "stability": 18,
+        "experience": 8,
+        "maintenance": 7
+      },
+      "byDate": {
+        "2026-07-04": 17,
+        "2026-07-05": 4,
+        "2026-07-06": 23,
+        "2026-07-07": 4,
+        "2026-07-08": 4,
+        "2026-07-09": 21,
+        "2026-07-12": 40,
+        "2026-07-13": 3,
+        "2026-07-15": 4
+      },
+      "latest": [
+        {
+          "sha": "0df4cfa",
+          "message": "Merge pull request #38 from sgeniusk/codex/p0a-condense-job-polling",
+          "date": "2026-07-15T10:06:57Z",
+          "url": "https://github.com/sgeniusk/story-x-beta/commit/0df4cfa84a198628d8aa415f5efa1fea580b51d4"
+        },
+        {
+          "sha": "6ff722d",
+          "message": "P0-a: link pull request",
+          "date": "2026-07-15T08:53:43Z",
+          "url": "https://github.com/sgeniusk/story-x-beta/commit/6ff722d455f8458114afedacde516435d922c4db"
+        },
+        {
+          "sha": "363310b",
+          "message": "P0-a: record verification and handoff",
+          "date": "2026-07-15T08:53:07Z",
+          "url": "https://github.com/sgeniusk/story-x-beta/commit/363310b0138b0ee78e5616fa85206a1d04b9c491"
+        },
+        {
+          "sha": "f8bddc9",
+          "message": "P0-a: add local condense jobs and generation inbox",
+          "date": "2026-07-15T08:51:56Z",
+          "url": "https://github.com/sgeniusk/story-x-beta/commit/f8bddc911de36794c9590fe779c50f7ea32af108"
+        },
+        {
+          "sha": "5c14880",
+          "message": "docs(harness): S1·S2 main 머지 반영 — 스택 PR close 교훈·다음 세션 사용자 테스트 시작점 기록",
+          "date": "2026-07-13T00:30:09Z",
+          "url": "https://github.com/sgeniusk/story-x-beta/commit/5c148801b26c2b9ee458be63655498b261531679"
+        }
+      ],
+      "insight": "Story X은 120커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "pliside-ops",
@@ -384,25 +382,24 @@
       "status": "active",
       "rank": 2,
       "progressTotal": 0,
-      "commits": 97,
-      "activeDays": 7,
-      "quietDays": 23,
-      "maxGap": 23,
-      "firstCommit": "2026-07-03T02:41:39Z",
+      "commits": 84,
+      "activeDays": 6,
+      "quietDays": 24,
+      "maxGap": 24,
+      "firstCommit": "2026-07-04T12:15:41Z",
       "lastCommit": "2026-07-09T14:16:56Z",
       "state": "surge",
       "topTheme": "feature",
       "themeLabel": "기능 구현",
       "themes": {
-        "verification": 11,
-        "feature": 45,
-        "stability": 9,
-        "experience": 9,
-        "docs": 16,
+        "verification": 9,
+        "docs": 15,
+        "feature": 39,
+        "experience": 6,
+        "stability": 8,
         "maintenance": 7
       },
       "byDate": {
-        "2026-07-03": 13,
         "2026-07-04": 14,
         "2026-07-05": 22,
         "2026-07-06": 9,
@@ -442,7 +439,7 @@
           "url": "https://github.com/sgeniusk/pliside-ops/commit/6f00f3a25c1d2249d59df8638609a8c625d5dc19"
         }
       ],
-      "insight": "Loom · 유튜브 운영 시스템은 97커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "Loom · 유튜브 운영 시스템은 84커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "honbul",
@@ -455,25 +452,24 @@
       "status": "active",
       "rank": 18,
       "progressTotal": 39,
-      "commits": 78,
-      "activeDays": 9,
-      "quietDays": 19,
-      "maxGap": 19,
-      "firstCommit": "2026-07-03T02:38:49Z",
+      "commits": 76,
+      "activeDays": 8,
+      "quietDays": 20,
+      "maxGap": 20,
+      "firstCommit": "2026-07-04T01:47:37Z",
       "lastCommit": "2026-07-13T11:46:15Z",
       "state": "surge",
-      "topTheme": "docs",
-      "themeLabel": "문서화",
+      "topTheme": "feature",
+      "themeLabel": "기능 구현",
       "themes": {
-        "docs": 26,
-        "stability": 7,
         "feature": 26,
         "experience": 2,
+        "docs": 25,
+        "stability": 6,
         "maintenance": 13,
         "verification": 4
       },
       "byDate": {
-        "2026-07-03": 2,
         "2026-07-04": 17,
         "2026-07-05": 3,
         "2026-07-06": 15,
@@ -515,7 +511,7 @@
           "url": "https://github.com/sgeniusk/honbul/commit/3864ee0d17fe94ee53489cea94c36cca12fd04d0"
         }
       ],
-      "insight": "혼불 (Honbul)은 78커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "혼불 (Honbul)은 76커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "cmds-daily-briefing",
@@ -530,8 +526,8 @@
       "progressTotal": 52,
       "commits": 3,
       "activeDays": 2,
-      "quietDays": 27,
-      "maxGap": 27,
+      "quietDays": 28,
+      "maxGap": 28,
       "firstCommit": "2026-07-04T23:34:33Z",
       "lastCommit": "2026-07-05T23:34:27Z",
       "state": "sporadic",
@@ -580,8 +576,8 @@
       "progressTotal": 19,
       "commits": 2,
       "activeDays": 1,
-      "quietDays": 18,
-      "maxGap": 18,
+      "quietDays": 19,
+      "maxGap": 19,
       "firstCommit": "2026-07-14T05:52:13Z",
       "lastCommit": "2026-07-14T05:53:08Z",
       "state": "sporadic",
@@ -887,80 +883,6 @@
   ],
   "topRepos": [
     {
-      "repo": "story-x-beta",
-      "displayName": "Story X",
-      "icon": "📖",
-      "category": "app",
-      "categoryLabel": "앱",
-      "tool": "claude",
-      "toolLabel": "Claude",
-      "status": "active",
-      "rank": 10,
-      "progressTotal": 50,
-      "commits": 148,
-      "activeDays": 10,
-      "quietDays": 17,
-      "maxGap": 17,
-      "firstCommit": "2026-07-03T02:35:20Z",
-      "lastCommit": "2026-07-15T10:06:57Z",
-      "state": "surge",
-      "topTheme": "feature",
-      "themeLabel": "기능 구현",
-      "themes": {
-        "verification": 21,
-        "docs": 38,
-        "feature": 46,
-        "stability": 19,
-        "experience": 11,
-        "maintenance": 13
-      },
-      "byDate": {
-        "2026-07-03": 28,
-        "2026-07-04": 17,
-        "2026-07-05": 4,
-        "2026-07-06": 23,
-        "2026-07-07": 4,
-        "2026-07-08": 4,
-        "2026-07-09": 21,
-        "2026-07-12": 40,
-        "2026-07-13": 3,
-        "2026-07-15": 4
-      },
-      "latest": [
-        {
-          "sha": "0df4cfa",
-          "message": "Merge pull request #38 from sgeniusk/codex/p0a-condense-job-polling",
-          "date": "2026-07-15T10:06:57Z",
-          "url": "https://github.com/sgeniusk/story-x-beta/commit/0df4cfa84a198628d8aa415f5efa1fea580b51d4"
-        },
-        {
-          "sha": "6ff722d",
-          "message": "P0-a: link pull request",
-          "date": "2026-07-15T08:53:43Z",
-          "url": "https://github.com/sgeniusk/story-x-beta/commit/6ff722d455f8458114afedacde516435d922c4db"
-        },
-        {
-          "sha": "363310b",
-          "message": "P0-a: record verification and handoff",
-          "date": "2026-07-15T08:53:07Z",
-          "url": "https://github.com/sgeniusk/story-x-beta/commit/363310b0138b0ee78e5616fa85206a1d04b9c491"
-        },
-        {
-          "sha": "f8bddc9",
-          "message": "P0-a: add local condense jobs and generation inbox",
-          "date": "2026-07-15T08:51:56Z",
-          "url": "https://github.com/sgeniusk/story-x-beta/commit/f8bddc911de36794c9590fe779c50f7ea32af108"
-        },
-        {
-          "sha": "5c14880",
-          "message": "docs(harness): S1·S2 main 머지 반영 — 스택 PR close 교훈·다음 세션 사용자 테스트 시작점 기록",
-          "date": "2026-07-13T00:30:09Z",
-          "url": "https://github.com/sgeniusk/story-x-beta/commit/5c148801b26c2b9ee458be63655498b261531679"
-        }
-      ],
-      "insight": "Story X은 148커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
-    },
-    {
       "repo": "ai-company-tycoon-boundaryless",
       "displayName": "AI 컴퍼니 타이쿤",
       "icon": "🏢",
@@ -971,24 +893,23 @@
       "status": "active",
       "rank": 9,
       "progressTotal": 75,
-      "commits": 135,
-      "activeDays": 11,
-      "quietDays": 19,
-      "maxGap": 19,
-      "firstCommit": "2026-07-03T02:56:36Z",
+      "commits": 133,
+      "activeDays": 10,
+      "quietDays": 20,
+      "maxGap": 20,
+      "firstCommit": "2026-07-04T01:42:46Z",
       "lastCommit": "2026-07-13T00:29:02Z",
       "state": "surge",
       "topTheme": "feature",
       "themeLabel": "기능 구현",
       "themes": {
-        "feature": 70,
-        "docs": 43,
+        "docs": 42,
+        "feature": 69,
         "verification": 13,
         "stability": 7,
         "experience": 2
       },
       "byDate": {
-        "2026-07-03": 2,
         "2026-07-04": 21,
         "2026-07-05": 20,
         "2026-07-06": 30,
@@ -1032,7 +953,80 @@
           "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/e173878c961fa560e056e4d24f4c502e8e0324fc"
         }
       ],
-      "insight": "AI 컴퍼니 타이쿤은 135커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "AI 컴퍼니 타이쿤은 133커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+    },
+    {
+      "repo": "story-x-beta",
+      "displayName": "Story X",
+      "icon": "📖",
+      "category": "app",
+      "categoryLabel": "앱",
+      "tool": "claude",
+      "toolLabel": "Claude",
+      "status": "active",
+      "rank": 10,
+      "progressTotal": 50,
+      "commits": 120,
+      "activeDays": 9,
+      "quietDays": 18,
+      "maxGap": 18,
+      "firstCommit": "2026-07-04T06:43:04Z",
+      "lastCommit": "2026-07-15T10:06:57Z",
+      "state": "surge",
+      "topTheme": "feature",
+      "themeLabel": "기능 구현",
+      "themes": {
+        "verification": 17,
+        "docs": 33,
+        "feature": 37,
+        "stability": 18,
+        "experience": 8,
+        "maintenance": 7
+      },
+      "byDate": {
+        "2026-07-04": 17,
+        "2026-07-05": 4,
+        "2026-07-06": 23,
+        "2026-07-07": 4,
+        "2026-07-08": 4,
+        "2026-07-09": 21,
+        "2026-07-12": 40,
+        "2026-07-13": 3,
+        "2026-07-15": 4
+      },
+      "latest": [
+        {
+          "sha": "0df4cfa",
+          "message": "Merge pull request #38 from sgeniusk/codex/p0a-condense-job-polling",
+          "date": "2026-07-15T10:06:57Z",
+          "url": "https://github.com/sgeniusk/story-x-beta/commit/0df4cfa84a198628d8aa415f5efa1fea580b51d4"
+        },
+        {
+          "sha": "6ff722d",
+          "message": "P0-a: link pull request",
+          "date": "2026-07-15T08:53:43Z",
+          "url": "https://github.com/sgeniusk/story-x-beta/commit/6ff722d455f8458114afedacde516435d922c4db"
+        },
+        {
+          "sha": "363310b",
+          "message": "P0-a: record verification and handoff",
+          "date": "2026-07-15T08:53:07Z",
+          "url": "https://github.com/sgeniusk/story-x-beta/commit/363310b0138b0ee78e5616fa85206a1d04b9c491"
+        },
+        {
+          "sha": "f8bddc9",
+          "message": "P0-a: add local condense jobs and generation inbox",
+          "date": "2026-07-15T08:51:56Z",
+          "url": "https://github.com/sgeniusk/story-x-beta/commit/f8bddc911de36794c9590fe779c50f7ea32af108"
+        },
+        {
+          "sha": "5c14880",
+          "message": "docs(harness): S1·S2 main 머지 반영 — 스택 PR close 교훈·다음 세션 사용자 테스트 시작점 기록",
+          "date": "2026-07-13T00:30:09Z",
+          "url": "https://github.com/sgeniusk/story-x-beta/commit/5c148801b26c2b9ee458be63655498b261531679"
+        }
+      ],
+      "insight": "Story X은 120커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "pliside-ops",
@@ -1045,25 +1039,24 @@
       "status": "active",
       "rank": 2,
       "progressTotal": 0,
-      "commits": 97,
-      "activeDays": 7,
-      "quietDays": 23,
-      "maxGap": 23,
-      "firstCommit": "2026-07-03T02:41:39Z",
+      "commits": 84,
+      "activeDays": 6,
+      "quietDays": 24,
+      "maxGap": 24,
+      "firstCommit": "2026-07-04T12:15:41Z",
       "lastCommit": "2026-07-09T14:16:56Z",
       "state": "surge",
       "topTheme": "feature",
       "themeLabel": "기능 구현",
       "themes": {
-        "verification": 11,
-        "feature": 45,
-        "stability": 9,
-        "experience": 9,
-        "docs": 16,
+        "verification": 9,
+        "docs": 15,
+        "feature": 39,
+        "experience": 6,
+        "stability": 8,
         "maintenance": 7
       },
       "byDate": {
-        "2026-07-03": 13,
         "2026-07-04": 14,
         "2026-07-05": 22,
         "2026-07-06": 9,
@@ -1103,7 +1096,7 @@
           "url": "https://github.com/sgeniusk/pliside-ops/commit/6f00f3a25c1d2249d59df8638609a8c625d5dc19"
         }
       ],
-      "insight": "Loom · 유튜브 운영 시스템은 97커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "Loom · 유튜브 운영 시스템은 84커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "honbul",
@@ -1116,25 +1109,24 @@
       "status": "active",
       "rank": 18,
       "progressTotal": 39,
-      "commits": 78,
-      "activeDays": 9,
-      "quietDays": 19,
-      "maxGap": 19,
-      "firstCommit": "2026-07-03T02:38:49Z",
+      "commits": 76,
+      "activeDays": 8,
+      "quietDays": 20,
+      "maxGap": 20,
+      "firstCommit": "2026-07-04T01:47:37Z",
       "lastCommit": "2026-07-13T11:46:15Z",
       "state": "surge",
-      "topTheme": "docs",
-      "themeLabel": "문서화",
+      "topTheme": "feature",
+      "themeLabel": "기능 구현",
       "themes": {
-        "docs": 26,
-        "stability": 7,
         "feature": 26,
         "experience": 2,
+        "docs": 25,
+        "stability": 6,
         "maintenance": 13,
         "verification": 4
       },
       "byDate": {
-        "2026-07-03": 2,
         "2026-07-04": 17,
         "2026-07-05": 3,
         "2026-07-06": 15,
@@ -1176,7 +1168,7 @@
           "url": "https://github.com/sgeniusk/honbul/commit/3864ee0d17fe94ee53489cea94c36cca12fd04d0"
         }
       ],
-      "insight": "혼불 (Honbul)은 78커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "혼불 (Honbul)은 76커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "cmds-daily-briefing",
@@ -1191,8 +1183,8 @@
       "progressTotal": 52,
       "commits": 3,
       "activeDays": 2,
-      "quietDays": 27,
-      "maxGap": 27,
+      "quietDays": 28,
+      "maxGap": 28,
       "firstCommit": "2026-07-04T23:34:33Z",
       "lastCommit": "2026-07-05T23:34:27Z",
       "state": "sporadic",
@@ -1241,8 +1233,8 @@
       "progressTotal": 19,
       "commits": 2,
       "activeDays": 1,
-      "quietDays": 18,
-      "maxGap": 18,
+      "quietDays": 19,
+      "maxGap": 19,
       "firstCommit": "2026-07-14T05:52:13Z",
       "lastCommit": "2026-07-14T05:53:08Z",
       "state": "sporadic",
