@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-08-04",
+  "generatedAt": "2026-08-05",
   "logs": {
     "samsu": [
       {
@@ -255,6 +255,11 @@
         "date": "2026-08-04",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -426,6 +431,11 @@
       },
       {
         "date": "2026-08-04",
+        "kind": "progress",
+        "text": "완성도 65%"
+      },
+      {
+        "date": "2026-08-05",
         "kind": "progress",
         "text": "완성도 65%"
       }
@@ -763,6 +773,11 @@
         "date": "2026-08-04",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
@@ -1050,6 +1065,11 @@
         "date": "2026-08-04",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
@@ -1323,6 +1343,11 @@
       },
       {
         "date": "2026-08-04",
+        "kind": "progress",
+        "text": "완성도 55%"
+      },
+      {
+        "date": "2026-08-05",
         "kind": "progress",
         "text": "완성도 55%"
       }
@@ -1624,15 +1649,14 @@
         "date": "2026-08-04",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-05-30T23:14:05Z",
-        "kind": "commit",
-        "text": "Expand flow smoke to completion routes",
-        "sha": "244f3e9"
-      },
       {
         "date": "2026-05-30T23:19:22Z",
         "kind": "commit",
@@ -2079,15 +2103,14 @@
         "date": "2026-08-04",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-05-30T08:53:13Z",
-        "kind": "commit",
-        "text": "Merge: A2 주장 레저 + 주장-근거 하네스",
-        "sha": "47b15f9"
-      },
       {
         "date": "2026-05-30T08:53:49Z",
         "kind": "commit",
@@ -2534,6 +2557,11 @@
         "date": "2026-08-04",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
@@ -2693,6 +2721,11 @@
       },
       {
         "date": "2026-08-04",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-05",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -2886,6 +2919,11 @@
         "date": "2026-08-04",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
@@ -3077,6 +3115,11 @@
         "date": "2026-08-04",
         "kind": "progress",
         "text": "완성도 56%"
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "progress",
+        "text": "완성도 56%"
       }
     ],
     "design-system-school": [
@@ -3266,6 +3309,11 @@
       },
       {
         "date": "2026-08-04",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-05",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -3639,6 +3687,11 @@
         "date": "2026-08-04",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
@@ -3786,6 +3839,11 @@
       },
       {
         "date": "2026-08-04",
+        "kind": "progress",
+        "text": "완성도 7%"
+      },
+      {
+        "date": "2026-08-05",
         "kind": "progress",
         "text": "완성도 7%"
       }
@@ -4225,15 +4283,14 @@
         "date": "2026-08-04",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-03T16:08:25Z",
-        "kind": "commit",
-        "text": "docs: 세션 마무리 + Codex 앱 핸드오프 (HANDOFF.md)",
-        "sha": "1e9fd66"
-      },
       {
         "date": "2026-06-04",
         "kind": "progress",
@@ -4680,6 +4737,11 @@
       },
       {
         "date": "2026-08-04",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-08-05",
         "kind": "progress",
         "text": "완성도 39%"
       }

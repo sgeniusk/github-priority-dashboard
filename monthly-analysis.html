@@ -214,28 +214,24 @@ footer{margin-top:70px;padding-top:22px;border-top:1px solid var(--line);color:v
 <script>
 const FALLBACK_ANALYSIS = {
   "_comment": "최근 30일 GitHub 커밋 관찰 분석. scripts/build-monthly-analysis.mjs가 생성하며 monthly-analysis.html의 FALLBACK_ANALYSIS와 동기화한다.",
-  "generatedAt": "2026-08-04",
+  "generatedAt": "2026-08-05",
   "owner": "sgeniusk",
   "window": {
-    "start": "2026-07-06",
-    "end": "2026-08-04",
+    "start": "2026-07-07",
+    "end": "2026-08-05",
     "days": 30
   },
   "summary": {
     "totalRepos": 17,
     "activeRepos": 5,
     "quietRepos": 12,
-    "totalCommits": 297,
-    "activeDays": 10,
-    "avgCommitsPerActiveRepo": 59.4,
+    "totalCommits": 220,
+    "activeDays": 9,
+    "avgCommitsPerActiveRepo": 44,
     "leaderRepo": "story-x-beta",
     "leaderName": "Story X"
   },
   "daily": [
-    {
-      "date": "2026-07-06",
-      "commits": 77
-    },
     {
       "date": "2026-07-07",
       "commits": 31
@@ -351,6 +347,10 @@ const FALLBACK_ANALYSIS = {
     {
       "date": "2026-08-04",
       "commits": 0
+    },
+    {
+      "date": "2026-08-05",
+      "commits": 0
     }
   ],
   "breakdowns": {
@@ -358,21 +358,21 @@ const FALLBACK_ANALYSIS = {
       {
         "id": "game",
         "label": "게임",
-        "commits": 148,
+        "commits": 103,
         "repos": 5,
         "activeRepos": 2
       },
       {
         "id": "app",
         "label": "앱",
-        "commits": 101,
+        "commits": 78,
         "repos": 8,
         "activeRepos": 2
       },
       {
         "id": "content",
         "label": "콘텐츠",
-        "commits": 48,
+        "commits": 39,
         "repos": 4,
         "activeRepos": 1
       }
@@ -381,14 +381,14 @@ const FALLBACK_ANALYSIS = {
       {
         "id": "codex",
         "label": "Codex",
-        "commits": 196,
+        "commits": 142,
         "repos": 6,
         "activeRepos": 3
       },
       {
         "id": "claude",
         "label": "Claude",
-        "commits": 101,
+        "commits": 78,
         "repos": 10,
         "activeRepos": 2
       },
@@ -404,37 +404,37 @@ const FALLBACK_ANALYSIS = {
       {
         "id": "feature",
         "label": "기능 구현",
-        "commits": 113
+        "commits": 81
       },
       {
         "id": "docs",
         "label": "문서화",
-        "commits": 89
-      },
-      {
-        "id": "verification",
-        "label": "검증",
-        "commits": 30
+        "commits": 67
       },
       {
         "id": "stability",
         "label": "안정화",
-        "commits": 29
+        "commits": 27
+      },
+      {
+        "id": "verification",
+        "label": "검증",
+        "commits": 23
       },
       {
         "id": "maintenance",
         "label": "정리/운영",
-        "commits": 24
+        "commits": 14
       },
       {
         "id": "experience",
         "label": "경험/화면",
-        "commits": 12
+        "commits": 8
       }
     ]
   },
   "diagnosis": [
-    "이번 30일의 중심은 Story X입니다. 99커밋과 7일의 활동일이 관찰되어, 가장 많은 실제 손길을 받았습니다.",
+    "이번 30일의 중심은 Story X입니다. 76커밋과 6일의 활동일이 관찰되어, 가장 많은 실제 손길을 받았습니다.",
     "전체 17개 중 5개 리포만 움직였습니다. 지금은 확장보다 재개 조건을 좁히는 운영 판단이 더 중요합니다.",
     "12개 리포는 한 달 동안 새 커밋이 없었습니다. 보류 프로젝트는 괜찮지만, 활성 프로젝트가 여기에 포함되면 다음 액션의 크기를 줄여야 합니다."
   ],
@@ -450,25 +450,24 @@ const FALLBACK_ANALYSIS = {
       "status": "active",
       "rank": 10,
       "progressTotal": 50,
-      "commits": 99,
-      "activeDays": 7,
-      "quietDays": 20,
-      "maxGap": 20,
-      "firstCommit": "2026-07-06T03:27:33Z",
+      "commits": 76,
+      "activeDays": 6,
+      "quietDays": 21,
+      "maxGap": 21,
+      "firstCommit": "2026-07-07T00:23:46Z",
       "lastCommit": "2026-07-15T10:06:57Z",
       "state": "surge",
-      "topTheme": "docs",
-      "themeLabel": "문서화",
+      "topTheme": "feature",
+      "themeLabel": "기능 구현",
       "themes": {
-        "verification": 15,
-        "feature": 26,
-        "docs": 27,
-        "stability": 16,
-        "experience": 8,
+        "docs": 18,
+        "feature": 20,
+        "verification": 12,
+        "experience": 5,
+        "stability": 14,
         "maintenance": 7
       },
       "byDate": {
-        "2026-07-06": 23,
         "2026-07-07": 4,
         "2026-07-08": 4,
         "2026-07-09": 21,
@@ -508,7 +507,7 @@ const FALLBACK_ANALYSIS = {
           "url": "https://github.com/sgeniusk/story-x-beta/commit/5c148801b26c2b9ee458be63655498b261531679"
         }
       ],
-      "insight": "Story X은 99커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "Story X은 76커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "ai-company-tycoon-boundaryless",
@@ -521,24 +520,23 @@ const FALLBACK_ANALYSIS = {
       "status": "active",
       "rank": 9,
       "progressTotal": 75,
-      "commits": 92,
-      "activeDays": 8,
-      "quietDays": 22,
-      "maxGap": 22,
-      "firstCommit": "2026-07-06T14:04:20Z",
+      "commits": 62,
+      "activeDays": 7,
+      "quietDays": 23,
+      "maxGap": 23,
+      "firstCommit": "2026-07-07T01:10:36Z",
       "lastCommit": "2026-07-13T00:29:02Z",
       "state": "surge",
       "topTheme": "feature",
       "themeLabel": "기능 구현",
       "themes": {
-        "verification": 7,
-        "docs": 28,
-        "feature": 49,
+        "docs": 22,
+        "feature": 27,
+        "verification": 5,
         "experience": 2,
         "stability": 6
       },
       "byDate": {
-        "2026-07-06": 30,
         "2026-07-07": 15,
         "2026-07-08": 6,
         "2026-07-09": 5,
@@ -579,7 +577,7 @@ const FALLBACK_ANALYSIS = {
           "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/e173878c961fa560e056e4d24f4c502e8e0324fc"
         }
       ],
-      "insight": "AI 컴퍼니 타이쿤은 92커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "AI 컴퍼니 타이쿤은 62커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "honbul",
@@ -592,25 +590,23 @@ const FALLBACK_ANALYSIS = {
       "status": "active",
       "rank": 18,
       "progressTotal": 39,
-      "commits": 56,
-      "activeDays": 6,
-      "quietDays": 22,
-      "maxGap": 22,
-      "firstCommit": "2026-07-06T14:01:30Z",
+      "commits": 41,
+      "activeDays": 5,
+      "quietDays": 23,
+      "maxGap": 23,
+      "firstCommit": "2026-07-07T00:36:27Z",
       "lastCommit": "2026-07-13T11:46:15Z",
       "state": "surge",
       "topTheme": "docs",
       "themeLabel": "문서화",
       "themes": {
-        "verification": 4,
-        "maintenance": 11,
-        "docs": 21,
-        "experience": 1,
+        "maintenance": 2,
+        "docs": 17,
         "feature": 15,
-        "stability": 4
+        "stability": 4,
+        "verification": 3
       },
       "byDate": {
-        "2026-07-06": 15,
         "2026-07-07": 3,
         "2026-07-09": 1,
         "2026-07-10": 6,
@@ -649,7 +645,7 @@ const FALLBACK_ANALYSIS = {
           "url": "https://github.com/sgeniusk/honbul/commit/3864ee0d17fe94ee53489cea94c36cca12fd04d0"
         }
       ],
-      "insight": "혼불 (Honbul)은 56커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "혼불 (Honbul)은 41커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "pliside-ops",
@@ -662,25 +658,24 @@ const FALLBACK_ANALYSIS = {
       "status": "active",
       "rank": 2,
       "progressTotal": 0,
-      "commits": 48,
-      "activeDays": 4,
-      "quietDays": 26,
-      "maxGap": 26,
-      "firstCommit": "2026-07-06T03:19:22Z",
+      "commits": 39,
+      "activeDays": 3,
+      "quietDays": 27,
+      "maxGap": 27,
+      "firstCommit": "2026-07-07T00:22:56Z",
       "lastCommit": "2026-07-09T14:16:56Z",
       "state": "surge",
       "topTheme": "feature",
       "themeLabel": "기능 구현",
       "themes": {
-        "feature": 23,
-        "docs": 11,
-        "maintenance": 6,
-        "verification": 4,
+        "feature": 19,
+        "docs": 8,
         "stability": 3,
+        "maintenance": 5,
+        "verification": 3,
         "experience": 1
       },
       "byDate": {
-        "2026-07-06": 9,
         "2026-07-07": 9,
         "2026-07-08": 1,
         "2026-07-09": 29
@@ -717,7 +712,7 @@ const FALLBACK_ANALYSIS = {
           "url": "https://github.com/sgeniusk/pliside-ops/commit/6f00f3a25c1d2249d59df8638609a8c625d5dc19"
         }
       ],
-      "insight": "Loom · 유튜브 운영 시스템은 48커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "Loom · 유튜브 운영 시스템은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
     },
     {
       "repo": "chaekdam",
@@ -732,8 +727,8 @@ const FALLBACK_ANALYSIS = {
       "progressTotal": 19,
       "commits": 2,
       "activeDays": 1,
-      "quietDays": 21,
-      "maxGap": 21,
+      "quietDays": 22,
+      "maxGap": 22,
       "firstCommit": "2026-07-14T05:52:13Z",
       "lastCommit": "2026-07-14T05:53:08Z",
       "state": "sporadic",
@@ -1074,25 +1069,24 @@ const FALLBACK_ANALYSIS = {
       "status": "active",
       "rank": 10,
       "progressTotal": 50,
-      "commits": 99,
-      "activeDays": 7,
-      "quietDays": 20,
-      "maxGap": 20,
-      "firstCommit": "2026-07-06T03:27:33Z",
+      "commits": 76,
+      "activeDays": 6,
+      "quietDays": 21,
+      "maxGap": 21,
+      "firstCommit": "2026-07-07T00:23:46Z",
       "lastCommit": "2026-07-15T10:06:57Z",
       "state": "surge",
-      "topTheme": "docs",
-      "themeLabel": "문서화",
+      "topTheme": "feature",
+      "themeLabel": "기능 구현",
       "themes": {
-        "verification": 15,
-        "feature": 26,
-        "docs": 27,
-        "stability": 16,
-        "experience": 8,
+        "docs": 18,
+        "feature": 20,
+        "verification": 12,
+        "experience": 5,
+        "stability": 14,
         "maintenance": 7
       },
       "byDate": {
-        "2026-07-06": 23,
         "2026-07-07": 4,
         "2026-07-08": 4,
         "2026-07-09": 21,
@@ -1132,7 +1126,7 @@ const FALLBACK_ANALYSIS = {
           "url": "https://github.com/sgeniusk/story-x-beta/commit/5c148801b26c2b9ee458be63655498b261531679"
         }
       ],
-      "insight": "Story X은 99커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "Story X은 76커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "ai-company-tycoon-boundaryless",
@@ -1145,24 +1139,23 @@ const FALLBACK_ANALYSIS = {
       "status": "active",
       "rank": 9,
       "progressTotal": 75,
-      "commits": 92,
-      "activeDays": 8,
-      "quietDays": 22,
-      "maxGap": 22,
-      "firstCommit": "2026-07-06T14:04:20Z",
+      "commits": 62,
+      "activeDays": 7,
+      "quietDays": 23,
+      "maxGap": 23,
+      "firstCommit": "2026-07-07T01:10:36Z",
       "lastCommit": "2026-07-13T00:29:02Z",
       "state": "surge",
       "topTheme": "feature",
       "themeLabel": "기능 구현",
       "themes": {
-        "verification": 7,
-        "docs": 28,
-        "feature": 49,
+        "docs": 22,
+        "feature": 27,
+        "verification": 5,
         "experience": 2,
         "stability": 6
       },
       "byDate": {
-        "2026-07-06": 30,
         "2026-07-07": 15,
         "2026-07-08": 6,
         "2026-07-09": 5,
@@ -1203,7 +1196,7 @@ const FALLBACK_ANALYSIS = {
           "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/e173878c961fa560e056e4d24f4c502e8e0324fc"
         }
       ],
-      "insight": "AI 컴퍼니 타이쿤은 92커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "AI 컴퍼니 타이쿤은 62커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "honbul",
@@ -1216,25 +1209,23 @@ const FALLBACK_ANALYSIS = {
       "status": "active",
       "rank": 18,
       "progressTotal": 39,
-      "commits": 56,
-      "activeDays": 6,
-      "quietDays": 22,
-      "maxGap": 22,
-      "firstCommit": "2026-07-06T14:01:30Z",
+      "commits": 41,
+      "activeDays": 5,
+      "quietDays": 23,
+      "maxGap": 23,
+      "firstCommit": "2026-07-07T00:36:27Z",
       "lastCommit": "2026-07-13T11:46:15Z",
       "state": "surge",
       "topTheme": "docs",
       "themeLabel": "문서화",
       "themes": {
-        "verification": 4,
-        "maintenance": 11,
-        "docs": 21,
-        "experience": 1,
+        "maintenance": 2,
+        "docs": 17,
         "feature": 15,
-        "stability": 4
+        "stability": 4,
+        "verification": 3
       },
       "byDate": {
-        "2026-07-06": 15,
         "2026-07-07": 3,
         "2026-07-09": 1,
         "2026-07-10": 6,
@@ -1273,7 +1264,7 @@ const FALLBACK_ANALYSIS = {
           "url": "https://github.com/sgeniusk/honbul/commit/3864ee0d17fe94ee53489cea94c36cca12fd04d0"
         }
       ],
-      "insight": "혼불 (Honbul)은 56커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "혼불 (Honbul)은 41커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "pliside-ops",
@@ -1286,25 +1277,24 @@ const FALLBACK_ANALYSIS = {
       "status": "active",
       "rank": 2,
       "progressTotal": 0,
-      "commits": 48,
-      "activeDays": 4,
-      "quietDays": 26,
-      "maxGap": 26,
-      "firstCommit": "2026-07-06T03:19:22Z",
+      "commits": 39,
+      "activeDays": 3,
+      "quietDays": 27,
+      "maxGap": 27,
+      "firstCommit": "2026-07-07T00:22:56Z",
       "lastCommit": "2026-07-09T14:16:56Z",
       "state": "surge",
       "topTheme": "feature",
       "themeLabel": "기능 구현",
       "themes": {
-        "feature": 23,
-        "docs": 11,
-        "maintenance": 6,
-        "verification": 4,
+        "feature": 19,
+        "docs": 8,
         "stability": 3,
+        "maintenance": 5,
+        "verification": 3,
         "experience": 1
       },
       "byDate": {
-        "2026-07-06": 9,
         "2026-07-07": 9,
         "2026-07-08": 1,
         "2026-07-09": 29
@@ -1341,7 +1331,7 @@ const FALLBACK_ANALYSIS = {
           "url": "https://github.com/sgeniusk/pliside-ops/commit/6f00f3a25c1d2249d59df8638609a8c625d5dc19"
         }
       ],
-      "insight": "Loom · 유튜브 운영 시스템은 48커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "Loom · 유튜브 운영 시스템은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
     },
     {
       "repo": "chaekdam",
@@ -1356,8 +1346,8 @@ const FALLBACK_ANALYSIS = {
       "progressTotal": 19,
       "commits": 2,
       "activeDays": 1,
-      "quietDays": 21,
-      "maxGap": 21,
+      "quietDays": 22,
+      "maxGap": 22,
       "firstCommit": "2026-07-14T05:52:13Z",
       "lastCommit": "2026-07-14T05:53:08Z",
       "state": "sporadic",
