@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-08-05",
+  "generatedAt": "2026-08-06",
   "logs": {
     "samsu": [
       {
@@ -260,6 +260,11 @@
         "date": "2026-08-05",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-08-06",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -436,6 +441,11 @@
       },
       {
         "date": "2026-08-05",
+        "kind": "progress",
+        "text": "완성도 65%"
+      },
+      {
+        "date": "2026-08-06",
         "kind": "progress",
         "text": "완성도 65%"
       }
@@ -778,6 +788,11 @@
         "date": "2026-08-05",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-06",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
@@ -1070,6 +1085,11 @@
         "date": "2026-08-05",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-08-06",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
@@ -1348,6 +1368,11 @@
       },
       {
         "date": "2026-08-05",
+        "kind": "progress",
+        "text": "완성도 55%"
+      },
+      {
+        "date": "2026-08-06",
         "kind": "progress",
         "text": "완성도 55%"
       }
@@ -1654,15 +1679,14 @@
         "date": "2026-08-05",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-08-06",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-05-30T23:19:22Z",
-        "kind": "commit",
-        "text": "Add beta candidate local gate",
-        "sha": "2e324b6"
-      },
       {
         "date": "2026-05-31",
         "kind": "progress",
@@ -2108,15 +2132,14 @@
         "date": "2026-08-05",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-08-06",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-05-30T08:53:49Z",
-        "kind": "commit",
-        "text": "docs: A2 완료 인계 노트 갱신",
-        "sha": "020dddc"
-      },
       {
         "date": "2026-05-31",
         "kind": "progress",
@@ -2562,6 +2585,11 @@
         "date": "2026-08-05",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-08-06",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
@@ -2726,6 +2754,11 @@
       },
       {
         "date": "2026-08-05",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-06",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -2924,6 +2957,11 @@
         "date": "2026-08-05",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-06",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
@@ -3120,6 +3158,11 @@
         "date": "2026-08-05",
         "kind": "progress",
         "text": "완성도 56%"
+      },
+      {
+        "date": "2026-08-06",
+        "kind": "progress",
+        "text": "완성도 56%"
       }
     ],
     "design-system-school": [
@@ -3314,6 +3357,11 @@
       },
       {
         "date": "2026-08-05",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-06",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -3692,6 +3740,11 @@
         "date": "2026-08-05",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-08-06",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
@@ -3844,6 +3897,11 @@
       },
       {
         "date": "2026-08-05",
+        "kind": "progress",
+        "text": "완성도 7%"
+      },
+      {
+        "date": "2026-08-06",
         "kind": "progress",
         "text": "완성도 7%"
       }
@@ -4288,14 +4346,14 @@
         "date": "2026-08-05",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-08-06",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-04",
-        "kind": "progress",
-        "text": "진척 19%"
-      },
       {
         "date": "2026-06-04T03:08:01Z",
         "kind": "commit",
@@ -4742,6 +4800,11 @@
       },
       {
         "date": "2026-08-05",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-08-06",
         "kind": "progress",
         "text": "완성도 39%"
       }
