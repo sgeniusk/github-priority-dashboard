@@ -1,27 +1,23 @@
 {
   "_comment": "최근 30일 GitHub 커밋 관찰 분석. scripts/build-monthly-analysis.mjs가 생성하며 monthly-analysis.html의 FALLBACK_ANALYSIS와 동기화한다.",
-  "generatedAt": "2026-08-07",
+  "generatedAt": "2026-08-08",
   "owner": "sgeniusk",
   "window": {
-    "start": "2026-07-09",
-    "end": "2026-08-07",
+    "start": "2026-07-10",
+    "end": "2026-08-08",
     "days": 30
   },
   "summary": {
     "totalRepos": 17,
-    "activeRepos": 5,
-    "quietRepos": 12,
-    "totalCommits": 178,
-    "activeDays": 7,
-    "avgCommitsPerActiveRepo": 35.6,
+    "activeRepos": 4,
+    "quietRepos": 13,
+    "totalCommits": 122,
+    "activeDays": 6,
+    "avgCommitsPerActiveRepo": 30.5,
     "leaderRepo": "story-x-beta",
     "leaderName": "Story X"
   },
   "daily": [
-    {
-      "date": "2026-07-09",
-      "commits": 56
-    },
     {
       "date": "2026-07-10",
       "commits": 14
@@ -137,6 +133,10 @@
     {
       "date": "2026-08-07",
       "commits": 0
+    },
+    {
+      "date": "2026-08-08",
+      "commits": 0
     }
   ],
   "breakdowns": {
@@ -144,37 +144,37 @@
       {
         "id": "game",
         "label": "게임",
-        "commits": 79,
+        "commits": 73,
         "repos": 5,
         "activeRepos": 2
       },
       {
         "id": "app",
         "label": "앱",
-        "commits": 70,
+        "commits": 49,
         "repos": 8,
         "activeRepos": 2
       },
       {
         "id": "content",
         "label": "콘텐츠",
-        "commits": 29,
+        "commits": 0,
         "repos": 4,
-        "activeRepos": 1
+        "activeRepos": 0
       }
     ],
     "tool": [
       {
         "id": "codex",
         "label": "Codex",
-        "commits": 108,
+        "commits": 73,
         "repos": 6,
-        "activeRepos": 3
+        "activeRepos": 2
       },
       {
         "id": "claude",
         "label": "Claude",
-        "commits": 70,
+        "commits": 49,
         "repos": 10,
         "activeRepos": 2
       },
@@ -190,39 +190,39 @@
       {
         "id": "feature",
         "label": "기능 구현",
-        "commits": 60
+        "commits": 43
       },
       {
         "id": "docs",
         "label": "문서화",
-        "commits": 55
-      },
-      {
-        "id": "stability",
-        "label": "안정화",
-        "commits": 25
+        "commits": 39
       },
       {
         "id": "verification",
         "label": "검증",
-        "commits": 21
+        "commits": 16
+      },
+      {
+        "id": "stability",
+        "label": "안정화",
+        "commits": 15
       },
       {
         "id": "maintenance",
         "label": "정리/운영",
-        "commits": 11
+        "commits": 5
       },
       {
         "id": "experience",
         "label": "경험/화면",
-        "commits": 6
+        "commits": 4
       }
     ]
   },
   "diagnosis": [
-    "이번 30일의 중심은 Story X입니다. 68커밋과 4일의 활동일이 관찰되어, 가장 많은 실제 손길을 받았습니다.",
-    "전체 17개 중 5개 리포만 움직였습니다. 지금은 확장보다 재개 조건을 좁히는 운영 판단이 더 중요합니다.",
-    "12개 리포는 한 달 동안 새 커밋이 없었습니다. 보류 프로젝트는 괜찮지만, 활성 프로젝트가 여기에 포함되면 다음 액션의 크기를 줄여야 합니다."
+    "이번 30일의 중심은 Story X입니다. 47커밋과 3일의 활동일이 관찰되어, 가장 많은 실제 손길을 받았습니다.",
+    "전체 17개 중 4개 리포만 움직였습니다. 지금은 확장보다 재개 조건을 좁히는 운영 판단이 더 중요합니다.",
+    "13개 리포는 한 달 동안 새 커밋이 없었습니다. 보류 프로젝트는 괜찮지만, 활성 프로젝트가 여기에 포함되면 다음 액션의 크기를 줄여야 합니다."
   ],
   "repos": [
     {
@@ -236,25 +236,24 @@
       "status": "active",
       "rank": 10,
       "progressTotal": 50,
-      "commits": 68,
-      "activeDays": 4,
-      "quietDays": 23,
-      "maxGap": 23,
-      "firstCommit": "2026-07-09T05:37:39Z",
+      "commits": 47,
+      "activeDays": 3,
+      "quietDays": 24,
+      "maxGap": 24,
+      "firstCommit": "2026-07-12T07:21:14Z",
       "lastCommit": "2026-07-15T10:06:57Z",
       "state": "surge",
       "topTheme": "feature",
       "themeLabel": "기능 구현",
       "themes": {
-        "stability": 14,
-        "verification": 11,
-        "docs": 15,
-        "maintenance": 7,
-        "feature": 17,
-        "experience": 4
+        "verification": 9,
+        "docs": 8,
+        "experience": 3,
+        "stability": 6,
+        "feature": 16,
+        "maintenance": 5
       },
       "byDate": {
-        "2026-07-09": 21,
         "2026-07-12": 40,
         "2026-07-13": 3,
         "2026-07-15": 4
@@ -291,75 +290,7 @@
           "url": "https://github.com/sgeniusk/story-x-beta/commit/5c148801b26c2b9ee458be63655498b261531679"
         }
       ],
-      "insight": "Story X은 68커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "displayName": "AI 컴퍼니 타이쿤",
-      "icon": "🏢",
-      "category": "game",
-      "categoryLabel": "게임",
-      "tool": "codex",
-      "toolLabel": "Codex",
-      "status": "active",
-      "rank": 9,
-      "progressTotal": 75,
-      "commits": 41,
-      "activeDays": 5,
-      "quietDays": 25,
-      "maxGap": 25,
-      "firstCommit": "2026-07-09T11:00:43Z",
-      "lastCommit": "2026-07-13T00:29:02Z",
-      "state": "surge",
-      "topTheme": "feature",
-      "themeLabel": "기능 구현",
-      "themes": {
-        "feature": 16,
-        "docs": 15,
-        "verification": 4,
-        "stability": 5,
-        "experience": 1
-      },
-      "byDate": {
-        "2026-07-09": 5,
-        "2026-07-10": 8,
-        "2026-07-11": 5,
-        "2026-07-12": 22,
-        "2026-07-13": 1
-      },
-      "latest": [
-        {
-          "sha": "c52da8a",
-          "message": "docs(feat-048): 다음 세션 핸드오프 갱신 — feat-047·048 done, 후보 정리",
-          "date": "2026-07-13T00:29:02Z",
-          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/c52da8af637821c751ac576164cb1b6dc0b42de0"
-        },
-        {
-          "sha": "3cdcc38",
-          "message": "docs(feat-048): 소품 타일 스케일 통일 done — progress/feature_list 갱신",
-          "date": "2026-07-12T15:12:25Z",
-          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/3cdcc380f5bb60787d39e9599c9b2939d4b94bf9"
-        },
-        {
-          "sha": "daa0e0b",
-          "message": "feat(feat-048): OfficeProps PropSpec Height→Depth, PlaceProp이 OfficePropScale 소비",
-          "date": "2026-07-12T15:08:12Z",
-          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/daa0e0b0ad4749e3b3f174c8d7e85be7676bcd72"
-        },
-        {
-          "sha": "48fc028",
-          "message": "test(feat-048): 씬키∪상점키 스케일 표 커버리지 fail-loud",
-          "date": "2026-07-12T15:08:12Z",
-          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/48fc028cf02f842b5987ef7b2062860befe7a0aa"
-        },
-        {
-          "sha": "e173878",
-          "message": "feat(feat-048): 상점 소품 균일 셀 AddPropThumb(상대크기·바닥정렬)",
-          "date": "2026-07-12T15:08:12Z",
-          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/e173878c961fa560e056e4d24f4c502e8e0324fc"
-        }
-      ],
-      "insight": "AI 컴퍼니 타이쿤은 41커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "Story X은 47커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "honbul",
@@ -372,23 +303,22 @@
       "status": "active",
       "rank": 18,
       "progressTotal": 39,
-      "commits": 38,
-      "activeDays": 4,
-      "quietDays": 25,
-      "maxGap": 25,
-      "firstCommit": "2026-07-09T23:25:55Z",
+      "commits": 37,
+      "activeDays": 3,
+      "quietDays": 26,
+      "maxGap": 26,
+      "firstCommit": "2026-07-10T02:04:06Z",
       "lastCommit": "2026-07-13T11:46:15Z",
       "state": "surge",
       "topTheme": "docs",
       "themeLabel": "문서화",
       "themes": {
-        "docs": 16,
         "feature": 15,
+        "docs": 15,
         "stability": 4,
         "verification": 3
       },
       "byDate": {
-        "2026-07-09": 1,
         "2026-07-10": 6,
         "2026-07-12": 22,
         "2026-07-13": 9
@@ -428,69 +358,71 @@
       "insight": "혼불 (Honbul)은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
     },
     {
-      "repo": "pliside-ops",
-      "displayName": "Loom · 유튜브 운영 시스템",
-      "icon": "📺",
-      "category": "content",
-      "categoryLabel": "콘텐츠",
+      "repo": "ai-company-tycoon-boundaryless",
+      "displayName": "AI 컴퍼니 타이쿤",
+      "icon": "🏢",
+      "category": "game",
+      "categoryLabel": "게임",
       "tool": "codex",
       "toolLabel": "Codex",
       "status": "active",
-      "rank": 2,
-      "progressTotal": 0,
-      "commits": 29,
-      "activeDays": 1,
-      "quietDays": 29,
-      "maxGap": 29,
-      "firstCommit": "2026-07-09T01:42:23Z",
-      "lastCommit": "2026-07-09T14:16:56Z",
+      "rank": 9,
+      "progressTotal": 75,
+      "commits": 36,
+      "activeDays": 4,
+      "quietDays": 26,
+      "maxGap": 26,
+      "firstCommit": "2026-07-10T01:44:11Z",
+      "lastCommit": "2026-07-13T00:29:02Z",
       "state": "surge",
-      "topTheme": "feature",
-      "themeLabel": "기능 구현",
+      "topTheme": "docs",
+      "themeLabel": "문서화",
       "themes": {
+        "docs": 14,
         "feature": 12,
-        "maintenance": 4,
-        "docs": 7,
-        "verification": 3,
-        "stability": 2,
+        "verification": 4,
+        "stability": 5,
         "experience": 1
       },
       "byDate": {
-        "2026-07-09": 29
+        "2026-07-10": 8,
+        "2026-07-11": 5,
+        "2026-07-12": 22,
+        "2026-07-13": 1
       },
       "latest": [
         {
-          "sha": "f127edf",
-          "message": "feat(m22): youtube sync — reconcile own-channel video status into the DB",
-          "date": "2026-07-09T14:16:56Z",
-          "url": "https://github.com/sgeniusk/pliside-ops/commit/f127edf5cb7f38b6d65b67d211c7317d0cc9b80c"
+          "sha": "c52da8a",
+          "message": "docs(feat-048): 다음 세션 핸드오프 갱신 — feat-047·048 done, 후보 정리",
+          "date": "2026-07-13T00:29:02Z",
+          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/c52da8af637821c751ac576164cb1b6dc0b42de0"
         },
         {
-          "sha": "cba157b",
-          "message": "feat(site): channel identity images + video links; hide studio nav",
-          "date": "2026-07-09T13:51:11Z",
-          "url": "https://github.com/sgeniusk/pliside-ops/commit/cba157bc994c12df5b792d56ea79125a69c01c2f"
+          "sha": "3cdcc38",
+          "message": "docs(feat-048): 소품 타일 스케일 통일 done — progress/feature_list 갱신",
+          "date": "2026-07-12T15:12:25Z",
+          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/3cdcc380f5bb60787d39e9599c9b2939d4b94bf9"
         },
         {
-          "sha": "1596433",
-          "message": "chore: gitignore .vercel link dirs anywhere",
-          "date": "2026-07-09T13:24:24Z",
-          "url": "https://github.com/sgeniusk/pliside-ops/commit/15964334e03f2ee04c4a816887e578d20d59e7f4"
+          "sha": "daa0e0b",
+          "message": "feat(feat-048): OfficeProps PropSpec Height→Depth, PlaceProp이 OfficePropScale 소비",
+          "date": "2026-07-12T15:08:12Z",
+          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/daa0e0b0ad4749e3b3f174c8d7e85be7676bcd72"
         },
         {
-          "sha": "42e2625",
-          "message": "Merge palm-breeze-day-03: M20 mastering, M22 YouTube API, M23 output expansion + DB unification",
-          "date": "2026-07-09T12:32:30Z",
-          "url": "https://github.com/sgeniusk/pliside-ops/commit/42e262512ec6a7ad886fc403167fa39b91deb8ff"
+          "sha": "48fc028",
+          "message": "test(feat-048): 씬키∪상점키 스케일 표 커버리지 fail-loud",
+          "date": "2026-07-12T15:08:12Z",
+          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/48fc028cf02f842b5987ef7b2062860befe7a0aa"
         },
         {
-          "sha": "6f00f3a",
-          "message": "fix(m23): surface silent skips — loop skipped tracks + per-short isolation",
-          "date": "2026-07-09T12:25:52Z",
-          "url": "https://github.com/sgeniusk/pliside-ops/commit/6f00f3a25c1d2249d59df8638609a8c625d5dc19"
+          "sha": "e173878",
+          "message": "feat(feat-048): 상점 소품 균일 셀 AddPropThumb(상대크기·바닥정렬)",
+          "date": "2026-07-12T15:08:12Z",
+          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/e173878c961fa560e056e4d24f4c502e8e0324fc"
         }
       ],
-      "insight": "Loom · 유튜브 운영 시스템은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
+      "insight": "AI 컴퍼니 타이쿤은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
     },
     {
       "repo": "chaekdam",
@@ -505,8 +437,8 @@
       "progressTotal": 19,
       "commits": 2,
       "activeDays": 1,
-      "quietDays": 24,
-      "maxGap": 24,
+      "quietDays": 25,
+      "maxGap": 25,
       "firstCommit": "2026-07-14T05:52:13Z",
       "lastCommit": "2026-07-14T05:53:08Z",
       "state": "sporadic",
@@ -533,6 +465,31 @@
         }
       ],
       "insight": "책담 (Chaekdam)은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
+    },
+    {
+      "repo": "pliside-ops",
+      "displayName": "Loom · 유튜브 운영 시스템",
+      "icon": "📺",
+      "category": "content",
+      "categoryLabel": "콘텐츠",
+      "tool": "codex",
+      "toolLabel": "Codex",
+      "status": "active",
+      "rank": 2,
+      "progressTotal": 0,
+      "commits": 0,
+      "activeDays": 0,
+      "quietDays": 30,
+      "maxGap": 30,
+      "firstCommit": null,
+      "lastCommit": null,
+      "state": "quiet",
+      "topTheme": "maintenance",
+      "themeLabel": "정리/운영",
+      "themes": {},
+      "byDate": {},
+      "latest": [],
+      "insight": "Loom · 유튜브 운영 시스템은 이번 30일 창에서 새 커밋이 보이지 않았습니다. 상태를 유지할 이유가 없다면 다음 세션에서 보류 사유나 재개 조건을 다시 적어두는 편이 좋습니다."
     },
     {
       "repo": "habit",
@@ -847,25 +804,24 @@
       "status": "active",
       "rank": 10,
       "progressTotal": 50,
-      "commits": 68,
-      "activeDays": 4,
-      "quietDays": 23,
-      "maxGap": 23,
-      "firstCommit": "2026-07-09T05:37:39Z",
+      "commits": 47,
+      "activeDays": 3,
+      "quietDays": 24,
+      "maxGap": 24,
+      "firstCommit": "2026-07-12T07:21:14Z",
       "lastCommit": "2026-07-15T10:06:57Z",
       "state": "surge",
       "topTheme": "feature",
       "themeLabel": "기능 구현",
       "themes": {
-        "stability": 14,
-        "verification": 11,
-        "docs": 15,
-        "maintenance": 7,
-        "feature": 17,
-        "experience": 4
+        "verification": 9,
+        "docs": 8,
+        "experience": 3,
+        "stability": 6,
+        "feature": 16,
+        "maintenance": 5
       },
       "byDate": {
-        "2026-07-09": 21,
         "2026-07-12": 40,
         "2026-07-13": 3,
         "2026-07-15": 4
@@ -902,75 +858,7 @@
           "url": "https://github.com/sgeniusk/story-x-beta/commit/5c148801b26c2b9ee458be63655498b261531679"
         }
       ],
-      "insight": "Story X은 68커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "displayName": "AI 컴퍼니 타이쿤",
-      "icon": "🏢",
-      "category": "game",
-      "categoryLabel": "게임",
-      "tool": "codex",
-      "toolLabel": "Codex",
-      "status": "active",
-      "rank": 9,
-      "progressTotal": 75,
-      "commits": 41,
-      "activeDays": 5,
-      "quietDays": 25,
-      "maxGap": 25,
-      "firstCommit": "2026-07-09T11:00:43Z",
-      "lastCommit": "2026-07-13T00:29:02Z",
-      "state": "surge",
-      "topTheme": "feature",
-      "themeLabel": "기능 구현",
-      "themes": {
-        "feature": 16,
-        "docs": 15,
-        "verification": 4,
-        "stability": 5,
-        "experience": 1
-      },
-      "byDate": {
-        "2026-07-09": 5,
-        "2026-07-10": 8,
-        "2026-07-11": 5,
-        "2026-07-12": 22,
-        "2026-07-13": 1
-      },
-      "latest": [
-        {
-          "sha": "c52da8a",
-          "message": "docs(feat-048): 다음 세션 핸드오프 갱신 — feat-047·048 done, 후보 정리",
-          "date": "2026-07-13T00:29:02Z",
-          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/c52da8af637821c751ac576164cb1b6dc0b42de0"
-        },
-        {
-          "sha": "3cdcc38",
-          "message": "docs(feat-048): 소품 타일 스케일 통일 done — progress/feature_list 갱신",
-          "date": "2026-07-12T15:12:25Z",
-          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/3cdcc380f5bb60787d39e9599c9b2939d4b94bf9"
-        },
-        {
-          "sha": "daa0e0b",
-          "message": "feat(feat-048): OfficeProps PropSpec Height→Depth, PlaceProp이 OfficePropScale 소비",
-          "date": "2026-07-12T15:08:12Z",
-          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/daa0e0b0ad4749e3b3f174c8d7e85be7676bcd72"
-        },
-        {
-          "sha": "48fc028",
-          "message": "test(feat-048): 씬키∪상점키 스케일 표 커버리지 fail-loud",
-          "date": "2026-07-12T15:08:12Z",
-          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/48fc028cf02f842b5987ef7b2062860befe7a0aa"
-        },
-        {
-          "sha": "e173878",
-          "message": "feat(feat-048): 상점 소품 균일 셀 AddPropThumb(상대크기·바닥정렬)",
-          "date": "2026-07-12T15:08:12Z",
-          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/e173878c961fa560e056e4d24f4c502e8e0324fc"
-        }
-      ],
-      "insight": "AI 컴퍼니 타이쿤은 41커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
+      "insight": "Story X은 47커밋으로 한 달의 중심 작업축이었습니다. 속도는 충분하니 다음 판단은 기능 추가보다 검증 산출물과 릴리스 기준을 고정하는 쪽이 좋습니다."
     },
     {
       "repo": "honbul",
@@ -983,23 +871,22 @@
       "status": "active",
       "rank": 18,
       "progressTotal": 39,
-      "commits": 38,
-      "activeDays": 4,
-      "quietDays": 25,
-      "maxGap": 25,
-      "firstCommit": "2026-07-09T23:25:55Z",
+      "commits": 37,
+      "activeDays": 3,
+      "quietDays": 26,
+      "maxGap": 26,
+      "firstCommit": "2026-07-10T02:04:06Z",
       "lastCommit": "2026-07-13T11:46:15Z",
       "state": "surge",
       "topTheme": "docs",
       "themeLabel": "문서화",
       "themes": {
-        "docs": 16,
         "feature": 15,
+        "docs": 15,
         "stability": 4,
         "verification": 3
       },
       "byDate": {
-        "2026-07-09": 1,
         "2026-07-10": 6,
         "2026-07-12": 22,
         "2026-07-13": 9
@@ -1039,69 +926,71 @@
       "insight": "혼불 (Honbul)은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
     },
     {
-      "repo": "pliside-ops",
-      "displayName": "Loom · 유튜브 운영 시스템",
-      "icon": "📺",
-      "category": "content",
-      "categoryLabel": "콘텐츠",
+      "repo": "ai-company-tycoon-boundaryless",
+      "displayName": "AI 컴퍼니 타이쿤",
+      "icon": "🏢",
+      "category": "game",
+      "categoryLabel": "게임",
       "tool": "codex",
       "toolLabel": "Codex",
       "status": "active",
-      "rank": 2,
-      "progressTotal": 0,
-      "commits": 29,
-      "activeDays": 1,
-      "quietDays": 29,
-      "maxGap": 29,
-      "firstCommit": "2026-07-09T01:42:23Z",
-      "lastCommit": "2026-07-09T14:16:56Z",
+      "rank": 9,
+      "progressTotal": 75,
+      "commits": 36,
+      "activeDays": 4,
+      "quietDays": 26,
+      "maxGap": 26,
+      "firstCommit": "2026-07-10T01:44:11Z",
+      "lastCommit": "2026-07-13T00:29:02Z",
       "state": "surge",
-      "topTheme": "feature",
-      "themeLabel": "기능 구현",
+      "topTheme": "docs",
+      "themeLabel": "문서화",
       "themes": {
+        "docs": 14,
         "feature": 12,
-        "maintenance": 4,
-        "docs": 7,
-        "verification": 3,
-        "stability": 2,
+        "verification": 4,
+        "stability": 5,
         "experience": 1
       },
       "byDate": {
-        "2026-07-09": 29
+        "2026-07-10": 8,
+        "2026-07-11": 5,
+        "2026-07-12": 22,
+        "2026-07-13": 1
       },
       "latest": [
         {
-          "sha": "f127edf",
-          "message": "feat(m22): youtube sync — reconcile own-channel video status into the DB",
-          "date": "2026-07-09T14:16:56Z",
-          "url": "https://github.com/sgeniusk/pliside-ops/commit/f127edf5cb7f38b6d65b67d211c7317d0cc9b80c"
+          "sha": "c52da8a",
+          "message": "docs(feat-048): 다음 세션 핸드오프 갱신 — feat-047·048 done, 후보 정리",
+          "date": "2026-07-13T00:29:02Z",
+          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/c52da8af637821c751ac576164cb1b6dc0b42de0"
         },
         {
-          "sha": "cba157b",
-          "message": "feat(site): channel identity images + video links; hide studio nav",
-          "date": "2026-07-09T13:51:11Z",
-          "url": "https://github.com/sgeniusk/pliside-ops/commit/cba157bc994c12df5b792d56ea79125a69c01c2f"
+          "sha": "3cdcc38",
+          "message": "docs(feat-048): 소품 타일 스케일 통일 done — progress/feature_list 갱신",
+          "date": "2026-07-12T15:12:25Z",
+          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/3cdcc380f5bb60787d39e9599c9b2939d4b94bf9"
         },
         {
-          "sha": "1596433",
-          "message": "chore: gitignore .vercel link dirs anywhere",
-          "date": "2026-07-09T13:24:24Z",
-          "url": "https://github.com/sgeniusk/pliside-ops/commit/15964334e03f2ee04c4a816887e578d20d59e7f4"
+          "sha": "daa0e0b",
+          "message": "feat(feat-048): OfficeProps PropSpec Height→Depth, PlaceProp이 OfficePropScale 소비",
+          "date": "2026-07-12T15:08:12Z",
+          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/daa0e0b0ad4749e3b3f174c8d7e85be7676bcd72"
         },
         {
-          "sha": "42e2625",
-          "message": "Merge palm-breeze-day-03: M20 mastering, M22 YouTube API, M23 output expansion + DB unification",
-          "date": "2026-07-09T12:32:30Z",
-          "url": "https://github.com/sgeniusk/pliside-ops/commit/42e262512ec6a7ad886fc403167fa39b91deb8ff"
+          "sha": "48fc028",
+          "message": "test(feat-048): 씬키∪상점키 스케일 표 커버리지 fail-loud",
+          "date": "2026-07-12T15:08:12Z",
+          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/48fc028cf02f842b5987ef7b2062860befe7a0aa"
         },
         {
-          "sha": "6f00f3a",
-          "message": "fix(m23): surface silent skips — loop skipped tracks + per-short isolation",
-          "date": "2026-07-09T12:25:52Z",
-          "url": "https://github.com/sgeniusk/pliside-ops/commit/6f00f3a25c1d2249d59df8638609a8c625d5dc19"
+          "sha": "e173878",
+          "message": "feat(feat-048): 상점 소품 균일 셀 AddPropThumb(상대크기·바닥정렬)",
+          "date": "2026-07-12T15:08:12Z",
+          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/e173878c961fa560e056e4d24f4c502e8e0324fc"
         }
       ],
-      "insight": "Loom · 유튜브 운영 시스템은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
+      "insight": "AI 컴퍼니 타이쿤은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
     },
     {
       "repo": "chaekdam",
@@ -1116,8 +1005,8 @@
       "progressTotal": 19,
       "commits": 2,
       "activeDays": 1,
-      "quietDays": 24,
-      "maxGap": 24,
+      "quietDays": 25,
+      "maxGap": 25,
       "firstCommit": "2026-07-14T05:52:13Z",
       "lastCommit": "2026-07-14T05:53:08Z",
       "state": "sporadic",
@@ -1146,6 +1035,31 @@
       "insight": "책담 (Chaekdam)은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
     },
     {
+      "repo": "pliside-ops",
+      "displayName": "Loom · 유튜브 운영 시스템",
+      "icon": "📺",
+      "category": "content",
+      "categoryLabel": "콘텐츠",
+      "tool": "codex",
+      "toolLabel": "Codex",
+      "status": "active",
+      "rank": 2,
+      "progressTotal": 0,
+      "commits": 0,
+      "activeDays": 0,
+      "quietDays": 30,
+      "maxGap": 30,
+      "firstCommit": null,
+      "lastCommit": null,
+      "state": "quiet",
+      "topTheme": "maintenance",
+      "themeLabel": "정리/운영",
+      "themes": {},
+      "byDate": {},
+      "latest": [],
+      "insight": "Loom · 유튜브 운영 시스템은 이번 30일 창에서 새 커밋이 보이지 않았습니다. 상태를 유지할 이유가 없다면 다음 세션에서 보류 사유나 재개 조건을 다시 적어두는 편이 좋습니다."
+    },
+    {
       "repo": "habit",
       "displayName": "Formi (포미)",
       "icon": "🎯",
@@ -1172,6 +1086,31 @@
     }
   ],
   "quietList": [
+    {
+      "repo": "pliside-ops",
+      "displayName": "Loom · 유튜브 운영 시스템",
+      "icon": "📺",
+      "category": "content",
+      "categoryLabel": "콘텐츠",
+      "tool": "codex",
+      "toolLabel": "Codex",
+      "status": "active",
+      "rank": 2,
+      "progressTotal": 0,
+      "commits": 0,
+      "activeDays": 0,
+      "quietDays": 30,
+      "maxGap": 30,
+      "firstCommit": null,
+      "lastCommit": null,
+      "state": "quiet",
+      "topTheme": "maintenance",
+      "themeLabel": "정리/운영",
+      "themes": {},
+      "byDate": {},
+      "latest": [],
+      "insight": "Loom · 유튜브 운영 시스템은 이번 30일 창에서 새 커밋이 보이지 않았습니다. 상태를 유지할 이유가 없다면 다음 세션에서 보류 사유나 재개 조건을 다시 적어두는 편이 좋습니다."
+    },
     {
       "repo": "habit",
       "displayName": "Formi (포미)",
@@ -1296,31 +1235,6 @@
       "byDate": {},
       "latest": [],
       "insight": "군령: 책략의 전장 (Warlord's Command)은 이번 30일 창에서 새 커밋이 보이지 않았습니다. 상태를 유지할 이유가 없다면 다음 세션에서 보류 사유나 재개 조건을 다시 적어두는 편이 좋습니다."
-    },
-    {
-      "repo": "ai-builder-school",
-      "displayName": "AI Builder School",
-      "icon": "🏫",
-      "category": "content",
-      "categoryLabel": "콘텐츠",
-      "tool": "claude",
-      "toolLabel": "Claude",
-      "status": "active",
-      "rank": 8,
-      "progressTotal": 45,
-      "commits": 0,
-      "activeDays": 0,
-      "quietDays": 30,
-      "maxGap": 30,
-      "firstCommit": null,
-      "lastCommit": null,
-      "state": "quiet",
-      "topTheme": "maintenance",
-      "themeLabel": "정리/운영",
-      "themes": {},
-      "byDate": {},
-      "latest": [],
-      "insight": "AI Builder School은 이번 30일 창에서 새 커밋이 보이지 않았습니다. 상태를 유지할 이유가 없다면 다음 세션에서 보류 사유나 재개 조건을 다시 적어두는 편이 좋습니다."
     }
   ],
   "errors": []
