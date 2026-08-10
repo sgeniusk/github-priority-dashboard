@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-08-09",
+  "generatedAt": "2026-08-10",
   "logs": {
     "samsu": [
       {
@@ -280,6 +280,11 @@
         "date": "2026-08-09",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-08-10",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -476,6 +481,11 @@
       },
       {
         "date": "2026-08-09",
+        "kind": "progress",
+        "text": "완성도 65%"
+      },
+      {
+        "date": "2026-08-10",
         "kind": "progress",
         "text": "완성도 65%"
       }
@@ -838,6 +848,11 @@
         "date": "2026-08-09",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-10",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
@@ -1150,6 +1165,11 @@
         "date": "2026-08-09",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-08-10",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
@@ -1448,6 +1468,11 @@
       },
       {
         "date": "2026-08-09",
+        "kind": "progress",
+        "text": "완성도 55%"
+      },
+      {
+        "date": "2026-08-10",
         "kind": "progress",
         "text": "완성도 55%"
       }
@@ -1774,15 +1799,14 @@
         "date": "2026-08-09",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-08-10",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-06-01T22:21:01Z",
-        "kind": "commit",
-        "text": "Ship the v1.0-beta preview and write the release report",
-        "sha": "397ba67"
-      },
       {
         "date": "2026-06-01T22:33:48Z",
         "kind": "commit",
@@ -2225,15 +2249,14 @@
         "date": "2026-08-09",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-08-10",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-05-31T14:19:21Z",
-        "kind": "commit",
-        "text": "Merge: A4 반론 무결성 + 연구 윤리 게이트",
-        "sha": "3c8ba7a"
-      },
       {
         "date": "2026-05-31T14:19:21Z",
         "kind": "commit",
@@ -2676,6 +2699,11 @@
         "date": "2026-08-09",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-08-10",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
@@ -2860,6 +2888,11 @@
       },
       {
         "date": "2026-08-09",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-10",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -3078,6 +3111,11 @@
         "date": "2026-08-09",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-10",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
@@ -3294,6 +3332,11 @@
         "date": "2026-08-09",
         "kind": "progress",
         "text": "완성도 56%"
+      },
+      {
+        "date": "2026-08-10",
+        "kind": "progress",
+        "text": "완성도 56%"
       }
     ],
     "design-system-school": [
@@ -3508,6 +3551,11 @@
       },
       {
         "date": "2026-08-09",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-10",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -3906,6 +3954,11 @@
         "date": "2026-08-09",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-08-10",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
@@ -4080,15 +4133,14 @@
         "date": "2026-08-09",
         "kind": "progress",
         "text": "완성도 7%"
+      },
+      {
+        "date": "2026-08-10",
+        "kind": "progress",
+        "text": "완성도 7%"
       }
     ],
     "chaekdam": [
-      {
-        "date": "2026-05-29T07:08:41Z",
-        "kind": "commit",
-        "text": "feat: Phase 4 — 책 + 알라딘 (서재)",
-        "sha": "f1d666d"
-      },
       {
         "date": "2026-05-29T15:47:05Z",
         "kind": "commit",
@@ -4530,15 +4582,14 @@
         "date": "2026-08-09",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-08-10",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-04T04:06:22Z",
-        "kind": "commit",
-        "text": "베타 초반 블록 깨기 밀도를 진행 계약으로 고정한다",
-        "sha": "14560bc"
-      },
       {
         "date": "2026-06-04T04:21:13Z",
         "kind": "commit",
@@ -4981,6 +5032,11 @@
       },
       {
         "date": "2026-08-09",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-08-10",
         "kind": "progress",
         "text": "완성도 39%"
       }

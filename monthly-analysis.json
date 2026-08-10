@@ -1,27 +1,23 @@
 {
   "_comment": "최근 30일 GitHub 커밋 관찰 분석. scripts/build-monthly-analysis.mjs가 생성하며 monthly-analysis.html의 FALLBACK_ANALYSIS와 동기화한다.",
-  "generatedAt": "2026-08-09",
+  "generatedAt": "2026-08-10",
   "owner": "sgeniusk",
   "window": {
-    "start": "2026-07-11",
-    "end": "2026-08-09",
+    "start": "2026-07-12",
+    "end": "2026-08-10",
     "days": 30
   },
   "summary": {
     "totalRepos": 17,
     "activeRepos": 4,
     "quietRepos": 13,
-    "totalCommits": 109,
-    "activeDays": 5,
-    "avgCommitsPerActiveRepo": 27.3,
+    "totalCommits": 104,
+    "activeDays": 4,
+    "avgCommitsPerActiveRepo": 26,
     "leaderRepo": "story-x-beta",
     "leaderName": "Story X"
   },
   "daily": [
-    {
-      "date": "2026-07-11",
-      "commits": 5
-    },
     {
       "date": "2026-07-12",
       "commits": 84
@@ -137,6 +133,10 @@
     {
       "date": "2026-08-09",
       "commits": 0
+    },
+    {
+      "date": "2026-08-10",
+      "commits": 0
     }
   ],
   "breakdowns": {
@@ -144,7 +144,7 @@
       {
         "id": "game",
         "label": "게임",
-        "commits": 60,
+        "commits": 55,
         "repos": 5,
         "activeRepos": 2
       },
@@ -167,7 +167,7 @@
       {
         "id": "codex",
         "label": "Codex",
-        "commits": 60,
+        "commits": 55,
         "repos": 6,
         "activeRepos": 2
       },
@@ -190,12 +190,12 @@
       {
         "id": "feature",
         "label": "기능 구현",
-        "commits": 39
+        "commits": 36
       },
       {
         "id": "docs",
         "label": "문서화",
-        "commits": 33
+        "commits": 31
       },
       {
         "id": "verification",
@@ -238,8 +238,8 @@
       "progressTotal": 50,
       "commits": 47,
       "activeDays": 3,
-      "quietDays": 25,
-      "maxGap": 25,
+      "quietDays": 26,
+      "maxGap": 26,
       "firstCommit": "2026-07-12T07:21:14Z",
       "lastCommit": "2026-07-15T10:06:57Z",
       "state": "surge",
@@ -305,8 +305,8 @@
       "progressTotal": 39,
       "commits": 32,
       "activeDays": 3,
-      "quietDays": 27,
-      "maxGap": 27,
+      "quietDays": 28,
+      "maxGap": 28,
       "firstCommit": "2026-07-10T15:51:42Z",
       "lastCommit": "2026-07-13T11:46:15Z",
       "state": "surge",
@@ -368,24 +368,23 @@
       "status": "active",
       "rank": 9,
       "progressTotal": 75,
-      "commits": 28,
-      "activeDays": 3,
-      "quietDays": 27,
-      "maxGap": 27,
-      "firstCommit": "2026-07-11T00:45:05Z",
+      "commits": 23,
+      "activeDays": 2,
+      "quietDays": 28,
+      "maxGap": 28,
+      "firstCommit": "2026-07-12T05:45:24Z",
       "lastCommit": "2026-07-13T00:29:02Z",
-      "state": "surge",
+      "state": "steady",
       "topTheme": "docs",
       "themeLabel": "문서화",
       "themes": {
-        "feature": 10,
-        "docs": 10,
         "experience": 1,
+        "feature": 7,
+        "docs": 8,
         "stability": 4,
         "verification": 3
       },
       "byDate": {
-        "2026-07-11": 5,
         "2026-07-12": 22,
         "2026-07-13": 1
       },
@@ -436,8 +435,8 @@
       "progressTotal": 19,
       "commits": 2,
       "activeDays": 1,
-      "quietDays": 26,
-      "maxGap": 26,
+      "quietDays": 27,
+      "maxGap": 27,
       "firstCommit": "2026-07-14T05:52:13Z",
       "lastCommit": "2026-07-14T05:53:08Z",
       "state": "sporadic",
@@ -805,8 +804,8 @@
       "progressTotal": 50,
       "commits": 47,
       "activeDays": 3,
-      "quietDays": 25,
-      "maxGap": 25,
+      "quietDays": 26,
+      "maxGap": 26,
       "firstCommit": "2026-07-12T07:21:14Z",
       "lastCommit": "2026-07-15T10:06:57Z",
       "state": "surge",
@@ -872,8 +871,8 @@
       "progressTotal": 39,
       "commits": 32,
       "activeDays": 3,
-      "quietDays": 27,
-      "maxGap": 27,
+      "quietDays": 28,
+      "maxGap": 28,
       "firstCommit": "2026-07-10T15:51:42Z",
       "lastCommit": "2026-07-13T11:46:15Z",
       "state": "surge",
@@ -935,24 +934,23 @@
       "status": "active",
       "rank": 9,
       "progressTotal": 75,
-      "commits": 28,
-      "activeDays": 3,
-      "quietDays": 27,
-      "maxGap": 27,
-      "firstCommit": "2026-07-11T00:45:05Z",
+      "commits": 23,
+      "activeDays": 2,
+      "quietDays": 28,
+      "maxGap": 28,
+      "firstCommit": "2026-07-12T05:45:24Z",
       "lastCommit": "2026-07-13T00:29:02Z",
-      "state": "surge",
+      "state": "steady",
       "topTheme": "docs",
       "themeLabel": "문서화",
       "themes": {
-        "feature": 10,
-        "docs": 10,
         "experience": 1,
+        "feature": 7,
+        "docs": 8,
         "stability": 4,
         "verification": 3
       },
       "byDate": {
-        "2026-07-11": 5,
         "2026-07-12": 22,
         "2026-07-13": 1
       },
@@ -1003,8 +1001,8 @@
       "progressTotal": 19,
       "commits": 2,
       "activeDays": 1,
-      "quietDays": 26,
-      "maxGap": 26,
+      "quietDays": 27,
+      "maxGap": 27,
       "firstCommit": "2026-07-14T05:52:13Z",
       "lastCommit": "2026-07-14T05:53:08Z",
       "state": "sporadic",
