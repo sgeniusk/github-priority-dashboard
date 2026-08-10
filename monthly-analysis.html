@@ -223,11 +223,11 @@ const FALLBACK_ANALYSIS = {
   },
   "summary": {
     "totalRepos": 17,
-    "activeRepos": 4,
-    "quietRepos": 13,
-    "totalCommits": 104,
-    "activeDays": 4,
-    "avgCommitsPerActiveRepo": 26,
+    "activeRepos": 5,
+    "quietRepos": 12,
+    "totalCommits": 108,
+    "activeDays": 5,
+    "avgCommitsPerActiveRepo": 21.6,
     "leaderRepo": "story-x-beta",
     "leaderName": "Story X"
   },
@@ -350,7 +350,7 @@ const FALLBACK_ANALYSIS = {
     },
     {
       "date": "2026-08-10",
-      "commits": 0
+      "commits": 4
     }
   ],
   "breakdowns": {
@@ -365,9 +365,9 @@ const FALLBACK_ANALYSIS = {
       {
         "id": "app",
         "label": "앱",
-        "commits": 49,
+        "commits": 53,
         "repos": 8,
-        "activeRepos": 2
+        "activeRepos": 3
       },
       {
         "id": "content",
@@ -388,9 +388,9 @@ const FALLBACK_ANALYSIS = {
       {
         "id": "claude",
         "label": "Claude",
-        "commits": 49,
+        "commits": 53,
         "repos": 10,
-        "activeRepos": 2
+        "activeRepos": 3
       },
       {
         "id": "hybrid",
@@ -409,7 +409,7 @@ const FALLBACK_ANALYSIS = {
       {
         "id": "docs",
         "label": "문서화",
-        "commits": 31
+        "commits": 32
       },
       {
         "id": "verification",
@@ -422,21 +422,21 @@ const FALLBACK_ANALYSIS = {
         "commits": 13
       },
       {
+        "id": "experience",
+        "label": "경험/화면",
+        "commits": 7
+      },
+      {
         "id": "maintenance",
         "label": "정리/운영",
         "commits": 5
-      },
-      {
-        "id": "experience",
-        "label": "경험/화면",
-        "commits": 4
       }
     ]
   },
   "diagnosis": [
     "이번 30일의 중심은 Story X입니다. 47커밋과 3일의 활동일이 관찰되어, 가장 많은 실제 손길을 받았습니다.",
-    "전체 17개 중 4개 리포만 움직였습니다. 지금은 확장보다 재개 조건을 좁히는 운영 판단이 더 중요합니다.",
-    "13개 리포는 한 달 동안 새 커밋이 없었습니다. 보류 프로젝트는 괜찮지만, 활성 프로젝트가 여기에 포함되면 다음 액션의 크기를 줄여야 합니다."
+    "전체 17개 중 5개 리포만 움직였습니다. 지금은 확장보다 재개 조건을 좁히는 운영 판단이 더 중요합니다.",
+    "12개 리포는 한 달 동안 새 커밋이 없었습니다. 보류 프로젝트는 괜찮지만, 활성 프로젝트가 여기에 포함되면 다음 액션의 크기를 줄여야 합니다."
   ],
   "repos": [
     {
@@ -635,6 +635,61 @@ const FALLBACK_ANALYSIS = {
         }
       ],
       "insight": "AI 컴퍼니 타이쿤은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "displayName": "해치의 데일리 브리핑",
+      "icon": "📰",
+      "category": "app",
+      "categoryLabel": "앱",
+      "tool": "claude",
+      "toolLabel": "Claude",
+      "status": "active",
+      "rank": 15,
+      "progressTotal": 52,
+      "commits": 4,
+      "activeDays": 1,
+      "quietDays": 0,
+      "maxGap": 29,
+      "firstCommit": "2026-08-10T07:45:47Z",
+      "lastCommit": "2026-08-10T07:57:31Z",
+      "state": "steady",
+      "topTheme": "experience",
+      "themeLabel": "경험/화면",
+      "themes": {
+        "docs": 1,
+        "experience": 3
+      },
+      "byDate": {
+        "2026-08-10": 4
+      },
+      "latest": [
+        {
+          "sha": "163e9c4",
+          "message": "Finalize August 10 build note",
+          "date": "2026-08-10T07:57:31Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/163e9c47e5e388d6023010f5c5ccfb4de41bda13"
+        },
+        {
+          "sha": "33779ba",
+          "message": "Update August 10 build note status",
+          "date": "2026-08-10T07:55:57Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/33779bad49bd928612723d8140d489304045029b"
+        },
+        {
+          "sha": "7e65f02",
+          "message": "Add August 10 build note",
+          "date": "2026-08-10T07:53:12Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/7e65f0272f5c8666f5947e126ae77bf6f30e230e"
+        },
+        {
+          "sha": "9742f34",
+          "message": "Add August 10 daily briefing",
+          "date": "2026-08-10T07:45:47Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/9742f348d6c1e3cd1842d596a4f394a145456442"
+        }
+      ],
+      "insight": "해치의 데일리 브리핑은 최근까지 손이 닿았습니다. 커밋 수는 과열권은 아니지만 이어서 처리할 맥락이 살아 있으므로 다음 세션 진입 비용이 낮습니다."
     },
     {
       "repo": "chaekdam",
@@ -954,31 +1009,6 @@ const FALLBACK_ANALYSIS = {
       "insight": "AI 디자인 시스템 스쿨은 이번 30일 창에서 새 커밋이 보이지 않았습니다. 상태를 유지할 이유가 없다면 다음 세션에서 보류 사유나 재개 조건을 다시 적어두는 편이 좋습니다."
     },
     {
-      "repo": "cmds-daily-briefing",
-      "displayName": "해치의 데일리 브리핑",
-      "icon": "📰",
-      "category": "app",
-      "categoryLabel": "앱",
-      "tool": "claude",
-      "toolLabel": "Claude",
-      "status": "active",
-      "rank": 15,
-      "progressTotal": 52,
-      "commits": 0,
-      "activeDays": 0,
-      "quietDays": 30,
-      "maxGap": 30,
-      "firstCommit": null,
-      "lastCommit": null,
-      "state": "quiet",
-      "topTheme": "maintenance",
-      "themeLabel": "정리/운영",
-      "themes": {},
-      "byDate": {},
-      "latest": [],
-      "insight": "해치의 데일리 브리핑은 이번 30일 창에서 새 커밋이 보이지 않았습니다. 상태를 유지할 이유가 없다면 다음 세션에서 보류 사유나 재개 조건을 다시 적어두는 편이 좋습니다."
-    },
-    {
       "repo": "Timeer",
       "displayName": "Timeer",
       "icon": "⏰",
@@ -1203,6 +1233,61 @@ const FALLBACK_ANALYSIS = {
       "insight": "AI 컴퍼니 타이쿤은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
     },
     {
+      "repo": "cmds-daily-briefing",
+      "displayName": "해치의 데일리 브리핑",
+      "icon": "📰",
+      "category": "app",
+      "categoryLabel": "앱",
+      "tool": "claude",
+      "toolLabel": "Claude",
+      "status": "active",
+      "rank": 15,
+      "progressTotal": 52,
+      "commits": 4,
+      "activeDays": 1,
+      "quietDays": 0,
+      "maxGap": 29,
+      "firstCommit": "2026-08-10T07:45:47Z",
+      "lastCommit": "2026-08-10T07:57:31Z",
+      "state": "steady",
+      "topTheme": "experience",
+      "themeLabel": "경험/화면",
+      "themes": {
+        "docs": 1,
+        "experience": 3
+      },
+      "byDate": {
+        "2026-08-10": 4
+      },
+      "latest": [
+        {
+          "sha": "163e9c4",
+          "message": "Finalize August 10 build note",
+          "date": "2026-08-10T07:57:31Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/163e9c47e5e388d6023010f5c5ccfb4de41bda13"
+        },
+        {
+          "sha": "33779ba",
+          "message": "Update August 10 build note status",
+          "date": "2026-08-10T07:55:57Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/33779bad49bd928612723d8140d489304045029b"
+        },
+        {
+          "sha": "7e65f02",
+          "message": "Add August 10 build note",
+          "date": "2026-08-10T07:53:12Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/7e65f0272f5c8666f5947e126ae77bf6f30e230e"
+        },
+        {
+          "sha": "9742f34",
+          "message": "Add August 10 daily briefing",
+          "date": "2026-08-10T07:45:47Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/9742f348d6c1e3cd1842d596a4f394a145456442"
+        }
+      ],
+      "insight": "해치의 데일리 브리핑은 최근까지 손이 닿았습니다. 커밋 수는 과열권은 아니지만 이어서 처리할 맥락이 살아 있으므로 다음 세션 진입 비용이 낮습니다."
+    },
+    {
       "repo": "chaekdam",
       "displayName": "책담 (Chaekdam)",
       "icon": "📖",
@@ -1268,31 +1353,6 @@ const FALLBACK_ANALYSIS = {
       "byDate": {},
       "latest": [],
       "insight": "Loom · 유튜브 운영 시스템은 이번 30일 창에서 새 커밋이 보이지 않았습니다. 상태를 유지할 이유가 없다면 다음 세션에서 보류 사유나 재개 조건을 다시 적어두는 편이 좋습니다."
-    },
-    {
-      "repo": "habit",
-      "displayName": "Formi (포미)",
-      "icon": "🎯",
-      "category": "app",
-      "categoryLabel": "앱",
-      "tool": "codex",
-      "toolLabel": "Codex",
-      "status": "active",
-      "rank": 3,
-      "progressTotal": 70,
-      "commits": 0,
-      "activeDays": 0,
-      "quietDays": 30,
-      "maxGap": 30,
-      "firstCommit": null,
-      "lastCommit": null,
-      "state": "quiet",
-      "topTheme": "maintenance",
-      "themeLabel": "정리/운영",
-      "themes": {},
-      "byDate": {},
-      "latest": [],
-      "insight": "Formi (포미)은 이번 30일 창에서 새 커밋이 보이지 않았습니다. 상태를 유지할 이유가 없다면 다음 세션에서 보류 사유나 재개 조건을 다시 적어두는 편이 좋습니다."
     }
   ],
   "quietList": [

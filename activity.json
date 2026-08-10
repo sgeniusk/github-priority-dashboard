@@ -3,6 +3,30 @@
   "asOf": "2026-08-10",
   "commits": [
     {
+      "repo": "cmds-daily-briefing",
+      "sha": "163e9c4",
+      "message": "Finalize August 10 build note",
+      "date": "2026-08-10T07:57:31Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "33779ba",
+      "message": "Update August 10 build note status",
+      "date": "2026-08-10T07:55:57Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "7e65f02",
+      "message": "Add August 10 build note",
+      "date": "2026-08-10T07:53:12Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "9742f34",
+      "message": "Add August 10 daily briefing",
+      "date": "2026-08-10T07:45:47Z"
+    },
+    {
       "repo": "story-x-beta",
       "sha": "0df4cfa",
       "message": "Merge pull request #38 from sgeniusk/codex/p0a-condense-job-polling",
@@ -265,30 +289,6 @@
       "sha": "aff8cf6",
       "message": "Add June 17 build note",
       "date": "2026-06-17T13:49:03Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "636ba26",
-      "message": "Add June 17 console briefing",
-      "date": "2026-06-16T23:34:15Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "fa60ae2",
-      "message": "Add 2026-06-16 build note",
-      "date": "2026-06-16T13:49:15Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "4e5a998",
-      "message": "Add 2026-06-16 research briefing",
-      "date": "2026-06-15T23:34:22Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "78ad32a",
-      "message": "Add June 15 build note",
-      "date": "2026-06-15T13:49:10Z"
     },
     {
       "repo": "sam-defender-logue",
