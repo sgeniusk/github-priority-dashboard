@@ -1,7 +1,19 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-08-11",
+  "asOf": "2026-08-12",
   "commits": [
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "04ea7b7",
+      "message": "Add 2026-08-12 console briefing",
+      "date": "2026-08-11T23:34:24Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "6cf54c0",
+      "message": "Add August 11 build note",
+      "date": "2026-08-11T13:48:33Z"
+    },
     {
       "repo": "cmds-daily-briefing",
       "sha": "cd05c61",
@@ -241,18 +253,6 @@
       "sha": "1fb4af3",
       "message": "feat(m23b): shorts auto CLI — hook + art + props + render command (dry-run)",
       "date": "2026-07-09T12:05:07Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "beef9f0",
-      "message": "Add 2026-07-06 daily briefing",
-      "date": "2026-07-05T23:34:27Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "7d5baa2",
-      "message": "Add July 5 build note",
-      "date": "2026-07-05T13:49:36Z"
     },
     {
       "repo": "chaekdam",

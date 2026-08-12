@@ -214,28 +214,24 @@ footer{margin-top:70px;padding-top:22px;border-top:1px solid var(--line);color:v
 <script>
 const FALLBACK_ANALYSIS = {
   "_comment": "최근 30일 GitHub 커밋 관찰 분석. scripts/build-monthly-analysis.mjs가 생성하며 monthly-analysis.html의 FALLBACK_ANALYSIS와 동기화한다.",
-  "generatedAt": "2026-08-11",
+  "generatedAt": "2026-08-12",
   "owner": "sgeniusk",
   "window": {
-    "start": "2026-07-13",
-    "end": "2026-08-11",
+    "start": "2026-07-14",
+    "end": "2026-08-12",
     "days": 30
   },
   "summary": {
     "totalRepos": 17,
-    "activeRepos": 5,
-    "quietRepos": 12,
-    "totalCommits": 25,
+    "activeRepos": 3,
+    "quietRepos": 14,
+    "totalCommits": 14,
     "activeDays": 4,
-    "avgCommitsPerActiveRepo": 5,
-    "leaderRepo": "honbul",
-    "leaderName": "혼불 (Honbul)"
+    "avgCommitsPerActiveRepo": 4.7,
+    "leaderRepo": "cmds-daily-briefing",
+    "leaderName": "해치의 데일리 브리핑"
   },
   "daily": [
-    {
-      "date": "2026-07-13",
-      "commits": 13
-    },
     {
       "date": "2026-07-14",
       "commits": 2
@@ -350,6 +346,10 @@ const FALLBACK_ANALYSIS = {
     },
     {
       "date": "2026-08-11",
+      "commits": 2
+    },
+    {
+      "date": "2026-08-12",
       "commits": 0
     }
   ],
@@ -358,16 +358,16 @@ const FALLBACK_ANALYSIS = {
       {
         "id": "app",
         "label": "앱",
-        "commits": 15,
+        "commits": 14,
         "repos": 8,
         "activeRepos": 3
       },
       {
         "id": "game",
         "label": "게임",
-        "commits": 10,
+        "commits": 0,
         "repos": 5,
-        "activeRepos": 2
+        "activeRepos": 0
       },
       {
         "id": "content",
@@ -381,16 +381,16 @@ const FALLBACK_ANALYSIS = {
       {
         "id": "claude",
         "label": "Claude",
-        "commits": 15,
+        "commits": 14,
         "repos": 10,
         "activeRepos": 3
       },
       {
         "id": "codex",
         "label": "Codex",
-        "commits": 10,
+        "commits": 0,
         "repos": 6,
-        "activeRepos": 2
+        "activeRepos": 0
       },
       {
         "id": "hybrid",
@@ -402,19 +402,14 @@ const FALLBACK_ANALYSIS = {
     ],
     "themes": [
       {
-        "id": "docs",
-        "label": "문서화",
-        "commits": 9
-      },
-      {
-        "id": "feature",
-        "label": "기능 구현",
-        "commits": 8
-      },
-      {
         "id": "experience",
         "label": "경험/화면",
-        "commits": 4
+        "commits": 5
+      },
+      {
+        "id": "docs",
+        "label": "문서화",
+        "commits": 5
       },
       {
         "id": "maintenance",
@@ -422,78 +417,79 @@ const FALLBACK_ANALYSIS = {
         "commits": 3
       },
       {
-        "id": "verification",
-        "label": "검증",
+        "id": "feature",
+        "label": "기능 구현",
         "commits": 1
       }
     ]
   },
   "diagnosis": [
-    "이번 30일의 중심은 혼불 (Honbul)입니다. 9커밋과 1일의 활동일이 관찰되어, 가장 많은 실제 손길을 받았습니다.",
-    "전체 17개 중 5개 리포만 움직였습니다. 지금은 확장보다 재개 조건을 좁히는 운영 판단이 더 중요합니다.",
-    "12개 리포는 한 달 동안 새 커밋이 없었습니다. 보류 프로젝트는 괜찮지만, 활성 프로젝트가 여기에 포함되면 다음 액션의 크기를 줄여야 합니다."
+    "이번 30일의 중심은 해치의 데일리 브리핑입니다. 8커밋과 2일의 활동일이 관찰되어, 가장 많은 실제 손길을 받았습니다.",
+    "전체 17개 중 3개 리포만 움직였습니다. 지금은 확장보다 재개 조건을 좁히는 운영 판단이 더 중요합니다.",
+    "14개 리포는 한 달 동안 새 커밋이 없었습니다. 보류 프로젝트는 괜찮지만, 활성 프로젝트가 여기에 포함되면 다음 액션의 크기를 줄여야 합니다."
   ],
   "repos": [
     {
-      "repo": "honbul",
-      "displayName": "혼불 (Honbul)",
-      "icon": "🔥",
-      "category": "game",
-      "categoryLabel": "게임",
-      "tool": "codex",
-      "toolLabel": "Codex",
+      "repo": "cmds-daily-briefing",
+      "displayName": "해치의 데일리 브리핑",
+      "icon": "📰",
+      "category": "app",
+      "categoryLabel": "앱",
+      "tool": "claude",
+      "toolLabel": "Claude",
       "status": "active",
-      "rank": 18,
-      "progressTotal": 39,
-      "commits": 9,
-      "activeDays": 1,
-      "quietDays": 29,
-      "maxGap": 29,
-      "firstCommit": "2026-07-13T00:43:34Z",
-      "lastCommit": "2026-07-13T11:46:15Z",
+      "rank": 15,
+      "progressTotal": 52,
+      "commits": 8,
+      "activeDays": 2,
+      "quietDays": 1,
+      "maxGap": 27,
+      "firstCommit": "2026-08-10T07:45:47Z",
+      "lastCommit": "2026-08-11T23:34:24Z",
       "state": "steady",
-      "topTheme": "feature",
-      "themeLabel": "기능 구현",
+      "topTheme": "experience",
+      "themeLabel": "경험/화면",
       "themes": {
-        "feature": 5,
-        "docs": 4
+        "docs": 3,
+        "experience": 5
       },
       "byDate": {
-        "2026-07-13": 9
+        "2026-08-10": 6,
+        "2026-08-11": 2
       },
       "latest": [
         {
-          "sha": "3428faa",
-          "message": "docs: 세션 종료 반영 — feat-070 컷인·feat-071 스테이지 생성(StS 구조) 완주",
-          "date": "2026-07-13T11:46:15Z",
-          "url": "https://github.com/sgeniusk/honbul/commit/3428faa916adbc7419feffb4e0a55fae74a463eb"
+          "sha": "04ea7b7",
+          "message": "Add 2026-08-12 console briefing",
+          "date": "2026-08-11T23:34:24Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/04ea7b7bdb2b01dcd8d43de4135b0c6516748657"
         },
         {
-          "sha": "5ca5913",
-          "message": "feat-071③: 조우 풀 + 맵 노드 배선 + 보스 고정 진형 — 진형 인게임 가시화 (StS 구조 3/3)",
-          "date": "2026-07-13T11:44:36Z",
-          "url": "https://github.com/sgeniusk/honbul/commit/5ca5913f656a344d409ea4a4ffa0c0066a7b7447"
+          "sha": "6cf54c0",
+          "message": "Add August 11 build note",
+          "date": "2026-08-11T13:48:33Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/6cf54c03738b550682036c3d0656b38188719cc9"
         },
         {
-          "sha": "aded150",
-          "message": "docs: feat-071 슬라이스 ② done 반영",
-          "date": "2026-07-13T11:19:46Z",
-          "url": "https://github.com/sgeniusk/honbul/commit/aded1503acb0426dfd51ea2ce666be504145dcf4"
+          "sha": "cd05c61",
+          "message": "Add 2026-08-11 console briefing",
+          "date": "2026-08-10T23:51:38Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/cd05c617f15475bb6255147d324d2e490808a3fd"
         },
         {
-          "sha": "e2ba900",
-          "message": "feat-071②: 진형 웨이브 시퀀스 — 스폰 행이 진형을 따른다 (StS 구조 2/3)",
-          "date": "2026-07-13T11:19:18Z",
-          "url": "https://github.com/sgeniusk/honbul/commit/e2ba90045a012e0c7556c0d187fb7daa97710c18"
+          "sha": "c192503",
+          "message": "Refresh August 10 build note timestamp",
+          "date": "2026-08-10T13:47:17Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/c192503f0eade2d91721e0abd62d3e2008e90ab0"
         },
         {
-          "sha": "3864ee0",
-          "message": "docs: feat-071 슬라이스 ① done 반영",
-          "date": "2026-07-13T10:31:22Z",
-          "url": "https://github.com/sgeniusk/honbul/commit/3864ee0d17fe94ee53489cea94c36cca12fd04d0"
+          "sha": "163e9c4",
+          "message": "Finalize August 10 build note",
+          "date": "2026-08-10T07:57:31Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/163e9c47e5e388d6023010f5c5ccfb4de41bda13"
         }
       ],
-      "insight": "혼불 (Honbul)은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
+      "insight": "해치의 데일리 브리핑은 최근까지 손이 닿았습니다. 커밋 수는 과열권은 아니지만 이어서 처리할 맥락이 살아 있으므로 다음 세션 진입 비용이 낮습니다."
     },
     {
       "repo": "story-x-beta",
@@ -506,22 +502,20 @@ const FALLBACK_ANALYSIS = {
       "status": "active",
       "rank": 10,
       "progressTotal": 50,
-      "commits": 7,
-      "activeDays": 2,
-      "quietDays": 27,
-      "maxGap": 27,
-      "firstCommit": "2026-07-13T00:26:57Z",
+      "commits": 4,
+      "activeDays": 1,
+      "quietDays": 28,
+      "maxGap": 28,
+      "firstCommit": "2026-07-15T08:51:56Z",
       "lastCommit": "2026-07-15T10:06:57Z",
       "state": "sporadic",
-      "topTheme": "feature",
-      "themeLabel": "기능 구현",
+      "topTheme": "maintenance",
+      "themeLabel": "정리/운영",
       "themes": {
-        "feature": 3,
-        "verification": 1,
+        "feature": 1,
         "maintenance": 3
       },
       "byDate": {
-        "2026-07-13": 3,
         "2026-07-15": 4
       },
       "latest": [
@@ -548,76 +542,9 @@ const FALLBACK_ANALYSIS = {
           "message": "P0-a: add local condense jobs and generation inbox",
           "date": "2026-07-15T08:51:56Z",
           "url": "https://github.com/sgeniusk/story-x-beta/commit/f8bddc911de36794c9590fe779c50f7ea32af108"
-        },
-        {
-          "sha": "5c14880",
-          "message": "docs(harness): S1·S2 main 머지 반영 — 스택 PR close 교훈·다음 세션 사용자 테스트 시작점 기록",
-          "date": "2026-07-13T00:30:09Z",
-          "url": "https://github.com/sgeniusk/story-x-beta/commit/5c148801b26c2b9ee458be63655498b261531679"
         }
       ],
       "insight": "Story X은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "displayName": "해치의 데일리 브리핑",
-      "icon": "📰",
-      "category": "app",
-      "categoryLabel": "앱",
-      "tool": "claude",
-      "toolLabel": "Claude",
-      "status": "active",
-      "rank": 15,
-      "progressTotal": 52,
-      "commits": 6,
-      "activeDays": 1,
-      "quietDays": 1,
-      "maxGap": 28,
-      "firstCommit": "2026-08-10T07:45:47Z",
-      "lastCommit": "2026-08-10T23:51:38Z",
-      "state": "steady",
-      "topTheme": "experience",
-      "themeLabel": "경험/화면",
-      "themes": {
-        "docs": 2,
-        "experience": 4
-      },
-      "byDate": {
-        "2026-08-10": 6
-      },
-      "latest": [
-        {
-          "sha": "cd05c61",
-          "message": "Add 2026-08-11 console briefing",
-          "date": "2026-08-10T23:51:38Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/cd05c617f15475bb6255147d324d2e490808a3fd"
-        },
-        {
-          "sha": "c192503",
-          "message": "Refresh August 10 build note timestamp",
-          "date": "2026-08-10T13:47:17Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/c192503f0eade2d91721e0abd62d3e2008e90ab0"
-        },
-        {
-          "sha": "163e9c4",
-          "message": "Finalize August 10 build note",
-          "date": "2026-08-10T07:57:31Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/163e9c47e5e388d6023010f5c5ccfb4de41bda13"
-        },
-        {
-          "sha": "33779ba",
-          "message": "Update August 10 build note status",
-          "date": "2026-08-10T07:55:57Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/33779bad49bd928612723d8140d489304045029b"
-        },
-        {
-          "sha": "7e65f02",
-          "message": "Add August 10 build note",
-          "date": "2026-08-10T07:53:12Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/7e65f0272f5c8666f5947e126ae77bf6f30e230e"
-        }
-      ],
-      "insight": "해치의 데일리 브리핑은 최근까지 손이 닿았습니다. 커밋 수는 과열권은 아니지만 이어서 처리할 맥락이 살아 있으므로 다음 세션 진입 비용이 낮습니다."
     },
     {
       "repo": "chaekdam",
@@ -632,8 +559,8 @@ const FALLBACK_ANALYSIS = {
       "progressTotal": 19,
       "commits": 2,
       "activeDays": 1,
-      "quietDays": 28,
-      "maxGap": 28,
+      "quietDays": 29,
+      "maxGap": 29,
       "firstCommit": "2026-07-14T05:52:13Z",
       "lastCommit": "2026-07-14T05:53:08Z",
       "state": "sporadic",
@@ -660,42 +587,6 @@ const FALLBACK_ANALYSIS = {
         }
       ],
       "insight": "책담 (Chaekdam)은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
-    },
-    {
-      "repo": "ai-company-tycoon-boundaryless",
-      "displayName": "AI 컴퍼니 타이쿤",
-      "icon": "🏢",
-      "category": "game",
-      "categoryLabel": "게임",
-      "tool": "codex",
-      "toolLabel": "Codex",
-      "status": "active",
-      "rank": 9,
-      "progressTotal": 75,
-      "commits": 1,
-      "activeDays": 1,
-      "quietDays": 29,
-      "maxGap": 29,
-      "firstCommit": "2026-07-13T00:29:02Z",
-      "lastCommit": "2026-07-13T00:29:02Z",
-      "state": "sporadic",
-      "topTheme": "docs",
-      "themeLabel": "문서화",
-      "themes": {
-        "docs": 1
-      },
-      "byDate": {
-        "2026-07-13": 1
-      },
-      "latest": [
-        {
-          "sha": "c52da8a",
-          "message": "docs(feat-048): 다음 세션 핸드오프 갱신 — feat-047·048 done, 후보 정리",
-          "date": "2026-07-13T00:29:02Z",
-          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/c52da8af637821c751ac576164cb1b6dc0b42de0"
-        }
-      ],
-      "insight": "AI 컴퍼니 타이쿤은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
     },
     {
       "repo": "pliside-ops",
@@ -873,6 +764,31 @@ const FALLBACK_ANALYSIS = {
       "insight": "AI Builder School은 이번 30일 창에서 새 커밋이 보이지 않았습니다. 상태를 유지할 이유가 없다면 다음 세션에서 보류 사유나 재개 조건을 다시 적어두는 편이 좋습니다."
     },
     {
+      "repo": "ai-company-tycoon-boundaryless",
+      "displayName": "AI 컴퍼니 타이쿤",
+      "icon": "🏢",
+      "category": "game",
+      "categoryLabel": "게임",
+      "tool": "codex",
+      "toolLabel": "Codex",
+      "status": "active",
+      "rank": 9,
+      "progressTotal": 75,
+      "commits": 0,
+      "activeDays": 0,
+      "quietDays": 30,
+      "maxGap": 30,
+      "firstCommit": null,
+      "lastCommit": null,
+      "state": "quiet",
+      "topTheme": "maintenance",
+      "themeLabel": "정리/운영",
+      "themes": {},
+      "byDate": {},
+      "latest": [],
+      "insight": "AI 컴퍼니 타이쿤은 이번 30일 창에서 새 커밋이 보이지 않았습니다. 상태를 유지할 이유가 없다면 다음 세션에서 보류 사유나 재개 조건을 다시 적어두는 편이 좋습니다."
+    },
+    {
       "repo": "BookCircle",
       "displayName": "BookCircle",
       "icon": "📚",
@@ -996,9 +912,7 @@ const FALLBACK_ANALYSIS = {
       "byDate": {},
       "latest": [],
       "insight": "Timeer은 이번 30일 창에서 새 커밋이 보이지 않았습니다. 상태를 유지할 이유가 없다면 다음 세션에서 보류 사유나 재개 조건을 다시 적어두는 편이 좋습니다."
-    }
-  ],
-  "topRepos": [
+    },
     {
       "repo": "honbul",
       "displayName": "혼불 (Honbul)",
@@ -1010,55 +924,83 @@ const FALLBACK_ANALYSIS = {
       "status": "active",
       "rank": 18,
       "progressTotal": 39,
-      "commits": 9,
-      "activeDays": 1,
-      "quietDays": 29,
-      "maxGap": 29,
-      "firstCommit": "2026-07-13T00:43:34Z",
-      "lastCommit": "2026-07-13T11:46:15Z",
+      "commits": 0,
+      "activeDays": 0,
+      "quietDays": 30,
+      "maxGap": 30,
+      "firstCommit": null,
+      "lastCommit": null,
+      "state": "quiet",
+      "topTheme": "maintenance",
+      "themeLabel": "정리/운영",
+      "themes": {},
+      "byDate": {},
+      "latest": [],
+      "insight": "혼불 (Honbul)은 이번 30일 창에서 새 커밋이 보이지 않았습니다. 상태를 유지할 이유가 없다면 다음 세션에서 보류 사유나 재개 조건을 다시 적어두는 편이 좋습니다."
+    }
+  ],
+  "topRepos": [
+    {
+      "repo": "cmds-daily-briefing",
+      "displayName": "해치의 데일리 브리핑",
+      "icon": "📰",
+      "category": "app",
+      "categoryLabel": "앱",
+      "tool": "claude",
+      "toolLabel": "Claude",
+      "status": "active",
+      "rank": 15,
+      "progressTotal": 52,
+      "commits": 8,
+      "activeDays": 2,
+      "quietDays": 1,
+      "maxGap": 27,
+      "firstCommit": "2026-08-10T07:45:47Z",
+      "lastCommit": "2026-08-11T23:34:24Z",
       "state": "steady",
-      "topTheme": "feature",
-      "themeLabel": "기능 구현",
+      "topTheme": "experience",
+      "themeLabel": "경험/화면",
       "themes": {
-        "feature": 5,
-        "docs": 4
+        "docs": 3,
+        "experience": 5
       },
       "byDate": {
-        "2026-07-13": 9
+        "2026-08-10": 6,
+        "2026-08-11": 2
       },
       "latest": [
         {
-          "sha": "3428faa",
-          "message": "docs: 세션 종료 반영 — feat-070 컷인·feat-071 스테이지 생성(StS 구조) 완주",
-          "date": "2026-07-13T11:46:15Z",
-          "url": "https://github.com/sgeniusk/honbul/commit/3428faa916adbc7419feffb4e0a55fae74a463eb"
+          "sha": "04ea7b7",
+          "message": "Add 2026-08-12 console briefing",
+          "date": "2026-08-11T23:34:24Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/04ea7b7bdb2b01dcd8d43de4135b0c6516748657"
         },
         {
-          "sha": "5ca5913",
-          "message": "feat-071③: 조우 풀 + 맵 노드 배선 + 보스 고정 진형 — 진형 인게임 가시화 (StS 구조 3/3)",
-          "date": "2026-07-13T11:44:36Z",
-          "url": "https://github.com/sgeniusk/honbul/commit/5ca5913f656a344d409ea4a4ffa0c0066a7b7447"
+          "sha": "6cf54c0",
+          "message": "Add August 11 build note",
+          "date": "2026-08-11T13:48:33Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/6cf54c03738b550682036c3d0656b38188719cc9"
         },
         {
-          "sha": "aded150",
-          "message": "docs: feat-071 슬라이스 ② done 반영",
-          "date": "2026-07-13T11:19:46Z",
-          "url": "https://github.com/sgeniusk/honbul/commit/aded1503acb0426dfd51ea2ce666be504145dcf4"
+          "sha": "cd05c61",
+          "message": "Add 2026-08-11 console briefing",
+          "date": "2026-08-10T23:51:38Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/cd05c617f15475bb6255147d324d2e490808a3fd"
         },
         {
-          "sha": "e2ba900",
-          "message": "feat-071②: 진형 웨이브 시퀀스 — 스폰 행이 진형을 따른다 (StS 구조 2/3)",
-          "date": "2026-07-13T11:19:18Z",
-          "url": "https://github.com/sgeniusk/honbul/commit/e2ba90045a012e0c7556c0d187fb7daa97710c18"
+          "sha": "c192503",
+          "message": "Refresh August 10 build note timestamp",
+          "date": "2026-08-10T13:47:17Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/c192503f0eade2d91721e0abd62d3e2008e90ab0"
         },
         {
-          "sha": "3864ee0",
-          "message": "docs: feat-071 슬라이스 ① done 반영",
-          "date": "2026-07-13T10:31:22Z",
-          "url": "https://github.com/sgeniusk/honbul/commit/3864ee0d17fe94ee53489cea94c36cca12fd04d0"
+          "sha": "163e9c4",
+          "message": "Finalize August 10 build note",
+          "date": "2026-08-10T07:57:31Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/163e9c47e5e388d6023010f5c5ccfb4de41bda13"
         }
       ],
-      "insight": "혼불 (Honbul)은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
+      "insight": "해치의 데일리 브리핑은 최근까지 손이 닿았습니다. 커밋 수는 과열권은 아니지만 이어서 처리할 맥락이 살아 있으므로 다음 세션 진입 비용이 낮습니다."
     },
     {
       "repo": "story-x-beta",
@@ -1071,22 +1013,20 @@ const FALLBACK_ANALYSIS = {
       "status": "active",
       "rank": 10,
       "progressTotal": 50,
-      "commits": 7,
-      "activeDays": 2,
-      "quietDays": 27,
-      "maxGap": 27,
-      "firstCommit": "2026-07-13T00:26:57Z",
+      "commits": 4,
+      "activeDays": 1,
+      "quietDays": 28,
+      "maxGap": 28,
+      "firstCommit": "2026-07-15T08:51:56Z",
       "lastCommit": "2026-07-15T10:06:57Z",
       "state": "sporadic",
-      "topTheme": "feature",
-      "themeLabel": "기능 구현",
+      "topTheme": "maintenance",
+      "themeLabel": "정리/운영",
       "themes": {
-        "feature": 3,
-        "verification": 1,
+        "feature": 1,
         "maintenance": 3
       },
       "byDate": {
-        "2026-07-13": 3,
         "2026-07-15": 4
       },
       "latest": [
@@ -1113,76 +1053,9 @@ const FALLBACK_ANALYSIS = {
           "message": "P0-a: add local condense jobs and generation inbox",
           "date": "2026-07-15T08:51:56Z",
           "url": "https://github.com/sgeniusk/story-x-beta/commit/f8bddc911de36794c9590fe779c50f7ea32af108"
-        },
-        {
-          "sha": "5c14880",
-          "message": "docs(harness): S1·S2 main 머지 반영 — 스택 PR close 교훈·다음 세션 사용자 테스트 시작점 기록",
-          "date": "2026-07-13T00:30:09Z",
-          "url": "https://github.com/sgeniusk/story-x-beta/commit/5c148801b26c2b9ee458be63655498b261531679"
         }
       ],
       "insight": "Story X은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "displayName": "해치의 데일리 브리핑",
-      "icon": "📰",
-      "category": "app",
-      "categoryLabel": "앱",
-      "tool": "claude",
-      "toolLabel": "Claude",
-      "status": "active",
-      "rank": 15,
-      "progressTotal": 52,
-      "commits": 6,
-      "activeDays": 1,
-      "quietDays": 1,
-      "maxGap": 28,
-      "firstCommit": "2026-08-10T07:45:47Z",
-      "lastCommit": "2026-08-10T23:51:38Z",
-      "state": "steady",
-      "topTheme": "experience",
-      "themeLabel": "경험/화면",
-      "themes": {
-        "docs": 2,
-        "experience": 4
-      },
-      "byDate": {
-        "2026-08-10": 6
-      },
-      "latest": [
-        {
-          "sha": "cd05c61",
-          "message": "Add 2026-08-11 console briefing",
-          "date": "2026-08-10T23:51:38Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/cd05c617f15475bb6255147d324d2e490808a3fd"
-        },
-        {
-          "sha": "c192503",
-          "message": "Refresh August 10 build note timestamp",
-          "date": "2026-08-10T13:47:17Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/c192503f0eade2d91721e0abd62d3e2008e90ab0"
-        },
-        {
-          "sha": "163e9c4",
-          "message": "Finalize August 10 build note",
-          "date": "2026-08-10T07:57:31Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/163e9c47e5e388d6023010f5c5ccfb4de41bda13"
-        },
-        {
-          "sha": "33779ba",
-          "message": "Update August 10 build note status",
-          "date": "2026-08-10T07:55:57Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/33779bad49bd928612723d8140d489304045029b"
-        },
-        {
-          "sha": "7e65f02",
-          "message": "Add August 10 build note",
-          "date": "2026-08-10T07:53:12Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/7e65f0272f5c8666f5947e126ae77bf6f30e230e"
-        }
-      ],
-      "insight": "해치의 데일리 브리핑은 최근까지 손이 닿았습니다. 커밋 수는 과열권은 아니지만 이어서 처리할 맥락이 살아 있으므로 다음 세션 진입 비용이 낮습니다."
     },
     {
       "repo": "chaekdam",
@@ -1197,8 +1070,8 @@ const FALLBACK_ANALYSIS = {
       "progressTotal": 19,
       "commits": 2,
       "activeDays": 1,
-      "quietDays": 28,
-      "maxGap": 28,
+      "quietDays": 29,
+      "maxGap": 29,
       "firstCommit": "2026-07-14T05:52:13Z",
       "lastCommit": "2026-07-14T05:53:08Z",
       "state": "sporadic",
@@ -1227,42 +1100,6 @@ const FALLBACK_ANALYSIS = {
       "insight": "책담 (Chaekdam)은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
     },
     {
-      "repo": "ai-company-tycoon-boundaryless",
-      "displayName": "AI 컴퍼니 타이쿤",
-      "icon": "🏢",
-      "category": "game",
-      "categoryLabel": "게임",
-      "tool": "codex",
-      "toolLabel": "Codex",
-      "status": "active",
-      "rank": 9,
-      "progressTotal": 75,
-      "commits": 1,
-      "activeDays": 1,
-      "quietDays": 29,
-      "maxGap": 29,
-      "firstCommit": "2026-07-13T00:29:02Z",
-      "lastCommit": "2026-07-13T00:29:02Z",
-      "state": "sporadic",
-      "topTheme": "docs",
-      "themeLabel": "문서화",
-      "themes": {
-        "docs": 1
-      },
-      "byDate": {
-        "2026-07-13": 1
-      },
-      "latest": [
-        {
-          "sha": "c52da8a",
-          "message": "docs(feat-048): 다음 세션 핸드오프 갱신 — feat-047·048 done, 후보 정리",
-          "date": "2026-07-13T00:29:02Z",
-          "url": "https://github.com/sgeniusk/ai-company-tycoon-boundaryless/commit/c52da8af637821c751ac576164cb1b6dc0b42de0"
-        }
-      ],
-      "insight": "AI 컴퍼니 타이쿤은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
-    },
-    {
       "repo": "pliside-ops",
       "displayName": "Loom · 유튜브 운영 시스템",
       "icon": "📺",
@@ -1286,6 +1123,56 @@ const FALLBACK_ANALYSIS = {
       "byDate": {},
       "latest": [],
       "insight": "Loom · 유튜브 운영 시스템은 이번 30일 창에서 새 커밋이 보이지 않았습니다. 상태를 유지할 이유가 없다면 다음 세션에서 보류 사유나 재개 조건을 다시 적어두는 편이 좋습니다."
+    },
+    {
+      "repo": "habit",
+      "displayName": "Formi (포미)",
+      "icon": "🎯",
+      "category": "app",
+      "categoryLabel": "앱",
+      "tool": "codex",
+      "toolLabel": "Codex",
+      "status": "active",
+      "rank": 3,
+      "progressTotal": 70,
+      "commits": 0,
+      "activeDays": 0,
+      "quietDays": 30,
+      "maxGap": 30,
+      "firstCommit": null,
+      "lastCommit": null,
+      "state": "quiet",
+      "topTheme": "maintenance",
+      "themeLabel": "정리/운영",
+      "themes": {},
+      "byDate": {},
+      "latest": [],
+      "insight": "Formi (포미)은 이번 30일 창에서 새 커밋이 보이지 않았습니다. 상태를 유지할 이유가 없다면 다음 세션에서 보류 사유나 재개 조건을 다시 적어두는 편이 좋습니다."
+    },
+    {
+      "repo": "tteuniyu-ios",
+      "displayName": "뜬이유 iOS",
+      "icon": "📈",
+      "category": "app",
+      "categoryLabel": "앱",
+      "tool": "hybrid",
+      "toolLabel": "Hybrid",
+      "status": "active",
+      "rank": 4,
+      "progressTotal": 65,
+      "commits": 0,
+      "activeDays": 0,
+      "quietDays": 30,
+      "maxGap": 30,
+      "firstCommit": null,
+      "lastCommit": null,
+      "state": "quiet",
+      "topTheme": "maintenance",
+      "themeLabel": "정리/운영",
+      "themes": {},
+      "byDate": {},
+      "latest": [],
+      "insight": "뜬이유 iOS은 이번 30일 창에서 새 커밋이 보이지 않았습니다. 상태를 유지할 이유가 없다면 다음 세션에서 보류 사유나 재개 조건을 다시 적어두는 편이 좋습니다."
     }
   ],
   "quietList": [
