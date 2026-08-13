@@ -214,28 +214,24 @@ footer{margin-top:70px;padding-top:22px;border-top:1px solid var(--line);color:v
 <script>
 const FALLBACK_ANALYSIS = {
   "_comment": "최근 30일 GitHub 커밋 관찰 분석. scripts/build-monthly-analysis.mjs가 생성하며 monthly-analysis.html의 FALLBACK_ANALYSIS와 동기화한다.",
-  "generatedAt": "2026-08-12",
+  "generatedAt": "2026-08-13",
   "owner": "sgeniusk",
   "window": {
-    "start": "2026-07-14",
-    "end": "2026-08-12",
+    "start": "2026-07-15",
+    "end": "2026-08-13",
     "days": 30
   },
   "summary": {
     "totalRepos": 17,
-    "activeRepos": 3,
-    "quietRepos": 14,
+    "activeRepos": 2,
+    "quietRepos": 15,
     "totalCommits": 14,
     "activeDays": 4,
-    "avgCommitsPerActiveRepo": 4.7,
+    "avgCommitsPerActiveRepo": 7,
     "leaderRepo": "cmds-daily-briefing",
     "leaderName": "해치의 데일리 브리핑"
   },
   "daily": [
-    {
-      "date": "2026-07-14",
-      "commits": 2
-    },
     {
       "date": "2026-07-15",
       "commits": 4
@@ -350,6 +346,10 @@ const FALLBACK_ANALYSIS = {
     },
     {
       "date": "2026-08-12",
+      "commits": 2
+    },
+    {
+      "date": "2026-08-13",
       "commits": 0
     }
   ],
@@ -360,7 +360,7 @@ const FALLBACK_ANALYSIS = {
         "label": "앱",
         "commits": 14,
         "repos": 8,
-        "activeRepos": 3
+        "activeRepos": 2
       },
       {
         "id": "game",
@@ -383,7 +383,7 @@ const FALLBACK_ANALYSIS = {
         "label": "Claude",
         "commits": 14,
         "repos": 10,
-        "activeRepos": 3
+        "activeRepos": 2
       },
       {
         "id": "codex",
@@ -404,12 +404,12 @@ const FALLBACK_ANALYSIS = {
       {
         "id": "experience",
         "label": "경험/화면",
-        "commits": 5
+        "commits": 6
       },
       {
         "id": "docs",
         "label": "문서화",
-        "commits": 5
+        "commits": 4
       },
       {
         "id": "maintenance",
@@ -424,9 +424,9 @@ const FALLBACK_ANALYSIS = {
     ]
   },
   "diagnosis": [
-    "이번 30일의 중심은 해치의 데일리 브리핑입니다. 8커밋과 2일의 활동일이 관찰되어, 가장 많은 실제 손길을 받았습니다.",
-    "전체 17개 중 3개 리포만 움직였습니다. 지금은 확장보다 재개 조건을 좁히는 운영 판단이 더 중요합니다.",
-    "14개 리포는 한 달 동안 새 커밋이 없었습니다. 보류 프로젝트는 괜찮지만, 활성 프로젝트가 여기에 포함되면 다음 액션의 크기를 줄여야 합니다."
+    "이번 30일의 중심은 해치의 데일리 브리핑입니다. 10커밋과 3일의 활동일이 관찰되어, 가장 많은 실제 손길을 받았습니다.",
+    "전체 17개 중 2개 리포만 움직였습니다. 지금은 확장보다 재개 조건을 좁히는 운영 판단이 더 중요합니다.",
+    "15개 리포는 한 달 동안 새 커밋이 없었습니다. 보류 프로젝트는 괜찮지만, 활성 프로젝트가 여기에 포함되면 다음 액션의 크기를 줄여야 합니다."
   ],
   "repos": [
     {
@@ -440,24 +440,37 @@ const FALLBACK_ANALYSIS = {
       "status": "active",
       "rank": 15,
       "progressTotal": 52,
-      "commits": 8,
-      "activeDays": 2,
+      "commits": 10,
+      "activeDays": 3,
       "quietDays": 1,
-      "maxGap": 27,
+      "maxGap": 26,
       "firstCommit": "2026-08-10T07:45:47Z",
-      "lastCommit": "2026-08-11T23:34:24Z",
+      "lastCommit": "2026-08-12T23:33:40Z",
       "state": "steady",
       "topTheme": "experience",
       "themeLabel": "경험/화면",
       "themes": {
-        "docs": 3,
-        "experience": 5
+        "docs": 4,
+        "experience": 6
       },
       "byDate": {
         "2026-08-10": 6,
-        "2026-08-11": 2
+        "2026-08-11": 2,
+        "2026-08-12": 2
       },
       "latest": [
+        {
+          "sha": "fe8d27c",
+          "message": "Add 2026-08-13 console briefing",
+          "date": "2026-08-12T23:33:40Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/fe8d27ca086a87c0f213f56d377e6a70cafb7224"
+        },
+        {
+          "sha": "93a2bc3",
+          "message": "Add 2026-08-12 build note",
+          "date": "2026-08-12T13:48:36Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/93a2bc30e106cb87e6512b413f665828b7119040"
+        },
         {
           "sha": "04ea7b7",
           "message": "Add 2026-08-12 console briefing",
@@ -475,18 +488,6 @@ const FALLBACK_ANALYSIS = {
           "message": "Add 2026-08-11 console briefing",
           "date": "2026-08-10T23:51:38Z",
           "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/cd05c617f15475bb6255147d324d2e490808a3fd"
-        },
-        {
-          "sha": "c192503",
-          "message": "Refresh August 10 build note timestamp",
-          "date": "2026-08-10T13:47:17Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/c192503f0eade2d91721e0abd62d3e2008e90ab0"
-        },
-        {
-          "sha": "163e9c4",
-          "message": "Finalize August 10 build note",
-          "date": "2026-08-10T07:57:31Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/163e9c47e5e388d6023010f5c5ccfb4de41bda13"
         }
       ],
       "insight": "해치의 데일리 브리핑은 최근까지 손이 닿았습니다. 커밋 수는 과열권은 아니지만 이어서 처리할 맥락이 살아 있으므로 다음 세션 진입 비용이 낮습니다."
@@ -504,8 +505,8 @@ const FALLBACK_ANALYSIS = {
       "progressTotal": 50,
       "commits": 4,
       "activeDays": 1,
-      "quietDays": 28,
-      "maxGap": 28,
+      "quietDays": 29,
+      "maxGap": 29,
       "firstCommit": "2026-07-15T08:51:56Z",
       "lastCommit": "2026-07-15T10:06:57Z",
       "state": "sporadic",
@@ -545,48 +546,6 @@ const FALLBACK_ANALYSIS = {
         }
       ],
       "insight": "Story X은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
-    },
-    {
-      "repo": "chaekdam",
-      "displayName": "책담 (Chaekdam)",
-      "icon": "📖",
-      "category": "app",
-      "categoryLabel": "앱",
-      "tool": "claude",
-      "toolLabel": "Claude",
-      "status": "active",
-      "rank": 17,
-      "progressTotal": 19,
-      "commits": 2,
-      "activeDays": 1,
-      "quietDays": 29,
-      "maxGap": 29,
-      "firstCommit": "2026-07-14T05:52:13Z",
-      "lastCommit": "2026-07-14T05:53:08Z",
-      "state": "sporadic",
-      "topTheme": "docs",
-      "themeLabel": "문서화",
-      "themes": {
-        "docs": 2
-      },
-      "byDate": {
-        "2026-07-14": 2
-      },
-      "latest": [
-        {
-          "sha": "6eb39e0",
-          "message": "Merge: Codex 이어받기 문서 (AGENTS.md + 킥오프)",
-          "date": "2026-07-14T05:53:08Z",
-          "url": "https://github.com/sgeniusk/chaekdam/commit/6eb39e04a57c76f17bf20eaedd034c1d4489aaae"
-        },
-        {
-          "sha": "9440619",
-          "message": "docs(handoff): Codex 웹 이어받기 — AGENTS.md 정본 + 킥오프 프롬프트",
-          "date": "2026-07-14T05:52:13Z",
-          "url": "https://github.com/sgeniusk/chaekdam/commit/9440619c257e8a75990df6a1bd312fec34e7f825"
-        }
-      ],
-      "insight": "책담 (Chaekdam)은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
     },
     {
       "repo": "pliside-ops",
@@ -914,6 +873,31 @@ const FALLBACK_ANALYSIS = {
       "insight": "Timeer은 이번 30일 창에서 새 커밋이 보이지 않았습니다. 상태를 유지할 이유가 없다면 다음 세션에서 보류 사유나 재개 조건을 다시 적어두는 편이 좋습니다."
     },
     {
+      "repo": "chaekdam",
+      "displayName": "책담 (Chaekdam)",
+      "icon": "📖",
+      "category": "app",
+      "categoryLabel": "앱",
+      "tool": "claude",
+      "toolLabel": "Claude",
+      "status": "active",
+      "rank": 17,
+      "progressTotal": 19,
+      "commits": 0,
+      "activeDays": 0,
+      "quietDays": 30,
+      "maxGap": 30,
+      "firstCommit": null,
+      "lastCommit": null,
+      "state": "quiet",
+      "topTheme": "maintenance",
+      "themeLabel": "정리/운영",
+      "themes": {},
+      "byDate": {},
+      "latest": [],
+      "insight": "책담 (Chaekdam)은 이번 30일 창에서 새 커밋이 보이지 않았습니다. 상태를 유지할 이유가 없다면 다음 세션에서 보류 사유나 재개 조건을 다시 적어두는 편이 좋습니다."
+    },
+    {
       "repo": "honbul",
       "displayName": "혼불 (Honbul)",
       "icon": "🔥",
@@ -951,24 +935,37 @@ const FALLBACK_ANALYSIS = {
       "status": "active",
       "rank": 15,
       "progressTotal": 52,
-      "commits": 8,
-      "activeDays": 2,
+      "commits": 10,
+      "activeDays": 3,
       "quietDays": 1,
-      "maxGap": 27,
+      "maxGap": 26,
       "firstCommit": "2026-08-10T07:45:47Z",
-      "lastCommit": "2026-08-11T23:34:24Z",
+      "lastCommit": "2026-08-12T23:33:40Z",
       "state": "steady",
       "topTheme": "experience",
       "themeLabel": "경험/화면",
       "themes": {
-        "docs": 3,
-        "experience": 5
+        "docs": 4,
+        "experience": 6
       },
       "byDate": {
         "2026-08-10": 6,
-        "2026-08-11": 2
+        "2026-08-11": 2,
+        "2026-08-12": 2
       },
       "latest": [
+        {
+          "sha": "fe8d27c",
+          "message": "Add 2026-08-13 console briefing",
+          "date": "2026-08-12T23:33:40Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/fe8d27ca086a87c0f213f56d377e6a70cafb7224"
+        },
+        {
+          "sha": "93a2bc3",
+          "message": "Add 2026-08-12 build note",
+          "date": "2026-08-12T13:48:36Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/93a2bc30e106cb87e6512b413f665828b7119040"
+        },
         {
           "sha": "04ea7b7",
           "message": "Add 2026-08-12 console briefing",
@@ -986,18 +983,6 @@ const FALLBACK_ANALYSIS = {
           "message": "Add 2026-08-11 console briefing",
           "date": "2026-08-10T23:51:38Z",
           "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/cd05c617f15475bb6255147d324d2e490808a3fd"
-        },
-        {
-          "sha": "c192503",
-          "message": "Refresh August 10 build note timestamp",
-          "date": "2026-08-10T13:47:17Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/c192503f0eade2d91721e0abd62d3e2008e90ab0"
-        },
-        {
-          "sha": "163e9c4",
-          "message": "Finalize August 10 build note",
-          "date": "2026-08-10T07:57:31Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/163e9c47e5e388d6023010f5c5ccfb4de41bda13"
         }
       ],
       "insight": "해치의 데일리 브리핑은 최근까지 손이 닿았습니다. 커밋 수는 과열권은 아니지만 이어서 처리할 맥락이 살아 있으므로 다음 세션 진입 비용이 낮습니다."
@@ -1015,8 +1000,8 @@ const FALLBACK_ANALYSIS = {
       "progressTotal": 50,
       "commits": 4,
       "activeDays": 1,
-      "quietDays": 28,
-      "maxGap": 28,
+      "quietDays": 29,
+      "maxGap": 29,
       "firstCommit": "2026-07-15T08:51:56Z",
       "lastCommit": "2026-07-15T10:06:57Z",
       "state": "sporadic",
@@ -1056,48 +1041,6 @@ const FALLBACK_ANALYSIS = {
         }
       ],
       "insight": "Story X은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
-    },
-    {
-      "repo": "chaekdam",
-      "displayName": "책담 (Chaekdam)",
-      "icon": "📖",
-      "category": "app",
-      "categoryLabel": "앱",
-      "tool": "claude",
-      "toolLabel": "Claude",
-      "status": "active",
-      "rank": 17,
-      "progressTotal": 19,
-      "commits": 2,
-      "activeDays": 1,
-      "quietDays": 29,
-      "maxGap": 29,
-      "firstCommit": "2026-07-14T05:52:13Z",
-      "lastCommit": "2026-07-14T05:53:08Z",
-      "state": "sporadic",
-      "topTheme": "docs",
-      "themeLabel": "문서화",
-      "themes": {
-        "docs": 2
-      },
-      "byDate": {
-        "2026-07-14": 2
-      },
-      "latest": [
-        {
-          "sha": "6eb39e0",
-          "message": "Merge: Codex 이어받기 문서 (AGENTS.md + 킥오프)",
-          "date": "2026-07-14T05:53:08Z",
-          "url": "https://github.com/sgeniusk/chaekdam/commit/6eb39e04a57c76f17bf20eaedd034c1d4489aaae"
-        },
-        {
-          "sha": "9440619",
-          "message": "docs(handoff): Codex 웹 이어받기 — AGENTS.md 정본 + 킥오프 프롬프트",
-          "date": "2026-07-14T05:52:13Z",
-          "url": "https://github.com/sgeniusk/chaekdam/commit/9440619c257e8a75990df6a1bd312fec34e7f825"
-        }
-      ],
-      "insight": "책담 (Chaekdam)은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
     },
     {
       "repo": "pliside-ops",
@@ -1173,6 +1116,31 @@ const FALLBACK_ANALYSIS = {
       "byDate": {},
       "latest": [],
       "insight": "뜬이유 iOS은 이번 30일 창에서 새 커밋이 보이지 않았습니다. 상태를 유지할 이유가 없다면 다음 세션에서 보류 사유나 재개 조건을 다시 적어두는 편이 좋습니다."
+    },
+    {
+      "repo": "sam-defender-logue",
+      "displayName": "삼국지: 시즈폴 (Siege Fall)",
+      "icon": "🛡️",
+      "category": "game",
+      "categoryLabel": "게임",
+      "tool": "claude",
+      "toolLabel": "Claude",
+      "status": "active",
+      "rank": 5,
+      "progressTotal": 20,
+      "commits": 0,
+      "activeDays": 0,
+      "quietDays": 30,
+      "maxGap": 30,
+      "firstCommit": null,
+      "lastCommit": null,
+      "state": "quiet",
+      "topTheme": "maintenance",
+      "themeLabel": "정리/운영",
+      "themes": {},
+      "byDate": {},
+      "latest": [],
+      "insight": "삼국지: 시즈폴 (Siege Fall)은 이번 30일 창에서 새 커밋이 보이지 않았습니다. 상태를 유지할 이유가 없다면 다음 세션에서 보류 사유나 재개 조건을 다시 적어두는 편이 좋습니다."
     }
   ],
   "quietList": [

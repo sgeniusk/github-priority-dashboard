@@ -1,7 +1,19 @@
 {
   "_comment": "전 프로젝트 통합 커밋 피드. refresh-progress.mjs가 각 추적 리포의 최근 커밋을 수집한다. 대시보드 활동 탭이 읽는다.",
-  "asOf": "2026-08-12",
+  "asOf": "2026-08-13",
   "commits": [
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "fe8d27c",
+      "message": "Add 2026-08-13 console briefing",
+      "date": "2026-08-12T23:33:40Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "93a2bc3",
+      "message": "Add 2026-08-12 build note",
+      "date": "2026-08-12T13:48:36Z"
+    },
     {
       "repo": "cmds-daily-briefing",
       "sha": "04ea7b7",
@@ -37,18 +49,6 @@
       "sha": "33779ba",
       "message": "Update August 10 build note status",
       "date": "2026-08-10T07:55:57Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "7e65f02",
-      "message": "Add August 10 build note",
-      "date": "2026-08-10T07:53:12Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "9742f34",
-      "message": "Add August 10 daily briefing",
-      "date": "2026-08-10T07:45:47Z"
     },
     {
       "repo": "story-x-beta",
