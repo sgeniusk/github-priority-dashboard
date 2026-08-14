@@ -4,6 +4,30 @@
   "commits": [
     {
       "repo": "cmds-daily-briefing",
+      "sha": "6818954",
+      "message": "Fix console weekday rendering",
+      "date": "2026-08-14T23:37:42Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "976b546",
+      "message": "Add 2026-08-15 console briefing",
+      "date": "2026-08-14T23:33:31Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "20e6518",
+      "message": "Polish 2026-08-14 build note verification",
+      "date": "2026-08-14T13:50:23Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "sha": "735e5bb",
+      "message": "Add 2026-08-14 build note",
+      "date": "2026-08-14T13:49:03Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
       "sha": "86df9fe",
       "message": "Add 2026-08-14 console briefing",
       "date": "2026-08-13T23:34:15Z"
@@ -25,30 +49,6 @@
       "sha": "93a2bc3",
       "message": "Add 2026-08-12 build note",
       "date": "2026-08-12T13:48:36Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "04ea7b7",
-      "message": "Add 2026-08-12 console briefing",
-      "date": "2026-08-11T23:34:24Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "6cf54c0",
-      "message": "Add August 11 build note",
-      "date": "2026-08-11T13:48:33Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "cd05c61",
-      "message": "Add 2026-08-11 console briefing",
-      "date": "2026-08-10T23:51:38Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "c192503",
-      "message": "Refresh August 10 build note timestamp",
-      "date": "2026-08-10T13:47:17Z"
     },
     {
       "repo": "story-x-beta",

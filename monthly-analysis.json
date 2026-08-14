@@ -11,9 +11,9 @@
     "totalRepos": 17,
     "activeRepos": 1,
     "quietRepos": 16,
-    "totalCommits": 12,
-    "activeDays": 4,
-    "avgCommitsPerActiveRepo": 12,
+    "totalCommits": 16,
+    "activeDays": 5,
+    "avgCommitsPerActiveRepo": 16,
     "leaderRepo": "cmds-daily-briefing",
     "leaderName": "해치의 데일리 브리핑"
   },
@@ -136,7 +136,7 @@
     },
     {
       "date": "2026-08-14",
-      "commits": 0
+      "commits": 4
     }
   ],
   "breakdowns": {
@@ -144,7 +144,7 @@
       {
         "id": "app",
         "label": "앱",
-        "commits": 12,
+        "commits": 16,
         "repos": 8,
         "activeRepos": 1
       },
@@ -167,7 +167,7 @@
       {
         "id": "claude",
         "label": "Claude",
-        "commits": 12,
+        "commits": 16,
         "repos": 10,
         "activeRepos": 1
       },
@@ -190,17 +190,22 @@
       {
         "id": "experience",
         "label": "경험/화면",
-        "commits": 7
+        "commits": 9
       },
       {
         "id": "docs",
         "label": "문서화",
-        "commits": 5
+        "commits": 6
+      },
+      {
+        "id": "stability",
+        "label": "안정화",
+        "commits": 1
       }
     ]
   },
   "diagnosis": [
-    "이번 30일의 중심은 해치의 데일리 브리핑입니다. 12커밋과 4일의 활동일이 관찰되어, 가장 많은 실제 손길을 받았습니다.",
+    "이번 30일의 중심은 해치의 데일리 브리핑입니다. 16커밋과 5일의 활동일이 관찰되어, 가장 많은 실제 손길을 받았습니다.",
     "전체 17개 중 1개 리포만 움직였습니다. 지금은 확장보다 재개 조건을 좁히는 운영 판단이 더 중요합니다.",
     "16개 리포는 한 달 동안 새 커밋이 없었습니다. 보류 프로젝트는 괜찮지만, 활성 프로젝트가 여기에 포함되면 다음 액션의 크기를 줄여야 합니다."
   ],
@@ -216,55 +221,57 @@
       "status": "active",
       "rank": 15,
       "progressTotal": 52,
-      "commits": 12,
-      "activeDays": 4,
-      "quietDays": 1,
+      "commits": 16,
+      "activeDays": 5,
+      "quietDays": 0,
       "maxGap": 25,
       "firstCommit": "2026-08-10T07:45:47Z",
-      "lastCommit": "2026-08-13T23:34:15Z",
+      "lastCommit": "2026-08-14T23:37:42Z",
       "state": "steady",
       "topTheme": "experience",
       "themeLabel": "경험/화면",
       "themes": {
-        "docs": 5,
-        "experience": 7
+        "docs": 6,
+        "experience": 9,
+        "stability": 1
       },
       "byDate": {
         "2026-08-10": 6,
         "2026-08-11": 2,
         "2026-08-12": 2,
-        "2026-08-13": 2
+        "2026-08-13": 2,
+        "2026-08-14": 4
       },
       "latest": [
+        {
+          "sha": "6818954",
+          "message": "Fix console weekday rendering",
+          "date": "2026-08-14T23:37:42Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/681895404b2fe6c884606706a7311faa6e4dd625"
+        },
+        {
+          "sha": "976b546",
+          "message": "Add 2026-08-15 console briefing",
+          "date": "2026-08-14T23:33:31Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/976b546ee68cd91bbe287bde5652ae0a9dbe4de2"
+        },
+        {
+          "sha": "20e6518",
+          "message": "Polish 2026-08-14 build note verification",
+          "date": "2026-08-14T13:50:23Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/20e65184c08334f7e1b077f4277ac3594c4547cb"
+        },
+        {
+          "sha": "735e5bb",
+          "message": "Add 2026-08-14 build note",
+          "date": "2026-08-14T13:49:03Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/735e5bb264d8fe35e5ac2e85255a22dd5875f018"
+        },
         {
           "sha": "86df9fe",
           "message": "Add 2026-08-14 console briefing",
           "date": "2026-08-13T23:34:15Z",
           "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/86df9fe6c117855d86e6132784dc33d962256a09"
-        },
-        {
-          "sha": "d4f9d12",
-          "message": "Add 2026-08-13 build note",
-          "date": "2026-08-13T13:48:26Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/d4f9d12533511d16e314c26c02cabf729571ef36"
-        },
-        {
-          "sha": "fe8d27c",
-          "message": "Add 2026-08-13 console briefing",
-          "date": "2026-08-12T23:33:40Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/fe8d27ca086a87c0f213f56d377e6a70cafb7224"
-        },
-        {
-          "sha": "93a2bc3",
-          "message": "Add 2026-08-12 build note",
-          "date": "2026-08-12T13:48:36Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/93a2bc30e106cb87e6512b413f665828b7119040"
-        },
-        {
-          "sha": "04ea7b7",
-          "message": "Add 2026-08-12 console briefing",
-          "date": "2026-08-11T23:34:24Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/04ea7b7bdb2b01dcd8d43de4135b0c6516748657"
         }
       ],
       "insight": "해치의 데일리 브리핑은 최근까지 손이 닿았습니다. 커밋 수는 과열권은 아니지만 이어서 처리할 맥락이 살아 있으므로 다음 세션 진입 비용이 낮습니다."
@@ -682,55 +689,57 @@
       "status": "active",
       "rank": 15,
       "progressTotal": 52,
-      "commits": 12,
-      "activeDays": 4,
-      "quietDays": 1,
+      "commits": 16,
+      "activeDays": 5,
+      "quietDays": 0,
       "maxGap": 25,
       "firstCommit": "2026-08-10T07:45:47Z",
-      "lastCommit": "2026-08-13T23:34:15Z",
+      "lastCommit": "2026-08-14T23:37:42Z",
       "state": "steady",
       "topTheme": "experience",
       "themeLabel": "경험/화면",
       "themes": {
-        "docs": 5,
-        "experience": 7
+        "docs": 6,
+        "experience": 9,
+        "stability": 1
       },
       "byDate": {
         "2026-08-10": 6,
         "2026-08-11": 2,
         "2026-08-12": 2,
-        "2026-08-13": 2
+        "2026-08-13": 2,
+        "2026-08-14": 4
       },
       "latest": [
+        {
+          "sha": "6818954",
+          "message": "Fix console weekday rendering",
+          "date": "2026-08-14T23:37:42Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/681895404b2fe6c884606706a7311faa6e4dd625"
+        },
+        {
+          "sha": "976b546",
+          "message": "Add 2026-08-15 console briefing",
+          "date": "2026-08-14T23:33:31Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/976b546ee68cd91bbe287bde5652ae0a9dbe4de2"
+        },
+        {
+          "sha": "20e6518",
+          "message": "Polish 2026-08-14 build note verification",
+          "date": "2026-08-14T13:50:23Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/20e65184c08334f7e1b077f4277ac3594c4547cb"
+        },
+        {
+          "sha": "735e5bb",
+          "message": "Add 2026-08-14 build note",
+          "date": "2026-08-14T13:49:03Z",
+          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/735e5bb264d8fe35e5ac2e85255a22dd5875f018"
+        },
         {
           "sha": "86df9fe",
           "message": "Add 2026-08-14 console briefing",
           "date": "2026-08-13T23:34:15Z",
           "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/86df9fe6c117855d86e6132784dc33d962256a09"
-        },
-        {
-          "sha": "d4f9d12",
-          "message": "Add 2026-08-13 build note",
-          "date": "2026-08-13T13:48:26Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/d4f9d12533511d16e314c26c02cabf729571ef36"
-        },
-        {
-          "sha": "fe8d27c",
-          "message": "Add 2026-08-13 console briefing",
-          "date": "2026-08-12T23:33:40Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/fe8d27ca086a87c0f213f56d377e6a70cafb7224"
-        },
-        {
-          "sha": "93a2bc3",
-          "message": "Add 2026-08-12 build note",
-          "date": "2026-08-12T13:48:36Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/93a2bc30e106cb87e6512b413f665828b7119040"
-        },
-        {
-          "sha": "04ea7b7",
-          "message": "Add 2026-08-12 console briefing",
-          "date": "2026-08-11T23:34:24Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/04ea7b7bdb2b01dcd8d43de4135b0c6516748657"
         }
       ],
       "insight": "해치의 데일리 브리핑은 최근까지 손이 닿았습니다. 커밋 수는 과열권은 아니지만 이어서 처리할 맥락이 살아 있으므로 다음 세션 진입 비용이 낮습니다."

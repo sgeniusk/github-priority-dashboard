@@ -3755,29 +3755,6 @@
     ],
     "cmds-daily-briefing": [
       {
-        "date": "2026-05-30T23:34:14Z",
-        "kind": "commit",
-        "text": "Add May 31 daily console briefing",
-        "sha": "d7bca6b"
-      },
-      {
-        "date": "2026-05-31",
-        "kind": "progress",
-        "text": "진척 52%"
-      },
-      {
-        "date": "2026-05-31T23:35:05Z",
-        "kind": "commit",
-        "text": "Add June 1 daily console briefing",
-        "sha": "2d18558"
-      },
-      {
-        "date": "2026-06-02T23:38:21Z",
-        "kind": "commit",
-        "text": "Add June 3 daily console briefing",
-        "sha": "81a2362"
-      },
-      {
         "date": "2026-06-03",
         "kind": "progress",
         "text": "진척 52% · 커밋 +1"
@@ -4196,6 +4173,30 @@
         "date": "2026-08-14",
         "kind": "progress",
         "text": "완성도 52% · 커밋 +2"
+      },
+      {
+        "date": "2026-08-14T13:49:03Z",
+        "kind": "commit",
+        "text": "Add 2026-08-14 build note",
+        "sha": "735e5bb"
+      },
+      {
+        "date": "2026-08-14T13:50:23Z",
+        "kind": "commit",
+        "text": "Polish 2026-08-14 build note verification",
+        "sha": "20e6518"
+      },
+      {
+        "date": "2026-08-14T23:33:31Z",
+        "kind": "commit",
+        "text": "Add 2026-08-15 console briefing",
+        "sha": "976b546"
+      },
+      {
+        "date": "2026-08-14T23:37:42Z",
+        "kind": "commit",
+        "text": "Fix console weekday rendering",
+        "sha": "6818954"
       }
     ],
     "Timeer": [
