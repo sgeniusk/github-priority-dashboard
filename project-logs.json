@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-08-13",
+  "generatedAt": "2026-08-14",
   "logs": {
     "samsu": [
       {
@@ -300,6 +300,11 @@
         "date": "2026-08-13",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-08-14",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -516,6 +521,11 @@
       },
       {
         "date": "2026-08-13",
+        "kind": "progress",
+        "text": "완성도 65%"
+      },
+      {
+        "date": "2026-08-14",
         "kind": "progress",
         "text": "완성도 65%"
       }
@@ -898,6 +908,11 @@
         "date": "2026-08-13",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-14",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
@@ -1230,6 +1245,11 @@
         "date": "2026-08-13",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-08-14",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
@@ -1548,6 +1568,11 @@
       },
       {
         "date": "2026-08-13",
+        "kind": "progress",
+        "text": "완성도 55%"
+      },
+      {
+        "date": "2026-08-14",
         "kind": "progress",
         "text": "완성도 55%"
       }
@@ -1894,15 +1919,14 @@
         "date": "2026-08-13",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-08-14",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-06-02T03:06:40Z",
-        "kind": "commit",
-        "text": "Give the office the whole stage",
-        "sha": "64b5321"
-      },
       {
         "date": "2026-06-02T11:49:08Z",
         "kind": "commit",
@@ -2341,14 +2365,14 @@
         "date": "2026-08-13",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-08-14",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-06-03",
-        "kind": "progress",
-        "text": "진척 45% · 커밋 +2"
-      },
       {
         "date": "2026-06-03T13:27:33Z",
         "kind": "commit",
@@ -2788,6 +2812,11 @@
         "date": "2026-08-13",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-08-14",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
@@ -2992,6 +3021,11 @@
       },
       {
         "date": "2026-08-13",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-14",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -3230,6 +3264,11 @@
         "date": "2026-08-13",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-14",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
@@ -3464,6 +3503,11 @@
       },
       {
         "date": "2026-08-13",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-08-14",
         "kind": "progress",
         "text": "완성도 56%"
       }
@@ -3702,27 +3746,14 @@
         "date": "2026-08-13",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-14",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "cmds-daily-briefing": [
-      {
-        "date": "2026-05-28T23:35:53Z",
-        "kind": "commit",
-        "text": "Add May 29 research briefing",
-        "sha": "cd78d03"
-      },
-      {
-        "date": "2026-05-29T23:34:30Z",
-        "kind": "commit",
-        "text": "Add May 30 light briefing",
-        "sha": "334f965"
-      },
-      {
-        "date": "2026-05-30T13:54:35Z",
-        "kind": "commit",
-        "text": "Add May 30 build note archive",
-        "sha": "c6e3d08"
-      },
       {
         "date": "2026-05-30T23:34:14Z",
         "kind": "commit",
@@ -4148,6 +4179,23 @@
         "date": "2026-08-13",
         "kind": "progress",
         "text": "완성도 52% · 커밋 +2"
+      },
+      {
+        "date": "2026-08-13T13:48:26Z",
+        "kind": "commit",
+        "text": "Add 2026-08-13 build note",
+        "sha": "d4f9d12"
+      },
+      {
+        "date": "2026-08-13T23:34:15Z",
+        "kind": "commit",
+        "text": "Add 2026-08-14 console briefing",
+        "sha": "86df9fe"
+      },
+      {
+        "date": "2026-08-14",
+        "kind": "progress",
+        "text": "완성도 52% · 커밋 +2"
       }
     ],
     "Timeer": [
@@ -4342,15 +4390,14 @@
         "date": "2026-08-13",
         "kind": "progress",
         "text": "완성도 7%"
+      },
+      {
+        "date": "2026-08-14",
+        "kind": "progress",
+        "text": "완성도 7%"
       }
     ],
     "chaekdam": [
-      {
-        "date": "2026-05-29T19:52:17Z",
-        "kind": "commit",
-        "text": "feat: Phase 7b — 비공개 클럽 초대",
-        "sha": "8ff9700"
-      },
       {
         "date": "2026-05-29T20:04:08Z",
         "kind": "commit",
@@ -4788,15 +4835,14 @@
         "date": "2026-08-13",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-08-14",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-04T09:38:27Z",
-        "kind": "commit",
-        "text": "베타 플레이 경로를 한 줄 smoke로 잠근다",
-        "sha": "8027cbf"
-      },
       {
         "date": "2026-06-04T15:28:32Z",
         "kind": "commit",
@@ -5235,6 +5281,11 @@
       },
       {
         "date": "2026-08-13",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-08-14",
         "kind": "progress",
         "text": "완성도 39%"
       }
