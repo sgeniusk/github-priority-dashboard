@@ -3803,12 +3803,6 @@
     ],
     "cmds-daily-briefing": [
       {
-        "date": "2026-06-03T23:34:22Z",
-        "kind": "commit",
-        "text": "Add June 4 daily console briefing",
-        "sha": "645e6a2"
-      },
-      {
         "date": "2026-06-04",
         "kind": "progress",
         "text": "진척 52%"
@@ -4245,6 +4239,12 @@
         "date": "2026-08-15",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-08-15T13:48:19Z",
+        "kind": "commit",
+        "text": "Add 2026-08-15 build note",
+        "sha": "6d3f049"
       }
     ],
     "Timeer": [

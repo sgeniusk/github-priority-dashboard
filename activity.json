@@ -4,6 +4,12 @@
   "commits": [
     {
       "repo": "cmds-daily-briefing",
+      "sha": "6d3f049",
+      "message": "Add 2026-08-15 build note",
+      "date": "2026-08-15T13:48:19Z"
+    },
+    {
+      "repo": "cmds-daily-briefing",
       "sha": "6818954",
       "message": "Fix console weekday rendering",
       "date": "2026-08-14T23:37:42Z"
@@ -43,12 +49,6 @@
       "sha": "fe8d27c",
       "message": "Add 2026-08-13 console briefing",
       "date": "2026-08-12T23:33:40Z"
-    },
-    {
-      "repo": "cmds-daily-briefing",
-      "sha": "93a2bc3",
-      "message": "Add 2026-08-12 build note",
-      "date": "2026-08-12T13:48:36Z"
     },
     {
       "repo": "story-x-beta",
