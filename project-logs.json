@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-08-15",
+  "generatedAt": "2026-08-16",
   "logs": {
     "samsu": [
       {
@@ -310,6 +310,11 @@
         "date": "2026-08-15",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-08-16",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -536,6 +541,11 @@
       },
       {
         "date": "2026-08-15",
+        "kind": "progress",
+        "text": "완성도 65%"
+      },
+      {
+        "date": "2026-08-16",
         "kind": "progress",
         "text": "완성도 65%"
       }
@@ -928,6 +938,11 @@
         "date": "2026-08-15",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-16",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
@@ -1270,6 +1285,11 @@
         "date": "2026-08-15",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-08-16",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
@@ -1598,6 +1618,11 @@
       },
       {
         "date": "2026-08-15",
+        "kind": "progress",
+        "text": "완성도 55%"
+      },
+      {
+        "date": "2026-08-16",
         "kind": "progress",
         "text": "완성도 55%"
       }
@@ -1954,14 +1979,14 @@
         "date": "2026-08-15",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-08-16",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-06-03",
-        "kind": "progress",
-        "text": "진척 40% · 커밋 +4"
-      },
       {
         "date": "2026-06-03T16:25:42Z",
         "kind": "commit",
@@ -2399,15 +2424,14 @@
         "date": "2026-08-15",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-08-16",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-06-03T13:36:57Z",
-        "kind": "commit",
-        "text": "docs: rank5 인계 프롬프트 + 상태 문서 갱신 (M11 세션 마무리)",
-        "sha": "054faa7"
-      },
       {
         "date": "2026-06-04",
         "kind": "progress",
@@ -2845,6 +2869,11 @@
         "date": "2026-08-15",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-08-16",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
@@ -3059,6 +3088,11 @@
       },
       {
         "date": "2026-08-15",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-16",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -3307,6 +3341,11 @@
         "date": "2026-08-15",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-16",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
@@ -3551,6 +3590,11 @@
       },
       {
         "date": "2026-08-15",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-08-16",
         "kind": "progress",
         "text": "완성도 56%"
       }
@@ -3799,14 +3843,14 @@
         "date": "2026-08-15",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-16",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "cmds-daily-briefing": [
-      {
-        "date": "2026-06-04",
-        "kind": "progress",
-        "text": "진척 52%"
-      },
       {
         "date": "2026-06-04T23:38:27Z",
         "kind": "commit",
@@ -4245,6 +4289,11 @@
         "kind": "commit",
         "text": "Add 2026-08-15 build note",
         "sha": "6d3f049"
+      },
+      {
+        "date": "2026-08-16",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
@@ -4449,15 +4498,14 @@
         "date": "2026-08-15",
         "kind": "progress",
         "text": "완성도 7%"
+      },
+      {
+        "date": "2026-08-16",
+        "kind": "progress",
+        "text": "완성도 7%"
       }
     ],
     "chaekdam": [
-      {
-        "date": "2026-05-29T20:12:01Z",
-        "kind": "commit",
-        "text": "feat: Phase 7d — 실시간 대화 (Realtime)",
-        "sha": "0e251aa"
-      },
       {
         "date": "2026-05-30T15:47:11Z",
         "kind": "commit",
@@ -4893,15 +4941,14 @@
         "date": "2026-08-15",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-08-16",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-04T15:42:41Z",
-        "kind": "commit",
-        "text": "외부 음원 교체 진입점을 연다",
-        "sha": "8438e67"
-      },
       {
         "date": "2026-06-04T16:03:52Z",
         "kind": "commit",
@@ -5338,6 +5385,11 @@
       },
       {
         "date": "2026-08-15",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-08-16",
         "kind": "progress",
         "text": "완성도 39%"
       }
