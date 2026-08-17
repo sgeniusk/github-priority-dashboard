@@ -1,10 +1,10 @@
 {
   "_comment": "최근 30일 GitHub 커밋 관찰 분석. scripts/build-monthly-analysis.mjs가 생성하며 monthly-analysis.html의 FALLBACK_ANALYSIS와 동기화한다.",
-  "generatedAt": "2026-08-16",
+  "generatedAt": "2026-08-17",
   "owner": "sgeniusk",
   "window": {
-    "start": "2026-07-18",
-    "end": "2026-08-16",
+    "start": "2026-07-19",
+    "end": "2026-08-17",
     "days": 30
   },
   "summary": {
@@ -18,10 +18,6 @@
     "leaderName": "해치의 데일리 브리핑"
   },
   "daily": [
-    {
-      "date": "2026-07-18",
-      "commits": 0
-    },
     {
       "date": "2026-07-19",
       "commits": 0
@@ -137,6 +133,10 @@
     {
       "date": "2026-08-16",
       "commits": 0
+    },
+    {
+      "date": "2026-08-17",
+      "commits": 0
     }
   ],
   "breakdowns": {
@@ -223,8 +223,8 @@
       "progressTotal": 52,
       "commits": 17,
       "activeDays": 6,
-      "quietDays": 1,
-      "maxGap": 23,
+      "quietDays": 2,
+      "maxGap": 22,
       "firstCommit": "2026-08-10T07:45:47Z",
       "lastCommit": "2026-08-15T13:48:19Z",
       "state": "steady",
@@ -692,8 +692,8 @@
       "progressTotal": 52,
       "commits": 17,
       "activeDays": 6,
-      "quietDays": 1,
-      "maxGap": 23,
+      "quietDays": 2,
+      "maxGap": 22,
       "firstCommit": "2026-08-10T07:45:47Z",
       "lastCommit": "2026-08-15T13:48:19Z",
       "state": "steady",
