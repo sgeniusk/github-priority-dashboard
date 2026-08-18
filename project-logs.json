@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-08-17",
+  "generatedAt": "2026-08-18",
   "logs": {
     "samsu": [
       {
@@ -320,6 +320,11 @@
         "date": "2026-08-17",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-08-18",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -556,6 +561,11 @@
       },
       {
         "date": "2026-08-17",
+        "kind": "progress",
+        "text": "완성도 65%"
+      },
+      {
+        "date": "2026-08-18",
         "kind": "progress",
         "text": "완성도 65%"
       }
@@ -958,6 +968,11 @@
         "date": "2026-08-17",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-18",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
@@ -1310,6 +1325,11 @@
         "date": "2026-08-17",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-08-18",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
@@ -1648,6 +1668,11 @@
       },
       {
         "date": "2026-08-17",
+        "kind": "progress",
+        "text": "완성도 55%"
+      },
+      {
+        "date": "2026-08-18",
         "kind": "progress",
         "text": "완성도 55%"
       }
@@ -2014,15 +2039,14 @@
         "date": "2026-08-17",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-08-18",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-06-03T23:07:32Z",
-        "kind": "commit",
-        "text": "Take the strategy hand out of the command row and label the controls",
-        "sha": "dc615eb"
-      },
       {
         "date": "2026-06-03T23:47:08Z",
         "kind": "commit",
@@ -2458,14 +2482,14 @@
         "date": "2026-08-17",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-08-18",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-06-05",
-        "kind": "progress",
-        "text": "진척 45%"
-      },
       {
         "date": "2026-06-05T15:01:02Z",
         "kind": "commit",
@@ -2903,6 +2927,11 @@
         "date": "2026-08-17",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-08-18",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
@@ -3127,6 +3156,11 @@
       },
       {
         "date": "2026-08-17",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-18",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -3385,6 +3419,11 @@
         "date": "2026-08-17",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-18",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
@@ -3639,6 +3678,11 @@
       },
       {
         "date": "2026-08-17",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-08-18",
         "kind": "progress",
         "text": "완성도 56%"
       }
@@ -3897,14 +3941,14 @@
         "date": "2026-08-17",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-18",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "cmds-daily-briefing": [
-      {
-        "date": "2026-06-05",
-        "kind": "progress",
-        "text": "진척 52%"
-      },
       {
         "date": "2026-06-05T13:49:12Z",
         "kind": "commit",
@@ -4342,6 +4386,11 @@
         "date": "2026-08-17",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-08-18",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
@@ -4556,14 +4605,14 @@
         "date": "2026-08-17",
         "kind": "progress",
         "text": "완성도 7%"
+      },
+      {
+        "date": "2026-08-18",
+        "kind": "progress",
+        "text": "완성도 7%"
       }
     ],
     "chaekdam": [
-      {
-        "date": "2026-05-31",
-        "kind": "progress",
-        "text": "진척 19%"
-      },
       {
         "date": "2026-06-03",
         "kind": "progress",
@@ -4998,15 +5047,14 @@
         "date": "2026-08-17",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-08-18",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-04T16:22:26Z",
-        "kind": "commit",
-        "text": "드래프트 융합 선택감을 조합 성장으로 끌어올린다",
-        "sha": "811132d"
-      },
       {
         "date": "2026-06-04T16:46:01Z",
         "kind": "commit",
@@ -5441,6 +5489,11 @@
       },
       {
         "date": "2026-08-17",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-08-18",
         "kind": "progress",
         "text": "완성도 39%"
       }
