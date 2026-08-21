@@ -1,27 +1,23 @@
 {
   "_comment": "최근 30일 GitHub 커밋 관찰 분석. scripts/build-monthly-analysis.mjs가 생성하며 monthly-analysis.html의 FALLBACK_ANALYSIS와 동기화한다.",
-  "generatedAt": "2026-08-20",
+  "generatedAt": "2026-08-21",
   "owner": "sgeniusk",
   "window": {
-    "start": "2026-07-22",
-    "end": "2026-08-20",
+    "start": "2026-07-23",
+    "end": "2026-08-21",
     "days": 30
   },
   "summary": {
     "totalRepos": 17,
-    "activeRepos": 1,
-    "quietRepos": 16,
-    "totalCommits": 17,
-    "activeDays": 6,
-    "avgCommitsPerActiveRepo": 17,
-    "leaderRepo": "cmds-daily-briefing",
-    "leaderName": "해치의 데일리 브리핑"
+    "activeRepos": 0,
+    "quietRepos": 17,
+    "totalCommits": 0,
+    "activeDays": 0,
+    "avgCommitsPerActiveRepo": 0,
+    "leaderRepo": "pliside-ops",
+    "leaderName": "Loom · 유튜브 운영 시스템"
   },
   "daily": [
-    {
-      "date": "2026-07-22",
-      "commits": 0
-    },
     {
       "date": "2026-07-23",
       "commits": 0
@@ -96,27 +92,27 @@
     },
     {
       "date": "2026-08-10",
-      "commits": 6
+      "commits": 0
     },
     {
       "date": "2026-08-11",
-      "commits": 2
+      "commits": 0
     },
     {
       "date": "2026-08-12",
-      "commits": 2
+      "commits": 0
     },
     {
       "date": "2026-08-13",
-      "commits": 2
+      "commits": 0
     },
     {
       "date": "2026-08-14",
-      "commits": 4
+      "commits": 0
     },
     {
       "date": "2026-08-15",
-      "commits": 1
+      "commits": 0
     },
     {
       "date": "2026-08-16",
@@ -137,22 +133,26 @@
     {
       "date": "2026-08-20",
       "commits": 0
+    },
+    {
+      "date": "2026-08-21",
+      "commits": 0
     }
   ],
   "breakdowns": {
     "category": [
       {
-        "id": "app",
-        "label": "앱",
-        "commits": 17,
-        "repos": 8,
-        "activeRepos": 1
-      },
-      {
         "id": "game",
         "label": "게임",
         "commits": 0,
         "repos": 5,
+        "activeRepos": 0
+      },
+      {
+        "id": "app",
+        "label": "앱",
+        "commits": 0,
+        "repos": 8,
         "activeRepos": 0
       },
       {
@@ -167,9 +167,9 @@
       {
         "id": "claude",
         "label": "Claude",
-        "commits": 17,
+        "commits": 0,
         "repos": 10,
-        "activeRepos": 1
+        "activeRepos": 0
       },
       {
         "id": "codex",
@@ -186,97 +186,14 @@
         "activeRepos": 0
       }
     ],
-    "themes": [
-      {
-        "id": "experience",
-        "label": "경험/화면",
-        "commits": 10
-      },
-      {
-        "id": "docs",
-        "label": "문서화",
-        "commits": 6
-      },
-      {
-        "id": "stability",
-        "label": "안정화",
-        "commits": 1
-      }
-    ]
+    "themes": []
   },
   "diagnosis": [
-    "이번 30일의 중심은 해치의 데일리 브리핑입니다. 17커밋과 6일의 활동일이 관찰되어, 가장 많은 실제 손길을 받았습니다.",
-    "전체 17개 중 1개 리포만 움직였습니다. 지금은 확장보다 재개 조건을 좁히는 운영 판단이 더 중요합니다.",
-    "16개 리포는 한 달 동안 새 커밋이 없었습니다. 보류 프로젝트는 괜찮지만, 활성 프로젝트가 여기에 포함되면 다음 액션의 크기를 줄여야 합니다."
+    "이번 30일의 중심은 Loom · 유튜브 운영 시스템입니다. 0커밋과 0일의 활동일이 관찰되어, 가장 많은 실제 손길을 받았습니다.",
+    "전체 17개 중 0개 리포만 움직였습니다. 지금은 확장보다 재개 조건을 좁히는 운영 판단이 더 중요합니다.",
+    "17개 리포는 한 달 동안 새 커밋이 없었습니다. 보류 프로젝트는 괜찮지만, 활성 프로젝트가 여기에 포함되면 다음 액션의 크기를 줄여야 합니다."
   ],
   "repos": [
-    {
-      "repo": "cmds-daily-briefing",
-      "displayName": "해치의 데일리 브리핑",
-      "icon": "📰",
-      "category": "app",
-      "categoryLabel": "앱",
-      "tool": "claude",
-      "toolLabel": "Claude",
-      "status": "active",
-      "rank": 15,
-      "progressTotal": 52,
-      "commits": 17,
-      "activeDays": 6,
-      "quietDays": 5,
-      "maxGap": 19,
-      "firstCommit": "2026-08-10T07:45:47Z",
-      "lastCommit": "2026-08-15T13:48:19Z",
-      "state": "steady",
-      "topTheme": "experience",
-      "themeLabel": "경험/화면",
-      "themes": {
-        "docs": 6,
-        "experience": 10,
-        "stability": 1
-      },
-      "byDate": {
-        "2026-08-10": 6,
-        "2026-08-11": 2,
-        "2026-08-12": 2,
-        "2026-08-13": 2,
-        "2026-08-14": 4,
-        "2026-08-15": 1
-      },
-      "latest": [
-        {
-          "sha": "6d3f049",
-          "message": "Add 2026-08-15 build note",
-          "date": "2026-08-15T13:48:19Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/6d3f049b0ad28e2d02b95e1e962e3acbedffbf6b"
-        },
-        {
-          "sha": "6818954",
-          "message": "Fix console weekday rendering",
-          "date": "2026-08-14T23:37:42Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/681895404b2fe6c884606706a7311faa6e4dd625"
-        },
-        {
-          "sha": "976b546",
-          "message": "Add 2026-08-15 console briefing",
-          "date": "2026-08-14T23:33:31Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/976b546ee68cd91bbe287bde5652ae0a9dbe4de2"
-        },
-        {
-          "sha": "20e6518",
-          "message": "Polish 2026-08-14 build note verification",
-          "date": "2026-08-14T13:50:23Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/20e65184c08334f7e1b077f4277ac3594c4547cb"
-        },
-        {
-          "sha": "735e5bb",
-          "message": "Add 2026-08-14 build note",
-          "date": "2026-08-14T13:49:03Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/735e5bb264d8fe35e5ac2e85255a22dd5875f018"
-        }
-      ],
-      "insight": "해치의 데일리 브리핑은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
-    },
     {
       "repo": "pliside-ops",
       "displayName": "Loom · 유튜브 운영 시스템",
@@ -603,6 +520,31 @@
       "insight": "AI 디자인 시스템 스쿨은 이번 30일 창에서 새 커밋이 보이지 않았습니다. 상태를 유지할 이유가 없다면 다음 세션에서 보류 사유나 재개 조건을 다시 적어두는 편이 좋습니다."
     },
     {
+      "repo": "cmds-daily-briefing",
+      "displayName": "해치의 데일리 브리핑",
+      "icon": "📰",
+      "category": "app",
+      "categoryLabel": "앱",
+      "tool": "claude",
+      "toolLabel": "Claude",
+      "status": "active",
+      "rank": 15,
+      "progressTotal": 52,
+      "commits": 0,
+      "activeDays": 0,
+      "quietDays": 30,
+      "maxGap": 30,
+      "firstCommit": null,
+      "lastCommit": null,
+      "state": "quiet",
+      "topTheme": "maintenance",
+      "themeLabel": "정리/운영",
+      "themes": {},
+      "byDate": {},
+      "latest": [],
+      "insight": "해치의 데일리 브리핑은 이번 30일 창에서 새 커밋이 보이지 않았습니다. 상태를 유지할 이유가 없다면 다음 세션에서 보류 사유나 재개 조건을 다시 적어두는 편이 좋습니다."
+    },
+    {
       "repo": "Timeer",
       "displayName": "Timeer",
       "icon": "⏰",
@@ -679,73 +621,6 @@
     }
   ],
   "topRepos": [
-    {
-      "repo": "cmds-daily-briefing",
-      "displayName": "해치의 데일리 브리핑",
-      "icon": "📰",
-      "category": "app",
-      "categoryLabel": "앱",
-      "tool": "claude",
-      "toolLabel": "Claude",
-      "status": "active",
-      "rank": 15,
-      "progressTotal": 52,
-      "commits": 17,
-      "activeDays": 6,
-      "quietDays": 5,
-      "maxGap": 19,
-      "firstCommit": "2026-08-10T07:45:47Z",
-      "lastCommit": "2026-08-15T13:48:19Z",
-      "state": "steady",
-      "topTheme": "experience",
-      "themeLabel": "경험/화면",
-      "themes": {
-        "docs": 6,
-        "experience": 10,
-        "stability": 1
-      },
-      "byDate": {
-        "2026-08-10": 6,
-        "2026-08-11": 2,
-        "2026-08-12": 2,
-        "2026-08-13": 2,
-        "2026-08-14": 4,
-        "2026-08-15": 1
-      },
-      "latest": [
-        {
-          "sha": "6d3f049",
-          "message": "Add 2026-08-15 build note",
-          "date": "2026-08-15T13:48:19Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/6d3f049b0ad28e2d02b95e1e962e3acbedffbf6b"
-        },
-        {
-          "sha": "6818954",
-          "message": "Fix console weekday rendering",
-          "date": "2026-08-14T23:37:42Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/681895404b2fe6c884606706a7311faa6e4dd625"
-        },
-        {
-          "sha": "976b546",
-          "message": "Add 2026-08-15 console briefing",
-          "date": "2026-08-14T23:33:31Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/976b546ee68cd91bbe287bde5652ae0a9dbe4de2"
-        },
-        {
-          "sha": "20e6518",
-          "message": "Polish 2026-08-14 build note verification",
-          "date": "2026-08-14T13:50:23Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/20e65184c08334f7e1b077f4277ac3594c4547cb"
-        },
-        {
-          "sha": "735e5bb",
-          "message": "Add 2026-08-14 build note",
-          "date": "2026-08-14T13:49:03Z",
-          "url": "https://github.com/sgeniusk/cmds-daily-briefing/commit/735e5bb264d8fe35e5ac2e85255a22dd5875f018"
-        }
-      ],
-      "insight": "해치의 데일리 브리핑은 한 달 안에서도 긴 공백이 보입니다. 다시 잡을 때는 새 기능보다 실행 명령, 현재 깨진 지점, 다음 1시간 목표부터 확인하는 편이 안전합니다."
-    },
     {
       "repo": "pliside-ops",
       "displayName": "Loom · 유튜브 운영 시스템",
@@ -870,6 +745,31 @@
       "byDate": {},
       "latest": [],
       "insight": "전지적 군주 시점은 이번 30일 창에서 새 커밋이 보이지 않았습니다. 상태를 유지할 이유가 없다면 다음 세션에서 보류 사유나 재개 조건을 다시 적어두는 편이 좋습니다."
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "displayName": "군령: 책략의 전장 (Warlord's Command)",
+      "icon": "🃏",
+      "category": "game",
+      "categoryLabel": "게임",
+      "tool": "codex",
+      "toolLabel": "Codex",
+      "status": "active",
+      "rank": 7,
+      "progressTotal": 55,
+      "commits": 0,
+      "activeDays": 0,
+      "quietDays": 30,
+      "maxGap": 30,
+      "firstCommit": null,
+      "lastCommit": null,
+      "state": "quiet",
+      "topTheme": "maintenance",
+      "themeLabel": "정리/운영",
+      "themes": {},
+      "byDate": {},
+      "latest": [],
+      "insight": "군령: 책략의 전장 (Warlord's Command)은 이번 30일 창에서 새 커밋이 보이지 않았습니다. 상태를 유지할 이유가 없다면 다음 세션에서 보류 사유나 재개 조건을 다시 적어두는 편이 좋습니다."
     }
   ],
   "quietList": [
@@ -1024,5 +924,74 @@
       "insight": "군령: 책략의 전장 (Warlord's Command)은 이번 30일 창에서 새 커밋이 보이지 않았습니다. 상태를 유지할 이유가 없다면 다음 세션에서 보류 사유나 재개 조건을 다시 적어두는 편이 좋습니다."
     }
   ],
-  "errors": []
+  "errors": [
+    {
+      "repo": "pliside-ops",
+      "message": "pliside-ops commits HTTP 401"
+    },
+    {
+      "repo": "habit",
+      "message": "habit commits HTTP 401"
+    },
+    {
+      "repo": "tteuniyu-ios",
+      "message": "tteuniyu-ios commits HTTP 401"
+    },
+    {
+      "repo": "sam-defender-logue",
+      "message": "sam-defender-logue commits HTTP 401"
+    },
+    {
+      "repo": "samguk-idle-prototype",
+      "message": "samguk-idle-prototype commits HTTP 401"
+    },
+    {
+      "repo": "three-kingdoms-deckbuilder",
+      "message": "three-kingdoms-deckbuilder commits HTTP 401"
+    },
+    {
+      "repo": "ai-builder-school",
+      "message": "ai-builder-school commits HTTP 401"
+    },
+    {
+      "repo": "ai-company-tycoon-boundaryless",
+      "message": "ai-company-tycoon-boundaryless commits HTTP 401"
+    },
+    {
+      "repo": "story-x-beta",
+      "message": "story-x-beta commits HTTP 401"
+    },
+    {
+      "repo": "BookCircle",
+      "message": "BookCircle commits HTTP 401"
+    },
+    {
+      "repo": "jewelry-webtoon-cloud",
+      "message": "jewelry-webtoon-cloud commits HTTP 401"
+    },
+    {
+      "repo": "Nodeloom",
+      "message": "Nodeloom commits HTTP 401"
+    },
+    {
+      "repo": "design-system-school",
+      "message": "design-system-school commits HTTP 401"
+    },
+    {
+      "repo": "cmds-daily-briefing",
+      "message": "cmds-daily-briefing commits HTTP 401"
+    },
+    {
+      "repo": "Timeer",
+      "message": "Timeer commits HTTP 401"
+    },
+    {
+      "repo": "chaekdam",
+      "message": "chaekdam commits HTTP 401"
+    },
+    {
+      "repo": "honbul",
+      "message": "honbul commits HTTP 401"
+    }
+  ]
 }
