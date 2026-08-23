@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-08-22",
+  "generatedAt": "2026-08-23",
   "logs": {
     "samsu": [
       {
@@ -345,6 +345,11 @@
         "date": "2026-08-22",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-08-23",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -606,6 +611,11 @@
       },
       {
         "date": "2026-08-22",
+        "kind": "progress",
+        "text": "완성도 65%"
+      },
+      {
+        "date": "2026-08-23",
         "kind": "progress",
         "text": "완성도 65%"
       }
@@ -1033,6 +1043,11 @@
         "date": "2026-08-22",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-23",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
@@ -1410,6 +1425,11 @@
         "date": "2026-08-22",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-08-23",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
@@ -1773,6 +1793,11 @@
       },
       {
         "date": "2026-08-22",
+        "kind": "progress",
+        "text": "완성도 55%"
+      },
+      {
+        "date": "2026-08-23",
         "kind": "progress",
         "text": "완성도 55%"
       }
@@ -2164,15 +2189,14 @@
         "date": "2026-08-22",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-08-23",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-06-09T07:01:33Z",
-        "kind": "commit",
-        "text": "feat-006 Block A: 경쟁사·시장점유율·전국 랭킹 시스템 (헤드리스)",
-        "sha": "ecf3e44"
-      },
       {
         "date": "2026-06-09T07:06:19Z",
         "kind": "commit",
@@ -2606,15 +2630,14 @@
         "date": "2026-08-22",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-08-23",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-06-06T00:07:08Z",
-        "kind": "commit",
-        "text": "test(editor): FloatingEditor 실데이터 배선 RED — props·콜백·시안제거 단언",
-        "sha": "fc7d5c4"
-      },
       {
         "date": "2026-06-06T00:11:03Z",
         "kind": "commit",
@@ -3048,6 +3071,11 @@
         "date": "2026-08-22",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-08-23",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
@@ -3297,6 +3325,11 @@
       },
       {
         "date": "2026-08-22",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-23",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -3580,6 +3613,11 @@
         "date": "2026-08-22",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-23",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
@@ -3859,6 +3897,11 @@
       },
       {
         "date": "2026-08-22",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-08-23",
         "kind": "progress",
         "text": "완성도 56%"
       }
@@ -4142,15 +4185,14 @@
         "date": "2026-08-22",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-23",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "cmds-daily-briefing": [
-      {
-        "date": "2026-06-07T13:48:58Z",
-        "kind": "commit",
-        "text": "Add June 7 build note",
-        "sha": "12369f3"
-      },
       {
         "date": "2026-06-08T01:15:28Z",
         "kind": "commit",
@@ -4584,6 +4626,11 @@
         "date": "2026-08-22",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-08-23",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
@@ -4823,15 +4870,14 @@
         "date": "2026-08-22",
         "kind": "progress",
         "text": "완성도 7%"
+      },
+      {
+        "date": "2026-08-23",
+        "kind": "progress",
+        "text": "완성도 7%"
       }
     ],
     "chaekdam": [
-      {
-        "date": "2026-06-05T03:04:21Z",
-        "kind": "commit",
-        "text": "Harden OAuth redirect origin",
-        "sha": "7cf330f"
-      },
       {
         "date": "2026-06-05T12:34:37Z",
         "kind": "commit",
@@ -5264,15 +5310,14 @@
         "date": "2026-08-22",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-08-23",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-04T23:22:27Z",
-        "kind": "commit",
-        "text": "전투 입력을 화면 증거로 고정한다",
-        "sha": "7071ab6"
-      },
       {
         "date": "2026-06-04T23:27:44Z",
         "kind": "commit",
@@ -5702,6 +5747,11 @@
       },
       {
         "date": "2026-08-22",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-08-23",
         "kind": "progress",
         "text": "완성도 39%"
       }
