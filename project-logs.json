@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-08-26",
+  "generatedAt": "2026-08-27",
   "logs": {
     "samsu": [
       {
@@ -365,6 +365,11 @@
         "date": "2026-08-26",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-08-27",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -648,15 +653,14 @@
         "date": "2026-08-26",
         "kind": "progress",
         "text": "완성도 65%"
+      },
+      {
+        "date": "2026-08-27",
+        "kind": "progress",
+        "text": "완성도 65%"
       }
     ],
     "sam-defender-logue": [
-      {
-        "date": "2026-05-21T05:45:29Z",
-        "kind": "commit",
-        "text": "Add battlefield terrain asset adapter",
-        "sha": "f53a0e4"
-      },
       {
         "date": "2026-05-21T06:00:57Z",
         "kind": "commit",
@@ -1081,6 +1085,11 @@
         "date": "2026-08-26",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-27",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
@@ -1478,6 +1487,11 @@
         "date": "2026-08-26",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-08-27",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
@@ -1861,6 +1875,11 @@
       },
       {
         "date": "2026-08-26",
+        "kind": "progress",
+        "text": "완성도 55%"
+      },
+      {
+        "date": "2026-08-27",
         "kind": "progress",
         "text": "완성도 55%"
       }
@@ -2272,15 +2291,14 @@
         "date": "2026-08-26",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-08-27",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-06-09T08:41:32Z",
-        "kind": "commit",
-        "text": "feat-006 Block D: 캐릭터·씬 생동감 (직원 통통 모션 + 모달 팝인)",
-        "sha": "08c13a1"
-      },
       {
         "date": "2026-06-09T08:42:34Z",
         "kind": "commit",
@@ -2710,15 +2728,14 @@
         "date": "2026-08-26",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-08-27",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-06-06T00:21:38Z",
-        "kind": "commit",
-        "text": "docs: 플로팅 에디터 실데이터 배선 진행 상태·인계 동기화",
-        "sha": "10c105a"
-      },
       {
         "date": "2026-06-10",
         "kind": "progress",
@@ -3148,6 +3165,11 @@
         "date": "2026-08-26",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-08-27",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
@@ -3417,6 +3439,11 @@
       },
       {
         "date": "2026-08-26",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-27",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -3720,6 +3747,11 @@
         "date": "2026-08-26",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-27",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
@@ -4019,6 +4051,11 @@
       },
       {
         "date": "2026-08-26",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-08-27",
         "kind": "progress",
         "text": "완성도 56%"
       }
@@ -4322,14 +4359,14 @@
         "date": "2026-08-26",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-27",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "cmds-daily-briefing": [
-      {
-        "date": "2026-06-10",
-        "kind": "progress",
-        "text": "완성도 52% · 커밋 +6"
-      },
       {
         "date": "2026-06-10T02:40:01Z",
         "kind": "commit",
@@ -4760,6 +4797,11 @@
         "date": "2026-08-26",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-08-27",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
@@ -5019,15 +5061,14 @@
         "date": "2026-08-26",
         "kind": "progress",
         "text": "완성도 7%"
+      },
+      {
+        "date": "2026-08-27",
+        "kind": "progress",
+        "text": "완성도 7%"
       }
     ],
     "chaekdam": [
-      {
-        "date": "2026-06-06T01:30:15Z",
-        "kind": "commit",
-        "text": "feat(presentation): solo prep→present flow with separated speaker notes",
-        "sha": "6a51a51"
-      },
       {
         "date": "2026-06-06T01:30:22Z",
         "kind": "commit",
@@ -5457,15 +5498,14 @@
         "date": "2026-08-26",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-08-27",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-05T02:38:00Z",
-        "kind": "commit",
-        "text": "전투가 흔들림 없이 읽히게 한다",
-        "sha": "1dc493d"
-      },
       {
         "date": "2026-06-05T02:55:53Z",
         "kind": "commit",
@@ -5892,6 +5932,11 @@
       },
       {
         "date": "2026-08-26",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-08-27",
         "kind": "progress",
         "text": "완성도 39%"
       }
