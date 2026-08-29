@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-08-28",
+  "generatedAt": "2026-08-29",
   "logs": {
     "samsu": [
       {
@@ -375,6 +375,11 @@
         "date": "2026-08-28",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-08-29",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -668,15 +673,14 @@
         "date": "2026-08-28",
         "kind": "progress",
         "text": "완성도 65%"
+      },
+      {
+        "date": "2026-08-29",
+        "kind": "progress",
+        "text": "완성도 65%"
       }
     ],
     "sam-defender-logue": [
-      {
-        "date": "2026-05-21T06:21:18Z",
-        "kind": "commit",
-        "text": "Add battlefield graphics tone plan",
-        "sha": "0c7ef35"
-      },
       {
         "date": "2026-05-21T07:51:43Z",
         "kind": "commit",
@@ -1099,6 +1103,11 @@
         "date": "2026-08-28",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-29",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
@@ -1506,6 +1515,11 @@
         "date": "2026-08-28",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-08-29",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
@@ -1899,6 +1913,11 @@
       },
       {
         "date": "2026-08-28",
+        "kind": "progress",
+        "text": "완성도 55%"
+      },
+      {
+        "date": "2026-08-29",
         "kind": "progress",
         "text": "완성도 55%"
       }
@@ -2320,15 +2339,14 @@
         "date": "2026-08-28",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-08-29",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-06-09T09:24:02Z",
-        "kind": "commit",
-        "text": "docs: feat-006 A~D 일단락, Block E 보류 (사용자 지시)",
-        "sha": "d827dc1"
-      },
       {
         "date": "2026-06-09T11:30:44Z",
         "kind": "commit",
@@ -2756,15 +2774,14 @@
         "date": "2026-08-28",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-08-29",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-06-13T06:15:45Z",
-        "kind": "commit",
-        "text": "feat(phase-a): A-4 헌장 프롬프트 주입 — digest 절·예산/종반/척추 규칙·길 잃음 점검",
-        "sha": "40646ea"
-      },
       {
         "date": "2026-06-13T06:17:37Z",
         "kind": "commit",
@@ -3193,6 +3210,11 @@
         "date": "2026-08-28",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-08-29",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
@@ -3472,6 +3494,11 @@
       },
       {
         "date": "2026-08-28",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-29",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -3785,6 +3812,11 @@
         "date": "2026-08-28",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-29",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
@@ -4094,6 +4126,11 @@
       },
       {
         "date": "2026-08-28",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-08-29",
         "kind": "progress",
         "text": "완성도 56%"
       }
@@ -4407,15 +4444,14 @@
         "date": "2026-08-28",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-08-29",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "cmds-daily-briefing": [
-      {
-        "date": "2026-06-10T13:48:36Z",
-        "kind": "commit",
-        "text": "Add June 10 build note",
-        "sha": "610e1d2"
-      },
       {
         "date": "2026-06-10T23:32:59Z",
         "kind": "commit",
@@ -4844,6 +4880,11 @@
         "date": "2026-08-28",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-08-29",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
@@ -5113,15 +5154,14 @@
         "date": "2026-08-28",
         "kind": "progress",
         "text": "완성도 7%"
+      },
+      {
+        "date": "2026-08-29",
+        "kind": "progress",
+        "text": "완성도 7%"
       }
     ],
     "chaekdam": [
-      {
-        "date": "2026-06-06T01:35:07Z",
-        "kind": "commit",
-        "text": "docs: add 2026-06-06 handoff and Phase 10 backlog",
-        "sha": "6c8b1e9"
-      },
       {
         "date": "2026-06-07T06:16:26Z",
         "kind": "commit",
@@ -5549,15 +5589,14 @@
         "date": "2026-08-28",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-08-29",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-05T03:10:23Z",
-        "kind": "commit",
-        "text": "구슬이 아레나 벽을 넘지 않게 한다",
-        "sha": "d2f5b16"
-      },
       {
         "date": "2026-06-05T03:38:17Z",
         "kind": "commit",
@@ -5982,6 +6021,11 @@
       },
       {
         "date": "2026-08-28",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-08-29",
         "kind": "progress",
         "text": "완성도 39%"
       }
