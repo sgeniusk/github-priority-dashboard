@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-09-01",
+  "generatedAt": "2026-09-02",
   "logs": {
     "samsu": [
       {
@@ -395,6 +395,11 @@
         "date": "2026-09-01",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-09-02",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -708,15 +713,14 @@
         "date": "2026-09-01",
         "kind": "progress",
         "text": "완성도 65%"
+      },
+      {
+        "date": "2026-09-02",
+        "kind": "progress",
+        "text": "완성도 65%"
       }
     ],
     "sam-defender-logue": [
-      {
-        "date": "2026-05-28",
-        "kind": "note",
-        "label": "조언",
-        "text": "콘텐츠 데이터와 마크다운 ID 불일치부터 잡으시길. 하네스가 어긋난 채로 항목을 늘리면 백로그만 더 무거워집니다."
-      },
       {
         "date": "2026-05-31",
         "kind": "progress",
@@ -1135,15 +1139,14 @@
         "date": "2026-09-01",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-02",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
-      {
-        "date": "2026-05-28",
-        "kind": "note",
-        "label": "조언",
-        "text": "20분과 24시간 세션을 합성 플레이테스트로 함께 돌려보시길. 방치형은 결국 시간 곡선이 재미를 결정합니다."
-      },
       {
         "date": "2026-05-30T17:36:23Z",
         "kind": "commit",
@@ -1562,6 +1565,11 @@
         "date": "2026-09-01",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-09-02",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
@@ -1977,15 +1985,14 @@
         "date": "2026-09-01",
         "kind": "progress",
         "text": "완성도 55%"
+      },
+      {
+        "date": "2026-09-02",
+        "kind": "progress",
+        "text": "완성도 55%"
       }
     ],
     "ai-builder-school": [
-      {
-        "date": "2026-05-27T05:32:09Z",
-        "kind": "commit",
-        "text": "content(stage-1): cost-monitoring-in-production 본문 보강 — stub 34줄 → 84줄",
-        "sha": "deb4064"
-      },
       {
         "date": "2026-05-27T05:36:04Z",
         "kind": "commit",
@@ -2404,15 +2411,14 @@
         "date": "2026-09-01",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-09-02",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-06-13T05:25:20Z",
-        "kind": "commit",
-        "text": "docs: feat-016 등록 — 오피스 비주얼 전면 재작업 (사용자 피드백: 사무실 같지 않다 → 진짜 픽셀아트 룸)",
-        "sha": "ccf6b51"
-      },
       {
         "date": "2026-06-13T08:54:52Z",
         "kind": "commit",
@@ -2837,15 +2843,14 @@
         "date": "2026-09-01",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-09-02",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-06-13T07:12:21Z",
-        "kind": "commit",
-        "text": "docs: A-5 완료 반영 — 헌장 체인 배선 끝, 다음=A-3 온보딩(헌장 생성)",
-        "sha": "4c64a1d"
-      },
       {
         "date": "2026-06-13T07:44:08Z",
         "kind": "commit",
@@ -3270,6 +3275,11 @@
         "date": "2026-09-01",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-09-02",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
@@ -3569,6 +3579,11 @@
       },
       {
         "date": "2026-09-01",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-02",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -3902,6 +3917,11 @@
         "date": "2026-09-01",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-02",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
@@ -4231,6 +4251,11 @@
       },
       {
         "date": "2026-09-01",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-09-02",
         "kind": "progress",
         "text": "완성도 56%"
       }
@@ -4564,15 +4589,14 @@
         "date": "2026-09-01",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-02",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "cmds-daily-briefing": [
-      {
-        "date": "2026-06-12T13:48:50Z",
-        "kind": "commit",
-        "text": "Add June 12 build note",
-        "sha": "bbd9501"
-      },
       {
         "date": "2026-06-12T23:33:15Z",
         "kind": "commit",
@@ -4997,6 +5021,11 @@
         "date": "2026-09-01",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-09-02",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
@@ -5286,15 +5315,14 @@
         "date": "2026-09-01",
         "kind": "progress",
         "text": "완성도 7%"
+      },
+      {
+        "date": "2026-09-02",
+        "kind": "progress",
+        "text": "완성도 7%"
       }
     ],
     "chaekdam": [
-      {
-        "date": "2026-06-13T08:51:12Z",
-        "kind": "commit",
-        "text": "chore(deps): avatar next/image 전환 + 미사용 radix 4종 제거 (F4·F5)",
-        "sha": "59e9d63"
-      },
       {
         "date": "2026-06-13T08:55:04Z",
         "kind": "commit",
@@ -5719,15 +5747,14 @@
         "date": "2026-09-01",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-09-02",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-06T03:49:51Z",
-        "kind": "commit",
-        "text": "전투 손맛을 살리고 메뉴·맵을 명부 아트로 입힌다",
-        "sha": "18fe103"
-      },
       {
         "date": "2026-06-06T05:31:18Z",
         "kind": "commit",
@@ -6149,6 +6176,11 @@
       },
       {
         "date": "2026-09-01",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-09-02",
         "kind": "progress",
         "text": "완성도 39%"
       }
