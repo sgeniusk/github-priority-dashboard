@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-09-02",
+  "generatedAt": "2026-09-03",
   "logs": {
     "samsu": [
       {
@@ -400,6 +400,11 @@
         "date": "2026-09-02",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-09-03",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -718,14 +723,14 @@
         "date": "2026-09-02",
         "kind": "progress",
         "text": "완성도 65%"
+      },
+      {
+        "date": "2026-09-03",
+        "kind": "progress",
+        "text": "완성도 65%"
       }
     ],
     "sam-defender-logue": [
-      {
-        "date": "2026-05-31",
-        "kind": "progress",
-        "text": "진척 60%"
-      },
       {
         "date": "2026-06-01T00:48:02Z",
         "kind": "commit",
@@ -1144,15 +1149,14 @@
         "date": "2026-09-02",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-03",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
-      {
-        "date": "2026-05-30T17:36:23Z",
-        "kind": "commit",
-        "text": "Keep adventure auto-hunt inside the store frame",
-        "sha": "8c229a4"
-      },
       {
         "date": "2026-05-30T17:57:44Z",
         "kind": "commit",
@@ -1568,6 +1572,11 @@
       },
       {
         "date": "2026-09-02",
+        "kind": "progress",
+        "text": "완성도 60%"
+      },
+      {
+        "date": "2026-09-03",
         "kind": "progress",
         "text": "완성도 60%"
       }
@@ -1990,15 +1999,14 @@
         "date": "2026-09-02",
         "kind": "progress",
         "text": "완성도 55%"
+      },
+      {
+        "date": "2026-09-03",
+        "kind": "progress",
+        "text": "완성도 55%"
       }
     ],
     "ai-builder-school": [
-      {
-        "date": "2026-05-27T05:36:04Z",
-        "kind": "commit",
-        "text": "content(stage-1): ai-delegation-decision 본문 보강 — stub 36줄 → 96줄",
-        "sha": "e14fd37"
-      },
       {
         "date": "2026-05-27T07:24:27Z",
         "kind": "commit",
@@ -2416,15 +2424,14 @@
         "date": "2026-09-02",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-09-03",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-06-13T08:54:52Z",
-        "kind": "commit",
-        "text": "feat-016: 오피스 비주얼 전면 재작업 — 정면 단면 픽셀룸 4종",
-        "sha": "4ffc4cf"
-      },
       {
         "date": "2026-06-13T08:55:20Z",
         "kind": "commit",
@@ -2848,15 +2855,14 @@
         "date": "2026-09-02",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-09-03",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-06-13T07:44:08Z",
-        "kind": "commit",
-        "text": "feat(phase-a): A-3 헌장 빌더 — deriveBeatSheet·buildStoryContractFromOnboarding",
-        "sha": "54fa97a"
-      },
       {
         "date": "2026-06-13T08:56:39Z",
         "kind": "commit",
@@ -3280,6 +3286,11 @@
         "date": "2026-09-02",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-09-03",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
@@ -3584,6 +3595,11 @@
       },
       {
         "date": "2026-09-02",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-03",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -3922,6 +3938,11 @@
         "date": "2026-09-02",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-03",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
@@ -4256,6 +4277,11 @@
       },
       {
         "date": "2026-09-02",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-09-03",
         "kind": "progress",
         "text": "완성도 56%"
       }
@@ -4594,15 +4620,14 @@
         "date": "2026-09-02",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-03",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "cmds-daily-briefing": [
-      {
-        "date": "2026-06-12T23:33:15Z",
-        "kind": "commit",
-        "text": "Add June 13 light research briefing",
-        "sha": "da6774d"
-      },
       {
         "date": "2026-06-13T13:49:32Z",
         "kind": "commit",
@@ -5026,6 +5051,11 @@
         "date": "2026-09-02",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-09-03",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
@@ -5320,15 +5350,14 @@
         "date": "2026-09-02",
         "kind": "progress",
         "text": "완성도 7%"
+      },
+      {
+        "date": "2026-09-03",
+        "kind": "progress",
+        "text": "완성도 7%"
       }
     ],
     "chaekdam": [
-      {
-        "date": "2026-06-13T08:55:04Z",
-        "kind": "commit",
-        "text": "feat(dashboard): 이어읽기 복구 큐 — 며칠째 안 펼친 진행 중인 책 다시 꺼내기 (G2)",
-        "sha": "87e3fe7"
-      },
       {
         "date": "2026-06-13T08:58:36Z",
         "kind": "commit",
@@ -5752,15 +5781,14 @@
         "date": "2026-09-02",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-09-03",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-06T05:31:18Z",
-        "kind": "commit",
-        "text": "마을 허브와 보스·손맛으로 게임을 한 판답게 만든다",
-        "sha": "761100c"
-      },
       {
         "date": "2026-06-06T05:52:44Z",
         "kind": "commit",
@@ -6181,6 +6209,11 @@
       },
       {
         "date": "2026-09-02",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-09-03",
         "kind": "progress",
         "text": "완성도 39%"
       }
