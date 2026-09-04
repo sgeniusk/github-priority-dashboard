@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-09-03",
+  "generatedAt": "2026-09-04",
   "logs": {
     "samsu": [
       {
@@ -405,6 +405,11 @@
         "date": "2026-09-03",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-09-04",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -728,15 +733,14 @@
         "date": "2026-09-03",
         "kind": "progress",
         "text": "완성도 65%"
+      },
+      {
+        "date": "2026-09-04",
+        "kind": "progress",
+        "text": "완성도 65%"
       }
     ],
     "sam-defender-logue": [
-      {
-        "date": "2026-06-01T00:48:02Z",
-        "kind": "commit",
-        "text": "feat(asset-beta): make wave launch land in debrief",
-        "sha": "e73e2c5"
-      },
       {
         "date": "2026-06-01T07:52:54Z",
         "kind": "commit",
@@ -1154,15 +1158,14 @@
         "date": "2026-09-03",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-04",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
-      {
-        "date": "2026-05-30T17:57:44Z",
-        "kind": "commit",
-        "text": "Keep final screenshot proof explicit",
-        "sha": "f6f3a34"
-      },
       {
         "date": "2026-05-30T18:19:43Z",
         "kind": "commit",
@@ -1579,15 +1582,14 @@
         "date": "2026-09-03",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-09-04",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
-      {
-        "date": "2026-05-28",
-        "kind": "note",
-        "label": "조언",
-        "text": "오리지널 시각 디자인 결정을 미루지 마시길. 라이선스 리스크를 빨리 걷어내야 스팀 위시리스트까지 안전하게 갑니다."
-      },
       {
         "date": "2026-05-29T15:18:42Z",
         "kind": "commit",
@@ -2004,15 +2006,14 @@
         "date": "2026-09-03",
         "kind": "progress",
         "text": "완성도 55%"
+      },
+      {
+        "date": "2026-09-04",
+        "kind": "progress",
+        "text": "완성도 55%"
       }
     ],
     "ai-builder-school": [
-      {
-        "date": "2026-05-27T07:24:27Z",
-        "kind": "commit",
-        "text": "content(stage-1): ai-collaboration-mindset 본문 보강 — stub 37줄 → 92줄",
-        "sha": "13cea7b"
-      },
       {
         "date": "2026-05-28",
         "kind": "note",
@@ -2429,15 +2430,14 @@
         "date": "2026-09-03",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-09-04",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-06-13T08:55:20Z",
-        "kind": "commit",
-        "text": "feat-017: 픽셀 컷씬 시스템 골격 — 출시 발표회 + No-cameras 수정",
-        "sha": "4a4174d"
-      },
       {
         "date": "2026-06-13T11:17:44Z",
         "kind": "commit",
@@ -2860,15 +2860,14 @@
         "date": "2026-09-03",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-09-04",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-06-13T08:56:39Z",
-        "kind": "commit",
-        "text": "feat(phase-a): A-3 온보딩 헌장 생성 단계 — 결말 역산 + 4줄 척추 잠금",
-        "sha": "2e51fa2"
-      },
       {
         "date": "2026-06-13T08:58:14Z",
         "kind": "commit",
@@ -3291,6 +3290,11 @@
         "date": "2026-09-03",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-09-04",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
@@ -3600,6 +3604,11 @@
       },
       {
         "date": "2026-09-03",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-04",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -3943,6 +3952,11 @@
         "date": "2026-09-03",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-04",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
@@ -4282,6 +4296,11 @@
       },
       {
         "date": "2026-09-03",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-09-04",
         "kind": "progress",
         "text": "완성도 56%"
       }
@@ -4625,15 +4644,14 @@
         "date": "2026-09-03",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-04",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "cmds-daily-briefing": [
-      {
-        "date": "2026-06-13T13:49:32Z",
-        "kind": "commit",
-        "text": "Add June 13 build note",
-        "sha": "8913e38"
-      },
       {
         "date": "2026-06-13T23:33:04Z",
         "kind": "commit",
@@ -5056,6 +5074,11 @@
         "date": "2026-09-03",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-09-04",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
@@ -5355,15 +5378,14 @@
         "date": "2026-09-03",
         "kind": "progress",
         "text": "완성도 7%"
+      },
+      {
+        "date": "2026-09-04",
+        "kind": "progress",
+        "text": "완성도 7%"
       }
     ],
     "chaekdam": [
-      {
-        "date": "2026-06-13T08:58:36Z",
-        "kind": "commit",
-        "text": "feat(dashboard): 회상 카드 — \"1년 전 오늘 이 문장을 남겼어요\" (G3)",
-        "sha": "4d9f1c2"
-      },
       {
         "date": "2026-06-13T09:42:25Z",
         "kind": "commit",
@@ -5786,15 +5808,14 @@
         "date": "2026-09-03",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-09-04",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-06T05:52:44Z",
-        "kind": "commit",
-        "text": "보스가 사라지지 않고 처치되어 승리가 뜨게 한다",
-        "sha": "1981692"
-      },
       {
         "date": "2026-06-06T09:20:14Z",
         "kind": "commit",
@@ -6214,6 +6235,11 @@
       },
       {
         "date": "2026-09-03",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-09-04",
         "kind": "progress",
         "text": "완성도 39%"
       }
