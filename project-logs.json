@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-09-05",
+  "generatedAt": "2026-09-06",
   "logs": {
     "samsu": [
       {
@@ -415,6 +415,11 @@
         "date": "2026-09-05",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-09-06",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -748,15 +753,14 @@
         "date": "2026-09-05",
         "kind": "progress",
         "text": "완성도 65%"
+      },
+      {
+        "date": "2026-09-06",
+        "kind": "progress",
+        "text": "완성도 65%"
       }
     ],
     "sam-defender-logue": [
-      {
-        "date": "2026-06-01T08:15:04Z",
-        "kind": "commit",
-        "text": "feat(asset-beta): keep reward prep inside the playable battlefield",
-        "sha": "13eef6c"
-      },
       {
         "date": "2026-06-01T08:50:04Z",
         "kind": "commit",
@@ -1172,15 +1176,14 @@
         "date": "2026-09-05",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-06",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
-      {
-        "date": "2026-05-30T23:42:26Z",
-        "kind": "commit",
-        "text": "Preserve local proof flow before final external receipts",
-        "sha": "cc82318"
-      },
       {
         "date": "2026-05-31",
         "kind": "progress",
@@ -1595,15 +1598,14 @@
         "date": "2026-09-05",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-09-06",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
-      {
-        "date": "2026-05-29T15:28:21Z",
-        "kind": "commit",
-        "text": "feat: build 150 banner-orders",
-        "sha": "a2fb4af"
-      },
       {
         "date": "2026-05-29T15:37:40Z",
         "kind": "commit",
@@ -2018,15 +2020,14 @@
         "date": "2026-09-05",
         "kind": "progress",
         "text": "완성도 55%"
+      },
+      {
+        "date": "2026-09-06",
+        "kind": "progress",
+        "text": "완성도 55%"
       }
     ],
     "ai-builder-school": [
-      {
-        "date": "2026-05-28T08:56:03Z",
-        "kind": "commit",
-        "text": "chore(stage-1): git/github 레슨 estimatedMinutes 현실 반영",
-        "sha": "51aab87"
-      },
       {
         "date": "2026-05-28T09:11:34Z",
         "kind": "commit",
@@ -2441,15 +2442,14 @@
         "date": "2026-09-05",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-09-06",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-06-13T12:07:46Z",
-        "kind": "commit",
-        "text": "feat-018: 픽셀 배경 폰 고품질 대응 — cover + 고해상도",
-        "sha": "4d09d96"
-      },
       {
         "date": "2026-06-13T12:40:10Z",
         "kind": "commit",
@@ -2870,14 +2870,14 @@
         "date": "2026-09-05",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-09-06",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-06-14",
-        "kind": "progress",
-        "text": "완성도 45% · 커밋 +63"
-      },
       {
         "date": "2026-06-15T05:33:53Z",
         "kind": "commit",
@@ -3299,6 +3299,11 @@
         "date": "2026-09-05",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-09-06",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
@@ -3618,6 +3623,11 @@
       },
       {
         "date": "2026-09-05",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-06",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -3971,6 +3981,11 @@
         "date": "2026-09-05",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-06",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
@@ -4320,6 +4335,11 @@
       },
       {
         "date": "2026-09-05",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-09-06",
         "kind": "progress",
         "text": "완성도 56%"
       }
@@ -4673,14 +4693,14 @@
         "date": "2026-09-05",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-06",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "cmds-daily-briefing": [
-      {
-        "date": "2026-06-14",
-        "kind": "progress",
-        "text": "완성도 52% · 커밋 +5"
-      },
       {
         "date": "2026-06-14T13:49:25Z",
         "kind": "commit",
@@ -5102,6 +5122,11 @@
         "date": "2026-09-05",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-09-06",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
@@ -5411,15 +5436,14 @@
         "date": "2026-09-05",
         "kind": "progress",
         "text": "완성도 7%"
+      },
+      {
+        "date": "2026-09-06",
+        "kind": "progress",
+        "text": "완성도 7%"
       }
     ],
     "chaekdam": [
-      {
-        "date": "2026-06-13T09:44:38Z",
-        "kind": "commit",
-        "text": "docs: C2 공개 표면(랜딩·/u) 모바일+다크 라이브 검증 무결 기록",
-        "sha": "f1c979e"
-      },
       {
         "date": "2026-06-13T11:05:46Z",
         "kind": "commit",
@@ -5840,15 +5864,14 @@
         "date": "2026-09-05",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-09-06",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-06T15:16:28Z",
-        "kind": "commit",
-        "text": "드래그로 각도를 조준해 쏘게 한다",
-        "sha": "854fc5e"
-      },
       {
         "date": "2026-06-06T16:14:53Z",
         "kind": "commit",
@@ -6266,6 +6289,11 @@
       },
       {
         "date": "2026-09-05",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-09-06",
         "kind": "progress",
         "text": "완성도 39%"
       }
