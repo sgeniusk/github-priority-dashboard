@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-09-06",
+  "generatedAt": "2026-09-07",
   "logs": {
     "samsu": [
       {
@@ -420,6 +420,11 @@
         "date": "2026-09-06",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-09-07",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -758,15 +763,14 @@
         "date": "2026-09-06",
         "kind": "progress",
         "text": "완성도 65%"
+      },
+      {
+        "date": "2026-09-07",
+        "kind": "progress",
+        "text": "완성도 65%"
       }
     ],
     "sam-defender-logue": [
-      {
-        "date": "2026-06-01T08:50:04Z",
-        "kind": "commit",
-        "text": "feat(asset-beta): show reward effects on the battlefield",
-        "sha": "fde54c7"
-      },
       {
         "date": "2026-06-01T09:20:46Z",
         "kind": "commit",
@@ -1181,14 +1185,14 @@
         "date": "2026-09-06",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-07",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
-      {
-        "date": "2026-05-31",
-        "kind": "progress",
-        "text": "진척 60% · 커밋 +4"
-      },
       {
         "date": "2026-05-31T01:52:27Z",
         "kind": "commit",
@@ -1603,15 +1607,14 @@
         "date": "2026-09-06",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-09-07",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
-      {
-        "date": "2026-05-29T15:37:40Z",
-        "kind": "commit",
-        "text": "feat: build 151 ridge-ambush",
-        "sha": "8f888e6"
-      },
       {
         "date": "2026-05-29T15:46:06Z",
         "kind": "commit",
@@ -2025,15 +2028,14 @@
         "date": "2026-09-06",
         "kind": "progress",
         "text": "완성도 55%"
+      },
+      {
+        "date": "2026-09-07",
+        "kind": "progress",
+        "text": "완성도 55%"
       }
     ],
     "ai-builder-school": [
-      {
-        "date": "2026-05-28T09:11:34Z",
-        "kind": "commit",
-        "text": "content: 옛 레슨 \\\"## 다음 레슨\\\" 일괄 제거 + terminal-first-day 압축",
-        "sha": "8420c9e"
-      },
       {
         "date": "2026-05-28T09:14:26Z",
         "kind": "commit",
@@ -2447,15 +2449,14 @@
         "date": "2026-09-06",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-09-07",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-06-13T12:40:10Z",
-        "kind": "commit",
-        "text": "feat-018 후속: 4종 룸 벽 중하단 디테일 — 20:9 휑함 해소",
-        "sha": "80e9867"
-      },
       {
         "date": "2026-06-13T14:31:57Z",
         "kind": "commit",
@@ -2875,15 +2876,14 @@
         "date": "2026-09-06",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-09-07",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-06-15T05:33:53Z",
-        "kind": "commit",
-        "text": "feat(quality): api/vs-candidates prod 라우트 (C-1 Task5)",
-        "sha": "14ac597"
-      },
       {
         "date": "2026-06-15T05:34:00Z",
         "kind": "commit",
@@ -3304,6 +3304,11 @@
         "date": "2026-09-06",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-09-07",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
@@ -3628,6 +3633,11 @@
       },
       {
         "date": "2026-09-06",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-07",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -3986,6 +3996,11 @@
         "date": "2026-09-06",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-07",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
@@ -4340,6 +4355,11 @@
       },
       {
         "date": "2026-09-06",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-09-07",
         "kind": "progress",
         "text": "완성도 56%"
       }
@@ -4698,15 +4718,14 @@
         "date": "2026-09-06",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-07",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "cmds-daily-briefing": [
-      {
-        "date": "2026-06-14T13:49:25Z",
-        "kind": "commit",
-        "text": "Add June 14 build note",
-        "sha": "00adfc8"
-      },
       {
         "date": "2026-06-14T23:37:56Z",
         "kind": "commit",
@@ -5127,6 +5146,11 @@
         "date": "2026-09-06",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-09-07",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
@@ -5441,15 +5465,14 @@
         "date": "2026-09-06",
         "kind": "progress",
         "text": "완성도 7%"
+      },
+      {
+        "date": "2026-09-07",
+        "kind": "progress",
+        "text": "완성도 7%"
       }
     ],
     "chaekdam": [
-      {
-        "date": "2026-06-13T11:05:46Z",
-        "kind": "commit",
-        "text": "feat(presentation): 발표 모드 전체화면 토글 + Home/End 키보드 내비 (D5 일부)",
-        "sha": "000437f"
-      },
       {
         "date": "2026-06-13T11:09:31Z",
         "kind": "commit",
@@ -5869,15 +5892,14 @@
         "date": "2026-09-06",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-09-07",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-06T16:14:53Z",
-        "kind": "commit",
-        "text": "W10~W13 진행을 핸드오프·결정·체크리스트에 기록한다",
-        "sha": "f4565f9"
-      },
       {
         "date": "2026-06-10",
         "kind": "progress",
@@ -6294,6 +6316,11 @@
       },
       {
         "date": "2026-09-06",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-09-07",
         "kind": "progress",
         "text": "완성도 39%"
       }
