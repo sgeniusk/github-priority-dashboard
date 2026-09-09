@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-09-08",
+  "generatedAt": "2026-09-09",
   "logs": {
     "samsu": [
       {
@@ -430,6 +430,11 @@
         "date": "2026-09-08",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-09-09",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -778,15 +783,14 @@
         "date": "2026-09-08",
         "kind": "progress",
         "text": "완성도 65%"
+      },
+      {
+        "date": "2026-09-09",
+        "kind": "progress",
+        "text": "완성도 65%"
       }
     ],
     "sam-defender-logue": [
-      {
-        "date": "2026-06-01T09:54:32Z",
-        "kind": "commit",
-        "text": "feat(asset-beta): make combat actions readable on the playfield",
-        "sha": "e071cb2"
-      },
       {
         "date": "2026-06-01T11:30:10Z",
         "kind": "commit",
@@ -1199,15 +1203,14 @@
         "date": "2026-09-08",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-09",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
-      {
-        "date": "2026-05-31T02:43:05Z",
-        "kind": "commit",
-        "text": "Prove daily retention can restart locally before final proof",
-        "sha": "a523fda"
-      },
       {
         "date": "2026-05-31T03:21:04Z",
         "kind": "commit",
@@ -1620,15 +1623,14 @@
         "date": "2026-09-08",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-09-09",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
-      {
-        "date": "2026-05-29T15:53:27Z",
-        "kind": "commit",
-        "text": "feat: build 153 aftercare-agency",
-        "sha": "d5583f9"
-      },
       {
         "date": "2026-05-29T16:02:26Z",
         "kind": "commit",
@@ -2040,14 +2042,14 @@
         "date": "2026-09-08",
         "kind": "progress",
         "text": "완성도 55%"
+      },
+      {
+        "date": "2026-09-09",
+        "kind": "progress",
+        "text": "완성도 55%"
       }
     ],
     "ai-builder-school": [
-      {
-        "date": "2026-05-31",
-        "kind": "progress",
-        "text": "진척 45%"
-      },
       {
         "date": "2026-06-03",
         "kind": "progress",
@@ -2460,15 +2462,14 @@
         "date": "2026-09-08",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-09-09",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-06-13T23:37:25Z",
-        "kind": "commit",
-        "text": "docs: feat-020 진행 기록 정정 — Unity 트랙은 unity/progress.md에 (루트 progress.md 복원)",
-        "sha": "485d574"
-      },
       {
         "date": "2026-06-13T23:49:28Z",
         "kind": "commit",
@@ -2886,15 +2887,14 @@
         "date": "2026-09-08",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-09-09",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-06-15T05:37:25Z",
-        "kind": "commit",
-        "text": "feat(quality): vsCandidatesClient + aiStatus mode (C-1 Task7)",
-        "sha": "641668c"
-      },
       {
         "date": "2026-06-15T05:40:29Z",
         "kind": "commit",
@@ -3313,6 +3313,11 @@
         "date": "2026-09-08",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-09-09",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
@@ -3647,6 +3652,11 @@
       },
       {
         "date": "2026-09-08",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-09",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -4015,6 +4025,11 @@
         "date": "2026-09-08",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-09",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
@@ -4379,6 +4394,11 @@
       },
       {
         "date": "2026-09-08",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-09-09",
         "kind": "progress",
         "text": "완성도 56%"
       }
@@ -4747,15 +4767,14 @@
         "date": "2026-09-08",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-09",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "cmds-daily-briefing": [
-      {
-        "date": "2026-06-15T13:49:10Z",
-        "kind": "commit",
-        "text": "Add June 15 build note",
-        "sha": "78ad32a"
-      },
       {
         "date": "2026-06-15T23:34:22Z",
         "kind": "commit",
@@ -5174,6 +5193,11 @@
         "date": "2026-09-08",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-09-09",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
@@ -5498,15 +5522,14 @@
         "date": "2026-09-08",
         "kind": "progress",
         "text": "완성도 7%"
+      },
+      {
+        "date": "2026-09-09",
+        "kind": "progress",
+        "text": "완성도 7%"
       }
     ],
     "chaekdam": [
-      {
-        "date": "2026-06-13T11:35:17Z",
-        "kind": "commit",
-        "text": "docs: 마이그레이션 0016~0020 전부 적용 확인 — F1 해소, stale \"적용 대기\" 메모 정정",
-        "sha": "4247373"
-      },
       {
         "date": "2026-06-13T15:42:53Z",
         "kind": "commit",
@@ -5924,15 +5947,14 @@
         "date": "2026-09-08",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-09-09",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-13T06:14:47Z",
-        "kind": "commit",
-        "text": "docs: MJ 가이드 v3.1 — 복붙 완성형 (스타일+--sref 2786484460 각 프롬프트 내장)",
-        "sha": "d490c73"
-      },
       {
         "date": "2026-06-13T06:27:27Z",
         "kind": "commit",
@@ -6348,6 +6370,11 @@
       },
       {
         "date": "2026-09-08",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-09-09",
         "kind": "progress",
         "text": "완성도 39%"
       }

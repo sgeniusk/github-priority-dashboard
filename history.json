@@ -2,62 +2,6 @@
   "_comment": "완성도 스냅샷 히스토리. /refresh(refresh-progress.mjs)가 실행될 때마다 그날의 스냅샷을 upsert한다. 대시보드 추세 차트가 읽는다.",
   "snapshots": [
     {
-      "date": "2026-05-21",
-      "avgProgress": 49,
-      "totalCommits": 712,
-      "active": 11,
-      "projects": {
-        "habit": {
-          "total": 70,
-          "commits": 133
-        },
-        "tteuniyu-ios": {
-          "total": 65,
-          "commits": 5
-        },
-        "sam-defender-logue": {
-          "total": 60,
-          "commits": 68
-        },
-        "samguk-idle-prototype": {
-          "total": 60,
-          "commits": 93
-        },
-        "three-kingdoms-deckbuilder": {
-          "total": 55,
-          "commits": 86
-        },
-        "ai-builder-school": {
-          "total": 45,
-          "commits": 72
-        },
-        "ai-company-tycoon-boundaryless": {
-          "total": 40,
-          "commits": 118
-        },
-        "story-x-beta": {
-          "total": 45,
-          "commits": 58
-        },
-        "BookCircle": {
-          "total": 20,
-          "commits": 3
-        },
-        "jewelry-webtoon-cloud": {
-          "total": 20,
-          "commits": 18
-        },
-        "Nodeloom": {
-          "total": 56,
-          "commits": 42
-        },
-        "design-system-school": {
-          "total": 20,
-          "commits": 16
-        }
-      }
-    },
-    {
       "date": "2026-05-23",
       "avgProgress": 49,
       "totalCommits": 764,
@@ -6861,6 +6805,88 @@
     },
     {
       "date": "2026-09-08",
+      "avgProgress": 48,
+      "totalCommits": 3232,
+      "active": 14,
+      "projects": {
+        "samsu": {
+          "total": 0,
+          "commits": 31,
+          "assessed": false
+        },
+        "pliside-ops": {
+          "total": 0,
+          "commits": 163,
+          "assessed": false
+        },
+        "habit": {
+          "total": 70,
+          "commits": 215
+        },
+        "tteuniyu-ios": {
+          "total": 65,
+          "commits": 5
+        },
+        "sam-defender-logue": {
+          "total": 20,
+          "commits": 204
+        },
+        "samguk-idle-prototype": {
+          "total": 60,
+          "commits": 205
+        },
+        "three-kingdoms-deckbuilder": {
+          "total": 55,
+          "commits": 187
+        },
+        "ai-builder-school": {
+          "total": 45,
+          "commits": 135
+        },
+        "ai-company-tycoon-boundaryless": {
+          "total": 75,
+          "commits": 692
+        },
+        "story-x-beta": {
+          "total": 50,
+          "commits": 671
+        },
+        "BookCircle": {
+          "total": 20,
+          "commits": 3
+        },
+        "jewelry-webtoon-cloud": {
+          "total": 20,
+          "commits": 18
+        },
+        "Nodeloom": {
+          "total": 56,
+          "commits": 42
+        },
+        "design-system-school": {
+          "total": 20,
+          "commits": 19
+        },
+        "cmds-daily-briefing": {
+          "total": 52,
+          "commits": 79
+        },
+        "Timeer": {
+          "total": 7,
+          "commits": 1
+        },
+        "chaekdam": {
+          "total": 19,
+          "commits": 193
+        },
+        "honbul": {
+          "total": 39,
+          "commits": 369
+        }
+      }
+    },
+    {
+      "date": "2026-09-09",
       "avgProgress": 48,
       "totalCommits": 3232,
       "active": 14,
