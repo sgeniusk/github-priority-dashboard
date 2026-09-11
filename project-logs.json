@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-09-10",
+  "generatedAt": "2026-09-11",
   "logs": {
     "samsu": [
       {
@@ -440,6 +440,11 @@
         "date": "2026-09-10",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-09-11",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -798,15 +803,14 @@
         "date": "2026-09-10",
         "kind": "progress",
         "text": "완성도 65%"
+      },
+      {
+        "date": "2026-09-11",
+        "kind": "progress",
+        "text": "완성도 65%"
       }
     ],
     "sam-defender-logue": [
-      {
-        "date": "2026-06-01T12:52:54Z",
-        "kind": "commit",
-        "text": "docs(asset-beta): prepare Claude handoff after 0.7.15",
-        "sha": "cd05cbc"
-      },
       {
         "date": "2026-06-03",
         "kind": "progress",
@@ -1217,15 +1221,14 @@
         "date": "2026-09-10",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-11",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
-      {
-        "date": "2026-05-31T04:04:19Z",
-        "kind": "commit",
-        "text": "Centralize readiness metadata to remove report drift",
-        "sha": "4786aa1"
-      },
       {
         "date": "2026-05-31T23:22:33Z",
         "kind": "commit",
@@ -1636,15 +1639,14 @@
         "date": "2026-09-10",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-09-11",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
-      {
-        "date": "2026-05-29T16:07:38Z",
-        "kind": "commit",
-        "text": "feat: build 155 release-proof-seal",
-        "sha": "fda5a5a"
-      },
       {
         "date": "2026-05-29T22:09:30Z",
         "kind": "commit",
@@ -2054,14 +2056,14 @@
         "date": "2026-09-10",
         "kind": "progress",
         "text": "완성도 55%"
+      },
+      {
+        "date": "2026-09-11",
+        "kind": "progress",
+        "text": "완성도 55%"
       }
     ],
     "ai-builder-school": [
-      {
-        "date": "2026-06-04",
-        "kind": "progress",
-        "text": "진척 45%"
-      },
       {
         "date": "2026-06-05",
         "kind": "progress",
@@ -2474,14 +2476,14 @@
         "date": "2026-09-10",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-09-11",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-06-14",
-        "kind": "progress",
-        "text": "완성도 40% · 커밋 +45"
-      },
       {
         "date": "2026-06-14T00:04:46Z",
         "kind": "commit",
@@ -2898,15 +2900,14 @@
         "date": "2026-09-10",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-09-11",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-06-15T05:44:53Z",
-        "kind": "commit",
-        "text": "feat(quality): StoryXDesk VS 배선 + .fc-vs CSS (C-1 Task9)",
-        "sha": "8a0955a"
-      },
       {
         "date": "2026-06-15T05:53:36Z",
         "kind": "commit",
@@ -3323,6 +3324,11 @@
         "date": "2026-09-10",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-09-11",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
@@ -3667,6 +3673,11 @@
       },
       {
         "date": "2026-09-10",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-11",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -4045,6 +4056,11 @@
         "date": "2026-09-10",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-11",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
@@ -4419,6 +4435,11 @@
       },
       {
         "date": "2026-09-10",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-09-11",
         "kind": "progress",
         "text": "완성도 56%"
       }
@@ -4797,14 +4818,14 @@
         "date": "2026-09-10",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-11",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "cmds-daily-briefing": [
-      {
-        "date": "2026-06-16",
-        "kind": "progress",
-        "text": "완성도 52% · 커밋 +5"
-      },
       {
         "date": "2026-06-16T13:49:15Z",
         "kind": "commit",
@@ -5222,6 +5243,11 @@
         "date": "2026-09-10",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-09-11",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
@@ -5556,15 +5582,14 @@
         "date": "2026-09-10",
         "kind": "progress",
         "text": "완성도 7%"
+      },
+      {
+        "date": "2026-09-11",
+        "kind": "progress",
+        "text": "완성도 7%"
       }
     ],
     "chaekdam": [
-      {
-        "date": "2026-06-13T22:02:49Z",
-        "kind": "commit",
-        "text": "feat(landing): 읽기-세계 토큰·본명조 폰트 배선 (이중 결 기반)",
-        "sha": "e2fb160"
-      },
       {
         "date": "2026-06-13T22:08:16Z",
         "kind": "commit",
@@ -5980,15 +6005,14 @@
         "date": "2026-09-10",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-09-11",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-13T07:45:02Z",
-        "kind": "commit",
-        "text": "docs: 아트 가이드 v4 — agy(nano banana) 생성 체제 + art-drops gitignore",
-        "sha": "8ebb145"
-      },
       {
         "date": "2026-06-13T11:18:44Z",
         "kind": "commit",
@@ -6402,6 +6426,11 @@
       },
       {
         "date": "2026-09-10",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-09-11",
         "kind": "progress",
         "text": "완성도 39%"
       }
