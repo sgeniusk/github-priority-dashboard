@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-09-11",
+  "generatedAt": "2026-09-12",
   "logs": {
     "samsu": [
       {
@@ -445,6 +445,11 @@
         "date": "2026-09-11",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-09-12",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -808,14 +813,14 @@
         "date": "2026-09-11",
         "kind": "progress",
         "text": "완성도 65%"
+      },
+      {
+        "date": "2026-09-12",
+        "kind": "progress",
+        "text": "완성도 65%"
       }
     ],
     "sam-defender-logue": [
-      {
-        "date": "2026-06-03",
-        "kind": "progress",
-        "text": "진척 60%"
-      },
       {
         "date": "2026-06-04",
         "kind": "progress",
@@ -1226,15 +1231,14 @@
         "date": "2026-09-11",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-12",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
-      {
-        "date": "2026-05-31T23:22:33Z",
-        "kind": "commit",
-        "text": "Make adventure combat read tactical instead of decorative",
-        "sha": "0cea438"
-      },
       {
         "date": "2026-06-01T00:06:29Z",
         "kind": "commit",
@@ -1644,15 +1648,14 @@
         "date": "2026-09-11",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-09-12",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
-      {
-        "date": "2026-05-29T22:09:30Z",
-        "kind": "commit",
-        "text": "feat: build 165 playtest alpha seal",
-        "sha": "191d7bc"
-      },
       {
         "date": "2026-05-31",
         "kind": "progress",
@@ -2061,14 +2064,14 @@
         "date": "2026-09-11",
         "kind": "progress",
         "text": "완성도 55%"
+      },
+      {
+        "date": "2026-09-12",
+        "kind": "progress",
+        "text": "완성도 55%"
       }
     ],
     "ai-builder-school": [
-      {
-        "date": "2026-06-05",
-        "kind": "progress",
-        "text": "진척 45%"
-      },
       {
         "date": "2026-06-06",
         "kind": "progress",
@@ -2481,15 +2484,14 @@
         "date": "2026-09-11",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-09-12",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-06-14T00:04:46Z",
-        "kind": "commit",
-        "text": "docs: feat-020 증거 완성 — 소품·환호 포즈 포함 + Codex 스코프 교훈",
-        "sha": "3900905"
-      },
       {
         "date": "2026-06-14T03:05:25Z",
         "kind": "commit",
@@ -2905,15 +2907,14 @@
         "date": "2026-09-11",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-09-12",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-06-15T05:53:36Z",
-        "kind": "commit",
-        "text": "fix(quality): VS 핸들러 finally·미회수 약속 dedup (C-1 리뷰 반영)",
-        "sha": "aad16c5"
-      },
       {
         "date": "2026-06-15T05:59:47Z",
         "kind": "commit",
@@ -3329,6 +3330,11 @@
         "date": "2026-09-11",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-09-12",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
@@ -3678,6 +3684,11 @@
       },
       {
         "date": "2026-09-11",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-12",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -4061,6 +4072,11 @@
         "date": "2026-09-11",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-12",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
@@ -4440,6 +4456,11 @@
       },
       {
         "date": "2026-09-11",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-09-12",
         "kind": "progress",
         "text": "완성도 56%"
       }
@@ -4823,15 +4844,14 @@
         "date": "2026-09-11",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-12",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "cmds-daily-briefing": [
-      {
-        "date": "2026-06-16T13:49:15Z",
-        "kind": "commit",
-        "text": "Add 2026-06-16 build note",
-        "sha": "fa60ae2"
-      },
       {
         "date": "2026-06-16T23:34:15Z",
         "kind": "commit",
@@ -5248,6 +5268,11 @@
         "date": "2026-09-11",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-09-12",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
@@ -5587,15 +5612,14 @@
         "date": "2026-09-11",
         "kind": "progress",
         "text": "완성도 7%"
+      },
+      {
+        "date": "2026-09-12",
+        "kind": "progress",
+        "text": "완성도 7%"
       }
     ],
     "chaekdam": [
-      {
-        "date": "2026-06-13T22:08:16Z",
-        "kind": "commit",
-        "text": "feat(book): 공개 표면 표지-우선 CoverImage + resolveCover 순수함수",
-        "sha": "4a6cb20"
-      },
       {
         "date": "2026-06-13T22:10:06Z",
         "kind": "commit",
@@ -6010,15 +6034,14 @@
         "date": "2026-09-11",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-09-12",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-13T11:18:44Z",
-        "kind": "commit",
-        "text": "feat-009b: 실아트 Unity 배선 1차 — SpriteLibrary·임포트·틴트 제거",
-        "sha": "019d5dc"
-      },
       {
         "date": "2026-06-13T11:52:13Z",
         "kind": "commit",
@@ -6431,6 +6454,11 @@
       },
       {
         "date": "2026-09-11",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-09-12",
         "kind": "progress",
         "text": "완성도 39%"
       }
