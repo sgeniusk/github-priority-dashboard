@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-09-12",
+  "generatedAt": "2026-09-13",
   "logs": {
     "samsu": [
       {
@@ -450,6 +450,11 @@
         "date": "2026-09-12",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-09-13",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -818,14 +823,14 @@
         "date": "2026-09-12",
         "kind": "progress",
         "text": "완성도 65%"
+      },
+      {
+        "date": "2026-09-13",
+        "kind": "progress",
+        "text": "완성도 65%"
       }
     ],
     "sam-defender-logue": [
-      {
-        "date": "2026-06-04",
-        "kind": "progress",
-        "text": "진척 60%"
-      },
       {
         "date": "2026-06-05",
         "kind": "progress",
@@ -1236,15 +1241,14 @@
         "date": "2026-09-12",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-13",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
-      {
-        "date": "2026-06-01T00:06:29Z",
-        "kind": "commit",
-        "text": "Make adventure combat resolve kills and drops",
-        "sha": "fcce8c8"
-      },
       {
         "date": "2026-06-01T00:42:47Z",
         "kind": "commit",
@@ -1653,14 +1657,14 @@
         "date": "2026-09-12",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-09-13",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
-      {
-        "date": "2026-05-31",
-        "kind": "progress",
-        "text": "진척 55%"
-      },
       {
         "date": "2026-06-01T22:29:36Z",
         "kind": "commit",
@@ -2069,14 +2073,14 @@
         "date": "2026-09-12",
         "kind": "progress",
         "text": "완성도 55%"
+      },
+      {
+        "date": "2026-09-13",
+        "kind": "progress",
+        "text": "완성도 55%"
       }
     ],
     "ai-builder-school": [
-      {
-        "date": "2026-06-06",
-        "kind": "progress",
-        "text": "완성도 45% · 커밋 +20"
-      },
       {
         "date": "2026-06-06T04:42:02Z",
         "kind": "commit",
@@ -2489,15 +2493,14 @@
         "date": "2026-09-12",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-09-13",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-06-14T03:05:25Z",
-        "kind": "commit",
-        "text": "feat-021 킥오프: 도감 열람 UI 설계·등록 — 크로스런 수집 그리드 갤러리",
-        "sha": "94e4c9e"
-      },
       {
         "date": "2026-06-14T04:00:45Z",
         "kind": "commit",
@@ -2912,15 +2915,14 @@
         "date": "2026-09-12",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-09-13",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-06-15T05:59:47Z",
-        "kind": "commit",
-        "text": "docs: VS 회차 후보(C-1) 완료 — 검증·인계 (C-1 Task10)",
-        "sha": "3a42620"
-      },
       {
         "date": "2026-06-15T13:16:04Z",
         "kind": "commit",
@@ -3335,6 +3337,11 @@
         "date": "2026-09-12",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-09-13",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
@@ -3689,6 +3696,11 @@
       },
       {
         "date": "2026-09-12",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-13",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -4077,6 +4089,11 @@
         "date": "2026-09-12",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-13",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
@@ -4461,6 +4478,11 @@
       },
       {
         "date": "2026-09-12",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-09-13",
         "kind": "progress",
         "text": "완성도 56%"
       }
@@ -4849,15 +4871,14 @@
         "date": "2026-09-12",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-13",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "cmds-daily-briefing": [
-      {
-        "date": "2026-06-16T23:34:15Z",
-        "kind": "commit",
-        "text": "Add June 17 console briefing",
-        "sha": "636ba26"
-      },
       {
         "date": "2026-06-17",
         "kind": "progress",
@@ -5273,6 +5294,11 @@
         "date": "2026-09-12",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-09-13",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
@@ -5617,15 +5643,14 @@
         "date": "2026-09-12",
         "kind": "progress",
         "text": "완성도 7%"
+      },
+      {
+        "date": "2026-09-13",
+        "kind": "progress",
+        "text": "완성도 7%"
       }
     ],
     "chaekdam": [
-      {
-        "date": "2026-06-13T22:10:06Z",
-        "kind": "commit",
-        "text": "feat(landing): 랜딩 본명조 세리프 리스킨 + 표지-우선 카드 + 신규 2섹션 배선",
-        "sha": "ede59af"
-      },
       {
         "date": "2026-06-13T22:10:06Z",
         "kind": "commit",
@@ -6039,15 +6064,14 @@
         "date": "2026-09-12",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-09-13",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-13T11:52:13Z",
-        "kind": "commit",
-        "text": "fix-009c: 보스 종횡비 버그 + 가장자리 품질 (인게임 1차 피드백)",
-        "sha": "56a6f7a"
-      },
       {
         "date": "2026-06-13T12:21:00Z",
         "kind": "commit",
@@ -6459,6 +6483,11 @@
       },
       {
         "date": "2026-09-12",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-09-13",
         "kind": "progress",
         "text": "완성도 39%"
       }
