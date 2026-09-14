@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-09-13",
+  "generatedAt": "2026-09-14",
   "logs": {
     "samsu": [
       {
@@ -455,6 +455,11 @@
         "date": "2026-09-13",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-09-14",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -828,14 +833,14 @@
         "date": "2026-09-13",
         "kind": "progress",
         "text": "완성도 65%"
+      },
+      {
+        "date": "2026-09-14",
+        "kind": "progress",
+        "text": "완성도 65%"
       }
     ],
     "sam-defender-logue": [
-      {
-        "date": "2026-06-05",
-        "kind": "progress",
-        "text": "진척 60%"
-      },
       {
         "date": "2026-06-06",
         "kind": "progress",
@@ -1246,15 +1251,14 @@
         "date": "2026-09-13",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-14",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
-      {
-        "date": "2026-06-01T00:42:47Z",
-        "kind": "commit",
-        "text": "Make adventure combat answer enemy skills",
-        "sha": "c16499b"
-      },
       {
         "date": "2026-06-01T07:59:35Z",
         "kind": "commit",
@@ -1662,15 +1666,14 @@
         "date": "2026-09-13",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-09-14",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
-      {
-        "date": "2026-06-01T22:29:36Z",
-        "kind": "commit",
-        "text": "Align agent split with completion harness",
-        "sha": "84d0953"
-      },
       {
         "date": "2026-06-01T22:41:53Z",
         "kind": "commit",
@@ -2078,15 +2081,14 @@
         "date": "2026-09-13",
         "kind": "progress",
         "text": "완성도 55%"
+      },
+      {
+        "date": "2026-09-14",
+        "kind": "progress",
+        "text": "완성도 55%"
       }
     ],
     "ai-builder-school": [
-      {
-        "date": "2026-06-06T04:42:02Z",
-        "kind": "commit",
-        "text": "feat(stages): 사다리 → 역량 지도 재서술 + Stage별 \"이 역량으로 짓는 프로젝트\"",
-        "sha": "b693e53"
-      },
       {
         "date": "2026-06-06T04:45:40Z",
         "kind": "commit",
@@ -2498,15 +2500,14 @@
         "date": "2026-09-13",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-09-14",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-06-14T04:00:45Z",
-        "kind": "commit",
-        "text": "feat-021: 도감 열람 UI — 크로스런 수집 그리드 갤러리",
-        "sha": "96cb40a"
-      },
       {
         "date": "2026-06-14T10:46:15Z",
         "kind": "commit",
@@ -2920,15 +2921,14 @@
         "date": "2026-09-13",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-09-14",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-06-15T13:16:04Z",
-        "kind": "commit",
-        "text": "fix(quality): VS 노출 자동열림 — 회차 생성 시 state 패널 자동 표시",
-        "sha": "3be758f"
-      },
       {
         "date": "2026-06-16",
         "kind": "progress",
@@ -3342,6 +3342,11 @@
         "date": "2026-09-13",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-09-14",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
@@ -3701,6 +3706,11 @@
       },
       {
         "date": "2026-09-13",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-14",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -4094,6 +4104,11 @@
         "date": "2026-09-13",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-14",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
@@ -4483,6 +4498,11 @@
       },
       {
         "date": "2026-09-13",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-09-14",
         "kind": "progress",
         "text": "완성도 56%"
       }
@@ -4876,14 +4896,14 @@
         "date": "2026-09-13",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-14",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "cmds-daily-briefing": [
-      {
-        "date": "2026-06-17",
-        "kind": "progress",
-        "text": "완성도 52% · 커밋 +2"
-      },
       {
         "date": "2026-06-17T13:49:03Z",
         "kind": "commit",
@@ -5299,6 +5319,11 @@
         "date": "2026-09-13",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-09-14",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
@@ -5648,15 +5673,14 @@
         "date": "2026-09-13",
         "kind": "progress",
         "text": "완성도 7%"
+      },
+      {
+        "date": "2026-09-14",
+        "kind": "progress",
+        "text": "완성도 7%"
       }
     ],
     "chaekdam": [
-      {
-        "date": "2026-06-13T22:10:06Z",
-        "kind": "commit",
-        "text": "feat(landing): 독서 시각화·결산 미리보기 컴포넌트 (Fable 차용 ⑤)",
-        "sha": "2344115"
-      },
       {
         "date": "2026-06-13T22:10:06Z",
         "kind": "commit",
@@ -6069,15 +6093,14 @@
         "date": "2026-09-13",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-09-14",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-13T12:21:00Z",
-        "kind": "commit",
-        "text": "fix-009d: 자글거림 해소 — sprite mipmap 활성화 (인게임 2차 피드백)",
-        "sha": "b3a4519"
-      },
       {
         "date": "2026-06-13T14:44:06Z",
         "kind": "commit",
@@ -6488,6 +6511,11 @@
       },
       {
         "date": "2026-09-13",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-09-14",
         "kind": "progress",
         "text": "완성도 39%"
       }
