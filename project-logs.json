@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-09-14",
+  "generatedAt": "2026-09-15",
   "logs": {
     "samsu": [
       {
@@ -460,6 +460,11 @@
         "date": "2026-09-14",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-09-15",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -838,14 +843,14 @@
         "date": "2026-09-14",
         "kind": "progress",
         "text": "완성도 65%"
+      },
+      {
+        "date": "2026-09-15",
+        "kind": "progress",
+        "text": "완성도 65%"
       }
     ],
     "sam-defender-logue": [
-      {
-        "date": "2026-06-06",
-        "kind": "progress",
-        "text": "완성도 60%"
-      },
       {
         "date": "2026-06-06T05:08:21Z",
         "kind": "commit",
@@ -1256,15 +1261,14 @@
         "date": "2026-09-14",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-15",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
-      {
-        "date": "2026-06-01T07:59:35Z",
-        "kind": "commit",
-        "text": "Make adventure waves settle into the next fight",
-        "sha": "792d08d"
-      },
       {
         "date": "2026-06-01T08:51:43Z",
         "kind": "commit",
@@ -1671,15 +1675,14 @@
         "date": "2026-09-14",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-09-15",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
-      {
-        "date": "2026-06-01T22:41:53Z",
-        "kind": "commit",
-        "text": "chore: ignore local environment files",
-        "sha": "97bdb1a"
-      },
       {
         "date": "2026-06-01T22:47:43Z",
         "kind": "commit",
@@ -2086,15 +2089,14 @@
         "date": "2026-09-14",
         "kind": "progress",
         "text": "완성도 55%"
+      },
+      {
+        "date": "2026-09-15",
+        "kind": "progress",
+        "text": "완성도 55%"
       }
     ],
     "ai-builder-school": [
-      {
-        "date": "2026-06-06T04:45:40Z",
-        "kind": "commit",
-        "text": "feat(projects): Blocker 데이터 모델 + \"여기서 막혔나요?\" 막힘 토글",
-        "sha": "f50eb46"
-      },
       {
         "date": "2026-06-06T04:49:02Z",
         "kind": "commit",
@@ -2505,15 +2507,14 @@
         "date": "2026-09-14",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-09-15",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-06-14T10:46:15Z",
-        "kind": "commit",
-        "text": "feat-022 킥오프: 트렌드 콘텐츠 웨이브 설계·등록 — 2025-26 AI 트렌드 월드 이벤트",
-        "sha": "63f7452"
-      },
       {
         "date": "2026-06-14T11:09:08Z",
         "kind": "commit",
@@ -2926,14 +2927,14 @@
         "date": "2026-09-14",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-09-15",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-06-16",
-        "kind": "progress",
-        "text": "완성도 45% · 커밋 +30"
-      },
       {
         "date": "2026-06-17",
         "kind": "progress",
@@ -3347,6 +3348,11 @@
         "date": "2026-09-14",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-09-15",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
@@ -3711,6 +3717,11 @@
       },
       {
         "date": "2026-09-14",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-15",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -4109,6 +4120,11 @@
         "date": "2026-09-14",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-15",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
@@ -4503,6 +4519,11 @@
       },
       {
         "date": "2026-09-14",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-09-15",
         "kind": "progress",
         "text": "완성도 56%"
       }
@@ -4901,15 +4922,14 @@
         "date": "2026-09-14",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-15",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "cmds-daily-briefing": [
-      {
-        "date": "2026-06-17T13:49:03Z",
-        "kind": "commit",
-        "text": "Add June 17 build note",
-        "sha": "aff8cf6"
-      },
       {
         "date": "2026-06-18",
         "kind": "progress",
@@ -5324,6 +5344,11 @@
         "date": "2026-09-14",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-09-15",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
@@ -5678,15 +5703,14 @@
         "date": "2026-09-14",
         "kind": "progress",
         "text": "완성도 7%"
+      },
+      {
+        "date": "2026-09-15",
+        "kind": "progress",
+        "text": "완성도 7%"
       }
     ],
     "chaekdam": [
-      {
-        "date": "2026-06-13T22:10:06Z",
-        "kind": "commit",
-        "text": "feat(landing): 표지 발견 띠 컴포넌트 + 공개 표지 조회 (Fable 차용 ②)",
-        "sha": "e60efa9"
-      },
       {
         "date": "2026-06-13T23:16:52Z",
         "kind": "commit",
@@ -6098,15 +6122,14 @@
         "date": "2026-09-14",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-09-15",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-13T14:44:06Z",
-        "kind": "commit",
-        "text": "fix-009e: HP바 보스그림 버그 수정 + 명부 배경 적용 (인게임 3차 피드백)",
-        "sha": "f1eb680"
-      },
       {
         "date": "2026-06-13T14:45:20Z",
         "kind": "commit",
@@ -6516,6 +6539,11 @@
       },
       {
         "date": "2026-09-14",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-09-15",
         "kind": "progress",
         "text": "완성도 39%"
       }
