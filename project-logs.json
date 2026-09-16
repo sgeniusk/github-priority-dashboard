@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-09-15",
+  "generatedAt": "2026-09-16",
   "logs": {
     "samsu": [
       {
@@ -465,6 +465,11 @@
         "date": "2026-09-15",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-09-16",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -848,15 +853,14 @@
         "date": "2026-09-15",
         "kind": "progress",
         "text": "완성도 65%"
+      },
+      {
+        "date": "2026-09-16",
+        "kind": "progress",
+        "text": "완성도 65%"
       }
     ],
     "sam-defender-logue": [
-      {
-        "date": "2026-06-06T05:08:21Z",
-        "kind": "commit",
-        "text": "feat(godot): grow the map outward on each wave clear",
-        "sha": "830000a"
-      },
       {
         "date": "2026-06-06T08:36:27Z",
         "kind": "commit",
@@ -1266,15 +1270,14 @@
         "date": "2026-09-15",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-16",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
-      {
-        "date": "2026-06-01T08:51:43Z",
-        "kind": "commit",
-        "text": "Make adventure combat run through engine commands",
-        "sha": "d167080"
-      },
       {
         "date": "2026-06-01T09:53:20Z",
         "kind": "commit",
@@ -1680,15 +1683,14 @@
         "date": "2026-09-15",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-09-16",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
-      {
-        "date": "2026-06-01T22:47:43Z",
-        "kind": "commit",
-        "text": "fix: bundle Korean UI font for web",
-        "sha": "097a86b"
-      },
       {
         "date": "2026-06-01T23:56:28Z",
         "kind": "commit",
@@ -2094,15 +2096,14 @@
         "date": "2026-09-15",
         "kind": "progress",
         "text": "완성도 55%"
+      },
+      {
+        "date": "2026-09-16",
+        "kind": "progress",
+        "text": "완성도 55%"
       }
     ],
     "ai-builder-school": [
-      {
-        "date": "2026-06-06T04:49:02Z",
-        "kind": "commit",
-        "text": "feat(build): /build 빌드 네비게이터 — 산출물 목표 → 프로젝트",
-        "sha": "027a9db"
-      },
       {
         "date": "2026-06-06T04:51:16Z",
         "kind": "commit",
@@ -2512,15 +2513,14 @@
         "date": "2026-09-15",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-09-16",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-06-14T11:09:08Z",
-        "kind": "commit",
-        "text": "feat-022: 트렌드 콘텐츠 웨이브 — 2025-26 AI 트렌드 월드 이벤트 12종 (30→42)",
-        "sha": "1dc99ad"
-      },
       {
         "date": "2026-06-14T16:55:26Z",
         "kind": "commit",
@@ -2932,14 +2932,14 @@
         "date": "2026-09-15",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-09-16",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-06-17",
-        "kind": "progress",
-        "text": "완성도 45% · 커밋 +1"
-      },
       {
         "date": "2026-06-17T06:03:44Z",
         "kind": "commit",
@@ -3353,6 +3353,11 @@
         "date": "2026-09-15",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-09-16",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
@@ -3722,6 +3727,11 @@
       },
       {
         "date": "2026-09-15",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-16",
         "kind": "progress",
         "text": "완성도 20%"
       }
@@ -4125,6 +4135,11 @@
         "date": "2026-09-15",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-16",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
@@ -4524,6 +4539,11 @@
       },
       {
         "date": "2026-09-15",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-09-16",
         "kind": "progress",
         "text": "완성도 56%"
       }
@@ -4927,14 +4947,14 @@
         "date": "2026-09-15",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-16",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "cmds-daily-briefing": [
-      {
-        "date": "2026-06-18",
-        "kind": "progress",
-        "text": "완성도 52% · 커밋 +1"
-      },
       {
         "date": "2026-07-01",
         "kind": "progress",
@@ -5349,6 +5369,11 @@
         "date": "2026-09-15",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-09-16",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
@@ -5708,15 +5733,14 @@
         "date": "2026-09-15",
         "kind": "progress",
         "text": "완성도 7%"
+      },
+      {
+        "date": "2026-09-16",
+        "kind": "progress",
+        "text": "완성도 7%"
       }
     ],
     "chaekdam": [
-      {
-        "date": "2026-06-13T23:16:52Z",
-        "kind": "commit",
-        "text": "docs: Fable 홈페이지 업그레이드 핸드오프 + 로드맵 A5 반영",
-        "sha": "975fb90"
-      },
       {
         "date": "2026-06-14",
         "kind": "progress",
@@ -6127,15 +6151,14 @@
         "date": "2026-09-15",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-09-16",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-13T14:45:20Z",
-        "kind": "commit",
-        "text": "docs: progress 갱신 — feat-009b 실아트 배선 + 인게임 피드백 3건 수정·세밀함 진단",
-        "sha": "72f6941"
-      },
       {
         "date": "2026-06-14",
         "kind": "progress",
@@ -6544,6 +6567,11 @@
       },
       {
         "date": "2026-09-15",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-09-16",
         "kind": "progress",
         "text": "완성도 39%"
       }
