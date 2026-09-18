@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-09-17",
+  "generatedAt": "2026-09-18",
   "logs": {
     "samsu": [
       {
@@ -67,12 +67,6 @@
       }
     ],
     "habit": [
-      {
-        "date": "2026-05-25T23:58:00Z",
-        "kind": "commit",
-        "text": "Connect Home to the Today loop action model",
-        "sha": "6b74580"
-      },
       {
         "date": "2026-05-26T01:33:21Z",
         "kind": "commit",
@@ -475,6 +469,11 @@
         "date": "2026-09-17",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-09-18",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
@@ -868,15 +867,14 @@
         "date": "2026-09-17",
         "kind": "progress",
         "text": "완성도 65%"
+      },
+      {
+        "date": "2026-09-18",
+        "kind": "progress",
+        "text": "완성도 65%"
       }
     ],
     "sam-defender-logue": [
-      {
-        "date": "2026-06-06T12:30:38Z",
-        "kind": "commit",
-        "text": "feat(godot): veil the map in fog of war that lifts as roads expand",
-        "sha": "6875c9e"
-      },
       {
         "date": "2026-06-06T13:00:06Z",
         "kind": "commit",
@@ -1284,15 +1282,14 @@
         "date": "2026-09-17",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-18",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
-      {
-        "date": "2026-06-01T12:55:14Z",
-        "kind": "commit",
-        "text": "Prepare v1.00.28 handoff for merge",
-        "sha": "46d6590"
-      },
       {
         "date": "2026-06-01T12:55:31Z",
         "kind": "commit",
@@ -1696,15 +1693,14 @@
         "date": "2026-09-17",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-09-18",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
-      {
-        "date": "2026-06-02T03:00:26Z",
-        "kind": "commit",
-        "text": "chore: add asset catalog safety foundation",
-        "sha": "0c7e07c"
-      },
       {
         "date": "2026-06-02T11:22:56Z",
         "kind": "commit",
@@ -2108,15 +2104,14 @@
         "date": "2026-09-17",
         "kind": "progress",
         "text": "완성도 55%"
+      },
+      {
+        "date": "2026-09-18",
+        "kind": "progress",
+        "text": "완성도 55%"
       }
     ],
     "ai-builder-school": [
-      {
-        "date": "2026-06-06T05:00:54Z",
-        "kind": "commit",
-        "text": "content(lessons): neededWhen 확대 — 모든 blocker 구제 레슨에 \"필요한 순간\" 헤더",
-        "sha": "65b146f"
-      },
       {
         "date": "2026-06-06T05:06:46Z",
         "kind": "commit",
@@ -2524,14 +2519,14 @@
         "date": "2026-09-17",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-09-18",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-06-16",
-        "kind": "progress",
-        "text": "완성도 40% · 커밋 +15"
-      },
       {
         "date": "2026-06-17",
         "kind": "progress",
@@ -2942,15 +2937,14 @@
         "date": "2026-09-17",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-09-18",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-06-17T13:15:22Z",
-        "kind": "commit",
-        "text": "fix(quality): 제목 \". \" 누수 — deriveProjectTitle 회차 접두에 마침표 구분자 추가",
-        "sha": "9f017c1"
-      },
       {
         "date": "2026-06-17T15:06:24Z",
         "kind": "commit",
@@ -3362,6 +3356,11 @@
         "date": "2026-09-17",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-09-18",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
@@ -3743,15 +3742,14 @@
         "date": "2026-09-17",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-18",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "jewelry-webtoon-cloud": [
-      {
-        "date": "2026-05-15T02:38:05Z",
-        "kind": "commit",
-        "text": "feat: replace ep001 evening panels with png art",
-        "sha": "bcaa2f3"
-      },
       {
         "date": "2026-05-15T03:00:07Z",
         "kind": "commit",
@@ -4154,15 +4152,14 @@
         "date": "2026-09-17",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-18",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
-      {
-        "date": "2026-05-18T15:43:56Z",
-        "kind": "commit",
-        "text": "v1.1.1 — 마인드맵 분기선이 세로로 뭉치던 버그 수정",
-        "sha": "08c9eac"
-      },
       {
         "date": "2026-05-19T03:06:33Z",
         "kind": "commit",
@@ -4565,15 +4562,14 @@
         "date": "2026-09-17",
         "kind": "progress",
         "text": "완성도 56%"
+      },
+      {
+        "date": "2026-09-18",
+        "kind": "progress",
+        "text": "완성도 56%"
       }
     ],
     "design-system-school": [
-      {
-        "date": "2026-05-21T10:37:50Z",
-        "kind": "commit",
-        "text": "Phase 5: learn paths include patterns",
-        "sha": "28ffe8a"
-      },
       {
         "date": "2026-05-21T10:59:34Z",
         "kind": "commit",
@@ -4976,15 +4972,14 @@
         "date": "2026-09-17",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-18",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "cmds-daily-briefing": [
-      {
-        "date": "2026-07-04T23:34:33Z",
-        "kind": "commit",
-        "text": "Add July 5 daily briefing",
-        "sha": "894a0f5"
-      },
       {
         "date": "2026-07-05T13:49:36Z",
         "kind": "commit",
@@ -5398,6 +5393,11 @@
         "date": "2026-09-17",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-09-18",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
@@ -5767,14 +5767,14 @@
         "date": "2026-09-17",
         "kind": "progress",
         "text": "완성도 7%"
+      },
+      {
+        "date": "2026-09-18",
+        "kind": "progress",
+        "text": "완성도 7%"
       }
     ],
     "chaekdam": [
-      {
-        "date": "2026-06-16",
-        "kind": "progress",
-        "text": "완성도 19% · 커밋 +7"
-      },
       {
         "date": "2026-06-17",
         "kind": "progress",
@@ -6185,14 +6185,14 @@
         "date": "2026-09-17",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-09-18",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-16",
-        "kind": "progress",
-        "text": "완성도 19%"
-      },
       {
         "date": "2026-06-17",
         "kind": "progress",
@@ -6601,6 +6601,11 @@
       },
       {
         "date": "2026-09-17",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-09-18",
         "kind": "progress",
         "text": "완성도 39%"
       }
