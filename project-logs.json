@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-09-21",
+  "generatedAt": "2026-09-22",
   "logs": {
     "samsu": [
       {
@@ -67,12 +67,6 @@
       }
     ],
     "habit": [
-      {
-        "date": "2026-05-26T14:09:07Z",
-        "kind": "commit",
-        "text": "Add extended action strip set to AGY packet",
-        "sha": "6f97c10"
-      },
       {
         "date": "2026-05-26T14:18:46Z",
         "kind": "commit",
@@ -471,15 +465,14 @@
         "date": "2026-09-21",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-09-22",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
-      {
-        "date": "2026-05-11T15:28:24Z",
-        "kind": "commit",
-        "text": "Wave 2 Bulk impl — Codex 4 agent 병렬 결과 (1,379 LOC Swift) (#1)",
-        "sha": "6b249f6"
-      },
       {
         "date": "2026-05-11T23:27:08Z",
         "kind": "commit",
@@ -878,15 +871,14 @@
         "date": "2026-09-21",
         "kind": "progress",
         "text": "완성도 65%"
+      },
+      {
+        "date": "2026-09-22",
+        "kind": "progress",
+        "text": "완성도 65%"
       }
     ],
     "sam-defender-logue": [
-      {
-        "date": "2026-06-06T15:20:43Z",
-        "kind": "commit",
-        "text": "feat(godot): add manual camera zoom and pan controls",
-        "sha": "639ed94"
-      },
       {
         "date": "2026-06-06T16:04:24Z",
         "kind": "commit",
@@ -1290,14 +1282,14 @@
         "date": "2026-09-21",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-22",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
-      {
-        "date": "2026-06-05",
-        "kind": "progress",
-        "text": "진척 60%"
-      },
       {
         "date": "2026-06-06",
         "kind": "progress",
@@ -1700,15 +1692,14 @@
         "date": "2026-09-21",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-09-22",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
-      {
-        "date": "2026-06-03T03:49:19Z",
-        "kind": "commit",
-        "text": "chore: make Vercel secret ignore explicit",
-        "sha": "778e91b"
-      },
       {
         "date": "2026-06-04",
         "kind": "progress",
@@ -2109,15 +2100,14 @@
         "date": "2026-09-21",
         "kind": "progress",
         "text": "완성도 55%"
+      },
+      {
+        "date": "2026-09-22",
+        "kind": "progress",
+        "text": "완성도 55%"
       }
     ],
     "ai-builder-school": [
-      {
-        "date": "2026-06-07T02:47:44Z",
-        "kind": "commit",
-        "text": "docs: roadmap을 두 줄기(top-down·v2.0)로 통합 갱신 + P0/P2 push 상태 정정",
-        "sha": "36c3dc1"
-      },
       {
         "date": "2026-06-07T07:26:41Z",
         "kind": "commit",
@@ -2521,15 +2511,14 @@
         "date": "2026-09-21",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-09-22",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-06-28T22:37:54Z",
-        "kind": "commit",
-        "text": "feat-030: 직원 얼굴 회색빛 수정 — 피부 팔레트 따뜻하게",
-        "sha": "9d05be4"
-      },
       {
         "date": "2026-06-28T23:38:14Z",
         "kind": "commit",
@@ -2938,15 +2927,14 @@
         "date": "2026-09-21",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-09-22",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-06-30T16:22:28Z",
-        "kind": "commit",
-        "text": "feat(canon): normalizeProject 가 CanonFact importance·participants·reveal·evidence 백필",
-        "sha": "208a656"
-      },
       {
         "date": "2026-06-30T16:26:47Z",
         "kind": "commit",
@@ -3355,6 +3343,11 @@
         "date": "2026-09-21",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-09-22",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
@@ -3756,15 +3749,14 @@
         "date": "2026-09-21",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-22",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "jewelry-webtoon-cloud": [
-      {
-        "date": "2026-05-15T03:44:52Z",
-        "kind": "commit",
-        "text": "fix: stabilize cover and reader layout",
-        "sha": "022f325"
-      },
       {
         "date": "2026-05-15T03:55:15Z",
         "kind": "commit",
@@ -4163,15 +4155,14 @@
         "date": "2026-09-21",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-22",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
-      {
-        "date": "2026-05-19T11:31:39Z",
-        "kind": "commit",
-        "text": "v1.3.2 — 분기선이 노드에서 떨어져 끝나던 갭 수정",
-        "sha": "719f261"
-      },
       {
         "date": "2026-05-19T11:55:57Z",
         "kind": "commit",
@@ -4570,15 +4561,14 @@
         "date": "2026-09-21",
         "kind": "progress",
         "text": "완성도 56%"
+      },
+      {
+        "date": "2026-09-22",
+        "kind": "progress",
+        "text": "완성도 56%"
       }
     ],
     "design-system-school": [
-      {
-        "date": "2026-05-21T11:17:42Z",
-        "kind": "commit",
-        "text": "Phase 9: design-spec extraction tool",
-        "sha": "5926c25"
-      },
       {
         "date": "2026-05-28",
         "kind": "note",
@@ -4977,14 +4967,14 @@
         "date": "2026-09-21",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-22",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "cmds-daily-briefing": [
-      {
-        "date": "2026-07-21",
-        "kind": "progress",
-        "text": "완성도 52%"
-      },
       {
         "date": "2026-07-22",
         "kind": "progress",
@@ -5396,6 +5386,11 @@
         "date": "2026-09-21",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-09-22",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
@@ -5785,15 +5780,14 @@
         "date": "2026-09-21",
         "kind": "progress",
         "text": "완성도 7%"
+      },
+      {
+        "date": "2026-09-22",
+        "kind": "progress",
+        "text": "완성도 7%"
       }
     ],
     "chaekdam": [
-      {
-        "date": "2026-06-28T09:51:55Z",
-        "kind": "commit",
-        "text": "chore(p1): CI 워크플로 + README 드리프트 정리 + 죽은 내비 제거",
-        "sha": "d7ce1e7"
-      },
       {
         "date": "2026-06-28T10:24:47Z",
         "kind": "commit",
@@ -6202,15 +6196,14 @@
         "date": "2026-09-21",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-09-22",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-27T12:26:45Z",
-        "kind": "commit",
-        "text": "feat-032 발사 시 '쿵' 하강 제거 — 연속 하강만",
-        "sha": "c1daebe"
-      },
       {
         "date": "2026-06-27T13:44:04Z",
         "kind": "commit",
@@ -6617,6 +6610,11 @@
       },
       {
         "date": "2026-09-21",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-09-22",
         "kind": "progress",
         "text": "완성도 39%"
       }
