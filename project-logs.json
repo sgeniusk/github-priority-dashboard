@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-09-22",
+  "generatedAt": "2026-09-23",
   "logs": {
     "samsu": [
       {
@@ -67,12 +67,6 @@
       }
     ],
     "habit": [
-      {
-        "date": "2026-05-26T14:18:46Z",
-        "kind": "commit",
-        "text": "Add dismissible PROOF OF ONE intro card",
-        "sha": "3a293b8"
-      },
       {
         "date": "2026-05-26T14:25:14Z",
         "kind": "commit",
@@ -470,15 +464,14 @@
         "date": "2026-09-22",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-09-23",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
-      {
-        "date": "2026-05-11T23:27:08Z",
-        "kind": "commit",
-        "text": "Wave 3 Integration — RisingIssuesView + ViewModel + XCTest 30+ (#2)",
-        "sha": "f075158"
-      },
       {
         "date": "2026-05-12T06:54:01Z",
         "kind": "commit",
@@ -876,15 +869,14 @@
         "date": "2026-09-22",
         "kind": "progress",
         "text": "완성도 65%"
+      },
+      {
+        "date": "2026-09-23",
+        "kind": "progress",
+        "text": "완성도 65%"
       }
     ],
     "sam-defender-logue": [
-      {
-        "date": "2026-06-06T16:04:24Z",
-        "kind": "commit",
-        "text": "docs(godot): record town(village) implementation plan for next session",
-        "sha": "6eee6ad"
-      },
       {
         "date": "2026-06-10",
         "kind": "progress",
@@ -1287,14 +1279,14 @@
         "date": "2026-09-22",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-23",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
-      {
-        "date": "2026-06-06",
-        "kind": "progress",
-        "text": "완성도 60%"
-      },
       {
         "date": "2026-06-06T03:34:30Z",
         "kind": "commit",
@@ -1697,14 +1689,14 @@
         "date": "2026-09-22",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-09-23",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
-      {
-        "date": "2026-06-04",
-        "kind": "progress",
-        "text": "진척 55%"
-      },
       {
         "date": "2026-06-04T12:45:25Z",
         "kind": "commit",
@@ -2105,15 +2097,14 @@
         "date": "2026-09-22",
         "kind": "progress",
         "text": "완성도 55%"
+      },
+      {
+        "date": "2026-09-23",
+        "kind": "progress",
+        "text": "완성도 55%"
       }
     ],
     "ai-builder-school": [
-      {
-        "date": "2026-06-07T07:26:41Z",
-        "kind": "commit",
-        "text": "content(lessons): neededWhen 21개 전수 백필 (12→33) — 막힘 착지 레슨 JIT 헤더 100%",
-        "sha": "a564b31"
-      },
       {
         "date": "2026-06-07T09:18:12Z",
         "kind": "commit",
@@ -2516,15 +2507,14 @@
         "date": "2026-09-22",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-09-23",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-06-28T23:38:14Z",
-        "kind": "commit",
-        "text": "feat-030: 손익 브리핑 보텀시트+순익 틱업 · 본문/버튼 폰트 · 트렌드바 문구",
-        "sha": "0690a02"
-      },
       {
         "date": "2026-06-28T23:42:42Z",
         "kind": "commit",
@@ -2932,15 +2922,14 @@
         "date": "2026-09-22",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-09-23",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-06-30T16:26:47Z",
-        "kind": "commit",
-        "text": "fix(canon): longform 회귀 테스트를 중간 앵커 생존(A-6)으로 교정 + 미사용 CONTEXT_CANON_HEAD 제거",
-        "sha": "1d7129f"
-      },
       {
         "date": "2026-06-30T16:35:13Z",
         "kind": "commit",
@@ -3348,15 +3337,14 @@
         "date": "2026-09-22",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-09-23",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
-      {
-        "date": "2026-05-13T14:27:24Z",
-        "kind": "commit",
-        "text": "Initial BookCircle scaffold",
-        "sha": "58bb89b"
-      },
       {
         "date": "2026-05-13T14:32:12Z",
         "kind": "commit",
@@ -3754,15 +3742,14 @@
         "date": "2026-09-22",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-23",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "jewelry-webtoon-cloud": [
-      {
-        "date": "2026-05-15T03:55:15Z",
-        "kind": "commit",
-        "text": "fix: compact episode reader",
-        "sha": "4ced752"
-      },
       {
         "date": "2026-05-15T04:00:14Z",
         "kind": "commit",
@@ -4160,15 +4147,14 @@
         "date": "2026-09-22",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-23",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
-      {
-        "date": "2026-05-19T11:55:57Z",
-        "kind": "commit",
-        "text": "v1.3.3 — 밑줄형 분기선과 밑줄의 중심선 어긋남 수정",
-        "sha": "3d0f2c1"
-      },
       {
         "date": "2026-05-19T12:08:24Z",
         "kind": "commit",
@@ -4566,15 +4552,14 @@
         "date": "2026-09-22",
         "kind": "progress",
         "text": "완성도 56%"
+      },
+      {
+        "date": "2026-09-23",
+        "kind": "progress",
+        "text": "완성도 56%"
       }
     ],
     "design-system-school": [
-      {
-        "date": "2026-05-28",
-        "kind": "note",
-        "label": "조언",
-        "text": "PRD부터 또렷이 적으시길. AI Builder School과 커리큘럼 구조를 공유하면 콘텐츠 제작 비용을 크게 아낄 수 있습니다."
-      },
       {
         "date": "2026-05-29T09:54:01Z",
         "kind": "commit",
@@ -4972,14 +4957,14 @@
         "date": "2026-09-22",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-23",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "cmds-daily-briefing": [
-      {
-        "date": "2026-07-22",
-        "kind": "progress",
-        "text": "완성도 52%"
-      },
       {
         "date": "2026-07-23",
         "kind": "progress",
@@ -5391,6 +5376,11 @@
         "date": "2026-09-22",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-09-23",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
@@ -5785,15 +5775,14 @@
         "date": "2026-09-22",
         "kind": "progress",
         "text": "완성도 7%"
+      },
+      {
+        "date": "2026-09-23",
+        "kind": "progress",
+        "text": "완성도 7%"
       }
     ],
     "chaekdam": [
-      {
-        "date": "2026-06-28T10:24:47Z",
-        "kind": "commit",
-        "text": "Merge: P1 위생 — CI + README 정리 + 죽은 내비 제거 (#4)",
-        "sha": "d8991fc"
-      },
       {
         "date": "2026-06-28T10:32:53Z",
         "kind": "commit",
@@ -6201,15 +6190,14 @@
         "date": "2026-09-22",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-09-23",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-27T13:44:04Z",
-        "kind": "commit",
-        "text": "feat-033 패들 가시성·차지 발광·하강 속도(사용자 QA)",
-        "sha": "b6bdbfe"
-      },
       {
         "date": "2026-06-27T23:21:53Z",
         "kind": "commit",
@@ -6615,6 +6603,11 @@
       },
       {
         "date": "2026-09-22",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-09-23",
         "kind": "progress",
         "text": "완성도 39%"
       }
