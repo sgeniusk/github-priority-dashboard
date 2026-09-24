@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-09-23",
+  "generatedAt": "2026-09-24",
   "logs": {
     "samsu": [
       {
@@ -67,12 +67,6 @@
       }
     ],
     "habit": [
-      {
-        "date": "2026-05-26T14:25:14Z",
-        "kind": "commit",
-        "text": "Redirect proof scorecard next action to FOCUSED VIEW",
-        "sha": "1ef1ccf"
-      },
       {
         "date": "2026-05-26T14:33:35Z",
         "kind": "commit",
@@ -469,15 +463,14 @@
         "date": "2026-09-23",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-09-24",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
-      {
-        "date": "2026-05-12T06:54:01Z",
-        "kind": "commit",
-        "text": "Wave 4 — Xcode 빌드 수정 4건 (Info.plist + Category 명시 + INFOPLIST_FILE) (#3)",
-        "sha": "1a44683"
-      },
       {
         "date": "2026-05-12T08:40:24Z",
         "kind": "commit",
@@ -874,14 +867,14 @@
         "date": "2026-09-23",
         "kind": "progress",
         "text": "완성도 65%"
+      },
+      {
+        "date": "2026-09-24",
+        "kind": "progress",
+        "text": "완성도 65%"
       }
     ],
     "sam-defender-logue": [
-      {
-        "date": "2026-06-10",
-        "kind": "progress",
-        "text": "완성도 60% · 커밋 +34"
-      },
       {
         "date": "2026-06-10T16:32:30Z",
         "kind": "commit",
@@ -1284,15 +1277,14 @@
         "date": "2026-09-23",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-24",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
-      {
-        "date": "2026-06-06T03:34:30Z",
-        "kind": "commit",
-        "text": "chore(cache): bump version key to 1.00.45-adventure-pixi-field",
-        "sha": "6fcbabf"
-      },
       {
         "date": "2026-06-06T03:35:23Z",
         "kind": "commit",
@@ -1694,15 +1686,14 @@
         "date": "2026-09-23",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-09-24",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
-      {
-        "date": "2026-06-04T12:45:25Z",
-        "kind": "commit",
-        "text": "art: add commander portrait placeholders",
-        "sha": "f801093"
-      },
       {
         "date": "2026-06-04T16:33:12Z",
         "kind": "commit",
@@ -2102,15 +2093,14 @@
         "date": "2026-09-23",
         "kind": "progress",
         "text": "완성도 55%"
+      },
+      {
+        "date": "2026-09-24",
+        "kind": "progress",
+        "text": "완성도 55%"
       }
     ],
     "ai-builder-school": [
-      {
-        "date": "2026-06-07T09:18:12Z",
-        "kind": "commit",
-        "text": "content(lessons): conceptDepth 9개 백필 (3→12) — concepts.ts 10개 개념 1:1 커버",
-        "sha": "5447116"
-      },
       {
         "date": "2026-06-07T09:46:48Z",
         "kind": "commit",
@@ -2512,15 +2502,14 @@
         "date": "2026-09-23",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-09-24",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-06-28T23:42:42Z",
-        "kind": "commit",
-        "text": "feat-030 ④: 이벤트 모달 옅은 스크림 통일 + progress 갱신",
-        "sha": "6bcd3e0"
-      },
       {
         "date": "2026-06-29T00:48:29Z",
         "kind": "commit",
@@ -2927,15 +2916,14 @@
         "date": "2026-09-23",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-09-24",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-06-30T16:35:13Z",
-        "kind": "commit",
-        "text": "fix(canon): selectCanonForContext 가 alwaysInclude 를 앵커로 직접 인정(mid-session 핀)",
-        "sha": "26c88c4"
-      },
       {
         "date": "2026-06-30T16:36:53Z",
         "kind": "commit",
@@ -3342,15 +3330,14 @@
         "date": "2026-09-23",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-09-24",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
-      {
-        "date": "2026-05-13T14:32:12Z",
-        "kind": "commit",
-        "text": "Add health endpoint for deployment",
-        "sha": "cd3b768"
-      },
       {
         "date": "2026-05-13T22:21:57Z",
         "kind": "commit",
@@ -3747,15 +3734,14 @@
         "date": "2026-09-23",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-24",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "jewelry-webtoon-cloud": [
-      {
-        "date": "2026-05-15T04:00:14Z",
-        "kind": "commit",
-        "text": "fix: tighten reader navigation",
-        "sha": "3f09d0e"
-      },
       {
         "date": "2026-05-15T04:03:52Z",
         "kind": "commit",
@@ -4152,15 +4138,14 @@
         "date": "2026-09-23",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-24",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
-      {
-        "date": "2026-05-19T12:08:24Z",
-        "kind": "commit",
-        "text": "v1.3.4 — 노드 자식 추가 버튼 + 분기선 z-순서",
-        "sha": "33f7a01"
-      },
       {
         "date": "2026-05-20T15:55:06Z",
         "kind": "commit",
@@ -4557,15 +4542,14 @@
         "date": "2026-09-23",
         "kind": "progress",
         "text": "완성도 56%"
+      },
+      {
+        "date": "2026-09-24",
+        "kind": "progress",
+        "text": "완성도 56%"
       }
     ],
     "design-system-school": [
-      {
-        "date": "2026-05-29T09:54:01Z",
-        "kind": "commit",
-        "text": "Phase 10: ontology graph edge color coding",
-        "sha": "c81ab78"
-      },
       {
         "date": "2026-05-29T09:54:37Z",
         "kind": "commit",
@@ -4962,14 +4946,14 @@
         "date": "2026-09-23",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-24",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "cmds-daily-briefing": [
-      {
-        "date": "2026-07-23",
-        "kind": "progress",
-        "text": "완성도 52%"
-      },
       {
         "date": "2026-07-24",
         "kind": "progress",
@@ -5381,6 +5365,11 @@
         "date": "2026-09-23",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-09-24",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
@@ -5780,15 +5769,14 @@
         "date": "2026-09-23",
         "kind": "progress",
         "text": "완성도 7%"
+      },
+      {
+        "date": "2026-09-24",
+        "kind": "progress",
+        "text": "완성도 7%"
       }
     ],
     "chaekdam": [
-      {
-        "date": "2026-06-28T10:32:53Z",
-        "kind": "commit",
-        "text": "feat(reading): 멤버·클럽 진행률 실데이터화 (pseudoPct 제거)",
-        "sha": "b2be576"
-      },
       {
         "date": "2026-06-28T10:36:39Z",
         "kind": "commit",
@@ -6195,15 +6183,14 @@
         "date": "2026-09-23",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-09-24",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-27T23:21:53Z",
-        "kind": "commit",
-        "text": "fix-033 패들 차지 발광 — 곱 틴트→금빛 가산 오버레이",
-        "sha": "af16095"
-      },
       {
         "date": "2026-06-28T00:00:48Z",
         "kind": "commit",
@@ -6608,6 +6595,11 @@
       },
       {
         "date": "2026-09-23",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-09-24",
         "kind": "progress",
         "text": "완성도 39%"
       }
