@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-09-24",
+  "generatedAt": "2026-09-25",
   "logs": {
     "samsu": [
       {
@@ -67,12 +67,6 @@
       }
     ],
     "habit": [
-      {
-        "date": "2026-05-26T14:33:35Z",
-        "kind": "commit",
-        "text": "Trim duplicated run section cards from proof mode",
-        "sha": "6b769c7"
-      },
       {
         "date": "2026-05-28",
         "kind": "note",
@@ -468,15 +462,14 @@
         "date": "2026-09-24",
         "kind": "progress",
         "text": "완성도 70%"
+      },
+      {
+        "date": "2026-09-25",
+        "kind": "progress",
+        "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
-      {
-        "date": "2026-05-12T08:40:24Z",
-        "kind": "commit",
-        "text": "Wave 5 — Mock data fallback + 브랜드 \"뜬 이유\" + UX 개선 (#4)",
-        "sha": "4541274"
-      },
       {
         "date": "2026-05-28",
         "kind": "note",
@@ -872,15 +865,14 @@
         "date": "2026-09-24",
         "kind": "progress",
         "text": "완성도 65%"
+      },
+      {
+        "date": "2026-09-25",
+        "kind": "progress",
+        "text": "완성도 65%"
       }
     ],
     "sam-defender-logue": [
-      {
-        "date": "2026-06-10T16:32:30Z",
-        "kind": "commit",
-        "text": "feat(unity): tower identity — archetype kits, splash/slow/burn, distinct looks (M12.6/M12.7)",
-        "sha": "896e497"
-      },
       {
         "date": "2026-06-11T01:28:55Z",
         "kind": "commit",
@@ -1282,15 +1274,14 @@
         "date": "2026-09-24",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-25",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
-      {
-        "date": "2026-06-06T03:35:23Z",
-        "kind": "commit",
-        "text": "feat(feature-list): register v1.00.45-adventure-pixi-field entry",
-        "sha": "10bee4f"
-      },
       {
         "date": "2026-06-06T04:40:47Z",
         "kind": "commit",
@@ -1691,15 +1682,14 @@
         "date": "2026-09-24",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-09-25",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
-      {
-        "date": "2026-06-04T16:33:12Z",
-        "kind": "commit",
-        "text": "chore: track commander portrait imports",
-        "sha": "6d2e33e"
-      },
       {
         "date": "2026-06-05",
         "kind": "progress",
@@ -2098,15 +2088,14 @@
         "date": "2026-09-24",
         "kind": "progress",
         "text": "완성도 55%"
+      },
+      {
+        "date": "2026-09-25",
+        "kind": "progress",
+        "text": "완성도 55%"
       }
     ],
     "ai-builder-school": [
-      {
-        "date": "2026-06-07T09:46:48Z",
-        "kind": "commit",
-        "text": "feat(me): 산출물 포트폴리오 — 프로젝트 완성 기록 + /me '내가 지은 것'",
-        "sha": "b3e5e4e"
-      },
       {
         "date": "2026-06-07T11:07:45Z",
         "kind": "commit",
@@ -2507,15 +2496,14 @@
         "date": "2026-09-24",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-09-25",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-06-29T00:48:29Z",
-        "kind": "commit",
-        "text": "feat-030: 오피스 고정 3레이어 — PropSpec.Layer(Back/Front) + 전경 소품 가림",
-        "sha": "d7145fb"
-      },
       {
         "date": "2026-06-29T14:45:56Z",
         "kind": "commit",
@@ -2921,15 +2909,14 @@
         "date": "2026-09-24",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-09-25",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-06-30T16:36:53Z",
-        "kind": "commit",
-        "text": "docs(canon): Canon Core MVP-0 done — 정본·스펙·계획 + progress·handoff 갱신",
-        "sha": "4418a86"
-      },
       {
         "date": "2026-06-30T17:07:25Z",
         "kind": "commit",
@@ -3335,15 +3322,14 @@
         "date": "2026-09-24",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-09-25",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
-      {
-        "date": "2026-05-13T22:21:57Z",
-        "kind": "commit",
-        "text": "Trigger Vercel deployment with verified author",
-        "sha": "5eb5c37"
-      },
       {
         "date": "2026-05-28",
         "kind": "note",
@@ -3739,15 +3725,14 @@
         "date": "2026-09-24",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-25",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "jewelry-webtoon-cloud": [
-      {
-        "date": "2026-05-15T04:03:52Z",
-        "kind": "commit",
-        "text": "fix: scale episode navigation content",
-        "sha": "5a0c61b"
-      },
       {
         "date": "2026-05-28",
         "kind": "note",
@@ -4143,15 +4128,14 @@
         "date": "2026-09-24",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-25",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
-      {
-        "date": "2026-05-20T15:55:06Z",
-        "kind": "commit",
-        "text": "하네스 엔지니어링 정비 — 5개 subsystem 100/100",
-        "sha": "fc08b81"
-      },
       {
         "date": "2026-05-28",
         "kind": "note",
@@ -4547,15 +4531,14 @@
         "date": "2026-09-24",
         "kind": "progress",
         "text": "완성도 56%"
+      },
+      {
+        "date": "2026-09-25",
+        "kind": "progress",
+        "text": "완성도 56%"
       }
     ],
     "design-system-school": [
-      {
-        "date": "2026-05-29T09:54:37Z",
-        "kind": "commit",
-        "text": "docs: backfill Phase 9·10 commit hashes in progress.md",
-        "sha": "62078e0"
-      },
       {
         "date": "2026-05-29T09:55:37Z",
         "kind": "commit",
@@ -4951,14 +4934,14 @@
         "date": "2026-09-24",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-25",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "cmds-daily-briefing": [
-      {
-        "date": "2026-07-24",
-        "kind": "progress",
-        "text": "완성도 52%"
-      },
       {
         "date": "2026-07-25",
         "kind": "progress",
@@ -5370,15 +5353,14 @@
         "date": "2026-09-24",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-09-25",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
-      {
-        "date": "2026-05-20T16:51:21Z",
-        "kind": "commit",
-        "text": "feat: init Vite React project with TDS theme and 2D canvas orb timer",
-        "sha": "a785d46"
-      },
       {
         "date": "2026-05-28",
         "kind": "note",
@@ -5774,15 +5756,14 @@
         "date": "2026-09-24",
         "kind": "progress",
         "text": "완성도 7%"
+      },
+      {
+        "date": "2026-09-25",
+        "kind": "progress",
+        "text": "완성도 7%"
       }
     ],
     "chaekdam": [
-      {
-        "date": "2026-06-28T10:36:39Z",
-        "kind": "commit",
-        "text": "Merge: 멤버·클럽 진행률 실데이터화 (#5)",
-        "sha": "5ff17ee"
-      },
       {
         "date": "2026-06-28T10:44:34Z",
         "kind": "commit",
@@ -6188,15 +6169,14 @@
         "date": "2026-09-24",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-09-25",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-28T00:00:48Z",
-        "kind": "commit",
-        "text": "test: PaddlePowerGlow 작동 검증 PlayMode 테스트",
-        "sha": "e298398"
-      },
       {
         "date": "2026-06-28T09:48:14Z",
         "kind": "commit",
@@ -6600,6 +6580,11 @@
       },
       {
         "date": "2026-09-24",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-09-25",
         "kind": "progress",
         "text": "완성도 39%"
       }
