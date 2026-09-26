@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-09-25",
+  "generatedAt": "2026-09-26",
   "logs": {
     "samsu": [
       {
@@ -68,12 +68,6 @@
     ],
     "habit": [
       {
-        "date": "2026-05-28",
-        "kind": "note",
-        "label": "조언",
-        "text": "Expo iOS 알파 빌드 한 번이 완성 단계 진입의 열쇠입니다. 그 전에 알파 피드백에서 AI 분석 정확도에 대한 신뢰부터 확인하시길."
-      },
-      {
         "date": "2026-05-31",
         "kind": "progress",
         "text": "진척 70%"
@@ -465,18 +459,17 @@
       },
       {
         "date": "2026-09-25",
+        "kind": "progress",
+        "text": "완성도 70%"
+      },
+      {
+        "date": "2026-09-26",
         "kind": "progress",
         "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
       {
-        "date": "2026-05-28",
-        "kind": "note",
-        "label": "조언",
-        "text": "이번 주에 Xcode 빌드와 시뮬레이터 스크린샷을 끝내거나, 어렵다면 Sprint A 일정을 솔직하게 재조정하시길. 멈춤을 방치하는 게 가장 비쌉니다."
-      },
-      {
         "date": "2026-05-31",
         "kind": "progress",
         "text": "진척 65%"
@@ -870,15 +863,14 @@
         "date": "2026-09-25",
         "kind": "progress",
         "text": "완성도 65%"
+      },
+      {
+        "date": "2026-09-26",
+        "kind": "progress",
+        "text": "완성도 65%"
       }
     ],
     "sam-defender-logue": [
-      {
-        "date": "2026-06-11T01:28:55Z",
-        "kind": "commit",
-        "text": "feat(unity): battle economy — kill gold + mid-wave building (M12.8) + progress archive",
-        "sha": "02aee93"
-      },
       {
         "date": "2026-06-11T01:33:07Z",
         "kind": "commit",
@@ -1279,15 +1271,14 @@
         "date": "2026-09-25",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-26",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
-      {
-        "date": "2026-06-06T04:40:47Z",
-        "kind": "commit",
-        "text": "docs(renderer): record v1.00.45 verification + fix feature row schema",
-        "sha": "456f6f7"
-      },
       {
         "date": "2026-06-06T04:40:47Z",
         "kind": "commit",
@@ -1687,14 +1678,14 @@
         "date": "2026-09-25",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-09-26",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
-      {
-        "date": "2026-06-05",
-        "kind": "progress",
-        "text": "진척 55% · 커밋 +2"
-      },
       {
         "date": "2026-06-05T04:45:59Z",
         "kind": "commit",
@@ -2093,15 +2084,14 @@
         "date": "2026-09-25",
         "kind": "progress",
         "text": "완성도 55%"
+      },
+      {
+        "date": "2026-09-26",
+        "kind": "progress",
+        "text": "완성도 55%"
       }
     ],
     "ai-builder-school": [
-      {
-        "date": "2026-06-07T11:07:45Z",
-        "kind": "commit",
-        "text": "feat(analytics): Plausible 운영자 학습 분석 (env 게이팅) + 완성 이벤트",
-        "sha": "f133550"
-      },
       {
         "date": "2026-06-07T11:36:47Z",
         "kind": "commit",
@@ -2501,15 +2491,14 @@
         "date": "2026-09-25",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-09-26",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-06-29T14:45:56Z",
-        "kind": "commit",
-        "text": "feat-030: 온보딩 첫 60초 — AI 비서 '첫 출근' 코치마크",
-        "sha": "42ecea7"
-      },
       {
         "date": "2026-06-29T14:50:29Z",
         "kind": "commit",
@@ -2914,15 +2903,14 @@
         "date": "2026-09-25",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-09-26",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-06-30T17:07:25Z",
-        "kind": "commit",
-        "text": "Merge pull request #7 from sgeniusk/feat/canon-core-mvp0",
-        "sha": "d034607"
-      },
       {
         "date": "2026-06-30T17:17:00Z",
         "kind": "commit",
@@ -3327,15 +3315,14 @@
         "date": "2026-09-25",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-09-26",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
-      {
-        "date": "2026-05-28",
-        "kind": "note",
-        "label": "조언",
-        "text": "책담과 도메인이 겹치니 둘의 관계부터 정리하시길. 지금 끌어올리기보다 재개 트리거만 적어두면 충분합니다."
-      },
       {
         "date": "2026-05-31",
         "kind": "progress",
@@ -3728,18 +3715,17 @@
       },
       {
         "date": "2026-09-25",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-26",
         "kind": "progress",
         "text": "완성도 20%"
       }
     ],
     "jewelry-webtoon-cloud": [
       {
-        "date": "2026-05-28",
-        "kind": "note",
-        "label": "조언",
-        "text": "재개 트리거를 명시해두시길('핵심 게임 2개 마감 후'처럼). 지금은 현재 산출물을 README에 잘 박아두는 것으로 충분합니다."
-      },
-      {
         "date": "2026-05-31",
         "kind": "progress",
         "text": "진척 20%"
@@ -4131,18 +4117,17 @@
       },
       {
         "date": "2026-09-25",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-26",
         "kind": "progress",
         "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
       {
-        "date": "2026-05-28",
-        "kind": "note",
-        "label": "조언",
-        "text": "20인 페르소나 알파 피드백의 B/C 우선순위부터 정리하시길. 대형 트리 렌더 성능(React Flow 가상화)도 사용성 체감을 크게 좌우합니다."
-      },
-      {
         "date": "2026-05-31",
         "kind": "progress",
         "text": "진척 56%"
@@ -4534,18 +4519,17 @@
       },
       {
         "date": "2026-09-25",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-09-26",
         "kind": "progress",
         "text": "완성도 56%"
       }
     ],
     "design-system-school": [
       {
-        "date": "2026-05-29T09:55:37Z",
-        "kind": "commit",
-        "text": "docs: backfill Phase 9 hash and add Phase 10 row to progress.md",
-        "sha": "070520e"
-      },
-      {
         "date": "2026-05-31",
         "kind": "progress",
         "text": "진척 20%"
@@ -4939,14 +4923,14 @@
         "date": "2026-09-25",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-26",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "cmds-daily-briefing": [
-      {
-        "date": "2026-07-25",
-        "kind": "progress",
-        "text": "완성도 52%"
-      },
       {
         "date": "2026-07-26",
         "kind": "progress",
@@ -5358,15 +5342,14 @@
         "date": "2026-09-25",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-09-26",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
-      {
-        "date": "2026-05-28",
-        "kind": "note",
-        "label": "조언",
-        "text": "'집중 타이머인지, 습관 타이머인지'처럼 한 줄 정체성부터 적어보시길. MVP 기능 하나만 정하면 스캐폴드가 살아납니다."
-      },
       {
         "date": "2026-05-31",
         "kind": "progress",
@@ -5761,15 +5744,14 @@
         "date": "2026-09-25",
         "kind": "progress",
         "text": "완성도 7%"
+      },
+      {
+        "date": "2026-09-26",
+        "kind": "progress",
+        "text": "완성도 7%"
       }
     ],
     "chaekdam": [
-      {
-        "date": "2026-06-28T10:44:34Z",
-        "kind": "commit",
-        "text": "feat(security): 익명 발표 제출 rate limit (DB 네이티브, 0023)",
-        "sha": "1f6c65d"
-      },
       {
         "date": "2026-06-28T11:03:33Z",
         "kind": "commit",
@@ -6174,15 +6156,14 @@
         "date": "2026-09-25",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-09-26",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-28T09:48:14Z",
-        "kind": "commit",
-        "text": "feat-034 패들 파워 전기 아크 — 블랑카식 응집 연출",
-        "sha": "20cf883"
-      },
       {
         "date": "2026-06-28T10:49:50Z",
         "kind": "commit",
@@ -6585,6 +6566,11 @@
       },
       {
         "date": "2026-09-25",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-09-26",
         "kind": "progress",
         "text": "완성도 39%"
       }
