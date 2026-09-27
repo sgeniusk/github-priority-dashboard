@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-09-26",
+  "generatedAt": "2026-09-27",
   "logs": {
     "samsu": [
       {
@@ -68,11 +68,6 @@
     ],
     "habit": [
       {
-        "date": "2026-05-31",
-        "kind": "progress",
-        "text": "진척 70%"
-      },
-      {
         "date": "2026-06-03",
         "kind": "progress",
         "text": "진척 70%"
@@ -464,17 +459,17 @@
       },
       {
         "date": "2026-09-26",
+        "kind": "progress",
+        "text": "완성도 70%"
+      },
+      {
+        "date": "2026-09-27",
         "kind": "progress",
         "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
       {
-        "date": "2026-05-31",
-        "kind": "progress",
-        "text": "진척 65%"
-      },
-      {
         "date": "2026-06-03",
         "kind": "progress",
         "text": "진척 65%"
@@ -868,15 +863,14 @@
         "date": "2026-09-26",
         "kind": "progress",
         "text": "완성도 65%"
+      },
+      {
+        "date": "2026-09-27",
+        "kind": "progress",
+        "text": "완성도 65%"
       }
     ],
     "sam-defender-logue": [
-      {
-        "date": "2026-06-11T01:33:07Z",
-        "kind": "commit",
-        "text": "fix(unity): 타워 중복 배치 방지 + agy QA 리포트 (M12.8 후속)",
-        "sha": "b5e1ebb"
-      },
       {
         "date": "2026-06-11T02:31:43Z",
         "kind": "commit",
@@ -1276,15 +1270,14 @@
         "date": "2026-09-26",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-27",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
-      {
-        "date": "2026-06-06T04:40:47Z",
-        "kind": "commit",
-        "text": "fix(renderer): persist Pixi adventure canvas across SPA render + frame-crop sprites",
-        "sha": "2f356e2"
-      },
       {
         "date": "2026-06-06T07:10:17Z",
         "kind": "commit",
@@ -1683,15 +1676,14 @@
         "date": "2026-09-26",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-09-27",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
-      {
-        "date": "2026-06-05T04:45:59Z",
-        "kind": "commit",
-        "text": "docs: add external UI redesign prompt",
-        "sha": "0ffdd3f"
-      },
       {
         "date": "2026-06-05T17:40:52Z",
         "kind": "commit",
@@ -2089,15 +2081,14 @@
         "date": "2026-09-26",
         "kind": "progress",
         "text": "완성도 55%"
+      },
+      {
+        "date": "2026-09-27",
+        "kind": "progress",
+        "text": "완성도 55%"
       }
     ],
     "ai-builder-school": [
-      {
-        "date": "2026-06-07T11:36:47Z",
-        "kind": "commit",
-        "text": "feat(playground): 프롬프트 연습장 1차 — Gemini BYO 키 인앱 호출",
-        "sha": "0556eba"
-      },
       {
         "date": "2026-06-07T13:46:51Z",
         "kind": "commit",
@@ -2496,15 +2487,14 @@
         "date": "2026-09-26",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-09-27",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-06-29T14:50:29Z",
-        "kind": "commit",
-        "text": "docs(feat-030): 핸드오프 — 시안 전 항목 구현 완료(13커밋 미푸시)",
-        "sha": "944aa6c"
-      },
       {
         "date": "2026-06-30T08:54:03Z",
         "kind": "commit",
@@ -2908,15 +2898,14 @@
         "date": "2026-09-26",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-09-27",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-06-30T17:17:00Z",
-        "kind": "commit",
-        "text": "docs(canon): Canon Core MVP-0 상태를 main 머지 완료로 정정(PR #7)",
-        "sha": "8750bb6"
-      },
       {
         "date": "2026-06-30T17:17:16Z",
         "kind": "commit",
@@ -3320,14 +3309,14 @@
         "date": "2026-09-26",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-09-27",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
-      {
-        "date": "2026-05-31",
-        "kind": "progress",
-        "text": "진척 20%"
-      },
       {
         "date": "2026-06-03",
         "kind": "progress",
@@ -3720,17 +3709,17 @@
       },
       {
         "date": "2026-09-26",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-27",
         "kind": "progress",
         "text": "완성도 20%"
       }
     ],
     "jewelry-webtoon-cloud": [
       {
-        "date": "2026-05-31",
-        "kind": "progress",
-        "text": "진척 20%"
-      },
-      {
         "date": "2026-06-03",
         "kind": "progress",
         "text": "진척 20%"
@@ -4122,17 +4111,17 @@
       },
       {
         "date": "2026-09-26",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-27",
         "kind": "progress",
         "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
       {
-        "date": "2026-05-31",
-        "kind": "progress",
-        "text": "진척 56%"
-      },
-      {
         "date": "2026-06-03",
         "kind": "progress",
         "text": "진척 56%"
@@ -4524,17 +4513,17 @@
       },
       {
         "date": "2026-09-26",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-09-27",
         "kind": "progress",
         "text": "완성도 56%"
       }
     ],
     "design-system-school": [
       {
-        "date": "2026-05-31",
-        "kind": "progress",
-        "text": "진척 20%"
-      },
-      {
         "date": "2026-06-03",
         "kind": "progress",
         "text": "진척 20%"
@@ -4928,14 +4917,14 @@
         "date": "2026-09-26",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-27",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "cmds-daily-briefing": [
-      {
-        "date": "2026-07-26",
-        "kind": "progress",
-        "text": "완성도 52%"
-      },
       {
         "date": "2026-07-27",
         "kind": "progress",
@@ -5347,14 +5336,14 @@
         "date": "2026-09-26",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-09-27",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
-      {
-        "date": "2026-05-31",
-        "kind": "progress",
-        "text": "진척 7%"
-      },
       {
         "date": "2026-06-03",
         "kind": "progress",
@@ -5749,15 +5738,14 @@
         "date": "2026-09-26",
         "kind": "progress",
         "text": "완성도 7%"
+      },
+      {
+        "date": "2026-09-27",
+        "kind": "progress",
+        "text": "완성도 7%"
       }
     ],
     "chaekdam": [
-      {
-        "date": "2026-06-28T11:03:33Z",
-        "kind": "commit",
-        "text": "docs(roadmap): 0023 prod 적용·검증 완료 반영",
-        "sha": "c625d61"
-      },
       {
         "date": "2026-06-28T11:10:42Z",
         "kind": "commit",
@@ -6161,15 +6149,14 @@
         "date": "2026-09-26",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-09-27",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-28T10:49:50Z",
-        "kind": "commit",
-        "text": "docs: 세션 핸드오프 갱신 — 게임필 QA 결산·다음 장비/캐릭터 일러스트",
-        "sha": "d1e649a"
-      },
       {
         "date": "2026-06-29T14:36:53Z",
         "kind": "commit",
@@ -6571,6 +6558,11 @@
       },
       {
         "date": "2026-09-26",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-09-27",
         "kind": "progress",
         "text": "완성도 39%"
       }
