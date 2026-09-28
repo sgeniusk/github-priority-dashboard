@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-09-27",
+  "generatedAt": "2026-09-28",
   "logs": {
     "samsu": [
       {
@@ -68,11 +68,6 @@
     ],
     "habit": [
       {
-        "date": "2026-06-03",
-        "kind": "progress",
-        "text": "진척 70%"
-      },
-      {
         "date": "2026-06-04",
         "kind": "progress",
         "text": "진척 70%"
@@ -464,17 +459,17 @@
       },
       {
         "date": "2026-09-27",
+        "kind": "progress",
+        "text": "완성도 70%"
+      },
+      {
+        "date": "2026-09-28",
         "kind": "progress",
         "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
       {
-        "date": "2026-06-03",
-        "kind": "progress",
-        "text": "진척 65%"
-      },
-      {
         "date": "2026-06-04",
         "kind": "progress",
         "text": "진척 65%"
@@ -868,15 +863,14 @@
         "date": "2026-09-27",
         "kind": "progress",
         "text": "완성도 65%"
+      },
+      {
+        "date": "2026-09-28",
+        "kind": "progress",
+        "text": "완성도 65%"
       }
     ],
     "sam-defender-logue": [
-      {
-        "date": "2026-06-11T02:31:43Z",
-        "kind": "commit",
-        "text": "feat(unity): generals on the battlefield — cleave, skill banners, oath links (M13)",
-        "sha": "68e7300"
-      },
       {
         "date": "2026-06-11T06:52:00Z",
         "kind": "commit",
@@ -1275,15 +1269,14 @@
         "date": "2026-09-27",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-28",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
-      {
-        "date": "2026-06-06T07:10:17Z",
-        "kind": "commit",
-        "text": "feat(renderer): emit hit-flash/impact-strip effect descriptors from scene model (E3-E4 data)",
-        "sha": "ee6852c"
-      },
       {
         "date": "2026-06-06T08:17:30Z",
         "kind": "commit",
@@ -1681,15 +1674,14 @@
         "date": "2026-09-27",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-09-28",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
-      {
-        "date": "2026-06-05T17:40:52Z",
-        "kind": "commit",
-        "text": "chore: refresh verified deployment author",
-        "sha": "d898a78"
-      },
       {
         "date": "2026-06-06",
         "kind": "progress",
@@ -2086,15 +2078,14 @@
         "date": "2026-09-27",
         "kind": "progress",
         "text": "완성도 55%"
+      },
+      {
+        "date": "2026-09-28",
+        "kind": "progress",
+        "text": "완성도 55%"
       }
     ],
     "ai-builder-school": [
-      {
-        "date": "2026-06-07T13:46:51Z",
-        "kind": "commit",
-        "text": "content(playground): playgroundPrompt 5개 확대 (1→6)",
-        "sha": "fb326d6"
-      },
       {
         "date": "2026-06-07T14:48:53Z",
         "kind": "commit",
@@ -2492,15 +2483,14 @@
         "date": "2026-09-27",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-09-28",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-06-30T08:54:03Z",
-        "kind": "commit",
-        "text": "docs(feat-030): 다음 세션 조정 항목 — 1인 창고 시작·업그레이드 조건 해금·버튼 affordance",
-        "sha": "c7fe5f0"
-      },
       {
         "date": "2026-07-01",
         "kind": "progress",
@@ -2903,15 +2893,14 @@
         "date": "2026-09-27",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-09-28",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-06-30T17:17:16Z",
-        "kind": "commit",
-        "text": "Merge pull request #8 from sgeniusk/docs/canon-core-merged-status",
-        "sha": "c1d1403"
-      },
       {
         "date": "2026-07-01",
         "kind": "progress",
@@ -3314,14 +3303,14 @@
         "date": "2026-09-27",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-09-28",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
-      {
-        "date": "2026-06-03",
-        "kind": "progress",
-        "text": "진척 20%"
-      },
       {
         "date": "2026-06-04",
         "kind": "progress",
@@ -3714,17 +3703,17 @@
       },
       {
         "date": "2026-09-27",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-28",
         "kind": "progress",
         "text": "완성도 20%"
       }
     ],
     "jewelry-webtoon-cloud": [
       {
-        "date": "2026-06-03",
-        "kind": "progress",
-        "text": "진척 20%"
-      },
-      {
         "date": "2026-06-04",
         "kind": "progress",
         "text": "진척 20%"
@@ -4116,17 +4105,17 @@
       },
       {
         "date": "2026-09-27",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-28",
         "kind": "progress",
         "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
       {
-        "date": "2026-06-03",
-        "kind": "progress",
-        "text": "진척 56%"
-      },
-      {
         "date": "2026-06-04",
         "kind": "progress",
         "text": "진척 56%"
@@ -4518,17 +4507,17 @@
       },
       {
         "date": "2026-09-27",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-09-28",
         "kind": "progress",
         "text": "완성도 56%"
       }
     ],
     "design-system-school": [
       {
-        "date": "2026-06-03",
-        "kind": "progress",
-        "text": "진척 20%"
-      },
-      {
         "date": "2026-06-04",
         "kind": "progress",
         "text": "진척 20%"
@@ -4922,14 +4911,14 @@
         "date": "2026-09-27",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-09-28",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "cmds-daily-briefing": [
-      {
-        "date": "2026-07-27",
-        "kind": "progress",
-        "text": "완성도 52%"
-      },
       {
         "date": "2026-07-28",
         "kind": "progress",
@@ -5341,14 +5330,14 @@
         "date": "2026-09-27",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-09-28",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
-      {
-        "date": "2026-06-03",
-        "kind": "progress",
-        "text": "진척 7%"
-      },
       {
         "date": "2026-06-04",
         "kind": "progress",
@@ -5743,15 +5732,14 @@
         "date": "2026-09-27",
         "kind": "progress",
         "text": "완성도 7%"
+      },
+      {
+        "date": "2026-09-28",
+        "kind": "progress",
+        "text": "완성도 7%"
       }
     ],
     "chaekdam": [
-      {
-        "date": "2026-06-28T11:10:42Z",
-        "kind": "commit",
-        "text": "Merge: 익명 발표 제출 rate limit (#6)",
-        "sha": "209f81b"
-      },
       {
         "date": "2026-07-01",
         "kind": "progress",
@@ -6154,15 +6142,14 @@
         "date": "2026-09-27",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-09-28",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-06-29T14:36:53Z",
-        "kind": "commit",
-        "text": "feat-035 영웅·장비 아트 — 그릇 초상 4종·장비 아이콘 10종",
-        "sha": "6fee5c6"
-      },
       {
         "date": "2026-07-01",
         "kind": "progress",
@@ -6563,6 +6550,11 @@
       },
       {
         "date": "2026-09-27",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-09-28",
         "kind": "progress",
         "text": "완성도 39%"
       }
