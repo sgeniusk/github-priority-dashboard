@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-09-30",
+  "generatedAt": "2026-10-01",
   "logs": {
     "samsu": [
       {
@@ -68,11 +68,6 @@
     ],
     "habit": [
       {
-        "date": "2026-06-06",
-        "kind": "progress",
-        "text": "완성도 70%"
-      },
-      {
         "date": "2026-06-10",
         "kind": "progress",
         "text": "완성도 70%"
@@ -464,17 +459,17 @@
       },
       {
         "date": "2026-09-30",
+        "kind": "progress",
+        "text": "완성도 70%"
+      },
+      {
+        "date": "2026-10-01",
         "kind": "progress",
         "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
       {
-        "date": "2026-06-06",
-        "kind": "progress",
-        "text": "완성도 65%"
-      },
-      {
         "date": "2026-06-10",
         "kind": "progress",
         "text": "완성도 65%"
@@ -868,15 +863,14 @@
         "date": "2026-09-30",
         "kind": "progress",
         "text": "완성도 65%"
+      },
+      {
+        "date": "2026-10-01",
+        "kind": "progress",
+        "text": "완성도 65%"
       }
     ],
     "sam-defender-logue": [
-      {
-        "date": "2026-06-11T10:13:03Z",
-        "kind": "commit",
-        "text": "feat(unity): port wrap-up — growing island, village ops, battle speed (M15)",
-        "sha": "6785fac"
-      },
       {
         "date": "2026-06-11T10:32:46Z",
         "kind": "commit",
@@ -1272,15 +1266,14 @@
         "date": "2026-09-30",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-10-01",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
-      {
-        "date": "2026-06-06T16:05:52Z",
-        "kind": "commit",
-        "text": "chore: ignore renderer proof screenshots + record W1 war Pixi port handoff",
-        "sha": "69f9531"
-      },
       {
         "date": "2026-06-10",
         "kind": "progress",
@@ -1675,15 +1668,14 @@
         "date": "2026-09-30",
         "kind": "progress",
         "text": "완성도 60%"
+      },
+      {
+        "date": "2026-10-01",
+        "kind": "progress",
+        "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
-      {
-        "date": "2026-06-06T10:10:37Z",
-        "kind": "commit",
-        "text": "Apply opening order UI polish",
-        "sha": "cda900d"
-      },
       {
         "date": "2026-06-10",
         "kind": "progress",
@@ -2078,15 +2070,14 @@
         "date": "2026-09-30",
         "kind": "progress",
         "text": "완성도 55%"
+      },
+      {
+        "date": "2026-10-01",
+        "kind": "progress",
+        "text": "완성도 55%"
       }
     ],
     "ai-builder-school": [
-      {
-        "date": "2026-06-10T06:39:29Z",
-        "kind": "commit",
-        "text": "docs: 세션 핸드오프 (콘텐츠 깊이·포트폴리오·연습장 8트랙) + .playwright-mcp ignore",
-        "sha": "363570c"
-      },
       {
         "date": "2026-06-10T07:11:04Z",
         "kind": "commit",
@@ -2482,15 +2473,14 @@
         "date": "2026-09-30",
         "kind": "progress",
         "text": "완성도 45%"
+      },
+      {
+        "date": "2026-10-01",
+        "kind": "progress",
+        "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
-      {
-        "date": "2026-07-12T14:49:22Z",
-        "kind": "commit",
-        "text": "docs(feat-048): 소품 타일 스케일 통일 구현 계획",
-        "sha": "b9cd1b1"
-      },
       {
         "date": "2026-07-12T15:05:19Z",
         "kind": "commit",
@@ -2891,15 +2881,14 @@
         "date": "2026-09-30",
         "kind": "progress",
         "text": "완성도 75%"
+      },
+      {
+        "date": "2026-10-01",
+        "kind": "progress",
+        "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
-      {
-        "date": "2026-07-13T00:26:57Z",
-        "kind": "commit",
-        "text": "Merge pull request #34 from sgeniusk/feat/source-discovery-preset",
-        "sha": "e1e1cf0"
-      },
       {
         "date": "2026-07-13T00:28:08Z",
         "kind": "commit",
@@ -3300,14 +3289,14 @@
         "date": "2026-09-30",
         "kind": "progress",
         "text": "완성도 50%"
+      },
+      {
+        "date": "2026-10-01",
+        "kind": "progress",
+        "text": "완성도 50%"
       }
     ],
     "BookCircle": [
-      {
-        "date": "2026-06-06",
-        "kind": "progress",
-        "text": "완성도 20%"
-      },
       {
         "date": "2026-06-10",
         "kind": "progress",
@@ -3700,17 +3689,17 @@
       },
       {
         "date": "2026-09-30",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-10-01",
         "kind": "progress",
         "text": "완성도 20%"
       }
     ],
     "jewelry-webtoon-cloud": [
       {
-        "date": "2026-06-06",
-        "kind": "progress",
-        "text": "완성도 20%"
-      },
-      {
         "date": "2026-06-10",
         "kind": "progress",
         "text": "완성도 20%"
@@ -4102,17 +4091,17 @@
       },
       {
         "date": "2026-09-30",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-10-01",
         "kind": "progress",
         "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
       {
-        "date": "2026-06-06",
-        "kind": "progress",
-        "text": "완성도 56%"
-      },
-      {
         "date": "2026-06-10",
         "kind": "progress",
         "text": "완성도 56%"
@@ -4504,17 +4493,17 @@
       },
       {
         "date": "2026-09-30",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-10-01",
         "kind": "progress",
         "text": "완성도 56%"
       }
     ],
     "design-system-school": [
       {
-        "date": "2026-06-06",
-        "kind": "progress",
-        "text": "완성도 20%"
-      },
-      {
         "date": "2026-06-10",
         "kind": "progress",
         "text": "완성도 20%"
@@ -4908,14 +4897,14 @@
         "date": "2026-09-30",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-10-01",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "cmds-daily-briefing": [
-      {
-        "date": "2026-07-30",
-        "kind": "progress",
-        "text": "완성도 52%"
-      },
       {
         "date": "2026-07-31",
         "kind": "progress",
@@ -5327,14 +5316,14 @@
         "date": "2026-09-30",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-10-01",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
-      {
-        "date": "2026-06-06",
-        "kind": "progress",
-        "text": "완성도 7%"
-      },
       {
         "date": "2026-06-10",
         "kind": "progress",
@@ -5729,15 +5718,14 @@
         "date": "2026-09-30",
         "kind": "progress",
         "text": "완성도 7%"
+      },
+      {
+        "date": "2026-10-01",
+        "kind": "progress",
+        "text": "완성도 7%"
       }
     ],
     "chaekdam": [
-      {
-        "date": "2026-07-01T14:28:36Z",
-        "kind": "commit",
-        "text": "feat(topbar): 상세 페이지 다단 크럼 배선 (클럽·책 이름)",
-        "sha": "ee41740"
-      },
       {
         "date": "2026-07-01T14:29:24Z",
         "kind": "commit",
@@ -6138,15 +6126,14 @@
         "date": "2026-09-30",
         "kind": "progress",
         "text": "완성도 19%"
+      },
+      {
+        "date": "2026-10-01",
+        "kind": "progress",
+        "text": "완성도 19%"
       }
     ],
     "honbul": [
-      {
-        "date": "2026-07-13T10:06:02Z",
-        "kind": "commit",
-        "text": "docs: feat-070 done 반영 — 컷인 코드+아트 완료·육안 게이트 등록",
-        "sha": "330257c"
-      },
       {
         "date": "2026-07-13T10:30:49Z",
         "kind": "commit",
@@ -6545,6 +6532,11 @@
       },
       {
         "date": "2026-09-30",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-10-01",
         "kind": "progress",
         "text": "완성도 39%"
       }
