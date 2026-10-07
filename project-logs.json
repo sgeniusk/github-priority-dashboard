@@ -1,6 +1,6 @@
 {
   "_comment": "프로젝트별 누적 타임라인(devlog). refresh마다 새 커밋·완성도 변동을 append(kind: commit/progress). 큐레이션은 kind:note로 /report·수동 추가 — 보존됨. project-report.html?repo=가 읽는다.",
-  "generatedAt": "2026-10-06",
+  "generatedAt": "2026-10-07",
   "logs": {
     "samsu": [
       {
@@ -68,11 +68,6 @@
     ],
     "habit": [
       {
-        "date": "2026-07-01",
-        "kind": "progress",
-        "text": "완성도 70%"
-      },
-      {
         "date": "2026-07-20",
         "kind": "progress",
         "text": "완성도 70%"
@@ -464,17 +459,17 @@
       },
       {
         "date": "2026-10-06",
+        "kind": "progress",
+        "text": "완성도 70%"
+      },
+      {
+        "date": "2026-10-07",
         "kind": "progress",
         "text": "완성도 70%"
       }
     ],
     "tteuniyu-ios": [
       {
-        "date": "2026-07-01",
-        "kind": "progress",
-        "text": "완성도 65%"
-      },
-      {
         "date": "2026-07-20",
         "kind": "progress",
         "text": "완성도 65%"
@@ -866,17 +861,17 @@
       },
       {
         "date": "2026-10-06",
+        "kind": "progress",
+        "text": "완성도 65%"
+      },
+      {
+        "date": "2026-10-07",
         "kind": "progress",
         "text": "완성도 65%"
       }
     ],
     "sam-defender-logue": [
       {
-        "date": "2026-07-01",
-        "kind": "progress",
-        "text": "완성도 20% · (-40p)"
-      },
-      {
         "date": "2026-07-20",
         "kind": "progress",
         "text": "완성도 20%"
@@ -1268,17 +1263,17 @@
       },
       {
         "date": "2026-10-06",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-10-07",
         "kind": "progress",
         "text": "완성도 20%"
       }
     ],
     "samguk-idle-prototype": [
       {
-        "date": "2026-07-01",
-        "kind": "progress",
-        "text": "완성도 60%"
-      },
-      {
         "date": "2026-07-20",
         "kind": "progress",
         "text": "완성도 60%"
@@ -1670,17 +1665,17 @@
       },
       {
         "date": "2026-10-06",
+        "kind": "progress",
+        "text": "완성도 60%"
+      },
+      {
+        "date": "2026-10-07",
         "kind": "progress",
         "text": "완성도 60%"
       }
     ],
     "three-kingdoms-deckbuilder": [
       {
-        "date": "2026-07-01",
-        "kind": "progress",
-        "text": "완성도 55%"
-      },
-      {
         "date": "2026-07-20",
         "kind": "progress",
         "text": "완성도 55%"
@@ -2072,17 +2067,17 @@
       },
       {
         "date": "2026-10-06",
+        "kind": "progress",
+        "text": "완성도 55%"
+      },
+      {
+        "date": "2026-10-07",
         "kind": "progress",
         "text": "완성도 55%"
       }
     ],
     "ai-builder-school": [
       {
-        "date": "2026-07-01",
-        "kind": "progress",
-        "text": "완성도 45%"
-      },
-      {
         "date": "2026-07-20",
         "kind": "progress",
         "text": "완성도 45%"
@@ -2474,18 +2469,17 @@
       },
       {
         "date": "2026-10-06",
+        "kind": "progress",
+        "text": "완성도 45%"
+      },
+      {
+        "date": "2026-10-07",
         "kind": "progress",
         "text": "완성도 45%"
       }
     ],
     "ai-company-tycoon-boundaryless": [
       {
-        "date": "2026-07-13T00:29:02Z",
-        "kind": "commit",
-        "text": "docs(feat-048): 다음 세션 핸드오프 갱신 — feat-047·048 done, 후보 정리",
-        "sha": "c52da8a"
-      },
-      {
         "date": "2026-07-20",
         "kind": "progress",
         "text": "완성도 75%"
@@ -2877,18 +2871,17 @@
       },
       {
         "date": "2026-10-06",
+        "kind": "progress",
+        "text": "완성도 75%"
+      },
+      {
+        "date": "2026-10-07",
         "kind": "progress",
         "text": "완성도 75%"
       }
     ],
     "story-x-beta": [
       {
-        "date": "2026-07-15T10:06:57Z",
-        "kind": "commit",
-        "text": "Merge pull request #38 from sgeniusk/codex/p0a-condense-job-polling",
-        "sha": "0df4cfa"
-      },
-      {
         "date": "2026-07-20",
         "kind": "progress",
         "text": "완성도 50%"
@@ -3280,17 +3273,17 @@
       },
       {
         "date": "2026-10-06",
+        "kind": "progress",
+        "text": "완성도 50%"
+      },
+      {
+        "date": "2026-10-07",
         "kind": "progress",
         "text": "완성도 50%"
       }
     ],
     "BookCircle": [
       {
-        "date": "2026-07-01",
-        "kind": "progress",
-        "text": "완성도 20%"
-      },
-      {
         "date": "2026-07-20",
         "kind": "progress",
         "text": "완성도 20%"
@@ -3682,17 +3675,17 @@
       },
       {
         "date": "2026-10-06",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-10-07",
         "kind": "progress",
         "text": "완성도 20%"
       }
     ],
     "jewelry-webtoon-cloud": [
       {
-        "date": "2026-07-01",
-        "kind": "progress",
-        "text": "완성도 20%"
-      },
-      {
         "date": "2026-07-20",
         "kind": "progress",
         "text": "완성도 20%"
@@ -4084,17 +4077,17 @@
       },
       {
         "date": "2026-10-06",
+        "kind": "progress",
+        "text": "완성도 20%"
+      },
+      {
+        "date": "2026-10-07",
         "kind": "progress",
         "text": "완성도 20%"
       }
     ],
     "Nodeloom": [
       {
-        "date": "2026-07-01",
-        "kind": "progress",
-        "text": "완성도 56%"
-      },
-      {
         "date": "2026-07-20",
         "kind": "progress",
         "text": "완성도 56%"
@@ -4486,17 +4479,17 @@
       },
       {
         "date": "2026-10-06",
+        "kind": "progress",
+        "text": "완성도 56%"
+      },
+      {
+        "date": "2026-10-07",
         "kind": "progress",
         "text": "완성도 56%"
       }
     ],
     "design-system-school": [
       {
-        "date": "2026-07-01",
-        "kind": "progress",
-        "text": "완성도 20%"
-      },
-      {
         "date": "2026-07-20",
         "kind": "progress",
         "text": "완성도 20%"
@@ -4890,14 +4883,14 @@
         "date": "2026-10-06",
         "kind": "progress",
         "text": "완성도 20%"
+      },
+      {
+        "date": "2026-10-07",
+        "kind": "progress",
+        "text": "완성도 20%"
       }
     ],
     "cmds-daily-briefing": [
-      {
-        "date": "2026-08-05",
-        "kind": "progress",
-        "text": "완성도 52%"
-      },
       {
         "date": "2026-08-06",
         "kind": "progress",
@@ -5309,14 +5302,14 @@
         "date": "2026-10-06",
         "kind": "progress",
         "text": "완성도 52%"
+      },
+      {
+        "date": "2026-10-07",
+        "kind": "progress",
+        "text": "완성도 52%"
       }
     ],
     "Timeer": [
-      {
-        "date": "2026-07-01",
-        "kind": "progress",
-        "text": "완성도 7%"
-      },
       {
         "date": "2026-07-20",
         "kind": "progress",
@@ -5709,18 +5702,17 @@
       },
       {
         "date": "2026-10-06",
+        "kind": "progress",
+        "text": "완성도 7%"
+      },
+      {
+        "date": "2026-10-07",
         "kind": "progress",
         "text": "완성도 7%"
       }
     ],
     "chaekdam": [
       {
-        "date": "2026-07-14T05:53:08Z",
-        "kind": "commit",
-        "text": "Merge: Codex 이어받기 문서 (AGENTS.md + 킥오프)",
-        "sha": "6eb39e0"
-      },
-      {
         "date": "2026-07-20",
         "kind": "progress",
         "text": "완성도 19%"
@@ -6112,18 +6104,17 @@
       },
       {
         "date": "2026-10-06",
+        "kind": "progress",
+        "text": "완성도 19%"
+      },
+      {
+        "date": "2026-10-07",
         "kind": "progress",
         "text": "완성도 19%"
       }
     ],
     "honbul": [
       {
-        "date": "2026-07-13T11:46:15Z",
-        "kind": "commit",
-        "text": "docs: 세션 종료 반영 — feat-070 컷인·feat-071 스테이지 생성(StS 구조) 완주",
-        "sha": "3428faa"
-      },
-      {
         "date": "2026-07-20",
         "kind": "progress",
         "text": "완성도 39%"
@@ -6515,6 +6506,11 @@
       },
       {
         "date": "2026-10-06",
+        "kind": "progress",
+        "text": "완성도 39%"
+      },
+      {
+        "date": "2026-10-07",
         "kind": "progress",
         "text": "완성도 39%"
       }
